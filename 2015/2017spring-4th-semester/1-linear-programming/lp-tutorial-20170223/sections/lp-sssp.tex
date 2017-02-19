@@ -2,9 +2,33 @@
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}
-  
+  \begin{equation*}
+	\setlength\arraycolsep{2.5pt}
+	\begin{array}{l@{\quad}rcl}
+	  \color{red}{\boxed{\max}} 	& d_t	& &	\\[5pt]
+	  \text{s.t.} 	& &	\\[5pt]
+			& d_v   &\leq& d_u + w(u,v) \quad \forall (u,v) \in E	\\[10pt]
+			& d_s	&=& 0 
+	\end{array}
+  \end{equation*}
+
+  \vspace{0.60cm}
+
+  \begin{align*}
+	& \min \; d_t	\\
+	& d_v \geq 0 \quad \forall v \in V \\
+	& d_v \leq d_u + w(u,v)
+  \end{align*}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
+\begin{frame}{\pno{29.2-3}}
+  \begin{align*}
+	\text{in}(i) &- \text{out}(i)	\\
+	\sum_{j} x_{ji} &- \sum_{j} x_{ij}	
+  \end{align*}
+
+
+\end{frame}
 %%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%

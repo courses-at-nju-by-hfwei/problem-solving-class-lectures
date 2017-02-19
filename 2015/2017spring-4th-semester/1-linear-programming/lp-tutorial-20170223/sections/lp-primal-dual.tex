@@ -1,0 +1,105 @@
+\section{Primal and Dual}
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Primal-dual}
+  \begin{columns}
+	\column{0.50\textwidth}
+	  \begin{equation*}
+		\setlength\arraycolsep{2.5pt}
+		\begin{array}{l@{\quad}rcc}
+		  \max 	& c^{T}x	&	&	\\[5pt]
+		  \text{s.t.} 	&	&	&	\\[5pt]
+				&	Ax 	&	\leq	&	b	\\[10pt]
+				&	x	& 	\geq 	&	0	
+		\end{array}
+	  \end{equation*}
+	\column{0.50\textwidth}
+	  \begin{equation*}
+		\setlength\arraycolsep{2.5pt}
+		\begin{array}{l@{\quad}rcc}
+		  \min 	& b^{T}y	&	&	\\[5pt]
+		  \text{s.t.} 	&	&	&	\\[5pt]
+				&	A^{T}y 	&	\geq	&	c	\\[10pt]
+				&	y	& 	\geq 	&	0	
+		\end{array}
+	  \end{equation*}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Primal-dual}
+  \begin{equation*}
+	\setlength\arraycolsep{2.5pt}
+	\begin{array}{l@{\quad}rcrcrcr}
+	  \max 	& 3x_1  &+&	x_2		&+&	2x_3	&	&	\\[5pt]
+	  \text{s.t.} 	&	&	&	&	&	&	&	\\[5pt]
+			& x_1   	&+&	x_2	&+&	3x_3	&\leq& 30 \\[10pt]
+			& 2x_1	&-&	2x_2 	&+& 5x_3 	&\leq& 24 \\[10pt]
+			& 4x_1   	&+&	x_2		&+&	2x_3	&\leq& 36	\\[10pt]
+			& x_1,	&&	x_2,	&&	x_3	&\geq&	0
+	\end{array}
+  \end{equation*}
+
+  \vspace{0.60cm}
+
+  \[
+	x^{\ast} = (8, 4, 0)	\qquad\qquad v^{\ast} = 28
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{The multiplier approach}
+  \begin{align*}
+	\circled{1} + \circled{2} &\Rightarrow	\\
+	\circled{1} + \frac{1}{2} \times \circled{3} &\Rightarrow \\
+	\circled{1} + \frac{1}{2} \times \circled{2} &\Rightarrow \\
+	% \frac{1}{2} \times \circled{2} + \frac{1}{2} \times \circled{3}	&\Rightarrow \\
+	0 \times \circled{1} + \frac{1}{6} \times \circled{2} + \frac{2}{3} \times \circled{3} &\Rightarrow 3x_1 + x_2 + \frac{13}{6} \leq 28
+  \end{align*}
+
+  \begin{align*}
+	3x_1 &+ x_2 + 2x_3	\\
+		&\leq y_1 \times \circled{1} + y_2 \times \circled{2} + y_3 \times \circled{3} \\
+		&=	\\
+		&\leq 30y_1 + 24y_2 + 36y_3
+  \end{align*}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Primal-dual \pno{29.3}}
+  \begin{columns}
+	\column{0.50\textwidth}
+	  \begin{equation*}
+		\setlength\arraycolsep{2.5pt}
+		\begin{array}{l@{\quad}rcrcrcr}
+		  \max 	& 3x_1  &+&	x_2		&+&	2x_3	&	&	\\[5pt]
+		  \text{s.t.} 	&	&	&	&	&	&	&	\\[5pt]
+				& x_1   	&+&	x_2	&+&	3x_3	&\leq& 30 \\[10pt]
+				& 2x_1	&-&	2x_2 	&+& 5x_3 	&\geq& 24 \\[10pt]
+				& 4x_1   	&+&	x_2		&+&	2x_3	&=& 36	\\[10pt]
+				& x_1,	&&	x_2	&&	&\geq&	0
+		\end{array}
+	  \end{equation*}
+	\column{0.50\textwidth}
+	  \begin{equation*}
+		\setlength\arraycolsep{2.5pt}
+		\begin{array}{l@{\quad}rcrcrcr}
+		  \min 	& 30y_1  &+&	24y_2		&+&	36y_3	&	&	\\[5pt]
+		  \text{s.t.} 	&	&	&	&	&	&	&	\\[5pt]
+				& x_1   	&+&	x_2	&+&	3x_3	&\leq& 30 \\[10pt]
+				& 2x_1	&-&	2x_2 	&+& 5x_3 	&\geq& 24 \\[10pt]
+				& 4x_1   	&+&	x_2		&+&	2x_3	&=& 36	\\[10pt]
+				& x_1,	&&	x_2	&&	&\geq&	0
+		\end{array}
+	  \end{equation*}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Weak/strong duality theorems}
+  
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Linear-inequality feasibility problem \pno{29.1}}
+  
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%

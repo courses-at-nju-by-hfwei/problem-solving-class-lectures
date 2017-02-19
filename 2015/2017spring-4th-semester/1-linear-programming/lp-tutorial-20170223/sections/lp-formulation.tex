@@ -1,0 +1,58 @@
+\section{Formulation}
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Linear programming}
+  \begin{equation*}
+	\setlength\arraycolsep{2.5pt}
+	\begin{array}{l@{\quad}l}
+	  \max/\min 	& \text{linear function } f \text{ on } x	\\[5pt]
+	  \text{subject to} 	&	\\
+					&	\text{linear constraints } (\geq, =, \leq)
+	\end{array}
+  \end{equation*}
+
+  \vspace{0.80cm}
+
+  Mathematical programming:
+  \begin{itemize}
+	\item multi-objective
+	\item non-linear objective/constraints
+	\item integral variables
+  \end{itemize}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Linear programming}
+  \begin{columns}
+	\column{0.50\textwidth}
+	  \begin{equation*}
+		\setlength\arraycolsep{2.5pt}
+		\begin{array}{l@{\quad}rccl}
+		  \red{\boxed{\max}} 	& \sum_{j=1}^{n} c_j x_j 	&	&	&	\\[5pt]
+		  \text{s.t.} 	&	&	&	&	\\[5pt]
+		  &	\sum_{j=1}^{n} a_{ij} x_j &	\red{\boxed{\leq}}	&	b_i	&	i = 1 \dots m \\[10pt]
+		  &	\red{\boxed{x_j}} 		& \geq 	&	0	&	j = 1 \dots n
+		\end{array}
+	  \end{equation*}
+	\column{0.50\textwidth}
+	  \begin{equation*}
+		\setlength\arraycolsep{2.5pt}
+		\begin{array}{l@{\quad}rcc}
+		  \max 	& c^{T}x	&	&	\\[5pt]
+		  \text{s.t.} 	&	&	&	\\[5pt]
+				&	Ax 	&	\leq	&	b	\\[10pt]
+				&	x	& 	\geq 	&	0	
+		\end{array}
+	  \end{equation*}
+  \end{columns}
+
+  \vspace{0.50cm}
+
+  \[
+	\sum_{j=1}^{n} a_{ij} x_j \leq b_i	\iff b_i - \sum_{j=1}^{n} a_{ij} x_j \geq 0
+  \]
+
+  \[
+	x_{n+i} = b_i - \sum_{j=1}^{n} a_{ij} x_j \quad x_{n+i} \geq 0
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%

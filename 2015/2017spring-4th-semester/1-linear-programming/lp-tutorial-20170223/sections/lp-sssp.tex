@@ -1,7 +1,7 @@
 \section{SSSP}
 
 %%%%%%%%%%%%%%%%%%%%
-\begin{frame}
+\begin{frame}{SPSP}
   \begin{equation*}
 	\setlength\arraycolsep{2.5pt}
 	\begin{array}{l@{\quad}rcl}
@@ -14,22 +14,110 @@
 
   \vspace{0.60cm}
 
-  \begin{align*}
-	& \min \; d_t	\\
-	& d_v \geq 0 \quad \forall v \in V \\
-	& d_v \leq d_u + w(u,v)
-  \end{align*}
+  \begin{equation*}
+	\setlength\arraycolsep{2.5pt}
+	\begin{array}{l@{\quad}l}
+	  Q_{1}:	& \min \; d_t	\\
+	  Q_{2}:	& d_v \geq 0 \quad \forall v \in V \\
+	  Q_{3}:	& d_v \leq d_u + w(u,v)
+	\end{array}
+  \end{equation*}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
-\begin{frame}{\pno{29.2-3}}
+\begin{frame}{SPSP}
+  \begin{columns}
+	\column{0.50\textwidth}
+	  \begin{equation*}
+		\setlength\arraycolsep{2.5pt}
+		\begin{array}{l@{\quad}l}
+		  \min	& w(P)		\\[5pt]
+		  \text{s.t.} 		\\[5pt]
+		  & P: s \leadsto t
+		\end{array}
+	  \end{equation*}
+	\column{0.50\textwidth}
+	  \begin{equation*}
+		\setlength\arraycolsep{2.5pt}
+		\begin{array}{l@{\quad}l}
+		  \min	& \sum_{(u,v) \in E} w_{uv} \cdot x_{uv}		\\[5pt]
+		  \text{s.t.} 		\\[5pt]
+		  & P: s \leadsto t	\\[10pt]
+		  &	\red{\boxed{x_{uv} = \set{0,1}}}	\quad \forall (u,v) \in E
+		\end{array}
+	  \end{equation*}
+  \end{columns}
+
+  \vspace{0.80cm}
+
+  \[
+	 \text{in}(v) - \text{out}(v) 
+	 =	\sum_{u} x_{uv} - \sum_{u} x_{vu} 
+	 = \left\{\begin{array}{rl}
+	  -1,	&	v = s	\\
+	  1,	&	v = t	\\
+	  0,	&	\text{o.w.}
+	\end{array}\right.
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{SPSP}
+  
   \begin{align*}
-	\text{in}(i) &- \text{out}(i)	\\
-	\sum_{j} x_{ji} &- \sum_{j} x_{ij}	
+	\sum_{(u,v) \in E} w_{uv} \cdot x_{uv} & \red{\boxed{\geq}} (d_2 - d_s) x_{12} + (d_t - d_s) x_{14} + \dots	\\
+	&	=	\sum_{(u,v) \in E} (d_v - d_u) x_{uv}	\\
+	&	=	d_t - d_s
   \end{align*}
 
+  \[
+	d_v - d_u \leq w(u,v) \iff d_v \leq d_u + w(u,v)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{SPSP: explaination}
+  \begin{align*}
+	&	d_v \leq d_u + w(u,v)	\quad \forall u: u \to v	\\[6pt]
+	& 	\iff	d_v \leq \min_{u: u \to v} d_u + w(u,v)	\\[6pt]
+	&	\xLeftrightarrow{\max d_v}	d_v = \min_{u: u \to v} d_u + w(u,v)
+  \end{align*}
+
+  \vspace{0.50cm}
+
+  \begin{center}
+	Physical ball-string model.
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{SSSP}
+  \begin{equation*}
+	\setlength\arraycolsep{2.5pt}
+	\begin{array}{l@{\quad}rcl}
+	  \color{red}{\boxed{\max}} 	& \sum_{t} d_t	& &	\\[5pt]
+	  \text{s.t.} 	& &	\\[5pt]
+			& d_v   &\leq& d_u + w(u,v) \quad \forall (u,v) \in E	\\[10pt]
+			& d_s	&=& 0 
+	\end{array}
+  \end{equation*}
+
+  \vspace{0.60cm}
+
+  \[
+	\max \sum_{t} d_t \iff \max \set{d_t \mid t \in V}
+  \]
+
+  \begin{Proof}
+	\begin{itemize}
+	  \item ``$\Rightarrow$:''
+	  \item ``$\Leftarrow$:'' $\max d_i$ never forces us to decrease $d_j$.
+	\end{itemize}
+  \end{Proof}
 
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  Questions:
+  \begin{itemize}
+	\item its dual?
+	\item simplex method vs. Dijkstra's alg \& Bellman-Ford alg?
+  \end{itemize}
+\end{frame}
 %%%%%%%%%%%%%%%%%%%%

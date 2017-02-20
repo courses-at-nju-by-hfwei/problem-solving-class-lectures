@@ -93,11 +93,92 @@
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Weak/strong duality theorems}
-  
+  \begin{theorem}[Weak duality (29.8)]
+	\[
+	  c^{T} x \leq b^{T} y	\quad (\forall x, y)
+	\]
+  \end{theorem}
+
+  \begin{corollary}[29.9]
+	\[
+	  c^{T} x \leq b^{T} y \Rightarrow x (y) \text{ is optimal to Primal (Dual)} 
+	\]
+  \end{corollary}
+
+  \begin{theorem}[Strong duality (29.10)]
+	If an LP has a \red{\boxed{bounded}} optimal solution $x^{\ast}$, then
+	\begin{enumerate}
+	  \item the dual has a bounded optimal solution $y^{\ast}$
+	  \item $c^{T} x^{\ast} \leq b^{T} y^{\ast}$
+	\end{enumerate}
+  \end{theorem}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
-\begin{frame}{Linear-inequality feasibility problem \pno{29.1}}
-  
+\begin{frame}{Linear-inequality feasibility}
+  \[
+	LF \Rightarrow LP
+  \]
+
+  \vspace{0.30cm}
+
+  \begin{columns}
+	\column{0.50\textwidth}
+	  \begin{equation*}
+		\setlength\arraycolsep{2.5pt}
+		\begin{array}{l@{\quad}rcc}
+		  \max 	& c^{T}x	&	&	\\[5pt]
+		  \text{s.t.} 	&	&	&	\\[5pt]
+		  &	Ax 	&	\leq	&	b	\\[10pt]
+		  &	x	& 	\geq 	&	0	
+		\end{array}
+	  \end{equation*}
+	\column{0.50\textwidth}
+	  \begin{enumerate}
+		\item feasible?
+		\item unbounded?
+		\item finite optimal
+	  \end{enumerate}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Linear-inequality feasibility}
+  Binary search from $c^{T} x = 0$:
+
+  \begin{itemize}
+	\item termination?
+	\item approximation
+  \end{itemize}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Linear-inequality feasibility}
+  \begin{columns}
+	\column{0.50\textwidth}
+	  \begin{equation*}
+		\setlength\arraycolsep{2.5pt}
+		\begin{array}{l@{\quad}rcc}
+		  \max 	& c^{T}x	&	&	\\[5pt]
+		  \text{s.t.} 	&	&	&	\\[5pt]
+				&	Ax 	&	\leq	&	b	\\[10pt]
+				&	x	& 	\geq 	&	0	
+		\end{array}
+	  \end{equation*}
+	\column{0.50\textwidth}
+	  \begin{equation*}
+		\setlength\arraycolsep{2.5pt}
+		\begin{array}{l@{\quad}rcc}
+		  \min 	& b^{T}y	&	&	\\[5pt]
+		  \text{s.t.} 	&	&	&	\\[5pt]
+				&	A^{T}y 	&	\geq	&	c	\\[10pt]
+				&	y	& 	\geq 	&	0	
+		\end{array}
+	  \end{equation*}
+  \end{columns}
+
+  \begin{align*}
+	b^{T} y &\red{\boxed{\leq}} c^{T} x	\\
+	Ax \leq b	&	\quad	A^{T} y \geq c	\\
+	x \geq 0	&	\quad 	y \geq 0
+  \end{align*}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%

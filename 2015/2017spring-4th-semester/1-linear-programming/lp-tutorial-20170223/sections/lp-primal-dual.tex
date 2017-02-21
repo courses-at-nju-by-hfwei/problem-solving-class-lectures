@@ -26,7 +26,7 @@
   \end{columns}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
-\begin{frame}{Primal-dual}
+\begin{frame}{Primal-dual (Eq. 29.53)}
   \begin{equation*}
 	\setlength\arraycolsep{2.5pt}
 	\begin{array}{l@{\quad}rcrcrcr}
@@ -66,7 +66,26 @@
   \end{align*}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
-\begin{frame}{Primal-dual \pno{29.4-2}}
+\begin{frame}{Primal-dual (Eq. 29.86)}
+  \begin{equation*}
+	\setlength\arraycolsep{2.5pt}
+	\begin{array}{l@{\quad}rcrcrcr}
+	  \max 	& 30y_1  &+&	24y_2		&+&	36y_3	&	& 	\\[5pt]
+	  \text{s.t.} 	&	&	&	&	&	&	&	\\[5pt]
+			& y_1   &+&	2y_2	&+&	4y_3	&\geq& 3 \\[10pt]
+			& y_1	&+&	2y_2 	&+& y_3 	&\geq& 1 \\[10pt]
+			& 3y_1  &+&	5y_2	&+&	2y_3	&\geq& 2	\\[10pt]
+			& y_1,	&&	y_2,	&&	y_3		&\geq&	0
+	\end{array}
+  \end{equation*}
+
+  \vspace{0.60cm}
+
+  \[
+	y^{\ast} = (0, \frac{1}{6}, \frac{2}{3}) \qquad\qquad\quad v^{\ast} = 28
+  \]
+\end{frame}
+\begin{frame}{Primal-dual (29.4-2)}
   \begin{columns}
 	\column{0.50\textwidth}
 	  \begin{equation*}
@@ -75,10 +94,11 @@
 		  \max 	& 3x_1  &+&	x_2		&+&	2x_3	&	&	\\[5pt]
 		  \text{s.t.} 	&	&	&	&	&	&	&	\\[5pt]
 				& x_1   &+&	x_2		&+&	3x_3	&\leq& 30 \\[10pt]
-				& 2x_1	&+&	2x_2 	&+& 5x_3 	&\geq& 24 \\[10pt]
-				& 4x_1  &+&	x_2		&+&	2x_3	&=& 36	\\[10pt]
+				& 2x_1	&+&	2x_2 	&+& 5x_3 	&\bbox{\geq}& 24 \\[10pt]
+				& 4x_1  &+&	x_2		&+&	2x_3	&\gbox{=}& 36	\\[10pt]
 				& &&	&&	x_1 &\geq&	0	\\[10pt]
-				& &&	&&	x_2 &\geq&	0
+				& &&	&&	x_2 &\pbox{\leq}&	0	\\[10pt]
+				& &&	&&	x_3 &\rbox{\gtreqqless} &	0
 		\end{array}
 	  \end{equation*}
 	\column{0.50\textwidth}
@@ -88,10 +108,11 @@
 		  \min 	& 30y_1  &+&	24y_2		&+&	36y_3	&	&	\\[5pt]
 		  \text{s.t.} 	&	&	&	&	&	&	&	\\[5pt]
 				& y_1   &+&	2y_2	&+&	4y_3	&\geq& 3 \\[10pt]
-				& y_1	&+&	2y_2 	&+& y_3 	&\geq& 1 \\[10pt]
-				& 3y_1  &+&	5y_2	&+&	2y_3	&=& 2	\\[10pt]
+				& y_1	&+&	2y_2 	&+& y_3 	&\pbox{\leq}& 1 \\[10pt]
+				& 3y_1  &+&	5y_2	&+&	2y_3	&\rbox{=}& 2	\\[10pt]
 				& &&	&&	y_1 &\geq&	0	\\[10pt]
-				& &&	&&	y_2 &\leq&	0
+				& &&	&&	y_2 &\bbox{\leq}&	0	\\[10pt]
+				& &&	&&  y_3 &\gbox{\gtreqqless}	&	0
 		\end{array}
 	  \end{equation*}
   \end{columns}
@@ -121,7 +142,7 @@
   \centerline{\purple{Remark:} P is unbounded $\Rightarrow$ D is infeasible.}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
-\begin{frame}{Linear-inequality feasibility \pno{29-1}}
+\begin{frame}{Linear-inequality feasibility (29-1)}
   \[
 	LP \Rightarrow LF
   \]

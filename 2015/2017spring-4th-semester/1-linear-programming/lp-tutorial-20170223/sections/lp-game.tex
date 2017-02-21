@@ -1,29 +1,116 @@
 \section{Game}
 
 %%%%%%%%%%%%%%%%%%%%
-\begin{frame}
+\begin{frame}{Game}
+  \begin{description}
+	\item[Alice:] (e)conomy, (m)edicine
+	\item[Bob:] (t)ax, (i)mmigration
+	\item[Votes:] Alice gains vs. Bob loses
+	\item[Strategy:] pure vs. mixed
+  \end{description}
+
+  \vspace{0.20cm}
+
+  \begin{center}
+	$G=$ \begin{tabular}{|c|cc|}
+	  \hline
+	  &	$t\; (y_1)$	&	$i\; (y_2)$	\\ \hline
+	  $e\; (x_1)$	&	$3$	&	$-1$	\\
+	  $m\; (x_2)$	&	$-2$	&	$1$	\\ \hline
+	\end{tabular}
+  \end{center}
+
+  \[
+	\sum_{i,j} G_{ij} \cdot \mathbb{P}\set{A_i, B_j} = \sum_{i,j} G_{ij} x_i y_j
+  \]
+
+  \begin{center}
+	\red{Q: Who Announce First?}\\[20pt]
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Game}
+  \begin{columns}
+	\column{0.50\textwidth}
+	  \begin{equation*}
+		\setlength\arraycolsep{2.5pt}
+		\begin{array}{l@{\quad}r}
+		  \max &	\boxed{\qquad}	\\
+		  \text{s.t.}	&	\\
+		  		&	x_1 + x_2 = 1 \\
+				&	x_1 \geq 0	\\
+				&	x_2 \geq 0
+		\end{array}
+	  \end{equation*}
+	  \begin{align*}
+		z &= \min \set{3x_1 - 2x_2, -x_1 + x_2} \\
+		&\iff \left\{\begin{array}{l}
+		  \max z \\
+		  z \leq 3x_1 - 2x_2 \\
+		  z \leq -x_1 + x_2
+		\end{array}\right.
+	  \end{align*}
+	\column{0.50\textwidth}
+	  \begin{equation*}
+		\setlength\arraycolsep{2.5pt}
+		\begin{array}{l@{\quad}r}
+		  \min &	\boxed{\qquad}	\\
+		  \text{s.t.}	&	\\
+		  		&	y_1 + y_2 = 1 \\
+				&	y_1 \geq 0	\\
+				&	y_2 \geq 0
+		\end{array}
+	  \end{equation*}
+	  \begin{align*}
+		w &= \max \set{3y_1 - y_2, -2y_1 + y_2} \\
+		&\iff \left\{\begin{array}{l}
+		  \min w \\
+		  w \geq 3y_1 - y_2 \\
+		  w \geq -2y_1 + y_2
+		\end{array}\right.
+	  \end{align*}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Game}
   \begin{columns}
 	\column{0.50\textwidth}
 	  \begin{equation*}
 		\setlength\arraycolsep{2.5pt}
 		\begin{array}{l@{\quad}rcrcrcr}
-		  \max 	& x_1 + x_3 	&	&	&	&	&	&	\\[5pt]
+		  \max 	& z &	&	&	&	&	&	\\[5pt]
 		  \text{s.t.} 	&	&	&	&	&	&	&	\\[5pt]
-		  &	-3x_1 &+&	2x_2	&+&	x_3	&\leq& 2 \\[10pt]
-		  &	x_1	  &-&	x_2 	&+& x_3 &\geq& 0 \\[10pt]
-		  & x_1   &+&	x_2		& &		&=&	1
+		  &	-3x_1 &+&	2x_2	&+&	z	&\leq& 0 \\[5pt]
+		  &	x_1	  &-&	x_2 	&+& z 	&\leq& 0 \\[5pt]
+		  & x_1   &+&	x_2		& &		&=&	1 \\[5pt]
+		  &		&&				&&	x_1 &\geq& 0 \\[5pt]
+		  &		&&				&&	x_2 &\geq& 0
 		\end{array}
 	  \end{equation*}
+	  \[
+		x^{\ast} = (\frac{3}{7}, \frac{4}{7}), \quad z = \frac{1}{7}
+	  \]
 	\column{0.50\textwidth}
 	  \begin{equation*}
 		\setlength\arraycolsep{2.5pt}
-		\begin{array}{l@{\quad}rcc}
-		  \max 	& c^{T}x	&	&	\\[5pt]
-		  \text{s.t.} 	&	&	&	\\[5pt]
-				&	Ax 	&	\leq	&	b	\\[10pt]
-				&	x	& 	\geq 	&	0	
+		\begin{array}{l@{\quad}rcrcrcr}
+		  \min 	& w &	&	&	&	&	&	\\[5pt]
+		  \text{s.t.} 	&	&	&	&	&	&	&	\\[5pt]
+		  &	-3y_1 &+&	y_2		&+&	w	&\geq& 0 \\[5pt]
+		  &	2y_1  &-&	y_2 	&+& w 	&\geq& 0 \\[5pt]
+		  & y_1   &+&	y_2		& &		&=&	1 \\[5pt]
+		  &		&&				&&	y_1 &\geq& 0 \\[5pt]
+		  &		&&				&&	y_2 &\geq& 0
 		\end{array}
 	  \end{equation*}
+	  \[
+		y^{\ast} = (\frac{2}{7}, \frac{5}{7}), \quad w = \frac{1}{7}
+	  \]
   \end{columns}
+
+  \vspace{0.50cm}
+  \[
+	\boxed{\max_{x} \min_{y} \sum_{i,j} G_{ij} x_i y_j \rbox{=} \min_{y} \max_{x} \sum_{i,j} G_{ij} x_i y_j}
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%

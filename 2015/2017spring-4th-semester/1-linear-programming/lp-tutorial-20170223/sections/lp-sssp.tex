@@ -83,6 +83,7 @@
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{SPSP}
+  Dual: to $\max$
   \begin{align*}
 	\sum_{(u,v) \in E} w_{uv} \cdot x_{uv} & \red{\boxed{\geq}} (d_2 - d_s) x_{12} + (d_t - d_s) x_{14} + \dots	\\
 	&	=	\sum_{(u,v) \in E} (d_v - d_u) x_{uv}	\\
@@ -108,7 +109,7 @@
   \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
-\begin{frame}{SSSP}
+\begin{frame}{SSSP (29.2-3)}
   \begin{equation*}
 	\setlength\arraycolsep{2.5pt}
 	\begin{array}{l@{\quad}rcl}
@@ -127,24 +128,39 @@
 
   \begin{Proof}
 	\begin{itemize}
-	  \item ``$\Rightarrow$:''
-	  \item ``$\Leftarrow$:'' $\max d_i$ never forces us to decrease $d_j$.
+	  \item ``$\Rightarrow$'':
+	  \item ``$\Leftarrow$'': $\max d_i$ never forces us to decrease $d_j$.
 	\end{itemize}
   \end{Proof}
-
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
-\begin{frame}
+\begin{frame}{SSSP}
   \[
-	 \text{in}(v) - \text{out}(v) 
-	 =	\sum_{u} x_{uv} - \sum_{u} x_{vu} 
+	\text{Dual:}\quad 
+	\text{in}(v) - \text{out}(v) 
+	=	\sum_{u} x_{uv} - \sum_{u} x_{vu} 
 	 = \left\{\begin{array}{rl}
 	  -1,	&	v = s	\\
-	  1,	&	v = t	\\
+	  \rbox{1},	&	v = t	\\
 	  1,	&	\text{o.w.}
 	\end{array}\right.
   \]
 	
-  \centerline{Simplex method vs. Dijkstra's alg \& Bellman-Ford alg?}
+  \begin{center}
+	System of difference constraints $\Rightarrow$ constraint graph $\Rightarrow$ Bellman-Ford alg
+  \end{center}
+
+  \begin{alertblock}{Highly Recommended}
+	\begin{center}
+	  Simplex method vs. Dijkstra's alg \& Bellman-Ford alg?
+	\end{center}
+  \end{alertblock}
+
+  \vspace{0.50cm}
+  \begin{quote}
+	``In an optimization problem, the identification of a dual problem 
+	is almost always coupled with the discovery of a polynomial time algorithm.''
+	\hfill --- ``Algorithms'' by Dasgupta \emph{et al.}
+  \end{quote}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%

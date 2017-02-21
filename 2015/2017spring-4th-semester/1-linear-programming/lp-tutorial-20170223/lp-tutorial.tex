@@ -5,10 +5,11 @@
 \usecolortheme{beaver}
 \usefonttheme[onlymath]{serif} % try "professionalfonts"
 
-% \setbeamertemplate{itemize items}[default]
-% \setbeamertemplate{enumerate items}[default]
+\setbeamertemplate{itemize items}[default]
+\setbeamertemplate{enumerate items}[default]
 
 \usepackage{amsmath, amsfonts, latexsym, mathtools}
+% \usepackage{kbordermatrix}
 % \usepackage{ntheorem}
 
 \DeclareMathOperator*{\argmin}{arg\,min}
@@ -20,12 +21,18 @@
 \newcommand{\blue}[1]{\textcolor{blue}{#1}}
 \newcommand{\purple}[1]{\textcolor{purple}{#1}}
 
+% colorded box
+\newcommand{\rbox}[1]{\red{\boxed{#1}}}
+\newcommand{\gbox}[1]{\green{\boxed{#1}}}
+\newcommand{\bbox}[1]{\blue{\boxed{#1}}}
+
 \usepackage{tikz}
 % see http://tex.stackexchange.com/a/7045/23098
 \newcommand*\circled[1]{\tikz[baseline=(char.base)]{
             \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
 
 \usepackage{pifont}
+\usepackage{wasysym}
 
 \usepackage[normalem]{ulem}
 \newcommand{\middlewave}[1]{\raisebox{0.5em}{\uwave{\hspace{#1}}}}
@@ -38,8 +45,8 @@
 \newcommand{\pno}[1]{\textcolor{blue}{\scriptsize [Problem: #1]}}
 \newcommand{\set}[1]{\{#1\}}
 
-\newcommand{\cmark}{\textcolor{red}{\ding{51}}}
-\newcommand{\xmark}{\textcolor{red}{\ding{55}}}
+\newcommand{\cmark}{\green{\ding{51}}}
+\newcommand{\xmark}{\red{\ding{55}}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % for fig without caption: #1: width/size; #2: fig file
 \newcommand{\fignocaption}[2]{
@@ -78,7 +85,7 @@
 \begin{document}
 \maketitle
 
-\input{sections/lp-formulation}
+\input{sections/lp-forms}
 \input{sections/lp-primal-dual}
 \input{sections/lp-sssp}
 \input{sections/lp-game}

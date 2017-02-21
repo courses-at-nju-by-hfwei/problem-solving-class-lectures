@@ -33,7 +33,7 @@
 	  \max 	& 3x_1  &+&	x_2		&+&	2x_3	&	&	\\[5pt]
 	  \text{s.t.} 	&	&	&	&	&	&	&	\\[5pt]
 			& x_1   	&+&	x_2	&+&	3x_3	&\leq& 30 \\[10pt]
-			& 2x_1	&-&	2x_2 	&+& 5x_3 	&\leq& 24 \\[10pt]
+			& 2x_1	&+&	2x_2 	&+& 5x_3 	&\leq& 24 \\[10pt]
 			& 4x_1   	&+&	x_2		&+&	2x_3	&\leq& 36	\\[10pt]
 			& x_1,	&&	x_2,	&&	x_3	&\geq&	0
 	\end{array}
@@ -42,28 +42,31 @@
   \vspace{0.60cm}
 
   \[
-	x^{\ast} = (8, 4, 0)	\qquad\qquad v^{\ast} = 28
+	x^{\ast} = (8, 4, 0) \qquad\qquad\quad v^{\ast} = 28
   \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{The multiplier approach}
-  \begin{align*}
-	\circled{1} + \circled{2} &\Rightarrow	\\
-	\circled{1} + \frac{1}{2} \times \circled{3} &\Rightarrow \\
-	\circled{1} + \frac{1}{2} \times \circled{2} &\Rightarrow \\
-	% \frac{1}{2} \times \circled{2} + \frac{1}{2} \times \circled{3}	&\Rightarrow \\
-	0 \times \circled{1} + \frac{1}{6} \times \circled{2} + \frac{2}{3} \times \circled{3} &\Rightarrow 3x_1 + x_2 + \frac{13}{6} \leq 28
-  \end{align*}
+  \begin{equation*}
+	\setlength\arraycolsep{5pt}
+	\begin{array}{rll}
+	  \circled{1} + \circled{2} &\Rightarrow	3x_1 + 3x_2 + 8x_3 & \leq 54 \\[5pt]
+	  \circled{1} + \frac{1}{2} \times \circled{3} &\Rightarrow 3x_1 + \frac{3}{2}x_2 + 4x_3 & \leq 48 \\[5pt]
+	  \circled{1} + \frac{1}{2} \times \circled{2} &\Rightarrow 2x_1 + 2x_2 + \frac{11}{2}x_3 & \text{\xmark{}} \\[5pt]
+	  % \frac{1}{2} \times \circled{2} + \frac{1}{2} \times \circled{3}	&\Rightarrow \\
+	  \red{0} \times \circled{1} + \red{\frac{1}{6}} \times \circled{2} + \red{\frac{2}{3}} \times \circled{3} &\Rightarrow 3x_1 + x_2 + \frac{13}{6}x_3 & \leq 28
+	\end{array}
+  \end{equation*}
 
   \begin{align*}
 	3x_1 &+ x_2 + 2x_3	\\
-		&\leq y_1 \times \circled{1} + y_2 \times \circled{2} + y_3 \times \circled{3} \\
-		&=	\\
-		&\leq 30y_1 + 24y_2 + 36y_3
+	  &\rbox{\leq} y_1 \times \circled{1} + y_2 \times \circled{2} + y_3 \times \circled{3} \\
+	  &= (y_1 + 2y_2 + 4y_3) x_1 + (y_1 + 2y_2 + y_3) x_2 + (3y_1 + 5y_2 + 2y_3)  \\
+	  &\leq 30y_1 + 24y_2 + 36y_3
   \end{align*}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
-\begin{frame}{Primal-dual \pno{29.3}}
+\begin{frame}{Primal-dual \pno{29.4-2}}
   \begin{columns}
 	\column{0.50\textwidth}
 	  \begin{equation*}
@@ -71,10 +74,11 @@
 		\begin{array}{l@{\quad}rcrcrcr}
 		  \max 	& 3x_1  &+&	x_2		&+&	2x_3	&	&	\\[5pt]
 		  \text{s.t.} 	&	&	&	&	&	&	&	\\[5pt]
-				& x_1   	&+&	x_2	&+&	3x_3	&\leq& 30 \\[10pt]
-				& 2x_1	&-&	2x_2 	&+& 5x_3 	&\geq& 24 \\[10pt]
-				& 4x_1   	&+&	x_2		&+&	2x_3	&=& 36	\\[10pt]
-				& x_1,	&&	x_2	&&	&\geq&	0
+				& x_1   &+&	x_2		&+&	3x_3	&\leq& 30 \\[10pt]
+				& 2x_1	&+&	2x_2 	&+& 5x_3 	&\geq& 24 \\[10pt]
+				& 4x_1  &+&	x_2		&+&	2x_3	&=& 36	\\[10pt]
+				& &&	&&	x_1 &\geq&	0	\\[10pt]
+				& &&	&&	x_2 &\geq&	0
 		\end{array}
 	  \end{equation*}
 	\column{0.50\textwidth}
@@ -83,10 +87,11 @@
 		\begin{array}{l@{\quad}rcrcrcr}
 		  \min 	& 30y_1  &+&	24y_2		&+&	36y_3	&	&	\\[5pt]
 		  \text{s.t.} 	&	&	&	&	&	&	&	\\[5pt]
-				& x_1   	&+&	x_2	&+&	3x_3	&\leq& 30 \\[10pt]
-				& 2x_1	&-&	2x_2 	&+& 5x_3 	&\geq& 24 \\[10pt]
-				& 4x_1   	&+&	x_2		&+&	2x_3	&=& 36	\\[10pt]
-				& x_1,	&&	x_2	&&	&\geq&	0
+				& y_1   &+&	2y_2	&+&	4y_3	&\geq& 3 \\[10pt]
+				& y_1	&+&	2y_2 	&+& y_3 	&\geq& 1 \\[10pt]
+				& 3y_1  &+&	5y_2	&+&	2y_3	&=& 2	\\[10pt]
+				& &&	&&	y_1 &\geq&	0	\\[10pt]
+				& &&	&&	y_2 &\leq&	0
 		\end{array}
 	  \end{equation*}
   \end{columns}
@@ -101,7 +106,7 @@
 
   \begin{corollary}[29.9]
 	\[
-	  c^{T} x \leq b^{T} y \Rightarrow x (y) \text{ is optimal to Primal (Dual)} 
+	  c^{T} x \leq b^{T} y \Rightarrow x \text{ optimal to primal; } y \text{ optimal to dual.} 
 	\]
   \end{corollary}
 
@@ -109,12 +114,24 @@
 	If an LP has a \red{\boxed{bounded}} optimal solution $x^{\ast}$, then
 	\begin{enumerate}
 	  \item the dual has a bounded optimal solution $y^{\ast}$
-	  \item $c^{T} x^{\ast} \leq b^{T} y^{\ast}$
+	  \item $c^{T} x^{\ast} = b^{T} y^{\ast}$
 	\end{enumerate}
   \end{theorem}
+
+  \centerline{\purple{Remark:} P is unbounded $\Rightarrow$ D is infeasible.}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
-\begin{frame}{Linear-inequality feasibility}
+\begin{frame}{Linear-inequality feasibility \pno{29-1}}
+  \[
+	LP \Rightarrow LF
+  \]
+
+  \[
+	\max 0	\quad \green{\smiley}	\qquad \qquad \max \; -x_0\; \text{(Ch 29.5)}
+  \]
+
+  \centerline{\rule{0.6\textwidth}{.4pt}}
+
   \[
 	LF \Rightarrow LP
   \]
@@ -143,11 +160,27 @@
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Linear-inequality feasibility}
   Binary search from $c^{T} x = 0$:
+  \[
+	-2\quad -1\quad -\frac{1}{2}\quad \rbox{0}\quad \frac{1}{2}\quad 1\quad 2\quad 4
+  \]
 
-  \begin{itemize}
-	\item termination?
-	\item approximation
-  \end{itemize}
+  \[
+	c^{T} x \geq 0 \begin{cases}
+	  c^T x \geq 2^0	\begin{cases}
+		c^Tx \geq 2^1 \\
+		c^Tx \geq 2^{-1}
+	  \end{cases} \\
+	  c^T x \geq -2^0	\begin{cases}
+		c^Tx \geq -2^{-1} \\
+		c^Tx \geq -2^1
+	  \end{cases}
+	\end{cases}
+  \]
+
+  \begin{center}
+	Termination?\\
+	Approximation?
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Linear-inequality feasibility}
@@ -179,6 +212,10 @@
 	Ax \leq b	&	\quad	A^{T} y \geq c	\\
 	x \geq 0	&	\quad 	y \geq 0
   \end{align*}
+
+  \begin{center}
+	\purple{Remark:} What if this LF is infeasible?
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%

@@ -1,12 +1,13 @@
-\section{Formulation}
+\section{LP Forms}
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Linear programming}
+  Linear programming (LP):
   \begin{equation*}
 	\setlength\arraycolsep{2.5pt}
 	\begin{array}{l@{\quad}l}
 	  \max/\min 	& \text{linear function } f \text{ on } x	\\[5pt]
-	  \text{subject to} 	&	\\
+	  \text{s.t.} 	&	\\
 					&	\text{linear constraints } (\geq, =, \leq)
 	\end{array}
   \end{equation*}
@@ -53,6 +54,32 @@
 
   \[
 	x_{n+i} = b_i - \sum_{j=1}^{n} a_{ij} x_j \quad x_{n+i} \geq 0
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Linear programming}
+  \begin{exampleblock}{\pno{29.1-4}}
+	\[
+	  x_3 \le 0
+	\]
+  \end{exampleblock}
+
+  \[
+	x_3 = x'_3 - x''_3 \quad x'_3, x''_3 \geq 0 \quad \text{\xmark{}}
+  \]
+
+  \[
+	x_3 = -x_4	\quad x_4 \geq 0	\quad \text{\cmark{}}
+  \]
+
+  \begin{exampleblock}{\pno{29.1-7}}
+	\[
+	  \max \; x_1 - x_2
+	\]
+  \end{exampleblock}
+
+  \[
+	(\infty, 0)	\qquad \text{\red{Picture is not a proof!}}
   \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%

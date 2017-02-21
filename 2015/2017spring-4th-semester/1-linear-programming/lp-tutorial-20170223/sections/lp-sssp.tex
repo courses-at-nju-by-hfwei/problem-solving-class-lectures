@@ -1,7 +1,7 @@
 \section{SSSP}
 
 %%%%%%%%%%%%%%%%%%%%
-\begin{frame}{SPSP}
+\begin{frame}{SPSP (Ch 29.2)}
   \begin{equation*}
 	\setlength\arraycolsep{2.5pt}
 	\begin{array}{l@{\quad}rcl}
@@ -61,7 +61,28 @@
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{SPSP}
-  
+  \[
+	x_{12}\;\; x_{14}\;\;	x_{23}\;\;	x_{24}\;\;	x_{31}\;\;	x_{43}
+  \]
+
+  \begin{equation*}
+	\begin{pmatrix}
+	  -1	&	-1	&	&	&	1	&	\\
+	  1		&		&	-1	&	-1	&	\\
+	  		&		&	1	&	1	&	-1	\\
+	 		&	1	&	&	1	&	&	-1
+	\end{pmatrix}
+	\begin{pmatrix}
+	  x_{12}\\x_{14}\\x_{23}\\x_{24}\\x_{31}\\x_{43}
+	\end{pmatrix}
+	= 
+	\begin{pmatrix}
+	  -1\\0\\0\\1
+	\end{pmatrix}
+  \end{equation*}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{SPSP}
   \begin{align*}
 	\sum_{(u,v) \in E} w_{uv} \cdot x_{uv} & \red{\boxed{\geq}} (d_2 - d_s) x_{12} + (d_t - d_s) x_{14} + \dots	\\
 	&	=	\sum_{(u,v) \in E} (d_v - d_u) x_{uv}	\\
@@ -73,7 +94,7 @@
   \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
-\begin{frame}{SPSP: explaination}
+\begin{frame}{SPSP: explanation}
   \begin{align*}
 	&	d_v \leq d_u + w(u,v)	\quad \forall u: u \to v	\\[6pt]
 	& 	\iff	d_v \leq \min_{u: u \to v} d_u + w(u,v)	\\[6pt]
@@ -83,7 +104,7 @@
   \vspace{0.50cm}
 
   \begin{center}
-	Physical ball-string model.
+	Physical ball-string model: \red{PULL} it!
   \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
@@ -114,10 +135,16 @@
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}
-  Questions:
-  \begin{itemize}
-	\item its dual?
-	\item simplex method vs. Dijkstra's alg \& Bellman-Ford alg?
-  \end{itemize}
+  \[
+	 \text{in}(v) - \text{out}(v) 
+	 =	\sum_{u} x_{uv} - \sum_{u} x_{vu} 
+	 = \left\{\begin{array}{rl}
+	  -1,	&	v = s	\\
+	  1,	&	v = t	\\
+	  1,	&	\text{o.w.}
+	\end{array}\right.
+  \]
+	
+  \centerline{Simplex method vs. Dijkstra's alg \& Bellman-Ford alg?}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%

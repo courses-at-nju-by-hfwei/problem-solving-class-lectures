@@ -1,0 +1,57 @@
+\section{Rotational Symmetries of Cube}
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{$C \cong S_4$}
+  \begin{itemize}
+    \item Order of $1$: id ($\# = 1$)
+    \item Order of $4$: face-to-face
+      \begin{align*}
+	 f_{td} = (1\;2\;3\;4) \quad f_{td}^{2} = (1\;3) (2\;4)  \quad f_{td}^{3} = (1\;4\;3\;2) \\
+	 f_{lr} = (1\;2\;4\;3) \quad f_{lr}^{2} = (1\;4) (2\;3)  \quad f_{lr}^{3} = (1\;3\;4\;2) \\
+	 f_{fb} = (1\;4\;2\;3) \quad f_{fb}^{2} = (1\;2) (3\;4)  \quad f_{fb}^{3} = (1\;3\;2\;4)
+      \end{align*}
+  \end{itemize}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{$C \cong S_4$}
+  \begin{itemize}
+    \item Order of $3$: vertex-to-vertex
+      \begin{align*}
+        v_{1} = (2\;3\;4) \quad v_{1}^{2} = (2\;4\;3) \\
+        v_{2} = (1\;4\;3) \quad v_{2}^{2} = (1\;3\;4) \\
+        v_{3} = (1\;2\;4) \quad v_{3}^{2} = (1\;4\;2) \\
+        v_{4} = (1\;2\;3) \quad v_{4}^{2} = (1\;3\;2) \\
+      \end{align*}
+    \item Order of $2$: edge-to-edge
+      \begin{align*}
+        e_{12} = (1\;2) \quad e_{13} = (1\;3) \quad e_{14} = (1\;4) \\
+        e_{23} = (2\;3) \quad e_{24} = (2\;4) \quad e_{34} = (3\;4)
+      \end{align*}
+  \end{itemize}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Subgroups of $S_4$}
+  Order of $6$:
+  \[
+    H \cong S_3 = \set{1, r, r^2, s, rs, r^2s}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Subgroups of $S_4$}
+  Order of $8$:
+  \[
+    H \cong D_4 = \set{1, r, r^2, r^3, s, rs, r^2s, r^3s}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Subgroups of $S_4$}
+  Order of $12$:
+  \[
+    H \cong A_4
+  \]
+
+  \begin{theorem}
+    There is only one subgroup of order $12$ in $S_4$.
+  \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%

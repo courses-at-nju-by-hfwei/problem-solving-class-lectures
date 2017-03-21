@@ -12,6 +12,8 @@
 % \usepackage{kbordermatrix}
 % \usepackage{ntheorem}
 
+\usepackage{centernot}
+
 \DeclareMathOperator*{\argmin}{arg\,min}
 \DeclareMathOperator*{\argmax}{arg\,max}
 
@@ -66,14 +68,14 @@
   \end{figure}
 }
 
-\newcommand{\titletext}{Rotational Symmetries}
+\newcommand{\titletext}{Group Homomorphism}
 %%%%%%%%%%%%%%%%%%%%
 \title[\titletext]{\titletext}
 \subtitle{}
 
 \author[Hengfeng Wei]{Hengfeng Wei}
 \institute{hfwei@nju.edu.cn}
-\date{Mar 19, 2017}
+\date{Mar 21, 2017}
 
 \AtBeginSection[]{
   \begin{frame}[noframenumbering, plain]
@@ -81,13 +83,12 @@
     \tableofcontents[currentsection, sectionstyle=show/shaded, subsectionstyle=show/show/hide]
   \end{frame}
 }
-
 %%%%%%%%%%
 \begin{document}
 \maketitle
 
-\input{sections/tetrahedron}
-\input{sections/cube}
+\input{sections/small-groups}
+\input{sections/homomorphism}
 
 \end{document}
 %%%%%%%%%%

@@ -10,7 +10,7 @@
   \]
 
   \[
-    G = \mathbb{Z}, \quad H = {1}, \quad K = \Pi_{n \in \mathbb{N}} \mathbb{Z}
+    G = \mathbb{Z}, \quad H = {1}, \quad K = \prod_{n \in \mathbb{N}} \mathbb{Z}
   \]
 
   \centerline{``On Cancellation in Groups'' by R. Hirshon, 1969}
@@ -33,5 +33,98 @@
   \]
 \end{frame}
 %%%%%%%%%%%%%%%
+\begin{frame}{(TJ 11.5)}
+  \[
+    \phi: \mathbb{Z}_{24} \to \mathbb{Z}_{18}
+  \]
+
+  \begin{align*}
+    \phi(1) = a & \implies \phi(x) = ax\; (\mathrm{mod} 18) \\
+	    & \implies Ker(\phi) = \mathbb{Z}_{b} \cap \mathbb{Z}_{24}: ab \equiv 0\; (\mathrm{mod} 18)
+  \end{align*}
+
+  \[
+    \phi(1) = ?
+  \]
+
+  \[
+    |\phi(1)| | 18 \land |\phi(1)| | 24 \implies |\phi(1)| | 6
+  \]
+
+  \[
+    \phi(1) = 0, 9, 6, 12, 3, 15
+  \]
+
+  \begin{align*}
+    \phi_3(x) = 6x, \quad Ker(\phi_{3}) = 3\mathbb{Z}_{24}
+  \end{align*}
+\end{frame}
 %%%%%%%%%%%%%%%
+\begin{frame}{Normal subgroups}
+  \[
+    \mathbb{Z}/n\mathbb{Z}
+  \]
+
+  \[
+    (aH) (bH) = (abH)
+  \]
+
+  \[
+  \forall a, b \in G, \forall h_1, h_2 \in H, (ah_1) \in aH, (bh_2) \in bH: (ah_1)(bh_2) \in abH
+  \]
+
+  \[
+    \exists h_3 \in H, (ah_1)(bh_2) = abh_3 \iff h_1 b = bh_3h_2^{-1}
+  \]
+
+  \[
+    \forall b \in G, \forall h_1 \in H: \exists h' \in H: h_1 b = bh'
+  \]
+
+  \[
+    \forall g \in G, \forall h \in H: \exists h' \in H: hg = gh'
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+\begin{frame}{Normal subgroups}
+  \[
+    \forall g \in G, \forall h \in H: \exists h' \in H: hg = gh'
+  \]
+
+  \[
+    \forall g \in G, Hg \subseteq gH
+  \]
+
+  \[
+    \forall g^{-1} \in G, Hg^{-1} \subseteq g^{-1}H
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+\begin{frame}{(TJ 10.13)}
+  \[
+    g \in G, C(g) = \set{x \in G: gx = xg}
+  \]
+
+  \[
+    Z(G) = \set{x \in G: gx = xg,  \forall g \in G} \implies Z(G) \triangleleft G
+  \]
+
+  \[
+    C(g) \le G
+  \]
+
+  \[
+    \langle g \rangle \triangleleft G \implies C(g) \triangleleft G
+  \]
+
+  \begin{proof}
+    \begin{align*}
+      \forall k \in G, x \in C(g): k^{-1} x k \in C(g) \\
+      \forall k \in G, x \in C(g): gk^{-1}xk = k^{-1}xkg \\
+      \langle g \rangle \triangleleft G \implies k \langle g \rangle = \langle g \rangle k \implies
+      \exists t, gk = kg^{t} \iff g k^{-1} = k^{-1} g^t \\
+      gk^{-1}xk = k^{-1}xg^{t}k \Leftarrow gk^{-1}x = k^{-1}xg^{t} \Leftarrow gk^{-1}x = k^{-1}g^{t}x
+    \end{align*}
+  \end{proof}
+\end{frame}
 %%%%%%%%%%%%%%%

@@ -86,6 +86,7 @@
 \begin{document}
 \maketitle
 
+\input{sections/tetrahedron}
 \input{sections/cube}
 
 \end{document}

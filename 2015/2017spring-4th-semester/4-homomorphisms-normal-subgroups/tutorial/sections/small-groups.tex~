@@ -1,10 +1,113 @@
 \section{Groups of Small Orders}
 
+%%%%%%%%%%%%%%%
 \begin{frame}{Order of 4}
+  \[
+    G \cong \mathbb{Z}_{4} \lor G \cong K_4 = \langle a, b \mid a^2 = b^2 = (ab)^2 = e \rangle (V)
+  \]
 \end{frame}
-
+%%%%%%%%%%%%%%%
 \begin{frame}{Order of 6}
+  \[
+    G \cong \mathbb{Z}_{6} \lor G \cong \mathbb{S_3}
+  \]
 \end{frame}
+%%%%%%%%%%%%%%%
+\begin{frame}{Order of 8 (TJ 9.11)}
+  \[
+    1,\;2,\;4,\;8 (\mathbb{Z}_{8})
+  \]
 
-\begin{frame}{Order of 8 (9.11)}
+  \[
+    \forall g \in G: |g| = 2 \implies \textrm{ Abelian}
+  \]
+
+  \[
+    G = \set{e, a, b, \textcolor{red}{c}, ab, ac, bc, abc}
+  \]
+
+  \[
+    G = \langle a, b, c \mid a^2 = b^2 = c^2 = e, ab = ba, ac = ca, bc = cb \rangle
+  \]
+
+  \[
+    H_1 = \set{e, a},\; H_2 = \set{e, b},\; H_3 = \set{e, c} \implies G \cong H_1 \times H_2 \times H_3
+  \]
+
+  \[
+    f(a) = (1,0,0),\; f(b) = (0,1,0),\; f(c) = (0,0,1)
+  \]
 \end{frame}
+%%%%%%%%%%%%%%%
+\begin{frame}{$|a| = 4$ (TJ 9.11)}
+  \[
+    |a| = 4: G = \set{e, a, a^2, a^3, b, ab, a^2b, a^3b}
+  \]
+
+  \[
+    \textcolor{red}{ba = ?,\quad |b| = ?}
+  \]
+
+  \[
+    ba \in \set{ab, a^2b, a^3b},\; b^2 \in \set{e, a, a^2, a^3}
+  \]
+
+  \[
+    b^2 = a \implies b^4 = a^2 \neq e
+  \]
+
+  \[
+    b^2 = a^3 \implies b^4 = a^6 \neq e
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+\begin{frame}{$b^2 = e$ (TJ 9.11)}
+  \[
+    ba = ab \iff \textcolor{red}{bab^{-1}} = a: G = \set{e, a, a^2, a^3, b, ab, a^2b, a^3b}
+  \]
+
+  \[
+    H = \set{e, a, a^2, a^3}, K = \set{e, b} \implies G \cong H \times K \cong \mathbb{Z}_{4} \times \mathbb{Z}_{2}
+  \]
+
+  \[
+    f(a) = (1,0),\; f(b) = (0,1)
+  \]
+
+  \[
+    ba = a^2b \implies a = b^{-1}a^2b \implies a^2 = b^{-1}a^4b = e
+  \]
+
+  \[
+    ba = a^3b \implies \textcolor{red}{bab^{-1}} = a^3 = a^{-1} \implies G \cong D_4
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+\begin{frame}{$b^2 = a^2$ (TJ 9.11)}
+  \[
+    b^2 = a^2 \neq e,\; b^3 = a^2b \neq e,\; b^4 = a^4 = e \implies |b| = 4
+  \]
+
+  \[
+    ba = ab: G = \set{e, a, a^2, a^3, b, ab, a^2b, a^3b}
+  \]
+
+  \[
+    H = \set{e, a, a^2, a^3},\; K = \set{e, ab} \implies G \cong H \times K \cong \mathbb{Z}_{4} \times \mathbb{Z}_{2} 
+  \]
+
+  \[
+    ba = a^2b \implies ba = b^3 \implies a = b^2 = a^2
+  \]
+
+  \[
+    ba = a^3b \implies a^4 = 1, a^2 = b^2, \textcolor{red}{bab^{-1}} = a^{-1}
+  \]
+
+  \[
+    Q_8 = \set{\pm 1, \pm i, \pm j, \pm k}: i^2 = j^2 = k^2 = ijk = -1
+  \]
+
+  \centerline{Quaternion group: Example 3.15, P42, 2016; Example 3.8, P44, 2010}
+\end{frame}
+%%%%%%%%%%%%%%%

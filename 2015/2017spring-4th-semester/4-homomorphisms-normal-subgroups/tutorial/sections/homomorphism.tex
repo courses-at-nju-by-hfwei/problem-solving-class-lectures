@@ -2,8 +2,106 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{$D_6 \cong D_3 \times \mathbb{Z}_{2}$ (TJ 9.16)}
-\end{frame}
+  \[
+    D_6 = \set{1, r, r^2, r^3, r^4, r^5, s, rs, r^{2}s, r^{3}s, r^{4}s, r^{5}s}\; (r^6 = 1, s^2 = 1,
+    srs = r^{-1})
+  \]
 
+  \[
+    D_3 = \set{1, \rho, \rho^2, \lambda, \rho\lambda, \rho^{2}\lambda}\; (\rho^3 = 1, \lambda^2 = 1,
+    \lambda\rho\lambda = \rho^{-1})
+  \]
+
+  \[
+    \mathbb{Z}_{2} = \set{0, 1}
+  \]
+
+  \[
+    f: D_6 \to D_3 \times \mathbb{Z}_{2}
+  \]
+
+  \[
+    f: r \mapsto (\rho, 1), s \mapsto (\lambda, 1)
+  \]
+
+  \[
+    D_8 \textcolor{gray}{\cong} D_4 \times \mathbb{Z}_{2}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+\begin{frame}{(TJ 9.16)}
+  \[
+    D_{2n} \cong D_{n} \times \mathbb{Z}_{2}\; (n \textrm{ is odd})
+  \]
+
+  \[
+    f: r \mapsto (\rho, 1), s \mapsto (\lambda, 1)
+  \]
+
+  \[
+    f: (r^{i}s^{j} \mapsto (\rho, 1)^{i} (\lambda, 1)^{j} = (\rho^{i}\lambda^{j}, 1^{i+j})\;
+    (0 \le i < n, j \in \set{0,1})
+  \]
+
+  \[
+    f((r^{i_1}s^{j_1})(r^{i_2}s^{j_2})) = (\rho^{i_1}\lambda^{j_1}, 1^{i_1 + j_1})
+      (\rho^{i_2}\lambda^{j_2}, 1^{i_2 + j_2})
+  \]
+
+  \[
+    f(r^{i_1}s^{j_1}r^{i_2}s^{j_2}) = (\rho^{i_1}\lambda^{j_1}\rho^{i_2}\lambda^{j_2}, 1^{i_1 + j_1
+    + i_2 + j_2})
+  \]
+
+  \[
+    sr^k = r^{-k}s, r^ks = sr^{-k}
+  \]
+
+  \centerline{$j_1$ even or odd?}
+\end{frame}
+%%%%%%%%%%%%%%%
+\begin{frame}{(TJ 9.16)}
+  \centerline{$f$ is one-to-one}
+
+  \[
+    f(r^{i_1}s^{j_1}) = f(r^{i_2}s^{j_2})
+  \]
+
+  \[
+    \rho^{i_1}\lambda^{j_1} = \rho^{i_2}\lambda^{j_2},\; 1^{i_1 + j_1} = 1^{i_2 + j_2}
+  \]
+
+  \[
+    \rho^{i_1 - i_2} = \lambda^{j_2 - j_1}
+  \]
+
+  \[
+    i_1 = i_2,\; j_1 = j_2 
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+\begin{frame}{(TJ 9.16)}
+  \[
+    H = \langle r^2, s \rangle \cong D_{n}
+  \]
+
+  \[
+    Z = \set{1, r^n}
+  \]
+
+  \[
+    D_{2n} = HZ,\quad H \cap Z = \emptyset,\quad hz = zh\; \forall h \in H, z \in Z
+  \]
+
+  \[
+    G \cong H \times Z\quad (\textrm{Theorem 9.27, P158, 2016; Theorem 9.13, P150, 2010})
+  \]
+
+  \[
+    |Z(D_{2n})| = 2,\; |Z(D_n \times \mathbb{Z}_{2})| = 4\quad (\textrm{if } n = 2k)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
 \begin{frame}{(TJ 9.23)}
   \[
     G \times K \cong H \times K \centernot\implies G \cong H
@@ -112,6 +210,36 @@
   \]
 \end{frame}
 %%%%%%%%%%%%%%%
+\begin{frame}{Normal subgroups}
+  \[
+    \forall g \in G, \forall h \in H: \exists h' \in H: hg = gh' \iff g^{-1}hg = h'
+  \]
+
+  \[
+    \forall g \in G, g^{-1}Hg \subseteq H
+  \]
+
+  \[
+    \forall g \in G, (g^{-1})^{-1}Hg^{-1} = gHg^{-1} \subseteq H
+  \]
+
+  \[
+   \forall g \in G, \forall h \in H, \exists h' \in H: ghg^{-1} = h' \iff h = g^{-1}h'g
+  \]
+
+  \[
+    \forall g \in G, H \subseteq g^{-1}Hg
+  \]
+
+  \[
+    \forall g \in G, g^{-1}Hg = H
+  \]
+
+  \[
+    \forall g \in G, gHg^{-1} = H
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
 \begin{frame}{(TJ 10.13)}
   \[
     g \in G, C(g) = \set{x \in G: gx = xg}
@@ -128,15 +256,24 @@
   \[
     \langle g \rangle \triangleleft G \implies C(g) \triangleleft G
   \]
+\end{frame}
+%%%%%%%%%%%%%%%
+\begin{frame}{(TJ 10.13)}
+  \[
+    \forall k \in G, x \in C(g): k^{-1} x k \in C(g)
+  \]
 
-  \begin{proof}
-    \begin{align*}
-      \forall k \in G, x \in C(g): k^{-1} x k \in C(g) \\
-      \forall k \in G, x \in C(g): gk^{-1}xk = k^{-1}xkg \\
-      \langle g \rangle \triangleleft G \implies k \langle g \rangle = \langle g \rangle k \implies
-      \exists t, gk = kg^{t} \iff g k^{-1} = k^{-1} g^t \\
-      gk^{-1}xk = k^{-1}xg^{t}k \Leftarrow gk^{-1}x = k^{-1}xg^{t} \Leftarrow gk^{-1}x = k^{-1}g^{t}x
-    \end{align*}
-  \end{proof}
+  \[
+    \forall k \in G, x \in C(g): gk^{-1}xk = k^{-1}xkg
+  \]
+
+  \[
+    \langle g \rangle \triangleleft G \implies k \langle g \rangle = \langle g \rangle k \implies
+    \exists t, kg = g^{t}k \iff gk^{-1} = k^{-1}g^t
+  \]
+
+  \[
+    gk^{-1}xk = k^{-1}xg^{t}k \iff k^{-1}g^{t}xk = k^{-1}xg^{t}k
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%

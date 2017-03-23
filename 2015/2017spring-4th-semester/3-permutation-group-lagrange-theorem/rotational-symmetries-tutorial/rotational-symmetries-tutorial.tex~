@@ -72,8 +72,9 @@
 \subtitle{}
 
 \author[Hengfeng Wei]{Hengfeng Wei}
+\titlegraphic{\includegraphics[height = 1.3cm]{figs/orcode.png}}
 \institute{hfwei@nju.edu.cn}
-\date{March 19, 2017 $\sim$ \today}
+\date{March 19 $\sim$ \today}
 
 \AtBeginSection[]{
   \begin{frame}[noframenumbering, plain]

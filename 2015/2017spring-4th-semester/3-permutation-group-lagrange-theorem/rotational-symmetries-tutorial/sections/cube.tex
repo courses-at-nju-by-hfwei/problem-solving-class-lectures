@@ -2,6 +2,27 @@
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{$C \cong S_4$}
+  \centerline{6 faces/8 vertices/12 edges}
+
+  \pause
+  \[
+    |C| \le 24
+  \]
+
+  \pause
+  \vspace{0.6cm}
+  \centerline{1. facing upward}
+
+  \vspace{0.4cm}
+  \centerline{2. 24 \textcolor{red}{oriented} edges}
+
+  \pause
+  \[
+    |C| = 24 \Leftarrow 4 \text{ main diagonals}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{$C \cong S_4$}
   \begin{itemize}
     \item Order of $1$: id ($\# = 1$)
     \item Order of $4$: face-to-face
@@ -45,12 +66,10 @@
   \begin{itemize}
     \item $H \cong \mathbb{Z}_{4}$: $\# = 3$
     \item $H \cong K_{4} = \set{e, a, b, c} (a^2 = b^2 = c^2)$
-    \begin{align*}
-      \set{(1), (1\; 2), (3\; 4), (1\; 2) (3\; 4)}\\
-      \set{(1), (1\; 3), (2\; 4), (1\; 3) (2\; 4)}\\
-      \set{(1), (1\; 4), (2\; 3), (1\; 4) (2\; 3)}\\
-      \textcolor{red}{\set{(1), (1\; 2) (1\; 3), (2\; 4), (1\; 4) (2\; 3)}}
-    \end{align*}
+      \[ \set{(1), (1\; 2), (3\; 4), (1\; 2) (3\; 4)} \]
+      \[ \set{(1), (1\; 3), (2\; 4), (1\; 3) (2\; 4)} \]
+      \[ \set{(1), (1\; 4), (2\; 3), (1\; 4) (2\; 3)} \]
+      \[ \textcolor{red}{\set{(1), (1\; 2) (1\; 3), (2\; 4), (1\; 4) (2\; 3)}} \]
   \end{itemize}
 
   \[
@@ -64,7 +83,7 @@
   \]
 
   \[
-    H \cong S_3 = \set{1, r, r^2, s, rs, r^2s} \quad (r^3 = 1, s^2 = 1)
+    H \cong S_3 = \set{1, r, r^2, s, rs, r^2s} \quad (r^3 = 1, s^2 = 1, srs = r^{-1})
   \]
 
   \centerline{Figure here.}
@@ -98,7 +117,7 @@
   \]
 
   \[
-    H \cong D_4 = \set{1, r, r^2, r^3, s, rs, r^2s, r^3s} \quad (r^4 = 1, s^2 = 1)
+    H \cong D_4 = \set{1, r, r^2, r^3, s, rs, r^2s, r^3s} \quad (r^4 = 1, s^2 = 1, srs = r^{-1})
   \]
 
   \centerline{Figure here.}

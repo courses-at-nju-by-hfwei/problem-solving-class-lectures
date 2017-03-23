@@ -3,13 +3,21 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{Order of 4}
   \[
-    G \cong \mathbb{Z}_{4} \lor G \cong K_4 = \langle a, b \mid a^2 = b^2 = (ab)^2 = e \rangle (V)
+    G \cong \mathbb{Z}_{4}
+  \]
+
+  \[
+    G \cong K_4 = \langle a, b \mid a^2 = b^2 = (ab)^2 = e \rangle (V)
   \]
 \end{frame}
 %%%%%%%%%%%%%%%
 \begin{frame}{Order of 6}
   \[
-    G \cong \mathbb{Z}_{6} \lor G \cong \mathbb{S_3}
+    G \cong \mathbb{Z}_{6} 
+  \]
+
+  \[
+    G \cong S_3
   \]
 \end{frame}
 %%%%%%%%%%%%%%%

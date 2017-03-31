@@ -2,6 +2,7 @@
 
 WELCOME to the `problem-solving-class-lectures` Project.
 
+![ORCode](https://github.com/hengxin/problem-solving-class-lectures/blob/master/2015/2017spring-4th-semester/3-permutation-group-lagrange-theorem/rotational-symmetries-tutorial/figs/orcode.png)
 ---
 
 Lectures for the "Problem Solving" class.

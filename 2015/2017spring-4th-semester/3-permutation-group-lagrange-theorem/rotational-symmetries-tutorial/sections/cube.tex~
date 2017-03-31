@@ -117,7 +117,7 @@
   \]
 
   \[
-    H \cong D_4 = \set{1, r, r^2, r^3, s, rs, r^2s, r^3s} \quad (r^4 = 1, s^2 = 1)
+    H \cong D_4 = \set{1, r, r^2, r^3, s, rs, r^2s, r^3s} \quad (r^4 = 1, s^2 = 1, srs = r^{-1})
   \]
 
   \centerline{Figure here.}

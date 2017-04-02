@@ -1,9 +1,84 @@
-\section{Euclid's GCD Algorithm}
+\section{Euclid's Algorithm}
 
 %%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Worst-case analysis of Euclid's algorithm}
+  \begin{exampleblock}{(TC 31.2--5)}
+	\begin{enumerate}
+	  \item If $a > b \ge 0$, $\textsc{Euclid}(a,b)$ makes $\le r \triangleq 1 + \log_{\phi}b$ recursive calls.
+	\end{enumerate}
+  \end{exampleblock}
+
+  \[
+	a > b \ge 1, b < F_{k+1} \implies r < k.
+  \]
+
+  \[
+	r \le 1 + \log_{\phi}b \implies k = 2 + \log_{\phi}b, b < \only<2->{\boxed{?} \le} F_{3 + \log_{\phi}b}
+  \]
+
+  \[
+	F_k = \frac{\phi^{k} - \hat{\phi^{k}}}{\sqrt{5}} = [\frac{\phi^{k}}{\sqrt{5}}] \ge \frac{\phi^{k}}{\sqrt{5}}
+  \]
+\end{frame}
 %%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Worst-case analysis of Euclid's algorithm}
+  \begin{exampleblock}{(TC 31.2--5)}
+	\begin{enumerate}
+	  \setcounter{enumi}{1}
+	  \item Improve this bound to $1 + \log_{\phi}(\frac{b}{\gcd(a,b)})$.
+	\end{enumerate}
+  \end{exampleblock}
+
+  \[
+	(a,b) = (a,b) \cdot (\frac{a}{(a,b)}, \frac{b}{(a,b)})
+  \]
+
+  \[
+	\textsc{Euclid}(a,b) \leftrightarrow \textsc{Euclid}(\frac{a}{\gcd(a,b)}, \frac{b}{\gcd(a,b)})
+  \]
+
+  \[
+	\textsc{Euclid}(b, a \mod b) \leftrightarrow \textsc{Euclid}(\frac{b}{\gcd(a,b)}, \frac{a}{\gcd(a,b)} \mod \frac{b}{\gcd(a,b)})
+  \]
+
+  \[
+	\frac{a}{\gcd(a,b)} \mod \frac{b}{\gcd(a,b)} = \frac{a \mod b}{\gcd(a,b)}
+  \]
+\end{frame}
 %%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Worst-case analysis of Euclid's algorithm}
+  \begin{exampleblock}{(TC 31.2--5)}
+	\begin{enumerate}
+	  \setcounter{enumi}{1}
+	  \item Improve this bound to $1 + \log_{\phi}(\frac{b}{\gcd(a,b)})$.
+	\end{enumerate}
+  \end{exampleblock}
+
+  \begin{Lemma}[Generalization of Lemma 31.10]
+	If $a > b \le 1, d = \gcd(a,b)$ and the call $\textsc{Euclid}(a,b)$ performs $k \ge 1$ recursive calls,
+	then $a \ge dF_{k+2}$ and $b \ge dF_{k+1}$.
+  \end{Lemma}
+\end{frame}
 %%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Average-case analysis of Euclid's algorithm}
+  \[
+	T(m,0) = 0; \quad T(m,n) = 1 + T(n, m \mod n) \; n \ge 1
+  \]
+  
+  When $m$ is chosen at random:
+  \[
+	T_n = \frac{1}{n} \sum_{0 \le k < n} T(k,n)
+  \]
+
+  Assume that, for $0 \le k < n$, $(n \mod k)$ is ``random'':
+  \[
+	T_n \approx 1 + \frac{1}{n} (T_0 + T_1 + \cdots + T_{n-1}) \pause = 1 + \frac{1}{2} + \cdots + \frac{1}{n} = H_n \approx \ln n + O(1)
+  \]
+
+  \begin{alertblock}{Reference}
+	``The Art of Computer Programming, Vol 2: Seminumerical Algorithms (Section 4.5.3)'' by Donald E. Knuth, 3rd edition.
+  \end{alertblock}
+\end{frame}
 %%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%

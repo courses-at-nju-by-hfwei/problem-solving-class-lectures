@@ -1,0 +1,157 @@
+\section{Chinese Remainder Theorem}
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Pairwise relatively prime (Problem 31.2-9)}
+  \begin{exampleblock}{}
+	\begin{gather*}
+	  n_1, n_2, n_3, n_4 \text{ are pairwise relatively prime} \\
+	  \iff \\
+	  \text{gcd}(n_1n_2, n_3n_4) = \text{gcd}(n_1n_3, n_2n_4) = 1
+	\end{gather*}
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{}
+	\begin{gather*}
+	  n_1, n_2, \dots, n_k \text{ are pairwise relatively prime} \\
+	  \iff \\
+	  \text{a set of } \lceil \lg k \rceil \text{ pairs of numbers derived from the } n_i \text{ are relatively prime}.
+	\end{gather*}
+  \end{exampleblock}
+
+  \pause
+  \[
+	\textcolor{red}{\text{gcd}(\fbox{$1_L$}, \fbox{$1_R$}) 
+	= \text{gcd}(\fbox{$2_L$}, \fbox{$2_R$}) 
+	= \cdots 
+	= \text{gcd}(\fbox{$\lceil \lg k \rceil_L$}, \fbox{$\lceil \lg k \rceil_R$}) = 1}
+  \]
+
+  \pause
+  \begin{gather*}
+    k = 4: \quad \text{gcd}(n_1n_2, n_3n_4) = \text{gcd}(n_1n_3, n_2n_4) = 1 \\
+	k = 3: \quad \text{gcd}(n_1, n_2n_3) = \text{gcd}(n_2, n_3) = 1 \\
+	k = 2: \quad \text{gcd}(n_1, n_2) = 1
+  \end{gather*}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  % \begin{exampleblock}{}
+  %   \begin{gather*}
+  %     n_1, n_2, \dots, n_k \text{ are pairwise relatively prime} \\
+  %     \iff \\
+  %     \text{a set of } \lceil \lg k \rceil \text{ pairs of numbers derived from the } n_i \text{ are relatively prime}.
+  %   \end{gather*}
+  % \end{exampleblock}
+
+  \[
+	k = 7: \quad n_1, n_2, n_3, n_4, n_5, n_6, n_7
+  \]
+
+  \pause
+  \[
+    \text{gcd}(n_1n_2n_3, n_4n_5n_6n_7) = 1
+  \]
+
+  \centerline{TODO: figure here.}
+
+  \begin{equation*}
+	\begin{cases}
+	  T(1) = 0 \\
+	  T(2) = 1 \\
+	  T(k) = 2T(\frac{k}{2}) + 1
+	\end{cases}\pause \implies T(k) = k - 1 = \Theta(k)
+  \end{equation*}
+  % \[
+  %   k = 8: \quad n_1, n_2, n_3, n_4, n_5, n_6, n_7, n_8
+  % \]
+
+  % \pause
+  % \[
+  %   \text{gcd}(n_1n_2n_3n_4, n_5n_6n_7n_8) = 1
+  % \]
+
+  % \pause
+  % \begin{gather*}
+  %   k' = 4: \quad \text{gcd}(n_1n_2, n_3n_4) = \text{gcd}(n_1n_3, n_2n_4) = 1 \\
+  %   k' = 4: \quad \text{gcd}(n_4n_5, n_6n_7) = \text{gcd}(n_4n_6, n_5n_7) = 1
+  % \end{gather*}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{} % {Being a little smarter with divide-and-conquer}
+  \[
+	k = 7: \quad n_1, n_2, n_3, n_4, n_5, n_6, n_7
+  \]
+
+  \pause
+  \[
+    \text{gcd}(n_1n_2n_3, n_4n_5n_6n_7) = 1
+  \]
+
+  \centerline{TODO: figure here.}
+
+  \begin{equation*}
+	\begin{cases}
+	  T(1) = 0 \\
+	  T(2) = 1 \\
+	  T(k) = T(\frac{k}{2}) + 1
+	\end{cases}\pause \implies T(k) = \lceil \lg k \rceil
+  \end{equation*}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Looking into the divide steps}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Not exactly the same}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Can we do even better?}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Biclique covering}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Biclique covering}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Chinese Remainder Theorem (CRT)}
+  Where do $m_i$, $c_i$, and $a$ come from?
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{History of CRT}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Proof of CRT (1)}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Proof of CRT (2)}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Proof of CRT (3)}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{CRT}
+  Meaning of Figure 31.3
+
+  $\equiv 1$ and $\equiv 0$ elsewhere
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{$\phi$ function}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{CRT with non-pairwise coprime moduli}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Application?}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Application?}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%

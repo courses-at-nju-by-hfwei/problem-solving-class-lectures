@@ -1,0 +1,57 @@
+\section{Modular Arithmetic}
+
+\begin{frame}{``Mod''}
+  \begin{exampleblock}{(TC 31.4.2)}
+	\[
+	  ad \equiv bd \pmod{n}, \textcolor{red}{a \bot n} \implies a \equiv b \pmod{n} 
+	\]
+  \end{exampleblock}
+
+  \[
+	3 \cdot 2 \equiv 5 \cdot 2 \pmod{4} \quad \textcolor{red}{3 \not\equiv 5 \pmod{4}} \quad \pause \textcolor{blue}{3 \equiv 5 \pmod{2}}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Changing the modulus}
+  \[
+	ad \equiv bd \pmod{nd} \iff a \equiv b \pmod{n} \quad (d \neq 0)
+  \]
+
+  \[
+	ad \equiv bd \pmod{n} \iff a \equiv b \pmod{\frac{n}{\gcd(d,n)}}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Changing the modulus}
+  \[
+	a \equiv b \pmod{100} \implies a \equiv b \pmod{20} \implies a \equiv b \pmod{5}
+  \]
+
+  \[
+	a \equiv b \pmod{nd} \implies a \equiv b \pmod{n}, d \in \mathbb{Z}
+  \]
+
+  \centerline{\rule{0.80\paperwidth}{0.4pt}}
+
+  \[
+	a \equiv b \pmod{n_1}, a \equiv b \pmod{n_2} \iff a \equiv b \pmod{\lcm(n_1, n_2)}
+  \]
+
+  % \[
+  %   a \equiv b \pmod{12}, a \equiv b \pmod{18} \iff a \equiv b \pmod{36}
+  % \]
+
+  \[
+	a \equiv b \pmod{n_1}, a \equiv b \pmod{n_2} \iff a \equiv b \pmod{n_1n_2}, \text{ if } n_1 \bot n_2
+  \]
+
+  \[
+	a \equiv b \pmod{n} \iff a \equiv b \pmod{p^{n_p}}, \quad n = \prod_{p} p^{n_p}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Changing the modulus}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%
+

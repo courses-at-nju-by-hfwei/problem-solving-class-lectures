@@ -47,6 +47,7 @@
 
 \newcommand{\pno}[1]{\textcolor{blue}{\scriptsize [Problem: #1]}}
 \newcommand{\set}[1]{\{#1\}}
+\DeclareMathOperator{\lcm}{lcm}
 
 \newcommand{\cmark}{\green{\ding{51}}}
 \newcommand{\xmark}{\red{\ding{55}}}
@@ -68,14 +69,14 @@
   \end{figure}
 }
 
-\newcommand{\titletext}{Group Homomorphism}
+\newcommand{\titletext}{Number-Theoretic Algorithms}
 %%%%%%%%%%%%%%%%%%%%
 \title[\titletext]{\titletext}
 \subtitle{}
 
 \author[Hengfeng Wei]{Hengfeng Wei}
 \institute{hfwei@nju.edu.cn}
-\date{March 21 $\sim$ \today}
+\date{March 31 $\sim$ \today}
 
 \AtBeginSection[]{
   \begin{frame}[noframenumbering, plain]
@@ -87,8 +88,9 @@
 \begin{document}
 \maketitle
 
-\input{sections/small-groups}
-\input{sections/homomorphism}
+\input{sections/modular}
+\input{sections/euclid}
+\input{sections/crt}
 
 \end{document}
 %%%%%%%%%%

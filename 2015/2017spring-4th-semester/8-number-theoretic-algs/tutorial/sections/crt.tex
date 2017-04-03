@@ -1,150 +1,74 @@
 \section{Chinese Remainder Theorem}
 
 %%%%%%%%%%%%%%%%%%%%
-\begin{frame}{Pairwise relatively prime}
-  \begin{exampleblock}{(TC 31.2--9)}
-	\begin{gather*}
-	  n_1, n_2, n_3, n_4 \text{ are pairwise relatively prime} \\
-	  \iff \\
-	  \gcd(n_1n_2, n_3n_4) = \gcd(n_1n_3, n_2n_4) = 1
-	\end{gather*}
-  \end{exampleblock}
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{Pairwise relatively prime}
-  \begin{exampleblock}{(TC 31.2--9)}
-	\begin{gather*}
-	  n_1, n_2, \dots, n_k \text{ are pairwise relatively prime} \\
-	  \iff \\
-	  \text{a set of } \lceil \lg k \rceil \text{ pairs of numbers derived from the } n_i \text{ are relatively prime}.
-	\end{gather*}
-  \end{exampleblock}
-
-  \pause
-  \[
-	\binom{k}{2} = \Theta(k^2)	\quad (\text{complete graph})
-  \]
-
-  \pause
-  \[
-	\textcolor{red}{\gcd(\fbox{$1_L$}, \fbox{$1_R$}) 
-	= gcd(\fbox{$2_L$}, \fbox{$2_R$}) 
-	= \cdots 
-	= gcd(\fbox{$\lceil \lg k \rceil_L$}, \fbox{$\lceil \lg k \rceil_R$}) = 1}
-  \]
-
-  \pause
-  \begin{gather*}
-    % k = 4: \quad gcd(n_1n_2, n_3n_4) = gcd(n_1n_3, n_2n_4) = 1 \\
-	k = 3: \quad gcd(n_1, n_2n_3) = gcd(n_2, n_3) = 1 \\
-	k = 2: \quad gcd(n_1, n_2) = 1
-  \end{gather*}
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{Pairwise relatively prime: divide-and-conquer}
-  \begin{center}
-	\input{tikz/coprime7}
-  \end{center}
-
-  \uncover<3->{
-	\begin{equation*}
-	  \begin{cases}
-		T(1) = 0 \\
-		T(k) = 2T(\frac{k}{2}) + 1
-	  \end{cases} \uncover<4-> {\implies T(k) = k - 1 = \Theta(k)}
-	\end{equation*}
-  }
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{Pairwise relatively prime: smarter combine}
-  \centerline{TODO: figure here.}
-
-  \begin{equation*}
-	\begin{cases}
-	  T(1) = 0 \\
-	  T(k) = T(\frac{k}{2}) + 1
-	\end{cases}\pause \implies T(k) = \lceil \lg k \rceil
-  \end{equation*}
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{Pairwise relatively prime: the dividing pattern}
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{Not exactly the same}
-  \begin{columns}
-	\column{0.50\textwidth}
-	  \fignocaption{width = 0.70\textwidth}{figs/coprime4.pdf}
-	  
-	  \[
-		\gcd(n_1n_2, n_3n_4) = \gcd(n_1n_3, n_2n_4) = 1
-	  \]
-	\column{0.50\textwidth}
-	  \[
-		\gcd{} \textcolor{red}{???}
-	  \]
-  \end{columns}
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{Can we do even better?}
-  \[
-	T(k) \ge \lceil \lg k \rceil.
-  \]
-
-  \pause
-  \centerline{Prove by (strong) mathematical induction.}
-
-  \pause
-  \begin{align*}
-	T(k) &\ge 1 + T(\lceil \frac{k}{2} \rceil) \\
-		&\ge 1 + \lceil \lg \lceil \frac{k}{2} \rceil \rceil \\
-		&= \lceil \lg k \rceil
-  \end{align*}
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{Biclique covering}
-  \centerline{Covering a complete graph with few complete bipartite subgraphs.}
-
-  \fignocaption{width = 0.38\textwidth}{figs/biclique-covering-google.png}
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{Biclique covering: rethinking the first divide-and-conquer}
-  \[
-	T(k) = k-1
-  \]
-
-  \pause
-  \centerline{\emph{edge-disjoint} biclique partition}
-
-  \pause
-  \vspace{0.20cm}
-  \begin{alertblock}{Reference for $T(k) \ge k-1$}
-	``On the Addressing Problem for Loop Switching'' by Graham and Pollak, 1971. 
-  \end{alertblock}
-
-  \pause
-  \vspace{0.30cm}
-  \begin{alertblock}{Reference for \emph{weighted} biclique partition}
-	``Covering a Graph by Complete Bipartite Graphs'' by P. Erdos and L. Pyber, 1997.
-  \end{alertblock}
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Chinese Remainder Theorem (CRT)}
-  Where do $m_i$, $c_i$, and $a$ come from?
+  \begin{theorem}[CRT]
+	\[
+	  n_1, \ldots, n_k; \quad a_1, \ldots, a_k
+	\]
+
+	\[ 
+	  n_i \bot n_j \quad i \neq j, \quad n = n_1n_2\cdots n_k 
+	\]
+
+    \[
+	  \exists! a\; (\textcolor{red}{0 \le a < n}): a \equiv a_i \pmod{n_i}.
+	\]
+  \end{theorem}
+
+  \begin{proof}[Proof for uniqueness]
+	\[
+	  a \equiv a' \pmod{n_i} \implies n \mid a - a'.
+	\]
+  \end{proof}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{History of CRT}
+  \begin{quote}
+  \end{quote}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Proof of CRT (1)}
+  \begin{proof}[Nonconstructive proof]
+	\begin{align*}
+	  &f: [0,n) \to \prod_{1 \le i \le k} [0,a_i) \\
+	  &f: a \mapsto \big( a \pmod{n_1}, \dots, a \pmod{n_k} \big)
+	\end{align*}
+
+	\begin{itemize}
+	  \item $f$ is one-to-one.
+	  \item $f$ is onto.
+		\[
+		  \exists a: f(a) = (a_1, \dots, a_k).
+		\]
+	\end{itemize}
+  \end{proof}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Proof of CRT (2)}
+  \begin{align*}
+	a &\equiv a_1 \pmod{n_1} \\
+	a &\equiv a_2 \pmod{n_2}
+  \end{align*}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Proof of CRT (3)}
+  \begin{proof}[Constructive proof]
+	\begin{enumerate}
+	  \item $x \equiv 1 \pmod{n_i}, \quad x \equiv 0 \pmod{n_j}\; (i \neq j)$
+		\[
+		  x = M_i(M_i^{-1} \pmod{n_i}) \implies x \equiv M_iM_i^{-1} \pmod{m}
+		\]
+	  \item $x \equiv a_i \pmod{n_i}, \quad x \equiv 0 \pmod{n_j}\; (i \neq j)$
+		\[
+		  x \equiv a_i M_iM_i^{-1} \pmod{m}
+		\]
+	  \item $a \equiv a_i \pmod{n_i}$
+		\[
+		  a \equiv \sum_{1 \le i \le k} a_i M_iM_i^{-1} \pmod{m}
+		\]
+	\end{enumerate}
+  \end{proof}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{CRT}
@@ -153,16 +77,63 @@
   $\equiv 1$ and $\equiv 0$ elsewhere
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
-\begin{frame}{$\phi$ function}
+\begin{frame}{The $\varphi$ function}
+  \begin{theorem}[The $\varphi$ function]
+	\[
+	  m \bot n \implies \varphi(mn) = \varphi(m) \varphi(n)
+	\]
+  \end{theorem}
+
+  \begin{proof}
+	\begin{gather*}
+	  U_{m} = \set{a \bmod m, (a,m) = 1}, U_{n} = \set{a \bmod n, (a,n) = 1}, \\
+	  U_{mn} = \set{c \bmod mn, (c, mn) = 1}
+	\end{gather*}
+
+	\begin{align*}
+	  f: U_{mn} &\to U_m \times U_n \\
+	  f(c \bmod mn) &= (c \bmod m, c \bmod n).
+	\end{align*}
+  \end{proof}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{The $\varphi$ function}
+  \begin{theorem}[The $\varphi$ function]
+	\[
+	  \varphi(p^k) = p^k - p^{k-1}
+	\]
+
+	\[
+	  \varphi(n) = n \prod_{p \mid n} (1 - frac{1}{p})
+	\]
+  \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Secret sharing using the CRT}
+  \begin{definition}[$(k,n)$ threshold secret sharing scheme]
+	$(2,3)$ secret sharing:
+	\fignocaption{width = 0.35\textwidth}{figs/secret-sharing-geometry.png}
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Secret sharing using the CRT}
+  \begin{enumerate}
+	\item Choose $m_i$:
+	  \[
+		m_1 < m_2 < \cdots < m_n, \quad m_i \bot m_j, \quad \prod_{i=n-k+2}^{n} m_i < \prod_{i=1}^{k} m_i
+	  \]
+	\item Choose the secret $S$:
+	  \[
+		\prod_{i=n-k+2}^{n} m_i < S < \prod_{i=1}^{k} m_i
+	  \]
+	\item Compute the shares:
+	  \[
+		s_i = S \bmod m_i
+	  \]
+  \end{enumerate}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{CRT with non-pairwise coprime moduli}
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{}
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{Application?}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Application?}

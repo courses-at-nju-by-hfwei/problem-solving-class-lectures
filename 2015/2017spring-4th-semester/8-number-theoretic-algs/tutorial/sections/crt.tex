@@ -46,10 +46,40 @@
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Proof of CRT (2)}
+  \begin{proof}[Constructive proof by induction]
+	\begin{align*}
+	  a &\equiv a_1 \pmod{n_1} \\
+	  a &\equiv a_2 \pmod{n_2}
+	\end{align*}
+
+	\[
+	  n_1 \bot n_2 \implies n_1n_1' + n_2n_2' = 1
+	\]
+
+	\begin{align*}
+	  x &= a_1n_1n_1' + a_2n_2n_2' \pmod{n_1n_2} \\
+		&= a_1M_1(M_1^{-1} \bmod n_1) \\
+		&\quad + a_2M_2(M_2^{-1} \bmod n_2) \pmod{n_1n_2}
+	\end{align*}
+  \end{proof}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Proof of CRT (2)}
   \begin{align*}
 	a &\equiv a_1 \pmod{n_1} \\
 	a &\equiv a_2 \pmod{n_2}
   \end{align*}
+
+  \begin{proof}[Constructive proof by induction]
+	\begin{align*}
+	  a &= a_1 + n_1y \\
+	  n_1y &\equiv a_2 - a_1 \pmod{n_2} \\
+	  y &\equiv M_2^{-1}(a_2 - a_1) \pmod{n_2} \\
+	  \textcolor{red}{n_1y} &\textcolor{red}{\equiv M_2M_2^{-1}(a_2 - a_1) \pmod{n_1n_2}} \\
+	  x &\equiv a_1 + M_2M_2^{-1}(a_2 - a_1) \pmod{n_1n_2} \\
+		&\equiv a_1M_1M_1^{-1} + a_2M_2M_2^{-1} \pmod{n_1n_2}
+	\end{align*}
+  \end{proof}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Proof of CRT (3)}
@@ -68,6 +98,14 @@
 		  a \equiv \sum_{1 \le i \le k} a_i M_iM_i^{-1} \pmod{m}
 		\]
 	\end{enumerate}
+  \end{proof}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Proof of CRT (3)}
+  \begin{proof}[More efficient constructive proof]
+	\begin{alertblock}{Reference}
+	  ``The Residue Number System'' by Garner, 1959.
+	\end{alertblock}
   \end{proof}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
@@ -110,14 +148,19 @@
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Secret sharing using the CRT}
-  \begin{definition}[$(k,n)$ threshold secret sharing scheme]
-	$(2,3)$ secret sharing:
-	\fignocaption{width = 0.35\textwidth}{figs/secret-sharing-geometry.png}
+  \begin{definition}[$(k,n)$-threshold secret sharing scheme]
+	$(2,3)$-secret sharing:
+	\fignocaption{width = 0.30\textwidth}{figs/secret-sharing-geometry.png}
   \end{definition}
+
+  \pause
+  \begin{alertblock}{Reference}
+	``How to Share a Secret'' by Mignotte, 1982.
+  \end{alertblock}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Secret sharing using the CRT}
-  \begin{enumerate}
+  \begin{enumerate}[<+->]
 	\item Choose $m_i$:
 	  \[
 		m_1 < m_2 < \cdots < m_n, \quad m_i \bot m_j, \quad \prod_{i=n-k+2}^{n} m_i < \prod_{i=1}^{k} m_i
@@ -133,9 +176,35 @@
   \end{enumerate}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
-\begin{frame}{CRT with non-pairwise coprime moduli}
+\begin{frame}{Solving the system of congruences}
+  \begin{exampleblock}{(TC 31.5--2)}
+	\[
+	  \begin{cases}
+		x \equiv 1 \pmod{9} \\
+		x \equiv 2 \pmod{8} \\
+		x \equiv 3 \pmod{7}
+	  \end{cases}
+	\]
+  \end{exampleblock}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
-\begin{frame}{Application?}
+\begin{frame}{Solving the system of congruences}
+  \begin{exampleblock}{}
+	\[
+	  19x \equiv 556 \pmod{1155}
+	\]
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Solving the system of congruences}
+  \begin{exampleblock}{CRT with non-pairwise coprime moduli}
+	\[
+	  \begin{cases}
+		x \equiv 3 \pmod{8} \\
+		x \equiv 11 \pmod{20} \\
+		x \equiv 1 \pmod{15} \\
+	  \end{cases}
+	\]
+  \end{exampleblock}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%

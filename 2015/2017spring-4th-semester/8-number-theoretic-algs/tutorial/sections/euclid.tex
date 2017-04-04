@@ -38,11 +38,11 @@
   \]
 
   \[
-	\textsc{Euclid}(b, a \mod b) \leftrightarrow \textsc{Euclid}(\frac{b}{\gcd(a,b)}, \frac{a}{\gcd(a,b)} \mod \frac{b}{\gcd(a,b)})
+	\textsc{Euclid}(b, a \bmod b) \leftrightarrow \textsc{Euclid}(\frac{b}{\gcd(a,b)}, \frac{a}{\gcd(a,b)} \bmod \frac{b}{\gcd(a,b)})
   \]
 
   \[
-	\frac{a}{\gcd(a,b)} \mod \frac{b}{\gcd(a,b)} = \frac{a \mod b}{\gcd(a,b)}
+	\frac{a}{\gcd(a,b)} \bmod \frac{b}{\gcd(a,b)} = \frac{a \bmod b}{\gcd(a,b)}
   \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
@@ -62,7 +62,7 @@
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Average-case analysis of Euclid's algorithm}
   \[
-	T(m,0) = 0; \quad T(m,n) = 1 + T(n, m \mod n) \; n \ge 1
+	T(m,0) = 0; \quad T(m,n) = 1 + T(n, m \bmod n) \; n \ge 1
   \]
   
   When $m$ is chosen at random:
@@ -70,11 +70,12 @@
 	T_n = \frac{1}{n} \sum_{0 \le k < n} T(k,n)
   \]
 
-  Assume that, for $0 \le k < n$, $(n \mod k)$ is ``random'':
+  Assume that, for $0 \le k < n$, $(n \bmod k)$ is ``random'':
   \[
 	T_n \approx 1 + \frac{1}{n} (T_0 + T_1 + \cdots + T_{n-1}) \pause = 1 + \frac{1}{2} + \cdots + \frac{1}{n} = H_n \approx \ln n + O(1)
   \]
 
+  \pause
   \begin{alertblock}{Reference}
 	``The Art of Computer Programming, Vol 2: Seminumerical Algorithms (Section 4.5.3)'' by Donald E. Knuth, 3rd edition.
   \end{alertblock}

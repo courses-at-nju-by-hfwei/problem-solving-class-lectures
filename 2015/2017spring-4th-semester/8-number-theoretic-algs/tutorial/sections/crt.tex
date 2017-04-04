@@ -115,6 +115,60 @@
   $\equiv 1$ and $\equiv 0$ elsewhere
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
+\begin{frame}{CRT}
+  \[
+	a \leftrightarrow (a_1, a_2, \ldots, a_n)
+  \]
+
+  \begin{align*}
+	a \pm b &\leftrightarrow (a_1 \pm b_1, a_2 \pm b_2, \ldots, a_n \pm b_n) \\
+	a \times b &\leftrightarrow (a_1 \times b_1, a_2 \times b_2, \ldots, a_n \times b_n) \\
+  \end{align*}
+
+  \begin{exampleblock}{TC 31.5--3}
+	\[
+	 a \leftrightarrow (a_1, a_2, \ldots, a_n), (a,n) = 1 \implies a^{-1} \leftrightarrow (a_1^{-1}, a_2^{-2}, \ldots, a_n^{-1})
+	\]
+  \end{exampleblock}
+
+  \begin{proof}
+	\begin{equation*}
+	  a^{-1} \equiv a_i^{-1} \pmod{n_i} \pause \impliedby \begin{cases}
+		a \equiv a_i \pmod{n_i} \\
+		(a,n) = 1
+	  \end{cases}
+	\end{equation*}
+  \end{proof}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{The $\varphi$ function}
+  \begin{theorem}[The $\varphi$ function]
+	\begin{align*}
+	  \varphi(p) &= p - 1 \\
+	  \varphi(p^k) &= p^k - p^{k-1}
+	\end{align*}
+  \end{theorem}
+
+  \pause
+
+  \[
+	n = \prod_{i=1}^{r} {p_i}^{k_i}
+  \]
+
+  \pause
+  \[
+	\textcolor{red}{m \bot n \implies \varphi(mn) = \varphi(m) \varphi(n)}
+  \]
+
+  \pause
+  \[
+	\varphi(n) = \prod_{i=1}^{r} \varphi(p_i^{k_i}) 
+	    \pause = \prod_{i=1}^{r} (p_i^{k_i} - p_{i}^{k_i - 1})
+		\pause = \prod_{i=1}^{r} p_i^{k_i} (1 - \frac{1}{p_i})
+		\pause = n \prod_{i=1}^{r} (1 - \frac{1}{p_i})
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{The $\varphi$ function}
   \begin{theorem}[The $\varphi$ function]
 	\[
@@ -133,18 +187,6 @@
 	  f(c \bmod mn) &= (c \bmod m, c \bmod n).
 	\end{align*}
   \end{proof}
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{The $\varphi$ function}
-  \begin{theorem}[The $\varphi$ function]
-	\[
-	  \varphi(p^k) = p^k - p^{k-1}
-	\]
-
-	\[
-	  \varphi(n) = n \prod_{p \mid n} (1 - frac{1}{p})
-	\]
-  \end{theorem}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Secret sharing using the CRT}

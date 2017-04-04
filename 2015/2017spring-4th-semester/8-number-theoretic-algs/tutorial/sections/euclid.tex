@@ -25,24 +25,37 @@
   \begin{exampleblock}{(TC 31.2--5)}
 	\begin{enumerate}
 	  \setcounter{enumi}{1}
-	  \item Improve this bound to $1 + \log_{\phi}(\frac{b}{\gcd(a,b)})$.
+	  \item Improve this bound to $1 + \log_{\phi}(\frac{b}{(a,b)})$.
 	\end{enumerate}
   \end{exampleblock}
 
+  \pause
   \[
 	(a,b) = (a,b) \cdot (\frac{a}{(a,b)}, \frac{b}{(a,b)})
   \]
 
+  \pause
+  \vspace{-0.20cm}
+  \begin{columns}
+	\column{0.20\textwidth}
+	  \begin{align*}
+		&(16,12) \\
+		&=(12,4) \\
+		&=(4,0) \\
+		&=4
+	  \end{align*}
+	\column{0.20\textwidth}
+	  \begin{align*}
+		&(4,3) \\
+		&=(3,1) \\
+		&=(1,0) \\
+		&=1
+	  \end{align*}
+  \end{columns}
+  
+  \pause
   \[
-	\textsc{Euclid}(a,b) \leftrightarrow \textsc{Euclid}(\frac{a}{\gcd(a,b)}, \frac{b}{\gcd(a,b)})
-  \]
-
-  \[
-	\textsc{Euclid}(b, a \bmod b) \leftrightarrow \textsc{Euclid}(\frac{b}{\gcd(a,b)}, \frac{a}{\gcd(a,b)} \bmod \frac{b}{\gcd(a,b)})
-  \]
-
-  \[
-	\frac{a}{\gcd(a,b)} \bmod \frac{b}{\gcd(a,b)} = \frac{a \bmod b}{\gcd(a,b)}
+	\textsc{Euclid}(a,b) \leftrightarrow \textsc{Euclid}(\frac{a}{(a,b)}, \frac{b}{(a,b)})
   \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
@@ -50,12 +63,33 @@
   \begin{exampleblock}{(TC 31.2--5)}
 	\begin{enumerate}
 	  \setcounter{enumi}{1}
-	  \item Improve this bound to $1 + \log_{\phi}(\frac{b}{\gcd(a,b)})$.
+	  \item Improve this bound to $1 + \log_{\phi}(\frac{b}{(a,b)})$.
+	\end{enumerate}
+  \end{exampleblock}
+
+  \[
+	\textsc{Euclid}(a,b) \leftrightarrow \textsc{Euclid}(\frac{a}{(a,b)}, \frac{b}{(a,b)})
+  \]
+
+  \[
+	\textsc{Euclid}(b, a \bmod b) \leftrightarrow \textsc{Euclid}(\frac{b}{(a,b)}, \frac{a}{(a,b)} \bmod \frac{b}{(a,b)})
+  \]
+
+  \[
+	\frac{a}{(a,b)} \bmod \frac{b}{(a,b)} = \frac{a \bmod b}{(a,b)}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Worst-case analysis of Euclid's algorithm}
+  \begin{exampleblock}{(TC 31.2--5)}
+	\begin{enumerate}
+	  \setcounter{enumi}{1}
+	  \item Improve this bound to $1 + \log_{\phi}(\frac{b}{(a,b)})$.
 	\end{enumerate}
   \end{exampleblock}
 
   \begin{Lemma}[Generalization of Lemma 31.10]
-	If $a > b \le 1, d = \gcd(a,b)$ and the call $\textsc{Euclid}(a,b)$ performs $k \ge 1$ recursive calls,
+	If $a > b \ge 1, d = (a,b)$ and $\textsc{Euclid}(a,b)$ performs $k \ge 1$ recursive calls,
 	then $a \ge dF_{k+2}$ and $b \ge dF_{k+1}$.
   \end{Lemma}
 \end{frame}
@@ -65,11 +99,13 @@
 	T(m,0) = 0; \quad T(m,n) = 1 + T(n, m \bmod n) \; n \ge 1
   \]
   
+  \pause
   When $m$ is chosen at random:
   \[
 	T_n = \frac{1}{n} \sum_{0 \le k < n} T(k,n)
   \]
 
+  \pause
   Assume that, for $0 \le k < n$, $(n \bmod k)$ is ``random'':
   \[
 	T_n \approx 1 + \frac{1}{n} (T_0 + T_1 + \cdots + T_{n-1}) \pause = 1 + \frac{1}{2} + \cdots + \frac{1}{n} = H_n \approx \ln n + O(1)
@@ -80,7 +116,4 @@
 	``The Art of Computer Programming, Vol 2: Seminumerical Algorithms (Section 4.5.3)'' by Donald E. Knuth, 3rd edition.
   \end{alertblock}
 \end{frame}
-%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%

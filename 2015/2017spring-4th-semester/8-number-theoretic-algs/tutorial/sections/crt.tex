@@ -32,7 +32,7 @@
   \begin{proof}[Nonconstructive proof]
 	\begin{align*}
 	  &f: [0,n) \to \prod_{1 \le i \le k} [0,a_i) \\
-	  &f: a \mapsto \big( a \pmod{n_1}, \dots, a \pmod{n_k} \big)
+	  &f: a \mapsto \big( a \bmod n_1, \dots, a \bmod n_k \big)
 	\end{align*}
 
 	\begin{itemize}
@@ -47,75 +47,78 @@
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Proof of CRT (2)}
   \begin{proof}[Constructive proof by induction]
-	\begin{align*}
+	\begin{align}
 	  a &\equiv a_1 \pmod{n_1} \\
 	  a &\equiv a_2 \pmod{n_2}
-	\end{align*}
+	\end{align}
+
+	\pause
+	\[
+	  (1) \implies a = a_1 + n_1 y
+	\]
+  \end{proof}
+
+  % \pause
+  % \begin{align*}
+  %   a &= a_1 + n_1y \\
+  %   n_1y &\equiv a_2 - a_1 \pmod{n_2} \\
+  %   y &\equiv M_2^{-1}(a_2 - a_1) \pmod{n_2} \\
+  %   n_1y &\equiv M_2M_2^{-1}(a_2 - a_1) \textcolor{red}{\pmod{n_1n_2}} \\
+  %   x &\equiv a_1 + M_2M_2^{-1}(a_2 - a_1) \pmod{n_1n_2} \\
+  %     &\equiv a_1M_1M_1^{-1} + a_2M_2M_2^{-1} \pmod{n_1n_2}
+  % \end{align*}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Proof of CRT (3)}
+  \begin{proof}[Constructive proof by induction]
+	\begin{align}
+	  a &\equiv a_1 \pmod{n_1} \\
+	  a &\equiv a_2 \pmod{n_2}
+	\end{align}
 
 	\[
 	  n_1 \bot n_2 \implies n_1n_1' + n_2n_2' = 1
 	\]
 
-	\begin{align*}
-	  x &= a_1n_1n_1' + a_2n_2n_2' \pmod{n_1n_2} \\
-		&= a_1M_1(M_1^{-1} \bmod n_1) \\
-		&\quad + a_2M_2(M_2^{-1} \bmod n_2) \pmod{n_1n_2}
-	\end{align*}
+	\pause
+	\[
+	  x = a_1n_1n_1' + a_2n_2n_2' \pmod{n_1n_2}
+	\]
   \end{proof}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
-\begin{frame}{Proof of CRT (2)}
-  \begin{align*}
-	a &\equiv a_1 \pmod{n_1} \\
-	a &\equiv a_2 \pmod{n_2}
-  \end{align*}
-
-  \begin{proof}[Constructive proof by induction]
-	\begin{align*}
-	  a &= a_1 + n_1y \\
-	  n_1y &\equiv a_2 - a_1 \pmod{n_2} \\
-	  y &\equiv M_2^{-1}(a_2 - a_1) \pmod{n_2} \\
-	  \textcolor{red}{n_1y} &\textcolor{red}{\equiv M_2M_2^{-1}(a_2 - a_1) \pmod{n_1n_2}} \\
-	  x &\equiv a_1 + M_2M_2^{-1}(a_2 - a_1) \pmod{n_1n_2} \\
-		&\equiv a_1M_1M_1^{-1} + a_2M_2M_2^{-1} \pmod{n_1n_2}
-	\end{align*}
-  \end{proof}
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{Proof of CRT (3)}
+\begin{frame}{Proof of CRT (4)}
   \begin{proof}[Constructive proof]
-	\begin{enumerate}
+	\begin{enumerate}[<+->]
 	  \item $x \equiv 1 \pmod{n_i}, \quad x \equiv 0 \pmod{n_j}\; (i \neq j)$
 		\[
-		  x = M_i(M_i^{-1} \pmod{n_i}) \implies x \equiv M_iM_i^{-1} \pmod{m}
+		  x = M_i(M_i^{-1} \bmod n_i) \implies x = M_iM_i^{-1} \pmod{n}
 		\]
 	  \item $x \equiv a_i \pmod{n_i}, \quad x \equiv 0 \pmod{n_j}\; (i \neq j)$
 		\[
-		  x \equiv a_i M_iM_i^{-1} \pmod{m}
+		  x = a_i M_iM_i^{-1} \pmod{n}
 		\]
-	  \item $a \equiv a_i \pmod{n_i}$
+	  \item $a \equiv a_i \pmod{n_i}, \forall 1 \le i \le k$
 		\[
-		  a \equiv \sum_{1 \le i \le k} a_i M_iM_i^{-1} \pmod{m}
+		  a = \sum_{1 \le i \le k} a_i M_iM_i^{-1} \pmod{n}
 		\]
 	\end{enumerate}
   \end{proof}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
-\begin{frame}{Proof of CRT (3)}
+\begin{frame}{Proof of CRT (5)}
   \begin{proof}[More efficient constructive proof]
 	\begin{alertblock}{Reference}
 	  ``The Residue Number System'' by Garner, 1959.
 	\end{alertblock}
+
+	\begin{alertblock}{Reference}
+	  ``The Art of Computer Programming, Vol 2: Seminumerical Algorithms (Section 4.3.2)'' by Donald E. Knuth, 3rd edition.
+	\end{alertblock}
   \end{proof}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
-\begin{frame}{CRT}
-  Meaning of Figure 31.3
-
-  $\equiv 1$ and $\equiv 0$ elsewhere
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{CRT}
+\begin{frame}{Operations over CRT}
   \[
 	a \leftrightarrow (a_1, a_2, \ldots, a_n)
   \]
@@ -125,12 +128,16 @@
 	a \times b &\leftrightarrow (a_1 \times b_1, a_2 \times b_2, \ldots, a_n \times b_n) \\
   \end{align*}
 
+  \pause
+  \vspace{-0.30cm}
+
   \begin{exampleblock}{TC 31.5--3}
 	\[
 	 a \leftrightarrow (a_1, a_2, \ldots, a_n), (a,n) = 1 \implies a^{-1} \leftrightarrow (a_1^{-1}, a_2^{-2}, \ldots, a_n^{-1})
 	\]
   \end{exampleblock}
 
+  \pause
   \begin{proof}
 	\begin{equation*}
 	  a^{-1} \equiv a_i^{-1} \pmod{n_i} \pause \impliedby \begin{cases}

@@ -1,4 +1,4 @@
-\section{Primes}
+\section{Pairwise Relatively Prime}
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Pairwise relatively prime}
@@ -28,16 +28,15 @@
   \pause
   \[
 	\textcolor{red}{\gcd(\fbox{$1_L$}, \fbox{$1_R$}) 
-	= gcd(\fbox{$2_L$}, \fbox{$2_R$}) 
+	= \gcd(\fbox{$2_L$}, \fbox{$2_R$}) 
 	= \cdots 
-	= gcd(\fbox{$\lceil \lg k \rceil_L$}, \fbox{$\lceil \lg k \rceil_R$}) = 1}
+	= \gcd(\fbox{$\lceil \lg k \rceil_L$}, \fbox{$\lceil \lg k \rceil_R$}) = 1}
   \]
 
   \pause
   \begin{gather*}
-    % k = 4: \quad gcd(n_1n_2, n_3n_4) = gcd(n_1n_3, n_2n_4) = 1 \\
-	k = 3: \quad gcd(n_1, n_2n_3) = gcd(n_2, n_3) = 1 \\
-	k = 2: \quad gcd(n_1, n_2) = 1
+	k = 3: \quad \gcd(n_1, n_2n_3) = \gcd(n_2, n_3) = 1 \\
+	k = 2: \quad \gcd(n_1, n_2) = 1
   \end{gather*}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
@@ -63,8 +62,6 @@
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Pairwise relatively prime: smarter combination}
-  \centerline{TODO: figure here.}
-
   \begin{equation*}
 	\begin{cases}
 	  T(1) = 0 \\
@@ -75,13 +72,28 @@
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Pairwise relatively prime: the dividing pattern}
   \[
-	n_{\textcolor{red}{0}}, n_1, n_2, \ldots, n_{k-1}
+	k = 7: \quad n_{\textcolor{red}{0}}, n_1, n_2, \ldots, n_6
+  \]
+
+  \begin{gather*}
+	000\\
+	001\\
+	010\\
+	011\\
+	100\\
+	101\\
+	110
+  \end{gather*}
+
+  \pause
+  \[
+	T(k) = \lceil \lg k \rceil
   \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Can we do even better?}
   \[
-	T(k) \ge \lceil \lg k \rceil.
+	T(k) \ge \lceil \lg k \rceil
   \]
 
   \pause
@@ -118,7 +130,7 @@
   \pause
   \vspace{0.30cm}
   \begin{alertblock}{Reference for \emph{weighted} biclique partition}
-	``Covering a Graph by Complete Bipartite Graphs'' by P. Erdos and L. Pyber, 1997.
+	``Covering a Graph by Complete Bipartite Graphs'' by P. Erd\H{o}s and L. Pyber, 1997.
   \end{alertblock}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%

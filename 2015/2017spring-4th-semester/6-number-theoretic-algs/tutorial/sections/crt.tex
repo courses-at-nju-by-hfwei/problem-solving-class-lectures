@@ -32,6 +32,16 @@
 \begin{frame}{History of CRT}
   \begin{quote}
   \end{quote}
+
+  \begin{columns}
+	\column{0.30\textwidth}
+	  \fignocaption{width = 0.65\textwidth}{figs/sun-crt-text.png}{\centerline{``孙子算经''}}
+	\column{0.30\textwidth}
+	  \fignocaption{width = 0.70\textwidth}{figs/sun-crt.png}{\centerline{``物不知数''}}
+	\pause
+	\column{0.30\textwidth}
+	  \fignocaption{width = 0.75\textwidth}{figs/qin-crt.jpg}{\centerline{秦九韶``数书九章''}\centerline{大衍求一术}}
+  \end{columns}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Proof of CRT (1)}
@@ -263,7 +273,7 @@
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Solving the system of congruences}
-  \begin{exampleblock}{}
+  \begin{exampleblock}{CRT with large modulus}
 	\[
 	  19x \equiv 556 \pmod{1155}
 	\]
@@ -272,25 +282,29 @@
   \begin{columns}
 	\column{0.45\textwidth}
 	  \pause
-	  \begin{align*}
-	    19x &\equiv 556 \pmod{3} \\
-	    19x &\equiv 556 \pmod{5} \\
-	    19x &\equiv 556 \pmod{7} \\
-	    19x &\equiv 556 \pmod{11}
-	  \end{align*}
+	  \[
+		\begin{cases}
+		  19x \equiv 556 \pmod{3} \\
+		  19x \equiv 556 \pmod{5} \\
+		  19x \equiv 556 \pmod{7} \\
+		  19x \equiv 556 \pmod{11}
+		\end{cases}
+	  \]
 	\column{0.45\textwidth}
 	  \pause
-	  \begin{align*}
-		x &\equiv 1 \pmod{3} \\
-		x &\equiv 4 \pmod{5} \\
-		x &\equiv 2 \pmod{7} \\
-		x &\equiv 9 \pmod{11}
-	  \end{align*}
+	  \[
+		\begin{cases}
+		  x \equiv 1 \pmod{3} \\
+		  x \equiv 4 \pmod{5} \\
+		  x \equiv 2 \pmod{7} \\
+		  x \equiv 9 \pmod{11}
+		\end{cases}
+	  \]
   \end{columns}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Solving the system of congruences}
-  \begin{exampleblock}{CRT with non-pairwise coprime moduli}
+  \begin{exampleblock}{CRT with non-pairwisely co-prime moduli}
 	\[
 	  \begin{cases}
 		x \equiv 3 \pmod{8} \\
@@ -299,5 +313,73 @@
 	  \end{cases}
 	\]
   \end{exampleblock}
+
+  \begin{columns}
+	\column{0.30\textwidth}
+	  \pause
+	  \[
+		\begin{cases}
+		  x \equiv 3 \pmod{2^3}
+		\end{cases}
+	  \]
+	\column{0.30\textwidth}
+	  \pause
+	  \[
+		\begin{cases}
+		  x \equiv 3 \pmod{2^2} \\
+		  x \equiv 1 \pmod{5} \\
+		\end{cases}
+	  \]
+	\column{0.30\textwidth}
+	  \pause
+	  \[
+		\begin{cases}
+		  x \equiv 1 \pmod{3} \\
+		  x \equiv 1 \pmod{5}
+		\end{cases}
+	  \]
+  \end{columns}
+
+  \begin{columns}
+	\column{0.30\textwidth}
+	  \pause
+	  \[
+		\begin{cases}
+		  x \equiv 3 \pmod{2^3} \\
+		  x \equiv 3 \pmod{2^2}
+		\end{cases}
+	  \]
+	\column{0.30\textwidth}
+	  \pause
+	  \[
+		\begin{cases}
+		  x \equiv 1 \pmod{3}
+		\end{cases}
+	  \]
+	\column{0.30\textwidth}
+	  \pause
+	  \[
+		\begin{cases}
+		  x \equiv 1 \pmod{5} \\
+		  x \equiv 1 \pmod{5}
+		\end{cases}
+	  \]
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Solving the system of congruences}
+  \begin{theorem}[CRT with non-pairwisely coprime moduli]
+	\[
+	  a_i \equiv a_j \pmod{(n_i, n_j)}
+	\]
+
+	\[
+	  0 \le a < \lcm(n_1, n_2, \ldots, n_k)
+	\]
+  \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[noframenumbering]
+  \fignocaption{width = 0.50\textwidth}{figs/thankyou.jpg}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%

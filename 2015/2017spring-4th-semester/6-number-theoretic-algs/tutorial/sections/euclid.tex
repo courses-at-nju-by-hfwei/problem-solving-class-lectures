@@ -4,18 +4,26 @@
 \begin{frame}{Worst-case analysis of Euclid's algorithm}
   \begin{exampleblock}{(TC 31.2--5)}
 	\begin{enumerate}
-	  \item If $a > b \ge 0$, $\textsc{Euclid}(a,b)$ makes $\le r \triangleq 1 + \log_{\phi}b$ recursive calls.
+	  \item If $a > b \ge 0$, $\textsc{Euclid}(a,b)$ makes $\le 1 + \log_{\phi}b$ recursive calls.
 	\end{enumerate}
   \end{exampleblock}
 
+  \pause
   \[
-	a > b \ge 1, b < F_{k+1} \implies r < k.
+	\text{Lam\'{e}'s theorem: } a > b \ge 1, b < F_{k+1} \implies r < k.
   \]
 
+  \pause
   \[
-	r \le 1 + \log_{\phi}b \implies k = 2 + \log_{\phi}b, b < \only<2->{\boxed{?} \le} F_{3 + \log_{\phi}b}
+	k = 2 + \log_{\phi}b
   \]
 
+  \pause
+  \[
+	\text{To prove } b < F_{3 + \log_{\phi}b}.
+  \]
+
+  \pause
   \[
 	F_k = \frac{\phi^{k} - \hat{\phi^{k}}}{\sqrt{5}} = [\frac{\phi^{k}}{\sqrt{5}}] \ge \frac{\phi^{k}}{\sqrt{5}}
   \]

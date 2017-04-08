@@ -25,7 +25,7 @@
 
   \pause
   \[
-	F_k = \frac{\phi^{k} - \hat{\phi^{k}}}{\sqrt{5}} = [\frac{\phi^{k}}{\sqrt{5}}] \ge \frac{\phi^{k}}{\sqrt{5}}
+	F_k = \frac{\phi^{k} - \hat{\phi^{k}}}{\sqrt{5}} > \frac{\phi^{k} - 1}{\sqrt{5}}
   \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
@@ -42,10 +42,10 @@
 	(a,b) = (a,b) \cdot (\frac{a}{(a,b)}, \frac{b}{(a,b)})
   \]
 
-  \pause
   \vspace{-0.20cm}
   \begin{columns}
 	\column{0.20\textwidth}
+	  \pause
 	  \begin{align*}
 		&(16,12) \\
 		&=(12,4) \\
@@ -53,6 +53,7 @@
 		&=4
 	  \end{align*}
 	\column{0.20\textwidth}
+	  \pause
 	  \begin{align*}
 		&(4,3) \\
 		&=(3,1) \\
@@ -79,10 +80,17 @@
 	\textsc{Euclid}(a,b) \leftrightarrow \textsc{Euclid}(\frac{a}{(a,b)}, \frac{b}{(a,b)})
   \]
 
+  \pause
   \[
-	\textsc{Euclid}(b, a \bmod b) \leftrightarrow \textsc{Euclid}(\frac{b}{(a,b)}, \frac{a}{(a,b)} \bmod \frac{b}{(a,b)})
+	\textsc{Euclid}(b, a \bmod b) \textcolor{red}{\stackrel{?}{\leftrightarrow}} \textsc{Euclid}(\frac{b}{(a,b)}, \frac{a}{(a,b)} \bmod \frac{b}{(a,b)})
   \]
 
+  \pause
+  \[
+	\textsc{Euclid}(b, a \bmod b) \textcolor{blue}{\leftrightarrow} \textsc{Euclid}(\frac{b}{(a,b)}, \frac{a \bmod b}{(a,b)})
+  \]
+
+  \pause
   \[
 	\frac{a}{(a,b)} \bmod \frac{b}{(a,b)} = \frac{a \bmod b}{(a,b)}
   \]
@@ -97,8 +105,8 @@
   \end{exampleblock}
 
   \begin{Lemma}[Generalization of Lemma 31.10]
-	If $a > b \ge 1, d = (a,b)$ and $\textsc{Euclid}(a,b)$ performs $k \ge 1$ recursive calls,
-	then $a \ge dF_{k+2}$ and $b \ge dF_{k+1}$.
+	If $a > b \ge 1, \textcolor{red}{d = (a,b)}$ and $\textsc{Euclid}(a,b)$ performs $k \ge 1$ recursive calls,
+	then $a \ge \textcolor{red}{d}F_{k+2}$ and $b \ge \textcolor{red}{d}F_{k+1}$.
   \end{Lemma}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%

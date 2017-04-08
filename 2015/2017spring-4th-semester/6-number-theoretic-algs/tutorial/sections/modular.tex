@@ -1,13 +1,13 @@
 \section{Modular Arithmetic}
 
 \begin{frame}{Cancellation in modular arithmetic}
-  \begin{exampleblock}{(TC 31.4.2)}
+  \begin{exampleblock}{(TC 31.4--2)}
 	\[
 	  ad \equiv bd \pmod{n} \centernot\implies a \equiv b \pmod{n} 
 	\]
 
 	\[
-	  \uncover<3->{ad \equiv bd \pmod{n}, \textcolor{red}{a \bot n} \implies a \equiv b \pmod{n}}
+	  \uncover<3->{ad \equiv bd \pmod{n}, \textcolor{red}{d \bot n} \implies a \equiv b \pmod{n}}
 	\]
   \end{exampleblock}
 
@@ -25,6 +25,11 @@
   \pause
   \[
 	ad \equiv bd \pmod{nd} \iff a \equiv b \pmod{n} \quad (d \neq 0)
+  \]
+
+  \pause
+  \[
+	\boxed{(a \bmod n) d = ad \bmod nd \quad (\text{distributive law})}
   \]
 
   \pause

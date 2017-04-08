@@ -35,8 +35,8 @@
 
   \pause
   \begin{gather*}
-	k = 3: \quad \gcd(n_1, n_2n_3) = \gcd(n_2, n_3) = 1 \\
-	k = 2: \quad \gcd(n_1, n_2) = 1
+	k = 2: \quad \gcd(n_1, n_2) = 1 \\
+	k = 3: \quad \gcd(n_1, n_2n_3) = \gcd(n_2, n_3) = 1
   \end{gather*}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
@@ -51,8 +51,8 @@
   \begin{equation*}
 	\begin{cases}
 	  T(1) = 0 \\
-	  T(k) = 2T(\frac{k}{2}) + 1
-	\end{cases} \pause \implies T(k) = k - 1
+	  T(k) = T(\lceil \frac{k}{2} \rceil) + T(\lfloor \frac{k}{2} \rfloor) + 1 % \approx 2T(\frac{k}{2}) + 1
+	\end{cases} \pause \implies T(k) = k - 1 = \Theta(k)
   \end{equation*}
 
   \pause
@@ -62,10 +62,30 @@
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Pairwise relatively prime: smarter combination}
+  \fignocaption{width = 0.26\textwidth}{figs/coprime4.pdf}
+
+  \vspace{-0.50cm}
+  \begin{columns}
+	\column{0.50\textwidth}
+	  \pause
+	  \begin{gather*}
+		(n_1n_2, n_3n_4) = 1 \\
+		(n_1, n_2) = 1, \; (n_3, n_4) = 1
+	  \end{gather*}
+	\column{0.50\textwidth}
+	  \pause
+	  \begin{gather*}
+		(n_1n_2, n_3n_4) = 1 \\
+		(n_1n_3, n_2n_4) = 1
+	  \end{gather*}
+  \end{columns}
+
+  \pause
+  \vspace{0.30cm}
   \begin{equation*}
 	\begin{cases}
 	  T(1) = 0 \\
-	  T(k) = T(\frac{k}{2}) + 1
+	  T(k) = T(\lceil \frac{k}{2} \rceil) + 1
 	\end{cases}\pause \implies T(k) = \lceil \lg k \rceil
   \end{equation*}
 \end{frame}
@@ -75,20 +95,28 @@
 	k = 7: \quad n_{\textcolor{red}{0}}, n_1, n_2, \ldots, n_6
   \]
 
-  \begin{gather*}
-	000\\
-	001\\
-	010\\
-	011\\
-	100\\
-	101\\
-	110
-  \end{gather*}
+  \begin{columns}
+	\column{0.45\textwidth}
+	  \fignocaption{width = 0.80\textwidth}{figs/coprime7-0.pdf}
+	\column{0.45\textwidth}
+	  \uncover<2->{
+		\begin{gather*}
+		  0: 000\\
+		  1: 001\\
+		  2: 010\\
+		  3: 011\\
+		  4: 100\\
+		  5: 101\\
+		  6: 110
+		\end{gather*}
+	  }
+  \end{columns}
 
-  \pause
-  \[
-	T(k) = \lceil \lg k \rceil
-  \]
+  \uncover<3->{
+	\[
+	  T(k) = \lceil \lg k \rceil
+	\]
+  }
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Can we do even better?}

@@ -30,17 +30,20 @@
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{History of CRT}
-  \fignocaption{width = 0.25\textwidth}{figs/ans-crt.png}
+  \begin{columns}
+	\column{0.50\textwidth}
+	  \fignocaption{width = 0.48\textwidth}{figs/ans-crt.png}
+	\column{0.50\textwidth}
+	  \pause
+	  \fignocaption{width = 0.40\textwidth}{figs/sun-crt.png}{\centerline{``物不知数''}}
+  \end{columns}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{History of CRT}
   \begin{columns}
-	\column{0.30\textwidth}
+	\column{0.40\textwidth}
 	  \fignocaption{width = 0.65\textwidth}{figs/sun-crt-text.png}{\centerline{``孙子算经''}}
-	\column{0.30\textwidth}
-	  \fignocaption{width = 0.70\textwidth}{figs/sun-crt.png}{\centerline{``物不知数''}}
-	\pause
-	\column{0.30\textwidth}
+	\column{0.40\textwidth}
 	  \fignocaption{width = 0.75\textwidth}{figs/qin-crt.jpg}{\centerline{秦九韶``数书九章''}\centerline{大衍求一术}}
   \end{columns}
 \end{frame}
@@ -157,7 +160,7 @@
 
   \begin{exampleblock}{TC 31.5--3}
 	\[
-	 a \leftrightarrow (a_1, a_2, \ldots, a_n), (a,n) = 1 \implies a^{-1} \leftrightarrow (a_1^{-1}, a_2^{-2}, \ldots, a_n^{-1})
+	 a \leftrightarrow (a_1, a_2, \ldots, a_n), (a,n) = 1 \implies a^{-1} \leftrightarrow (a_1^{-1}, a_2^{-1}, \ldots, a_n^{-1})
 	\]
   \end{exampleblock}
 
@@ -229,7 +232,7 @@
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Secret sharing using the CRT}
   \begin{definition}[$(k,n)$-threshold secret sharing scheme]
-	$(2,3)$-secret sharing:
+	$(3,3)$-secret sharing:
 	\fignocaption{width = 0.30\textwidth}{figs/secret-sharing-geometry.png}
   \end{definition}
 
@@ -256,7 +259,7 @@
   \end{enumerate}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
-\begin{frame}{Solving the system of congruences}
+\begin{frame}{Solving simultaneous congruences}
   \begin{exampleblock}{(TC 31.5--2)}
 	\[
 	  \begin{cases}
@@ -273,7 +276,7 @@
   \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
-\begin{frame}{Solving the system of congruences}
+\begin{frame}{Solving simultannous congruences}
   \begin{exampleblock}{CRT with large modulus}
 	\[
 	  19x \equiv 556 \pmod{1155}
@@ -304,7 +307,7 @@
   \end{columns}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
-\begin{frame}{Solving the system of congruences}
+\begin{frame}{Solving simultaneous congruences}
   \begin{exampleblock}{CRT with non-pairwisely co-prime moduli}
 	\[
 	  \begin{cases}
@@ -368,7 +371,7 @@
   \end{columns}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
-\begin{frame}{Solving the system of congruences}
+\begin{frame}{Solving simultaneous congruences}
   \begin{theorem}[CRT with non-pairwisely coprime moduli]
 	\[
 	  a_i \equiv a_j \pmod{(n_i, n_j)}
@@ -378,6 +381,16 @@
 	  0 \le a < \lcm(n_1, n_2, \ldots, n_k)
 	\]
   \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Simultaneous incongruences}
+  \[
+	\exists? a, \forall 1 \le i \le k: a \not\equiv a_i \pmod{n_i} 
+  \]
+
+  \pause
+  \vspace{0.50cm}
+  \centerline{\textsf{NP}-complete}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}[noframenumbering]

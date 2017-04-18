@@ -11,7 +11,7 @@
   \]
 
   \[
-	n
+	n > k
   \]
 
   \[
@@ -19,21 +19,29 @@
   \]
 
   \[
-	|C|
+	|C| \le 2^n
+  \]
+
+  \[
+	0 < \frac{r}{n} < 1
   \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Hamming distance}
   \[
-	w(c)
+	w(c) = \# 1's \text{ in } c
   \]
 
   \[
-	d(c_1, c_2)
+	d(c_1, c_2) = w(c_1 + c_2)
   \]
 
   \[
-	d(C)
+	\begin{aligned}
+	  d(C) &= \min \set{d(c_1, c_2) \mid c_1 \neq c_2, c_1, c_2 \in C} \\
+	  &= \min \set{w(c_1 + c_2) \mid c_1 \neq c_2, c_1, c_2 \in C} \\
+	  &\red{\neq} \min \set{w(c) \mid c \neq 0, c \in C}
+	\end{aligned}
   \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
@@ -48,12 +56,22 @@
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Sphere-packing bound}
-  \[
-	|C| \le \frac{2^n}{n + 1}
-  \]
+  \begin{theorem}[Sphere-packing bound]
+	A $t$-error-correcting binary code of length $n$ must satisfy
+
+	\[
+	  |C| \sum_{i=0}^{t} \binom{n}{i} \le 2^n
+	\]
+  \end{theorem}
 
   \[
-	2^n \ge |C| (n + 1)
+	t = 1 \implies |C| \le \frac{2^n}{n + 1}
   \]
+
+  \begin{definition}[Perfect code]
+	\[
+	  |C| \sum_{i=0}^{t} \binom{n}{i} = 2^n
+	\]
+  \end{definition}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%

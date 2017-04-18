@@ -1,1 +1,223 @@
 \section{Linear Codes}
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Definition of linear code}
+  \begin{definition}[Linear code]
+	A linear code $C$ of length $n$ is a linear subspace of the vector space $\mathbb{F}_2^n$.
+  \end{definition}
+
+  \[
+	c_1 \in C, c_2 \in C \implies c_1 + c_2 \in C
+  \]
+
+  \[
+	\begin{aligned}
+	  d(C) &= \min \set{w(c_1 + c_2) \mid c_1 \neq c_2, c_1, c_2 \in C} \\
+	  &{\blue{=}} \min \set{w(c) \mid c \neq 0, c \in C}
+	\end{aligned}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Definition of linear code}
+  \begin{exampleblock}{Problem TJ--8.18}
+	Let $C$ be a linear code.
+
+	Show that either the $i$-th coordinates in the codewords of $C$ are all zeros
+	or exactly half of them are zeros.
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Definition of linear code}
+  \begin{exampleblock}{Problem TJ--8.19}
+	Let $C$ be a linear code.
+
+	Show that either every codeword has even weight
+	or exactly half of them have even weight.
+  \end{exampleblock}
+
+  \[
+	\text{Parity: } w(c_1) + w(c_2) \emph{ vs. } w(c_1 + c_2)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Definition of linear code}
+  \begin{definition}[Linear code]
+	An $(n,k)$ linear code $C$ of length $n$ and rank $k$ is a linear subspace with dimension $k$ of the vector space $\mathbb{F}_2^n$.
+  \end{definition}
+
+  \[
+	\text{Basis: } c_1, c_2, \dots, c_k
+  \]
+
+  \[
+	c_i = \alpha_1 c_1 + \alpha_2 c_2 + \cdots + \alpha_k c_k
+  \]
+
+  \[
+	|C| = 2^k
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Generator matrix}
+  \begin{definition}[Generator matrix]
+	A matrix $G_{n \times k}$ is a generator matrix for an $(n,k)$ linear code $C$ if 
+	
+	\[
+	  C = \text{Col}(G)
+	\]
+  \end{definition}
+
+  \[
+	G_{(n \times k)} \cdot d_{k \times 1} = c_{n \times 1} \in C
+  \]
+
+  \[
+	G(c_1 + c_2) = G(c_1) + G(c_2)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Generator matrix for Hamming code $(7,4)$}
+  \begin{columns}
+	\column{0.45\textwidth}
+	  \fignocaption{width = 0.60\textwidth}{figs/hamming74-venn.png}
+	\column{0.45\textwidth}
+	  \[
+		G = \begin{bmatrix}
+		  1 & 0 & 0 & 0 \\
+		  0 & 1 & 0 & 0 \\
+		  0 & 0 & 1 & 0 \\
+		  0 & 0 & 0 & 1 \\
+		  1 & 1 & 0 & 1 \\
+		  0 & 1 & 1 & 1 \\
+		  1 & 0 & 1 & 1 \\
+		\end{bmatrix}
+	  \]
+
+  \end{columns}
+
+  \[
+	G \cdot \begin{pmatrix}
+	  1 \\ 0 \\ 1 \\ 0
+	\end{pmatrix}
+	= 
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Standard generator matrix}
+  \begin{exampleblock}{Problem TJ--8.7}
+	Generator matrices are NOT unique.
+  \end{exampleblock}
+
+  \begin{definition}[Generator matrix]
+	A generator matrix $G_{n \times k}$ is standard if
+
+	\[
+	  G_{n \times k} = \begin{bmatrix}
+		I_k \\ A_{(n-k) \times k}
+	  \end{bmatrix}
+	\]
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{From generator matrix to parity-check matrix}
+  \[
+	G \cdot \begin{pmatrix}
+      d_1 \\ d_2 \\ d_3 \\ d_4
+	\end{pmatrix}
+	= \begin{bmatrix}
+	  1 & 0 & 0 & 0 \\
+	  0 & 1 & 0 & 0 \\
+	  0 & 0 & 1 & 0 \\
+	  0 & 0 & 0 & 1 \\
+	  1 & 1 & 0 & 1 \\
+	  0 & 1 & 1 & 1 \\
+	  1 & 0 & 1 & 1 \\
+	\end{bmatrix} 
+	\cdot \begin{pmatrix}
+      d_1 \\ d_2 \\ d_3 \\ d_4
+	\end{pmatrix}
+	= \begin{pmatrix}
+      d_1 \\ d_2 \\ d_3 \\ d_4 \\
+	  p_1 = d_1 + d_2  \qquad + d_4 \\
+	  p_2 = \qquad d_2 + d_3 + d_4 \\
+	  p_3 = d_1 \qquad + d_3 + d_4 \\
+	\end{pmatrix}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{From generator matrix to parity-check matrix}
+  \begin{gather*}
+	d_1 + d_2  \qquad + d_4 + p_1 \qquad\qquad = 0 \\
+	\qquad d_2 + d_3 + d_4 \qquad + p_2 \qquad = 0 \\
+	d_1 \qquad + d_3 + d_4 \qquad \qquad + p_3 = 0 \\
+  \end{gather*}
+
+  \[
+	\begin{bmatrix}
+	  1 & 1 & 0 & 1 & 1 & 0 & 0 \\
+	  0 & 1 & 1 & 1 & 0 & 1 & 0 \\
+	  1 & 0 & 1 & 1 & 0 & 0 & 1 \\
+	\end{bmatrix} \begin{pmatrix}
+      d_1 \\ d_2 \\ d_3 \\ d_4 \\ p_1 \\ p_2 \\ p_3
+	\end{pmatrix}
+	= 0
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Parity-check matrix}
+  \begin{definition}[Parity-check matrix]
+	A matrix $H_{(n - k) \times n}$ is a parity-check matrix for an $(n,k)$ linear code $C$ if
+
+	\[
+	  C = \text{Nul}(H)
+	\]
+  \end{definition}
+
+  \[
+	H_{(n - k) \times n} \cdot c_{n \times 1} = 0_{(n - k) \times 1}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Standard parity-check matrix}
+  \begin{exampleblock}{Problem TJ--8.11}
+	Parity-check matrices are NOT unique.
+  \end{exampleblock}
+
+  \begin{definition}[Standard parity-check matrix]
+	A parity-check matrix $H_{(n-k) \times n}$ is standard if
+
+	\[
+	  H_{(n-k) \times n} = \begin{bmatrix}
+		A_{(n-k) \times k} \mid I_{n-k}
+	  \end{bmatrix}
+	\]
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Generator matrix and Parity-check matrix}
+  \[
+	H_{(n-k) \times n} \cdot G_{n \times k} \cdot d_{k \times 1} = 0_{(n-k) \times 1}
+  \]
+
+  \begin{align*}
+	H_{(n-k) \times n} &\cdot G_{n \times k} \\
+	&= \begin{bmatrix}
+	  A_{(n-k) \times k} \mid I_{n-k} 
+	\end{bmatrix}
+	\cdot
+	\begin{bmatrix}
+	  I_k \\ A_{(n-k) \times k}
+	\end{bmatrix} \\
+	&= A_{(n-k) \times k} \cdot I_k + I_{n-k} \cdot A_{(n-k) \times k} \\
+	&= A_{(n-k) \times k} + A_{(n-k) \times k} \\
+	&= 0_{(n-k) \times k}
+  \end{align*}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Syndrome decoding}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Error-detecting and error-correcting capabilities}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%

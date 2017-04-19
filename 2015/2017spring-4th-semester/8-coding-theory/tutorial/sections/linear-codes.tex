@@ -264,6 +264,14 @@
 	If $H$ is the parity-check matrix for a linear code $C$, then
 	$d(C)$ equals the minimum number of columns of $H$ that are linearly dependent.
   \end{theorem}
+
+  \[
+	\begin{bmatrix}
+	  1 & 0 & 1 & 0 \\
+	  0 & 1 & 1 & 0 \\
+	  0 & 0 & 0 & 1
+	\end{bmatrix}
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Error-detecting and error-correcting capabilities}
@@ -295,6 +303,10 @@
   \]
 
   \[
+	H_{3 \times 7}: r = 3, n = 2^3 - 1 = 7
+  \]
+
+  \[
 	\begin{bmatrix}
 	  1 & 1 & 0 & 1 & 1 & 0 & 0 \\
 	  0 & 1 & 1 & 1 & 0 & 1 & 0 \\
@@ -304,8 +316,27 @@
 	\end{pmatrix}
 	= 0
   \]
-  perfect code?
-  rate?
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Generalized Hamming codes}
+  \begin{definition}[Generalized Hamming codes]
+	\[
+	  H_r \triangleq H_{r \times (2^r-1)}: \text{all nonzero binary vectors of length } r
+	\]
+
+	\[
+	  C_{Ham}^{r} = (n = 2^r-1, k = 2^r-1-r)
+	\]
+  \end{definition}
+
+  \[
+	|C_{Ham}^{r}| = \frac{2^n}{n+1}
+  \]
+
+  \[
+	R(C_{Ham}^{r}) = \frac{k}{n}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\tx{}
 %%%%%%%%%%%%%%%%%%%%

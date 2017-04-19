@@ -68,6 +68,10 @@
   \end{definition}
 
   \[
+	\text{rank}(G) = k
+  \]
+
+  \[
 	G_{(n \times k)} \cdot d_{k \times 1} = c_{n \times 1} \in C
   \]
 
@@ -108,7 +112,7 @@
 	Generator matrices are NOT unique.
   \end{exampleblock}
 
-  \begin{definition}[Generator matrix]
+  \begin{definition}[Standard generator matrix]
 	A generator matrix $G_{n \times k}$ is standard if
 
 	\[
@@ -176,6 +180,10 @@
   \[
 	H_{(n - k) \times n} \cdot c_{n \times 1} = 0_{(n - k) \times 1}
   \]
+
+  \[
+	\text{rank}(H) = n - k
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Standard parity-check matrix}
@@ -183,6 +191,9 @@
 	Parity-check matrices are NOT unique.
   \end{exampleblock}
 
+  \centerline{Elementary row operations.}
+
+  \vspace{0.60cm}
   \begin{definition}[Standard parity-check matrix]
 	A parity-check matrix $H_{(n-k) \times n}$ is standard if
 
@@ -215,9 +226,86 @@
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Syndrome decoding}
+  \[
+	r = c + e_i
+  \]
+
+  \[
+	r = c + (e_{i} + e_{j} + \cdots)
+  \]
+
+  \begin{definition}[Syndrome]
+	\begin{align*}
+	  S(r) &= H r \\
+	  	&= H(c + (e_{i} + e_{j} + \cdots)) \\
+		&= H (e_{i} + e_{j} + \cdots) \\
+		&= H e_{i} + H e_{j} + \cdots \\
+		&= S(e_i) + S{e_{j}} + \cdots
+	\end{align*}
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Syndrome decoding}
+  \begin{exampleblock}{Problem TJ--8.13}
+	\[
+	  H = \begin{bmatrix}
+		0 & 1 & 1 & 1 & 1 \\
+		0 & 0 & 0 & 1 & 1 \\
+		1 & 0 & 1 & 0 & 1
+	  \end{bmatrix}
+	\]
+
+	\centerline{(d) Errors in the third and fourth bits}
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Extracting $d(C)$ from $H$}
+  \begin{theorem}[]
+	If $H$ is the parity-check matrix for a linear code $C$, then
+	$d(C)$ equals the minimum number of columns of $H$ that are linearly dependent.
+  \end{theorem}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Error-detecting and error-correcting capabilities}
+  \begin{align*}
+	t = 1 & \implies d(C) = 3 \\
+	  &\iff \forall \set{c_i}, \forall \set{c_i, c_j} \text{ linearly independent} \\
+	  &\iff \text{no zero column, no identical columns}
+  \end{align*}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Error-detecting and error-correcting capabilities}
+  \begin{exampleblock}{Problem TJ--8.21; TJ--8.23}
+	If we are to use an error-correcting linear code to transmit the 128 ASCII characters,
+	what size matrix must be used? What if we require only error detection?
+  \end{exampleblock}
+
+  \[
+	t = 1
+  \]
+
+  \[
+	2^r - 1 \ge 7 + r \implies r \ge 4
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Generalized Hamming codes}
+  \[
+	C_{Ham} = (7,4)
+  \]
+
+  \[
+	\begin{bmatrix}
+	  1 & 1 & 0 & 1 & 1 & 0 & 0 \\
+	  0 & 1 & 1 & 1 & 0 & 1 & 0 \\
+	  1 & 0 & 1 & 1 & 0 & 0 & 1 \\
+	\end{bmatrix} \begin{pmatrix}
+      d_1 \\ d_2 \\ d_3 \\ d_4 \\ p_1 \\ p_2 \\ p_3
+	\end{pmatrix}
+	= 0
+  \]
+  perfect code?
+  rate?
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%

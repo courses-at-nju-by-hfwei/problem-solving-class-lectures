@@ -1,0 +1,114 @@
+\documentclass{beamer}
+\usepackage{lmodern}
+
+\usepackage{xeCJK}
+
+\usepackage[safe]{silence}
+\WarningFilter*{latexfont}{Font}
+
+\usetheme{CambridgeUS} % try Madrid, Pittsburgh
+\usecolortheme{beaver}
+\usefonttheme[onlymath]{serif} % try "professionalfonts"
+
+\setbeamertemplate{itemize items}[default]
+\setbeamertemplate{enumerate items}[default]
+
+\usepackage{amsmath, amsfonts, latexsym, mathtools}
+% \usepackage{kbordermatrix}
+% \usepackage{ntheorem}
+
+\usepackage{centernot}
+
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+
+% colors
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\green}[1]{\textcolor{green}{#1}}
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+\newcommand{\purple}[1]{\textcolor{purple}{#1}}
+
+% color box
+\newcommand{\rbox}[1]{\red{\boxed{#1}}}
+\newcommand{\gbox}[1]{\green{\boxed{#1}}}
+\newcommand{\bbox}[1]{\blue{\boxed{#1}}}
+\newcommand{\pbox}[1]{\purple{\boxed{#1}}}
+
+\usepackage{tikz}
+% see http://tex.stackexchange.com/a/7045/23098
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+\usepackage{tikz-qtree}
+\usetikzlibrary{backgrounds, fit}
+
+\usepackage{pifont}
+\usepackage{wasysym}
+
+\usepackage[normalem]{ulem}
+\newcommand{\middlewave}[1]{\raisebox{0.5em}{\uwave{\hspace{#1}}}}
+
+\usepackage{graphicx, subcaption}
+
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+
+\newcommand{\pno}[1]{\textcolor{blue}{\scriptsize [Problem: #1]}}
+\newcommand{\set}[1]{\{#1\}}
+\DeclareMathOperator{\lcm}{lcm}
+
+\newcommand{\cmark}{\green{\ding{51}}}
+\newcommand{\xmark}{\red{\ding{55}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% for fig without caption: #1: width/size; #2: fig file
+\newcommand{\fignocaption}[2]{
+  \begin{figure}[htp]
+    \centering
+      \includegraphics[#1]{#2}
+  \end{figure}
+}
+
+% for fig with caption: #1: width/size; #2: fig file; #3: fig caption
+\newcommand{\fig}[3]{
+  \begin{figure}[htp]
+    \centering
+      \includegraphics[#1]{#2}
+      \caption[labelInTOC]{#3}
+  \end{figure}
+}
+
+\newcommand{\p}{\text{P}}
+\newcommand{\np}{\text{NP}}
+\newcommand{\nph}{\text{NP}-hard}
+\newcommand{\npc}{\text{NP}-complete}
+
+\newcommand{\titletext}{P, NP, NP-hard, and NP-complete}
+
+\newcommand{\tx}{%
+  \begin{frame}[noframenumbering]
+	\fignocaption{width = 0.50\textwidth}{figs/thankyou.jpg}
+  \end{frame}
+}
+%%%%%%%%%%%%%%%%%%%%
+\title[\titletext]{\titletext}
+% \subtitle{}
+
+\author[Hengfeng Wei]{Hengfeng Wei}
+% \titlegraphic{\includegraphics[height = 1.5cm]{figs/qrcode-coding-theory-20170420.png}}
+\institute{hfwei@nju.edu.cn}
+\date{May 01 $\sim$ May 04, 2017}
+
+\AtBeginSection[]{
+  \begin{frame}[noframenumbering, plain]
+    \frametitle{\titletext}
+    \tableofcontents[currentsection, sectionstyle=show/shaded, subsectionstyle=show/show/hide]
+  \end{frame}
+}
+%%%%%%%%%%
+\begin{document}
+\maketitle
+
+\input{sections/complexity-class}
+\input{sections/tetris-npc}
+
+\end{document}
+%%%%%%%%%%

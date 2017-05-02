@@ -1,43 +1,180 @@
 \section{Complexity Class}
 
 %%%%%%%%%%%%%%%%%%%%
-\begin{frame}{P}
+\begin{frame}{\p}
+  \[
+	\p = \bigcup_{c \ge 1} \dtime(n^c)
+  \]
+
   \begin{exampleblock}{TC 34.1--5}
+	\begin{align*}
+	  f(n) &= O(n^c) \\
+	  t(n) &= O(n^d)
+	\end{align*}
   \end{exampleblock}
+
+  \[
+	T(n) = kf(n) + t(n)
+  \]
+
+  \[
+	T_{k}(n) = \sum_{i=0}^{k}f^{(i)}(n) + t(n) 
+  \]
+
+  \[
+	k = \Theta(n^{O(1)})
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
-\begin{frame}{NP}
+\begin{frame}{\np}
+  \begin{definition}[\np]
+	$(L \subseteq \set{0,1}^{\ast}) \in \np$ if there exists a polynomial-time \emph{verifier} $V(x,y)$ such that $\forall x \in \set{0,1}^{\ast}$,
+	\[
+	  x \in L \iff \exists y \in \set{0,1}^{\ast}, V(x,y) = 1.
+	\]
+  \end{definition}
+
   \begin{exampleblock}{TC 34.2--4}
+	\np{} is closed under $\cup, \cap, \cdot, \ast$.
   \end{exampleblock}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
-\begin{frame}{co-NP}
+\begin{frame}{\conp{}}
+  \[
+	\conp = \set{L: \bar{L} \in \np}
+  \]
+
+  \[
+	\overline{\text{SAT}} = \set{\phi: \phi \text{ is not satisfiable}}
+  \]
+
+  \[
+	\text{TAUT} = \set{\phi: \phi \text{ is a tautology}}
+  \]
+
+  \begin{definition}[\conp]
+	$(L \subseteq \set{0,1}^{\ast}) \in \conp$ if there exists a polynomial-time \emph{verifier} $V(x,y)$ such that $\forall x \in \set{0,1}^{\ast}$,
+	\[
+	  x \in L \iff \red{\forall} y \in \set{0,1}^{\ast}, V(x,y) = 1.
+	\]
+  \end{definition}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
-\begin{frame}{EXP}
+\begin{frame}{\conp{}}
+  \[
+	\conp{} \red{\neq} \set{0,1}^{\ast} \setminus \np
+  \]
+
+  \[
+	\p \subseteq \np \cap \conp
+  \]
+
+  \[
+	\p = \np \implies \np = \conp = \p
+  \]
+
+  \[
+	\np \neq \conp \implies \p \neq \np
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{\nph{} and \npc}
+  \[
+	\forall L \in \np, L \pr L' \implies L' \text{ is } \nph
+  \]
+
+  \[
+	\npc = \np \cap \nph
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{\expcls}
+  \[
+	\expcls = \bigcup_{c \ge 1} \dtime(2^{n^c})
+  \]
+
+  \[
+    \p \subseteq \np \subseteq \expcls
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Time Hierarchy Theorem}
+  \[
+	\p \subsetneqq \expcls
+  \]
+
+  \begin{theorem}[Time hierarchy theorem]
+	\[
+	  f(n) \log f(n) = o(g(n)) \implies \emph{\dtime}(f(n)) \subsetneqq \emph{\dtime}(g(n))
+	\]
+  \end{theorem}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
-\begin{frame}{R}
+\begin{frame}{\rcls}
+  \[
+	\rcls = \dtime(<\infty)
+  \]
+
+  \vspace{0.80cm}
+  \centerline{\#decidable \emph{vs.} \#undecidable}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
-\begin{frame}{NPI}
+\begin{frame}{\pspace}
+  \[
+	\pspace = \bigcup_{c > 0} \dspace(n^c)
+  \]
+
+  \[
+	\p \subseteq \pspace
+  \]
+  
+  \[
+	\np \subseteq \pspace \subseteq \expcls
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{\pspacec}
+  \begin{definition}[QBF: Quantified Boolean Formula]
+	\[
+	  Q_1 x_1 Q_2 x_2 \cdots Q_n x_n \varphi(x_1, x_2, \ldots, x_n)
+	\]
+
+	\[
+	  Q_i: \forall, \exists
+	\]
+  \end{definition}
+
+  \[
+	\text{TQBF} = \set{\text{True QBF}} \in \pspacec
+  \]
+
+  \[
+	\text{SAT}: \phi = \exists x_1,\ldots,x_n \varphi(x_1, x_2, \ldots, x_n) \in \npc
+  \]
+
+  \[
+	\text{TAUT}: \phi = \forall x_1,\ldots,x_n \varphi(x_1, x_2, \ldots, x_n) \in \conpc
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{\pspacec}
+  \begin{exampleblock}{The QBF game}
+	\[
+	  \varphi(x_1,x_2,\dots,x_{2n})
+	\]
+
+	\begin{center}
+	  Player 1 wins $\iff$ $\varphi(x_1,x_2,\dots,x_{2n})$ is true.\\[6pt]
+	  Does player 1 has a \emph{winning strategy}?
+	\end{center}
+
+	\[
+	  \exists x_1 \forall x_2 \exists x_3 \forall x_4 \cdots \forall x_{2n} \varphi(x_1,x_2,\dots,x_{2n})
+	\]
+  \end{exampleblock}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{PH}
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{PSPACE}
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{NP-hard}
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{NP-complete}
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{X-hard and X-complete}
+
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%

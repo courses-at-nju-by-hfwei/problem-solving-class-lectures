@@ -33,10 +33,22 @@
 	  x \in L \iff \exists y \in \set{0,1}^{\ast}, V(x,y) = 1.
 	\]
   \end{definition}
-
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{\np}
   \begin{exampleblock}{TC 34.2--4}
 	\np{} is closed under $\cup, \cap, \cdot, \ast$.
   \end{exampleblock}
+
+  \begin{alertblock}{Remark}
+	\[
+	  O \emph{\text{ vs. }} \Omega
+	\]
+  \end{alertblock}
+
+  \begin{alertblock}{Question}
+	\centerline{Is \npc{} closed under $\cup, \cap, \cdot, \ast$?}
+  \end{alertblock}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{\conp{}}
@@ -86,6 +98,27 @@
   \[
 	\npc = \np \cap \nph
   \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{\nph{} and \npc}
+  \begin{exampleblock}{TC 34.5--6}
+	\centerline{$\text{HAM-PATH}$ is $\npc$.}
+  \end{exampleblock}
+
+  \[
+	\text{HAM-CYCLE} \pr \text{HAM-PATH}
+  \]
+
+  \centerline{$\pr$: split $v$ into $v_1, v_2$; add $s, t, (s,v_1), (v_2, t)$}
+
+  \vspace{0.50cm}
+  \begin{alertblock}{Question:}
+	\[
+	  \text{HAM-PATH} \pr \text{HAM-CYCLE}
+	\]
+
+	\centerline{$\pr$: add $v'; (v', v), \forall v \in V $}
+  \end{alertblock}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{\expcls}

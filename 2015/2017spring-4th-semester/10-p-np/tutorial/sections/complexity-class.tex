@@ -1,59 +1,93 @@
-\section{Complexity Class}
+\section{Concepts: Computational Complexity Classes}
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{\p}
   \[
-	\p = \bigcup_{c \ge 1} \dtime(n^c)
+	\p = \bigcup_{c > 0} \dtime(n^c)
   \]
 
   \begin{exampleblock}{TC 34.1--5}
-	\begin{align*}
-	  f(n) &= O(n^c) \\
-	  t(n) &= O(n^d)
-	\end{align*}
+	\[ 
+	  f(n) = O(n^c) \qquad t(n) = O(n^d)
+	\]
   \end{exampleblock}
 
   \[
-	T(n) = kf(n) + t(n)
+	\hbox{\sout{$T(n) = kf(n) + t(n)$}}
   \]
 
   \[
-	T_{k}(n) = \sum_{i=0}^{k}f^{(i)}(n) + t(n) 
+	T_{k}(n) = \sum_{i=1}^{k}f^{(i)}(n) + t(n) 
   \]
 
   \[
-	k = \Theta(n^{O(1)})
+	k = O(1) \text{\emph{ vs. }} k = \Theta(n^{O(1)}) \qquad O \emph{\text{ vs. }} \Theta, \Omega
   \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{\np}
   \begin{definition}[\np]
-	$(L \subseteq \set{0,1}^{\ast}) \in \np$ if there exists a polynomial-time \emph{verifier} $V(x,y)$ such that $\forall x \in \set{0,1}^{\ast}$,
+	$L \in \np$ if $\exists$ polynomial-time \emph{verifier} $V(x,c)$ such that $\forall x \in \set{0,1}^{\ast}$,
 	\[
-	  x \in L \iff \exists y \in \set{0,1}^{\ast}, V(x,y) = 1.
+	  x \in L \iff \exists c \in \set{0,1}^{\ast}, V(x,c) = 1.
 	\]
   \end{definition}
+
+  \vspace{0.50cm}
+  \centerline{\np-problems has short certificates that are easy to verify.}
+
+  \vspace{0.60cm}
+  \begin{exampleblock}{TC 34.2--6}
+	\[
+	  \text{HAM-PATH} \in \np
+	\]
+  \end{exampleblock}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{\np}
   \begin{exampleblock}{TC 34.2--4}
 	\np{} is closed under $\cup, \cap, \cdot, \ast$.
+
+	\[
+	  L_1 \in \np, L_2 \in \np \implies L = L_1 \circ L_2 \in \np
+	\]
   \end{exampleblock}
 
-  \begin{alertblock}{Remark}
-	\[
-	  O \emph{\text{ vs. }} \Omega
-	\]
-  \end{alertblock}
-
-  \begin{alertblock}{Question}
+  \vspace{0.60cm}
+  \begin{alertblock}{Question:}
 	\centerline{Is \npc{} closed under $\cup, \cap, \cdot, \ast$?}
+  \end{alertblock}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{\np}
+  \begin{theorem}{}
+	\np{} is closed under ``$\ast$''.
+  \end{theorem}
+
+  \[
+	c = c_1\#c_2\#\dots\#c_k\#m_1\&m_2\&\dots\&m_{k-1}
+  \]
+
+  $A^{\ast}(x,y): \forall 1 \le k \le |x|$
+  \begin{align*}
+	c = &c_1\#c_2\#\dots\#c_k\#m_1\&m_2\&\dots\&m_{k-1} \\
+	  &\bigwedge \land_{i=1}^{i=k} A(x_i, c_i)
+  \end{align*}
+
+  % \fignocaption{width = 0.35\textwidth}{figs/np-closure-star.png}
+
+  \[
+	x \in L^{\ast} \iff \exists c, A(x,c) = 1
+  \]
+
+  \begin{alertblock}{Reference}
+	\url{http://www.dei.unipd.it/~geppo/AA/DOCS/NPC.pdf}
   \end{alertblock}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{\conp{}}
   \[
-	\conp = \set{L: \bar{L} \in \np}
+	L \in \np \xLongrightarrow{?} \overline{L} \in \np
   \]
 
   \[
@@ -64,15 +98,19 @@
 	\text{TAUT} = \set{\phi: \phi \text{ is a tautology}}
   \]
 
+  \[
+	\conp = \set{L: \bar{L} \in \np}
+  \]
+
   \begin{definition}[\conp]
-	$(L \subseteq \set{0,1}^{\ast}) \in \conp$ if there exists a polynomial-time \emph{verifier} $V(x,y)$ such that $\forall x \in \set{0,1}^{\ast}$,
+	$L \in \conp$ if $\exists$ polynomial-time \emph{verifier} $V(x,c)$ such that $\forall x \in \set{0,1}^{\ast}$,
 	\[
-	  x \in L \iff \red{\forall} y \in \set{0,1}^{\ast}, V(x,y) = 1.
+	  x \in L \iff \red{\forall} c \in \set{0,1}^{\ast}, V(x,c) = 1.
 	\]
   \end{definition}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
-\begin{frame}{\conp{}}
+\begin{frame}{\np{} \emph{vs.} \conp{}}
   \[
 	\conp{} \red{\neq} \set{0,1}^{\ast} \setminus \np
   \]
@@ -82,7 +120,7 @@
   \]
 
   \[
-	\p = \np \implies \np = \conp = \p
+	\p = \np \implies \np = \conp
   \]
 
   \[
@@ -121,9 +159,28 @@
   \end{alertblock}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
+\begin{frame}{\p{} \emph{vs.} \np{}}
+  \begin{center}
+	solve \emph{vs.} verify \\[10pt]
+	exhaustive search avoidable?
+  \end{center}
+
+  \[
+	\p \neq \np \implies \p \neq \npc
+  \]
+
+  \begin{theorem}[\npi: Ladner's theorem, 1975]
+	\[
+	  \p \neq \np \implies \exists L \in \np \setminus \p \land L \notin \npc
+	\]
+  \end{theorem}
+
+  \centerline{Factoring, Graph (group) isomorphism {\footnotesize (\emph{vs. Subgraph isomorphism})}}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{\expcls}
   \[
-	\expcls = \bigcup_{c \ge 1} \dtime(2^{n^c})
+	\expcls = \bigcup_{c > 0} \dtime(2^{n^c})
   \]
 
   \[
@@ -136,9 +193,9 @@
 	\p \subsetneqq \expcls
   \]
 
-  \begin{theorem}[Time hierarchy theorem]
+  \begin{theorem}[Time Hierarchy Theorem, 1965]
 	\[
-	  f(n) \log f(n) = o(g(n)) \implies \emph{\dtime}(f(n)) \subsetneqq \emph{\dtime}(g(n))
+	  f(n) \log f(n) = o(g(n)) \implies \dtime(f(n)) \subsetneqq \dtime(g(n))
 	\]
   \end{theorem}
 \end{frame}
@@ -148,8 +205,14 @@
 	\rcls = \dtime(<\infty)
   \]
 
-  \vspace{0.80cm}
-  \centerline{\#decidable \emph{vs.} \#undecidable}
+  \[
+	\#\text{undecidable} \gg \#\text{decidable}
+  \]
+
+  \begin{align*}
+	\#\text{algs} &= \mathbb{N} \\
+	\#\text{problems} &= 2^{\mathbb{N}} = \mathbb{R}
+  \end{align*}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{\pspace}
@@ -207,7 +270,89 @@
   \end{exampleblock}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
+\begin{frame}{\np{} \emph{vs.} \pspace}
+  \[
+	\np \stackrel{?}{=} \pspace
+  \]
+  
+  \centerline{Short certificate for winning strategy?}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{PH}
+  \begin{definition}[Polynomial Hierarchy]
+	$L \in \sum_{i}^{p}$ if $\exists$ polynomial-time decidable \emph{relation} $R(x,u_1,u_2,\dots,u_i)$ such that $\forall x \in \set{0,1}^{\ast}$,
+	\begin{align*}
+	  x \in L \iff \exists u_1 &\in \set{0,1} \forall u_2 \in \set{0,1} \cdots Q_i u_i \in \set{0,1} \\
+	 	 &R(x,u_1,u_2,\dots,u_i) = 1
+	\end{align*}
+  \end{definition}
 
+  \begin{center}
+	$\prod_{1}^{p} = \text{co}\sum_{1}^{p}$ \\[10pt]
+	$\sum_{1}^{p} = \np \qquad \prod_{1}^{p} = \conp$ \\[10pt]
+	$\ph = \bigcup_{i} \sum_{i}^{p}$ \\[15pt]
+	$\text{Unique-SAT} \in \sum_{2}^{p}$
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Summary}
+  \[
+	\p \subseteq \np \subseteq \ph \subseteq \pspace \subseteq \expcls
+  \]
+
+  \[
+	\p \subsetneqq \expcls
+  \]
+
+  \begin{alertblock}{References}
+	\begin{itemize}
+	  \item ``Computational Complexity --- A Modern Approach'' by Arora and Barak {\footnotesize (the first 5 chapters)}
+	  \item ``Computer and Intractability --- A Guide to the Theory of NP-Completeness'' by Garey and Johnson
+	\end{itemize}
+  \end{alertblock}
+\end{frame}  
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{If $\hc \in \p$}
+  \begin{exampleblock}{TC 34.2--3}
+    \[
+	  \hc \in \p \implies \hc\text{-LIST} \in \p
+	\]
+  \end{exampleblock}
+
+  \begin{enumerate}
+	\item starting from $v$
+	\item removing each edge $e$ on $v$
+	\item checking $G \setminus e$
+	\item restoring and marking the critical edge $e = (v, u)$
+	\item $v = u$
+  \end{enumerate}
+
+  \begin{alertblock}{Reference}
+	\url{http://www.cs.wustl.edu/~pless/441/hw3soln.pdf}
+  \end{alertblock}
+
+  \begin{alertblock}{Question}
+	\centerline{remove $e \in E$ in arbitrary order if $(G \setminus e) \in \hc$?}
+  \end{alertblock}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{$G^3 \in \hc$}
+  \begin{exampleblock}{TC 34.2--11 (Karaganis, 1968)}
+	\[
+	  G^3 \in \hc
+	\]
+  \end{exampleblock}
+
+  \begin{theorem}{}
+	Let $T = (V, E)$ be a tree. For any edge $e \in E$, there is a Hamilton cycle on $T^3$ that contains $e$.
+  \end{theorem}
+
+  \begin{alertblock}{References}
+	\begin{itemize}
+	  \item ``On the Cube of a Graph'' by Jerome J. Karaganis, 1968
+	  \item ``The Cube of Every Connected Graph is 1-Hamiltonian'' by Gary Chartrand and S. F. Kapoor, 1968
+	  \item \url{http://www.aco.gatech.edu/sites/default/files/documents/comp-fa14sol.pdf}
+	  \end{itemize}
+  \end{alertblock}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%

@@ -10,10 +10,11 @@
 \usecolortheme{beaver}
 \usefonttheme[onlymath]{serif} % try "professionalfonts"
 
+\setbeamertemplate{theorems}[normal font]
 \setbeamertemplate{itemize items}[default]
 \setbeamertemplate{enumerate items}[default]
 
-\usepackage{amsmath, amsfonts, latexsym, mathtools}
+\usepackage{amsmath, amsfonts, latexsym, mathtools, extarrows}
 % \usepackage{kbordermatrix}
 % \usepackage{ntheorem}
 
@@ -82,6 +83,7 @@
 \newcommand{\pr}{\le_{p}} % polynomial reduction
 \newcommand{\nph}{\text{NP-hard}}
 \newcommand{\npc}{\text{NP-complete}}
+\newcommand{\npi}{\text{NP-intermediate}}
 \newcommand{\conpc}{\text{coNP-complete}}
 \newcommand{\expcls}{\text{EXP}}
 \newcommand{\rcls}{\text{R}}
@@ -89,10 +91,13 @@
 \newcommand{\dspace}{\text{SPACE}}
 \newcommand{\pspace}{\text{PSPACE}}
 \newcommand{\pspacec}{\text{PSPACE-complete}}
+\newcommand{\ph}{\text{PH}}
+\newcommand{\hp}{\text{HAM-PATH}}
+\newcommand{\hc}{\text{HAM-CYCLE}}
 \newcommand{\partition}{\text{3-PARTITION}}
 \newcommand{\tetris}{\text{TETRIS}}
 
-\newcommand{\titletext}{P, NP, and Beyond}
+\newcommand{\titletext}{P, NP, and More}
 
 \newcommand{\tx}{%
   \begin{frame}[noframenumbering]

@@ -343,16 +343,26 @@
 	\]
   \end{exampleblock}
 
-  \begin{theorem}{}
-	Let $T = (V, E)$ be a tree. For any edge $e \in E$, there is a Hamilton cycle on $T^3$ that contains $e$.
-  \end{theorem}
-
   \begin{alertblock}{References}
 	\begin{itemize}
 	  \item ``On the Cube of a Graph'' by Jerome J. Karaganis, 1968
 	  \item ``The Cube of Every Connected Graph is 1-Hamiltonian'' by Gary Chartrand and S. F. Kapoor, 1968
 	  \item \url{http://www.aco.gatech.edu/sites/default/files/documents/comp-fa14sol.pdf}
 	  \end{itemize}
+  \end{alertblock}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{$G^3 \in \hc$}
+  \begin{theorem}[$T^3 \in \hc$]
+	Let $T = (V, E)$ be a tree. For any edge $e \in E$, there is a Hamilton cycle on $T^3$ that contains $e$.
+  \end{theorem}
+
+  \begin{proof}
+	\centerline{By induction on subtrees obtained by removing any edge $e = (u,v)$.}
+  \end{proof}
+
+  \begin{alertblock}{Question}
+	In I.S., choose edge $e = (u,v)$ with $u$ or $v$ being a leaf?
   \end{alertblock}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%

@@ -1,0 +1,1 @@
+> Let $Q = (\Sigma_I, \Sigma_O, L, L_I, M, cost, goal) \in \text{NPO}$ be well approximable. If, for a distance measure $D$ and a constant $r$, one proves the nonexistence of any polynomial-time approximation algorithm for $Q_{r,D} = (\Sigma_I, \Sigma_O, L, Ball_{r,D}(L_I), M, cost, goal)$, then this means that the problem $Q$ is "unstable" according to $D$.

@@ -1,1 +1,47 @@
 \section{Approximation Classes}
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Approximation Classes}
+  \begin{description}
+	\item[NPO:] \np{} optimization problems
+	\item[APX:] constant factor $\epsilon$-approximation ($\epsilon > 1$)
+	\item[$f(n)$-APX:] Exp-APX, Poly-APX, Log-APX
+	\item[PTAS:] 
+	  \begin{itemize}
+		\item $\forall \epsilon > 0: (1 + \epsilon)$-approximation
+		\item $\p: \poly(n) \qquad O(n^{2/\epsilon}) \qquad O(n^{2^{2^{1/\epsilon}}})$
+	  \end{itemize}
+	\item[FPTAS:] 
+	  \begin{itemize}
+		\item $\forall \epsilon > 0: (1 + \epsilon)$-approximation
+		\item $\fp: \poly(n, 1/\epsilon) \qquad O((1/\epsilon)^2 \cdot n^3)$
+	  \end{itemize}
+	\item[PO:] polynomial time solvable optimization problems
+  \end{description}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Approximation Classes}
+  \begin{align*}
+	\po &\subsetneq \fptas \subsetneq \ptas \subsetneq \apx \\
+	&\subsetneq \logapx \subsetneq \polyapx \subsetneq \expapx \subsetneq \npo
+  \end{align*}
+
+  \[
+	(\text{if } \p{} \neq \np{})
+  \]
+
+  \begin{itemize}
+	\item Knapsack, Makespan, Vertex Cover, Set Cover, Clique, TSP
+  \end{itemize}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Stability of approximation}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Stability of approximation}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%

@@ -1,1 +1,120 @@
 \section{Approximation Classes}
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Approximation Classes}
+  \begin{description}
+	\item[NPO:] \np{} optimization problems
+	\item[APX:] constant factor $\epsilon$-approximation ($\epsilon > 1$)
+	\item[$f(n)$-APX:] Exp-APX, Poly-APX, Log-APX
+	\item[PTAS:] 
+	  \begin{itemize}
+		\item $\forall \epsilon > 0: (1 + \epsilon)$-approximation
+		\item $\p: \poly(n) \qquad O(n^{2/\epsilon}) \qquad O(n^{2^{2^{1/\epsilon}}})$
+	  \end{itemize}
+	\item[FPTAS:] 
+	  \begin{itemize}
+		\item $\forall \epsilon > 0: (1 + \epsilon)$-approximation
+		\item $\fp: \poly(n, 1/\epsilon) \qquad O((1/\epsilon)^2 \cdot n^3)$
+	  \end{itemize}
+	\item[PO:] polynomial time solvable optimization problems
+  \end{description}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Approximation Classes}
+  \begin{align*}
+	\po &\subsetneq \fptas \subsetneq \ptas \subsetneq \apx \\
+	&\subsetneq \logapx \subsetneq \polyapx \subsetneq \expapx \subsetneq \npo
+  \end{align*}
+
+  \vspace{-0.50cm}
+  \[
+	(\text{if } \p{} \neq \np{})
+  \]
+
+  \begin{enumerate}
+	\item $\text{Knapsack} \in \fptas \setminus \po$
+	\item $\text{Makespan} \in \ptas \setminus \fptas$ ({\small \textcolor{blue}{TODAY}})
+	\item $\text{Vertex Cover} \in \apx \setminus \ptas$ 
+	\item $\text{Set Cover} \in \logapx \setminus \apx$ ({\small CLRS 35.3})
+	\item $\text{Clique} \in \polyapx \setminus \logapx$
+	\item $\text{TSP} \in \expapx \setminus \polyapx$
+  \end{enumerate}
+
+  \begin{alertblock}{Reference}
+	\begin{itemize}
+	  \item ``A Survey on the Structure of Approximation Classes'' by Bruno Escoffier, 	Vangelis Th. Paschos, 2010.
+	\end{itemize}
+  \end{alertblock}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Stability of approximation}
+  TSP: worst-case complexity \emph{vs.} inapproximability according to instances
+
+  \begin{itemize}
+	\item $\text{TSP} \in \expapx \setminus \polyapx$
+	\item $\Delta\text{-TSP} \in \apx{}$
+	\item $\text{Euclidean TSP} \in \ptas{}$
+  \end{itemize}
+
+  \begin{alertblock}{Reference}
+	\begin{itemize}
+	  \item ``Stability of Approximation Algorithms for Hard Optimization Problems'' by Juraj Hromkovi\v{c}, 1999.
+	\end{itemize}
+  \end{alertblock}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Stability of approximation}
+  \begin{exampleblock}{Distance function (JH 4.2.3.3)}
+	\begin{gather*}
+	  \text{dist}_{k}(G,c) = \\
+	  \max\left\{0, \max\left\{ \frac{c(\set{u,v})}{\sum_{i=1}^{m} c(\set{p_i, p_{i+1}})} - 1 \bigl \lvert |u = p_1 \leadsto v = p_m| \le k \right\}\right\}
+	\end{gather*}
+  \end{exampleblock}
+
+  \begin{center}
+	\sout{enumerate}: $k = n^{\frac{1}{3}}$ \\[5pt]
+    shortest paths of length $\le k$ (Bellman-Ford)
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Stability of approximation}
+  \begin{exampleblock}{$h_{\text{index}}$ (JH 4.2.3.4)}
+	\[
+	  h_{\text{index}}\text{: using canonical order}
+	\]
+  \end{exampleblock}
+
+  \[
+	|\text{Ball}_{r, h_{\text{index}}}(L_I)| < \infty
+  \]
+
+  \[
+	\delta_{r, \epsilon} = \max \set{R_A(x): x \in \text{Ball}_{r, h_{\text{index}}}(L_I)}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Stability of approximation}
+  \begin{exampleblock}{$h$ (JH 4.2.3.5)}
+	\begin{itemize}
+	  \item $h$: infinite jumps
+	  \item $\delta$-approx. algorithm $A$ for $U$ is stable according to $h$
+	\end{itemize}
+  \end{exampleblock}
+
+  \[
+	\text{TSP } U:  (G, 1)
+  \]
+
+  \[
+	\text{Multi-TSP } \overline{U}: (G, k)
+  \]
+
+  \[
+	h(G,k) = k-1
+  \]
+
+  \[
+	A \text{ is } \delta\text{-approx. for } (G, 1) \implies A \text{ is } r\delta\text{-approx. for } (G,r \in \mathbb{N})
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%

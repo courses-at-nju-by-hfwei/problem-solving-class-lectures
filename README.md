@@ -16,6 +16,7 @@ Lectures for the "Problem Solving" class.
 - [2017-04-06: Number-Theoretic Algorithms](https://github.com/hengxin/problem-solving-class-lectures/tree/master/2015/2017spring-4th-semester/6-number-theoretic-algs)
 - [2017-04-20: Coding Theory](https://github.com/hengxin/problem-solving-class-lectures/tree/master/2015/2017spring-4th-semester/8-coding-theory)
 - [2017-05-04: NP-completeness](https://github.com/hengxin/problem-solving-class-lectures/tree/master/2015/2017spring-4th-semester/10-p-np)
+- [2017-05-18: Approximation Algorithms](https://github.com/hengxin/problem-solving-class-lectures/tree/master/2015/2017spring-4th-semester/12-approximation-algorithms)
 
 ---
 

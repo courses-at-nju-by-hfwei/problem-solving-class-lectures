@@ -17,17 +17,40 @@
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{\ms{} is \npc{}}
   \begin{definition}[Partition]
+	\begin{description}
+	  \item[Instance:] 
+		\[
+		  \forall a \in A: s(a) \in \mathbb{Z}^{+} 
+		\]
+	  \item[Question:] Is there a subset $A' \subseteq A$: 
+		\[
+		  \sum_{a \in A'} s(a) = \sum_{a \in A \setminus A'} s(a)
+		\]
+	\end{description}
   \end{definition}
 
   \[
-	A = \set{5,1,3,4,8,2,7} \implies A' = \set{5,3,7} \quad A - A' = \set{1,2,4,8}
+	A = \set{5,1,3,4,8,2,7} \implies A' = \set{5,3,7}, A \setminus A' = \set{1,2,4,8}
   \]
-
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{\ms{} is strongly \npc{}}
   \begin{definition}[$3$-Partition]
+	\begin{description}
+	  \item[Instance:] 
+		\begin{gather*}
+		  |A| = 3m, B \in \mathbb{Z}^{+} \\
+		  \forall a \in A: s(a) \in \mathbb{Z}^{+}, B/4 < s(a) < B/2
+		\end{gather*}
+	  \item[Question:] Can $A$ be partitioned into $m$ disjoint sets $S_1,\dots,S_m$:
+		\[
+		  \forall 1 \le i \le m: |S_i| = 3, \sum_{a \in S_i} s(a) = B
+		\]
+	\end{description}
   \end{definition}
 
   \[
-	A = \set{3,3,2,2,2,2}, m = 2, B = 7
+	A = \set{1,2,2,3,3,4,6,7,8}, m = 3, B = 12 \implies \set{1,3,8; 2,4,6; 2,3,7}
   \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
@@ -157,13 +180,85 @@
   \end{alertblock}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
-\begin{frame}{}
+\begin{frame}{\ptas{} for \ms{}}
+  \begin{enumerate}
+	\item $M_i$: with the maximum load
+	\item $J_i$: the last job on $M_i$
+  \end{enumerate}
+
+  \[
+	T = s_i + p_i \le T^{\ast} + p_i
+  \]
+
+  \begin{enumerate}
+	\item $J = J_{L} \triangleq \set{\text{long jobs}} \uplus J_{S} \triangleq \set{\text{short jobs}}$
+	\item $S_L$: the optimal schedule for $J_L$
+	\item $S$: apply List-Scheduling to $S_L$ and $J_S$
+  \end{enumerate}
+
+  \begin{alertblock}{Reference}
+	\begin{itemize}
+	  \item ``The Design of Approximation Algorithms'' by David P. Williamson and David Shmoys, 2011 ({\small Section 3.2}).
+	\end{itemize}
+  \end{alertblock}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
-\begin{frame}{}
+\begin{frame}{\ptas{} for \ms{}}
+  \begin{enumerate}
+	\item Split $J$:
+	  \begin{gather*}
+		J_i \in J_{S} \iff p_i \le \epsilon \cdot \frac{1}{m} \sum_{j} p_j \\
+		\implies |J_L| < \frac{1}{\epsilon} \cdot m
+	  \end{gather*}
+	\item Time for $S_L$ (\textcolor{red}{$m$ being a constant!}):
+	  \[
+		m^{\frac{1}{\epsilon} \cdot m} \cdot O(n)
+	  \]
+	\item Approx. ratio ($p_i \in J_{S}$ case):
+	  \begin{align*}
+		T &= s_i + p_i \le \frac{1}{m} \sum_{j} p_j + \epsilon \cdot \frac{1}{m} \sum_{j} p_j \\
+		&= (1 + \epsilon) \frac{1}{m} \sum_{j} p_j \\
+		&\le (1 + \epsilon) T^{\ast}
+	  \end{align*}
+  \end{enumerate}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
-\begin{frame}{}
+\begin{frame}{No \fptas{} for \ms{}}
+  \begin{theorem}[$\ms \in \ptas \setminus \fptas$]
+	No \fptas{} for \ms{}.
+  \end{theorem}
+
+  \[
+	\ms{} \text{ is strongly } \npc{} \implies \ms{} \text{ with } \max_{j} p_j \le q(n) \text{ is } \npc{}.
+  \]
+
+  \begin{alertblock}{Reference}
+	\begin{itemize}
+	  \item ``The Design of Approximation Algorithms'' by David P. Williamson and David Shmoys, 2011 ({\small Section 3.2}).
+	\end{itemize}
+  \end{alertblock}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{No \fptas{} for \ms{}}
+  \begin{theorem}[]
+	\[
+	  \exists \fptas{} \text{ for } \ms{} \implies \ms \in \p{}.
+	\]
+  \end{theorem}
+
+  \[
+	A_{\epsilon}: \epsilon = \frac{1}{\lceil 2n q(n) \rceil}
+  \]
+
+  \begin{align*}
+	(1 + \epsilon) T^{\ast} &= T^{\ast} + \epsilon \cdot T^{\ast} \\
+	&\le T^{\ast} + \frac{1}{\lceil 2n q(n) \rceil} \cdot n q(n) \\
+	&\le T^{\ast} + \frac{1}{2}
+  \end{align*}
+
+  \[
+	\text{Time: } \text{Poly}(\frac{1}{\epsilon}, n) = \text{Poly}(\lceil 2n q(n) \rceil, n) = \text{Poly}(n)
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

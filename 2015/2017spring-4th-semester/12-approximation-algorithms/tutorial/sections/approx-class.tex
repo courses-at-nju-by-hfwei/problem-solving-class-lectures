@@ -26,13 +26,25 @@
 	&\subsetneq \logapx \subsetneq \polyapx \subsetneq \expapx \subsetneq \npo
   \end{align*}
 
+  \vspace{-0.50cm}
   \[
 	(\text{if } \p{} \neq \np{})
   \]
 
-  \begin{itemize}
-	\item Knapsack, Makespan, Vertex Cover, Set Cover, Clique, TSP
-  \end{itemize}
+  \begin{enumerate}
+	\item $\text{Knapsack} \in \fptas \setminus \po$
+	\item $\text{Makespan} \in \ptas \setminus \fptas$ ({\small \textcolor{blue}{TODAY}})
+	\item $\text{Vertex Cover} \in \apx \setminus \ptas$ 
+	\item $\text{Set Cover} \in \logapx \setminus \apx$ ({\small CLRS 35.3})
+	\item $\text{Clique} \in \polyapx \setminus \logapx$
+	\item $\text{TSP} \in \expapx \setminus \polyapx$
+  \end{enumerate}
+
+  \begin{alertblock}{Reference}
+	\begin{itemize}
+	  \item ``A Survey on the Structure of Approximation Classes'' by Bruno Escoffier, 	Vangelis Th. Paschos, 2010.
+	\end{itemize}
+  \end{alertblock}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Stability of approximation}

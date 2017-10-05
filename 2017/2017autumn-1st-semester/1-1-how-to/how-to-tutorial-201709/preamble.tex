@@ -1,4 +1,5 @@
-\documentclass{beamer}
+% File: preamble.tex
+
 \usepackage{lmodern}
 
 \usepackage{xeCJK}
@@ -10,7 +11,6 @@
 \setbeamertemplate{enumerate items}[default]
 
 \usepackage{amsmath, amsfonts, latexsym, mathtools}
-% \usepackage{kbordermatrix}
 % \usepackage{ntheorem}
 
 \DeclareMathOperator*{\argmin}{arg\,min}
@@ -68,31 +68,5 @@
 }
 
 \newcommand{\titletext}{How to Solve It?}
-%%%%%%%%%%%%%%%%%%%%
-\title[\titletext]{\titletext}
-\subtitle{}
-
-\author[Hengfeng Wei]{Hengfeng Wei}
-\institute{hfwei@nju.edu.cn}
-\date{Sep 02, 2017}
-
-\AtBeginSection[]{
-  \begin{frame}[noframenumbering, plain]
-    \frametitle{\titletext}
-    \tableofcontents[currentsection, sectionstyle=show/shaded, subsectionstyle=show/show/hide]
-  \end{frame}
-}
-
-%%%%%%%%%%
-\begin{document}
-\maketitle
 
 \newcommand{\GP}{G. P\'{o}ya}
-
-\input{sections/how-to}
-\input{sections/josephus}
-\input{sections/csc}
-\input{sections/puzzles}
-
-\end{document}
-%%%%%%%%%%

@@ -1,0 +1,31 @@
+\documentclass{beamer}
+
+\input{preamble}
+
+%%%%%%%%%%
+\title[\titletext]{\titletext}
+\subtitle{}
+
+\author[Hengfeng Wei]{Hengfeng Wei}
+\institute{hfwei@nju.edu.cn}
+\date{Sep 02, 2017}
+
+\AtBeginSection[]{
+  \begin{frame}[noframenumbering, plain]
+    \frametitle{\titletext}
+    \tableofcontents[currentsection, sectionstyle=show/shaded, subsectionstyle=show/show/hide]
+  \end{frame}
+}
+%%%%%%%%%%
+\begin{document}
+
+\maketitle
+
+\input{sections/how-to}
+\input{sections/counterfeit-coin}
+\input{sections/josephus}
+\input{sections/csc}
+\input{sections/puzzles}
+
+\end{document}
+%%%%%%%%%%

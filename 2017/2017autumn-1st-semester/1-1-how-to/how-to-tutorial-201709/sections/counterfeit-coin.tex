@@ -119,6 +119,77 @@
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
-\begin{frame}{}
+\begin{frame}{The Weighing Algorithm (0)}
+  Compute $n$, the minimum number of weighings:
+
+  \[
+    (3^{n-1} - 3) / 2 < |S| \le (3^n - 3) / 2
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{The Weighing Algorithm (1)}
+  \[
+    S = S_1 \cup S_2 \cup S_3
+  \]
+
+  \[
+    |S_1| = |S_2| \qquad |S_1 \cup S_2| \le 3^{n-1} - 1 
+  \]
+
+  \[
+    |S_3| \le (3^{n-1} - 1) / 2
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{The Weighing Algorithm (2: Balanced)}
+  \[
+    S_3 \cup \set{\text{a standard coin}}
+  \]
+
+  \[
+    S_3 = S'_1 \cup S'_2 \cup S'_3
+  \]
+
+  \[
+    |S_3| \le (3^{n-1} - 1) / 2
+  \]
+
+  \[
+    |S'_1| = |S'_2| + 1 \text{ (the standard coin)} \qquad |S_1 \cup S_2| \dots
+  \]
+
+  \[
+    |S'_3| \le (3^{n-2} - 1) / 2
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{The Weighing Algorithm (2: Not Balanced)}
+  \[
+    |S_1 \cup S_2| \le 3^{n-1} - 1 
+  \]
+
+  \[
+    |S_1 \cup S_2| = S'_1 \cup S'_2 \cup S'_3
+  \]
+
+  \[
+    |S'_1| = |S'_2| \le 3^{n-2} \qquad |S'_1|_{PH}| = |S'_2|_{PL}|
+  \]
+
+  \[
+    |S'_3| \le 3^{n-2}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{The Weighing Algorithm (3: Recurse)}
+  \fignocaption{width = 0.65\textwidth}{figs/recurse.pdf}
 \end{frame}
 %%%%%%%%%%%%%%%

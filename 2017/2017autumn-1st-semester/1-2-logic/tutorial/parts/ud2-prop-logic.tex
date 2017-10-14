@@ -99,8 +99,9 @@
     \pause
     \column{0.40\textwidth}
       \begin{itemize}
-	\item De Morgan's Law
-	\item Implication
+	\item De Morgan's Law \\
+	  (在程序设计中的应用)
+	\item 蕴含 (implication)
 	  \[
 	    (P \to Q) \leftrightarrow (\lnot P \lor Q)
 	  \]
@@ -118,10 +119,21 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{exampleblock}{题目 2.11：诚实的人 vs. 说谎者}
+    On a certain island,
+    \begin{itemize}
+      \item Each inhabitant is either a truth-teller or a liar (not both).
+      \item A truth-teller always tells the truth and a liar always lies.
+      \item Arnie and Barnie live on the island.
+    \end{itemize}
 
+    \begin{enumerate}[(a)]
+      \item Arnie: ``If I am a truth-teller, then each person living on this island is either a truth-teller or a liar.''
+      \item Arnie: ``If I am a truth-teller, then so is Barnie.''
+    \end{enumerate}
   \end{exampleblock}
 
-  \vspace{0.30cm}
+  \vspace{0.50cm}
+  \pause
   \centerline{注意：这是日常语言里的推理!}
 \end{frame}
 %%%%%%%%%%%%%%%

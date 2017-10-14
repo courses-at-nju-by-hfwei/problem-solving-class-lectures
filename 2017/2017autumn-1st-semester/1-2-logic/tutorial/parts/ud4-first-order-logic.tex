@@ -1,0 +1,337 @@
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \centerline{\LARGE 一阶谓词逻辑部分习题选讲}
+  \vspace{0.50cm}
+  \centerline{\large UD 第四章 \; 量词}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{题目 4.1：量词 $\forall$、$\exists$}
+    \begin{enumerate}[(a)]
+      \setcounter{enumi}{3}
+      \item There exists an $x$ such that for some $y$ the equality $x = 2y$ holds.
+      \item There exists an $x$ and a $y$ such that $x = 2y$.
+    \end{enumerate}
+  \end{exampleblock}
+
+  \vspace{0.60cm}
+  \pause
+  对于 $(d)$, 这个公式正确吗?
+  \[
+    \exists x \to \exists y, x = 2y
+  \]
+  \pause
+  对于 $(e)$, 以下两个公式正确吗?
+  \[
+    \exists (x,y), x = 2y
+  \]
+  \vspace{-0.30cm}
+  \[
+    \exists x, y, x = 2y
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{题目 4.5：量词的否定}
+    \begin{enumerate}[(a)]
+      \setcounter{enumi}{9}
+      \item 
+	\[
+	  \forall \epsilon > 0, \exists \delta > 0, (x \in R \land |x - 1| < \delta) \to |x^2 - 1| < \epsilon.
+	\]
+      \item
+	\[
+	  \forall M \in R, \exists N \in R, \forall n > N, |f(n)| > M.
+	\]
+    \end{enumerate}
+  \end{exampleblock}
+
+  \vspace{0.50cm}
+  \pause
+  对于 $(j)$, 以下否定形式正确吗?
+  \[
+      \exists \epsilon > 0, \forall \delta > 0, (x \in R \land |x - 1| \ge \delta) \land |x^2 - 1| < \epsilon.
+  \]
+
+  \pause
+  对于 $(k)$, 以下否定形式正确吗?
+  \[
+    \exists M \in R, \forall N \in R, \exists n > N, |f(n)| > M.
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{题目 4.7：量词与蕴含的否定}
+    \[
+      \forall x \Big(x \in \mathbb{Z} \land \lnot\big(\exists y (y \in \mathbb{Z} \land x = 7y)\big)
+	\land \big(\forall z (z \in \mathbb{Z} \land x = 2z)\big)\Big).
+    \]
+    \vspace{-0.60cm}
+    \begin{enumerate}[(a)]
+      \setcounter{enumi}{1}
+        \item Read it out.
+      \setcounter{enumi}{0}
+        \item Negate it.
+      \setcounter{enumi}{2}
+	\item Which statement is \red{\LARGE true}, the original one or the negation?
+    \end{enumerate}
+  \end{exampleblock}
+
+  \pause
+  \vspace{0.20cm}
+  以下``读法''正确吗?
+  \begin{quote}
+    For all $x$, if $x$ is an integer and for any integer $y$ we have $x \neq 7y$,
+    then there exists an integer $z$ such that $x = 2z$.
+  \end{quote}
+
+  \pause
+  以下否定形式正确吗?
+  \[
+    \exists x \Big( \big(x \in \mathbb{Z} \land \big(\forall y (y \notin \mathbb{Z} \lor x \neq 7y)\big) \big) 
+    \land \big(\forall z (z \notin \mathbb{Z} \lor x \neq 2z) \big) \Big)
+  \]
+
+  \pause
+  一阶谓词逻辑公式的\red{\large 语义}：如何定义``真假值''?
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{题目 4.13：一阶谓词逻辑的推理规则(及其公式的语义)}
+    Decide whether (3) is true \red{\large if} (1) and (2) are both true.
+  \end{exampleblock}
+
+  \pause
+  \vspace{0.50cm}
+  你是如何理解这道题的?
+  
+  \begin{enumerate}
+    \item ``True'' 是什么意思?
+    \item 如何 Decide?
+      \begin{itemize}
+	\item 假设(3)为真, 结合(1)、(2)，没有产生矛盾，就说明 (3) 是真的吗?
+      \end{itemize}
+  \end{enumerate}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{题目 4.13：一阶谓词逻辑的推理规则(及其公式的语义)}
+    Decide whether (3) is true \red{\large if} (1) and (2) are both true.
+
+    \begin{enumerate}[(a)]
+      \item 
+	\begin{enumerate}[(1)]
+	  \item Everyone who loves Bill loves Sam.
+	  \item I don't love Sam.
+	  \item I don't love Bill.
+	\end{enumerate}
+    \end{enumerate}
+  \end{exampleblock}
+
+  \vspace{0.50cm}
+  \pause
+  \centerline{\red{问题}：如何在一阶谓词逻辑框架中推理出该结论?}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{题目 4.13：一阶谓词逻辑的推理规则(及其公式的语义)}
+    Decide whether (3) is true \red{\large if} (1) and (2) are both true.
+
+    \begin{enumerate}[(a)]
+      \setcounter{enumi}{1}
+      \item 
+	\begin{enumerate}[(1)]
+	  \item If Susie goes to the ball in the red dress, I will stay home.
+	  \item Susie went to the ball in the green dress.
+	  \item I did not stay home.
+	\end{enumerate}
+    \end{enumerate}
+  \end{exampleblock}
+
+  \centerline{是真的吗?}
+
+  \pause
+  \vspace{0.30cm}
+  到底是真是假?
+  \vspace{0.30cm}
+  \begin{columns}
+    \column{0.45\textwidth}
+      \begin{itemize}
+	\item (3) is true:
+
+	Whether I stay at home or not, (3) is always true.
+      \end{itemize}
+    \column{0.45\textwidth}
+      \begin{itemize}
+        \item (3) is false:
+
+	No matter what I do, the implication is always true.
+      \end{itemize}
+  \end{columns}
+
+  \pause
+  \vspace{0.50cm}
+  实际上，仅根据 (1)、(2), 我们无法判断 (3) 的真假 (尽管 (3) 是个命题)。
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{题目 4.13：一阶谓词逻辑的推理规则(及其公式的语义)}
+    Decide whether (3) is true \red{\large if} (1) and (2) are both true.
+
+    \begin{enumerate}[(a)]
+      \setcounter{enumi}{2}
+      \item 
+	\begin{enumerate}[(1)]
+	  \item If $l$ is a positive real number, then there exists a real number $m$ such that $m > l$.
+	  \item Every real number $m$ is less than $t$.
+	  \item The real number $t$ is not positive.
+	\end{enumerate}
+    \end{enumerate}
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{题目 4.13：一阶谓词逻辑的推理规则(及其公式的语义)}
+    Decide whether (3) is true \red{\large if} (1) and (2) are both true.
+
+    \begin{enumerate}[(a)]
+      \setcounter{enumi}{3}
+      \item 
+	\begin{enumerate}[(1)]
+	  \item Every little breeze seems to whisper Louise or my name is Igor.
+	  \item My name is Stewart.
+	  \item Every little breeze seems to whisper Louise.
+	\end{enumerate}
+    \end{enumerate}
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{题目 4.13：一阶谓词逻辑的推理规则(及其公式的语义)}
+    Decide whether (3) is true \red{\large if} (1) and (2) are both true.
+
+    \begin{enumerate}[(a)]
+      \setcounter{enumi}{4}
+      \item 
+	\begin{enumerate}[(1)]
+	  \item There is a house on every street such that if that house is blue,
+	    the one next to it is black.
+	  \item There is no blue house on my street.
+	  \item There is no black house on my street.
+	\end{enumerate}
+    \end{enumerate}
+  \end{exampleblock}
+
+  \vspace{0.50cm}
+  \centerline{(1) 在说什么?}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{题目 4.13：一阶谓词逻辑的推理规则(及其公式的语义)}
+    Decide whether (3) is true \red{\large if} (1) and (2) are both true.
+
+    \begin{enumerate}[(a)]
+      \setcounter{enumi}{5}
+      \item Let $x$ and $y$ be real numbers.
+	\begin{enumerate}[(1)]
+	  \item If $x > 5$, then $y < 1/5$.
+	  \item We know $y = 1$.
+	  \item So $x \le 5$.
+	\end{enumerate}
+    \end{enumerate}
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{题目 4.13：一阶谓词逻辑的推理规则(及其公式的语义)}
+    Decide whether (3) is true \red{\large if} (1) and (2) are both true.
+
+    \begin{enumerate}[(a)]
+      \setcounter{enumi}{6}
+      \item Let $M$ and $n$ be real numbers.
+	\begin{enumerate}[(1)]
+	  \item If $n > M$, then $n^2 > M^2$.
+	  \item We know $n < M$.
+	  \item So $n^2 \le M^2$.
+	\end{enumerate}
+    \end{enumerate}
+  \end{exampleblock}
+
+  \vspace{0.30cm}
+  到底哪个是正确的? 好像都有道理哦。
+  \begin{columns}[t]
+    \column{0.30\textwidth}
+      \begin{itemize}
+	\item (3) is false: 
+	  \[
+	    n = -2, \; M = -1
+	  \]
+      \end{itemize}
+    \column{0.30\textwidth}
+      \begin{itemize}
+        \item (3) is true:
+	\[
+	  (1): n > 0;\; (2): 0 < n < M
+	\]
+      \end{itemize}
+    \column{0.20\textwidth}
+      \begin{itemize}
+        \item 无法判断
+      \end{itemize}
+  \end{columns}
+
+  \vspace{0.60cm}
+  \pause
+  \centerline{缺少明确说明, 很难讲我们是否允许使用关于实数的知识。}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{题目 4.13：一阶谓词逻辑的推理规则(及其公式的语义)}
+    Decide whether (3) is true \red{\large if} (1) and (2) are both true.
+
+    \begin{enumerate}[(a)]
+      \setcounter{enumi}{7}
+      \item Let $x,y$, and $z$ be real numbers.
+	\begin{enumerate}[(1)]
+	  \item If $y > x$ and $y > 0$, then $y > z$.
+	  \item We know that $y \le z$.
+	  \item Then $y \le x$ or $y \le 0$.
+	\end{enumerate}
+    \end{enumerate}
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+\end{frame}
+%%%%%%%%%%%%%%%

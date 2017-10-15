@@ -8,16 +8,74 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{题目 3.2：逆否命题与逆命题}
-    \[
-      P \to Q
-    \]
+  \begin{exampleblock}{题目 3.7：四类命题}
+    \begin{enumerate}
+      \item 原命题
+	\[
+	  p \to q
+	\]
+      \item 逆否命题 (contrapositive)
+	\[
+	  \lnot q \to \lnot p
+	\]
+      \item 逆命题 (converse)
+	\[
+	  q \to p \qquad \lnot p \to \lnot q \; \red{(?)}
+	\]
+      \item 否命题 (negation)
+	\[
+	  p \land \lnot q \qquad p \to \lnot q \; \red{(?)}
+	\]
+      \pause
+      \item 反命题 (inverse)
+	\[
+	  \lnot p \to \lnot q
+	\]
+    \end{enumerate}
   \end{exampleblock}
-
-  \[
-    (P \to Q) \leftrightarrow \red{(?)}
-  \]
 \end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{题目 3.7：四类命题}
+    \centerline{原命题与其逆否命题等价。}
+
+    \vspace{0.50cm}
+    \centerline{\red{\large 问题：}逆命题与否命题等价吗?}
+
+    \vspace{0.50cm}
+    \centerline{\red{\large 问题：}还有谁和谁等价吗?}
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{题目 3.7 (2nd Edition)：四类命题}
+    \[
+      p \to q
+    \]
+    \begin{enumerate}
+      \item 逆命题的否命题
+      \item 逆否命题的否命题
+      \item 反命题的否命题
+    \end{enumerate}
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+% \begin{frame}{}
+%   \begin{exampleblock}{题目 3.2：逆否命题与逆命题}
+%     \[
+%       P \to Q
+%     \]
+%   \end{exampleblock}
+% 
+%   \[
+%     (P \to Q) \leftrightarrow \red{(?)}
+%   \]
+% \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
@@ -84,23 +142,28 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{题目 3.7：四类命题}
-    \[
-      p \to q
-    \]
+  \begin{exampleblock}{题目 3.9：巧克力蛋糕配方}
     \begin{enumerate}
-      \item 原命题
-      \item 逆否命题
-      \item 逆命题
-      \item 否命题
+      \item \textcolor<3->{red}{Exactly three} use $\cdots$
+      \item $A$ \& $G$ use the \textcolor<3->{red}{same} amount of $f$.
+      \item $A$ \& $G$ use \textcolor<3->{red}{different} kind of $c$.
     \end{enumerate}
   \end{exampleblock}
 
-  \vspace{0.50cm}
-  \centerline{原命题与其逆否命题等价。}
+  \begin{table}
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabular}{|c||c|c|c|c|}
+      \hline
+			      & French (F) & Swiss (S) & German (G) & American (A) \\ \hline \hline
+      Semisweet choco. (c) 	& \cmark & \cmark & \xmark & \cmark \\ \hline
+      Very little flour (f) 	& \cmark & \xmark & \cmark & \cmark \\ \hline
+      $<\frac{1}{4}$ cup sugar (s) 	& \cmark & \cmark & \cmark & \xmark \\ \hline
+    \end{tabular}
+  \end{table}
+
   \pause
-  \vspace{0.50cm}
-  \centerline{\red{\large 问题：}逆命题与否命题等价吗?}
+  \vspace{0.30cm}
+  \centerline{\large 你没有勇气来\red{``算一算''}? 如何选取命题符号? 如何形式化上述条件?}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -115,5 +178,10 @@
   \begin{exampleblock}{题目 3.11：利用逆否命题作证明}
     Prove that if $x$ is odd, then $\sqrt{2x}$ is not an integer.
   \end{exampleblock}
+
+  \pause
+  \[
+    \sqrt{2x} = k \implies 2x = k^2 \implies k \text{ is even} \implies x \text{ is even} 
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%

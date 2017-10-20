@@ -9,73 +9,29 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{exampleblock}{题目 3.7：四类命题}
+    \[
+      p \to q
+    \]
     \begin{enumerate}
-      \item 原命题
-	\[
-	  p \to q
-	\]
       \item 逆否命题 (contrapositive)
 	\[
 	  \lnot q \to \lnot p
 	\]
       \item 逆命题 (converse)
 	\[
-	  q \to p \qquad \lnot p \to \lnot q \; \red{(?)}
+	  q \to p
 	\]
-      \item 否命题 (negation)
-	\[
-	  p \land \lnot q \qquad p \to \lnot q \; \red{(?)}
-	\]
-      \pause
-      \item 反命题 (inverse)
+      \item 否命题 (inverse)
 	\[
 	  \lnot p \to \lnot q
 	\]
+      \item 命题的否定 (negated)
+	\[
+	  p \land \lnot q
+	\]
     \end{enumerate}
   \end{exampleblock}
 \end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \begin{exampleblock}{题目 3.7：四类命题}
-    \centerline{原命题与其逆否命题等价。}
-
-    \vspace{0.50cm}
-    \centerline{\red{\large 问题：}逆命题与否命题等价吗?}
-
-    \vspace{0.50cm}
-    \centerline{\red{\large 问题：}还有谁和谁等价吗?}
-  \end{exampleblock}
-\end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \begin{exampleblock}{题目 3.7 (2nd Edition)：四类命题}
-    \[
-      p \to q
-    \]
-    \begin{enumerate}
-      \item 逆命题的否命题
-      \item 逆否命题的否命题
-      \item 反命题的否命题
-    \end{enumerate}
-  \end{exampleblock}
-\end{frame}
-%%%%%%%%%%%%%%%
-
-% \begin{frame}{}
-%   \begin{exampleblock}{题目 3.2：逆否命题与逆命题}
-%     \[
-%       P \to Q
-%     \]
-%   \end{exampleblock}
-% 
-%   \[
-%     (P \to Q) \leftrightarrow \red{(?)}
-%   \]
-% \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
@@ -182,6 +138,29 @@
   \pause
   \[
     \sqrt{2x} = k \implies 2x = k^2 \implies k \text{ is even} \implies x \text{ is even} 
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{关于联词的思考题}
+  \[
+    (A \lor B \lor C) \land (\lnot A \lor B \lor C) \land (A \lor \lnot B \lor C) \land (A \lor B \lor \lnot C)
+  \]
+
+  \pause
+  \begin{theorem}[联词的功能完全性]
+    $\set{\land, \lor, \lnot}$ 是功能完全的。
+  \end{theorem}
+
+  \pause
+  \[
+    \set{\land, \lnot}
+  \]
+
+  \pause
+  \[
+    \set{\land, \to}
   \]
 \end{frame}
 %%%%%%%%%%%%%%%

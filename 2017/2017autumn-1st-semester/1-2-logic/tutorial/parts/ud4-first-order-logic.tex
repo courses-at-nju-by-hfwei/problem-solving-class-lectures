@@ -7,6 +7,120 @@
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
+\begin{frame}{学生反馈 (I)}
+  \begin{quote}
+    Suppose a statement restricts the variable $x$ to a proper subset $A$
+    of the universe as in the statement form, $\cdots$
+
+    \hfill --- ``Tips on Quantification'' (UD P51)
+  \end{quote}
+  
+  \vspace{0.60cm}
+  \begin{columns}
+    \column{0.50\textwidth}
+      ``For all $x \in A$, $p(x)$ holds.''
+      \[
+	\forall x \; \Big(x \in A \to P(x)\Big)
+      \]
+
+      \uncover<3->{
+	\[
+	  \red{\forall x \; \Big(x \in A \land P(x)\Big)}
+	\]
+      }
+    \column{0.50\textwidth}
+      ``For some $x \in A$, $p(x)$ holds.''
+      \[
+	\exists x \; \Big(x \in A \land P(x)\Big)
+      \]
+
+      \uncover<3->{
+	\[
+	  \red{\exists x \; \Big(x \in A \to P(x)\Big)}
+	\]
+      }
+  \end{columns}
+
+  \vspace{0.30cm}
+  \centerline{\uncover<2->{\red{$Q:$} 为什么 $\forall$ 就要用 $\to$, 而 $\exists$ 就要用 $\land$?}}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{学生反馈 (II)}
+  \begin{columns}
+    \column{0.50\textwidth}
+      ``For all $x \in A$, $p(x)$ holds.''
+      \[
+	\forall x \; \Big(x \in A \to P(x)\Big)
+      \]
+
+      \uncover<2->{
+	\[
+	  \blue{\forall x \in A. \; P(x)}
+	\]
+      }
+    \column{0.50\textwidth}
+      ``For some $x \in A$, $p(x)$ holds.''
+      \[
+	\exists x \; \Big(x \in A \land P(x)\Big)
+      \]
+
+      \uncover<2->{
+	\[
+	  \blue{\exists x \in A. \; P(x)}
+	\]
+      }
+  \end{columns}
+
+  \vspace{0.30cm}
+  \centerline{\red{$Q:$} 几个月前，我们还经常在量词后写 $x \in A$。现在还能这样写吗?}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{一阶谓词语言的语义}
+  \[
+    L = \set{<}
+  \]
+
+  \[
+    \psi: \forall x \exists y \; (y < x)
+  \]
+
+  \vspace{0.30cm}
+  \centerline{$Q:$ $\psi$ 是真是假?}
+
+  \vspace{0.50cm}
+  \pause
+  \[
+    \mathcal{U} = \mathbb{N}
+  \]
+
+  \[
+    \mathcal{U} = \mathbb{Z}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{一阶谓词语言中的重言式}
+  \[
+    \Big(\forall y \lnot P(y) \to \lnot P(x)\Big) \to \Big(P(x) \to \exists y P(y)\Big)
+  \]
+
+  \[
+    \Big(\forall x (\alpha \to \beta)\Big) \to (\forall x \alpha \to \forall x \beta)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+% \begin{frame}{一阶谓词逻辑的公理系统与推理规则}
+% \end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{exampleblock}{题目 4.1：量词 $\forall$、$\exists$}
     \begin{enumerate}[(a)]
@@ -31,6 +145,10 @@
   \[
     \exists x, y, x = 2y
   \]
+  \vspace{-0.30cm}
+  \[
+    \exists x, y, \to x = 2y
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -54,13 +172,17 @@
   \pause
   对于 $(j)$, 以下否定形式正确吗?
   \[
-      \exists \epsilon > 0, \forall \delta > 0, (x \in R \land |x - 1| \ge \delta) \land |x^2 - 1| < \epsilon.
+    \exists \epsilon \le 0, \forall \delta \le 0, (x \in R \land |x - 1| < \delta) \land |x^2 - 1| \ge \epsilon.
   \]
-
   \pause
-  对于 $(k)$, 以下否定形式正确吗?
+  \vspace{-0.30cm}
   \[
-    \exists M \in R, \forall N \in R, \exists n > N, |f(n)| > M.
+    \red{(\lnot \forall x\, \alpha) \leftrightarrow (\exists x\, \lnot \alpha)}
+  \]
+  \pause
+  对于 $(k)$, 正确的否定形式应该是什么?
+  \[
+    \exists M \in R, \forall N \in R, \exists n > N, |f(n)| \le M.
   \]
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -79,12 +201,12 @@
       \setcounter{enumi}{0}
         \item Negate it.
       \setcounter{enumi}{2}
-	\item Which statement is \red{\LARGE true}, the original one or the negation?
+	\item Which statement is \red{\large true}, the original one or the negation?
     \end{enumerate}
   \end{exampleblock}
 
   \pause
-  \vspace{0.20cm}
+  \vspace{0.50cm}
   以下``读法''正确吗?
   \begin{quote}
     For all $x$, if $x$ is an integer and for any integer $y$ we have $x \neq 7y$,
@@ -97,9 +219,6 @@
     \exists x \Big( \big(x \in \mathbb{Z} \land \big(\forall y (y \notin \mathbb{Z} \lor x \neq 7y)\big) \big) 
     \land \big(\forall z (z \notin \mathbb{Z} \lor x \neq 2z) \big) \Big)
   \]
-
-  \pause
-  一阶谓词逻辑公式的\red{\large 语义}：如何定义``真假值''?
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -251,8 +370,14 @@
     \end{enumerate}
   \end{exampleblock}
 
-  \vspace{0.50cm}
-  \centerline{(1) 在说什么?}
+  \vspace{0.30cm}
+  \centerline{(1) 在说什么? 翻译成汉语是什么意思?}
+
+  \pause
+  \fignocaption{width = 0.40\textwidth}{figs/what.jpg}
+
+  \pause
+  \centerline{现在可以形式化，然后``算一算''了。}
 \end{frame}
 %%%%%%%%%%%%%%%
 

@@ -56,6 +56,7 @@
 	\[
 	  \forall B \in 2^{A}\; \exists a \in A\; (f(a) = B).
 	\]
+      \pause
       \item[Not Onto]
 	\[
 	  \exists B \in 2^{A}\; \lnot \Big(\exists a \in A\; (f(a) = B)\Big).
@@ -74,23 +75,27 @@
   \end{theorem}
 
   \begin{proof}
-    \begin{itemize}
-      \pause
-      \item Constructive proof:
-	\[
-	  B = \set{x \in A \mid x \notin f(x)}.
-	\]
-      \pause
-      \item By contradiction:
-	\[
-	  \exists a \in A: f(a) = B.
-	\]
+    \begin{columns}[t]
+      \column{0.50\textwidth}
+	\begin{itemize}
+	  \item<2-> Constructive proof:
+	    \[
+	      B = \set{x \in A \mid x \notin f(x)}.
+	    \]
+	  \item<4-> By contradiction:
+	    \[
+	      \exists a \in A: f(a) = B.
+	    \]
 
-	\pause
-	\[
-	  \red{a \in B?}
-	\]
-    \end{itemize}
+	    \uncover<5->{
+	      \[
+		\red{Q}: a \in B \; \blue{(= f(a))}?
+	      \]
+	    }
+	\end{itemize}
+      \column{0.40\textwidth}
+	\uncover<3->{\fignocaption{width = 0.80\textwidth}{figs/what-is-this}}
+    \end{columns}
   \end{proof}
 \end{frame}
 %%%%%%%%%%%%%%%

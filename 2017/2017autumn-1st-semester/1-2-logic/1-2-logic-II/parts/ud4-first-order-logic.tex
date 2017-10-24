@@ -7,7 +7,6 @@
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
-% TODO: move to the end
 \begin{frame}{}
   \begin{columns}
     \column{0.60\textwidth}
@@ -27,34 +26,6 @@
     \column{0.30\textwidth}
       \fignocaption{width = 1.00\textwidth}{figs/terrence-tao-color.jpg}
   \end{columns}
-\end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \begin{exampleblock}{题目 3.7：四类命题}
-    \[
-      p \to q
-    \]
-    \begin{enumerate}
-      \item 逆否命题 (contrapositive)
-	\[
-	  \lnot q \to \lnot p
-	\]
-      \item 逆命题 (converse)
-	\[
-	  q \to p
-	\]
-      \item 否命题 (inverse)
-	\[
-	  \lnot p \to \lnot q
-	\]
-      \item 命题的否定 (negated)
-	\[
-	  p \land \lnot q
-	\]
-    \end{enumerate}
-  \end{exampleblock}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -498,7 +469,7 @@
   \pause
   \[
     \forall s\in S\, \exists h \in H 
-    \Big(\text{On}(h,s) \land \big(\text{Blue}(h) \to \text{Black}\big(\text{next}(s)\big) \big)\Big)
+    \Big(\text{On}(h,s) \land \big(\text{Blue}(h) \to \text{Black}\big(\text{next-to}(h)\big) \big)\Big)
   \]
 \end{frame}
 %%%%%%%%%%%%%%%

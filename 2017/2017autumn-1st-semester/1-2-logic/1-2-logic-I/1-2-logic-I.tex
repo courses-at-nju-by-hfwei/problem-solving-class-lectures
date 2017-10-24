@@ -1,0 +1,32 @@
+\documentclass[]{beamer}
+
+\input{preamble}
+
+%%%%%%%%%%
+\title[\titletext]{\titletext}
+\subtitle{}
+
+\author[Hengfeng Wei]{\large 魏恒峰}
+\titlegraphic{\includegraphics[height = 1.8cm]{figs/20171016-logic-qrcode.png}}
+\institute{hfwei@nju.edu.cn}
+\date{2017年10月16日}
+
+\AtBeginSection[]{
+  \begin{frame}[noframenumbering, plain]
+    \frametitle{\titletext}
+    \tableofcontents[currentsection, sectionstyle=show/shaded, subsectionstyle=show/show/hide]
+  \end{frame}
+}
+%%%%%%%%%%
+\begin{document}
+
+\maketitle
+
+\input{parts/intro}
+\input{parts/prop}
+\input{parts/ud2-prop-logic}
+\input{parts/ud3-contrapositive}
+\thankyou{}
+
+\end{document}
+%%%%%%%%%%

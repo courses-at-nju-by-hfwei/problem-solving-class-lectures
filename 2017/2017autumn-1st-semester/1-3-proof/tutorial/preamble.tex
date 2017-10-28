@@ -12,12 +12,35 @@
 \usepackage{amsmath, amsfonts, latexsym, mathtools, tabu}
 \newcommand{\set}[1]{\{#1\}}
 
+\ExplSyntaxOn
+\bool_new:N \l__xeCJK_listings_letter_bool
+\ExplSyntaxOff
+\usepackage{listings}
+
+\definecolor{bgcolor}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{CStyle}{
+    language = C,
+    basicstyle = \ttfamily\bfseries,
+    backgroundcolor = \color{bgcolor},   
+    keywordstyle = \color{blue},
+    stringstyle = \color{red},
+    commentstyle = \color{cyan},
+    breakatwhitespace = false,
+    breaklines = true,                 
+    mathescape = true,
+    % showspaces=false,                
+    % showstringspaces=false,
+    % showtabs=false,                  
+}
+
 % colors
 \newcommand{\red}[1]{\textcolor{red}{#1}}
 \newcommand{\redoverlay}[2]{\textcolor<#2>{red}{#1}}
 \newcommand{\green}[1]{\textcolor{green}{#1}}
 \newcommand{\blue}[1]{\textcolor{blue}{#1}}
 \newcommand{\purple}[1]{\textcolor{purple}{#1}}
+\newcommand{\cyan}[1]{\textcolor{cyan}{#1}}
 
 % colorded box
 \newcommand{\rbox}[1]{\red{\boxed{#1}}}
@@ -42,7 +65,7 @@
 \newcommand{\titletext}{1-3 常用的证明方法}
 
 \newcommand{\thankyou}{
-\begin{frame}[noframenumbering]{}
-  \fignocaption{width = 0.50\textwidth}{figs/thankyou.png}
-\end{frame}
+  \begin{frame}[noframenumbering]{}
+    \fignocaption{width = 0.50\textwidth}{figs/thankyou.png}
+  \end{frame}
 }

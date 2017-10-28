@@ -1,0 +1,99 @@
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \centerline{\LARGE Longest Monotone Subsequence}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{example}[ES 24.8：Longest Monotone Subsequence]
+    Write a computer program that takes as its input a sequence of distinct integers
+    and returns as its output the length of a longest monotone subsequence.
+  \end{example}
+
+  \vspace{0.50cm}
+  \pause
+  Understanding this problem:
+
+  \vspace{0.20cm}
+  \begin{description}[Subsequence]
+    \pause
+    \item[Subsequence] \emph{vs.} substring
+    \pause
+  \item[Monotone] increasing \emph{vs.} decreasing \pause \qquad strictly \emph{vs.} non-strictly
+    \pause
+    \item[Longest] existence? uniqueness?
+  \end{description}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{ES 24.8：Longest Increasing Subsequence}
+    \begin{itemize}
+      \item Given an integer array $A[1 \ldots n]$
+      \item To find (the length $L$ of) a longest increasing subseqence.
+    \end{itemize}
+  \end{exampleblock}
+
+  \vspace{0.30cm}
+  \[
+    5,2,8,6,3,6,9,7 \implies 2, 3, 6, 9
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    \red{学生反馈：} 这道题为什么放在``Pigeonhole Principle''这一章?
+  \end{center}
+
+  \pause
+  \fignocaption{width = 0.25\textwidth}{figs/no-pigeon}
+
+  \pause
+  \begin{theorem}[Erd\H{o}s-Szekeres Theorem]
+     Let $n$ be a positive integer. 
+     Every sequence of $n^2 + 1$ distinct integers must contain a monotone subsequence of length $n + 1$.
+  \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \centerline{\red{$Q:$} 这道题与数学归纳法有什么关系?}
+
+  \vspace{0.30cm}
+  \pause
+  \begin{description}
+    \item[B.S.] $P(1)$
+    \item[I.H.] $P(n)$
+    \item[I.S.] $P(n) \to P(n+1)$
+  \end{description}
+
+  \[
+    P(n) \text{ 是什么?}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \centerline{$L(i):$ the length of an LIS \red{\it ending at } $i$.}
+
+  \pause
+  \[
+    L = \max_{1 \le i \le n} L(i)
+  \]
+
+  \pause
+  \begin{align*}
+    L(1) &= 1 \\
+    L(i) &= 1 + \max\set{L(j): j < i \land A[j] < A[i]}
+  \end{align*}
+
+  \pause
+  \fignocaption{width = 0.40\textwidth}{figs/coding}
+\end{frame}
+%%%%%%%%%%%%%%%

@@ -1,12 +1,70 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \centerline{\Large Lossless Compression}
+  \centerline{\Large Lossless Compression Algorithms}
+  \vspace{0.50cm}
+  \fignocaption{width = 0.30\textwidth}{figs/gzip-logo}
 \end{frame}
 %%%%%%%%%%%%%%%
+
 %%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[``No Free Lunch'' Theorem]
+    Any lossless (file) compression algorithm that makes some files shorter must necessarily make some files longer.
+  \end{theorem}
+
+  \vspace{0.50cm}
+  \pause
+  Understanding this problem:
+  \begin{description}[Compression Algorithm]
+      \pause
+    \item[File $f$:] a string of bits of a finite length $|f|$
+      \pause
+    \item[Compression Alg.:] a function $\mathcal{C}$
+      \[
+	\mathcal{C}: F \to F
+      \]
+      \vspace{-0.50cm}
+      \pause
+    \item[Lossless:] $f$ is injective
+      \[
+	\mathcal{C}(f_1) = \mathcal{C}(f_2) \implies f_1 = f_2
+      \]
+  \end{description}
+
+  \vspace{-0.20cm}
+  \pause
+  \[
+    \fbox{$\forall \mathcal{C}: \big(\exists f \in F: |\mathcal{C}(f)| < |f|\big) \to \big(\exists f \in F: |\mathcal{C}(f)| > |f|\big)$}
+  \]
+\end{frame}
 %%%%%%%%%%%%%%%
+
 %%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[``No Free Lunch'' Theorem]
+    Any lossless (file) compression algorithm that makes some files shorter must necessarily make some files longer.
+  \end{theorem}
+
+  \[
+    \fbox{$\forall \mathcal{C}: \big(\exists f \in F: |\mathcal{C}(f)| < |f|\big) \to \big(\exists f \in F: |\mathcal{C}(f)| > |f|\big)$}
+  \]
+  
+  \begin{proof}
+    \begin{itemize} 
+	\pause
+      \item By contradiction
+	\pause
+	\[
+	  \exists \mathcal{C}: \big(\exists f \in F: |\mathcal{C}(f)| < |f|\big) \land \big(\forall f \in F: |\mathcal{C}(f)| \le |f| \big)
+	\]
+        \pause
+	\red{$M:$} \# of bits of a shortest file $f$ such that $(|\mathcal{C}(f)| \;\blue{= N}) < (|f| \;\red{= M})$
+	\pause
+      \item By the pigeonhole principle
+	\[
+	  2^N + 1 \;\text{\it vs. } 2^N
+	\]
+    \end{itemize}
+  \end{proof}
+\end{frame}
 %%%%%%%%%%%%%%%

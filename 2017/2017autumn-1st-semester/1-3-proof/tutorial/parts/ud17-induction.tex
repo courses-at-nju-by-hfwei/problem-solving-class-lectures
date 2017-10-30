@@ -36,11 +36,48 @@
   \vspace{0.50cm}
   \begin{theorem}[(第一) 数学归纳法]
     \[
-      \Big[ P(1) \land \forall n \in \mathbb{N}^{+} \big(P(n) \to P(n+1) \big) \Big]
+      \only<3>{\red{\forall P:}} \; \Big[ P(1) \land \forall n \in \mathbb{N}^{+} \big(P(n) \to P(n+1) \big) \Big]
 	\to \forall n \in \mathbb{N}^{+} P(n).
     \]
   \end{theorem}
+
+  \vspace{0.50cm}
+  \uncover<4->{
+    \begin{quote}
+      \centerline{\red{\Large Let us calculate [calculemus].}}
+    \end{quote}
+  }
+
+  \uncover<5->{
+    \[
+      P(n) \triangleq Q(1) \land \cdots \land Q(n)
+    \]
+  }
 \end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fignocaption{width = 0.50\textwidth}{figs/wait}{\centerline{\large 说好的数学归纳法呢?}}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+% \begin{frame}{}
+%   \begin{columns}
+%     \column{0.50\textwidth}
+%       \begin{proof}
+% 	\centerline{能不能``算一算''呢?}
+% 	\uncover<2->{
+% 	  \[
+% 	    P(n) \triangleq Q(1) \land \cdots \land Q(n)
+% 	  \]
+% 	}
+%       \end{proof}
+%     \column{0.50\textwidth}
+%       \fignocaption{width = 0.50\textwidth}{figs/Leibniz.jpg}
+%   \end{columns}
+% \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
@@ -91,27 +128,6 @@
 
     Therefore, $P(n)$ holds for all positive integers.
   \end{proof}
-\end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \begin{columns}
-    \column{0.50\textwidth}
-      \begin{proof}
-	\centerline{能不能``算一算''呢?}
-	\[
-	  P(n) \triangleq Q(1) \land \cdots \land Q(n)
-	\]
-      \end{proof}
-    \column{0.50\textwidth}
-      \fignocaption{width = 0.60\textwidth}{figs/Leibniz.jpg}
-  \end{columns}
-
-  \vspace{0.80cm}
-  \begin{quote}
-    \centerline{\red{\Large Let us calculate [calculemus].}}
-  \end{quote}
 \end{frame}
 %%%%%%%%%%%%%%%
 

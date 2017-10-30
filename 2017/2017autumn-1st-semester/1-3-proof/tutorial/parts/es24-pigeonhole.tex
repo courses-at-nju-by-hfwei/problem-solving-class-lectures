@@ -162,45 +162,28 @@
     If $f: A \to 2^{A}$, then $f$ is not onto.
   \end{theorem}
 
-  \begin{proof}[对角线论证 (Cantor's diagonal argument) {\footnotesize (以下仅适用于可数集合 $A$)}]
+  \begin{proof}[对角线论证 (Cantor's diagonal argument) \only<5->{\footnotesize (以下仅适用于可数集合 $A$)}]
+    \pause
     \begin{table}[]
       \centering
       $\begin{tabu}{|c||c|c|c|c|c|c|}
 	\hline
 	a      & \multicolumn{6}{c|}{f(a)} \\ \hline
 	       & 1      & 2      & 3      & 4      & 5      & \cdots \\ \hline \hline
-	1      & \redoverlay{1}{2-}      & 1      & 0      & 0      & 1      & \cdots \\ \hline
-	2      & 0      & \redoverlay{0}{2-}      & 0      & 0      & 0      & \cdots \\ \hline
-	3      & 1      & 0      & \redoverlay{0}{2-}      & 1      & 0      & \cdots \\ \hline
-	4      & 1      & 1      & 1      & \redoverlay{1}{2-}      & 1      & \cdots \\ \hline
-	5      & 0      & 1      & 0      & 1      & \redoverlay{0}{2-}      & \cdots \\ \hline
+	1      & \redoverlay{1}{3-}      & 1      & 0      & 0      & 1      & \cdots \\ \hline
+	2      & 0      & \redoverlay{0}{3-}      & 0      & 0      & 0      & \cdots \\ \hline
+	3      & 1      & 0      & \redoverlay{0}{3-}      & 1      & 0      & \cdots \\ \hline
+	4      & 1      & 1      & 1      & \redoverlay{1}{3-}      & 1      & \cdots \\ \hline
+	5      & 0      & 1      & 0      & 1      & \redoverlay{0}{3-}      & \cdots \\ \hline
 	\vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \cdots \\ \hline
       \end{tabu}$
     \end{table}
 
-    \uncover<3->{
+    \uncover<4->{
       \[
 	B = \blue{\set{0, 1, 1, 0, 1}}
       \]
     }
   \end{proof}
 \end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%

@@ -1,0 +1,164 @@
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \centerline{\LARGE Longest Monotone Subsequence}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{ES 24.8：Longest Monotone Subsequence}
+    Write a computer program that takes as its input a sequence of distinct integers
+    and returns as its output the length of a longest monotone subsequence.
+  \end{exampleblock}
+
+  \vspace{0.50cm}
+  \pause
+  Understanding this problem:
+
+  \vspace{0.20cm}
+  \begin{description}[Subsequence]
+    \pause
+    \item[Subsequence] \emph{vs.} substring
+    \pause
+  \item[Monotone] increasing \emph{vs.} decreasing \pause \qquad strictly \emph{vs.} non-strictly
+    \pause
+    \item[Longest] existence? uniqueness?
+  \end{description}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{ES 24.8：Longest (Strictly) Increasing Subsequence (LIS)}
+    \begin{itemize}
+      \item Given an integer array $A[0 \ldots n-1]$
+      \item To find (the length $L$ of) an LIS
+    \end{itemize}
+  \end{exampleblock}
+
+  \vspace{0.30cm}
+  \[
+    0, 8, 4, 12, 2, 10, 6, 14, 1, 9, 5, 13, 3, 11, 7, 15 \implies 0, 2, 6, 9, 11, 15
+  \]
+
+  \pause
+  \[
+    0, 4, 6, 9, 11, 15
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    \red{学生反馈：} 这道题为什么放在``Pigeonhole Principle''这一章?
+  \end{center}
+
+  \pause
+  \fignocaption{width = 0.25\textwidth}{figs/no-pigeon}
+
+  \pause
+  \begin{theorem}[Erd\H{o}s-Szekeres Theorem]
+     Let $n$ be a positive integer. 
+     Every sequence of $n^2 + 1$ distinct integers must contain a monotone subsequence of length $n + 1$.
+  \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \centerline{\red{$Q:$} 这道题与(\red{强})数学归纳法有什么关系?}
+
+  \vspace{0.30cm}
+  \pause
+  \begin{description}
+    \item[B.S.] $P(0)$
+    \item[I.H.] $P(0) \cdots P(i-1)$
+    \item[I.S.] $P(0) \cdots P(i-1) \to P(i)$
+  \end{description}
+
+  \pause
+  \[
+    P(i) \text{ 是什么?}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \centerline{$P(i):$ the length of an LIS in $A[0 \cdots i]$.}
+
+  \pause
+  \[
+    \blue{L = P(n-1)}
+  \]
+
+  \pause
+  \[
+    P(0) = 1
+  \]
+
+  \pause
+  \[
+    \red{P(0) \cdots P(i-1) \to P(i)?}
+  \]
+
+  \pause
+  \[
+    P(i) = \max\set{P(i-1), \redoverlay{\max_{0 \le j < i \atop A[j] < A[i]} \set{P(j) + 1}}{6-}}
+  \]
+  
+  \only<7->{\fignocaption{width = 0.15\textwidth}{figs/sad-face}}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \centerline{$P(i):$ the length of an LIS \red{\it ending at } $i$.}
+
+  \pause
+  \[
+    \blue{L = \max_{1 \le i < n} P(i)}
+  \]
+
+  \pause
+  \[
+    P(0) = 1
+  \]
+
+  \pause
+  \[
+    P(i) = \max_{0 \le j < i \atop A[j] < A[i]} \set{P(j) + 1}
+  \]
+
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{}
+  \begin{lstlisting}[style = Cstyle]
+    $P(0) = 1$;
+
+    for (int i = 1; i < n; ++i)
+      $P(i) = \max\limits_{0 \le j < i \atop A[j] < A[i]} \set{P(j) + 1}$
+
+    return $L = \max\limits_{0 \le i < n} P(i)$;
+  \end{lstlisting}
+
+  % \begin{lstlisting}[style = Cstyle]
+  %   P(0) = 1;
+  %   for (int i = 1; i < n; ++i) {
+  %     // $P(i) = \max_{0 \le j < i \atop A[j] < A[i]} \set{P(j) + 1}$
+  %     P(i) = 0;
+  %     for (int j = 1; j < i + 1; ++j) {
+  %       P(i+1) = max{P(i+1), P(j)} + 1;
+  %     }
+  %   }
+
+  %   return $L = \max_{0 \le i < n} P(i)$;
+  % \end{lstlisting}
+
+  \pause
+  \fignocaption{width = 0.40\textwidth}{figs/coding}
+\end{frame}
+%%%%%%%%%%%%%%%

@@ -20,9 +20,11 @@
     \pause
     \item[Subsequence] \emph{vs.} substring
     \pause
-  \item[Monotone] increasing \emph{vs.} decreasing \pause \qquad strictly \emph{vs.} non-strictly
+    \item[Monotone] increasing \emph{vs.} decreasing \pause \qquad strictly \emph{vs.} non-strictly
     \pause
     \item[Longest] existence? uniqueness?
+    \pause
+    \item[The Length] \emph{vs.} the subsequence itself
   \end{description}
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -32,19 +34,18 @@
   \begin{exampleblock}{ES 24.8：Longest (Strictly) Increasing Subsequence (LIS)}
     \begin{itemize}
       \item Given an integer array $A[0 \ldots n-1]$
-      \item To find (the length $L$ of) an LIS
+      \item To find the length $L$ of an LIS
     \end{itemize}
   \end{exampleblock}
 
   \vspace{0.30cm}
-  \[
-    0, 8, 4, 12, 2, 10, 6, 14, 1, 9, 5, 13, 3, 11, 7, 15 \implies 0, 2, 6, 9, 11, 15
-  \]
+  \only<1>{
+    \[
+      0, 8, 4, 12, 2, 10, 6, 14, 1, 9, 5, 13, 3, 11, 7, 15 \implies 0, 2, 6, 9, 11, 15
+    \]
+  }
 
-  \pause
-  \[
-    0, 4, 6, 9, 11, 15
-  \]
+  \uncover<2->{\fignocaption{width = 0.18\textwidth}{figs/to-try}}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -86,7 +87,7 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \centerline{$P(i):$ the length of an LIS in $A[0 \cdots i]$.}
+  \centerline{\fbox{$P(i):$ the length of an LIS in $A[0 \cdots i]$.}}
 
   \pause
   \[
@@ -108,17 +109,17 @@
     P(i) = \max\set{P(i-1), \redoverlay{\max_{0 \le j < i \atop A[j] < A[i]} \set{P(j) + 1}}{6-}}
   \]
   
-  \only<7->{\fignocaption{width = 0.15\textwidth}{figs/sad-face}}
+  \only<7->{\fignocaption{width = 0.12\textwidth}{figs/sad-face}}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \centerline{$P(i):$ the length of an LIS \red{\it ending at } $i$.}
+  \centerline{\fbox{$P(i):$ the length of an LIS \red{\it ending at} $A[i]$.}}
 
   \pause
   \[
-    \blue{L = \max_{1 \le i < n} P(i)}
+    \blue{L = \max_{0 \le i < n} P(i)}
   \]
 
   \pause
@@ -128,9 +129,13 @@
 
   \pause
   \[
-    P(i) = \max_{0 \le j < i \atop A[j] < A[i]} \set{P(j) + 1}
+    \red{P(0) \cdots P(i-1) \to P(i)?}
   \]
 
+  \pause
+  \[
+    P(i) = \max_{0 \le j < i \atop A[j] < A[i]} \set{P(j) + 1}
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -139,10 +144,10 @@
   \begin{lstlisting}[style = Cstyle]
     $P(0) = 1$;
 
-    for (int i = 1; i < n; ++i)
+    for (int i = 1; i < n; ++i)  |\uncover<2->{\cyan{// How much time?}}|
       $P(i) = \max\limits_{0 \le j < i \atop A[j] < A[i]} \set{P(j) + 1}$
 
-    return $L = \max\limits_{0 \le i < n} P(i)$;
+      return $L = \max\limits_{0 \le i < n} P(i)$;  |\uncover<3->{\cyan{// How much space?}}|
   \end{lstlisting}
 
   % \begin{lstlisting}[style = Cstyle]
@@ -158,7 +163,6 @@
   %   return $L = \max_{0 \le i < n} P(i)$;
   % \end{lstlisting}
 
-  \pause
-  \fignocaption{width = 0.40\textwidth}{figs/coding}
+  \uncover<4->{\fignocaption{width = 0.40\textwidth}{figs/coding}}
 \end{frame}
 %%%%%%%%%%%%%%%

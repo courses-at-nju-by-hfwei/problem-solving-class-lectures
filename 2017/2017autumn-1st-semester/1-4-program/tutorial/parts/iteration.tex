@@ -1,0 +1,93 @@
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \centerline{\LARGE Bounded Iterations \emph{vs.} Unbounded Iterations}
+
+  \vspace{0.80cm}
+  \fignocaption{width = 0.40\textwidth}{figs/sisyphus}
+
+  \vspace{0.40cm}
+  \pause
+  \centerline{\Large \red{$Q:$} Why unbounded iterations?}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fignocaption{width = 0.15\textwidth}{figs/mu}{\vspace{-0.50cm} \centerline{$\mu$-Recursive Functions}}
+
+  \vspace{0.20cm}
+  \[
+    \red{\mu} y \big(g(x, y)\big) = \Big(\argmin_{y} g(x,y) = 0\Big)
+  \]
+
+  \pause
+  \centerline{\red{Unbounded} iterations: ``\texttt{while-do}''}
+
+  \vspace{0.40cm}
+  \pause
+  \begin{theorem}[Ackermann Function]
+    The Ackermann function is \red{$\mu$}-recursive but not \blue{primitive} recursive (which contains \blue{bounded} iterations.).
+  \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{}
+  \begin{exampleblock}{DH 2.4: Bounded Iteration}
+    Given a list $L$ of $N$ integers,
+    to produce in $S$ and $P$ the sum of the even numbers in $L$ and the product of the odd ones, respectively.
+  \end{exampleblock}
+
+  \pause
+  \begin{lstlisting}[style = Cstyle]
+    int S = 0, P = 1;
+    for (int i = 0; i < N; ++i) {
+      if (L(i) % 2 == 0)
+        S += L(i);
+      else
+        P *= L(i);
+    }
+  \end{lstlisting}
+
+  \begin{columns}
+    \pause
+    \column{0.40\textwidth}
+      \begin{exampleblock}{DH 2.1: Salary Summation}
+	$N-1$ vs. $N$ iterations
+      \end{exampleblock}
+    \pause
+    \column{0.55\textwidth}
+      \fignocaption{width = 0.30\textwidth}{figs/forget-it}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{}
+  \begin{exampleblock}{DH 2.7: Compute $n!$}
+    Write algorithms that compute $n!$, given a non-negative integer $n$.
+    \begin{enumerate}[(a)]
+      \item Using iteration statements.
+      \item Using recursion.
+    \end{enumerate}
+  \end{exampleblock}
+
+  \pause
+  \begin{lstlisting}[style = Cstyle]
+  int P = 1;
+  for (int i = 2; i <= n; ++i) {
+    P *= i;
+  }
+  \end{lstlisting}
+
+  \pause
+  \begin{lstlisting}[style = Cstyle]
+  int recursive-factorial(int n) { |\uncover<4->{\textcolor{cyan}{// define function}}|
+    if (n == 1)
+      return 1;
+      |\only<5->{\textcolor{cyan}{// \red{NOT:} return $n * (n-1)!$}}|
+      else return n * recursive-factorial(n-1); 
+  }
+  \end{lstlisting}
+\end{frame}
+%%%%%%%%%%%%%%%

@@ -7,7 +7,31 @@
 %%%%%%%%%%%%%%%
 \begin{frame}[fragile]{}
   \begin{exampleblock}{DH 2.5: Simulations}
-    Show how to perform the following simulations of some control constructs by others.
+    Perform the following simulations of some control constructs by others.
+    \begin{enumerate}[(a)]
+      \item ``\texttt{for-do}'' by ``\texttt{while-do}''
+    \end{enumerate}
+  \end{exampleblock}
+
+  \vspace{0.40cm}
+  \pause
+  \begin{lstlisting}[style = Cstyle, backgroundcolor = \color{teal!10!lightgray}]
+  for (int i = 0; i < N; ++i) |\uncover<3->{\textcolor{cyan}{// not general!}}|
+    statement
+  \end{lstlisting}
+
+  \vspace{0.20cm}
+  \begin{lstlisting}[style = Cstyle]
+  int i = 0;
+  while (i < N)
+    statement
+    ++i
+  \end{lstlisting}
+\end{frame}
+%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{}
+  \begin{exampleblock}{DH 2.5: Simulations}
+    Perform the following simulations of some control constructs by others.
     \begin{enumerate}[(a)]
       \item ``\texttt{for-do}'' by ``\texttt{while-do}''
     \end{enumerate}
@@ -20,7 +44,6 @@
     statement
       \end{lstlisting}
     \column{0.45\textwidth}
-    \pause
       \begin{lstlisting}[style = Cstyle]
   init;
   while (cond)
@@ -42,7 +65,7 @@
 %%%%%%%%%%%%%%%
 \begin{frame}[fragile]{}
   \begin{exampleblock}{DH 2.5: Simulations}
-    Show how to perform the following simulations of some control constructs by others.
+    Perform the following simulations of some control constructs by others.
     \begin{enumerate}[(a)]
       \setcounter{enumi}{(1)}
       \item ``\texttt{if-then} \& \texttt{if-then-else}'' by ``\texttt{while-do}''
@@ -50,36 +73,24 @@
   \end{exampleblock}
 
   \begin{columns}
-    \column{0.45\textwidth}
-      \pause
+    \column{0.40\textwidth}
       \begin{lstlisting}[style = Cstyle, backgroundcolor = \color{teal!10!lightgray}]
   if (A)
     B
+      \end{lstlisting}
+
+    \column{0.55\textwidth}
+      \pause
+      \begin{lstlisting}[style = Cstyle]
+  while (A)
+    B
+    $\lnot$ A |\pause \textcolor{cyan}{// \red{Wrong:} side effects?}|
       \end{lstlisting}
 
       \pause
       \begin{lstlisting}[style = Cstyle]
   flag = 1
   while (A && flag)
-    B
-    flag = 0
-      \end{lstlisting}
-    \column{0.45\textwidth}
-      \pause
-      \begin{lstlisting}[style = Cstyle, backgroundcolor = \color{teal!10!lightgray}]
-  if (A)
-    B
-  else
-    C
-      \end{lstlisting}
-
-      \pause
-      \begin{lstlisting}[style = Cstyle]
-  flag = 1
-  while (A && flag)
-    B
-    flag = 0
-  while ($\lnot$ A && flag)
     B
     flag = 0
       \end{lstlisting}
@@ -90,7 +101,52 @@
 %%%%%%%%%%%%%%%
 \begin{frame}[fragile]{}
   \begin{exampleblock}{DH 2.5: Simulations}
-    Simulate the following control constructs by others.
+    Perform the following simulations of some control constructs by others.
+    \begin{enumerate}[(a)]
+      \setcounter{enumi}{(1)}
+      \item ``\texttt{if-then} \& \texttt{if-then-else}'' by ``\texttt{while-do}''
+    \end{enumerate}
+  \end{exampleblock}
+
+  \begin{columns}
+    \column{0.55\textwidth}
+      \begin{lstlisting}[style = Cstyle, backgroundcolor = \color{teal!10!lightgray}]
+  if (A)
+    B
+  else
+    C
+      \end{lstlisting}
+
+      \pause
+      \begin{lstlisting}[style = Cstyle]
+  flag_if = 1
+  while (A && flag_if)
+    B  |\uncover<3->{\textcolor{cyan}{// \red{Wrong:} side effects?}}|
+    flag_if = 0
+  flag_else = 1
+  while ($\lnot$ A && flag_else)
+    C
+    flag_else = 0
+      \end{lstlisting}
+
+    \column{0.45\textwidth}
+      \begin{onlyenv}<4->
+      \begin{lstlisting}[style = Cstyle]
+  flag = 1
+  while (A && flag)
+    B
+    flag = 0
+  while ($\lnot$ A && flag)
+    C
+    flag = 0
+      \end{lstlisting}
+      \end{onlyenv}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{}
+  \begin{exampleblock}{DH 2.5: Simulations}
+    Perform the following simulations of some control constructs by others.
     \begin{enumerate}[(a)]
       \setcounter{enumi}{(2)}
       \item ``\texttt{while-do}'' by ``\texttt{if-then} \& \texttt{goto}''
@@ -109,7 +165,7 @@
       \begin{lstlisting}[style = Cstyle]
   L: if (A)
        B
-       goto loop
+       goto L
       \end{lstlisting}
     \column{0.45\textwidth}
       \pause
@@ -130,15 +186,15 @@
   \end{exampleblock}
 
   \begin{columns}
-    \column{0.45\textwidth}
+    \column{0.30\textwidth}
       \begin{lstlisting}[style = Cstyle, backgroundcolor = \color{teal!10!lightgray}]
   while (A)
     B
       \end{lstlisting}
-    \column{0.45\textwidth}
+    \column{0.70\textwidth}
       \pause
       \begin{lstlisting}[style = Cstyle]
-  simulateWhile() {
+  simulateWhile() { |\uncover<3->{\textcolor{cyan}{// define function}}|
     if (A)
       B
       simulateWhile();
@@ -147,6 +203,8 @@
   }
       \end{lstlisting}
   \end{columns}
+
+  \uncover<4->{\fignocaption{width = 0.30\textwidth}{figs/recursion-draw}}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -189,99 +247,23 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \fignocaption{width = 0.40\textwidth}{figs/minimalism}
-
   \begin{columns}
-    \column{0.25\textwidth}
-      \fignocaption{width = 0.80\textwidth}{figs/turing-machine}
-    \column{0.25\textwidth}
+    \column{0.45\textwidth}
+      \fignocaption{width = 0.80\textwidth}{figs/minimalism}
+    \column{0.45\textwidth}
+    \uncover<3->{\centerline{\Large \textcolor{cyan}{Simulations} for Equivalence}}
+  \end{columns}
+
+  \pause
+  \begin{columns}
+    \column{0.30\textwidth}
+      \fignocaption{width = 0.85\textwidth}{figs/turing-machine}
+    \column{0.30\textwidth}
       \fignocaption{width = 0.50\textwidth}{figs/lambda}
-    \column{0.25\textwidth}
+    \column{0.30\textwidth}
       \fignocaption{width = 0.80\textwidth}{figs/mu}
-    \column{0.25\textwidth}
-      \fignocaption{width = 0.80\textwidth}{figs/abacus}
+    %\column{0.25\textwidth}
+    %  \fignocaption{width = 0.80\textwidth}{figs/abacus}
   \end{columns}
-
-  Simulations
-\end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-% \begin{frame}{}
-%   \fignocaption{width = 0.40\textwidth}{figs/minimalism}
-% 
-%   \begin{columns}
-%     \column{0.30\textwidth}
-%       \fignocaption{width = 0.80\textwidth}{figs/turing-machine}{\centerline{Truing Machine}}
-%     \column{0.30\textwidth}
-%       
-%     \column{0.30\textwidth}
-%   \end{columns}
-% \end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{frame}{}
-  Bounded iteration vs. Unbounded iteration
-\end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{}
-  \begin{exampleblock}{DH 2.4: Bounded Iteration}
-    Given a list $L$ of $N$ integers,
-    to produce in $S$ and $P$ the sum of the even numbers in $L$ and the product of the odd ones, respectively.
-  \end{exampleblock}
-
-  \pause
-  \begin{lstlisting}[style = Cstyle]
-    int S = 0, P = 1;
-    for (int i = 0; i < N; ++i) {
-      if (L(i) % 2 == 0)
-        S += L(i);
-      else
-        P *= L(i);
-    }
-  \end{lstlisting}
-
-  \begin{columns}
-    \pause
-    \column{0.40\textwidth}
-      \begin{exampleblock}{DH 2.1: Salary Summation}
-	$N-1$ vs. $N$ iterations
-      \end{exampleblock}
-    \pause
-    \column{0.55\textwidth}
-      \fignocaption{width = 0.30\textwidth}{figs/forget-it}
-  \end{columns}
-\end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{}
-  \begin{exampleblock}{DH 2.7: Compute $n!$}
-    Write algorithms that compute $n!$, given a non-negative integer $n$.
-    \begin{enumerate}[(a)]
-      \item Using iteration statements.
-      \item Using recursion.
-    \end{enumerate}
-  \end{exampleblock}
-
-  \pause
-  \begin{lstlisting}[style = Cstyle]
-  int P = 1;
-  for (int i = 1; i <= n; ++i) {
-    P *= i;
-  }
-  \end{lstlisting}
-
-  \pause
-  \begin{lstlisting}[style = Cstyle]
-  int recursive-factorial(int n) {
-    if (n == 1)
-      return 1;
-    else n * recursive-factorial(n-1);
-  }
-  \end{lstlisting}
 \end{frame}
 %%%%%%%%%%%%%%%

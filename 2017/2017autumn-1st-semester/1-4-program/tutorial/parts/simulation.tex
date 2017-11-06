@@ -16,7 +16,7 @@
   \vspace{0.40cm}
   \pause
   \begin{lstlisting}[style = Cstyle, backgroundcolor = \color{teal!10!lightgray}]
-  for (int i = 0; i < N; ++i) |\uncover<3->{\textcolor{cyan}{// not general!}}|
+  for (int i = 0; i < N; ++i) |\uncover<3->{\red{// not general!}}|
     statement
   \end{lstlisting}
 
@@ -136,6 +136,7 @@
   while (A && flag)
     B
     flag = 0
+  |\uncover<5->{\textcolor{cyan}{// $\lnot A$ not necessary}}|
   while ($\lnot$ A && flag)
     C
     flag = 0
@@ -160,20 +161,20 @@
   \end{lstlisting}
 
   \begin{columns}
-    \column{0.45\textwidth}
+    \column{0.40\textwidth}
       \pause
       \begin{lstlisting}[style = Cstyle]
   L: if (A)
        B
        goto L
       \end{lstlisting}
-    \column{0.45\textwidth}
+    \column{0.55\textwidth}
       \pause
       \begin{lstlisting}[style = Cstyle]
-  if (A)
-    repeat
-      B
-    until ($\lnot$ A)
+  if (A)  |\uncover<4->{\red{// no ''\texttt{if}''?}}|
+  repeat
+    B
+  until ($\lnot$ A)
       \end{lstlisting}
   \end{columns}
 \end{frame}
@@ -218,7 +219,7 @@
 	\item \texttt{if-then-else} 
 	\item \texttt{for-do} 
 	\item \red{\texttt{while-do}} 
-	\item \blue{\texttt{repeat-until}}
+	\item \blueoverlay{\texttt{repeat-until}}{2-}
       \end{enumerate}
     \column{0.55\textwidth}
       \pause

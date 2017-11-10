@@ -1,0 +1,112 @@
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \centerline{\LARGE Permutations}
+
+  \vspace{0.50cm}
+  \fignocaption{width = 0.30\textwidth}{figs/rubiks-cube}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{DH 2.9: \# of Permutations}
+    Prove that the number of permutations of $A_n = \set{1 \cdots n}$ is $n!$.
+  \end{exampleblock}
+
+  \vspace{0.60cm}
+  \begin{columns}
+    \pause
+    \column{0.50\textwidth}
+      \begin{enumerate}[(1)]
+	\item The ``choosing from'' method:
+      \end{enumerate}
+      \fignocaption{width = 0.70\textwidth}{figs/4-permtree}
+    \pause
+    \column{0.50\textwidth}
+      \begin{enumerate}[(1)]
+	\setcounter{enumi}{1}
+	\item The ``inserting into'' method:
+      \end{enumerate}
+      \fignocaption{width = 0.70\textwidth}{figs/4-permtree}
+  \end{columns}
+
+  \vspace{0.60cm}
+  \pause
+  \centerline{\Large Prove by mathematical induction on $n$.}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{DH 2.9: \# of Permutations}
+    Prove that the number of permutations of $A_n = \set{1 \cdots n}$ is $n!$.
+  \end{exampleblock}
+
+  \vspace{0.60cm}
+  \begin{proof}[Prove by mathematical induction on $n$.]
+
+    \[
+      P(n): \text{\# of permutations of } A_n = \set{1 \cdots n} \text{ is } n!
+    \]
+
+    \pause
+
+    \begin{description}
+      \item[B.S.] $P(1)$
+      \item[I.H.] $P(n)$
+      \item[I.S.] $P(n) \to P(n+1)$
+	\begin{description}
+	  \pause
+	  \item[Choosing from]
+	  \pause
+	  \item[Inserting into]
+	\end{description}
+    \end{description}
+  \end{proof}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{DH 2.11: Generate All Permutations}
+    Design an algorithm which, given a positive integer $N$,
+    produces all the permutations of $A_N$.
+  \end{exampleblock}
+
+
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{DH 2.10: Permutation Checking}
+    \begin{itemize}
+      \item An integer $n$
+      \item An array of integers $P$ of length $n$
+    \end{itemize}
+    To check whether $P$ is a permutation of $1 \cdots n$?
+  \end{exampleblock}
+
+  \vspace{0.60cm}
+  \pause
+
+  \begin{columns}
+    \pause
+    \column{0.40\textwidth}
+      \begin{itemize}
+	\item Boolean array $[1 \cdots n]$
+      \end{itemize}
+    \pause
+    \column{0.15\textwidth}
+      \begin{itemize}
+	\item Sort
+      \end{itemize}
+    \pause
+    \column{0.45\textwidth}
+      \begin{itemize}
+	\item $\forall x: x \in [1 \cdots n]$
+	\item check for duplication
+      \end{itemize}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%

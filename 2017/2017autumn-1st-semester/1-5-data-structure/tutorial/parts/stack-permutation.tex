@@ -1,24 +1,87 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \centerline{\LARGE Stack and Permutations}
+  \centerline{\LARGE Stackable Permutations}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{ES 2.12: One Stack and Permutations}
+  \begin{definition}[Stackable Permutations]
+    \begin{description}[\texttt{push(X, S)}:]
+      \item[\texttt{read(X)}:] $\texttt{>> } X$
+      \item[\texttt{print(X)}:] $\texttt{<< } X$
+      \item[\texttt{push(X, S)}:] $S \Leftarrow X$
+      \item[\texttt{pop(X, S)}:] $X \Leftarrow S$
+      %	\pause
+      % \item[\texttt{is-empty(S)}:] $S = \emptyset?$
+    \end{description}
+  \end{definition}
+
+  \vspace{0.30cm}
+  \pause
+  \fignocaption{width = 0.40\textwidth}{figs/stack-railway-switching}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{DH 2.12: Stackable Permutations}
     \begin{enumerate}[(a)]
-      \item Show that the following permutations can be obtained by a stack;
-      \item Prove that the following permutations cannot be obtained by a stack;
-      \item How many permutations of $A_4$ \emph{cannot} be obtained by a stack?
-      \end{enumerate}
+      \item Show that the following permutations can be obtained by a stack:
+	\begin{enumerate}[(i)]
+	  \item $(3, 2, 1)$
+	  \item $(3, 4, 2, 1)$
+	  \item $(3, 5, 7, 6, 8, 4, 9, 2, 10, 1)$
+	\end{enumerate}
+    \end{enumerate}
+  \end{exampleblock}
+
+  \pause
+  \fignocaption{width = 0.40\textwidth}{figs/no-choice}
+
+  % \fignocaption{width = 0.40\textwidth}{figs/no-choice-best-choice}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{DH 2.13: Stackable Permutations Checking Algorithm}
+    Design an algorithm that checks whether a given permutation can be obtained by a stack.
+
+    \centerline{\texttt{push} \quad \texttt{pop} \quad \blue{\texttt{is-empty}}}
   \end{exampleblock}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{ES 2.12: One Stack and Permutations}
+  \begin{exampleblock}{DH 2.12: Stackable Permutations}
+    \begin{enumerate}[(a)]
+      \setcounter{enumi}{1}
+      \item Prove that the following permutations cannot be obtained by a stack:
+	\begin{enumerate}[(i)]
+	  \item $(3, 1, 2)$
+	  \item $(4, 5, 3, 7, 2, 1, 6)$
+	\end{enumerate}
+    \end{enumerate}
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{DH 2.12: Stackable Permutations}
+    \begin{enumerate}[(a)]
+      \setcounter{enumi}{2}
+      \item How many permutations of $A_4$ \emph{cannot} be obtained by a stack?
+    \end{enumerate}
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{DH 2.12: One Stack and Permutations}
     \begin{enumerate}[(a)]
       \item Sufficient and necessary condition
       \item How many?

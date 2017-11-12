@@ -1,25 +1,11 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{center}
-    {\LARGE Permutations} \\[1.00cm]
-
-    \pause
-    \begin{description}
-      \centering
-      \item[\Large Generating All Permutations]
-	\vspace{0.30cm}
-      \item[\Large Stackable/Queueable Permutations]
-    \end{description}
-  \end{center}
-\end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{frame}{}
   \begin{description}
     \centering
     \item[\Large Generating All Permutations]
   \end{description}
+
+  \fignocaption{width = 0.30\textwidth}{figs/simple-but-not-easy}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -43,8 +29,7 @@
   \end{proof}
 
   \vspace{0.60cm}
-  \pause
-  \centerline{\Large Prove by mathematical induction on $n$.}
+  \uncover<4->{\centerline{\Large Prove by mathematical induction on $n$.}}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -104,7 +89,7 @@
 \begin{frame}[fragile]{}
   \begin{exampleblock}{DH 2.11: Generate All Permutations}
     Design an algorithm which, given a positive integer $n$,
-    generates/\blue{prints} all the permutations of $[1 \cdots n]$.
+    generates/\blue{prints} all the permutations of $[0 \cdots n)$.
   \end{exampleblock}
 
   \pause
@@ -170,6 +155,9 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \centerline{\Large For more about ``Generating All Permutations'':}
+
+  \vspace{0.30cm}
   \begin{columns}
     \column{0.45\textwidth}
       \fignocaption{width = 0.70\textwidth}{figs/taocp-perms}

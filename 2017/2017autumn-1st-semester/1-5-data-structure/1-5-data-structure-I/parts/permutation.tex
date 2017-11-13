@@ -141,7 +141,7 @@
     else 
       for (int i = 0; i < n; ++i)
         perms(|\purple{prefix $\gets$ prefix ++ A[i]}|, 
-            A $\gets$ A $\setminus$ A[i], n - 1)
+            |\redoverlay{A $\gets$ A $\setminus$ A[i]}{3-}|, n - 1) |\uncover<3->{\red{// Space???}}|
         print ''\n''
   }
   \end{lstlisting}

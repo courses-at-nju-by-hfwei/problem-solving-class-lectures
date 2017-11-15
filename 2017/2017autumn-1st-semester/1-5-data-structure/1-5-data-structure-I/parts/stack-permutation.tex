@@ -309,100 +309,116 @@ foreach 'a' in out:
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{DH 2.12: Stackable Permutations}
-    How many permutations of $A_n$ \red{\emph{cannot}} be obtained by a stack?
-  \end{exampleblock}
-
-  \pause
+  \fignocaption{width = 0.50\textwidth}{figs/stack-perm}
 
   \[
-    \texttt{Push}: + \qquad \texttt{Pop}: -
-  \]
-
-  \pause
-  \[
-    (1, 2, 3): +-+-+-
+    (1, 2, 3): \push{}\;\; \pop{}\;\; \push{}\;\; \pop{}\;\; \push{}\;\; \pop{}\;\;
   \]
 
   \[
-    (3, 2, 1): +++---
+    (3, 2, 1): \push{}\;\;\push{}\;\;\push{}\;\;\pop{}\;\;\pop{}\;\;\pop{}\;\;
   \]
-
-  \pause
-  \[
-    (3, 2, 5, 6, 1, 4): +++--++-+---
-  \]
+  % \[
+  %   (3, 2, 5, 6, 1, 4): \push{}\;\;\push{}\;\;\push{}\;\;\pop{}\;\;\pop{}\;\;\push{}\;\;\push{}\;\;\pop{}\;\;\push{}\;\;\pop{}\;\;\pop{}\;\;\pop{}\;\;
+  % \]
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{definition}[Admissible Sequences]
-    A sequence of ``$+$'' and ``$-$'' is \blue{\it admissible} if and only if
-    \pause
-    \begin{enumerate}
-      \item $\# \text{ of ``$+$''} = n \qquad \# \text{ of ``$-$''} = n$
-      \item $\forall \text{ prefix}: (\# \text{ of ``$-$''}) \le (\# \text{ of ``$+$''})$
+  \begin{exampleblock}{DH 2.12: Stackable Permutations}
+    How many permutations of $\set{1 \cdots n}$ are stackable \blue{on the model $S$}?
+  \end{exampleblock}
+
+  \fignocaption{width = 0.50\textwidth}{figs/stack-perm}
+
+  \pause
+  \centerline{\red{$Q:$} How many \blue{\emph{admissible}} operation sequences of \purple{``\texttt{Push}''} and \purple{``\texttt{Pop}''}?}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Admissible Operation Sequences]
+    An operation sequence of \purple{``\texttt{Push}''} and \purple{``\texttt{Pop}''} is \blue{\it admissible} if and only if
+    \begin{enumerate}[(i)]
+      \pause
+      \item $\# \text{ of ``\texttt{Push}''} = n \qquad \# \text{ of ``\texttt{Pop}''} = n$
+      \pause
+      \item $\forall \text{ prefix}: (\# \text{ of ``\texttt{Pop}''}) \le (\# \text{ of ``\texttt{Push}''})$
     \end{enumerate}
   \end{definition}
 
   \vspace{0.50cm}
   \pause
-  \begin{theorem}
-    Different admissible sequences correspond to different permutations.
-  \end{theorem}
+  \centerline{\fbox{\# of stackable perms $=$ \# of admissible operation sequences}}
 
   \pause
-  \begin{align*}
-    +++--\red{+} \cdots \\
-    +++--\red{-} \cdots \\
-  \end{align*}
+  \fignocaption{width = 0.30\textwidth}{figs/broken-chain}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{theorem}[Reflection Method]
-    The number of stackable permutations is ${2n \choose n} - {2n \choose n-1}$.
+  \begin{theorem}
+    Different admissible operation sequences correspond to different permutations.
   \end{theorem}
 
+  \vspace{0.30cm}
+  \pause
   \begin{proof}
+    \begin{align*}
+      &\push{}\; \;\push{}\; \;\push{}\; \;\pop{}\; \;\pop{}\; \;\red{\push{}} \cdots \\
+      &\push{}\; \;\push{}\; \;\push{}\; \;\pop{}\; \;\pop{}\; \;\red{\pop{}} \cdots \\
+    \end{align*}
+  \end{proof}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}
+    The number of admissible operation sequences of \texttt{\it \purple{``Push''}} and \texttt{\it \purple{``Pop''}} is ${2n \choose n} - {2n \choose n-1}$.
+  \end{theorem}
+
+  \pause
+  \begin{proof}[Proof: The Reflection Method]
     \[
-      \blue{\underbrace{\textcolor{black}{{2n \choose n}}}_{\text{all}}} 
-      - \red{\underbrace{\textcolor{black}{{2n \choose n-1}}}_{\text{inadmissible}}}
+      \push{}: \;\rightarrow \qquad \pop{}: \;\uparrow
     \]
 
-    \vspace{0.20cm}
-    \begin{columns}[c]
-      \column{0.55\textwidth}
-	\pause
-	\[
-	  ++-+--\red{\bm{-}}--+++
-	\]
-	\pause
-	\[
-	  --+-++\red{\bm{+}}--+++
-	\]
+    \begin{columns}
+      \pause
       \column{0.50\textwidth}
-	\uncover<6->{%
+	% \fignocaption{width = 0.90\textwidth}{figs/grid-path}
+	\begin{center}
+	  \resizebox{0.80\textwidth}{!}{\input{tikz/grid}}
+	\end{center}
+      \column{0.50\textwidth}
+	\uncover<6->{
 	  \[
-	    ++--\blue{\bm{-}}+
-	  \]
-	}
-	\uncover<5->{%
-	  \[
-	    --++\blue{\bm{+}}+
+	    \blue{\underbrace{\textcolor{black}{{2n \choose n}}}_{\text{all}}} 
+	    - \red{\underbrace{\textcolor{black}{{2n \choose n-1}}}_{\text{inadmissible}}}
 	  \]
 	}
     \end{columns}
-
-    \vspace{0.30cm}
-    \uncover<4->{
-      \[
-	(\# \text{ of ``$+$''}) = (n + 1) \qquad (\# \text{ of ``$-$''}) = (n - 1)
-      \]
-    }
   \end{proof}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    \resizebox{0.60\textwidth}{!}{\input{tikz/reflection}}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    \resizebox{0.60\textwidth}{!}{\input{tikz/reflection-nplus1}}
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -410,28 +426,15 @@ foreach 'a' in out:
 \begin{frame}{}
   \centerline{\Large \href{https://en.wikipedia.org/wiki/Catalan\_number}{Catalan Number}}
 
-  \vspace{0.50cm}
-  \pause
-  \begin{description}[Parenthesis]
-    \item[Parenthesis] 
-      \[
-	(3,2,1): ((())) \qquad (1,2,3): ()()()
-      \]
-    \pause
-    \item[Grid Paths] Not above the diagonal:
-      \begin{columns}
-	\column{0.60\textwidth}
-	  \fignocaption{width = 0.70\textwidth}{figs/grid-path}
-	\column{0.40\textwidth}
-	  \fignocaption{width = 0.50\textwidth}{figs/grid-path-reflection}
-      \end{columns}
-  \end{description}
+  \[
+    (3,2,1): ((())) \qquad (1,2,3): ()()()
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \centerline{\Large For more about ``Stackable Permutations'':}
+  \centerline{\Large For more about ``Stackable Permutations'' {\large (Section $2.2.1$)}:}
 
   \vspace{0.30cm}
   \begin{columns}

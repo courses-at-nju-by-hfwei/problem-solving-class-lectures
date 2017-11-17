@@ -8,3 +8,5 @@
 - Partial Order and Total Order (ref. paper by Lamport)
 - The DieHard Problem (GCD)
 - Book: 程序员的自我修养
+- Generating all permutations (multiple solutions in TAOCP)
+- Queueable/Stackable permutations

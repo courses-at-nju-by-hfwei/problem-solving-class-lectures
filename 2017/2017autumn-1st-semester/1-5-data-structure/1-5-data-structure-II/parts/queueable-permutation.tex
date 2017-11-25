@@ -3,7 +3,7 @@
   \centerline{\LARGE Queueable Permutations}
 
   \vspace{0.30cm}
-  \fignocaption{width = 0.25\textwidth}{figs/calm-queue}
+  \fignocaption{width = 0.35\textwidth}{figs/queue-child}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -217,7 +217,7 @@ foreach 'a' $\!\in\!$ out:
   \vspace{0.30cm}
   \begin{columns}
     \column{0.45\textwidth}
-      2 stacks model
+      \fignocaption{width = 1.00\textwidth}{figs/two-stacks-perm-x}
     \pause
     \column{0.55\textwidth}
       \begin{lstlisting}[style = Cstyle]
@@ -232,10 +232,6 @@ foreach 'a' $\in$ out:
     |\purple{transfer-till}|(S, S$'$, 'a')
       \end{lstlisting}
   \end{columns}
-
-  \pause
-  \vspace{0.30cm}
-  \centerline{\Large Can you \red{PROVE} it?}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -251,6 +247,7 @@ foreach 'a' $\in$ out:
   \fignocaption{width = 0.25\textwidth}{figs/what-is-this-bear}
 
   \pause
+  \vspace{-0.20cm}
   \begin{lstlisting}[style = Cstyle]
         two-stackable-perm(in, X, S, S$'$)
   \end{lstlisting}
@@ -262,7 +259,31 @@ foreach 'a' $\in$ out:
   \end{lstlisting}
 
   \pause
-  \centerline{\large Embedding ``\texttt{transfer}'' into ``\texttt{stackable-perm}''.}
+  \centerline{\large \red{Embedding ``\texttt{transfer}'' into ``\texttt{stackable-perm}''.}}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{DH 2.15: Algorithm for Queueable Permutations}
+    Extend the algorithm you were asked to design in Exercise 2.13,
+    so that \red{\bf if} the given permutation \red{cannot} be obtained by \red{a stack},
+    the algorithm will print the series of operations on \blue{two stacks} that will generate it.
+  \end{exampleblock}
+
+  \fignocaption{width = 0.60\textwidth}{figs/two-stacks-perm-x}
+
+  \pause
+  \centerline{\purple{\texttt{transfer-till(S, S', top(S) == 'a')}}} 
+  
+  \pause
+  \centerline{\purple{\texttt{transfer-till(S', S, S' == $\emptyset$)}}}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fignocaption{width = 0.30\textwidth}{figs/how-to-solve-it-book}{\centerline{\Large Step 4: Looking Back!}}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -300,7 +321,7 @@ foreach 'a' $\in$ out:
 
       \pause
       \[
-	\red{3\; 2\; 1}
+	\mbox{\Large \red{\sout{$3\; 2\; 1$}}}
       \]
     \column{0.40\textwidth}
       \pause
@@ -312,13 +333,60 @@ foreach 'a' $\in$ out:
 %%%%%%%%%%%%%%%
 \begin{frame}
   \begin{theorem}[Queueable Permutations]
-     A permutation $(a_1, \cdots, a_n)$ is queueable $\iff$ it is not the case that
+     A permutation $(a_1, \cdots, a_n)$ is \red{queueable} $\iff$ it is not the case that
      \[
        321\text{\it -Pattern}: \fbox{$\texttt{\it out} = \cdots a_i \cdots a_j \cdots a_k: i < j < k \land a_i > a_j > a_k$}
      \]
   \end{theorem}
 
-  \vspace{0.30cm}
   \pause
+  \vspace{0.30cm}
+  \begin{proof}
+    \centerline{\Large Left as an exercise.}
+  \end{proof}
 \end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[\# of Queueable Permutations]
+    The number of queueable permutations of $[1 \cdots n]$ is ${2n \choose n} - {2n \choose n-1}$.
+  \end{theorem}
+
+  \vspace{0.20cm}
+  \begin{columns}
+    \pause
+    \column{0.65\textwidth}
+      \fignocaption{width = 0.80\textwidth}{figs/grid}
+    \pause
+    \column{0.30\textwidth}
+      \fignocaption{width = 0.95\textwidth}{figs/sad}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[\# of Queueable Permutations]
+    The number of queueable permutations of $[1 \cdots n]$ is ${2n \choose n} - {2n \choose n-1}$.
+  \end{theorem}
+
+  \vspace{0.30cm}
+  \begin{proof}
+    \begin{center}
+      {\Large Left for your research.}
+    \end{center}
+
+    \pause
+    \fignocaption{width = 0.20\textwidth}{figs/be-brave}
+  \end{proof}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+% \begin{frame}{}
+%   \begin{theorem}
+%     321-avoiding $\iff$ two increasing sequences
+%   \end{theorem}
+% \end{frame}
 %%%%%%%%%%%%%%%

@@ -90,7 +90,6 @@ foreach 'a' in out:
       && 'a' == top(S))
     pop(S, X)
     print(X)
-    continue
   else $\cdots$ // T.B.C
       \end{lstlisting}
     \pause
@@ -101,7 +100,7 @@ foreach 'a' in out:
       read(X)
       if (X == 'a')
         print(X)
-        continue
+        break
       else
         push(X, S)
     |\redoverlay{ERR}{4-}|  |\uncover<4->{\red{// How???}}|

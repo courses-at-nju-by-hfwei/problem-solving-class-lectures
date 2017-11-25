@@ -1,15 +1,20 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \centerline{\LARGE \textcolor{gray}{Stackable}/Queueable Permutations}
+  \centerline{\LARGE Queueable Permutations}
+
+  \vspace{0.30cm}
+  \fignocaption{width = 0.25\textwidth}{figs/calm-queue}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{exampleblock}{DH 2.14: Queueable Permutations}
-    \[
-      \fbox{$\texttt{out} = (a_1, \cdots, a_n) \blue{\xleftarrow[X = 0]{Q = \emptyset}} \texttt{in} = (1, \cdots, n)$}
-    \]
+    \uncover<2->{
+      \[
+	\fbox{$\texttt{out} = (a_1, \cdots, a_n) \;\blue{\xleftarrow[X = 0]{Q = \emptyset}}\; \texttt{in} = (1, \cdots, n)$}
+      \]
+    }
 
     \fignocaption{width = 0.80\textwidth}{figs/queue-perm-x}
   \end{exampleblock}
@@ -26,28 +31,149 @@
 	  \item $(4,5,3,7,2,1,6)$
 	\end{enumerate}
     \end{enumerate}
-
-    \begin{columns}
-      \column{0.45\textwidth}
-	\fignocaption{width = 0.60\textwidth}{figs/impossible-cube}
-      \column{0.45\textwidth}
-	\fignocaption{width = 0.70\textwidth}{figs/possible}
-    \end{columns}
   \end{exampleblock}
+
+  \vspace{0.30cm}
+  \begin{columns}
+    \pause
+    \column{0.45\textwidth}
+      \fignocaption{width = 0.85\textwidth}{figs/mission-impossible-left}
+    \pause
+    \column{0.45\textwidth}
+      \fignocaption{width = 0.75\textwidth}{figs/possible}
+  \end{columns}
 \end{frame}
 %%%%%%%%%%%%%%%
 
-
 %%%%%%%%%%%%%%%
-\begin{frame}{}
+\begin{frame}[fragile]{}
   \begin{exampleblock}{DH 2.14: Queueable Permutations}
     \begin{enumerate}[(a)]
       \setcounter{enumi}{1}
-      \item Prove that every permutation can be obtained by \blue{a queue}.
+      \item Prove that every permutation are \blue{queueable}.
     \end{enumerate}
   \end{exampleblock}
 
-  Alg here.
+  \pause
+  \begin{lstlisting}[style = Cstyle]
+              X = 0    Q = $\emptyset$    in != EOF
+  \end{lstlisting}
+
+  \begin{columns}
+    \column{0.45\textwidth}
+      \begin{lstlisting}[style = Cstyle]
+foreach 'a' $\!\in\!$ out:
+  if |\redoverlay{('a' == in)}{5-}|
+    read(X)
+    print(X)
+  else if |\redoverlay{('a' > in)}{5-}|
+    |\purple{add-Q-till}|('a')
+  else // ('a' < in)
+    |\purple{cycle-Q-till}|('a')
+      \end{lstlisting}
+    \pause
+    \column{0.50\textwidth}
+      \begin{lstlisting}[style = Cstyle]
+|\purple{add-Q-till}|('a'):
+  while (('x' $\!\!\in\!\!$ in) != 'a')
+    add(X, Q)
+  read(X)
+  print(X)
+      \end{lstlisting}
+      \pause
+      \begin{lstlisting}[style = Cstyle]
+|\purple{cycle-Q-till}|('a'):
+  while (('x' $\!\in\!$ $Q$) != 'a')
+    remove(X, Q)
+    add(X, Q)
+  remove(X, Q)
+  print(X)
+      \end{lstlisting}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{}
+  \begin{exampleblock}{DH 2.14: Queueable Permutations}
+    \begin{enumerate}[(a)]
+      \setcounter{enumi}{1}
+      \item Prove that every permutation are \blue{queueable}.
+    \end{enumerate}
+  \end{exampleblock}
+
+  \begin{proof}
+    \begin{columns}
+      \column{0.45\textwidth}
+	\begin{lstlisting}[style = Cstyle]
+foreach 'a' $\!\in\!$ out:
+  if ('a' >= in)
+    |\purple{add-Q-till}|('a')
+  else // ('a' < in)
+    |\purple{cycle-Q-till}|('a')
+        \end{lstlisting}
+      \pause
+      \column{0.45\textwidth}
+	\begin{lstlisting}[style = Cstyle]
+foreach 'a' $\!\in\!$ out:
+  if ('a' $\in$ in)
+    |\purple{add-Q-till}|('a')
+  else // ('a' $\in$ Q)
+    |\purple{cycle-Q-till}|('a')
+      \end{lstlisting}
+      \only<3->{\fignocaption{width = 0.65\textwidth}{figs/what-is-wrong}}
+    \end{columns}
+  \end{proof}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \centerline{\LARGE \red{Pseudo}\blue{code}}
+
+  \vspace{0.30cm}
+  \pause
+  \fignocaption{width = 0.40\textwidth}{figs/simple-einstein}
+
+  % \begin{columns}
+  %   \pause
+  %   \column{0.50\textwidth}
+  %     \fignocaption{width = 0.80\textwidth}{figs/porn-seeit}
+  %   \pause
+  %   \column{0.50\textwidth}
+  %     \fignocaption{width = 0.80\textwidth}{figs/simple-einstein}
+  % \end{columns}
+
+  \pause
+  \vspace{1.00cm}
+  \centerline{\Large \blue{``Executable''} at an \red{abstract} level.}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{}
+  \begin{exampleblock}{DH 2.14: Queueable Permutations}
+    \begin{enumerate}[(a)]
+      \setcounter{enumi}{1}
+      \item Prove that every permutation are \blue{queueable}.
+    \end{enumerate}
+  \end{exampleblock}
+
+  \begin{proof}[An ``AHA!'' Proof]
+    \begin{columns}
+      \column{0.45\textwidth}
+	\begin{lstlisting}[style = Cstyle]
+  foreach 'a' $\in$ in:
+    add(X, Q)
+
+  foreach 'a' $\in$ out:
+    |\purple{cycle-Q-till}|('a')
+        \end{lstlisting}
+      \pause
+      \column{0.45\textwidth}
+	\fignocaption{width = 0.40\textwidth}{figs/aha}
+    \end{columns}
+  \end{proof}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -59,16 +185,84 @@
       \item Prove that every permutation can be obtained by \blue{two stacks}.
     \end{enumerate}
   \end{exampleblock}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{columns}[b]
+    \column{0.50\textwidth}
+      \fignocaption{width = 0.95\textwidth}{figs/stack-perm-x}
+    \column{0.45\textwidth}
+      \fignocaption{width = 0.95\textwidth}{figs/stack-perm}
+  \end{columns}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{quote}
+    We can similarly speak of a permutation obtained by \blue{two stacks},
+    if we permit the \purple{\textsf{push}} and \purple{\textsf{pop}} operations 
+    on two stacks $S$ and $S'$.
+  \end{quote}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
-\begin{frame}{}
+\begin{frame}[fragile]{}
+  \begin{exampleblock}{DH 2.14: Queueable Permutations}
+    \begin{enumerate}[(a)]
+      \setcounter{enumi}{2}
+      \item Prove that every permutation can be obtained by \blue{two stacks}.
+    \end{enumerate}
+  \end{exampleblock}
+
+  \vspace{0.30cm}
+  \begin{columns}
+    \column{0.45\textwidth}
+      2 stacks model
+    \pause
+    \column{0.55\textwidth}
+      \begin{lstlisting}[style = Cstyle]
+foreach 'a' $\in$ in:
+  read(X)
+  push(X, S$'$)
+
+foreach 'a' $\in$ out:
+  if ('a' <= top(S$'$)) // $\in S'$
+    |\purple{transfer-till}|(S$'$, S, 'a')
+  else // $\in S$
+    |\purple{transfer-till}|(S, S$'$, 'a')
+      \end{lstlisting}
+  \end{columns}
+
+  \pause
+  \vspace{0.30cm}
+  \centerline{\Large Can you \red{PROVE} it?}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{}
   \begin{exampleblock}{DH 2.15: Algorithm for Queueable Permutations}
     Extend the algorithm you were asked to design in Exercise 2.13,
-    so that \red{if} the given permutation cannot be obtained by \red{a stack},
-    the algorithm will print the series of operations on \red{two stacks} that will generate it.
+    so that \red{\bf if} the given permutation \red{cannot} be obtained by \red{a stack},
+    the algorithm will print the series of operations on \blue{two stacks} that will generate it.
   \end{exampleblock}
+
+  \pause
+  \fignocaption{width = 0.25\textwidth}{figs/what-is-this-bear}
+
+  \pause
+  \begin{lstlisting}[style = Cstyle]
+        two-stackable-perm(in, X, S, S$'$)
+  \end{lstlisting}
+
+  \pause
+  \begin{lstlisting}[style = Cstyle]
+        if (! stackable-perm(in, X, S))
+          two-stackable-perm(in, X, S, S$'$)
+  \end{lstlisting}
+
+  \pause
+  \centerline{\large Embedding ``\texttt{transfer}'' into ``\texttt{stackable-perm}''.}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -77,14 +271,17 @@
   \begin{columns}
     \column{0.60\textwidth}
       \fignocaption{width = 0.90\textwidth}{figs/queue-perm-x}
+    \pause
     \column{0.40\textwidth}
       \fignocaption{width = 0.45\textwidth}{figs/not-interesting}
   \end{columns}
 
   \vspace{0.80cm}
   \begin{columns}
+    \pause
     \column{0.60\textwidth}
       \fignocaption{width = 0.90\textwidth}{figs/queue-perm}
+    \pause
     \column{0.40\textwidth}
       \fignocaption{width = 0.60\textwidth}{figs/boring}
   \end{columns}
@@ -97,9 +294,16 @@
     \column{0.60\textwidth}
       \fignocaption{width = 0.90\textwidth}{figs/queue-perm-x-no-circle}
 
-      \vspace{0.80cm}
+      \pause
+      \vspace{0.50cm}
       \fignocaption{width = 0.90\textwidth}{figs/queue-perm-direct}
+
+      \pause
+      \[
+	\red{3\; 2\; 1}
+      \]
     \column{0.40\textwidth}
+      \pause
       \fignocaption{width = 0.60\textwidth}{figs/yisi}
   \end{columns}
 \end{frame}
@@ -108,21 +312,13 @@
 %%%%%%%%%%%%%%%
 \begin{frame}
   \begin{theorem}[Queueable Permutations]
-    A permutation $(a_1, \cdots, a_n)$ is queueable $\iff$ it is not the case that
-    \[
-      321\text{\it -Pattern}: \fbox{$\texttt{\it out} = \cdots a_i \cdots a_j \cdots a_k: i < j < k \land a_i > a_j > a_k$}
-    \]
+     A permutation $(a_1, \cdots, a_n)$ is queueable $\iff$ it is not the case that
+     \[
+       321\text{\it -Pattern}: \fbox{$\texttt{\it out} = \cdots a_i \cdots a_j \cdots a_k: i < j < k \land a_i > a_j > a_k$}
+     \]
   \end{theorem}
 
   \vspace{0.30cm}
   \pause
-  \begin{proof}
-    % \fignocaption{width = 0.40\textwidth}{figs/no-proof}
-  \end{proof}
-\end{proof}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%
+\end{frame}
 %%%%%%%%%%%%%%%

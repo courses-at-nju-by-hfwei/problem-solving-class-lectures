@@ -27,7 +27,7 @@
     \begin{enumerate}[(a)]
       \item Show that the permutations given in Excecise 2.12(b) are queueable.
 	\begin{enumerate}[(i)]
-	  \item \textcolor{gray}{$(3,1,2)$}
+	  \item $(3,1,2) \;\red{\Longrightarrow (3,2,1)}$
 	  \item $(4,5,3,7,2,1,6)$
 	\end{enumerate}
     \end{enumerate}
@@ -54,28 +54,29 @@
     \end{enumerate}
   \end{exampleblock}
 
-  \pause
-  \begin{lstlisting}[style = Cstyle]
-              X = 0    Q = $\emptyset$    in != EOF
-  \end{lstlisting}
 
   \begin{columns}
     \column{0.45\textwidth}
+  \pause
+  \begin{lstlisting}[style = Cstyle]
+X = 0  Q = $\emptyset$  in != EOF
+  \end{lstlisting}
       \begin{lstlisting}[style = Cstyle]
-foreach 'a' $\!\in\!$ out:
-  if |\redoverlay{('a' == in)}{5-}|
+foreach 'a' $\!\in\!$ out: |\pause|
+  if |\redoverlay{('a' == in)}{8-}|
     read(X)
-    print(X)
-  else if |\redoverlay{('a' > in)}{5-}|
-    |\purple{add-Q-till}|('a')
+    print(X) |\pause|
+  else if |\redoverlay{('a' > in)}{8-}|
+    |\purple{add-Q-till}|('a') |\pause|
   else // ('a' < in)
     |\purple{cycle-Q-till}|('a')
       \end{lstlisting}
-    \pause
     \column{0.50\textwidth}
+      \pause
       \begin{lstlisting}[style = Cstyle]
 |\purple{add-Q-till}|('a'):
   while (('x' $\!\!\in\!\!$ in) != 'a')
+    read(X)
     add(X, Q)
   read(X)
   print(X)
@@ -159,11 +160,13 @@ foreach 'a' $\!\in\!$ out:
     \end{enumerate}
   \end{exampleblock}
 
-  \begin{proof}[An ``AHA!'' Proof]
-    \begin{columns}
+  \begin{proof}[An ``AHA!'' Proof from \purple{杜星亮}]
+    \begin{columns}[b]
+      \pause
       \column{0.45\textwidth}
 	\begin{lstlisting}[style = Cstyle]
   foreach 'a' $\in$ in:
+    read(X)
     add(X, Q)
 
   foreach 'a' $\in$ out:
@@ -200,7 +203,7 @@ foreach 'a' $\!\in\!$ out:
   \begin{quote}
     We can similarly speak of a permutation obtained by \blue{two stacks},
     if we permit the \purple{\textsf{push}} and \purple{\textsf{pop}} operations 
-    on two stacks $S$ and $S'$.
+    on two stacks $S$ and $S'$. \hfill --- DH
   \end{quote}
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -215,24 +218,36 @@ foreach 'a' $\!\in\!$ out:
   \end{exampleblock}
 
   \vspace{0.30cm}
-  \begin{columns}
-    \column{0.45\textwidth}
-      \fignocaption{width = 1.00\textwidth}{figs/two-stacks-perm-x}
-    \pause
-    \column{0.55\textwidth}
-      \begin{lstlisting}[style = Cstyle]
-foreach 'a' $\in$ in:
-  read(X)
-  push(X, S$'$)
-
-foreach 'a' $\in$ out:
-  if ('a' <= top(S$'$)) // $\in S'$
-    |\purple{transfer-till}|(S$'$, S, 'a')
-  else // $\in S$
-    |\purple{transfer-till}|(S, S$'$, 'a')
-      \end{lstlisting}
-  \end{columns}
+  \fignocaption{width = 0.65\textwidth}{figs/two-stacks-perm-x}
 \end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{}
+  \begin{exampleblock}{DH 2.14: Queueable Permutations}
+    \begin{enumerate}[(a)]
+      \setcounter{enumi}{2}
+      \item Prove that every permutation can be obtained by \blue{two stacks}.
+    \end{enumerate}
+  \end{exampleblock}
+
+  \vspace{0.30cm}
+  \begin{lstlisting}[style = Cstyle]
+        foreach 'a' $\in$ in:
+          read(X)
+          push(X, S)
+        
+        foreach 'a' $\in$ out: |\pause|
+          |\purple{transfer-till}|(S, S$'$, top(S) == 'a')  |\pause|
+          |\purple{transfer-till}|(S$'$, S, S$'$ == $\emptyset$)
+  \end{lstlisting}
+\end{frame}
+
+% foreach 'a' $\in$ out: |\pause|
+%   if ('a' <= top(S$'$)) // $\in S'$
+%     |\purple{transfer-till}|(S$'$, S, 'a')
+%   else // $\in S$
+%     |\purple{transfer-till}|(S, S$'$, 'a')
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
@@ -249,17 +264,17 @@ foreach 'a' $\in$ out:
   \pause
   \vspace{-0.20cm}
   \begin{lstlisting}[style = Cstyle]
-        two-stackable-perm(in, X, S, S$'$)
+        two-stacks-perm(in, X, S, S$'$)
   \end{lstlisting}
 
   \pause
   \begin{lstlisting}[style = Cstyle]
-        if (! stackable-perm(in, X, S))
-          two-stackable-perm(in, X, S, S$'$)
+        if (! one-stack-perm(in, X, S))
+          two-stacks-perm(in, X, S, S$'$)
   \end{lstlisting}
 
   \pause
-  \centerline{\large \red{Embedding ``\texttt{transfer}'' into ``\texttt{stackable-perm}''.}}
+  \centerline{\large \blue{Embedding \purple{``\texttt{transfer}''} into \purple{``\texttt{one-stack-perm}''}.}}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -353,7 +368,10 @@ foreach 'a' $\in$ out:
     The number of queueable permutations of $[1 \cdots n]$ is ${2n \choose n} - {2n \choose n-1}$.
   \end{theorem}
 
-  \vspace{0.20cm}
+  \pause
+  \vspace{0.10cm}
+  \centerline{\large Catalan Number Again!}
+
   \begin{columns}
     \pause
     \column{0.65\textwidth}

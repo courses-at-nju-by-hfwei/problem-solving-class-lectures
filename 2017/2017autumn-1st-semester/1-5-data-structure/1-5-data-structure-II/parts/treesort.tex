@@ -1,0 +1,89 @@
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \centerline{\LARGE Treesort Algorithm on BST}
+
+  \vspace{0.30cm}
+  \fignocaption{width = 0.35\textwidth}{figs/bst}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{}
+  \begin{exampleblock}{DH 2.16: Treesort}
+    \begin{enumerate}[(i)]
+      \item Construct an algorithm that transforms a given list of integers into a binary search tree.
+    \end{enumerate}
+  \end{exampleblock}
+
+  \begin{columns}
+    \column{0.48\textwidth}
+      \pause
+      \begin{lstlisting}[style = Cstyle]
+|\purple{Node:}|
+  int val = NIL,
+  Node left = NULL,
+  Node right = NULL
+      \end{lstlisting}
+
+      \pause
+      \begin{lstlisting}[style = Cstyle]
+|\purple{buildBST}|(int eles[]):
+  Node root(eles[0])
+
+  foreach e $\in$ eles[1..]:
+    insert(root, e)
+      \end{lstlisting}
+    \column{0.52\textwidth}
+      \pause
+      \begin{lstlisting}[style = Cstyle]
+|\purple{insert}|(Node T, int e):  |\pause|
+  if (e < T.val)
+    if (T.left == NULL)
+      T.left = new Node(e)
+    else
+      insert(T.left, e)  |\pause|
+  else  // e >= T.val
+    if (T.right == NULL)
+      T.right = new Node(e)
+    else
+      insert(T.right, e)
+      \end{lstlisting}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{}
+  \begin{lstlisting}[style = Cstyle]
+  procedure |\purple{put x into a BST t}|:
+    ... call |\purple{put x into t$'$s left subtree}|
+    ... call |\purple{put x into t$'$s right subtree}|
+  end procedure
+  \end{lstlisting}
+
+  \pause
+  \vspace{0.30cm}
+  \centerline{\red{\Large should be:}}
+  \vspace{0.20cm}
+  \begin{lstlisting}[style = Cstyle]
+  procedure |\purple{put-x-into-BST}| (t):
+    ... call |\purple{put-x-into-BST}| (t$'$s left subtree)
+    ... call |\purple{put-x-into-BST}| (t$'$s right subtree)
+  end procedure
+  \end{lstlisting}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{}
+  \begin{exampleblock}{DH 2.16: Treesort}
+    \begin{enumerate}[(i)]
+      \setcounter{enumi}{1}
+      \item right; \quad val; \quad left
+    \end{enumerate}
+  \end{exampleblock}
+
+  \vspace{0.30cm}
+  \fignocaption{width = 0.35\textwidth}{figs/bst}
+\end{frame}
+%%%%%%%%%%%%%%%

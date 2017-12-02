@@ -1,0 +1,130 @@
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \centerline{\Large Axiomatic Set Theory}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  First-order language
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  公理系统
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Axiom of Extensionality]
+  \end{definition}
+
+  \[
+    A \subseteq B \triangleq \forall x: x \in A \iff x \in B
+  \]
+
+  \[
+    A \subset B \triangleq A \subseteq B \land A \neq B
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Separation Axiom]
+    令 $\psi(u)$ 为公式。
+
+    \[
+      \forall X \exists Y: Y = \set{u \in X \mid \psi(u)}
+    \]
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[``$\cap$'']
+  \end{definition}
+
+  \begin{definition}[``$\setminus$'']
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Axiom of Paring]
+    \[
+      \forall a \forall b \exists c (a \in c \land b \in c)
+    \]
+
+    \[
+      a, b \implies \set{a, b}
+    \]
+  \end{definition}
+
+  \[
+    \set{a, a} \pause = \set{a}
+  \]
+
+  \pause
+  \begin{definition}[Axiom of Union]
+  \end{definition}
+
+  \[
+    X \cup Y \triangleq \bigcup \set{X, Y}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{DH $7.1 (b)$}
+    \[
+      A \cap (B \cup C) = (A \cap B) \cup (A \cap C)
+    \]
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{DH $7.1 (c)$}
+    Let $X$ denote a set, and \textcolor<2->{gray}{$A, B$ denote subsets of $X$}.
+
+    \[
+      X \setminus (A \cap B) = (X \setminus A) \cup (X \setminus B)
+    \]
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{DH $7.1 (c)$}
+    Let $X$ denote a set, and \textcolor{gray}{$A, B$ denote subsets of $X$}.
+
+    \[
+      A \subseteq B \iff (X \setminus B) \subseteq (X \setminus A)
+    \]
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    A \setminus B = \set{x \mid x \in A \land x \notin B}
+  \]
+
+  \begin{quote}
+    We can never look for objects ``not in $B$'' unless we know where to start looking.
+
+    So we use $A$ to tell us where to look for elements not in $B$.
+
+    \hfill -- DH (Chapter 6)
+  \end{quote}
+\end{frame}
+%%%%%%%%%%%%%%%

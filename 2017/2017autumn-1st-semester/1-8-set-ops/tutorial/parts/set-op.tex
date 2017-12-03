@@ -22,11 +22,9 @@
     \[
       A \cup (B \cap C) = (A \cup B) \cap (A \cup C)
     \]
-  \end{theorem}
 
-  \begin{proof}
-    % \fignocaption{width = 0.30\textwidth}{figs/distributive-proof}
-  \end{proof}
+    \fignocaption{width = 0.40\textwidth}{figs/distributive-proof}
+  \end{theorem}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -71,10 +69,10 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{UD $7.8$}
+  \begin{exampleblock}{Equivalence: UD $7.8$}
     Consider the following sets:
     \begin{columns}
-      \column{0.50\textwidth}
+      \column{0.45\textwidth}
 	\begin{enumerate}[(i)]
 	  \item $(A \cap B) \setminus (A \cap B \cap C)$
 	  \item \textcolor<2->{red}{$A \cap B \setminus (A \cap B \cap C)$}
@@ -82,31 +80,72 @@
 	  \item $(A \cap B) \setminus C$
 	  \item $(A \setminus C) \cap (B \setminus C)$
 	\end{enumerate}
+      \column{0.55\textwidth}
+	\uncover<6->{
+	  \fignocaption{width = 0.60\textwidth}{figs/ambiguous}
+	}
+    \end{columns}
+
+    \begin{enumerate}[(a)]
+      \item Which of the sets above are \red{written ambiguously}, if any?
+    \end{enumerate}
+  \end{exampleblock}
+
+  \uncover<3->{
+    \[
+      \textcolor{teal}{(\text{ii}):\;} (A \cap B) \setminus (A \cap B \cap C) \red{\text{\it \;vs. }} A \cap \Big(B \setminus (A \cap B \cap C)\Big)
+    \]
+  }
+
+  \vspace{-0.80cm}
+  \uncover<4->{
+    \[
+      \textcolor{teal}{(\text{none}):\;} (A \cap B) \setminus (A \cap B \cap C) \red{\;=\;} A \cap \Big(B \setminus (A \cap B \cap C)\Big)
+    \]
+  }
+
+  \vspace{-0.30cm}
+  \uncover<5->{
+    \centerline{\textcolor{teal}{(none):} from the left to the right}
+  }
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Equivalence: UD $7.8$}
+    Consider the following sets:
+    \begin{columns}
       \column{0.50\textwidth}
-	\uncover<3->{
+	\begin{enumerate}[(i)]
+	  \item $(A \cap B) \setminus (A \cap B \cap C)$
+	  \item $A \cap B \setminus (A \cap B \cap C)$
+	  \item $A \cap B \cap C^{c}$
+	  \item $(A \cap B) \setminus C$
+	  \item $(A \setminus C) \cap (B \setminus C)$
+	\end{enumerate}
+      \column{0.50\textwidth}
+	\uncover<2->{
 	  \fignocaption{width = 0.70\textwidth}{figs/A-B-Cc}
 	}
     \end{columns}
 
-    \vspace{0.30cm}
     \begin{enumerate}[(a)]
-      \item Which of the sets above are written ambiguously, if any?
-      % \item Of the sets above that make sense, which ones equal the set sketched in Figure 7.2?
       \setcounter{enumi}{2}
       \item Prove that $(A \cap B) \setminus C = (A \setminus C) \cap (B \setminus C)$.
     \end{enumerate}
   \end{exampleblock}
 
-  \uncover<4->{
+  \uncover<3->{
     \[
-      A \setminus C = A \cap \red{C^c}
+      A \setminus C = \set{x \mid x \in A \land x \notin C}
     \]
   }
 
   \vspace{-0.60cm}
-  \uncover<5->{
+  \uncover<4->{
     \[
-      A \setminus C = \set{x \mid x \in A \land x \notin C}
+      A \setminus C = A \cap \red{C^c}
     \]
   }
 \end{frame}

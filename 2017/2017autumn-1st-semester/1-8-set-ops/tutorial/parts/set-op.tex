@@ -1,43 +1,167 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{DH $7.8$}
-    Consider the following sets:
-    \begin{enumerate}[(i)]
-      \item $(A \cap B) \setminus (A \cap B \cap C)$
-      \item $A \cap B \setminus (A \cap B \cap C)$
-      \item $A \cap B \cap C^{c}$
-      \item $(A \cap B) \setminus C$
-      \item $(A \setminus C) \cap (B \setminus C)$
-    \end{enumerate}
+  \centerline{\Large Set Operations}
 
-    \begin{enumerate}[(a)]
-      \item Which of the sets above are written ambiguously, if any?
-      \item Of the sets above that make sense, which ones equal the set sketched in Figure 7.2?
-      \item Prove that $(A \cap B) \setminus C = (A \setminus C) \cap (B \setminus C)$.
-    \end{enumerate}
-  \end{exampleblock}
+  \[
+    \text{\Large $\cap \qquad \cup \qquad \setminus$}
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{DH $7.9$}
+  \begin{exampleblock}{UD $7.1 \;(b)$: Distributive Property}
+    \[
+      A \cap (B \cup C) = (A \cap B) \cup (A \cap C)
+    \]
+  \end{exampleblock}
+
+  \pause
+  \vspace{0.50cm}
+  \begin{theorem}[Distributive Property (Theorem $7.1$)]
+    \[
+      A \cup (B \cap C) = (A \cup B) \cap (A \cup C)
+    \]
+  \end{theorem}
+
+  \begin{proof}
+    % \fignocaption{width = 0.30\textwidth}{figs/distributive-proof}
+  \end{proof}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{UD $7.1 \;(c)$: DeMorgan's Law}
+    Let $X$ denote a set, and $A, B \subseteq X$.
+
+    \[
+      X \setminus (A \cap B) = (X \setminus A) \cup (X \setminus B)
+    \]
+  \end{exampleblock}
+
+  \pause
+  \vspace{0.50cm}
+  \[
+    \red{Q: A, B \subseteq X?}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{UD $7.1 (d)$}
+    Let $X$ denote a set, and $A, B \subseteq X$.
+
+    \[
+      A \subseteq B \iff (X \setminus B) \subseteq (X \setminus A)
+    \]
+  \end{exampleblock}
+
+  \pause
+  \vspace{0.50cm}
+  \fignocaption{width = 0.35\textwidth}{figs/known-unknown}
+
+  \pause
+  \[
+    \red{Q: A, B \subseteq X?} \pause \qquad \blue{(``\Leftarrow: X = \emptyset")}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{UD $7.8$}
+    Consider the following sets:
+    \begin{columns}
+      \column{0.50\textwidth}
+	\begin{enumerate}[(i)]
+	  \item $(A \cap B) \setminus (A \cap B \cap C)$
+	  \item \textcolor<2->{red}{$A \cap B \setminus (A \cap B \cap C)$}
+	  \item $A \cap B \cap C^{c}$
+	  \item $(A \cap B) \setminus C$
+	  \item $(A \setminus C) \cap (B \setminus C)$
+	\end{enumerate}
+      \column{0.50\textwidth}
+	\uncover<3->{
+	  \fignocaption{width = 0.70\textwidth}{figs/A-B-Cc}
+	}
+    \end{columns}
+
+    \vspace{0.30cm}
+    \begin{enumerate}[(a)]
+      \item Which of the sets above are written ambiguously, if any?
+      % \item Of the sets above that make sense, which ones equal the set sketched in Figure 7.2?
+      \setcounter{enumi}{2}
+      \item Prove that $(A \cap B) \setminus C = (A \setminus C) \cap (B \setminus C)$.
+    \end{enumerate}
+  \end{exampleblock}
+
+  \uncover<4->{
+    \[
+      A \setminus C = A \cap \red{C^c}
+    \]
+  }
+
+  \vspace{-0.60cm}
+  \uncover<5->{
+    \[
+      A \setminus C = \set{x \mid x \in A \land x \notin C}
+    \]
+  }
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{UD $7.9$}
+    Prove that the union of two sets can be rewritten as the union of two \red{disjoint} sets.
     \begin{enumerate}[(a)]
       \item Prove that $(A \setminus B) \cap B = \emptyset$
       \item Prove that $A \cup B = (A \setminus B) \cup B$
     \end{enumerate}
   \end{exampleblock}
+
+  \vspace{0.30cm}
+  \begin{columns}
+    \column{0.35\textwidth}
+      \uncover<3->{
+	\centerline{By contradiction.}
+      }
+    \column{0.35\textwidth}
+      \pause
+      \fignocaption{width = 0.80\textwidth}{figs/leng}{\centerline{``太容易了，一时没反应过来''}}
+    \column{0.35\textwidth}
+      \uncover<4->{
+	\[
+	  (A \setminus B) \cup B = \cdots
+	\]
+      }
+  \end{columns}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
-\begin{frame}{}
-  \begin{exampleblock}{DH $7.11$}
-    Let $X$ be the universe and $A, B \subseteq X$.
-
-    \[
-      (\forall Y \subseteq X: A \cap Y = B \cap Y) \implies A = B.
-    \]
-  \end{exampleblock}
-\end{frame}
+% \begin{frame}{}
+%   \begin{exampleblock}{UD $7.11$}
+%     Let $X$ be the\only<2->{\purple{\;temporary}} universe and $A, B \subseteq X$.
+% 
+%     \[
+%       (\forall Y \subseteq X: A \cap Y = B \cap Y) \implies A = B.
+%     \]
+%   \end{exampleblock}
+% 
+%   \pause
+%   \vspace{0.50cm}
+%   \begin{proof}
+%     \[
+%       Y = A  \qquad Y = B
+%     \]
+% 
+%     \pause
+%     \[
+%       Y = X
+%     \]
+%   \end{proof}
+% \end{frame}
 %%%%%%%%%%%%%%%

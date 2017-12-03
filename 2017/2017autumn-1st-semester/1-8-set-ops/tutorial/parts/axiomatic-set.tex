@@ -1,130 +1,167 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \centerline{\Large Axiomatic Set Theory}
+  \centerline{\Large A Little Axiomatic Set Theory \blue{(ZFC)}}
+
+  \vspace{0.80cm}
+  \begin{columns}
+    \column{0.45\textwidth}
+      \fignocaption{width = 0.50\textwidth}{figs/Zermelo}{\centerline{Ernst Zermelo (1871--1953)}}
+    \column{0.45\textwidth}
+      \fignocaption{width = 0.48\textwidth}{figs/Fraenkel}{\centerline{Abraham Fraenkel (1891--1965)}}
+  \end{columns}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
-\begin{frame}{}
-  First-order language
-\end{frame}
+% \begin{frame}{}
+%   First-order language
+% \end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+% \begin{frame}{}
+%   公理系统
+% \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  公理系统
-\end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \begin{definition}[Axiom of Extensionality]
-  \end{definition}
-
-  \[
-    A \subseteq B \triangleq \forall x: x \in A \iff x \in B
-  \]
-
-  \[
-    A \subset B \triangleq A \subseteq B \land A \neq B
-  \]
-\end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \begin{definition}[Separation Axiom]
-    令 $\psi(u)$ 为公式。
-
+  \begin{definition}[Axiom \textcolor<2->{purple}{Schema} of Separation]
     \[
-      \forall X \exists Y: Y = \set{u \in X \mid \psi(u)}
+      \forall \psi(x): \Big(\forall X \exists Y: Y = \set{\red{x \in X} \mid \psi(x)}\Big).
     \]
   \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \psi(x) = x \notin x
+  \]
+
+  \pause
+  \[
+    R = \set{x \mid x \notin x}
+  \]
+
+  \pause
+  \begin{theorem}
+    \[
+      \set{x \mid x \notin x} \red{\text{\bf \;is not a set.}}
+    \]
+  \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \forall X: R_X = \set{x \in X \mid x \notin x}
+  \]
+
+  \pause
+  \[
+    \red{Q: R_X \in R_X ?}
+  \]
+
+  \pause
+  \begin{theorem}
+    There is no universe set. \uncover<8->{\it \textcolor{teal}{(It is too ``big'' to be a set!)}}
+
+    \pause
+    \[
+      \forall C \exists x: x \notin C.
+    \]
+  \end{theorem}
+
+  \pause
+  \begin{proof}
+    \centerline{By contradiction.}
+
+    \pause
+    \[
+      \set{x \in C \mid x \notin x} \pause = \set{x \mid x \notin x}
+    \]
+  \end{proof}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{definition}[``$\cap$'']
+    \vspace{-0.50cm}
+    \begin{align*}
+      A \cap B &= \set{x \in A \mid x \in B} \\
+	       &= \set{x \mid x \in A \land x \in B}
+    \end{align*}
   \end{definition}
-
-  \begin{definition}[``$\setminus$'']
-  \end{definition}
-\end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \begin{definition}[Axiom of Paring]
-    \[
-      \forall a \forall b \exists c (a \in c \land b \in c)
-    \]
-
-    \[
-      a, b \implies \set{a, b}
-    \]
-  \end{definition}
-
-  \[
-    \set{a, a} \pause = \set{a}
-  \]
 
   \pause
-  \begin{definition}[Axiom of Union]
+  \vspace{0.80cm}
+  \begin{definition}[``$\setminus$'']
+    \vspace{-0.50cm}
+    \begin{align*}
+      A \setminus B &= \set{x \in A \mid x \notin B} \\
+	       &= \set{x \mid x \in A \land x \notin B}
+    \end{align*}
   \end{definition}
 
-  \[
-    X \cup Y \triangleq \bigcup \set{X, Y}
-  \]
-\end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \begin{exampleblock}{DH $7.1 (b)$}
-    \[
-      A \cap (B \cup C) = (A \cap B) \cup (A \cap C)
-    \]
-  \end{exampleblock}
-\end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \begin{exampleblock}{DH $7.1 (c)$}
-    Let $X$ denote a set, and \textcolor<2->{gray}{$A, B$ denote subsets of $X$}.
-
-    \[
-      X \setminus (A \cap B) = (X \setminus A) \cup (X \setminus B)
-    \]
-  \end{exampleblock}
-\end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \begin{exampleblock}{DH $7.1 (c)$}
-    Let $X$ denote a set, and \textcolor{gray}{$A, B$ denote subsets of $X$}.
-
-    \[
-      A \subseteq B \iff (X \setminus B) \subseteq (X \setminus A)
-    \]
-  \end{exampleblock}
-\end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \[
-    A \setminus B = \set{x \mid x \in A \land x \notin B}
-  \]
-
+  \pause
+  \vspace{0.30cm}
   \begin{quote}
-    We can never look for objects ``not in $B$'' unless we know where to start looking.
-
+    We can never look for objects ``not in $B$'' \red{unless we know where to start looking}.
     So we use $A$ to tell us where to look for elements not in $B$.
-
-    \hfill -- DH (Chapter 6)
+    \hfill -- UD (Chapter 6)
   \end{quote}
 \end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Axiom of Extensionality]
+    \[
+      \forall A \forall B \forall \blue{x} (\blue{x} \in A \iff \blue{x} \in B) \iff A = B.
+    \]
+  \end{definition}
+
+  \pause
+  \[
+    \set{a, a} = \set{a}
+  \]
+
+  % \[
+  %   A \subseteq B \triangleq \forall x: x \in A \implies x \in B
+  % \]
+
+  % \[
+  %   A \subset B \triangleq A \subseteq B \land A \neq B
+  % \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+% \begin{frame}{}
+%   \begin{definition}[Axiom of Paring]
+%     \[
+%       \forall a \forall b \exists c (a \in c \land b \in c)
+%     \]
+% 
+%     \[
+%       a, b \implies \set{a, b}
+%     \]
+%   \end{definition}
+% 
+%   \[
+%     \set{a, a} \pause = \set{a}
+%   \]
+% 
+%   \pause
+%   \begin{definition}[Axiom of Union]
+%   \end{definition}
+% 
+%   \[
+%     X \cup Y \triangleq \bigcup \set{X, Y}
+%   \]
+% \end{frame}
 %%%%%%%%%%%%%%%

@@ -106,6 +106,27 @@
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
+% \begin{frame}{}
+%   \begin{definition}[Topology]
+%     A \blue{topology} on a set $X$ is \fbox{a collection $\mathcal{T}$ of subsets of $X$} such that:
+%     \begin{enumerate}[(1)]
+%       \item $\emptyset, X \in \mathcal{T}$.
+%       \item Any \purple{union} of elements of $\mathcal{T}$ is in $\mathcal{T}$.
+%       \item Any \purple{intersection} of \red{finitely many} elements of $\mathcal{T}$ is in $\mathcal{T}$.
+%     \end{enumerate}
+%   \end{definition}
+% 
+%   \[
+%     X = \set{a, b, c}
+%   \]
+% 
+%   \[
+%     \mathcal{T} = \set{X, \emptyset, \set{a,b}, \set{b}, \set{b,c}}
+%   \]
+% \end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{exampleblock}{DeMorgan's Law: UD Exercise $8.9$}
     \[
@@ -129,15 +150,15 @@
 
   \pause
   \[
-    X_n = \mathbb{R} \setminus \set{-n, -n+1, \cdots, 0, \cdots, n-1, n}
+    X_n = \set{-n, -n+1, \cdots, 0, \cdots, n-1, n}
   \]
 
   \pause
   \begin{align*}
      A &= \mathbb{R} \setminus \bigcap_{n \in \mathbb{Z}^{+}} (\mathbb{R} \setminus X_n)\\
        &= \mathbb{R} \setminus \Big(\mathbb{R} \setminus \bigcup_{n \in \mathbb{Z}^{+}} X_n \Big) \\
-       &= \bigcup_{n \in \mathbb{Z}^{+}} X_n \\
-       &= \mathbb{Z}
+       % &= \bigcup_{n \in \mathbb{Z}^{+}} X_n \\
+       % &= \mathbb{Z}
   \end{align*}
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -158,9 +179,17 @@
   \begin{align*}
      A &= \mathbb{Q} \setminus \bigcap_{n \in \mathbb{Z}} (\mathbb{R} \setminus \set{2n}) \\
      &= \mathbb{Q} \setminus \Big(\mathbb{R} \setminus \bigcup_{n \in \mathbb{Z}} \set{2n} \Big) \\
-     &= \mathbb{Q} \setminus \Big(\bigcup_{n \in \mathbb{Z}} \set{2n}\Big)^{c} \\
-     &= \mathbb{Q} \cap \bigcup_{n \in \mathbb{Z}} \set{2n}\\
-     &= \set{2n: n \in \mathbb{Z}}
+     % &= \mathbb{Q} \setminus \Big(\bigcup_{n \in \mathbb{Z}} \set{2n}\Big)^{c} \\
+     % &= \mathbb{Q} \cap \bigcup_{n \in \mathbb{Z}} \set{2n}\\
+     % &= \set{2n: n \in \mathbb{Z}}
   \end{align*}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \centerline{\Large \textcolor{teal}{Video:}}
+  \vspace{0.20cm}
+  \centerline{\large \textcolor{teal}{\href{https://www.youtube.com/watch?v=HXuvEeecZtU}{Message To Future Generations --- Bertrand Russell}}}
 \end{frame}
 %%%%%%%%%%%%%%%

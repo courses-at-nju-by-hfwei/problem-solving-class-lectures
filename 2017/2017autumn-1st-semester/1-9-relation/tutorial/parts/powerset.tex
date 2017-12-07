@@ -1,0 +1,86 @@
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \centerline{\LARGE Power Set}
+
+  \vspace{0.50cm}
+  \fignocaption{width = 0.40\textwidth}{figs/powerset-example}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Axiom of Power Set]
+    \[
+      \forall X \exists Y \forall u (u \in Y \iff u \subseteq X)
+    \]
+  \end{definition}
+
+  \[
+    \ps{X}
+  \]
+
+  \pause
+  \[
+    2^{X} = \set{0,1}^{X}
+  \]
+  \fignocaption{width = 0.50\textwidth}{figs/powerset-2-x-notation}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \boxed{\blue{S \in \ps{X} \iff S \subseteq X}}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{``$\subseteq$'' (UD $9.2$)}
+    \[
+      \ps{A} \cup \ps{B} \subseteq \ps{A \cup B}
+    \]
+  \end{exampleblock}
+
+  \pause
+  \begin{proof}
+    \[
+      \forall x \Big(x \in \ps{A} \cup \ps{B} \implies x \in \ps{A \cup B}\Big)
+    \]
+  \end{proof}
+
+  \pause
+  \[
+    \ps{A} \cup \ps{B} \;\red{\neq}\; \ps{A \cup B}
+  \]
+
+  \pause
+  \begin{exampleblock}{UD Exercise $9.3$}
+    \[
+      \ps{A} \cap \ps{B} \;\blue{=}\; \ps{A \cap B}
+    \]
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{``$\subseteq$'' (UD $9.4$)}
+    \[
+      A \subseteq B \iff \ps{A} \subseteq \ps{B}
+    \]
+  \end{exampleblock}
+
+  \vspace{0.60cm}
+  \centerline{The ``element-chasing'' method.}
+
+  \pause
+  \vspace{1.00cm}
+  A proof using the following equation:
+
+  \[
+    \ps{A \cap B} = \ps{A} \cap \ps{B}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%

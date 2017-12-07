@@ -1,0 +1,139 @@
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \centerline{\LARGE Ordered Pair and Cartesian Product}
+
+  \vspace{0.60cm}
+  \fignocaption{width = 0.80\textwidth}{figs/cards}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Definitions of $(a,b)$ and $A \times B$ (UD $9.16$)}
+    \[
+      (a, b) = \set{\set{a}, \set{a,b}}
+    \]
+
+    \[
+      (a,b) = (x,y) \iff a = x \land b = y
+    \]
+  \end{exampleblock}
+
+  \[
+    \boxed{\set{\set{a}, \set{a,b}} = \set{\set{x}, \set{x,y}} \implies a = x \land b = y}
+  \]
+
+  \vspace{0.50cm}
+  What is wrong with the following proof:
+  \begin{columns}
+    \column{0.45\textwidth}
+      \begin{equation*}
+	\begin{cases}
+	  \set{a} &= \set{x} \\
+	  \set{a,b} &= \set{x,y}
+	\end{cases}
+	\implies \begin{cases}
+	    a = x \\
+	    b = y
+	  \end{cases}
+      \end{equation*}
+    \column{0.45\textwidth}
+      \[
+	\begin{cases}
+	  \set{a} &= \set{x,y} \\
+	  \set{a,b} &= \set{x}
+	\end{cases}
+	\implies \text{ no solution.}
+      \]
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Definitions of $(a,b)$ and $A \times B$ (UD $9.16$)}
+    \[
+      (a, b) = \set{\set{a}, \set{a,b}}
+    \]
+
+    \[
+      (a,b) = (x,y) \iff a = x \land b = y
+    \]
+  \end{exampleblock}
+
+  \[
+    \boxed{\set{\set{a}, \set{a,b}} = \set{\set{x}, \set{x,y}} \implies a = x \land b = y}
+  \]
+
+  \vspace{0.50cm}
+  \begin{proof}
+    \begin{columns}
+      \column{0.45\textwidth}
+        \[
+	  \textsc{Case } a = b
+	\]
+      \column{0.45\textwidth}
+        \[
+	  \textsc{Case } a \neq b
+	\]
+    \end{columns}
+  \end{proof}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Definitions of $(a,b)$ and $A \times B$ (UD $9.16$)}
+    \[
+      (a, b) = \set{\set{a}, \set{a,b}}
+    \]
+
+    \[
+      a \in A \land b \in B \implies (a, b) \in \ps{\ps{A \cup B}}
+    \]
+
+    \pause
+    \[
+      A \times B = \set{x \in \ps{\ps{A \cup B}} \mid \exists a \in A \,\exists b \in B : x = (a,b)}
+    \]
+
+    \[
+      A \subseteq C \land B \subseteq D \implies A \times B \subseteq C \times D
+    \]
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{(UD $9.13$)}
+    \[
+      A \times B \subseteq C \times D \;\red{\xRightarrow{\;\;?\;\;}}\; A \subseteq C \land B \subseteq D
+    \]
+  \end{exampleblock}
+
+  \[
+    \red{A = \emptyset}
+  \]
+
+  \[
+    A \times B \subseteq C \times D \;\blue{\xRightarrow{A, B \neq \emptyset}}\; A \subseteq C \land B \subseteq D
+  \]
+
+  \centerline{\blue{By contradiction.}}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Distributive Laws (UD $9.14$)}
+    \begin{align*}
+      A \times (B \cup C) &= (A \times B) \cup (A \times C) \\
+      A \times (B \cap C) &= (A \times B) \cap (A \times C) \\
+      A \times (B \setminus C) &= (A \times B) \setminus (A \times C)
+    \end{align*}
+  \end{exampleblock}
+
+  \fignocaption{width = 0.60\textwidth}{figs/cp-distributive}
+\end{frame}
+%%%%%%%%%%%%%%%

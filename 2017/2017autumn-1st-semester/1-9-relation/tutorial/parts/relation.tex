@@ -3,6 +3,126 @@
   \centerline{\LARGE Relation}
 
   \vspace{0.60cm}
-  \fignocaption{width = 0.80\textwidth}{figs/cards}
+  \fignocaption{width = 0.60\textwidth}{figs/wulin-relation}
+  \centerline{燕小六: ``帮我照顾好我七舅姥爷和我外甥女''}
 \end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    G = \set{(a,b): a \text{ 是}\; b \text{ 的舅姥爷}} 
+  \]
+
+  \[
+    N = \set{(a,b): a \text{ 是}\; b \text{ 的外甥女}}
+  \]
+
+  \[
+    G \cup N
+  \]
+
+  \pause
+  \begin{columns}
+    \column{0.30\textwidth}
+      \begin{description}
+	\item[``$B$''] Brother
+	\item[``$S$''] Sister
+      \end{description}
+    \column{0.30\textwidth}
+      \begin{description}
+	\item[``$F$''] Father
+	\item[``$M$''] Mather
+      \end{description}
+    \column{0.30\textwidth}
+      \begin{description}
+	\item[``$O$''] Son
+	\item[``$D$''] Dau.
+      \end{description}
+  \end{columns}
+
+  \vspace{0.80cm}
+  \begin{columns}
+    \column{0.50\textwidth}
+      \pause
+      \[
+	G = B \circ M \circ M
+      \]
+    \column{0.50\textwidth}
+      \pause
+      \[
+	N = D \circ S
+      \]
+  \end{columns}
+
+  \pause
+  \vspace{0.60cm}
+  \[
+    G = (B \circ M) \circ M = B \circ (M \circ M)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    R \subseteq X \times Y
+  \]
+
+  \centerline{$R$ is a relation \red{\bf from} $X$ \red{\bf to} $Y$.}
+
+  \[
+    R \subseteq X \times X
+  \]
+
+  \centerline{$R$ is a relation \red{\bf on} $X$.}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Equivalence Relation]
+    $R$ is an equivalence relation on $X \times X$ if
+    \begin{description}
+      \item[Reflexive:] 
+	(fig here)
+      \item[Symmetric:] 
+      \item[Transitive:] 
+    \end{description}
+  \end{definition}
+
+  \pause
+  \vspace{0.50cm}
+  \begin{definition}[Equivalence Class]
+    \[
+      (X, \sim)
+    \]
+
+    \[
+      E_{x} = \set{y \in X: x \sim y} \; \red{= [x]_{\sim}}
+    \]
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Equivalence Relation (UD $10.5$)}
+    \[
+      (X, \sim)
+    \]
+
+    Prove that 
+    \[
+      \forall x, y \in X: [x]_{\sim} = [y]_{\sim} \iff x \sim y.
+    \]
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+% \begin{frame}{}
+%   \begin{exampleblock}{Equivalence Relation (UD $10.5$)}
+%   \end{exampleblock}
+% \end{frame}
 %%%%%%%%%%%%%%%

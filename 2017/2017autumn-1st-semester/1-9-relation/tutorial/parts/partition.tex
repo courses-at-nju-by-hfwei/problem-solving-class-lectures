@@ -2,7 +2,176 @@
 \begin{frame}{}
   \centerline{\LARGE Partition}
 
-  % \vspace{0.60cm}
-  % \fignocaption{width = 0.80\textwidth}{figs/cards}
+  \vspace{0.60cm}
+  \fignocaption{width = 0.60\textwidth}{figs/partition}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Partition]
+    A family of sets \red{$\set{A_{\alpha}: \alpha \in I}$} is a \blue{\it partition} of \purple{$X$} if
+
+    \begin{enumerate}[(i)]
+      \item 
+	\[
+	  \forall \alpha \in I: A_{\alpha} \neq \emptyset
+	\]
+	\[
+	  \textcolor{teal}{\forall \alpha \in I \; \exists x \in X: x \in A_{\alpha}}
+	\]
+      \item 
+	\[
+	  \bigcup_{\alpha \in I} A_{\alpha} = X
+	\]
+	\[
+	  \textcolor{teal}{\forall x \in X \; \exists \alpha \in I: x \in A_{\alpha}}
+	\]
+      \item 
+	\[
+	  \forall \alpha, \beta \in I: A_{\alpha} \cap A_{\beta} = \emptyset \lor A_{\alpha} = A_{\beta}
+	\]
+	\[
+	  \textcolor{teal}{\forall \alpha, \beta \in I: A_{\alpha} \cap A_{\beta} \neq \emptyset \implies A_{\alpha} = A_{\beta}}
+	\]
+    \end{enumerate}
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{columns}
+    \column{0.50\textwidth}
+      \fignocaption{width = 0.85\textwidth}{figs/world-map}
+    \column{0.50\textwidth}
+      \fignocaption{width = 0.80\textwidth}{figs/china-map}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Partitions of $\mathbb{R}^{3}$ (UD $11.3$)}
+    Is $\set{A_r: r \in \mathbb{R}}$ a partition of $\mathbb{R}^{3}$?
+
+    \[
+      A_{r} = \set{(x,y,z) \in \mathbb{R}^{3}: x + y + z = r}
+    \]
+  \end{exampleblock}
+
+  \pause
+  \fignocaption{width = 0.32\textwidth}{figs/xyzr}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Partitions of $\mathbb{R}^{3}$ (UD $11.3$)}
+    Is $\set{A_r: r \in \mathbb{R}}$ a partition of $\mathbb{R}^{3}$?
+
+    \[
+      A_{r} = \set{(x,y,z) \in \mathbb{R}^{3}: x^2 + y^2 + z^2 = r^2}
+    \]
+  \end{exampleblock}
+
+  \pause
+  \fignocaption{width = 0.35\textwidth}{figs/x2y2z2r2}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Partitions of the Set of Polynomials (UD $11.7$)}
+    \[
+      p(x) = a_n x^n + a_{n-1} x^{n-1} + \cdots + a_1 x^1 + a_0 \quad (a_j \in \mathbb{R}, n \in \mathbb{N})
+    \]
+    \[
+      \text{deg}(p = 0) = -\infty
+    \]
+
+    \begin{enumerate}[(a)]
+      \item
+	\[
+	  A_m = \set{p: \text{deg}(p) = m} \quad m \in \mathbb{N}
+	\]
+      \setcounter{enumi}{2}
+      \item 
+	\[
+	  A_q = \set{p: \exists r (p = qr)} \quad q \in P
+	\]
+	\pause
+	\vspace{-0.20cm}
+	\[
+	  \textcolor{teal}{q \in A_q}
+	\]
+	\vspace{-0.30cm}
+	\[
+	  \textcolor{teal}{p \in A_p}
+	\]
+	\pause
+	\vspace{-0.30cm}
+	\[
+	  \textcolor{teal}{p \neq q \land r = pq \implies (r \in A_q \cap A_q) \land (A_p \neq A_q)}
+	\]
+    \end{enumerate}
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Partitions of the Set of Polynomials (UD $11.7$)}
+    \[
+      p(x) = a_n x^n + a_{n-1} x^{n-1} + \cdots + a_1 x^1 + a_0 \quad (a_j \in \mathbb{R}, n \in \mathbb{N})
+    \]
+    \[
+      \text{deg}(p = 0) = -\infty
+    \]
+
+    \begin{enumerate}[(a)]
+      \setcounter{enumi}{1}
+      \item 
+	\[
+	  A_c = \set{p: p(0) = c} \quad c \in \mathbb{R}
+	\]
+      \setcounter{enumi}{3}
+      \item 
+	\[
+	  A_c = \set{p: p(c) = 0} \quad c \in \mathbb{R}
+	\]
+	\pause
+	\vspace{-0.20cm}
+	\[
+	  \textcolor{teal}{p(x) = x^2 + 1}
+	\]
+	\pause
+	\vspace{-0.30cm}
+	\[
+	  \textcolor{teal}{(p(x) = 0) \in A_c, \forall c \in \mathbb{R}}
+	\]
+    \end{enumerate}
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Subset and Partition (UD $11.9$)}
+    $\set{A_{\alpha}: \alpha \in I}$ is a partition of $X \neq \emptyset$.
+    \begin{enumerate}[(a)]
+      \item 
+	\[
+	  B \subseteq X, \quad \forall \alpha \in I: A_{\alpha} \cap B \neq \emptyset
+	\]
+
+	To prove that
+	\[
+	  \set{A_{\alpha} \cap B: \alpha \in I} \text{ \red{\it is} a partition of } B.
+	\]
+    \end{enumerate}
+  \end{exampleblock}
+
+  \fignocaption{width = 0.50\textwidth}{figs/subset-partition}
 \end{frame}
 %%%%%%%%%%%%%%%

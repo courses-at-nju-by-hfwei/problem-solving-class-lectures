@@ -11,7 +11,7 @@
 \begin{frame}{}
   \begin{definition}[Axiom of Power Set]
     \[
-      \forall X \exists Y \forall u (u \in Y \iff u \subseteq X)
+      \forall X \exists Y \forall u (u \subseteq X \iff u \in Y )
     \]
   \end{definition}
 
@@ -37,6 +37,35 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \begin{exampleblock}{``$\subseteq$'' (UD $9.4$)}
+    \[
+      A \subseteq B \iff \ps{A} \subseteq \ps{B}
+    \]
+  \end{exampleblock}
+
+  \pause
+  \vspace{0.60cm}
+  \begin{columns}
+    \column{0.45\textwidth}
+      \[
+	A \subseteq B \implies \ps{A} \subseteq \ps{B}
+      \]
+      \[
+	\teal{x \in \ps{A} \implies x \subseteq A}
+      \]
+    \column{0.45\textwidth}
+      \[
+	\ps{A} \subseteq \ps{B} \implies A \subseteq B
+      \]
+      \[
+	\teal{x \in A \implies \set{x} \subseteq \ps{A}}
+      \]
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
   \begin{exampleblock}{``$\subseteq$'' (UD $9.2$)}
     \[
       \ps{A} \cup \ps{B} \subseteq \ps{A \cup B}
@@ -45,6 +74,11 @@
 
   \pause
   \begin{proof}
+    \[
+      A \subseteq B \iff \ps{A} \subseteq \ps{B}
+    \]
+
+    \pause
     \[
       \forall x \Big(x \in \ps{A} \cup \ps{B} \implies x \in \ps{A \cup B}\Big)
     \]
@@ -61,26 +95,5 @@
       \ps{A} \cap \ps{B} \;\blue{=}\; \ps{A \cap B}
     \]
   \end{exampleblock}
-\end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \begin{exampleblock}{``$\subseteq$'' (UD $9.4$)}
-    \[
-      A \subseteq B \iff \ps{A} \subseteq \ps{B}
-    \]
-  \end{exampleblock}
-
-  \vspace{0.60cm}
-  \centerline{The ``element-chasing'' method.}
-
-  \pause
-  \vspace{1.00cm}
-  A proof using the following equation:
-
-  \[
-    \ps{A \cap B} = \ps{A} \cap \ps{B}
-  \]
 \end{frame}
 %%%%%%%%%%%%%%%

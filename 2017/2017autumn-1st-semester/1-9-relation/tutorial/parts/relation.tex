@@ -19,7 +19,7 @@
   \]
 
   \[
-    G \cup N
+    \blue{G \cup N}
   \]
 
   \pause
@@ -58,7 +58,7 @@
   \pause
   \vspace{0.60cm}
   \[
-    G = (B \circ M) \circ M = B \circ (M \circ M)
+    \red{G = (B \circ M) \circ M = B \circ (M \circ M)}
   \]
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -71,23 +71,30 @@
 
   \centerline{$R$ is a relation \red{\bf from} $X$ \red{\bf to} $Y$.}
 
+  \vspace{0.20cm}
   \[
     R \subseteq X \times X
   \]
 
-  \centerline{$R$ is a relation \red{\bf on} $X$.}
+  \begin{center}
+    $R$ is a relation \red{\bf on} $X$.
+
+    \teal{\small (over)}
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{definition}[Equivalence Relation]
-    $R$ is an equivalence relation on $X \times X$ if
+    $R$ is an \blue{equivalence relation} on $X$ if $R$ is
     \begin{description}
-      \item[Reflexive:] 
-	(fig here)
-      \item[Symmetric:] 
-      \item[Transitive:] 
+      \item[Reflexive:] $x R x$ \vspace{-0.30cm}
+	\fignocaption{width = 0.20\textwidth}{figs/reflexive}
+      \item[Symmetric:] $x R y \implies y R x$
+	\fignocaption{width = 0.25\textwidth}{figs/symmetric}
+      \item[Transitive:] $x R y \land y R z \implies x R z$
+	\fignocaption{width = 0.30\textwidth}{figs/transitive}
     \end{description}
   \end{definition}
 \end{frame}
@@ -100,8 +107,9 @@
       (X, \sim)
     \]
 
+    The equivalence class of $x$ is a \red{\it set}:
     \[
-      E_{x} = \set{y \in X: x \sim y} \; \red{= [x]_{\sim}}
+      E_{x} = \set{y \in X: x \sim y} \; \red{= [x]_{\sim}} \; \blue{= [x]}
     \]
   \end{definition}
 \end{frame}

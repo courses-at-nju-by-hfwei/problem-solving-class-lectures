@@ -21,32 +21,33 @@
 
   \pause
   \[
-    \boxed{\set{\set{a}, \set{a,b}} = \set{\set{x}, \set{x,y}} \implies a = x \land b = y}
+    \boxed{\blue{\set{\set{a}, \set{a,b}} = \set{\set{x}, \set{x,y}} \implies a = x \land b = y}}
   \]
 
   \pause
   \vspace{0.50cm}
-  What are the flaws in the following proof:
+  \red{$Q:$ What is wrong with this proof?}
+
   \begin{columns}
     \column{0.45\textwidth}
-      \begin{equation*}
-	\begin{cases}
+      \begin{align*}
+	(1) &\begin{cases}
 	  \set{a} &= \set{x} \\
 	  \set{a,b} &= \set{x,y}
-	\end{cases}
-	\implies \begin{cases}
+	\end{cases} \\
+	&\implies \begin{cases}
 	    a = x \\
 	    b = y
 	  \end{cases}
-      \end{equation*}
+      \end{align*}
     \column{0.45\textwidth}
-      \[
-	\begin{cases}
+      \begin{align*}
+	(2) &\begin{cases}
 	  \set{a} &= \set{x,y} \\
 	  \set{a,b} &= \set{x}
-	\end{cases}
-	\implies \text{ no solution.}
-      \]
+	\end{cases} \\
+	&\implies \text{ no solution.}
+      \end{align*}
   \end{columns}
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -64,20 +65,30 @@
   \end{exampleblock}
 
   \[
-    \boxed{\set{\set{a}, \set{a,b}} = \set{\set{x}, \set{x,y}} \implies a = x \land b = y}
+    \boxed{\blue{\set{\set{a}, \set{a,b}} = \set{\set{x}, \set{x,y}} \implies a = x \land b = y}}
   \]
 
   \vspace{0.50cm}
   \begin{proof}
-    \begin{columns}
+    \begin{columns}[t]
       \column{0.45\textwidth}
         \[
 	  \textsc{Case } a = b
 	\]
+	\uncover<2->{
+	  \[
+	    \teal{(a,a) = \set{\set{a}}}
+	  \]
+	}
       \column{0.45\textwidth}
         \[
 	  \textsc{Case } a \neq b
 	\]
+	\uncover<3->{
+	  \[
+	    \teal{\set{a} = \set{x} \quad \set{a,b} = \set{x,y}}
+	  \]
+	}
     \end{columns}
   \end{proof}
 \end{frame}
@@ -91,7 +102,7 @@
     \]
 
     \[
-      a \in A \land b \in B \implies (a, b) \in \ps{\ps{A \cup B}}
+      \blue{a \in A \land b \in B \implies (a, b) \in \ps{\ps{A \cup B}}}
     \]
 
     \pause
@@ -100,7 +111,7 @@
     \]
 
     \[
-      A \subseteq C \land B \subseteq D \implies A \times B \subseteq C \times D
+      \blue{A \subseteq C \land B \subseteq D \implies A \times B \subseteq C \times D}
     \]
   \end{exampleblock}
 \end{frame}
@@ -108,21 +119,38 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{(UD $9.13$)}
+  \begin{exampleblock}{Cartesian Product and ``$\subseteq$'' (UD $9.13$)}
     \[
       A \times B \subseteq C \times D \;\red{\xRightarrow{\;\;?\;\;}}\; A \subseteq C \land B \subseteq D
     \]
   \end{exampleblock}
 
+  \pause
+  \begin{proof}[Disproof]
+    \begin{columns}
+      \column{0.60\textwidth}
+	\begin{align*}
+	  (x,y) \in A \times B &\implies (x,y) \in C \times D  \\
+	  x \in A \land y \in B &\implies x \in C \land y \times D \\
+	  \redoverlay{(x \in A \implies x \in C)}{3-}\; &\redoverlay{\land\; (y \in B \implies y \in D)}{3-} \\
+	  (A \subseteq C) &\land (B \subseteq D)
+	\end{align*}
+      \column{0.40\textwidth}
+	\pause
+	\[
+	  \red{A = \emptyset \lor B = \emptyset}
+	\]
+    \end{columns}
+  \end{proof}
+
+  \pause
   \[
-    \red{A = \emptyset}
+    A \times B \subseteq C \times D \;\blue{\xRightarrow{\uncover<3->{A, B \neq \emptyset}}}\; A \subseteq C \land B \subseteq D
   \]
 
-  \[
-    A \times B \subseteq C \times D \;\blue{\xRightarrow{A, B \neq \emptyset}}\; A \subseteq C \land B \subseteq D
-  \]
-
-  \centerline{\blue{By contradiction.}}
+  \uncover<4->{
+    \centerline{\blue{By contradiction.}}
+  }
 \end{frame}
 %%%%%%%%%%%%%%%
 

@@ -1,0 +1,38 @@
+-- this is an example
+
+group: CourseManagementSystem
+
+
+CSG = {
+	Course:string, StudentId:number, Grade:string
+	'CS101'      , 12345           , 'A'         
+	'CS101'      , 67890           , 'B'    
+	'CS101'      , 33333           , 'A-'
+	'EE200'      , 12345           , 'C'         
+	'EE200'      , 22222           , 'B+'                
+	'PH100'      , 67890           , 'C+'        
+}
+
+SNAP = {
+	StudentId:number, Name:string  , Address:string  , Phone:string
+	12345           , 'C. Brown'   , '12 Apple St.'  , '555-1234'  
+	67890           , 'L. Van Pelt', '34 Pear Ave.'  , '555-5678'  
+	22222           , 'P. Patty'   , '56 Grape Blvd.', '555-9999'  
+}
+
+CDH = {
+	Course:string, Day:string, Hour:string
+	'CS101'      , 'M'       , '9AM'      
+	'CS101'      , 'W'       , '9AM'      
+	'CS101'      , 'F'       , '9AM'      
+	'EE200'      , 'Tu'      , '10AM'     
+	'EE200'      , 'W'       , '1PM'      
+	'EE200'      , 'Th'      , '10AM'     
+}
+
+CR = {
+	Course:string, Room:string  
+	'CS101'      , 'Turing Aud.'
+	'EE200'      , '25 Ohm Hall'
+	'PH100'      , 'Newton Lab.'
+}

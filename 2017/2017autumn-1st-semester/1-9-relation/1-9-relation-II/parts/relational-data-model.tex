@@ -1,0 +1,75 @@
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    (a,b) = \set{\set{a}, \set{a,b}}
+  \]
+  
+  \[
+    R \subseteq A \times B
+  \]
+
+  \pause
+  \[
+    (a, b, c) = ((a,b), c)
+  \]
+
+  \pause
+  \[
+    (x_1, x_2, \cdots, x_n) = ((x_1, x_2, \cdots, x_{n-1}), x_n)
+  \]
+
+  \pause
+  \[
+    R \subseteq X_1 \times X_2 \times \cdots \times X_n
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{align*}
+    \course &= \set{\cs{}, \ee{}, \ph{}} \\
+    \sid &= \set{12345, 67890, 22222, 33333}  \\
+    \grade &= \set{A, B, C, D}
+  \end{align*}
+
+  \pause
+  \[
+    \blue{\csg \subseteq \course{} \times \sid{} \times \grade{}}
+  \]
+
+  \begin{align*}
+    \csg = \{ &(\cs{}, 12345, A), \\
+      & (\cs{}, 67890, B), \\
+      & (\cs{}, 33333, C), \\
+      & (\ee{}, 12345, B^{+}), \\
+      & (\ee{}, 22222, A^{-}), \\
+      & (\ph{}, 67890, C^{+}) \}
+  \end{align*}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fignocaption{width = 0.45\textwidth}{figs/csg}
+
+  \pause
+  \begin{align*}
+    \text{\blue{Row}} &: \text{tuple} \\
+    \text{\blue{Column}} &: \text{attribute}
+  \end{align*}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fignocaption{width = 0.70\textwidth}{figs/snap}
+
+  \begin{columns}
+    \column{0.50\textwidth}
+      \fignocaption{width = 0.80\textwidth}{figs/cdh}
+    \column{0.50\textwidth}
+      \fignocaption{width = 0.80\textwidth}{figs/cr}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%

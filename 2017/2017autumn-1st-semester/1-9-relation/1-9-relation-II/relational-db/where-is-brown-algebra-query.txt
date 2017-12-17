@@ -1,0 +1,11 @@
+π Room (
+  π Course (
+	  π StudentId (
+		  σ Name = 'C. Brown' (SNAP)
+		) ⨝ (CSG)
+	) ⨝ (
+	  π Course (
+		  σ Day = 'M' ∧ Hour = '9AM' (CDH)
+		)
+	) ⨝ CR
+)

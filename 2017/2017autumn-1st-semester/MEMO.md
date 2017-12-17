@@ -3,7 +3,7 @@
 - The Google Egg Problem
 - Simple Programming Language (ref. "Computability, Complexity, and Languages")
 - Functional Programming
-- Logical Programming
+- Logic Programming
 - Set and Relations (ref. definition of consistency model as exercises)
 - Partial Order and Total Order (ref. paper by Lamport)
 - The DieHard Problem (GCD)

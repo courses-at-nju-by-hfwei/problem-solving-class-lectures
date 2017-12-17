@@ -1,12 +1,34 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \fignocaption{width = 0.30\textwidth}{figs/2-logo}
+
+  \vspace{0.50cm}
+  \centerline{\Large Relational Algebra}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
   \centerline{\LARGE Relational Algebra}
 
   \vspace{0.30cm}
   \fignocaption{width = 0.50\textwidth}{figs/algebra}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \centerline{\LARGE Relational Algebra}
 
   \pause
-  \centerline{\Large \blue{Operations on Relations}}
+  \vspace{0.60cm}
+  \begin{center}
+    {\Large A \blue{set} of relations} \\[8pt]
+
+    {\Large \blue{Operations} on relations} \\[8pt]
+
+    {\Large \blue{Laws} of operations}
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -20,37 +42,292 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \centerline{\Large Selection (\blue{$\sigma$})}
+  \centerline{\Large Selection (\red{$\sigma_{C}(R)$})}
 
   \[
-    \sigma_{\text{\course} = '\cs{}'} (\csg{})
+    \red{\sigma_{\text{\course} \;=\; ``\cs{}''}} (\csg{})
   \]
 
   \begin{columns}
     \column{0.50\textwidth}
-      \fignocaption{width = 0.80\textwidth}{figs/csg}
+      \fignocaption{width = 0.70\textwidth}{figs/csg}
     \column{0.50\textwidth}
-      \fignocaption{width = 0.80\textwidth}{figs/csg-cs101}
+      \fignocaption{width = 0.65\textwidth}{figs/csg-cs101}
   \end{columns}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \centerline{\Large Projection (\red{$\pi_{L}(R)$})}
+
+  \[
+    \red{\pi_{\sid}}\Big(\blue{\sigma_{\text{\course} \;=\; ``\cs{}''}} (\csg{})\Big)
+  \]
+
+  \begin{columns}
+    \column{0.35\textwidth}
+      \fignocaption{width = 0.85\textwidth}{figs/csg}
+    \column{0.35\textwidth}
+      \fignocaption{width = 0.85\textwidth}{figs/csg-cs101}
+    \column{0.30\textwidth}
+      \fignocaption{width = 0.35\textwidth}{figs/csg-cs101-sid}
+  \end{columns}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \centerline{\Large Join (\red{$R \underset{R.A_i = S.B_j}{\bowtie} S$})}
+
+  \vspace{0.60cm}
+  \[
+    R \subseteq A_1 \times \cdots \times A_n
+  \]
+
+  \[
+    S \subseteq B_1 \times \cdots \times B_m
+  \]
+
+  \[
+    \red{R \underset{R.A_i = S.B_j}{\bowtie} S} \subseteq \blue{A_1 \times \cdots \times A_n} 
+      \times \teal{B_1 \times \cdots B_{j-1} \times B_{j+1} \times \cdots \times B_m}
+  \]
+
+  \pause
+  \vspace{0.30cm}
+  \[
+    \text{\Large Natural Join (\red{$R \bowtie S$})}
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \[
+    \crm \;\red{\underset{\crm.\course \;=\; \cdh.\course}{\bowtie}}\; \cdh \qquad (\crm{} \;\red{\bowtie}\; \cdh{})
+  \]
+
+  \begin{columns}
+    \column{0.50\textwidth}
+      \fignocaption{width = 0.60\textwidth}{figs/cr}
+    \column{0.50\textwidth}
+      \fignocaption{width = 0.60\textwidth}{figs/cdh}
+  \end{columns}
+
+  \fignocaption{width = 0.45\textwidth}{figs/cr-cdh-join}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \fignocaption{width = 0.45\textwidth}{figs/simple.jpg}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fignocaption{width = 0.30\textwidth}{figs/csg}
+  \vspace{-0.60cm}
+  \fignocaption{width = 0.50\textwidth}{figs/snap}
+  \vspace{-0.60cm}
+
+  \begin{columns}
+    \column{0.50\textwidth}
+      \fignocaption{width = 0.50\textwidth}{figs/cdh}
+    \column{0.50\textwidth}
+      \fignocaption{width = 0.50\textwidth}{figs/cr}
+  \end{columns}
+
+  \pause
+  \vspace{0.60cm}
+  \centerline{\red{$Q:$} \blue{Where} {\it is} \teal{``C. Brown''} \purple{9 AM} {\it on} \textcolor{brown}{Mondays}{\it ?}}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fignocaption{width = 0.60\textwidth}{figs/where-is-brown}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fignocaption{width = 0.50\textwidth}{figs/where-is-brown-final}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+% \begin{frame}{}
+  % \begin{align*}
+  %   \pi_{\room}\Big(& \\
+  %     &\pi_{\course} \big( \\
+  %       \pi_{\sid} \( \\
+  %         \sigma_{\name = ``C. Brown''}(\snap{}) \\
+  %       \) \bowtie \csg{} \\
+  %     \big) \\
+  %   \Big) \\
+  % \end{align*}
+% \end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fignocaption{width = 0.45\textwidth}{figs/clever-dumb}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fignocaption{width = 0.45\textwidth}{figs/miss}
+
+  \vspace{0.50cm}
+  \centerline{\Large Algebraic Laws for Relations}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fignocaption{width = 0.60\textwidth}{figs/where-is-brown-start}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fignocaption{width = 0.50\textwidth}{figs/where-is-brown-final}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{quote}
+    ``In fact, the \textcolor{brown}{improvement in efficiency} made possible
+    by \blue{transforming expressions of relational algebra}
+    is arguably the most striking example of \red{the power of algebra} 
+    that we find in computer science.''
+  \end{quote}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \centerline{\Large Laws Involving Selection (\red{$\sigma_{C}(R)$})}
+
+  \vspace{0.50cm}
+  \begin{description}
+    \item[Selection Splitting]
+      \[
+	\sigma_{C \land C'}(R) \equiv \sigma_{C}(\sigma_{C'}(R))
+      \]
+    \item[Commutativity] 
+      \[
+	\sigma_{C}(\sigma_{C'}(R)) \equiv \sigma_{C'}(\sigma_{C}(R))
+      \]
+      \pause
+    \item[\red{Selection Pushing}] 
+      \begin{align*}
+	(\sigma_C(R \bowtie S)) &\equiv (\sigma_{C}(R) \bowtie S) \\
+	(\sigma_C(R \bowtie S)) &\equiv (R \bowtie \sigma_{C}(S))
+      \end{align*}
+  \end{description}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+%\begin{frame}{}
+%  \begin{columns}
+%    \column{0.50\textwidth}
+%      \fignocaption{width = 0.85\textwidth}{figs/where-is-brown-start}
+%    \column{0.50\textwidth}
+%      \fignocaption{width = 0.80\textwidth}{figs/where-is-brown-selection-below-top}
+%  \end{columns}
+%\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+%\begin{frame}{}
+%  \begin{columns}
+%    \column{0.50\textwidth}
+%      \fignocaption{width = 0.85\textwidth}{figs/where-is-brown-selection-below-top}
+%    \column{0.50\textwidth}
+%      \fignocaption{width = 0.65\textwidth}{figs/where-is-brown-selection-split}
+%  \end{columns}
+%\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+%\begin{frame}{}
+%  \begin{columns}
+%    \column{0.50\textwidth}
+%      \fignocaption{width = 0.65\textwidth}{figs/where-is-brown-selection-split}
+%    \column{0.50\textwidth}
+%      \fignocaption{width = 0.85\textwidth}{figs/where-is-brown-two-selections}
+%  \end{columns}
+%\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+%\begin{frame}{}
+%  \begin{columns}
+%    \column{0.50\textwidth}
+%      \fignocaption{width = 0.85\textwidth}{figs/where-is-brown-two-selections}
+%    \column{0.50\textwidth}
+%      \fignocaption{width = 0.85\textwidth}{figs/where-is-brown-selection-bottom}
+%  \end{columns}
+%\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fignocaption{width = 0.60\textwidth}{figs/where-is-brown-selection}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+%\begin{frame}{}
+%  \begin{columns}
+%    \column{0.50\textwidth}
+%      \fignocaption{width = 0.90\textwidth}{figs/where-is-brown-selection-bottom}
+%    \column{0.50\textwidth}
+%      \fignocaption{width = 0.85\textwidth}{figs/where-is-brown-final}
+%  \end{columns}
+%\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \centerline{\Large Laws Involving Projection (\red{$\pi_{L}(R)$})}
+
+  \vspace{0.40cm}
+  \[
+    \Big(\blue{\pi_{L}}(\teal{R} \red{\underset{A_i = B_j} \bowtie} \textcolor{brown}{S})\Big) \equiv 
+      \Big(\blue{\pi_{L}}\big(\teal{\pi_{M}(R)} \red{\underset{A_i = B_j} \bowtie} \textcolor{brown}{\pi_{N}(S)}\big)\Big)
+  \]
+
+  \[
+    \teal{M} = \Big(L \cup \set{A_i}\Big) \cap \set{A_i}_{i}
+  \]
+
+  \[
+    \textcolor{brown}{N} = \Big(L \cup \set{B_j}\Big) \cap \set{B_j}_{j}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fignocaption{width = 0.60\textwidth}{figs/where-is-brown}
+
+  \vspace{-0.50cm}
+  \begin{align*}
+    &\blue{\pi_{\course{}}} \Big(\teal{\csg{}} \red{\underset{\sid{}}{\bowtie}} \textcolor{brown}{\snap{}} \Big) \\
+    \equiv\; &\blue{\pi_{\course{}}} \Big(\teal{\pi_{\course,\sid} (\csg)} \red{\underset{\sid{}}{\bowtie}} \textcolor{brown}{\pi_{\sid{}}(\snap{})}\Big)
+  \end{align*}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fignocaption{width = 0.50\textwidth}{figs/where-is-brown-final}
 \end{frame}
 %%%%%%%%%%%%%%%

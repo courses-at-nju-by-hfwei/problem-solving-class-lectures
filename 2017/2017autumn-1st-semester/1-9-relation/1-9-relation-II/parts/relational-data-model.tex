@@ -1,5 +1,14 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \fignocaption{width = 0.25\textwidth}{figs/1-logo}
+
+  \vspace{0.50cm}
+  \centerline{\Large A Relational View of Data}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
   \[
     (a,b) = \set{\set{a}, \set{a,b}}
   \]
@@ -30,7 +39,7 @@
   \begin{align*}
     \course &= \set{\cs{}, \ee{}, \ph{}} \\
     \sid &= \set{12345, 67890, 22222, 33333}  \\
-    \grade &= \set{A, B, C, D}
+    \grade &= \set{A, B, C, D, A^{-}, B^{+}, C^{+}}
   \end{align*}
 
   \pause
@@ -38,6 +47,8 @@
     \blue{\csg \subseteq \course{} \times \sid{} \times \grade{}}
   \]
 
+  \pause
+  \vspace{-0.30cm}
   \begin{align*}
     \csg = \{ &(\cs{}, 12345, A), \\
       & (\cs{}, 67890, B), \\
@@ -51,25 +62,42 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \fignocaption{width = 0.45\textwidth}{figs/csg}
+  \fignocaption{width = 0.40\textwidth}{figs/csg}
 
   \pause
   \begin{align*}
     \text{\blue{Row}} &: \text{tuple} \\
-    \text{\blue{Column}} &: \text{attribute}
+    \text{\blue{Column}} &: \text{attribute/component}
   \end{align*}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \fignocaption{width = 0.70\textwidth}{figs/snap}
+  \fignocaption{width = 0.30\textwidth}{figs/csg}
+
+  \fignocaption{width = 0.50\textwidth}{figs/snap}
 
   \begin{columns}
     \column{0.50\textwidth}
-      \fignocaption{width = 0.80\textwidth}{figs/cdh}
+      \fignocaption{width = 0.50\textwidth}{figs/cdh}
     \column{0.50\textwidth}
-      \fignocaption{width = 0.80\textwidth}{figs/cr}
+      \fignocaption{width = 0.50\textwidth}{figs/cr}
   \end{columns}
 \end{frame}
 %%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fignocaption{width = 0.40\textwidth}{figs/too-simple}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+% \fignocaption{width = 0.70\textwidth}{figs/snap}
+
+% \begin{columns}
+%   \column{0.50\textwidth}
+%     \fignocaption{width = 0.80\textwidth}{figs/cdh}
+%   \column{0.50\textwidth}
+%     \fignocaption{width = 0.80\textwidth}{figs/cr}
+% \end{columns}

@@ -10,3 +10,5 @@
 - Book: 程序员的自我修养
 - Generating all permutations (multiple solutions in TAOCP)
 - Queueable/Stackable permutations
+- Banach–Tarski paradox
+- Ordinal and Cardinal Numbers

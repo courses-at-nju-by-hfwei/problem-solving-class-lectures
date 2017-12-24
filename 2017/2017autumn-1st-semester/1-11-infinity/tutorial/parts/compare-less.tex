@@ -10,6 +10,7 @@
     $|A| \le |B|$ if there exists an \red{\it one-to-one} function $f$ from $A$ into $B$.
   \end{definition}
 
+  \pause
   \[
     \text{bijection} \;f: A \to f(A) \; (\blue{\subseteq B})
   \]
@@ -17,7 +18,7 @@
   \pause
   \vspace{0.80cm}
   \begin{center}
-    {\red{\it $Q:$ What about onto function $f: A \to B$?}} \\[8pt]
+    {\red{\it $Q:$ What about onto function $f: A \to B$?}} \\[8pt] \pause
     {\blue{$|B| \le |A|$ \pause {\footnotesize (Axiom of Choice)}}}
   \end{center}
 \end{frame}
@@ -49,8 +50,9 @@
     \]
   \end{definition}
 
-  \begin{exampleblock}{Proof for Countable (UD Exercise $22.5$)}
-    $X$ is countable iff there exists a one-to-one function
+  \pause
+  \begin{theorem}[Proof for Countable (UD Exercise $22.5$)]
+    $X$ is countable iff there exists a \red{\it one-to-one} function
     \[
       f: A \to \N.
     \]
@@ -59,7 +61,7 @@
     \[
       \blue{|X| \le |\N|.}
     \]
-  \end{exampleblock}
+  \end{theorem}
 
   \pause
   \begin{exampleblock}{Subsets of Countable Set (UD $22.6$; UD Corollary $22.4$)}
@@ -76,10 +78,12 @@
       \setcounter{enumi}{2}
       \item a countably infinite collection of \blue{\it pairwise disjoint} nonempty sets whose union is finite.
       \setcounter{enumi}{1}
+      \pause
       \item a countably infinite collection of nonempty sets whose union is finite.
     \end{enumerate}
   \end{exampleblock}
 
+  \pause
   \[
     \Big(\set{A_i: i \in R} \quad A_{i} = \set{1}\Big) \;\red{= \set{\set{1}}}
   \]
@@ -103,6 +107,11 @@
   \pause
   \[
     (\Q, \;\red{\R})
+  \]
+
+  \pause
+  \[
+    \teal{|\R| \le \;\red{|\Q \times \R|}\; \le |\R \times \R| = |\R|}
   \]
 \end{frame}
 %%%%%%%%%%%%%%%

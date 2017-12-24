@@ -8,23 +8,23 @@
   \pause
   \begin{quote}
     \begin{center}
-      {\large ``关于有穷, 我原以为我是懂的''}
+      {\large \red{``关于有穷, 我原以为我是懂的''}}
     \end{center}
   \end{quote}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
-\begin{frame}{}
-  \begin{exampleblock}{学生反馈 (改编版)}
-    \begin{quote}
-      \begin{center}
-	``明明很显然的事情，为什么要那么繁琐的证明?\\[6pt]
-	依靠直觉不可以吗?''
-      \end{center}
-    \end{quote}
-  \end{exampleblock}
-\end{frame}
+% \begin{frame}{}
+%   \begin{exampleblock}{学生反馈 (改编版)}
+%     \begin{quote}
+%       \begin{center}
+% 	``明明很显然的事情，为什么要那么繁琐的证明?\\[6pt]
+% 	依靠直觉不可以吗?''
+%       \end{center}
+%     \end{quote}
+%   \end{exampleblock}
+% \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
@@ -36,6 +36,7 @@
     \]
   \end{definition}
 
+  \pause
   \vspace{0.60cm}
   \begin{theorem}[Pigeonhole Principle (UD Theorem $21.2$)]
     \[
@@ -55,13 +56,14 @@
     Prove that $A \setminus \set{a}$ is finite and $|A \setminus \set{a}| = n - 1$.
   \end{exampleblock}
 
+  \pause
   \[
     f: A \to \set{1, \cdots, n}
   \]
 
   \pause
   \[
-    f|_{A \setminus \set{a}}: A \setminus \set{a} \to \set{1, \cdots, n} \setminus \set{f(a)}
+    f|_{A \setminus \set{a}}: A \setminus \set{a} \to \set{1, \cdots, n} \setminus \set{f(a)} \;\only<4->{\red{\to \set{1, \cdots, n - 1}}}
   \]
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -127,7 +129,7 @@
     \teal{\text{one-to-one} \;g: \text{ran}(f) \to A}
   \]
   \pause
-  \centerline{\red{(No Axiom of Choice Here)}}
+  \centerline{\red{\footnotesize (No Axiom of Choice Here)}}
 \end{frame}
 %%%%%%%%%%%%%%%
 

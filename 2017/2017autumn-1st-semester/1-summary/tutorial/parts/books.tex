@@ -1,16 +1,26 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{为什么列书单?}
-  \begin{itemize}
-    \item 我感受到了大家强烈的求知欲。
-    \item 希望大家在本科阶段多读一些书。
-    \item 读书多快乐啊。
-  \end{itemize}
+  \begin{enumerate}
+    \setlength{\itemsep}{8pt}
+    \item 我感受到了大家强烈的求知欲
+    \item 希望大家在本科阶段多读一些书
+    \item 有书读多快乐啊
+  \end{enumerate}
+
+  \vspace{0.80cm}
+  \begin{quote}
+    \centering
+    ``列书单就是把自己也没读过的书\\[3pt]
+    推荐给同样不会去读的其他人,\\[3pt]
+    以达到大家都已读过这些书的假象。''
+  \end{quote}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{读什么书?}
   \begin{enumerate}
+    \setlength{\itemsep}{6pt}
     \centering
     \item 经典性
     \item 专业性
@@ -21,11 +31,13 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{如何读?}
-  放慢速度
+  \begin{center}
+    不要指望一遍就能读懂\\[10pt]
 
-  交叉阅读
+    交叉阅读, 多角度思考\\[10pt]
 
-  组队
+    三五人同读一本书\\
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -34,16 +46,18 @@
   \begin{columns}
     \column{0.45\textwidth}
       \fignocaption{width = 0.55\textwidth}{figs/fudan-logic}
-      \begin{center}
-	第一章: 语法\emph{vs.}语义 \\
-	第二章: 正确性\emph{vs.}完全性
-      \end{center}
-    \column{0.45\textwidth}
-      \fignocaption{width = 0.60\textwidth}{figs/engines-of-logic}
-      \begin{center}
-	读故事, 了解历史发展 \\
-	不求甚解
-      \end{center}
+    \column{0.55\textwidth}
+      \begin{description}
+	\setlength{\itemsep}{6pt}
+	\item[第一章] 预备知识 \\
+	  快速复习集合论知识
+	\item[第二章] 命题逻辑 \\
+	  \begin{itemize}
+	    \item 语法\emph{vs.}语义
+	    \item 公理系统
+	    \item 可靠性\emph{vs.}完全性
+	  \end{itemize}
+      \end{description}
   \end{columns}
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -53,15 +67,27 @@
   \begin{columns}
     \column{0.45\textwidth}
       \fignocaption{width = 0.55\textwidth}{figs/fudan-set-theory-book}
+    \column{0.45\textwidth}
       \begin{center}
-	第一章: \\
-	第二章: 
+	前三章\\[3pt]
+	重在基本概念\\[3pt]
+	理清概念之间的逻辑关系
       \end{center}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{逻辑与集合论科普书籍}
+  \begin{center}
+    读故事, 了解历史发展; 不求甚解
+  \end{center}
+
+  \begin{columns}
+    \column{0.45\textwidth}
+      \fignocaption{width = 0.60\textwidth}{figs/engines-of-logic}
     \column{0.45\textwidth}
       \fignocaption{width = 0.60\textwidth}{figs/book-paradox-crisis}
-      \begin{center}
-	知其然, 更知其所以然。
-      \end{center}
   \end{columns}
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -70,9 +96,16 @@
 \begin{frame}{程序设计}
   \begin{columns}
     \column{0.45\textwidth}
-    the c 
+      \fignocaption{width = 0.60\textwidth}{figs/cplusplus-bjarne-book}
     \column{0.45\textwidth}
-    the c++
+      \begin{center}
+	C++ 语言设计者之作\\[3pt]
+	大块头, 有难度\\[8pt]
+	宜: 慢读深思\\[3pt]
+	忌: 只读不练\\[15pt]
+
+	初读可跳过第2--5章\\
+      \end{center}
   \end{columns}
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -81,36 +114,33 @@
 \begin{frame}{数据结构与算法}
   \begin{columns}
     \column{0.45\textwidth}
-      \fignocaption{width = 0.60\textwidth}{figs/erik-demaine}
-      \centerline{\href{Click: http://open.163.com/special/opencourse/algorithms.html}{MIT OCW: Introduction to Algorithms}}
+      \fignocaption{width = 0.90\textwidth}{figs/leiserson}
     \column{0.45\textwidth}
+      \fignocaption{width = 0.45\textwidth}{figs/erik-demaine}
   \end{columns}
+
+  \begin{center}
+    ``Algorithms''\\[4pt]
+    \href{http://open.163.com/special/opencourse/algorithms.html}{MIT 6.046/18.410, Fall 2005}\\[3pt]
+    \href{https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/lecture-videos/}{MIT 6.006, Fall 2011}\\[10pt]
+
+    讲得太好, Enjoy it!
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
-\begin{frame}{数学 (一)}
+\begin{frame}{数学}
   \begin{columns}
-    \column{0.50\textwidth}
+    \column{0.45\textwidth}
       \fignocaption{width = 0.60\textwidth}{figs/book-concrete-mathematics}
+    \column{0.60\textwidth}
       \begin{center}
-	Knuth 眼中的计算机科学中的数学
+	Knuth 眼中的``计算机科学中的数学''\\[10pt]
+	切勿望而却步\\[8pt]
+	读进去\\
+	就(\teal{才})不(\teal{知})会(\teal{道})觉(\teal{有})得(\teal{多})难\\[3pt]
       \end{center}
-    \column{0.45\textwidth}
-      % \fignocaption{width = 0.60\textwidth}{figs/}
-      \begin{center}
-      \end{center}
-  \end{columns}
-\end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{frame}{数学 (二)}
-  \begin{columns}
-    \column{0.50\textwidth}
-    torrence tao
-    \column{0.50\textwidth}
-    数学分析八讲
   \end{columns}
 \end{frame}
 %%%%%%%%%%%%%%%

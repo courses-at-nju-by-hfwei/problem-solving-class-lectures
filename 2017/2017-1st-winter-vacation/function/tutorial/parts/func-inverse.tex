@@ -1,44 +1,138 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{definition}[Inverse]
+    Let $f: A \to B$ be a \red{bijective} function.
+
+    The \blue{inverse} of $f$ is the function $f^{-1}: B \to A$ defined by
     \[
-      f: A \to B
+      f^{-1}(b) = a \iff f(a) = b.
     \]
   \end{definition}
+
+  \begin{alertblock}{``Bijective'' Requirement of $f^{-1}$:}
+    \[
+      f: A \to B \quad f \subseteq A \times B
+    \]
+
+    \pause
+    \[
+      f^{-1} \subseteq B \times A \quad \text{(as a relation)}
+    \]
+    \pause
+    \[
+      \blue{f^{-1}: X \; (\subseteq B) \to A \quad \text{(as a function to $A$)}}
+    \]
+    \pause
+    \[
+      \red{f^{-1}: B \to A \quad \text{(as a function from $B$ to $A$)}}
+    \]
+  \end{alertblock}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \begin{theorem}[(UD Theorem $15.4$ (ii))]
+    \[
+      f: A \to B \text{ is bijective } \implies f^{-1} \text{ is bijective}.
+    \]
+  \end{theorem}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \begin{theorem}[Solving Equations (UD Theorem 15.4)]
+    \[
+      f: A \to B \text{ is bijective}
+    \]
+
+    \begin{enumerate}[(i)]
+      \item $f \circ f^{-1} = i_B$
+      \item $g: B \to A \land f \circ g = i_B \implies g = f^{-1}$
+      \vspace{0.30cm}
+      \item $f^{-1} \circ f = i_A$
+      \item $g: B \to A \land g \circ f = i_A \implies g = f^{-1}$
+    \end{enumerate}
+  \end{theorem}
+
+  \pause
+  \begin{alertblock}{Solving the equations:}
+    \[
+      f \circ g = i_B \qquad g \circ f = i_A
+    \]
+  \end{alertblock}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \begin{alertblock}{Bijective $\implies$ Inverse:}
+    \[
+      f: A \to B \text{ is bijective }
+    \]
+    \[ 
+      \implies 
+    \]
+    \[
+      \exists g: B \to A\; \Big( f \circ g = i_B \land g \circ f = i_A \Big) \pause \red{\;\land\; g = f^{-1}}
+    \]
+  \end{alertblock}
+
+  \pause
+  \vspace{0.50cm}
+  \begin{theorem}[Inverse $\implies$ Bijective (UD Theorem $15.8$ (iii))]
+    \[
+      \exists g: B \to A\; \Big( g \circ f = i_A \land f \circ g = i_B \Big) 
+    \]
+    \[ 
+      \implies 
+    \]
+    \[
+      f: A \to B \text{ is bijective} \pause \red{\;\land\; g = f^{-1}}
+    \]
+  \end{theorem}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \begin{theorem}[Inverse of Composition (UD Theorem $15.6$)]
+    \[
+      f: A \to B, g: B \to C \text{ are bijective}
+    \]
+
+    \begin{enumerate}[(i)]
+      \item $g \circ f \text{ is bijective}$
+      \item $(g \circ f)^{-1} = f^{-1} \circ g^{-1}$
+    \end{enumerate}
+  \end{theorem}
+
+  \begin{proof}[Proof for (ii)]
+    \[
+      (f^{-1} \circ g^{-1}) \circ (g \circ f) = i_A
+    \]
+
+    \[
+      (g \circ f) \circ (f^{-1} \circ g^{-1}) = i_B
+    \]
+  \end{proof}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-\end{frame}
-%%%%%%%%%%%%%%%
+  \begin{definition}[Symmetric Group]
+    Let $A$ be a set.
 
-%%%%%%%%%%%%%%%
-\begin{frame}{}
-\end{frame}
-%%%%%%%%%%%%%%%
+    Consider all bijective functions on $A$ and the composition ($\circ$) operator.
 
-%%%%%%%%%%%%%%%
-\begin{frame}{}
+    \begin{enumerate}[(i)]
+      \item $f \circ g$ is a bijective function on $A$
+      \item $h \circ (\circ g \circ f) = (h \circ g) \circ f$
+      \item $f \circ id_A = f = id_A \circ f$
+      \item $f \circ f^{-1} = id_A = f^{-1} \circ f$
+    \end{enumerate}
+  \end{definition}
 \end{frame}
 %%%%%%%%%%%%%%%

@@ -116,6 +116,7 @@
     \begin{enumerate}[(i)]
       \item If $g \circ f$ is injective, then $f$ is injective.
       \item If $g \circ f$ is surjective, then $g$ is surjective.
+      \item If $g \circ f$ is bijective, then $f$ is injective and $g$ is surjective.
     \end{enumerate}
   \end{theorem}
 \end{frame}
@@ -124,17 +125,21 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{exampleblock}{Cancellation Property for Composition (Problem $15.11$)}
+    \[
+      f: A \to B \qquad g_1, g_2: B \to A
+    \]
 
+    \[
+      f \circ g_1 = f \circ g_2 \land \red{f \text{ is bijective }} \implies g_1 = g_2
+    \]
   \end{exampleblock}
-\end{frame}
-%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%
-\begin{frame}{}
-\end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{frame}{}
+  \pause
+  \vspace{0.60cm}
+  \begin{proof}
+    \[
+      f \text{ is one-to-one}.
+    \]
+  \end{proof}
 \end{frame}
 %%%%%%%%%%%%%%%

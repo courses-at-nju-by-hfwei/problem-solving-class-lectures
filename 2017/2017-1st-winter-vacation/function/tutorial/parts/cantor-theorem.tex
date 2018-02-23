@@ -1,0 +1,207 @@
+% %%%%%%%%%%%%%%%
+% \begin{frame}{}
+%   \begin{columns}
+%     \column{0.45\textwidth}
+%       \fignocaption{width = 0.45\textwidth}{figs/cantor-infinity}
+%       \vspace{-0.20cm}
+%       {\centerline{\footnotesize Georg Cantor (1845 -- 1918)}}
+%     \column{0.45\textwidth}
+%       \only<5->{
+% 	\fignocaption{width = 0.40\textwidth}{figs/hilbert}
+% 	\vspace{-0.20cm}
+% 	{\centerline{\footnotesize David Hilbert (1862 -- 1943)}}
+%       }
+%   \end{columns}
+% 
+%   \begin{columns}
+%     \pause
+%     \column{0.30\textwidth}
+%       \fignocaption{width = 0.50\textwidth}{figs/kronecker}
+%       \vspace{-0.50cm}
+%       \begin{center}
+% 	{\footnotesize Leopold Kronecker}
+%       
+%         {\footnotesize (1823 -- 1891)}
+%       \end{center}
+%     \pause
+%     \column{0.30\textwidth}
+%       \fignocaption{width = 0.50\textwidth}{figs/poincare}
+%       \vspace{-0.50cm}
+%       \begin{center}
+% 	{\footnotesize Henri Poincar\'{e}}
+%       
+%         {\footnotesize (1854 -- 1912)}
+%       \end{center}
+%     \pause
+%     \column{0.30\textwidth}
+%       \fignocaption{width = 0.50\textwidth}{figs/wittgenstein}
+%       \vspace{-0.50cm}
+%       \begin{center}
+% 	{\footnotesize Ludwig Wittgenstein}
+%       
+%         {\footnotesize (1889 -- 1951)}
+%       \end{center}
+%   \end{columns}
+% \end{frame}
+% %%%%%%%%%%%%%%%
+% 
+% %%%%%%%%%%%%%%%
+% \begin{frame}{}
+%   \begin{quote}
+%     From his paradise that Cantor with us unfolded, 
+%     we hold our breath in awe; knowing, we shall not be expelled.
+% 
+%     \hfill --- David Hilbert
+%   \end{quote}
+% 
+%   \vspace{0.80cm}
+%   \begin{quote}
+%     \centerline{没有人能把我们从 Cantor 创造的乐园中驱逐出去。}
+%   \end{quote}
+% 
+%   \pause
+%   \fignocaption{width = 0.35\textwidth}{figs/cat-door}
+% \end{frame}
+% %%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[Cantor Theorem (ES Theorem 24.4)]
+    Let $A$ be a set. 
+
+    If $f: A \to 2^{A}$, then $f$ is not onto.
+  \end{theorem}
+
+  \begin{proof}
+    \fignocaption{width = 0.65\textwidth}{figs/cantor-theorem-proof}
+  \end{proof}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[Cantor Theorem]
+    Let $A$ be a set. 
+
+    If $f: A \to 2^{A}$, then $f$ is not onto.
+  \end{theorem}
+
+  \vspace{0.60cm}
+  \begin{columns}
+    \pause
+    \column{0.28\textwidth}
+      \fignocaption{width = 1.00\textwidth}{figs/talking-about}
+    \pause
+    \column{0.25\textwidth}
+      \fignocaption{width = 0.90\textwidth}{figs/interesting}
+    \pause
+    \column{0.25\textwidth}
+      \fignocaption{width = 0.80\textwidth}{figs/genius}
+    \pause
+    \column{0.25\textwidth}
+      \fignocaption{width = 1.00\textwidth}{figs/stupid}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[Cantor Theorem]
+    Let $A$ be a set. 
+
+    If $f: A \to 2^{A}$, then $f$ is not onto.
+  \end{theorem}
+
+  \vspace{0.30cm}
+  Understanding this problem:
+  \[
+    A = \set{1,2,3}
+  \]
+
+  \begin{description}
+    \pause
+    \item[$2^{A}$]
+      \[
+	2^{A} = \Big\{\emptyset, \set{1}, \set{2}, \set{3}, \set{1,2}, \set{1,3}, \set{2,3}, \set{1,2,3}\Big\}
+      \]
+    \pause
+    \item[Onto]
+      \[
+	\forall B \in 2^{A}\; \Big(\exists a \in A\; f(a) = B\Big).
+      \]
+    \pause
+    \item[Not Onto]
+      \[
+	\red{\exists} B \in 2^{A}\; \Big(\red{\forall} a \in A\; f(a) \neq B\Big).
+      \]
+  \end{description}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[Cantor Theorem]
+    Let $A$ be a set. 
+
+    If $f: A \to 2^{A}$, then $f$ is not onto.
+  \end{theorem}
+
+  \begin{proof}
+    \begin{columns}[t]
+      \column{0.50\textwidth}
+	\begin{itemize}
+	  \item<2-> Constructive proof (\red{$\exists$}):
+	    \[
+	      B = \set{x \in A \mid x \notin f(x)}.
+	    \]
+	  \item<4-> By contradiction (\red{$\forall$}):
+	    \[
+	      \exists a \in A: f(a) = B.
+	    \]
+	\end{itemize}
+      \column{0.40\textwidth}
+	\uncover<3->{\fignocaption{width = 0.80\textwidth}{figs/what-is-this}}
+    \end{columns}
+
+    \uncover<5->{
+      \[
+	\red{Q: a \in B\emph{?}}
+      \]
+    }
+  \end{proof}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[Cantor Theorem]
+    Let $A$ be a set. 
+
+    If $f: A \to 2^{A}$, then $f$ is not onto.
+  \end{theorem}
+
+  \begin{proof}[对角线论证 (Cantor's diagonal argument) \only<5->{\footnotesize (以下仅适用于可数集合 $A$)}]
+    \pause
+    \begin{table}[]
+      \centering
+      $\begin{tabu}{|c||c|c|c|c|c|c|}
+	\hline
+	a      & \multicolumn{6}{c|}{f(a)} \\ \hline
+	       & 1      & 2      & 3      & 4      & 5      & \cdots \\ \hline \hline
+	1      & \redoverlay{1}{3-}      & 1      & 0      & 0      & 1      & \cdots \\ \hline
+	2      & 0      & \redoverlay{0}{3-}      & 0      & 0      & 0      & \cdots \\ \hline
+	3      & 1      & 0      & \redoverlay{0}{3-}      & 1      & 0      & \cdots \\ \hline
+	4      & 1      & 1      & 1      & \redoverlay{1}{3-}      & 1      & \cdots \\ \hline
+	5      & 0      & 1      & 0      & 1      & \redoverlay{0}{3-}      & \cdots \\ \hline
+	\vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \cdots \\ \hline
+      \end{tabu}$
+    \end{table}
+
+    \uncover<4->{
+      \[
+	B = \blue{\set{0, 1, 1, 0, 1}}
+      \]
+    }
+  \end{proof}
+\end{frame}
+%%%%%%%%%%%%%%%

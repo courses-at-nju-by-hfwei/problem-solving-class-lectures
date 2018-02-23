@@ -8,46 +8,79 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{definition}[Injective (one-to-one; 1-1)]
+  \begin{definition}[Injective (one-to-one; 1-1) 单射函数]
     \[
-      \forall a_1, a_2 \in A: f(a_1) = f(a_2) \implies a_1 = a_2
+      f: A \to B \qquad \uncover<2->{f: A \red{\;\rightarrowtail\;} B}
     \]
 
+    \vspace{-0.60cm}
     \[
       \forall a_1, a_2 \in A: a_1 \neq a_2 \implies f(a_1) \neq f(a_2)
     \]
   \end{definition}
 
-  \pause
-  \[
-    \exists a_1, a_2 \in A: a_1 \neq a_2 \land f(a_1) = f(a_2)
-  \]
+  \vspace{0.50cm}
+  \uncover<3->{
+    \begin{alertblock}{For Proof:}
+      \begin{itemize}
+	\item To prove that $f$ \blue{\it is} 1-1:
+	  \[
+	    \forall a_1, a_2 \in A: f(a_1) = f(a_2) \implies a_1 = a_2
+	  \]
+	\item<4-> To show that $f$ \blue{\it is not} 1-1:
+	  \[
+	    \red{\exists} a_1, a_2 \in A: a_1 \neq a_2 \land f(a_1) = f(a_2)
+	  \]
+      \end{itemize}
+    \end{alertblock}
+  }
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{definition}[Surjective (onto)]
+  \begin{definition}[Surjective (onto) 满射函数]
     \[
-      \forall b \in B: \exists a \in A: f(a) = b
+      f: A \to B \qquad \uncover<2->{f: A \red{\;\twoheadrightarrow\;} B}
     \]
 
+    \vspace{-0.60cm}
     \[
       \ran{f} = B
     \]
   \end{definition}
 
-  \pause
-  \[
-    \exists b \in B: \forall a \in A: f(a) \neq b
-  \]
+  \vspace{0.50cm}
+  \uncover<3->{
+    \begin{alertblock}{For Proof:}
+      \begin{itemize}
+	\item To prove that $f$ \blue{\it is} onto:
+	  \[
+	    \forall b \in B \; \Big(\red{\exists} a \in A: f(a) = b \Big)
+	  \]
+	\item<4-> To show that $f$ \blue{\it is not} onto:
+	  \[
+	    \red{\exists} b \in B\; \Big(\red{\forall} a \in A: f(a) \neq b \Big)
+	  \]
+	\end{itemize}
+    \end{alertblock}
+  }
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
+\input{parts/cantor-theorem}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{definition}[Bijective (one-to-one correspondence)]
-    \centerline{Bijective: injective + surjective}
+  \begin{definition}[Bijective (one-to-one correspondence) 一一对应]
+    \[
+      f: A \to B \qquad f: A \red{\;\;} B
+    \]
+
+    \vspace{0.50cm}
+    \centerline{1-1 \& onto}
   \end{definition}
 \end{frame}
 %%%%%%%%%%%%%%%

@@ -33,24 +33,27 @@
     \]
   \end{definition}
 
-  \[
-    \red{\exists!}: \forall b, b' \in B, (a, b) \in f \land (a, b') \in f \implies b = b'.
-  \]
+  \pause
+  \begin{alertblock}{For Proof:}
+    \[
+      \red{\forall}
+    \]
+
+    \[
+      \red{\exists!}: \forall b, b' \in B, (a, b) \in f \land (a, b') \in f \implies b = b'.
+    \]
+  \end{alertblock}
 
   \pause
   \[
-    f: A \to B
+    f: A \to B, \quad a \mapsto f(a) \qquad\Big(b = f(a)\Big)
   \]
 
   \centerline{$A: \dom{f}$ \qquad $B: \cod{f}$}
 
-  \[
-    f: a \mapsto f(a)
-  \]
-
   \pause
   \[
-    \ran{f} = \set{b \in B \mid \exists a \in A: f(a) = b} \subseteq B
+    \ran{f} = f(A) = \set{f(a) \mid a \in A} \subseteq B
   \]
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -58,15 +61,7 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \[
-    f = g \iff \dom{f} = \dom{g} \land (\forall x \in \dom{f}: f(x) = g(x))
-  \]
-\end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \[
-    f: A \to B
+    \text{A function } f: A \to B \text{ is a set.}
   \]
 
   \[
@@ -80,5 +75,26 @@
   \[
     (a,b) = \set{\set{a}, \set{a,b}}
   \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Axiom of Extensionality (集合的外延公理)]
+    \[
+      \forall A \forall B \forall \blue{x} (\blue{x} \in A \iff \blue{x} \in B) \iff A = B.
+    \]
+  \end{definition}
+
+  \vspace{0.80cm}
+  \centerline{Intensionality (内涵) \emph{vs.} Extensionality (外延)}
+  \vspace{0.80cm}
+
+  \pause
+  \begin{definition}[函数的外延性原则]
+    \[
+      f = g \iff \dom{f} = \dom{g} \land (\forall x \in \dom{f}: f(x) = g(x))
+    \]
+  \end{definition}
 \end{frame}
 %%%%%%%%%%%%%%%

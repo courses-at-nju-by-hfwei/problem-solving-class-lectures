@@ -8,17 +8,15 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \begin{definition}[Relation]
+    Let $A$ and $B$ be sets.
 
-\end{frame}
-%%%%%%%%%%%%%%%
+    $R$ is a (binary) relation if
 
-%%%%%%%%%%%%%%%
-\begin{frame}{}
-\end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{frame}{}
+    \[
+      R \subseteq A \times B.
+    \]
+  \end{definition}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -55,6 +53,69 @@
   \[
     \ran{f} = f(A) = \set{f(a) \mid a \in A} \subseteq B
   \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    D(x) = \left\{\begin{array}{ll}
+      1 & \text{if } x \in \mathbb{Q} \\
+      0 & \text{if } x \in \real \setminus \mathbb{Q} 
+    \end{array}\right.
+  \]
+
+  \vspace{0.60cm}
+  \centerline{Dirichlet Function}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fignocaption{width = 0.50\textwidth}{figs/weierstrass-function}{\centerline{Weierstrass Function (1872)}}
+
+  \[
+    f(x)=\sum_{n=0} ^\infty a^n \cos(b^n \pi x) 
+  \]
+
+  \[
+    0 < a < 1,\; b \in 2\nat + 1,\; ab > 1+\frac{3}{2} \pi
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Problem $13.3\; (g)$}
+    \[
+      f: \mathbb{Q} \to \real{}
+    \]
+
+    \[
+      f(x) = \left\{\begin{array}{ll}
+	x + 1 & \text{if } x \in 2\integer{} \\
+	x - 1 & \text{if } x \in 3\integer{} \\
+	2     & \text{otherwise}
+      \end{array}\right.
+    \]
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Problem $13.4$}
+    \[
+      f: \mathcal{P}(\real{}) \to \integer{}
+    \]
+
+    \[
+      f(A) = \left\{\begin{array}{ll}
+	\min(A \cap \nat{}) & \text{if } A \cap \nat{} \neq \emptyset \\
+	-1 & \text{if } A \cap \nat{} = \emptyset
+      \end{array}\right.
+    \]
+  \end{exampleblock}
 \end{frame}
 %%%%%%%%%%%%%%%
 

@@ -1,0 +1,189 @@
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fignocaption{width = 0.35\textwidth}{figs/equal-logo}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[$|A| = |B| \;(A \approx B)$ (1878)]
+    Two sets of $A$ and $B$ are \blue{\it equipotent} if there exists a \red{\it bijection} from $A$ to $B$.
+  \end{definition}
+
+  \pause
+  \vspace{0.60cm}
+  \centerline{``='' is an equivalence relation.}
+
+  \pause
+  \[
+    \overline{\overline{A}} \quad \text{(two \red{abstractions})}
+  \]
+
+  \pause
+  \[
+    \set{1,2,3} \quad \text{\it vs.} \quad \set{a,b,c}
+  \]
+
+  \pause
+  \[
+    \set{1,2,3,\cdots} \quad \text{\it vs.} \quad \set{1,3,5,\cdots, 2,4,6,\cdots}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Finite and Infinite]
+    For any set $X$,
+    \begin{description}[Infinite]
+      \item[Finite] 
+	\[
+	  \exists n \in \N: |X| = n  \qquad (\red{0 \in \N})
+	\]
+      \item[Infinite] ($\lnot$ finite)
+	\[
+	  \forall n \in \N: |X| \neq n
+	\]
+    \end{description}
+  \end{definition}
+
+  % \pause
+  % \vspace{0.30cm}
+  % \begin{center}
+  %   {\red{\it $Q:$ How to prove that a set is infinite?}} \\[8pt]
+  %   \pause
+  %   {\blue{By contradiction.}}
+  % \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Finite and Infinite]
+    For any set $X$,
+    \begin{description}[Uncountable Infinite]
+      \item[Countably Infinite]
+	\[
+	  |X| = |\N| \blue{\;\triangleq \aleph_{0}}
+	\]
+      \item[Countable]
+	\[
+	  \text{(finite $\lor$ countably infinite)}
+	\]
+      \item[Uncountably Infinite] 
+	\[
+	  \text{($\lnot$ finite) $\land$ \Big($\lnot$ (countably infinite)\Big)}
+	\]
+	\[
+	  \text{($\lnot$ countable)}
+	\]
+    \end{description}
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[$\aleph_0$ (1874)]
+    \[
+      |\Q| = |\N|
+    \]
+  \end{theorem}
+
+  \pause
+  \begin{exampleblock}{$|\Q| = |\N|$ (UD $22.9$)}
+    \[
+      q \in \Q^{+}: a / b \; (a,b \in \N^{+})
+    \]
+    \fignocaption{width = 0.35\textwidth}{figs/counting-Q}
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    |\N| = |\Z|
+  \]
+
+  \[
+    |\N| = |\N \times \N|
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[$\R$ is uncountably infinite (1874).]
+    \[
+      |\R| \neq |\N| \qquad (|\R| \;\blue{>}\; |\N|)
+    \]
+  \end{theorem}
+
+  \pause
+  \vspace{0.60cm}
+  \begin{center}
+    Different ``Sizes'' of Infinity \\[10pt] \pause
+    Cantor's Diagonal Argument (1890)
+  \end{center}
+
+  \pause
+  \vspace{0.50cm}
+  \begin{theorem}[Cantor's Theorem (1891)]
+    \[
+      |X| \neq |2^{X}| \qquad (|X| \;\blue{<}\; |2^{X}|)
+    \]
+  \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Infinite Sequences of $0$'s and $1$'s (UD $22.3$)}
+    Is the set of all infinite sequences of $0$'s and $1$'s finite,
+    countably infinite, or uncountable?
+  \end{exampleblock}
+
+  \pause
+  \vspace{0.50cm}
+  \begin{proof}
+    By Cantor's diagonal argument $\implies$ uncountable.
+  \end{proof}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{proof}[Nonproof]
+    \[
+      f: \set{\set{0,1}^{\ast}} \to \N
+    \]
+
+    \[
+      f(x_0 x_1 \cdots) = \sum_{i=0}^{\infty} x_i 2^{i}
+    \]
+  \end{proof}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[$|\R|$ (1877)]
+    \[
+      (0,1) = \teal{|\R| = |\R \times \R|} \blue{= |\R^{n \in \N}|}
+    \]
+  \end{theorem}
+
+  \pause
+  \vspace{0.80cm}
+  \begin{quote}
+    \begin{center}
+      ``Je le vois, mais je ne le crois pas !'' \\[8pt]
+      ``I see it, but I don't believe it !'' \\[10pt]
+      \hfill --- Cantor's letter to Dedekind (1877). 
+    \end{center}
+  \end{quote}
+
+  \pause
+  \vspace{0.60cm}
+  \centerline{\red{\it $Q:$ Then, what is ``dimension''?}}
+\end{frame}
+%%%%%%%%%%%%%%%

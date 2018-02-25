@@ -1,0 +1,1905 @@
+
+
+
+
+
+<html>
+  <head>
+    <title>导出学生名单</title>
+  </head>
+  <style>
+	@media print{
+		INPUT {display:none}
+		#pageMarker {display: block}
+	}
+  </style>
+  <body>
+  	<center><input type="button" value="导出到Excel"></center>
+    <table border="0" style="font-size:10px;" width="100%" height="100%" align="center">
+		<thead style="display:table-header-group;font-weight:bold">
+			<tr><td align="center" style="font-weight:bold;font-size:20px">南京大学&nbsp;&nbsp;《问题求解（二）》&nbsp;&nbsp;课程学生名单<br><br></td></tr>
+			<tr><td align="center" style="font-weight:bold;font-size:18px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br></td></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					<table cellpadding="2" border="0" style="border-collapse:collapse;font-size:14px;" width="100%" height="100%" align="center">
+						<thead style="display:table-header-group;font-weight:bold">
+							<tr align="center" valign="middle" style="font-weight:bold;" height="25">
+								<td style="border:solid 1px #000000" width="50" align="center">学号</td>
+								<td style="border:solid 1px #000000" width="80" align="center">姓名</td>
+								<td style="border:solid 1px #000000" width="30" align="center">类型</td>
+								<td style="border:solid 1px #000000" width="90" align="center">院系专业</td>
+								<td style="border:solid 1px #000000" width="8" align="center">&nbsp;1&nbsp;</td>
+								<td style="border:solid 1px #000000" width="8" align="center">&nbsp;2&nbsp;</td>
+								<td style="border:solid 1px #000000" width="8" align="center">&nbsp;3&nbsp;</td>
+								<td style="border:solid 1px #000000" width="8" align="center">&nbsp;4&nbsp;</td>
+								<td style="border:solid 1px #000000" width="8" align="center">&nbsp;5&nbsp;</td>
+								<td style="border:solid 1px #000000" width="8" align="center">&nbsp;6&nbsp;</td>
+								<td style="border:solid 1px #000000" width="8" align="center">&nbsp;7&nbsp;</td>
+								<td style="border:solid 1px #000000" width="8" align="center">&nbsp;8&nbsp;</td>
+								<td style="border:solid 1px #000000" width="8" align="center">&nbsp;9&nbsp;</td>
+								
+								<td style="border:solid 1px #000000" width="8" align="center">10</td>
+								<td style="border:solid 1px #000000" width="8" align="center">11</td>
+								<td style="border:solid 1px #000000" width="8" align="center">12</td>
+								<td style="border:solid 1px #000000" width="8" align="center">13</td>
+								<td style="border:solid 1px #000000" width="8" align="center">14</td>
+								<td style="border:solid 1px #000000" width="8" align="center">15</td>
+								<td style="border:solid 1px #000000" width="8" align="center">16</td>
+								<td style="border:solid 1px #000000" width="8" align="center">17</td>
+								<td style="border:solid 1px #000000" width="8" align="center">18</td>								
+								<td style="border:solid 1px #000000" align="center">&nbsp;&nbsp;备注&nbsp;&nbsp;</td>
+							</tr>
+						</thead>
+						
+						
+						
+							<tr valign="middle" height="25">
+								<td style="border:solid 1px #000000" align="center" valign="middle" >151160030</td>
+								<td style="border:solid 1px #000000" valign="middle" >&nbsp;李奕萱</td>
+								<td style="border:solid 1px #000000" align="center" valign="middle" >
+									
+										正选
+										
+										
+										
+										
+										
+										
+									
+								</td>
+								<td width="150" style="border:solid 1px #000000" valign="middle" >&nbsp;匡亚明 - 理强</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+															
+								<td style="border:solid 1px #000000">&nbsp;</td>
+							</tr>
+							
+							
+						
+							<tr valign="middle" height="25">
+								<td style="border:solid 1px #000000" align="center" valign="middle" >171180558</td>
+								<td style="border:solid 1px #000000" valign="middle" >&nbsp;徐臣</td>
+								<td style="border:solid 1px #000000" align="center" valign="middle" >
+									
+										正选
+										
+										
+										
+										
+										
+										
+									
+								</td>
+								<td width="150" style="border:solid 1px #000000" valign="middle" >&nbsp;电子 - 电子类</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+															
+								<td style="border:solid 1px #000000">&nbsp;</td>
+							</tr>
+							
+							
+						
+							<tr valign="middle" height="25">
+								<td style="border:solid 1px #000000" align="center" valign="middle" >171180589</td>
+								<td style="border:solid 1px #000000" valign="middle" >&nbsp;李凯旭</td>
+								<td style="border:solid 1px #000000" align="center" valign="middle" >
+									
+										正选
+										
+										
+										
+										
+										
+										
+									
+								</td>
+								<td width="150" style="border:solid 1px #000000" valign="middle" >&nbsp;电子 - 电子类</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+															
+								<td style="border:solid 1px #000000">&nbsp;</td>
+							</tr>
+							
+							
+						
+							<tr valign="middle" height="25">
+								<td style="border:solid 1px #000000" align="center" valign="middle" >171240009</td>
+								<td style="border:solid 1px #000000" valign="middle" >&nbsp;何润雨</td>
+								<td style="border:solid 1px #000000" align="center" valign="middle" >
+									
+										正选
+										
+										
+										
+										
+										
+										
+									
+								</td>
+								<td width="150" style="border:solid 1px #000000" valign="middle" >&nbsp;匡亚明 - 理强</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+															
+								<td style="border:solid 1px #000000">&nbsp;</td>
+							</tr>
+							
+							
+						
+							<tr valign="middle" height="25">
+								<td style="border:solid 1px #000000" align="center" valign="middle" >171240501</td>
+								<td style="border:solid 1px #000000" valign="middle" >&nbsp;匡舒磊</td>
+								<td style="border:solid 1px #000000" align="center" valign="middle" >
+									
+										正选
+										
+										
+										
+										
+										
+										
+									
+								</td>
+								<td width="150" style="border:solid 1px #000000" valign="middle" >&nbsp;匡亚明 - 理强</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+															
+								<td style="border:solid 1px #000000">&nbsp;</td>
+							</tr>
+							
+							
+						
+							<tr valign="middle" height="25">
+								<td style="border:solid 1px #000000" align="center" valign="middle" >171240502</td>
+								<td style="border:solid 1px #000000" valign="middle" >&nbsp;刘寒</td>
+								<td style="border:solid 1px #000000" align="center" valign="middle" >
+									
+										正选
+										
+										
+										
+										
+										
+										
+									
+								</td>
+								<td width="150" style="border:solid 1px #000000" valign="middle" >&nbsp;匡亚明 - 理强</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+															
+								<td style="border:solid 1px #000000">&nbsp;</td>
+							</tr>
+							
+							
+						
+							<tr valign="middle" height="25">
+								<td style="border:solid 1px #000000" align="center" valign="middle" >171240511</td>
+								<td style="border:solid 1px #000000" valign="middle" >&nbsp;孙旭东</td>
+								<td style="border:solid 1px #000000" align="center" valign="middle" >
+									
+										正选
+										
+										
+										
+										
+										
+										
+									
+								</td>
+								<td width="150" style="border:solid 1px #000000" valign="middle" >&nbsp;匡亚明 - 理强</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+															
+								<td style="border:solid 1px #000000">&nbsp;</td>
+							</tr>
+							
+							
+						
+							<tr valign="middle" height="25">
+								<td style="border:solid 1px #000000" align="center" valign="middle" >171240513</td>
+								<td style="border:solid 1px #000000" valign="middle" >&nbsp;黄秉焜</td>
+								<td style="border:solid 1px #000000" align="center" valign="middle" >
+									
+										正选
+										
+										
+										
+										
+										
+										
+									
+								</td>
+								<td width="150" style="border:solid 1px #000000" valign="middle" >&nbsp;匡亚明 - 理强</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+															
+								<td style="border:solid 1px #000000">&nbsp;</td>
+							</tr>
+							
+							
+						
+							<tr valign="middle" height="25">
+								<td style="border:solid 1px #000000" align="center" valign="middle" >171240518</td>
+								<td style="border:solid 1px #000000" valign="middle" >&nbsp;鄢振宇</td>
+								<td style="border:solid 1px #000000" align="center" valign="middle" >
+									
+										正选
+										
+										
+										
+										
+										
+										
+									
+								</td>
+								<td width="150" style="border:solid 1px #000000" valign="middle" >&nbsp;匡亚明 - 理强</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+															
+								<td style="border:solid 1px #000000">&nbsp;</td>
+							</tr>
+							
+							
+						
+							<tr valign="middle" height="25">
+								<td style="border:solid 1px #000000" align="center" valign="middle" >171240521</td>
+								<td style="border:solid 1px #000000" valign="middle" >&nbsp;袁彦</td>
+								<td style="border:solid 1px #000000" align="center" valign="middle" >
+									
+										正选
+										
+										
+										
+										
+										
+										
+									
+								</td>
+								<td width="150" style="border:solid 1px #000000" valign="middle" >&nbsp;匡亚明 - 理强</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+															
+								<td style="border:solid 1px #000000">&nbsp;</td>
+							</tr>
+							
+							
+						
+							<tr valign="middle" height="25">
+								<td style="border:solid 1px #000000" align="center" valign="middle" >171240524</td>
+								<td style="border:solid 1px #000000" valign="middle" >&nbsp;张灵毓</td>
+								<td style="border:solid 1px #000000" align="center" valign="middle" >
+									
+										正选
+										
+										
+										
+										
+										
+										
+									
+								</td>
+								<td width="150" style="border:solid 1px #000000" valign="middle" >&nbsp;匡亚明 - 理强</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+															
+								<td style="border:solid 1px #000000">&nbsp;</td>
+							</tr>
+							
+							
+						
+							<tr valign="middle" height="25">
+								<td style="border:solid 1px #000000" align="center" valign="middle" >171240525</td>
+								<td style="border:solid 1px #000000" valign="middle" >&nbsp;凌晨宇</td>
+								<td style="border:solid 1px #000000" align="center" valign="middle" >
+									
+										正选
+										
+										
+										
+										
+										
+										
+									
+								</td>
+								<td width="150" style="border:solid 1px #000000" valign="middle" >&nbsp;匡亚明 - 理强</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+															
+								<td style="border:solid 1px #000000">&nbsp;</td>
+							</tr>
+							
+							
+						
+							<tr valign="middle" height="25">
+								<td style="border:solid 1px #000000" align="center" valign="middle" >171240530</td>
+								<td style="border:solid 1px #000000" valign="middle" >&nbsp;兰兆炜</td>
+								<td style="border:solid 1px #000000" align="center" valign="middle" >
+									
+										正选
+										
+										
+										
+										
+										
+										
+									
+								</td>
+								<td width="150" style="border:solid 1px #000000" valign="middle" >&nbsp;匡亚明 - 理强</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+															
+								<td style="border:solid 1px #000000">&nbsp;</td>
+							</tr>
+							
+							
+						
+							<tr valign="middle" height="25">
+								<td style="border:solid 1px #000000" align="center" valign="middle" >171240535</td>
+								<td style="border:solid 1px #000000" valign="middle" >&nbsp;高天朗</td>
+								<td style="border:solid 1px #000000" align="center" valign="middle" >
+									
+										正选
+										
+										
+										
+										
+										
+										
+									
+								</td>
+								<td width="150" style="border:solid 1px #000000" valign="middle" >&nbsp;匡亚明 - 理强</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+															
+								<td style="border:solid 1px #000000">&nbsp;</td>
+							</tr>
+							
+							
+						
+							<tr valign="middle" height="25">
+								<td style="border:solid 1px #000000" align="center" valign="middle" >171240536</td>
+								<td style="border:solid 1px #000000" valign="middle" >&nbsp;谢逸</td>
+								<td style="border:solid 1px #000000" align="center" valign="middle" >
+									
+										正选
+										
+										
+										
+										
+										
+										
+									
+								</td>
+								<td width="150" style="border:solid 1px #000000" valign="middle" >&nbsp;匡亚明 - 理强</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+															
+								<td style="border:solid 1px #000000">&nbsp;</td>
+							</tr>
+							
+							
+						
+							<tr valign="middle" height="25">
+								<td style="border:solid 1px #000000" align="center" valign="middle" >171240537</td>
+								<td style="border:solid 1px #000000" valign="middle" >&nbsp;何伟</td>
+								<td style="border:solid 1px #000000" align="center" valign="middle" >
+									
+										正选
+										
+										
+										
+										
+										
+										
+									
+								</td>
+								<td width="150" style="border:solid 1px #000000" valign="middle" >&nbsp;匡亚明 - 理强</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+															
+								<td style="border:solid 1px #000000">&nbsp;</td>
+							</tr>
+							
+							
+						
+							<tr valign="middle" height="25">
+								<td style="border:solid 1px #000000" align="center" valign="middle" >171240540</td>
+								<td style="border:solid 1px #000000" valign="middle" >&nbsp;王腾</td>
+								<td style="border:solid 1px #000000" align="center" valign="middle" >
+									
+										正选
+										
+										
+										
+										
+										
+										
+									
+								</td>
+								<td width="150" style="border:solid 1px #000000" valign="middle" >&nbsp;匡亚明 - 理强</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+															
+								<td style="border:solid 1px #000000">&nbsp;</td>
+							</tr>
+							
+							
+						
+							<tr valign="middle" height="25">
+								<td style="border:solid 1px #000000" align="center" valign="middle" >171240542</td>
+								<td style="border:solid 1px #000000" valign="middle" >&nbsp;李博文</td>
+								<td style="border:solid 1px #000000" align="center" valign="middle" >
+									
+										正选
+										
+										
+										
+										
+										
+										
+									
+								</td>
+								<td width="150" style="border:solid 1px #000000" valign="middle" >&nbsp;匡亚明 - 理强</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+															
+								<td style="border:solid 1px #000000">&nbsp;</td>
+							</tr>
+							
+							
+						
+							<tr valign="middle" height="25">
+								<td style="border:solid 1px #000000" align="center" valign="middle" >171240543</td>
+								<td style="border:solid 1px #000000" valign="middle" >&nbsp;张博乔</td>
+								<td style="border:solid 1px #000000" align="center" valign="middle" >
+									
+										正选
+										
+										
+										
+										
+										
+										
+									
+								</td>
+								<td width="150" style="border:solid 1px #000000" valign="middle" >&nbsp;匡亚明 - 理强</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+															
+								<td style="border:solid 1px #000000">&nbsp;</td>
+							</tr>
+							
+							
+						
+							<tr valign="middle" height="25">
+								<td style="border:solid 1px #000000" align="center" valign="middle" >171240565</td>
+								<td style="border:solid 1px #000000" valign="middle" >&nbsp;殷天润</td>
+								<td style="border:solid 1px #000000" align="center" valign="middle" >
+									
+										正选
+										
+										
+										
+										
+										
+										
+									
+								</td>
+								<td width="150" style="border:solid 1px #000000" valign="middle" >&nbsp;匡亚明 - 理强</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+															
+								<td style="border:solid 1px #000000">&nbsp;</td>
+							</tr>
+							
+							
+						
+							<tr valign="middle" height="25">
+								<td style="border:solid 1px #000000" align="center" valign="middle" >171250623</td>
+								<td style="border:solid 1px #000000" valign="middle" >&nbsp;姜勇刚</td>
+								<td style="border:solid 1px #000000" align="center" valign="middle" >
+									
+										正选
+										
+										
+										
+										
+										
+										
+									
+								</td>
+								<td width="150" style="border:solid 1px #000000" valign="middle" >&nbsp;软院 - 软件工程</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+															
+								<td style="border:solid 1px #000000">&nbsp;</td>
+							</tr>
+							
+							
+						
+							<tr valign="middle" height="25">
+								<td style="border:solid 1px #000000" align="center" valign="middle" >171250630</td>
+								<td style="border:solid 1px #000000" valign="middle" >&nbsp;杨欣然</td>
+								<td style="border:solid 1px #000000" align="center" valign="middle" >
+									
+										正选
+										
+										
+										
+										
+										
+										
+									
+								</td>
+								<td width="150" style="border:solid 1px #000000" valign="middle" >&nbsp;软院 - 软件工程</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+															
+								<td style="border:solid 1px #000000">&nbsp;</td>
+							</tr>
+							
+							
+						
+							<tr valign="middle" height="25">
+								<td style="border:solid 1px #000000" align="center" valign="middle" >171840548</td>
+								<td style="border:solid 1px #000000" valign="middle" >&nbsp;邱凯</td>
+								<td style="border:solid 1px #000000" align="center" valign="middle" >
+									
+										正选
+										
+										
+										
+										
+										
+										
+									
+								</td>
+								<td width="150" style="border:solid 1px #000000" valign="middle" >&nbsp;*数理科学类 - *数理科学类</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+															
+								<td style="border:solid 1px #000000">&nbsp;</td>
+							</tr>
+							
+							
+						
+							<tr valign="middle" height="25">
+								<td style="border:solid 1px #000000" align="center" valign="middle" >171860004</td>
+								<td style="border:solid 1px #000000" valign="middle" >&nbsp;戴若石</td>
+								<td style="border:solid 1px #000000" align="center" valign="middle" >
+									
+										正选
+										
+										
+										
+										
+										
+										
+									
+								</td>
+								<td width="150" style="border:solid 1px #000000" valign="middle" >&nbsp;*计算机科学与技术类 - *计算机科学与技术类</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+															
+								<td style="border:solid 1px #000000">&nbsp;</td>
+							</tr>
+							
+							
+						
+							<tr valign="middle" height="25">
+								<td style="border:solid 1px #000000" align="center" valign="middle" >171860013</td>
+								<td style="border:solid 1px #000000" valign="middle" >&nbsp;刘恩萌</td>
+								<td style="border:solid 1px #000000" align="center" valign="middle" >
+									
+										正选
+										
+										
+										
+										
+										
+										
+									
+								</td>
+								<td width="150" style="border:solid 1px #000000" valign="middle" >&nbsp;*计算机科学与技术类 - *计算机科学与技术类</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+															
+								<td style="border:solid 1px #000000">&nbsp;</td>
+							</tr>
+							
+							
+						
+							<tr valign="middle" height="25">
+								<td style="border:solid 1px #000000" align="center" valign="middle" >171860020</td>
+								<td style="border:solid 1px #000000" valign="middle" >&nbsp;裴一凡</td>
+								<td style="border:solid 1px #000000" align="center" valign="middle" >
+									
+										正选
+										
+										
+										
+										
+										
+										
+									
+								</td>
+								<td width="150" style="border:solid 1px #000000" valign="middle" >&nbsp;*计算机科学与技术类 - *计算机科学与技术类</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+															
+								<td style="border:solid 1px #000000">&nbsp;</td>
+							</tr>
+							
+							
+						
+							<tr valign="middle" height="25">
+								<td style="border:solid 1px #000000" align="center" valign="middle" >171860508</td>
+								<td style="border:solid 1px #000000" valign="middle" >&nbsp;张天昀</td>
+								<td style="border:solid 1px #000000" align="center" valign="middle" >
+									
+										正选
+										
+										
+										
+										
+										
+										
+									
+								</td>
+								<td width="150" style="border:solid 1px #000000" valign="middle" >&nbsp;*计算机科学与技术类 - *计算机科学与技术类</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+															
+								<td style="border:solid 1px #000000">&nbsp;</td>
+							</tr>
+							
+							
+						
+							<tr valign="middle" height="25">
+								<td style="border:solid 1px #000000" align="center" valign="middle" >171860509</td>
+								<td style="border:solid 1px #000000" valign="middle" >&nbsp;丁保荣</td>
+								<td style="border:solid 1px #000000" align="center" valign="middle" >
+									
+										正选
+										
+										
+										
+										
+										
+										
+									
+								</td>
+								<td width="150" style="border:solid 1px #000000" valign="middle" >&nbsp;*计算机科学与技术类 - *计算机科学与技术类</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+															
+								<td style="border:solid 1px #000000">&nbsp;</td>
+							</tr>
+							
+							
+						
+							<tr valign="middle" height="25">
+								<td style="border:solid 1px #000000" align="center" valign="middle" >171860532</td>
+								<td style="border:solid 1px #000000" valign="middle" >&nbsp;杜星亮</td>
+								<td style="border:solid 1px #000000" align="center" valign="middle" >
+									
+										正选
+										
+										
+										
+										
+										
+										
+									
+								</td>
+								<td width="150" style="border:solid 1px #000000" valign="middle" >&nbsp;*计算机科学与技术类 - *计算机科学与技术类</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+															
+								<td style="border:solid 1px #000000">&nbsp;</td>
+							</tr>
+							
+							
+						
+							<tr valign="middle" height="25">
+								<td style="border:solid 1px #000000" align="center" valign="middle" >171860538</td>
+								<td style="border:solid 1px #000000" valign="middle" >&nbsp;陶绍诚</td>
+								<td style="border:solid 1px #000000" align="center" valign="middle" >
+									
+										正选
+										
+										
+										
+										
+										
+										
+									
+								</td>
+								<td width="150" style="border:solid 1px #000000" valign="middle" >&nbsp;*计算机科学与技术类 - *计算机科学与技术类</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+															
+								<td style="border:solid 1px #000000">&nbsp;</td>
+							</tr>
+							
+							
+						
+							<tr valign="middle" height="25">
+								<td style="border:solid 1px #000000" align="center" valign="middle" >171860543</td>
+								<td style="border:solid 1px #000000" valign="middle" >&nbsp;李顶为</td>
+								<td style="border:solid 1px #000000" align="center" valign="middle" >
+									
+										正选
+										
+										
+										
+										
+										
+										
+									
+								</td>
+								<td width="150" style="border:solid 1px #000000" valign="middle" >&nbsp;*计算机科学与技术类 - *计算机科学与技术类</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+															
+								<td style="border:solid 1px #000000">&nbsp;</td>
+							</tr>
+							
+							
+						
+							<tr valign="middle" height="25">
+								<td style="border:solid 1px #000000" align="center" valign="middle" >171860548</td>
+								<td style="border:solid 1px #000000" valign="middle" >&nbsp;张扬播</td>
+								<td style="border:solid 1px #000000" align="center" valign="middle" >
+									
+										正选
+										
+										
+										
+										
+										
+										
+									
+								</td>
+								<td width="150" style="border:solid 1px #000000" valign="middle" >&nbsp;*计算机科学与技术类 - *计算机科学与技术类</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+															
+								<td style="border:solid 1px #000000">&nbsp;</td>
+							</tr>
+							
+							
+						
+							<tr valign="middle" height="25">
+								<td style="border:solid 1px #000000" align="center" valign="middle" >171860553</td>
+								<td style="border:solid 1px #000000" valign="middle" >&nbsp;肖江</td>
+								<td style="border:solid 1px #000000" align="center" valign="middle" >
+									
+										正选
+										
+										
+										
+										
+										
+										
+									
+								</td>
+								<td width="150" style="border:solid 1px #000000" valign="middle" >&nbsp;*计算机科学与技术类 - *计算机科学与技术类</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+															
+								<td style="border:solid 1px #000000">&nbsp;</td>
+							</tr>
+							
+							
+						
+							<tr valign="middle" height="25">
+								<td style="border:solid 1px #000000" align="center" valign="middle" >171860558</td>
+								<td style="border:solid 1px #000000" valign="middle" >&nbsp;董杨静</td>
+								<td style="border:solid 1px #000000" align="center" valign="middle" >
+									
+										正选
+										
+										
+										
+										
+										
+										
+									
+								</td>
+								<td width="150" style="border:solid 1px #000000" valign="middle" >&nbsp;*计算机科学与技术类 - *计算机科学与技术类</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+															
+								<td style="border:solid 1px #000000">&nbsp;</td>
+							</tr>
+							
+							
+						
+							<tr valign="middle" height="25">
+								<td style="border:solid 1px #000000" align="center" valign="middle" >171860575</td>
+								<td style="border:solid 1px #000000" valign="middle" >&nbsp;毛一鸣</td>
+								<td style="border:solid 1px #000000" align="center" valign="middle" >
+									
+										正选
+										
+										
+										
+										
+										
+										
+									
+								</td>
+								<td width="150" style="border:solid 1px #000000" valign="middle" >&nbsp;*计算机科学与技术类 - *计算机科学与技术类</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+															
+								<td style="border:solid 1px #000000">&nbsp;</td>
+							</tr>
+							
+							
+						
+							<tr valign="middle" height="25">
+								<td style="border:solid 1px #000000" align="center" valign="middle" >171860592</td>
+								<td style="border:solid 1px #000000" valign="middle" >&nbsp;吕云哲</td>
+								<td style="border:solid 1px #000000" align="center" valign="middle" >
+									
+										正选
+										
+										
+										
+										
+										
+										
+									
+								</td>
+								<td width="150" style="border:solid 1px #000000" valign="middle" >&nbsp;*计算机科学与技术类 - *计算机科学与技术类</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+															
+								<td style="border:solid 1px #000000">&nbsp;</td>
+							</tr>
+							
+							
+						
+							<tr valign="middle" height="25">
+								<td style="border:solid 1px #000000" align="center" valign="middle" >171860599</td>
+								<td style="border:solid 1px #000000" valign="middle" >&nbsp;周涛</td>
+								<td style="border:solid 1px #000000" align="center" valign="middle" >
+									
+										正选
+										
+										
+										
+										
+										
+										
+									
+								</td>
+								<td width="150" style="border:solid 1px #000000" valign="middle" >&nbsp;*计算机科学与技术类 - *计算机科学与技术类</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+															
+								<td style="border:solid 1px #000000">&nbsp;</td>
+							</tr>
+							
+							
+						
+							<tr valign="middle" height="25">
+								<td style="border:solid 1px #000000" align="center" valign="middle" >171860609</td>
+								<td style="border:solid 1px #000000" valign="middle" >&nbsp;陈昱名</td>
+								<td style="border:solid 1px #000000" align="center" valign="middle" >
+									
+										正选
+										
+										
+										
+										
+										
+										
+									
+								</td>
+								<td width="150" style="border:solid 1px #000000" valign="middle" >&nbsp;*计算机科学与技术类 - *计算机科学与技术类</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+															
+								<td style="border:solid 1px #000000">&nbsp;</td>
+							</tr>
+							
+							
+						
+							<tr valign="middle" height="25">
+								<td style="border:solid 1px #000000" align="center" valign="middle" >171860624</td>
+								<td style="border:solid 1px #000000" valign="middle" >&nbsp;毕秋宇</td>
+								<td style="border:solid 1px #000000" align="center" valign="middle" >
+									
+										正选
+										
+										
+										
+										
+										
+										
+									
+								</td>
+								<td width="150" style="border:solid 1px #000000" valign="middle" >&nbsp;*计算机科学与技术类 - *计算机科学与技术类</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+															
+								<td style="border:solid 1px #000000">&nbsp;</td>
+							</tr>
+							
+							
+						
+							<tr valign="middle" height="25">
+								<td style="border:solid 1px #000000" align="center" valign="middle" >171860637</td>
+								<td style="border:solid 1px #000000" valign="middle" >&nbsp;马常风</td>
+								<td style="border:solid 1px #000000" align="center" valign="middle" >
+									
+										正选
+										
+										
+										
+										
+										
+										
+									
+								</td>
+								<td width="150" style="border:solid 1px #000000" valign="middle" >&nbsp;*计算机科学与技术类 - *计算机科学与技术类</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+															
+								<td style="border:solid 1px #000000">&nbsp;</td>
+							</tr>
+							
+							
+						
+							<tr valign="middle" height="25">
+								<td style="border:solid 1px #000000" align="center" valign="middle" >171860639</td>
+								<td style="border:solid 1px #000000" valign="middle" >&nbsp;殷兆恒</td>
+								<td style="border:solid 1px #000000" align="center" valign="middle" >
+									
+										正选
+										
+										
+										
+										
+										
+										
+									
+								</td>
+								<td width="150" style="border:solid 1px #000000" valign="middle" >&nbsp;*计算机科学与技术类 - *计算机科学与技术类</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+															
+								<td style="border:solid 1px #000000">&nbsp;</td>
+							</tr>
+							
+							
+						
+							<tr valign="middle" height="25">
+								<td style="border:solid 1px #000000" align="center" valign="middle" >171860647</td>
+								<td style="border:solid 1px #000000" valign="middle" >&nbsp;廖玺然</td>
+								<td style="border:solid 1px #000000" align="center" valign="middle" >
+									
+										正选
+										
+										
+										
+										
+										
+										
+									
+								</td>
+								<td width="150" style="border:solid 1px #000000" valign="middle" >&nbsp;*计算机科学与技术类 - *计算机科学与技术类</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+															
+								<td style="border:solid 1px #000000">&nbsp;</td>
+							</tr>
+							
+							
+						
+							<tr valign="middle" height="25">
+								<td style="border:solid 1px #000000" align="center" valign="middle" >171860649</td>
+								<td style="border:solid 1px #000000" valign="middle" >&nbsp;谢乃容</td>
+								<td style="border:solid 1px #000000" align="center" valign="middle" >
+									
+										正选
+										
+										
+										
+										
+										
+										
+									
+								</td>
+								<td width="150" style="border:solid 1px #000000" valign="middle" >&nbsp;*计算机科学与技术类 - *计算机科学与技术类</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+															
+								<td style="border:solid 1px #000000">&nbsp;</td>
+							</tr>
+							
+							
+						
+							<tr valign="middle" height="25">
+								<td style="border:solid 1px #000000" align="center" valign="middle" >171860658</td>
+								<td style="border:solid 1px #000000" valign="middle" >&nbsp;郑奘巍</td>
+								<td style="border:solid 1px #000000" align="center" valign="middle" >
+									
+										正选
+										
+										
+										
+										
+										
+										
+									
+								</td>
+								<td width="150" style="border:solid 1px #000000" valign="middle" >&nbsp;*计算机科学与技术类 - *计算机科学与技术类</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+															
+								<td style="border:solid 1px #000000">&nbsp;</td>
+							</tr>
+							
+							
+						
+							<tr valign="middle" height="25">
+								<td style="border:solid 1px #000000" align="center" valign="middle" >171860696</td>
+								<td style="border:solid 1px #000000" valign="middle" >&nbsp;韩博</td>
+								<td style="border:solid 1px #000000" align="center" valign="middle" >
+									
+										正选
+										
+										
+										
+										
+										
+										
+									
+								</td>
+								<td width="150" style="border:solid 1px #000000" valign="middle" >&nbsp;*计算机科学与技术类 - *计算机科学与技术类</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+															
+								<td style="border:solid 1px #000000">&nbsp;</td>
+							</tr>
+							
+							
+						
+							<tr valign="middle" height="25">
+								<td style="border:solid 1px #000000" align="center" valign="middle" >171870691</td>
+								<td style="border:solid 1px #000000" valign="middle" >&nbsp;张廷昊</td>
+								<td style="border:solid 1px #000000" align="center" valign="middle" >
+									
+										正选
+										
+										
+										
+										
+										
+										
+									
+								</td>
+								<td width="150" style="border:solid 1px #000000" valign="middle" >&nbsp;*工科试验班 - *工科试验班</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+								<td  style="border:solid 1px #000000" align="center">&nbsp;</td>
+															
+								<td style="border:solid 1px #000000">&nbsp;</td>
+							</tr>
+							
+							
+						
+						
+					</table>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+  </body>
+</html>

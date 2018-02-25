@@ -1,0 +1,230 @@
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{description}
+    \centering
+    \item[\Large Generating All Permutations]
+  \end{description}
+
+  \fignocaption{width = 0.30\textwidth}{figs/simple-but-not-easy}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{DH 2.9: \# of Permutations}
+    Prove that the number of permutations of $n$ (distinct) elements is $n!$.
+  \end{exampleblock}
+
+  \pause
+  \begin{proof}[\uncover<3->{\red{``坊间''证明}}]
+    \begin{description}
+      \item[For $a_1$:] We have $n$ choices.
+      \item[For $a_2$:] We have $n-1$ choices.
+      \item[For $\cdots$:] $\cdots$
+    \end{description}
+    Then, \# of perms is 
+    \[
+      n \times (n-1) \times \cdots \times 1 = n!
+    \]
+  \end{proof}
+
+  \vspace{0.60cm}
+  \uncover<4->{\centerline{\Large Prove by mathematical induction on $n$.}}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{DH 2.9: \# of Permutations}
+    Prove that the number of permutations of $n$ (distinct) elements is $n!$.
+  \end{exampleblock}
+
+  \vspace{0.60cm}
+  \begin{proof}[Prove by mathematical induction on $n$.]
+    \[
+      P(n): \text{\# of perms of } n \text{ (distinct) element is } n!
+    \]
+
+    \pause
+    \begin{description}
+      \item[B.S.] $P(1)$
+      \item[I.H.] $P(n)$
+      \item[I.S.] $P(n) \to P(n+1)$
+	\pause
+	\[
+	  \red{\underbrace{\textcolor{black}{(n + 1)}}_{\text{1st choice}}} 
+	  \times \blue{\underbrace{\textcolor{black}{n!}}_{I.H.}} = (n + 1)!
+	\]
+    \end{description}
+  \end{proof}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+% \begin{frame}{}
+%   \begin{exampleblock}{DH 2.9: \# of Permutations}
+%     Prove that the number of permutations of $n$ (distinct) elements is $n!$.
+%   \end{exampleblock}
+% 
+%   \vspace{0.60cm}
+%   \begin{columns}
+%     \pause
+%     \column{0.50\textwidth}
+%       \begin{enumerate}[(1)]
+% 	\item The ``choosing from'' method:
+%       \end{enumerate}
+%       \fignocaption{width = 0.70\textwidth}{figs/4-permtree}
+%     \pause
+%     \column{0.50\textwidth}
+%       \begin{enumerate}[(1)]
+% 	\setcounter{enumi}{1}
+% 	\item The ``inserting into'' method:
+%       \end{enumerate}
+%       \fignocaption{width = 0.70\textwidth}{figs/4-permtree}
+%   \end{columns}
+% \end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{}
+  \begin{exampleblock}{DH 2.11: Generate All Permutations}
+    Design an algorithm which, given a positive integer $n$,
+    generates/\blue{prints} all the permutations of $[0 \cdots n)$.
+  \end{exampleblock}
+
+  \pause
+  \begin{lstlisting}[style = Cstyle]
+  void perms (A[], n) {
+    if (n == 1)
+      print ''A[0]''
+    else 
+      for (int i = 0; i < n; ++i)
+        print ''A[i]''
+        perms(A $\gets$ A $\setminus$ A[i], n - 1)
+        print ''\n''
+  }
+  \end{lstlisting}
+
+  \vspace{0.30cm}
+  \pause
+  \centerline{\texttt{\cyan{\large generate-perms.c}}}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{columns}
+    \column{0.45\textwidth}
+      \fignocaption{width = 0.70\textwidth}{figs/error-crazy}
+    \pause
+    \column{0.45\textwidth}
+      \fignocaption{width = 0.80\textwidth}{figs/recursion-draw}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    A = [0,1,2,3] \qquad n = 4
+  \]
+  \fignocaption{width = 0.50\textwidth}{figs/4-permtree}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{}
+  \begin{lstlisting}[style = Cstyle]
+  void perms (|\purple{prifix}|, A[], n) {
+    if (n == 1)
+      print ''prifix ++ A[0]''
+    else 
+      for (int i = 0; i < n; ++i)
+        perms(|\purple{prefix $\gets$ prefix ++ A[i]}|, 
+            |\redoverlay{A $\gets$ A $\setminus$ A[i]}{3-}|, n - 1) |\uncover<3->{\red{// Space???}}|
+        print ''\n''
+  }
+  \end{lstlisting}
+
+  \pause
+  \begin{lstlisting}[style = Cstyle]
+  perms('''', A, n);
+  \end{lstlisting}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \centerline{\Large For more about ``Generating All Permutations'':}
+
+  \vspace{0.30cm}
+  \begin{columns}
+    \column{0.45\textwidth}
+      \fignocaption{width = 0.70\textwidth}{figs/taocp-perms}
+    \column{0.45\textwidth}
+      \fignocaption{width = 0.60\textwidth}{figs/knuth}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{DH 2.10: Permutation Checking}
+    \begin{itemize}
+      \item An integer $n$
+      \item An array of integers $P$ of length $n$
+    \end{itemize}
+    To check whether $P$ is a permutation of $1 \cdots n$?
+  \end{exampleblock}
+
+  \begin{columns}[t]
+    \pause
+    \column{0.45\textwidth}
+      \begin{enumerate}
+	\item Boolean array $[1 \cdots n]$
+      \end{enumerate}
+
+      \pause
+      \[
+	\blue{\underbrace{O(n)}_{\texttt{time}}} \quad \red{\underbrace{O(n)}_{\text{space}}}
+      \]
+    \pause
+    \column{0.45\textwidth}
+      \begin{enumerate}
+	\setcounter{enumi}{1}
+	\item Sort and then scan
+      \end{enumerate}
+
+      \pause
+      \[
+	\red{\underbrace{O(n \log n)}_{\texttt{time}}} \quad \blue{\underbrace{O(1)}_{\text{space}}}
+      \]
+  \end{columns}
+
+  \pause
+  \begin{columns}
+    \column{0.25\textwidth}
+      \fignocaption{width = 0.50\textwidth}{figs/question}
+    \column{0.20\textwidth}
+      \[
+	\blue{\underbrace{O(n)}_{\texttt{time}}} \quad \blue{\underbrace{O(1)}_{\text{space}}}
+      \]
+    \pause
+    \column{0.40\textwidth}
+      \fignocaption{width = 0.40\textwidth}{figs/baby-dont-know}
+  \end{columns}
+  % \begin{columns}
+  %   \column{0.20\textwidth}
+  %   \column{0.60\textwidth}
+  %     \begin{enumerate}
+  %       \setcounter{enumi}{2}
+  %       \centering
+  %       \item \begin{itemize}
+  %         \item Check $\forall x: x \in [1 \cdots n]$
+  %         \item Check for duplication/distinctness
+  %       \end{itemize}
+  %     \end{enumerate}
+  %   \column{0.20\textwidth}
+  % \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%

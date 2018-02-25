@@ -12,7 +12,7 @@
 
   \pause
   \vspace{0.60cm}
-  \centerline{``='' is an equivalence relation.}
+  \centerline{``$\approx$'' is an equivalence relation.}
 
   \pause
   \[
@@ -106,29 +106,40 @@
     |\N| = |\Z|
   \]
 
+  \pause
   \[
     |\N| = |\N \times \N|
+  \]
+
+  \pause
+  \[
+    f: \N \times \N \to \N \qquad f(m,n) = n + \frac{(m+n)(m+n+1)}{2}
   \]
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{theorem}[$\R$ is uncountably infinite (1874).]
+  \begin{theorem}[$\R$ is uncountably infinite (1874) .]
     \[
       |\R| \neq |\N| \qquad (|\R| \;\blue{>}\; |\N|)
     \]
   \end{theorem}
 
   \pause
-  \vspace{0.60cm}
+  \begin{proof}
+    \centerline{See UD Theorem $22.12$. $f: \N \xleftrightarrow[onto]{1-1} (0,1)$.}
+  \end{proof}
+
+  \pause
+  \vspace{0.30cm}
   \begin{center}
     Different ``Sizes'' of Infinity \\[10pt] \pause
     Cantor's Diagonal Argument (1890)
   \end{center}
 
   \pause
-  \vspace{0.50cm}
+  \vspace{0.20cm}
   \begin{theorem}[Cantor's Theorem (1891)]
     \[
       |X| \neq |2^{X}| \qquad (|X| \;\blue{<}\; |2^{X}|)
@@ -168,22 +179,33 @@
 \begin{frame}{}
   \begin{theorem}[$|\R|$ (1877)]
     \[
-      (0,1) = \teal{|\R| = |\R \times \R|} \blue{= |\R^{n \in \N}|}
+      |(0,1)| = \teal{|\R| = |\R \times \R|} \blue{= |\R^{n \in \N}|}
     \]
   \end{theorem}
 
+  \begin{proof}
+    \pause
+    \[
+      |(0,1)| = |(-\frac{\pi}{2}, \frac{\pi}{2})| = |\R|
+    \]
+
+    \pause
+    \[
+      (x = 0.\blue{a_1 a_2 a_3 \cdots}, y = 0.\red{b_1 b_2 b_3 \cdots}) \pause \mapsto 0.\blue{a_1}\red{b_1}\blue{a_2}\red{b_2}\blue{a_3}\red{b_3}\cdots
+    \]
+  \end{proof}
+
   \pause
-  \vspace{0.80cm}
+  \vspace{0.30cm}
   \begin{quote}
     \begin{center}
-      ``Je le vois, mais je ne le crois pas !'' \\[8pt]
-      ``I see it, but I don't believe it !'' \\[10pt]
+      ``Je le vois, mais je ne le crois pas !'' \\[4pt]
+      ``I see it, but I don't believe it !'' \\[5pt]
       \hfill --- Cantor's letter to Dedekind (1877). 
     \end{center}
   \end{quote}
 
   \pause
-  \vspace{0.60cm}
   \centerline{\red{\it $Q:$ Then, what is ``dimension''?}}
 \end{frame}
 %%%%%%%%%%%%%%%

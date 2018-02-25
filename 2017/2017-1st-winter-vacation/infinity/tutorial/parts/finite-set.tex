@@ -50,7 +50,7 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{$A \setminus \set{a}$ (UD $21.15$)}
+  \begin{exampleblock}{$A \setminus \set{a}$ (UD Problem $21.15$)}
     Let $A$ be a nonempty finite set with $|A| = n$ and let $a \in A$.
 
     Prove that $A \setminus \set{a}$ is finite and $|A \setminus \set{a}| = n - 1$.
@@ -58,33 +58,37 @@
 
   \pause
   \[
-    f: A \to \set{1, \cdots, n}
+    f: A \xleftrightarrow[onto]{1-1} \set{1, \cdots, n}
   \]
 
   \pause
   \[
-    f|_{A \setminus \set{a}}: A \setminus \set{a} \to \set{1, \cdots, n} \setminus \set{f(a)} \;\only<4->{\red{\to \set{1, \cdots, n - 1}}}
+    f|_{A \setminus \set{a}}: A \setminus \set{a} \xleftrightarrow[onto]{1-1} \set{1, \cdots, n} \setminus \set{f(a)} \;
+    \only<4->{\red{\xleftrightarrow[onto]{1-1} \set{1, \cdots, n - 1}}}
   \]
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{$|A| \le |B|$ (UD $21.17$)}
+  \begin{exampleblock}{$|A| \le |B|$ (UD Problem $21.17$)}
     $A$ and $B$ are finite sets and $f: A \to B$ is one-to-one. 
     
     Show that $|A| \le |B|$.
   \end{exampleblock}
 
   \pause
-  \vspace{0.60cm}
+  \fignocaption{width = 0.35\textwidth}{figs/gaoshenme}
+
+  \pause
+  \vspace{0.30cm}
   \centerline{By contradiction and the pigeonhole principle.}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{(UD $21.16$)}
+  \begin{exampleblock}{(UD Problem $21.16$)}
     \begin{enumerate}[(a)]
       \item $A$ is a finite set and $B \subseteq A$. \textcolor{gray}{We showed that $B$ is finite (Corollary $20.11$)}. Show that $|B| \le |A|$.
 	\pause
@@ -113,7 +117,7 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{Cardinality of $|\text{ran}(f)|$ (UD $21.18$)}
+  \begin{exampleblock}{Cardinality of $|\text{ran}(f)|$ (UD Problem $21.18$)}
     Let $A$ and $B$ be sets with $A$ finite.
 
     \[
@@ -135,7 +139,7 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{$f: A \to A$ (UD $21.19$)}
+  \begin{exampleblock}{$f: A \to A$ (UD Problem $21.19$)}
     Let $A$ be a finite set.
     \[
       f: A \to A

@@ -3,6 +3,19 @@
   \begin{center}
     {\LARGE Operations on Functions}
   \end{center}
+
+  \pause
+  \vspace{0.50cm}
+  \begin{description}
+    \item[Set]
+      \[
+	\cup \qquad \cap \qquad \subseteq
+      \]
+    \item[Relation]
+      \[
+	\circ \qquad f^{-1}(a) \qquad f(A) \& f^{-1}(B)
+      \]
+  \end{description}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -18,6 +31,18 @@
       \item $\red{Q}:$ Is $f_1 \cup f_2$ a function from $A$ to $B$?
       \item $\red{Q}:$ Is $f_1 \cap f_2$ a function from $A$ to $B$?
     \end{enumerate}
+  \end{definition}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{definition}[Restriction (Problem $15.20$)]
+    \[
+      f: A \to B, \; A_0 \subseteq A
+    \]
+
+    \[
+      \red{f\mid_{A_0}}: A_0 \to B,\qquad f\mid_{A_0}(a) = f(a), \forall a \in A_0
+    \]
   \end{definition}
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -68,6 +93,7 @@
   \pause
   \vspace{0.60cm}
   \begin{proof}
+    \pause
     \begin{enumerate}[(i)]
       \item 
 	\[
@@ -99,6 +125,7 @@
   \pause
   \vspace{0.60cm}
   \begin{proof}[Proof for (i)]
+    \pause
     \[
       \forall a_1, a_2 \in A\; \Big( (g \circ f)(a_1) = (g \circ f)(a_2) \implies a_1 = a_2 \Big)
     \]
@@ -119,6 +146,12 @@
       \item If $g \circ f$ is bijective, then $f$ is injective and $g$ is surjective.
     \end{enumerate}
   \end{theorem}
+
+  \pause
+  \vspace{0.60cm}
+  \begin{proof}
+    \centerline{Left as Exercise $(15.9)$.}
+  \end{proof}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -136,9 +169,18 @@
 
   \pause
   \vspace{0.60cm}
-  \begin{proof}
+  \begin{alertblock}{Remark:}
     \[
       f \text{ is one-to-one}.
+    \]
+  \end{alertblock}
+
+  \pause
+  \vspace{0.60cm}
+  \begin{proof}
+    \pause
+    \[
+      \forall b \in B \Big( f \circ g_1 (b) = f \circ g_2 (b) \implies \cdots \Big)
     \]
   \end{proof}
 \end{frame}

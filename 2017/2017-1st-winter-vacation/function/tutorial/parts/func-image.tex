@@ -1,22 +1,22 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \[
-    f: X \to Y \quad A \subseteq X \quad B \subseteq Y
+    f: A \to B,\; A_0 \subseteq A,\; B_0 \subseteq B
   \]
 
   \begin{definition}[Image]
-    The \blue{image} of $A$ under $f$ is the set
+    The \blue{image} of $A_0$ under $f$ is the set
 
     \[
-      f(A) = \set{f(a) \mid a \in A}.
+      f(A_0) = \set{f(a) \mid a \in A_0}.
     \]
   \end{definition}
 
   \vspace{0.60cm}
   \begin{definition}[Inverse Image]
-    The \blue{inverse image} of $B$ under $f$ is the set
+    The \blue{inverse image} of $B_0$ under $f$ is the set
     \[
-      f^{-1}(B) = \set{x \in X \mid f(x) \in B}.
+      f^{-1}(B_0) = \set{a \in A \mid f(a) \in B_0}.
     \]
   \end{definition}
 \end{frame}
@@ -24,13 +24,58 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \[
-    \red{Q_1}: A \emph{ vs. } f^{-1}(f(A))
-  \]
+  \begin{theorem}[Properties of $f$ and $f^{-1}$ (Theorem $16.7$)]
+    \[
+      f: A \to B,\; A_0, A_1, A_2 \subseteq A,\; B_0, B_1, B_2 \subseteq B
+    \]
 
-  \[
-    \red{Q_2}: B \emph{ vs. } f(f^{-1}(B))
-  \]
+    \vspace{-0.10cm}
+    \begin{enumerate}[(i)]
+      \setlength{\itemsep}{8pt}
+      \item $f$, when applied to subsets of $A$, preserves only ``$\subseteq$'' and $\cup$:
+	\begin{enumerate}[(1)]
+	  \setlength{\itemsep}{4pt}
+	  \item $A_1 \subseteq A_2 \implies f(A_1) \subseteq f(A_2)$
+	  \item $f(A_1 \cup A_2) = f(A_1) \cup f(A_2)$
+	  \item $f(A_1 \cap A_2) \red{\;\subseteq\;} f(A_1) \cap f(A_2)$
+	  \item $f(A \setminus A_0) \neq B \setminus f(A_0)$
+	\end{enumerate}
+      \item $f^{-1}$, when applied to subsets of $B$, preserves $\subseteq, \cup, \cap,$ and $\setminus$:
+	\begin{enumerate}[(1)]
+	  \setlength{\itemsep}{4pt}
+	  \setcounter{enumii}{4}
+	  \item $B_1 \subseteq B_2 \implies f^{-1}(B_1) \subseteq f^{-1}(B_2)$
+	  \item $f^{-1}(B_1 \cup B_2) = f^{-1}(B_1) \cup f^{-1}(B_2)$
+	  \item $f^{-1}(B_1 \cap B_2) \red{\;=\;} f^{-1}(B_1) \cap f^{-1}(B_2)$
+	  \item $f^{-1}(B \setminus B_0) = A \setminus f^{-1}(B_0)$
+	\end{enumerate}
+    \end{enumerate}
+  \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[Properties of $f$ and $f^{-1}$ (Theorem $16.7$)]
+    \[
+      f: A \to B,\; A_0 \subseteq A,\; B_0 \subseteq B
+    \]
+
+    \vspace{-0.10cm}
+    \begin{enumerate}[(i)]
+      \setcounter{enumi}{2}
+      \item $f$ and $f^{-1}$: \\[8pt]
+	\begin{enumerate}[(1)]
+	  \setlength{\itemsep}{15pt}
+	  \setcounter{enumii}{8}
+	    \item $A_0 \subseteq f^{-1}(f(A_0))$
+	      \centerline{\red{$Q$:} When is $A_0 = f^{-1}(f(A_0))?$}
+	    \pause
+	    \item $B_0 \subseteq f(f^{-1}(B_0))$
+	      \centerline{\red{$Q$:} When is $B_0 = f(f^{-1}(B_0))?$}
+	\end{enumerate}
+    \end{enumerate}
+  \end{theorem}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -38,12 +83,12 @@
 \begin{frame}{}
   \begin{exampleblock}{Problem $16.20$}
     \[
-      f: X \to Y, \quad A_1, A_2 \subseteq X
+      f: A \to B, \quad A_1, A_2 \subseteq A
     \]
 
     \begin{enumerate}[(i)]
       \centering
-      \item $f(A_1) = f(A_2) \implies A_1 = A_2?$
+      \item When is $f(A_1) = f(A_2) \implies A_1 = A_2?$
     \end{enumerate}
   \end{exampleblock}
 \end{frame}
@@ -53,12 +98,12 @@
 \begin{frame}{}
   \begin{exampleblock}{Problem $16.21$}
     \[
-      f: X \to Y, \quad B_1, B_2 \subseteq Y
+      f: A \to B, \quad B_1, B_2 \subseteq B
     \]
 
     \begin{enumerate}[(i)]
       \centering
-      \item $f^{-1}(B_1) = f^{-1}(B_2) \implies B_1 = B_2?$
+      \item When is $f^{-1}(B_1) = f^{-1}(B_2) \implies B_1 = B_2?$
     \end{enumerate}
   \end{exampleblock}
 \end{frame}

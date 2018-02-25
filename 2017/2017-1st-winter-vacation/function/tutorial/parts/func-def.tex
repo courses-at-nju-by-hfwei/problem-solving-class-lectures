@@ -3,13 +3,12 @@
   \begin{center}
     {\LARGE Function}
 
+    \pause
     \fignocaption{width = 0.25\textwidth}{figs/aims}
 
-    \begin{enumerate}[(1)]
-      \centering
-      \item<2-> from the perspective of set theory
-      \item<3-> PROOF! PROOF! PROOF!
-    \end{enumerate}
+    \pause
+    \vspace{0.20cm}
+    \centerline{\Large \red{PROOF! PROOF! PROOF!}}
   \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -25,7 +24,7 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{definition}[Relation]
-    Let $A$ and $B$ be sets.
+    \centerline{Let $A$ and $B$ be sets.}
 
     $R$ is a (binary) relation if
 
@@ -33,14 +32,18 @@
       R \subseteq A \times B = \set{(a, b) \mid a \in A \land b \in B}
     \]
   \end{definition}
+
+  \pause
+  \vspace{0.30cm}
+  \[
+    (a,b) = \set{\set{a}, \set{a,b}} \quad \text{(UD Problem $9.16$)}
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{definition}[Function]
-    Let $A$ and $B$ be sets.
-
     A \blue{\textbf{function}} $f$ from $A$ to $B$ is a \red{\it relation} $f$ from $A$ to $B$ such that
     \[
       \red{\forall} a \in A\; \red{\exists!} b \in B\; (a, b) \in f.
@@ -52,23 +55,23 @@
     \[
       \red{\forall}
     \]
-
     \[
       \red{\exists!}: \forall b, b' \in B, (a, b) \in f \land (a, b') \in f \implies b = b'.
     \]
   \end{alertblock}
 
   \pause
-  \[
-    f: A \to B, \quad a \mapsto f(a) \qquad\Big(b = f(a)\Big)
-  \]
+  \begin{exampleblock}{Notations:}
+    \[
+      f: A \to B, \quad a \mapsto b = f(a)
+    \]
 
-  \centerline{$A: \dom{f}$ \qquad $B: \cod{f}$}
+    \centerline{$A: \dom{f}$ \qquad $B: \cod{f}$}
 
-  \pause
-  \[
-    \ran{f} = f(A) = \set{f(a) \mid a \in A} \subseteq B
-  \]
+    \[
+      \ran{f} = f(A) = \set{f(a) \mid a \in A} \subseteq B
+    \]
+  \end{exampleblock}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -102,7 +105,7 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{Problem $13.3\; (g)$}
+  \begin{exampleblock}{UD Problem $13.3\; (g)$}
     \[
       f: \mathbb{Q} \to \real{}
     \]
@@ -120,7 +123,7 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{Problem $13.4$}
+  \begin{exampleblock}{UD Problem $13.4$}
     \[
       f: \mathcal{P}(\real{}) \to \integer{}
     \]
@@ -132,26 +135,6 @@
       \end{array}\right.
     \]
   \end{exampleblock}
-\end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \[
-    \text{A function } f: A \to B \text{ is a set.}
-  \]
-
-  \[
-    f \subseteq A \times B
-  \]
-
-  \[
-    A \times B = \set{(a,b) \mid a \in A, b \in B}
-  \]
-
-  \[
-    (a,b) = \set{\set{a}, \set{a,b}}
-  \]
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -171,7 +154,7 @@
   \vspace{0.80cm}
   \begin{definition}[函数的外延性原则]
     \[
-      f = g \iff \dom{f} = \dom{g} \land (\forall x \in \dom{f}: f(x) = g(x))
+      f = g \iff \dom{f} = \dom{g} \land \Big(\forall x \in \dom{f}: f(x) = g(x)\Big)
     \]
   \end{definition}
 \end{frame}

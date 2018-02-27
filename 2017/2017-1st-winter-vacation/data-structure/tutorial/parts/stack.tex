@@ -5,13 +5,33 @@
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
-\begin{frame}{}
+\begin{frame}{Stack}
   \fignocaption{width = 0.50\textwidth}{figs/stack}
+
+  \[
+    \textsc{Push, Pop, Empty, Peek}
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
-\begin{frame}{}
-  brackets matching problem
+\begin{frame}{Brackets Matching}
+  \begin{exampleblock}{Brackets Matching}
+    \centerline{\blue{\large 判断给定字符串中的括号是否匹配。}}
+
+    \vspace{0.60cm}
+    \begin{description}
+      \item[输入格式:]
+	\begin{itemize}
+	  \item 首行是一个正整数 (记为$n$)。
+	  \item 接着是$n$行字符串。
+	    \begin{itemize}
+	      \item 每个字符串最多含有 $(,\; [,\; \{,\; ),\; ],\; \}$ 六种不同字符。
+	      \item 字符串可以为空。规定空字符串是``括号匹配的''。
+	    \end{itemize}
+	\end{itemize}
+  　  \item[输出格式:] 如果某行字符串中的括号是匹配的, 则对应行输出1, 否则输出0。
+    \end{description}
+  \end{exampleblock}
 \end{frame}
 %%%%%%%%%%%%%%%

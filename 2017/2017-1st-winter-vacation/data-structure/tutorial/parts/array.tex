@@ -5,7 +5,7 @@
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
-\begin{frame}[fragile]{}
+\begin{frame}[fragile]{Array}
   \centerline{Array: A sequence of \red{contiguously} stored elements.}
 
   \fignocaption{width = 0.50\textwidth}{figs/1d-array}
@@ -22,7 +22,23 @@
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
-\begin{frame}{}
-  2d array
+\begin{frame}[fragile]{2D Array}
+  \begin{columns}
+    \column{0.50\textwidth}
+      \fignocaption{width = 0.90\textwidth}{figs/2d-array}
+    \pause
+    \column{0.50\textwidth}
+      \fignocaption{width = 0.95\textwidth}{figs/array-of-pointers}
+  \end{columns}
+
+  \pause
+  \begin{lstlisting}[style = CStyle]
+      vector<int> array {1,5,7,9,10};
+      matrix<int>
+
+      array[1] = 3;  // offset
+      array.insert(pos, val);  // moving elements
+      array.erase(pos)  // moving elements
+  \end{lstlisting}
 \end{frame}
 %%%%%%%%%%%%%%%

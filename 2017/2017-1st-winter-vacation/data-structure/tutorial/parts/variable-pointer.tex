@@ -5,7 +5,18 @@
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
-\begin{frame}[fragile]{}
+\begin{frame}{Memory}
+  \begin{definition}[Memory (K\&R)]
+    The memory is organized as a collection of consecutively \red{addressed} cells
+    that may be manipulated \blue{individually or in contiguous groups}.
+  \end{definition}
+
+  \fignocaption{width = 0.60\textwidth}{figs/memory-cell}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{Variable}
   \begin{lstlisting}[style = CStyle]
                   int x;
   \end{lstlisting}
@@ -13,15 +24,52 @@
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
-\begin{frame}[fragile]{}
-  \begin{lstlisting}[style = CStyle]
-                int *p = x;
+\begin{frame}[fragile]{Pointer}
+  \begin{definition}[Pointer (K\&R)]
+    A pointer is a \red{variable} that contains the \blue{address} of a variable.
+  \end{definition}
+
+  \vspace{0.50cm}
+  \begin{lstlisting}[style = Cstyle]
+    int a = 0;
+    int *p = &a;
   \end{lstlisting}
+
+  \vspace{0.50cm}
+  \pause
+  \begin{definition}[Pointer in Memory (K\&R)]
+    A pointer is a group of cells (often two or four) that can hold an address.
+  \end{definition}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
-\begin{frame}[fragile]{}
-  swap
+\begin{frame}[fragile]{\textsf{swap}}
+  \begin{lstlisting}[style = Cstyle]
+    swap(a, b);
+
+    void swap(int a, int b) {
+      int temp = a;
+      a = b;
+      b = tmp;
+    }
+  \end{lstlisting}
+
+  \pause
+  \begin{quote}
+    \red{Pointer arguments} enable a function to access and change objects
+    in the function that called it.  \hfill --- K\&R
+  \end{quote}
+
+  \pause
+  \begin{lstlisting}[style = Cstyle]
+    swap(&a, &b);
+
+    void swap(int *a, int *b) {
+      int temp = *a;
+      *a = *b;
+      *b = tmp;
+    }
+  \end{lstlisting}
 \end{frame}
 %%%%%%%%%%%%%%%

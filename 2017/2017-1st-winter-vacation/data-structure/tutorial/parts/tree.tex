@@ -1,15 +1,144 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \centerline{\Large Binary Search Tree}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
-\begin{frame}{}
+\begin{frame}{Binary Search Tree}
+  \begin{definition}[BST]
+    A binary search tree is a rooted binary tree, 
+    \begin{enumerate}
+      \item each internal node stores a key/value
+      \item each internal node has two distinguished subtrees
+	\begin{description}
+	  \item[left subtree] the key in each node must be $\ge$ any key stored in the left subtree
+	  \item[right subtree] the key in each node must be $\le$ any key stored in the right subtree
+	\end{description}
+    \end{enumerate}
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{BST}
   \fignocaption{width = 0.40\textwidth}{figs/bst}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
-\begin{frame}{}
+\begin{frame}{Preorder Traversal}
+  \fignocaption{width = 0.45\textwidth}{figs/preorder}
+
+  \begin{enumerate}
+    \item Check if the current node is a leaf.
+    \item Display the data part of the root (or current node).
+    \item Traverse the left subtree by \red{recursively} calling the preorder function.
+    \item Traverse the right subtree by \red{recursively} calling the preorder function.
+  \end{enumerate}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{Inorder Traversal}
+  \fignocaption{width = 0.45\textwidth}{figs/inorder}
+
+  \begin{enumerate}
+    \item Check if the current node is a leaf.
+    \item Traverse the left subtree by \red{recursively} calling the inorder function.
+    \item Display the data part of the root (or current node).
+    \item Traverse the right subtree by \red{recursively} calling the inorder function.
+  \end{enumerate}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{Postorder Traversal}
+  \fignocaption{width = 0.45\textwidth}{figs/postorder}
+
+  \begin{enumerate}
+    \item Check if the current node is a leaf.
+    \item Traverse the left subtree by \red{recursively} calling the postorder function.
+    \item Traverse the right subtree by \red{recursively} calling the postorder function.
+    \item Display the data part of the root (or current node).
+  \end{enumerate}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{}
+  \begin{exampleblock}{DH $2.16$: Treesort}
+    \begin{enumerate}[(i)]
+      \item Construct an algorithm that transforms a given list of integers into a binary search tree.
+    \end{enumerate}
+  \end{exampleblock}
+
+  \pause
+  \vspace{0.60cm}
+  \begin{lstlisting}[style = Cstyle]
+  procedure |\purple{put-x-into-BST}| (t):
+    ... call |\purple{put-x-into-BST}| (t$'$s left subtree)
+    ... call |\purple{put-x-into-BST}| (t$'$s right subtree)
+  end procedure
+  \end{lstlisting}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{}
+  \begin{exampleblock}{DH $2.16$: Treesort}
+    \begin{enumerate}[(i)]
+      \item Construct an algorithm that transforms a given list of integers into a binary search tree.
+    \end{enumerate}
+  \end{exampleblock}
+
+  \begin{columns}
+    \column{0.48\textwidth}
+      \pause
+      \begin{lstlisting}[style = Cstyle]
+|\purple{Node:}|
+  int val = NIL,
+  Node left = NULL,
+  Node right = NULL
+      \end{lstlisting}
+
+      \pause
+      \begin{lstlisting}[style = Cstyle]
+|\purple{buildBST}|(int eles[]):
+  Node root(eles[0])
+
+  foreach e $\in$ eles[1..]:
+    insert(root, e)
+      \end{lstlisting}
+    \column{0.52\textwidth}
+      \pause
+      \begin{lstlisting}[style = Cstyle]
+|\purple{insert}|(Node T, int e):  |\pause|
+  if (e < T.val)
+    if (T.left == NULL)
+      T.left = new Node(e)
+    else
+      insert(T.left, e)  |\pause|
+  else  // e >= T.val
+    if (T.right == NULL)
+      T.right = new Node(e)
+    else
+      insert(T.right, e)
+      \end{lstlisting}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{}
+  \begin{exampleblock}{DH $2.16$: Treesort}
+    \begin{enumerate}[(i)]
+      \setcounter{enumi}{1}
+      \item right; \quad val; \quad left
+    \end{enumerate}
+  \end{exampleblock}
+
+  \vspace{0.30cm}
+  \fignocaption{width = 0.35\textwidth}{figs/bst}
 \end{frame}
 %%%%%%%%%%%%%%%

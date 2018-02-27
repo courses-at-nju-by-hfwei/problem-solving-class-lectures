@@ -1,0 +1,201 @@
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{SM Problem $14.62$}
+    Suppose $A$ and $B$ are \red{\it well-ordered} \teal{\it isomorphic} sets. 
+    
+    Show that there is only one \purple{\it isomorphic mapping} $f : A \to B$.
+  \end{exampleblock}
+
+  \pause
+  \vspace{0.50cm}
+  \begin{definition}[Well-ordered Set (SM Definition $14.1$)]
+    An ordered set $S$ is said to be \red{\it well-ordered} if every non-empty subset of $S$ has a first element.
+  \end{definition}
+
+  \pause
+  \vspace{0.50cm}
+  \begin{definition}[Isomorphic]
+    Two ordered sets $A$ and $B$ are said to be \teal{\it isomorphic}, written $A \simeq B$, 
+
+    if $\exists f: A \red{\;\xleftrightarrow[onto]{1-1}\;} B$ which preserves the order relations
+
+    \[
+      \forall a, a' \in A: a \prec a' \iff f(a) \prec f(a')
+    \]
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{SM Problem $14.62$}
+    Suppose $A$ and $B$ are \red{\it well-ordered} \teal{\it isomorphic} sets. 
+    
+    Show that there is only one \purple{\it isomorphic mapping} $f : A \to B$.
+  \end{exampleblock}
+
+  \vspace{0.50cm}
+  \begin{alertblock}{Remark: What if ``similarity mapping''?}
+    \pause
+    \begin{definition}[Similarity Mapping]
+      A function $f: A \red{\;\xleftrightarrow{1-1}\;} B$ is called a \purple{\it similarity mapping} from $A$ to $B$ 
+
+      if $f$ preserves the order relations
+
+      \[
+	\forall a, a' \in A: a \prec a' \iff f(a) \prec f(a')
+      \]
+    \end{definition}
+
+    \pause
+    \begin{exampleblock}{Counterexample for ``similarity mapping'':}
+      \pause
+      \[
+	A = B = \mathbb{N}  \qquad f: a \mapsto a  \qquad f': a \mapsto a + 1
+      \]
+    \end{exampleblock}
+  \end{alertblock}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{SM Problem $14.62$}
+    Suppose $A$ and $B$ are \red{\it well-ordered} \teal{\it isomorphic} sets. 
+    
+    Show that there is only one \purple{\it isomorphic mapping} $f : A \to B$.
+  \end{exampleblock}
+
+  \vspace{0.40cm}
+  \begin{columns}
+    \column{0.50\textwidth}
+      \fignocaption{width = 0.65\textwidth}{figs/share-ideas}
+    \column{0.50\textwidth}
+      \pause
+      \fignocaption{width = 0.50\textwidth}{figs/not-easy}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{SM Problem $14.62$}
+    Suppose $A$ and $B$ are \red{\it well-ordered} \teal{\it isomorphic} sets. 
+    
+    Show that there is only one \purple{\it isomorphic mapping} $f : A \to B$.
+  \end{exampleblock}
+
+  \pause
+  \vspace{0.50cm}
+  \begin{lemma}
+    $X$ is a well-ordered set. $f: X \to X$ is a similarity mapping.
+
+    Then $\forall x \in X: f(x) \ge x$.
+  \end{lemma}
+  
+  \pause
+  \vspace{0.50cm}
+  \begin{lemma}
+    $X$ is a well-ordered set. 
+
+    Then $X$ has only one \red{\it automorphism}, i.e., $id_X$.
+  \end{lemma}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{lemma}
+    $X$ is a well-ordered set. $f: X \to X$ is a similarity mapping.
+
+    Then $\forall x \in X: f(x) \ge x$.
+  \end{lemma}
+
+  \vspace{0.50cm}
+  \begin{proof}
+    \pause
+    \centerline{By contradiction.}
+
+    \pause
+    \[
+      Y = \set{x \in X \mid f(x) < x} \neq \emptyset
+    \]
+
+    \pause
+    \vspace{0.20cm}
+    \begin{description}
+      \item[Well-ordered:] $x = \min\, Y \implies f(x) < x$ 
+      \pause
+      \item[Similarity:] $f(f(x)) < f(a) \implies f(a) \in X$
+    \end{description}
+  \end{proof}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{lemma}
+    $X$ is a well-ordered set. 
+
+    Then $X$ has only one \red{\it automorphism}, i.e., $id_X$.
+  \end{lemma}
+
+  \vspace{0.50cm}
+  \begin{proof}
+    \pause
+    \centerline{Suppose $f: X \to X$ is an automorphism.}
+
+    \pause
+    \[
+      f \text{ is a similarity from $X$ to $X$} \implies \forall x \in X: f(x) \ge x
+    \]
+
+    \pause
+    \[
+      f^{-1} \text{ is a similarity from $X$ to $X$} \implies \forall x \in X: f^{-1}(x) \ge x
+    \]
+
+    \pause
+    \[
+      f \text{ is a similarity from $X$ to $X$} \implies x = f(f^{-1}(x)) \ge f(x)
+    \]
+
+    \pause
+    \[
+      id_X: f(x) = x
+    \]
+  \end{proof}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{SM Problem $14.62$}
+    Suppose $A$ and $B$ are \red{\it well-ordered} \teal{\it isomorphic} sets. 
+    
+    Show that there is only one \purple{\it isomorphic mapping} $f : A \to B$.
+  \end{exampleblock}
+
+  \vspace{0.50cm}
+  \begin{proof}
+    \pause
+    \centerline{By contradiction.}
+
+    \pause
+    \[
+      \exists \text{ isomorphic mappings } f, g: A \to B
+    \]
+
+    \pause
+    \[
+      h = g^{-1} \circ f \text{ is an automorphism on } A \implies h = id_A
+    \]
+
+    \pause
+    \[
+      f = g \circ h = g \circ id_A = g
+    \]
+  \end{proof}
+\end{frame}
+%%%%%%%%%%%%%%%

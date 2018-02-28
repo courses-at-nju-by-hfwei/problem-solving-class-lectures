@@ -1,0 +1,80 @@
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Boolean Algebra}
+    \begin{enumerate}[(i)]
+      \item 等势且有穷的布尔代数均同构。 
+    \end{enumerate}
+  \end{exampleblock}
+
+  \begin{proof}
+    \pause
+    \[
+      |B_1| = |B_2| = m \pause \qquad f: B_1 \red{\;\xleftrightarrow[onto]{1-1}\;} B_2
+    \]
+
+    \pause
+    \vspace{-0.50cm}
+    \begin{theorem}[Representation Theorem]
+      $B$ is a finite Boolean algebra. $A_{B}$ is the set of atoms of $B$.
+      \[
+	f: B \xleftrightarrow[onto]{1-1} \mathcal{P}(A_B)  
+      \]
+      \[
+	x = a_1 + a_2 + \cdots + a_r \mapsto \set{a_1, a_2, \cdots, a_r} \text{ is an isomorphism.}
+      \]
+    \end{theorem}
+    \pause
+    \vspace{-0.50cm}
+    \[
+      |A_{B_1}| = |A_{B_2}| = n = \log_2 m \quad A_{B_1} = \set{b_1, \cdots, b_n} \quad A_{B_2} = \set{b_2, \cdots, b_n} 
+    \]
+  \end{proof}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Boolean Algebra}
+    \begin{enumerate}[(i)]
+      \setcounter{enumi}{1}
+      \item 举例说明等势但无穷的布尔代数不一定同构。
+    \end{enumerate}
+  \end{exampleblock}
+
+  \pause
+  \vspace{0.60cm}
+  \begin{proof}[Not Exactly an Answer.]
+    \pause
+    \begin{alertblock}{并非任何 Boolean Algebra 皆同构于某幂集代数。}
+      \centerline{有穷-余有穷 (finite co-finite) 代数 $F(\mathbb{N})$}
+
+      \[
+	F(\mathbb{N}) = \set{X \in \mathcal{P}(\mathbb{N}) \mid X \text{ is finite} \lor \mathbb{N} \setminus X \text{ is finite}}
+      \]
+
+      \pause
+      \[
+	|F(\mathbb{N})| = \aleph_0
+      \]
+      \pause
+      \[
+	f: F(\mathbb{N}) \red{\;\xrightarrow{1-1}\;} \mathbb{N} \qquad \set{a_1, a_2, \cdots, a_n} = p_{a_1} p_{a_2} \cdots p_{a_n}
+      \]
+    \end{alertblock}
+  \end{proof}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[Representation Theorem]
+    \begin{enumerate}[(i)]
+      \setlength{\itemsep}{8pt}
+      \item 任何有穷 Boolean Algebra 同构于某幂集代数。
+      \item 有穷 Boolean Algebra 之势呈形 $2^n$。
+      \item 两个等势的有穷 Boolean Algebra 是同构的。
+      \item 并非任何 Boolean Algebra 皆同构于某幂集代数。
+    \end{enumerate}
+  \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%

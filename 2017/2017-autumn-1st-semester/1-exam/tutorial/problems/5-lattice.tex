@@ -1,38 +1,238 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  徐臣
+  \begin{exampleblock}{$5.$ 格 (Lattice)}
+    \[
+      \forall x \in L: a \le b \implies a \lor (x \land b) = (a \lor x) \land b.
+    \]
+
+    \textbf{以下均假设$L$是模格。}
+  \end{exampleblock}
+
+  \pause
+  \fignocaption{width = 0.50\textwidth}{figs/lizhi-qinggan}
+
+  \pause
+  \[
+    \red{\emph{vs. }} a \lor (x \land b) = (a \lor x) \land (a \lor b)
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
-\begin{frame}{(1)}
-  董杨静 分配律
+\begin{frame}{}
+  \begin{exampleblock}{$5.$ 格 (Lattice)}
+    \[
+      \forall x \in L: a \le b \implies a \lor (x \land b) = (a \lor x) \land b.
+    \]
 
-  郑奘巍 分配律
+    \begin{enumerate}[(1)]
+      \item 请证明模律与以下条件等价:
+	\[
+	  \forall x \in L: a \le b \implies a \lor (x \land b) \ge (a \lor x) \land b.
+	\]
+    \end{enumerate}
+  \end{exampleblock}
 
-  李凯旭 case analysis $x \le b$ 或 $x \ge b$
+  \pause
+  \begin{gather*}
+    \forall x \in L: \blue{a \le b} \\
+    \implies \\
+    \Big(\big(a \lor (x \land b) = (a \lor x) \land b\big) \\[-0.8ex]
+    \iff \\[-0.8ex]
+    \quad\;\;\big(a \lor (x \land b) \ge (a \lor x) \land b\big)\Big).
+  \end{gather*}
+
+  \pause
+  \[
+    \teal{a \le b \implies a \lor (x \land b) \le (a \lor x) \land b}
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
-\begin{frame}{(2)}
-  李博文 分配律
+\begin{frame}{}
+  \begin{exampleblock}{$5.$ 格 (Lattice)}
+    \[
+      \forall x \in L: a \le b \implies a \lor (x \land b) = (a \lor x) \land b.
+    \]
 
-  杜星亮 case analysis
+    \begin{enumerate}[(1)]
+      \setcounter{enumi}{1}
+    \item 请证明: $\forall a, b, c \in L$, \\
+      如果 $\red{c \le a}, \; a \land b = c \land b, \; a \lor b = c \lor b$ 成立, 则 $a = c$.
+    \end{enumerate}
+  \end{exampleblock}
+
+  \pause
+  \[
+    \red{[a \leftarrow c] \quad [b \leftarrow a]}
+  \]
+  \[
+    \forall x \in L: c \le a \implies c \lor (x \land a) = (c \lor x) \land a.
+  \]
+
+  \pause
+  \[
+    \red{[x := b]}
+  \]
+  \[
+    c \le a \implies c \lor (\teal{b} \land a) = (c \lor \teal{b}) \land a.
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
-\begin{frame}{(2)}
-  杨欣然 模律的运算是封闭的
+\begin{frame}{}
+  \begin{exampleblock}{$5.$ 格 (Lattice)}
+    \[
+      \forall x \in L: a \le b \implies a \lor (x \land b) = (a \lor x) \land b.
+    \]
+
+    \begin{enumerate}[(1)]
+      \setcounter{enumi}{2}
+      \item 给定任意元素 $s, t \in L$, 且 $s \le t$, 构造集合 (称为区间(interval)):
+	\[
+	  [s, t] \triangleq \{x \in L \mid s \le x \le t\}.
+	\]
+	请证明 $([s,t], \le)$ 是 $L$ 的子格 (sublattice)。
+    \end{enumerate}
+  \end{exampleblock}
+
+  \pause
+  \fignocaption{width = 0.25\textwidth}{figs/closed}
+
+  \pause
+  \vspace{-0.50cm}
+  \[
+    a,b \in [s,t] \implies a \lor b, a \land b \in [s,t]
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{$5.$ 格 (Lattice)}
+    \[
+      \forall x \in L: a \le b \implies a \lor (x \land b) = (a \lor x) \land b.
+    \]
+
+    \begin{enumerate}[(1)]
+      \setcounter{enumi}{3}
+      \item 给定任意元素$a, b \in L$, 定义函数
+	\[
+	  \varphi: [a \land b, b] \to [a, a \lor b]  \quad \varphi(x) = x \lor a
+	\]
+	\[
+	  \psi: [a, a \lor b] \to [a \land b, b] \quad \psi(y) = y \land b
+	\]
+
+	请证明 $\varphi$ (类似地, $\psi$) 是从 $[a \land b, b]$ 到 $[a, a \lor b]$ 的同构。
+	
+	\fignocaption{width = 0.25\textwidth}{figs/modular-lattice-iso.pdf}
+    \end{enumerate}
+  \end{exampleblock}
+\end{frame}
 %%%%%%%%%%%%%%%
+
 %%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Lattice Isomorphism]
+    \[
+      (L, \lor_{L}, \land_{L})  \qquad (M, \lor_{M}, \land_{M})
+    \]
+
+    A \blue{\it lattice isomorphism} from $L$ to $M$ is a bijection
+    \[
+      f: L \red{\;\xleftrightarrow[onto]{1-1}\;} M
+    \]
+    such that $\forall a, b \in L$:
+    \vspace{-0.30cm}
+    \begin{align*}
+      f(a \lor_{L} b) &= f(a) \lor_{M} f(b) \\
+      f(a \land_{L} b) &= f(a) \land_{M} f(b)
+    \end{align*}
+  \end{definition}
+
+  \pause
+  \vspace{0.60cm}
+  \centerline{\red{\large $f$ preserving $\lor$ and $\land$.}}
+\end{frame}
 %%%%%%%%%%%%%%%
+
 %%%%%%%%%%%%%%%
+\begin{frame}{}
+  \centerline{\blue{Bounded Lattice!!!}} 
+
+  \[
+    (L, \lor_{L}, \land_{L})  \qquad (M, \lor_{M}, \land_{M})
+  \]
+
+  \pause
+  \begin{align*}
+   f(0_L) &= 0_M \\
+   f(1_L) &= 1_M \\
+  \end{align*}
+\end{frame}
 %%%%%%%%%%%%%%%
+
 %%%%%%%%%%%%%%%
+\begin{frame}{}
+  \centerline{\red{\large $\varphi$ preserving $\lor$ and $\land$.}}
+
+  \[
+    \varphi: [a \land b, b] \to [a, a \lor b]  \quad \varphi(x) = x \lor a
+  \]
+
+  \fignocaption{width = 0.30\textwidth}{figs/modular-lattice-iso.pdf}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \varphi: [a \land b, b] \to [a, a \lor b]  \quad \varphi(x) = x \lor a
+  \]
+  \[
+    \psi: [a, a \lor b] \to [a \land b, b] \quad \psi(y) = y \land b
+  \]
+
+  \vspace{0.30cm}
+  \centerline{\red{\large $\varphi$ is bijective.}}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{theorem}[UD Theorem $15.8$ (iii)]
+    \[
+      f: A \to B
+    \]
+
+    \[
+      \exists g: B \to A\; \Big( g \circ f = i_A \land f \circ g = i_B \Big) 
+    \]
+    \[ 
+      \implies 
+    \]
+    \[
+      f: A \to B \text{ is bijective} \land g = f^{-1}
+    \]
+  \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \teal{\psi \circ \varphi = id_{[a, a \lor b]} \qquad \varphi \circ \psi = id_{[a \land b, b]}}
+  \]
+
+  \pause
+  \[
+    (\psi \circ \varphi) (y) = \psi(\varphi(y)) = (y \land b) \lor a = a \lor (b \land y) = (a \lor b) \land y = y
+  \]
+
+  \pause
+  \[
+    (\varphi \circ \psi) (x) = \varphi(\psi(x)) = (x \lor a) \land b = x \lor (b \land a) = x
+  \]
+\end{frame}
 %%%%%%%%%%%%%%%

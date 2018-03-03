@@ -1,0 +1,33 @@
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{$6.$ 布尔代数 (Boolean Algebra)}
+    给定某\red{布尔表达式} $E = xy' + xyz' + x'yz'$, 请证明:
+    \begin{enumerate}[(1)]
+      \item $xz' + E = E$
+      \item $x + E \neq E$
+    \end{enumerate}
+  \end{exampleblock}
+
+  \pause
+  \vspace{-0.40cm}
+  \fignocaption{width = 0.45\textwidth}{figs/cab-ambiguity}
+
+  \pause
+  \vspace{-0.80cm}
+  \[
+    \blue{E = xy'z + xy'z' + xyz' + x'yz'}
+  \]
+
+  \pause
+  \vspace{-0.50cm}
+  \[
+    xz' = x\red{y}z' + x\red{y'}z'
+  \]
+
+  \pause
+  \vspace{-0.50cm}
+  \[
+    x = \red{xyz} + xyz' + xy'z + xy'z'
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%

@@ -5,45 +5,60 @@
       \item 某公司要从赵、钱、孙、李、吴5名员工中选派某些人出国考察。\\
 	由于某些不可描述的原因, 选派要求如下:
 
-	\begin{enumerate}[(1)]
-	  \item 若赵去, 钱也去;
-	  \item 李、吴两人中必有一人去; 
-	  \item 钱、孙两人中去且仅去一人; 
-	  \item 孙、李两人同去或同不去; 
-	  \item 若吴去, 则赵、钱也去;
-	  \item 只有孙去, 赵才会去。
-	\end{enumerate}
+	\begin{columns}
+	  \column{0.42\textwidth}
+	    \begin{enumerate}[(1)]
+	      \item 若赵去, 钱也去;
+	      \item 李、吴两人中必有一人去; 
+	      \item 钱、孙两人中去且仅去一人; 
+	      \item 孙、李两人同去或同不去; 
+	      \item 若吴去, 则赵、钱也去;
+	      \item 只有孙去, 赵才会去。
+	    \end{enumerate}
+	  \column{0.40\textwidth}
+	    \uncover<3->{
+	      \begin{enumerate}[(1)]
+		\item $\teal{Z \to Q}$;
+		\item $\teal{L \lor W}$; 
+		\item $\teal{(Q \land \lnot S) \lor (S \land \lnot Q)}$; 
+		\item $\teal{(S \land L) \lor (\lnot S \land \lnot L)}$; 
+		\item $\teal{W \to Z \land Q}$;
+		\item $\teal{Z \to S}$。
+	      \end{enumerate}
+	    }
+      \end{columns}
 
-	请使用形式化推理的方法帮该公司判断应选哪些人出国考察。
+      \vspace{0.20cm}
+      请使用形式化推理的方法帮该公司判断应选哪些人出国考察。
     \end{enumerate}
   \end{exampleblock}
 
   \pause
   \vspace{0.30cm}
   \[
-    \red{Z,\; Q,\; S,\; L,\; W} \emph{ vs. } \teal{P,\; Q,\; R,\; S,\; T\;}
+    \red{Z,\; Q,\; S,\; L,\; W} \emph{ vs. } \blue{P,\; Q,\; R,\; S,\; T\;}
   \]
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
-\begin{frame}{}
-  \setlength{\jot}{1.5ex}
-  \begin{gather}
-    Z \to Q \\
-    L \lor W \\
-    (Q \land \lnot S) \lor (S \land \lnot Q) \\
-    (S \land L) \lor (\lnot S \land \lnot L) \\
-    W \to Z \land Q \\
-    Z \to S
-  \end{gather}
-
-  \pause
-  \vspace{0.60cm}
-  \[
-    \blue{\lnot Z,\; \lnot Q,\; S,\; L,\; \lnot W}
-  \]
-\end{frame}
+% \begin{frame}{}
+%   \setlength{\jot}{1.5ex}
+%   \begin{gather}
+%     Z \to Q \\
+%     L \lor W \\
+%     (Q \land \lnot S) \lor (S \land \lnot Q) \\
+%     (S \land L) \lor (\lnot S \land \lnot L) \\
+%     W \to Z \land Q \\
+%     Z \to S
+%   \end{gather}
+% 
+%   \pause
+%   \vspace{0.60cm}
+%   \[
+%     \blue{\lnot Z,\; \lnot Q,\; S,\; L,\; \lnot W}
+%   \]
+% \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
@@ -52,17 +67,27 @@
   \begin{align*}
     & (1) \land (2) \land (3) \land (4) \land (5) \land (6) \\
     =\; & \cdots \\
-    =\; & \cdots \\
-    =\; & \red{\text{ one page here } \cdots } \\
+    =\; & \red{\text{\Large ONE PAGE HERE } \cdots } \\
     =\; & \lnot Z \land \lnot Q \land S \land L \land \lnot W
   \end{align*}
 
   \pause
-  \fignocaption{width = 0.30\textwidth}{figs/you}
+  \fignocaption{width = 0.35\textwidth}{figs/you}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{columns}
+    \column{0.45\textwidth}
+      \fignocaption{width = 0.60\textwidth}{figs/hushi-dadan}
+    \column{0.45\textwidth}
+      \pause
+      \fignocaption{width = 0.85\textwidth}{figs/possibilities}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
 \begin{frame}{}
   \begin{exampleblock}{$1.$ ``算一算'' (Let us Calculate!)}	
     \begin{enumerate}[(1)]
@@ -71,39 +96,54 @@
 	前提如下:
 
 	\begin{enumerate}[(1)]
+	  \setlength{\itemsep}{6pt}
 	  \item 每个人或者喜欢美剧, 或者喜欢韩剧 (可以同时喜欢二者);
+
+	    \only<3->{$\teal{\forall x: A(x) \lor K(x)}$}
 	  \item 任何人如果他喜欢抗日神剧, 他就不喜欢美剧;
+
+	    \only<3->{$\teal{\forall x: J(x) \to \lnot A(x)}$}
 	  \item 有的人不喜欢韩剧。
+
+	    \only<3->{$\teal{\exists x: \lnot K(x)}$}
 	\end{enumerate}
-	结论: 有的人不喜欢抗日神剧。
+	结论: 有的人不喜欢抗日神剧。 \only<3->{\qquad $\teal{\exists x: \lnot J(x)}$}
     \end{enumerate}
   \end{exampleblock}
+
+  \uncover<2->{
+    \vspace{0.40cm}
+    \centerline{$x$: Human \qquad \only<4->{\red{$Q: H(x)?$}}}
+    \[
+      A(x),\quad K(x),\quad J(x)
+    \]
+  }
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
-\begin{frame}{}
-  \centerline{$x$: Human}
-
-  \[
-    A(x),\quad K(x),\quad J(x)
-  \]
-
-  \pause
-  \setlength{\jot}{1.5ex}
-  \begin{gather}
-    \setcounter{equation}{0}
-    \forall x: A(x) \lor K(x) \\
-    \forall x: J(x) \to \lnot A(x) \\
-    \exists x: \lnot K(x) \\[3ex]
-    \teal{\exists x: \lnot J(x)}
-  \end{gather}
-
-  \pause
-  \[
-    \red{Q: H(x)?}
-  \]
-\end{frame}
+% \begin{frame}{}
+%   \centerline{$x$: Human}
+% 
+%   \[
+%     A(x),\quad K(x),\quad J(x)
+%   \]
+% 
+%   \pause
+%   \setlength{\jot}{1.5ex}
+%   \begin{gather}
+%     \setcounter{equation}{0}
+%     \forall x: A(x) \lor K(x) \\
+%     \forall x: J(x) \to \lnot A(x) \\
+%     \exists x: \lnot K(x) \\[3ex]
+%     \teal{\exists x: \lnot J(x)}
+%   \end{gather}
+% 
+%   \pause
+%   \[
+%     \red{Q: H(x)?}
+%   \]
+% \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
@@ -112,12 +152,12 @@
     A,\quad K,\quad J
   \]
 
-  \begin{gather}
+  \begin{gather*}
     \setcounter{equation}{0}
     \forall x: A \lor K \\[1ex]
     \forall x: J \to \lnot A \\[1ex]
     \exists x: \lnot K \\[3ex]
     \red{\exists x: \lnot J}
-  \end{gather}
+  \end{gather*}
 \end{frame}
 %%%%%%%%%%%%%%%

@@ -16,24 +16,27 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{definition}[$|A| \le |B|$]
-    $|A| \le |B|$ if there exists an \red{\it one-to-one} function $f$ from $A$ into $B$.
-  \end{definition}
+  \uncover<2->{
+    \begin{definition}[$|A| \le |B|$]
+      $|A| \le |B|$ if there exists an \red{\it one-to-one} function $f$ from $A$ into $B$.
+    \end{definition}
+  }
 
-  \pause
-  \vspace{0.50cm}
-  \centerline{\large \red{\it $Q:$ Is ``$\le$'' a partial order?}}
+  \uncover<3->{
+    \vspace{0.50cm}
+    \centerline{\large \red{\it $Q:$ Is ``$\le$'' a partial order?}}
+  }
 
-  \pause
   \vspace{0.30cm}
   \begin{theorem}[Cantor-\textcolor{gray}{(Dedekind)}-Schr\"{o}der–Bernstein (1887)]
     \[
       |X| \le |Y| \land |Y| \le |X| \implies |X| = |Y|
     \]
-    \pause
-    \[
-      \exists\; f: A \blue{\;\xrightarrow{1-1}\;} B \land g: B \blue{\;\xrightarrow{1-1}\;} A \implies \exists\; h: A \red{\;\xleftrightarrow[onto]{1-1}\;} B
-    \]
+    \uncover<4->{
+      \[
+	\exists\; f: A \blue{\;\xrightarrow{1-1}\;} B \land g: B \blue{\;\xrightarrow{1-1}\;} A \implies \exists\; h: A \red{\;\xleftrightarrow[onto]{1-1}\;} B
+      \]
+    }
   \end{theorem}
 \end{frame}
 %%%%%%%%%%%%%%%

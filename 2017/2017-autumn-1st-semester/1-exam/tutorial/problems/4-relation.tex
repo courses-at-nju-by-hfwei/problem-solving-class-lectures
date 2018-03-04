@@ -1,7 +1,8 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{exampleblock}{$4.$ 关系与序 (Order)}
-    一个自反(reflexive)且传递(transitive)的二元关系 $R \subseteq X \times X$ 称为 $X$ 上的拟序 (preorder)。\\[8pt]
+    一个自反(\blue{reflexive})且传递(\blue{transitive})的二元关系 $R \subseteq X \times X$ 
+    称为 $X$ 上的拟序 (\red{preorder/\textcolor{gray}{quasiorder}})。\\[8pt]
 
     令 $\le \;\subseteq X \times X$ 为拟序, 请证明:
     \begin{enumerate}[(1)]
@@ -12,17 +13,14 @@
 	则 $\sim$ 是 $X$ 上的等价关系 (equivalence relation)。
     \end{enumerate}
   \end{exampleblock}
-
-  \pause
-  \vspace{0.50cm}
-  \centerline{A preorder that is symmetric is an equivalence relation.}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{exampleblock}{$4.$ 关系与序 (Order)}
-    一个自反(reflexive)且传递(transitive)的二元关系 $R \subseteq X \times X$ 称为 $X$ 上的拟序 (preorder)。\\[8pt]
+    一个自反(\blue{reflexive})且传递(\blue{transitive})的二元关系 $R \subseteq X \times X$ 
+    称为 $X$ 上的拟序 (\red{preorder/\textcolor{gray}{quasiorder}})。\\[8pt]
 
     令 $\le \;\subseteq X \times X$ 为拟序, 请证明:
     \begin{enumerate}[(1)]
@@ -63,12 +61,19 @@
 \begin{frame}{}
   \fignocaption{width = 0.40\textwidth}{figs/example}
 
-  \pause
   \vspace{0.20cm}
-  \centerline{\red{\Large Reachability relationship in directed graphs.}}
+  \centerline{\red{\large $\teal{\le:}$ \only<1>{$\teal{???}$}\only<2->{Reachability} relationship in a directed graph}}
 
-  \pause
-  \vspace{0.20cm}
-  \fignocaption{width = 0.50\textwidth}{figs/scc}{\pause \centerline{\teal{Strongly Connected Component (SCC)}}}
+  \uncover<1->{
+    \vspace{0.20cm}
+    \fignocaption{width = 0.40\textwidth}{figs/scc}
+  }
+
+  \uncover<3->{\centerline{\teal{$\sim, [x]_{\sim}:$} \uncover<4->{Strongly Connected Component (SCC)}}}
+
+  \uncover<5->{
+    \vspace{0.40cm}
+    \centerline{\red{\large $\teal{\preceq:}$ \uncover<6->{Reachability relationship in a condensed directed acyclic graph}}}
+  }
 \end{frame}
 %%%%%%%%%%%%%%%

@@ -1,6 +1,10 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{exampleblock}{$5.$ 格 (Lattice)}
+    假设 $(L, \le)$ 是格。
+
+    如果以下模律 (modular law) 成立, 则称 $L$ 是模格 (modular lattice):
+
     \[
       \forall x \in L: a \le b \implies a \lor (x \land b) = (a \lor x) \land b.
     \]
@@ -8,13 +12,17 @@
     \textbf{以下均假设$L$是模格。}
   \end{exampleblock}
 
-  \pause
-  \fignocaption{width = 0.50\textwidth}{figs/lizhi-qinggan}
+  % \pause
+  % \fignocaption{width = 0.50\textwidth}{figs/lizhi-qinggan}
 
   \pause
   \[
     \red{\emph{vs. }} a \lor (x \land b) = (a \lor x) \land (a \lor b)
   \]
+
+  \pause
+  \vspace{0.40cm}
+  \centerline{The stronger distributivity property is \red{\it not} available.}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -33,19 +41,30 @@
     \end{enumerate}
   \end{exampleblock}
 
-  \pause
-  \begin{gather*}
-    \forall x \in L: \blue{a \le b} \\
-    \implies \\
-    \Big(\big(a \lor (x \land b) = (a \lor x) \land b\big) \\[-0.8ex]
-    \iff \\[-0.8ex]
-    \quad\;\;\big(a \lor (x \land b) \ge (a \lor x) \land b\big)\Big).
-  \end{gather*}
-
-  \pause
-  \[
-    \teal{a \le b \implies a \lor (x \land b) \le (a \lor x) \land b}
-  \]
+  \begin{columns}
+    \column{0.45\textwidth}
+      \pause
+      \begin{gather*}
+	\forall x \in L: \blue{a \le b} \\
+	\implies \\
+	\Big(\big(a \lor (x \land b) = (a \lor x) \land b\big) \\[-0.8ex]
+	\iff \\[-0.8ex]
+	\quad\;\;\big(a \lor (x \land b) \ge (a \lor x) \land b\big)\Big).
+      \end{gather*}
+    \column{0.50\textwidth}
+      \pause
+      \[
+	\teal{a \le b \implies a \lor (x \land b) \le (a \lor x) \land b}
+      \]
+      \pause
+      \[
+	a \le a \lor x, a \le b \implies a \le (a \lor x) \land b
+      \]
+      \pause
+      \[
+	x \land b \le (a \lor x) \land b
+      \]
+  \end{columns}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -104,7 +123,7 @@
   \pause
   \vspace{-0.50cm}
   \[
-    a,b \in [s,t] \implies a \lor b, a \land b \in [s,t]
+    \teal{a,b \in [s,t] \implies a \lor b, a \land b \in [s,t]}
   \]
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -161,29 +180,34 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \centerline{\blue{Bounded Lattice!!!}} 
-
+  \centerline{\red{\large $\varphi$ preserving $\lor$ and $\land$.}}
   \[
-    (L, \lor_{L}, \land_{L})  \qquad (M, \lor_{M}, \land_{M})
+    \varphi: [a \land b, b] \to [a, a \lor b]  \quad \varphi(x) = x \lor a
+  \]
+
+  % \fignocaption{width = 0.30\textwidth}{figs/modular-lattice-iso.pdf}
+
+  \pause
+  \[
+    \red{\varphi(x_1 \land x_2) = \varphi(x_1) \land \varphi(x_2)}
   \]
 
   \pause
+  \[
+    \varphi(x_1 \land x_2) = (x_1 \land x_2) \lor a
+  \]
   \begin{align*}
-   f(0_L) &= 0_M \\
-   f(1_L) &= 1_M \\
+    \varphi(x_1) \land \varphi(x_2) &= (x_1 \lor a) \land (x_2 \lor a) \\
+    &= (a \lor x_1) \land (x_2 \lor a) \\
+    &=_{\text{modular law}} a \lor (x_1 \land (x_2 \lor a)) \\
+    &= \cdots
   \end{align*}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \centerline{\red{\large $\varphi$ preserving $\lor$ and $\land$.}}
-
-  \[
-    \varphi: [a \land b, b] \to [a, a \lor b]  \quad \varphi(x) = x \lor a
-  \]
-
-  \fignocaption{width = 0.30\textwidth}{figs/modular-lattice-iso.pdf}
+  \fignocaption{width = 0.30\textwidth}{figs/dead-end}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -200,7 +224,13 @@
   \centerline{\red{\large $\varphi$ is bijective.}}
 
   \pause
-  \vspace{0.30cm}
+  \vspace{0.40cm}
+  \fignocaption{width = 0.35\textwidth}{figs/hard}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
   \begin{theorem}[UD Theorem $15.8$ (iii)]
     \[
       f: A \to B
@@ -227,12 +257,52 @@
 
   \pause
   \[
-    (\psi \circ \varphi) (y) = \psi(\varphi(y)) = (y \land b) \lor a = a \lor (b \land y) = (a \lor b) \land y = y
+    (\psi \circ \varphi) (y) = \psi(\varphi(y)) = (y \land b) \lor a = a \lor (b \land y) \red{\;=\;} (a \lor b) \land y = y
   \]
 
   \pause
   \[
-    (\varphi \circ \psi) (x) = \varphi(\psi(x)) = (x \lor a) \land b = x \lor (b \land a) = x
+    (\varphi \circ \psi) (x) = \varphi(\psi(x)) = (x \lor a) \land b \red{\;=\;} x \lor (b \land a) = x
   \]
 \end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \centerline{\red{\large \blue{Back to} $\varphi$ preserving $\lor$ and $\land$.}}
+
+  \pause
+  \vspace{0.50cm}
+  \centerline{$\psi$ preserving $\land$:}
+  \[
+    \psi(y_1 \land y_2) = y_1 \land y_2 \land b = (y_1 \land b) \land (y_2 \land b) = \psi(y_1) \land \psi(y_2)
+  \]
+
+  \pause
+  \vspace{0.20cm}
+  \[
+    \teal{\psi\big(\varphi(x_1) \land \varphi(x_2) \big)} = \psi\big(\varphi(x_1)\big) \land \psi\big(\varphi(x_2)\big) = x_1 \land x_2
+  \]
+
+  \pause
+  \[
+    \varphi(x_1 \land x_2) = \varphi\Big(\psi\big(\varphi(x_1) \land \varphi(x_2) \big)\Big) = \varphi(x_1) \land \varphi(x_2)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+% \begin{frame}{}
+%   \centerline{\blue{Bounded Lattice!!!}} 
+% 
+%   \[
+%     (L, \lor_{L}, \land_{L})  \qquad (M, \lor_{M}, \land_{M})
+%   \]
+% 
+%   \pause
+%   \begin{align*}
+%    f(0_L) &= 0_M \\
+%    f(1_L) &= 1_M \\
+%   \end{align*}
+% \end{frame}
 %%%%%%%%%%%%%%%

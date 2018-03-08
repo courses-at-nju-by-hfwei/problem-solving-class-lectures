@@ -1,0 +1,76 @@
+% file: overview.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{学生反馈}
+  \centerline{\large \red{$Q:$} Assertion, Invariant, Loop invariant 之间是什么关系?}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \centerline{\large \red{$Q:$} How to prove a loop partially correct?}
+
+  \begin{columns}
+    \column{0.60\textwidth}
+      \fignocaption{width = 0.60\textwidth}{figs/loop-invariant}
+    \column{0.35\textwidth}
+      \pause
+      \[
+	\teal{\set{P} \texttt{ loop } \set{Q}}
+      \]
+      \vspace{-0.20cm}
+      \pause
+      \begin{enumerate}[(1)]
+	\setlength{\itemsep}{8pt}
+	\item $\set{P} \texttt{ init } \set{\red{I}}$
+	\item $\set{\red{I} \land C} \texttt{ body } \set{\red{I}}$
+	\item $\set{\red{I} \land \lnot C} \implies \set{Q}$
+      \end{enumerate}
+  \end{columns}
+
+  \pause
+  \vspace{0.50cm}
+  \centerline{$I$ is \emph{before} the loop.}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \centerline{\large \red{$Q:$} How to prove a loop totally correct?}
+
+  \begin{columns}
+    \column{0.50\textwidth}
+      \fignocaption{width = 0.70\textwidth}{figs/loop-invariant}
+    \column{0.50\textwidth}
+      \[
+	\teal{D(X)}
+      \]
+      \vspace{-0.20cm}
+      \pause
+      \begin{enumerate}[(1)]
+	\setlength{\itemsep}{8pt}
+	\item $\set{\red{I} \land C} \texttt{ body } \set{D(X') < D(X)}$
+	\item $\set{\red{I} \land D(X) = \min} \implies \lnot C$
+      \end{enumerate}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \centerline{\large \red{$Q:$} How to develop loop invariants?}
+
+  \pause
+  \fignocaption{width = 0.60\textwidth}{figs/loop-dynamics}
+
+  \pause
+  \vspace{-0.30cm}
+  \[
+    \text{\large $\red{I} \equiv \big(\teal{\texttt{totalWork} = \texttt{workDone} + \texttt{workToDo}}\big)$}
+  \]
+  \pause
+  \[
+    \texttt{workDone} \xLeftarrow{\texttt{data}} \texttt{workToDo}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%

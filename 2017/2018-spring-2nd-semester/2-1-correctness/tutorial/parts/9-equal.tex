@@ -1,0 +1,45 @@
+% file: 9-equal.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{$\texttt{equal}(X,Y)$ (Problem $5.9$)}
+    \begin{itemize}
+      \item $\texttt{head}(X)$
+      \item $\texttt{tail}(X)$
+      \item $\texttt{last}(X)$
+      \item $\texttt{all-but-last}(X)$
+      \item $\texttt{eq}(s,t)$
+    \end{itemize}
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{}
+  \begin{lstlisting}[style = CStyle]
+    $X \gets S_1$
+    $Y \gets S_2$
+
+    $E \gets \top$
+    while ($X \neq \Lambda \land E == \top$)
+      if ($Y == \Lambda$)
+        $E \gets \bot$
+      else if $\texttt{eq}(\texttt{head}(X), \texttt{head}(Y))$
+          $X \gets \texttt{tail}(X)$
+          $Y \gets \texttt{tail}(Y)$
+      else
+        $E \gets \bot$
+
+    if $Y \neq \Lambda$
+      $E \gets \bot$
+
+    return $E$
+  \end{lstlisting}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{}
+  改变判断条件
+\end{frame}
+%%%%%%%%%%%%%%%

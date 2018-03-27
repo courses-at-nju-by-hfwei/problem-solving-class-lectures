@@ -1,0 +1,25 @@
+% file: algs/sum-of-depths.tex
+% for UD Problem 4.2 (a)
+
+\begin{algorithm}[H]
+  \caption{Calculate the sum of depths of all nodes of a tree $T$.}
+  \label{alg:sum-of-depths}
+  \begin{algorithmic}[1]
+    \Procedure{Sum-of-Depths}{\null}
+      \State \Return $\Call{Sum-of-Depths}{T, 0}$ 
+    \EndProcedure
+
+    \Statex
+    \Procedure{Sum-of-Depths}{$r, depth$} \Comment{$r$: root of a tree}
+      \If{$T$ is a leaf}
+        \State \Return $depth$
+      \EndIf
+
+      \Statex
+      \ForAll{child vertex $v$ of $r$}
+	\State $depth \gets depth + \Call{Sum-of-Depths}{v, depth + 1}$
+      \EndFor
+      \State \Return $depth$
+    \EndProcedure
+  \end{algorithmic}
+\end{algorithm}

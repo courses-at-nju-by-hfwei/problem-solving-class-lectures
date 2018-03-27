@@ -1,0 +1,28 @@
+% file: 12-pal2.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{}
+  \begin{exampleblock}{$\texttt{Pal2}(S)$ (Problem $5.12$)}
+    \begin{lstlisting}[style = CStyle]
+    $X \gets S$
+    $E \gets \top$
+
+    |\only<3->{\cyan{//} \red{$I \equiv \texttt{isPal}(S) \iff E = \top \land \texttt{isPal}(X)$}}|
+    while $X \neq \Lambda$ |\uncover<2->{\red{$\land\; E == \top$}}|
+      if $\texttt{eq}(\texttt{head}(X), \texttt{last}(X))$
+        $X \gets \texttt{all-but-last}(\texttt{tail}(X))$
+      else
+        $E \gets \bot$
+    |\only<4->{\cyan{//} \red{$F \equiv \texttt{isPal}(S) \iff E = \top$}}|
+
+    return $E$
+    \end{lstlisting}
+  \end{exampleblock}
+
+  \uncover<5->{
+    \[
+      I \red{\implies} F
+    \]
+  }
+\end{frame}
+%%%%%%%%%%%%%%%

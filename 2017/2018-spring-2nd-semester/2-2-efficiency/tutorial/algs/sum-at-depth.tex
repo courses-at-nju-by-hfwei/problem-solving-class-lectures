@@ -1,0 +1,28 @@
+% file: algs/sum-at-depth.tex
+% for UD Problem 4.3 (a)
+
+\begin{algorithm}[t]
+  \caption{Calculate the sum of contents of nodes of a tree $T$ at each depth.}
+  \label{alg:sum-at-depth}
+  \begin{algorithmic}[1]
+    \Procedure{Sum-at-Depth}{$r$} \Comment{$r$: root of the tree $T$}
+      \State $r.depth \gets 0$
+
+      \hStatex
+      \State $Q \gets \emptyset$
+      \State $\Call{Enqueue}{Q, r}$
+
+      \hStatex
+      \While{$Q \neq \emptyset$}
+	\State $u \gets \Call{Dequeue}{Q}$
+	\State $sumAtDepth[u.depth] \textsl{\;+=\;} u.content$
+
+	\hStatex
+	\ForAll{child vertex $v$ of $u$}
+	  \State $v.depth \gets u.depth + 1$
+	  \State $\Call{Enqueue}{Q, v}$
+	\EndFor
+      \EndWhile
+    \EndProcedure
+  \end{algorithmic}
+\end{algorithm}

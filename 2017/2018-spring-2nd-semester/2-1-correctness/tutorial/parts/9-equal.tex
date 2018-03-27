@@ -2,7 +2,7 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{$\texttt{equal}(X,Y)$ (Problem $5.9$)}
+  \begin{exampleblock}{$\texttt{equal}(S_1,S_2)$ (Problem $5.9$)}
     \begin{itemize}
       \item $\texttt{head}(X)$
       \item $\texttt{tail}(X)$
@@ -16,13 +16,66 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}[fragile]{}
+  \begin{columns}
+    \column{0.50\textwidth}
+  \begin{lstlisting}[style = CStyle]
+ while $X \neq \Lambda \land Y \neq \Lambda$
+   if $\texttt{eq}(\texttt{head}(X), \texttt{head}(Y))$
+     $X \gets \texttt{tail}(X)$
+     $Y \gets \texttt{tail}(Y)$
+   else
+     return false
+
+ if $X = \Lambda \land Y = \Lambda$
+   return true
+ return false
+  \end{lstlisting}
+    \column{0.50\textwidth}
+  \begin{lstlisting}[style = CStyle]
+ $X \gets S_1$
+ $Y \gets S_2$
+
+ $E \gets \top$
+ |\uncover<3->{\cyan{//} \red{$S_1 = S_2 \iff E = \top \land X = Y$}}|
+ while $X \neq \Lambda \land Y \neq \Lambda \land E = \top$
+   if $\texttt{eq}(\texttt{head}(X), \texttt{head}(Y))$
+     $X \gets \texttt{tail}(X)$
+     $Y \gets \texttt{tail}(Y)$
+   else
+     $E \gets \bot$
+
+ if $\lnot (X = \Lambda \land Y = \Lambda)$
+   $E \gets \bot$
+ |\uncover<2->{\cyan{//} \red{$S_1 = S_2 \iff E = \top$}}|
+
+ return $E$
+  \end{lstlisting}
+  \end{columns}
+
+% |\uncover<2->{$X \gets S_1$}|
+% |\uncover<2->{$Y \gets S_2$}|
+% // |\red{$I:$} \teal{$S_1 = S_2 \iff X = Y$}|
+% // |\teal{$S_1 = S_2 \iff X = Y \land \lnot(X \neq \Lambda \land Y \neq \Lambda)$}|
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{}
+  \begin{lstlisting}[style = CStyle]
+  肖江
+  \end{lstlisting}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{}
   \begin{lstlisting}[style = CStyle]
     $X \gets S_1$
     $Y \gets S_2$
 
     $E \gets \top$
-    while ($X \neq \Lambda \land E == \top$)
-      if ($Y == \Lambda$)
+    while $X \neq \Lambda \land E == \top$
+      if $Y == \Lambda$
         $E \gets \bot$
       else if $\texttt{eq}(\texttt{head}(X), \texttt{head}(Y))$
           $X \gets \texttt{tail}(X)$
@@ -35,11 +88,5 @@
 
     return $E$
   \end{lstlisting}
-\end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{}
-  改变判断条件
 \end{frame}
 %%%%%%%%%%%%%%%

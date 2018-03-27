@@ -1,0 +1,27 @@
+% file: algs/leaf-at-even-depth.tex
+% for UD Problem 4.2 (c)
+
+\begin{algorithm}[H]
+  \caption{Check whether a tree $T$ has any leaf at an even depth.}
+  \label{alg:leaf-at-even-depth}
+  \begin{algorithmic}[1]
+    \Procedure{Leaf-at-Even-Depth}{\null}
+      \State \Return $\Call{Leaf-at-Depth}{T, even = 0}$
+    \EndProcedure
+
+    \Statex
+    \Procedure{Leaf-at-Depth}{$r, parity$} \Comment{$r$: root of a tree}
+      \If{$r$ is a leaf}
+        \State \Return $1-parity$
+      \EndIf
+
+      \Statex
+      \State $result \gets 0$
+      \ForAll{child vertex $v$ of $r$}
+	\State $result \gets result \lor \Call{Leaf-at-Depth}{v, 1-parity}$
+      \EndFor
+      \State \Return $result$
+    \EndProcedure
+  \end{algorithmic}
+\end{algorithm}
+

@@ -1,0 +1,31 @@
+% file: algs/nodes-at-depth-K.tex
+% for UD Problem 4.2 (b)
+
+\begin{algorithm}[H]
+  \caption{Count the number of nodes in $T$ at depth $K$.}
+  \label{alg:nodes-at-depth-K}
+  \begin{algorithmic}[1]
+    \Procedure{Nodes-at-Depth}{\null}
+      \State \Return $\Call{Nodes-at-Depth}{T, K}$ 
+    \EndProcedure
+
+    \Statex
+    \Procedure{Nodes-at-Depth}{$r, k$} \Comment{$r$: root of a tree}
+      \If{$k = 0$}
+        \State \Return 1
+      \EndIf
+
+      \Statex
+      \If{$r$ is a leaf}
+	\State \Return 0
+      \EndIf
+
+      \Statex
+      \State $num \gets 0$
+      \ForAll{child vertex $v$ of $r$}
+	\State $num \gets num + \Call{Nodes-at-Depth}{v, k - 1}$
+      \EndFor
+      \State \Return $num$
+    \EndProcedure
+  \end{algorithmic}
+\end{algorithm}

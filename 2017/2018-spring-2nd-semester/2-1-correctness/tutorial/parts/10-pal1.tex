@@ -1,0 +1,35 @@
+% file: 10-pal1.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{}
+  \begin{exampleblock}{$\texttt{Pal1}(S)$ (Problem $5.10$)}
+    \begin{columns}
+      \column{0.45\textwidth}
+	\begin{lstlisting}[style = CStyle]
+    $Y \gets \texttt{rev}(S)$
+    return $\texttt{equal}(S, Y)$
+        \end{lstlisting}
+      \column{0.50\textwidth}
+	\begin{lstlisting}[style = CStyle]
+    $Y \gets \texttt{rev}(S)$
+    |\only<3->{\cyan{//} |\red{$Y = \texttt{reverse}(S)$}|}|
+    $E \gets \texttt{equal}(S, Y)$
+    |\only<2->{\cyan{//} |\red{$\texttt{isPal}(S) \iff E = \top$}|}|
+    return $E$
+        \end{lstlisting}
+    \end{columns}
+
+    \begin{enumerate}[(a)]
+      \item Total correctness of $\texttt{Pal1}$
+      \item Termination of $\texttt{Pal1}$
+    \end{enumerate}
+  \end{exampleblock}
+
+  \uncover<4->{
+    \[
+      \Big(Y = \texttt{reverse}(S) \land E = \texttt{equal}(S, Y)\Big) \red{\implies} \Big(\texttt{isPal}(S) \iff E = \top\Big)
+    \]
+  }
+\end{frame}
+%%%%%%%%%%%%%%%
+

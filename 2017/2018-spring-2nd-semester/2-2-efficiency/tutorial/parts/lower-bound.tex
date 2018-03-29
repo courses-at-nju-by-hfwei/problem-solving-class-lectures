@@ -265,7 +265,20 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  $k$-sorted 
+  \begin{exampleblock}{The $k$-sorted Problem}
+    An array $A[1 \cdots n]$ is \red{$k$-sorted} if it can be divided into $k$ blocks, 
+    each of size $n/k$ (we assume that $n/k \in \mathbb{N}$), 
+    such that the elements in each block are larger than the elements 
+    in earlier blocks and smaller than elements in later blocks. 
+    The elements within each block need \red{\it not} be sorted.
+  
+    \begin{enumerate}[(a)]
+      \item Describe an algorithm that \teal{$k$-sorts an arbitrary array} in $O(n \log k)$ time.    
+      \item Prove that any comparison-based $k$-sorting algorithm requires $\Omega(n \log k)$ comparisons in the worst case.    
+      \item Describe an algorithm that \teal{completely sorts an already $k$-sorted array} in $O(n \log(n/k))$ time.    
+      \item Prove that any comparison-based algorithm to completely sort a $k$-sorted array requires $\Omega(n \log(n/k))$ comparisons in the worst case.
+    \end{enumerate}
+  \end{exampleblock}
 \end{frame}
 %%%%%%%%%%%%%%%
 

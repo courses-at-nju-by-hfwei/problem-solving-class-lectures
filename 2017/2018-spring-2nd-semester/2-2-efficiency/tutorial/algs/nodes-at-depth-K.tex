@@ -15,12 +15,12 @@
         \State \Return 1
       \EndIf
 
-      \Statex
+      \hStatex
       \If{$r$ is a leaf}
 	\State \Return 0
       \EndIf
 
-      \Statex
+      \hStatex
       \State $num \gets 0$
       \ForAll{child vertex $v$ of $r$}
 	\State $num \gets num + \Call{Nodes-at-Depth}{v, k - 1}$

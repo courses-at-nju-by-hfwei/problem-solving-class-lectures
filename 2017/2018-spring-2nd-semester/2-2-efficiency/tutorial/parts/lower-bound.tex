@@ -1,0 +1,276 @@
+% file: parts/lower-bound.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    \teal{\Large Lower Bound for Comparion-based Sorting}
+  \end{center}
+
+  \pause
+  \fignocaption{width = 0.40\textwidth}{figs/suspicious.png}
+
+  % \begin{columns}
+  %   \pause
+  %   \column{0.50\textwidth}
+  %     \fignocaption{width = 0.75\textwidth}{figs/huaiyi}
+  %   \pause
+  %   \column{0.50\textwidth}
+  %     \fignocaption{width = 0.75\textwidth}{figs/mingbai}
+  % \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Lower Bound for Comparison-based Sorting (DH $6.13$)}
+    Prove a lower bound of $O(n \lg n)$ on the time complexity 
+    of any comparison-based sorting algorithm.
+  \end{exampleblock}
+
+  \pause
+  \vspace{-0.30cm}
+  \fignocaption{width = 0.40\textwidth}{figs/wrong}
+
+  \pause
+  \vspace{-0.30cm}
+  \begin{exampleblock}{Lower Bound for Comparison-based Sorting (DH $6.13$)}
+    Prove a lower bound of \red{$\Omega(n \lg n)$}
+    on the time complexity of any comparison-based sorting 
+    algorithm\only<4->{\red{\;on inputs of size $n$}}.
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Lower Bound for Comparison-based Sorting (DH $6.13$)}
+    Prove a lower bound of $\Omega(n \lg n)$
+    on the time complexity of any \red{\bf\large comparison-based} sorting 
+    algorithm on inputs of size $n$.
+  \end{exampleblock}
+
+  \vspace{0.30cm}
+  \begin{columns}
+    \pause
+    \column{0.45\textwidth}
+      \begin{center}
+	\teal{Computational Model:} \\[6pt]
+	{\it the only way to gain order info.}
+
+	\pause
+	\[
+	  x \in [1 \cdots 99]
+	\]
+	\[
+	  x / 10
+	\]
+      \end{center}
+    \pause
+    \column{0.60\textwidth}
+      \begin{center}
+	\teal{Cost Model:} \\[6pt]
+	{\it the critical operations to count}
+      \end{center}
+
+      \pause
+      \fignocaption{width = 0.35\textwidth}{figs/pancake-sorting}{\centerline{\small ``Bounds For Sorting By Prefix Reversal'', 1979}}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    {\Large \teal{Decision Tree Model}} 
+
+    \pause
+    \vspace{0.80cm}
+    \begin{columns}
+      \column{0.40\textwidth}
+	\fignocaption{width = 0.90\textwidth}{figs/decision-tree-model}
+      \column{0.55\textwidth}
+	\begin{description}[Leaves:]
+	  \item[Nodes:] comparisions \red{$a_i : a_j$}
+	    \[
+	      a_i < a_j, \; a_i \le a_j, \; a_i = a_j 
+	    \]
+	    \[
+	      a_i \ge a_j, \; a_i > a_j
+	    \]
+	  \item[Edges:] two-way decisions
+	  \item[Leaves:] possible permutations
+	\end{description}
+    \end{columns}
+
+    \pause
+    \vspace{0.60cm}
+    \begin{alertblock}{Assumption (By aware of any assumptions !!!):}
+      \centerline{All the input elements are \red{\bf\large distinct}.}
+
+      \pause
+      \[
+	\red{a_i < a_j}
+      \]
+    \end{alertblock}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    {\Large \teal{Decision Tree Model}} 
+  \end{center}
+
+  \vspace{-0.40cm}
+  \[
+    \boxed{\text{Any Comparison-based Sorting Algorithm} \;\red{\xRightarrow{ \textsf{modeled by} }}\; \text{A Decision Tree}}
+  \]
+
+  \only<2>{
+    \fignocaption{width = 0.50\textwidth}{figs/suspicious-smurf}
+  }
+
+  \only<3->{
+    \fignocaption{width = 0.70\textwidth}{figs/decision-tree-insertion-sort}
+  }
+  \uncover<4->{
+    \centerline{The decision tree for \teal{insertion sort} on three elements.}
+  }
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    {\Large \teal{Decision Tree Model}} 
+  \end{center}
+
+  \vspace{-0.40cm}
+  \[
+    \boxed{\text{Any Comparison-based Sorting Algorithm} \;\red{\xRightarrow{ \textsf{modeled by} }}\; \text{A Decision Tree}}
+  \]
+
+  \pause
+  \input{algs/selection-sort}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    {\Large \teal{Decision Tree Model}} 
+  \end{center}
+
+  \vspace{-0.40cm}
+  \[
+    \boxed{\text{Any Comparison-based Sorting Algorithm} \;\red{\xRightarrow{ \textsf{modeled by} }}\; \text{A Decision Tree}}
+  \]
+
+  \fignocaption{width = 0.85\textwidth}{figs/decision-tree-selection-sort}{\centerline{The decision tree for \teal{selection sort} on three elements.}}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    {\Large \teal{Decision Tree Model}} 
+  \end{center}
+
+  \vspace{-0.40cm}
+  \[
+    \boxed{\text{Any Comparison-based Sorting Algorithm } \mathcal{A} \;\red{\xRightarrow{\textsf{modeled by}}}\; \text{A Decision Tree } \mathcal{T}}
+  \]
+
+  \pause
+  \[
+    \text{Algorithm $\mathcal{A}$ on a specific input of size } n \;\red{\xRightarrow{\textsf{modeled by}}}\; \text{A path through } \mathcal{T}
+  \]
+
+  \pause
+  \[
+    \text{Worst-case time complexity of $\mathcal{A}$} \;\red{\xRightarrow{\textsf{modeled by}}}\; \text{The height of } \mathcal{T}
+  \]
+
+  \pause
+  \vspace{0.50cm}
+  \centering
+  \fbox{\begin{tabular}{@{}c@{}}
+    Worst-case Lower Bound of Comparison-based Sorting on inputs of size $n$ \\
+    \red{$\xRightarrow{\textsf{modeled by}}$} \\
+    The Minimum Height of All  $\mathcal{T}$s
+  \end{tabular}}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    {\Large \teal{Decision Tree Model}} 
+  \end{center}
+
+  \centering
+  \vspace{0.30cm}
+  \fbox{\begin{tabular}{@{}c@{}}
+    Worst-case Lower Bound of Comparison-based Sorting on inputs of size $n$ \\
+    \red{$\xRightarrow{\textsf{modeled by}}$} \\
+    \teal{The Minimum Height of All  $\mathcal{T}$s}
+  \end{tabular}}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{alertblock}{To be a full binary tree:}
+    \[
+      \# \text{ of leaves } \;\red{\le}\; 2^h
+    \]
+  \end{alertblock}
+
+  \pause
+  \vspace{0.50cm}
+  \begin{alertblock}{To be a \blue{correct} sorting algorithm:}
+    \[
+      \# \text{ of leaves } \;\red{\ge}\; n!
+    \]
+  \end{alertblock}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    {\Large \teal{Lower Bound for Comparison-based Sorting}} 
+  \end{center}
+
+  \[
+    \boxed{n! \le \# \text{ of leaves} \le 2^h}
+  \]
+
+  \pause
+  \[
+    h \ge \lg n! = \Omega(n \lg n)
+  \]
+
+  \pause
+  \vspace{0.60cm}
+  \begin{alertblock}{Stirling Formula (by {\it James Stirling}):}
+    \[
+      n! = \Theta(\sqrt{2 \pi n} \left(\frac{n}{e}\right)^{n})
+    \]
+
+    \begin{proof}
+    \end{proof}
+  \end{alertblock}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  $k$-sorted 
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  Repeated Elements Problem
+\end{frame}
+%%%%%%%%%%%%%%%

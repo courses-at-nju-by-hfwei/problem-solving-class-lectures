@@ -8,15 +8,6 @@
 
   \pause
   \fignocaption{width = 0.40\textwidth}{figs/suspicious.png}
-
-  % \begin{columns}
-  %   \pause
-  %   \column{0.50\textwidth}
-  %     \fignocaption{width = 0.75\textwidth}{figs/huaiyi}
-  %   \pause
-  %   \column{0.50\textwidth}
-  %     \fignocaption{width = 0.75\textwidth}{figs/mingbai}
-  % \end{columns}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -78,41 +69,41 @@
 \end{frame}
 %%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \begin{exampleblock}{An argument from a student:}
-    \begin{itemize}[<+->]
-      \setlength{\itemsep}{4pt}
-      \item Any comparison-based sorting algorithm can be considered to work 
-	by \purple{\it putting elements into their final positions one by one}. 
-	(Take the last time one element is put into its final position.)
-      \item To put the element $e$ which is the $i$-th one being put into its final position, 
-	the algorithms \purple{\it should know the relative ordering between $e$ and the first $n-1$ elements}
-	that are already put into their final positions. 
-	This costs at least $\Omega(\lg i)$ comparisons.
-      \item Therefore, \purple{\it the total number of comparisons} is at least 
-	\[
-	  \sum_{i=1}^{n-1} \lg i = \Omega(n \lg n).
-	\]
-    \end{itemize}
-  \end{exampleblock}
-\end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \fignocaption{width = 0.60\textwidth}{figs/lower-bound-csse}
-
-  \fignocaption{width = 0.20\textwidth}{figs/lower-bound-qrcode}
-
-  \pause
-  \vspace{0.30cm}
-  \begin{quote}
-    \centering
-    ``This makes claims without justification.'' \hfill --- D.W.
-  \end{quote}
-\end{frame}
-%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%
+% \begin{frame}{}
+%   \begin{exampleblock}{An argument from a student:}
+%     \begin{itemize}[<+->]
+%       \setlength{\itemsep}{4pt}
+%       \item Any comparison-based sorting algorithm can be considered to work 
+% 	by \purple{\it putting elements into their final positions one by one}. 
+% 	(Take the last time one element is put into its final position.)
+%       \item To put the element $e$ which is the $i$-th one being put into its final position, 
+% 	the algorithms \purple{\it should know the relative ordering between $e$ and the first $n-1$ elements}
+% 	that are already put into their final positions. 
+% 	This costs at least $\Omega(\lg i)$ comparisons.
+%       \item Therefore, \purple{\it the total number of comparisons} is at least 
+% 	\[
+% 	  \sum_{i=1}^{n-1} \lg i = \Omega(n \lg n).
+% 	\]
+%     \end{itemize}
+%   \end{exampleblock}
+% \end{frame}
+% %%%%%%%%%%%%%%%
+% 
+% %%%%%%%%%%%%%%%
+% \begin{frame}{}
+%   \fignocaption{width = 0.60\textwidth}{figs/lower-bound-csse}
+% 
+%   \fignocaption{width = 0.20\textwidth}{figs/lower-bound-qrcode}
+% 
+%   \pause
+%   \vspace{0.30cm}
+%   \begin{quote}
+%     \centering
+%     ``This makes claims without justification.'' \hfill --- D.W.
+%   \end{quote}
+% \end{frame}
+% %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
@@ -120,7 +111,7 @@
     {\Large \teal{Decision Tree Model}} 
 
     \pause
-    \vspace{0.80cm}
+    \vspace{0.20cm}
     \begin{columns}
       \column{0.40\textwidth}
 	\fignocaption{width = 0.90\textwidth}{figs/decision-tree-model}

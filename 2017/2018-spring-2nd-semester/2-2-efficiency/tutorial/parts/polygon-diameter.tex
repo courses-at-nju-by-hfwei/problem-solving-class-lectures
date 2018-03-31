@@ -7,57 +7,115 @@
   \end{exampleblock}
 
   \pause
-  \vspace{0.40\textwidth}
-  \centerline{Linear-time of \red{WHAT}?}
+  \vspace{0.30cm}
+  \fignocaption{width = 0.60\textwidth}{figs/convex-diameter-alg}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \centerline{\teal{\large Time Complexity}}
+  \begin{exampleblock}{Convex Polygon Diameter (DH $6.8$)}
+    Show that the ``Convex Polygon Diameter'' algorithm is of \red{\bf linear-time} complexity.
+  \end{exampleblock}
+
+  \begin{center}
+    \red{$Q:$} Linear-time of \red{\bf WHAT}? \\[5pt] \pause
+    \blue{$A:$} Linear-time of \blue{\bf the size of input} \\[12pt] \pause
+
+    \red{$Q:$} What is the input? \\[5pt] \pause
+    \blue{$A:$} A convex polygon \uncover<5->{\teal{represented by $n$ vertices}} \\[12pt]
+
+    \uncover<6->{
+      \red{$Q:$} What are the critical operations? \\[5pt] \pause
+    }
+    \uncover<7->{
+      \blue{$A:$} $d(p_1, p_2) = \sqrt{(x_1 - x_2)^2 + (y_1 - y_2)^2}$
+    }
+  \end{center}
+
+  \uncover<8->{
+    \[
+      \Theta(c \cdot n) = \Theta(n)
+    \]
+  }
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \centerline{\teal{\large Correctness}}
+  \centerline{\teal{\Huge Correctness}}
+  \vspace{0.30cm}
+  \fignocaption{width = 0.60\textwidth}{figs/wait-why}
+\end{frame}
+%%%%%%%%%%%%%%%
 
-  \pause
+%%%%%%%%%%%%%%%
+\begin{frame}{}
   \vspace{0.60cm}
-  \begin{alertblock}[An Simple Observation]
-  \end{alertblock}
-\end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \centerline{\teal{\large Correctness}}
-
-  \begin{definition}[Line of Support]
-  \end{definition}
-
-  \pause
-  \vspace{0.60cm}
-  \begin{definition}[Antipodal]
-  \end{definition}
-\end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \centerline{\teal{\large Correctness}}
-
-  \begin{theorem}[]
+  \begin{theorem}[A Simple Observation]
+    For a convex polygon, a pair of vertices determine the diameter.
   \end{theorem}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{proof}
+  \end{proof}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{center}
+    \red{\large BUT, we have {\it not} enumerated {\it all} pairs of vertices.} \\[10pt] \pause
+    \teal{We have enumerated {\it all} pairs of vertices \\
+    \uncover<5->{\purple{which {\it admits parallel supporting lines}.}}}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Line of Support]
+    A line $L$ is a \red{\it line of support} of a convex polygon $P$ if
+    \[
+      L \cap P = \text{ a vertex/an edge of } P.
+    \]
+  \end{definition}
+  \pause
+  \vspace{0.20cm}
+  \centerline{$L \cap P \neq \emptyset$ and $P$ lies entirely on one side of $L$.}
+
+  \pause
+  \vspace{0.50cm}
+  \begin{definition}[Antipodal]
+    An \red{\it antipodal} is a pair of points that admits parallel supporting lines.
+  \end{definition}
+
+  \pause
+  \vspace{0.60cm}
+  \centerline{\teal{\large We have enumerated {\it all} antipodals}.}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[]
+    If $AB$ is a diameter of a convex polygon $P$, then $AB$ is an antipodal.
+  \end{theorem}
+
+  \pause
+  \vspace{0.50cm}
+  \begin{proof}
+    \pause
+  \end{proof}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \centerline{\teal{\Large Rotating Caliper}}
-
+  \vspace{-0.30cm}
   \fignocaption{width = 0.50\textwidth}{figs/caliper}
 
+  \vspace{-0.30cm}
   \begin{columns}
     \pause
     \column{0.50\textwidth}
@@ -78,6 +136,18 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  shortest distance
+  \begin{exampleblock}{Finding the Closest Pair of Points}
+    \fignocaption{width = 0.30\textwidth}{figs/closest-pair-plane}
+  \end{exampleblock}
+
+  \pause
+  \begin{proof}[A Classic and Beautiful Divide-Conquer\only<4->{\red{-Combine}} Algorithm:]
+    \pause
+    \fignocaption{width = 0.35\textwidth}{figs/try}
+    \vspace{-0.40cm}
+    \uncover<5->{
+      \centerline{\teal{Section $33.4$, CLRS}}
+    }
+  \end{proof}
 \end{frame}
 %%%%%%%%%%%%%%%

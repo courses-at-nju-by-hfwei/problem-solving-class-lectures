@@ -42,6 +42,25 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \[
+    \textsf{sum-of-depths}(r, \red{d}) = \left\{\begin{array}{lr}
+      d, & r \textsf{ is a leaf} \\[6pt]
+      \sum\limits_{v: \textsf{child of } r} \textsf{sum-of-depths}(v, \red{d + 1}) + d, & \textsf{o.w.}
+    \end{array}\right.
+  \]
+
+  \pause
+  \centerline{\red{\large Master Theorem?}}
+
+  \pause
+  \[
+    \Theta(m + n) = \Theta(n)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
   \begin{exampleblock}{DH 4.2 (b): Number of Nodes at Depth $K$}
     \fignocaption{width = 0.45\textwidth}{figs/tree-traversal-depth}
   \end{exampleblock}

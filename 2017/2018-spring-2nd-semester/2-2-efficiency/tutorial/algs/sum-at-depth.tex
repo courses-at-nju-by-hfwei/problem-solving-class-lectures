@@ -6,7 +6,7 @@
   \label{alg:sum-at-depth}
   \begin{algorithmic}[1]
     \Procedure{Sum-at-Depth}{$r$} \Comment{$r$: root of the tree $T$}
-      \State $r.depth \gets 0$
+      \State \teal{$r.depth \gets 0$}
 
       \hStatex
       \State $Q \gets \emptyset$
@@ -15,11 +15,11 @@
       \hStatex
       \While{$Q \neq \emptyset$}
 	\State $u \gets \Call{Dequeue}{Q}$
-	\State $sumAtDepth[u.depth] \textsl{\;+=\;} u.content$
+	\State \teal{$sumAtDepth[u.depth] \text{\;+=\;} u.content$}
 
 	\hStatex
 	\ForAll{child vertex $v$ of $u$}
-	  \State $v.depth \gets u.depth + 1$
+	  \State \teal{$v.depth \gets u.depth + 1$}
 	  \State $\Call{Enqueue}{Q, v}$
 	\EndFor
       \EndWhile

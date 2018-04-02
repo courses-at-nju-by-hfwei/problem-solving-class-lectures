@@ -49,10 +49,11 @@
     \end{array}\right.
   \]
 
-  \pause
+  \vspace{0.30cm}
   \centerline{\red{\large Master Theorem?}}
 
   \pause
+  \vspace{0.50cm}
   \[
     \Theta(m + n) = \Theta(n)
   \]
@@ -69,9 +70,9 @@
   \vspace{-0.60cm}
   \[
     \textsf{nodes-at-depth}(r, \red{k}) = \left\{\begin{array}{ll}
-      \uncover<3->{1, \hspace{4.00cm} k = 0} & \\[5pt]
-      \uncover<3->{0, \hspace{4.00cm} k > 0 \land r \textsf{ is a leaf}} & \\[5pt]
-      \uncover<2->{\sum\limits_{v: \textsf{child of } r} \textsf{nodes-at-depth}(v, \red{k - 1}),} \qquad \uncover<3->{\textsf{o.w.}} &
+      \uncover<4->{1, \hspace{4.00cm} k = 0} & \\[5pt]
+      \uncover<4->{0, \hspace{4.00cm} k > 0 \land r \textsf{ is a leaf}} & \\[5pt]
+      \uncover<3->{\sum\limits_{v: \textsf{child of } r} \textsf{nodes-at-depth}(v, \red{k - 1}),} \qquad \uncover<4->{\textsf{o.w.}} &
       \end{array}\right.
   \]
 \end{frame}
@@ -92,9 +93,9 @@
   \pause
   \vspace{-0.60cm}
   \[
-    \textsf{leaf-at-depth}(r, \red{parity}) = \left\{\begin{array}{lr}
-      \uncover<3->{1 - parity, & r \textsf{ is a leaf}} \\[5pt]
-      \sum\limits_{v: \textsf{child of } r} \textsf{}(v, \red{1 - parity}), & \qquad \uncover<3->{\textsf{o.w.}}
+    \textsf{leaf-at-depth}(r, \uncover<3->{\red{parity}}) = \left\{\begin{array}{lr}
+      \uncover<5->{1 - parity, & r \textsf{ is a leaf}} \\[5pt]
+      \uncover<4->{\bigvee\limits_{v: \textsf{child of } r} \textsf{}(v, \red{1 - parity})}, & \qquad \uncover<5->{\textsf{o.w.}}
       \end{array}\right.
   \]
 \end{frame}

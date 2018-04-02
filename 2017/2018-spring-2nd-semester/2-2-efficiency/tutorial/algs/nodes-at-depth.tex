@@ -15,7 +15,7 @@
       \hStatex
       \While{$Q \neq \emptyset$}
 	\State $u \gets \Call{Dequeue}{Q}$
-	\State $nodesAtDepth[u.depth] \textsl{\;+=\;} 1$
+	\State $nodesAtDepth[u.depth] \text{\;+=\;} 1$
 
 	\hStatex
 	\ForAll{child vertex $v$ of $u$}
@@ -23,6 +23,9 @@
 	  \State $\Call{Enqueue}{Q, v}$
 	\EndFor
       \EndWhile
+
+      \hStatex
+      \State \Return $\text{argmax}_{K} nodesAtDepth[k]$
     \EndProcedure
   \end{algorithmic}
 \end{algorithm}

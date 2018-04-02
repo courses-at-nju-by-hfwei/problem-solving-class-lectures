@@ -161,8 +161,6 @@
 
   \only<3->{
     \fignocaption{width = 0.70\textwidth}{figs/decision-tree-insertion-sort}
-  }
-  \uncover<4->{
     \centerline{The decision tree for \teal{insertion sort} on three elements.}
   }
 \end{frame}
@@ -179,7 +177,6 @@
     \boxed{\text{Any Comparison-based Sorting Algorithm} \;\red{\xRightarrow{ \textsf{modeled by} }}\; \text{A Decision Tree}}
   \]
 
-  \pause
   \input{algs/selection-sort}
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -224,7 +221,7 @@
   \vspace{0.50cm}
   \centering
   \fbox{\begin{tabular}{@{}c@{}}
-    Worst-case Lower Bound of Comparison-based Sorting on inputs of size $n$ \\
+    Worst-case Lower Bound of Comparison-based Sorting (on inputs of size $n$) \\
     \red{$\xRightarrow{\textsf{modeled by}}$} \\
     The Minimum Height of All  $\mathcal{T}$s
   \end{tabular}}
@@ -240,7 +237,7 @@
   \centering
   \vspace{0.30cm}
   \fbox{\begin{tabular}{@{}c@{}}
-    Worst-case Lower Bound of Comparison-based Sorting on inputs of size $n$ \\
+    Worst-case Lower Bound of Comparison-based Sorting (on inputs of size $n$) \\
     \red{$\xRightarrow{\textsf{modeled by}}$} \\
     \teal{The Minimum Height of All  $\mathcal{T}$s}
   \end{tabular}}
@@ -295,10 +292,6 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \centerline{\Large \teal{Looking Back}}
-
-  \pause
-  \vspace{0.30cm}
   \fignocaption{width = 0.50\textwidth}{figs/assmuptions-game}
 
   \pause
@@ -308,6 +301,7 @@
       \setlength{\itemsep}{5pt}
       \item \red{\large Comparison-based} sorting algorithms.
       \item All the input elements are \red{\bf\large distinct}.
+      \item Completely sort all possible inputs.
     \end{enumerate}
   \end{alertblock}
 \end{frame}
@@ -323,9 +317,9 @@
     The elements within each block need \red{\it not} be sorted.
   
     \begin{enumerate}[(a)]
-      \item Describe an algorithm that \teal{$k$-sorts an arbitrary array} in $O(n \log k)$ time.    
-      \item Prove that any comparison-based $k$-sorting algorithm requires $\Omega(n \log k)$ comparisons in the worst case.    
-      \item Describe an algorithm that \teal{completely sorts an already $k$-sorted array} in $O(n \log(n/k))$ time.    
+      \item \textcolor{gray}{Describe an algorithm that \teal{$k$-sorts an arbitrary array} in $O(n \log k)$ time.}
+      \item Prove that any comparison-based $k$-sorting algorithm requires $\Omega(n \log k)$ comparisons in the worst case.
+      \item \textcolor{gray}{Describe an algorithm that \teal{completely sorts an already $k$-sorted array} in $O(n \log(n/k))$ time.}
       \item Prove that any comparison-based algorithm to completely sort a $k$-sorted array requires $\Omega(n \log(n/k))$ comparisons in the worst case.
     \end{enumerate}
   \end{exampleblock}

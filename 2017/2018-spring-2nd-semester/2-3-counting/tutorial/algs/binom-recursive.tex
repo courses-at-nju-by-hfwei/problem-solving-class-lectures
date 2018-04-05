@@ -1,0 +1,14 @@
+% file: algs/binom-recursive.tex
+
+\begin{algorithm}[H]
+  \caption{Computing $\binom{n}{k}$.}
+  \begin{algorithmic}[1]
+    \Procedure{Binom}{$n, k$} \Comment{Required: $n \ge k \ge 0$}
+      \If{$k = 0 \lor n = k$}
+	\State \Return 1
+      \EndIf
+
+      \State \Return $\Call{Binom}{n-1, k} + \Call{Binom}{n-1, k-1}$
+    \EndProcedure
+  \end{algorithmic}
+\end{algorithm}

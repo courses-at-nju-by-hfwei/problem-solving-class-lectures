@@ -1,0 +1,52 @@
+% file: parts/binom.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Computing $\binom{n}{k}$ (CS $1.5:14$)}
+    \input{algs/binom-recursive}
+  \end{exampleblock}
+
+  \pause
+  \fignocaption{width = 0.60\textwidth}{figs/binom-4-2}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \input{algs/binom-recursive}
+
+  \begin{enumerate}[(i)]
+    \pause
+    \item \# of ``+'':
+      \pause
+      \[
+	A(n,k) = 1 + A(n-1, k) + A(n-1, k-1)
+      \]
+    \pause
+    \vspace{-0.60cm}
+    \item \# of recursive calls of \textsc{Binom}:
+      \pause
+      \[
+	R(n,k) = 2 + R(n-1, k) + R(n-1, k-1)
+      \]
+  \end{enumerate}
+
+  \pause
+  \[
+    \boxed{T(n,k) = T(n-1, k) + T(n-1, k-1) + c}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fignocaption{width = 0.50\textwidth}{figs/pascal}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \input{algs/binom-dp}
+\end{frame}
+%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%

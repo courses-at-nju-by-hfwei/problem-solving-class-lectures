@@ -21,6 +21,13 @@
 \usepackage[noend]{algpseudocode}
 \newcommand{\hStatex}[0]{\vspace{5pt}}
 
+% table
+\usepackage{amstext} % for \text macro
+\usepackage{array}   % for \newcolumntype macro
+\newcolumntype{L}{>{$}l<{$}} % math-mode version of "l" column type
+\newcolumntype{C}{>{$}c<{$}} % math-mode version of "c" column type
+\newcolumntype{R}{>{$}r<{$}} % math-mode version of "r" column type
+
 \ExplSyntaxOn
 \bool_new:N \l__xeCJK_listings_letter_bool
 \ExplSyntaxOff
@@ -82,7 +89,7 @@
 \newcommand{\push}{\texttt{Push}}
 \newcommand{\pop}{\texttt{Pop}}
 
-\newcommand{\titletext}{2-2 The Efficiency of Algorithms}
+\newcommand{\titletext}{2-4 Recurrences}
 
 \newcommand{\thankyou}{
   \begin{frame}[noframenumbering]{}

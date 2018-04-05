@@ -1,0 +1,107 @@
+% file: parts/binary-search.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Binary Search (CLRS $4.5-3$)}
+    \[
+      T(n) = 2T(n/2) + \Theta(1)
+    \]
+
+    \[
+      T(n) = \Theta(n \lg n)
+    \]
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+
+  \begin{quote}
+    {\large People who analyze algorithms have \red{double happiness}. \\[8pt]
+
+    First of all they experience the sheer \teal{beauty of elegant mathematical patterns}
+    that surround elegant computational procedures. \\[6pt]
+
+    Then they receive a \teal{practical payoff} when their theories 
+    make it possible to get other jobs done more quickly and more economically.} \\[4pt]
+
+    \begin{columns}[t]
+      \column{0.50\textwidth}
+	\fignocaption{width = 0.35\textwidth}{figs/knuth}
+      \column{0.50\textwidth}
+	--- Donald E. Knuth (1995)
+    \end{columns}
+  \end{quote}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fignocaption{width = 0.40\textwidth}{figs/binary-stride}
+
+  \[
+    T(n) = \left\{\begin{array}{lr}
+      \max\Big\{T(\lfloor \frac{n-1}{2} \rfloor), T(\lceil \frac{n-1}{2} \rceil)\Big\} + 1, & n > 2 \\
+      1, & n = 1
+  \end{array}\right.
+  \]
+
+  \pause
+  \vspace{0.30cm}
+  \[
+    T(n) = \left\{\begin{array}{lr}
+      T(\lfloor \frac{n}{2} \rfloor) + 1, & n > 2 \\
+      1, & n = 1
+    \end{array}\right.
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    T(n) = \left\{\begin{array}{lr}
+      T(\lfloor \frac{n}{2} \rfloor) + 1, & n > 2 \\
+      1, & n = 1
+    \end{array}\right.
+  \]
+
+  \pause
+  \vspace{0.30cm}
+  \[
+    n = 2^k \implies T(n) = k + 1
+  \]
+
+  \pause
+  \vspace{0.30cm}
+  \[
+    2^k \le n < 2^{k+1} \implies T(n) = k + 1
+  \]
+
+  \pause
+  \vspace{0.30cm}
+  \[
+    T(n) = \lfloor \lg n \rfloor + 1
+  \]
+
+  \begin{theorem}
+    The worst case time complexity (\# of comparisons) of \textsc{BinarySearch} on an input size of $n$ \teal{$=$} \# of bits in the binary representation of $n$.
+  \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+\end{frame}
+%%%%%%%%%%%%%%%

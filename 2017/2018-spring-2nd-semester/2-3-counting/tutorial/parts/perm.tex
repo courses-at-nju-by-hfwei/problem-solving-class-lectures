@@ -2,8 +2,14 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \fignocaption{width = 0.40\textwidth}{figs/apple-children}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
   \begin{exampleblock}{$k$-Permutation ($\text{CS}: 1.2-5$)}
-    We need to pass out $k$ \red{distinct} pieces of fruit to $n$ children
+    We need to pass out $k$ \red{distinct} apples \textcolor{lightgray}{(pieces of fruit)} to $n$ children \\
     such that \red{\it each child may get at most one}.
 
     \begin{enumerate}[(a)]
@@ -12,10 +18,12 @@
     \end{enumerate}
   \end{exampleblock}
 
+  \pause
   \[
-    n^{\underline{k}}
+    n^{\underline{k}} \triangleq n (n-1) \cdots (n-k+1)
   \]
 
+  \pause
   \[
     \red{0}
   \]

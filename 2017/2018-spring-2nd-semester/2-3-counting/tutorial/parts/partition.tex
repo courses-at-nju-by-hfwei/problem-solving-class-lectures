@@ -1,28 +1,27 @@
-% file: parts/others.tex
-
-% %%%%%%%%%%%%%%%
-% \begin{frame}{}
-%   \begin{exampleblock}{Penny Doubling ($\text{CS}: 1.1-13$)}
-%     Suppose on Day 1 you receive one penny, and, for $i > 1$, 
-%     on Day $i$ you receive twice as many pennies as you did on Day $i-1$. 
-% 
-%     \begin{enumerate}[(a)]
-%       \item How many pennies will you have on Day 20? 
-%       \item How many will you have on Day $n$?
-%     \end{enumerate}
-%   \end{exampleblock}
-% 
-%   \[
-%     2^{n} - 1
-%   \]
-% \end{frame}
-% %%%%%%%%%%%%%%%
+% file: parts/partition.tex
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{Partition ($\text{CS}: 1.5-4$)}
-    Use \red{multisets} to determine the number of ways to pass out $k$ \purple{identical} apples to \red{$n$-胞胎}. 
+  \begin{exampleblock}{Partition ($\text{CS}: 1.5-4$ Extended)}
+    What is the number of ways to pass out $k$ \purple{identical} apples to \red{$n$-胞胎}. 
     Assume that a child may get more than one apple.
   \end{exampleblock}
+
+  \pause
+  \begin{columns}
+    \column{0.50\textwidth}
+      \fignocaption{width = 0.95\textwidth}{figs/apple-to-children-partition}
+    \column{0.50\textwidth}
+      \fignocaption{width = 0.95\textwidth}{figs/apple-to-children-partition-equiv}
+  \end{columns}
+
+  \pause
+  \vspace{0.80cm}
+  \centerline{\red{\large partition of $k$ into $\le n$ parts}}
+
+  \pause
+  \[
+    \sum_{x=1}^{x=n} p_{x}(k)
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%

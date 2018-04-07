@@ -1,0 +1,42 @@
+% file: parts/set-partition.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Set Partition ($\text{CS}: 1.5-4$ Extended)}
+    What is the number of ways to pass out $k$ \red{distinct} apples to \red{$n$-胞胎}. 
+    Assume that a child may get more than one apple.
+  \end{exampleblock}
+
+  \pause
+  \fignocaption{width = 0.40\textwidth}{figs/apple-to-children-set-partition}
+
+  \begin{columns}
+    \pause
+    \column{0.50\textwidth}
+      \fignocaption{width = 0.85\textwidth}{figs/apple-to-children-set-partition-equiv}
+    \pause
+    \column{0.50\textwidth}
+      \fignocaption{width = 0.85\textwidth}{figs/apple-to-children-set-partition-nonequiv}
+  \end{columns}
+
+  \pause
+  \vspace{0.50cm}
+  \centerline{\red{\large partition of $[1 \cdots k]$ into $\le n$ parts}}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Set Partition ($\text{CS}: 1.5-12$)}
+    \[
+      S(n,k): \#\; \text{of set partitions of $[1 \cdots n]$ into $k$ classes}
+    \]
+  \end{exampleblock}
+
+  \pause
+  \vspace{0.30cm}
+  \[
+    S(n,k) = \underbrace{S(n-1, k-1)}_{\text{\red{$n$ is alone}}} + \underbrace{k S(n-1, k)}_{\text{\red{$n$ is not alone}}}, \quad 1 < k < n
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%

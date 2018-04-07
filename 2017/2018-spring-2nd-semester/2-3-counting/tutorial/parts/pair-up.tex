@@ -1,0 +1,33 @@
+% file: pair-up.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Paring up ($\text{CS}: 1.2-15$)}
+    A tennis club has $2n$ members. 
+    We want to pair up the members by twos for singles matches. 
+    
+    \begin{enumerate}[(a)]
+      \item In how many ways can we pair up all the members of the club? 
+      \item Suppose that in addition to specifying who plays whom, 
+	we also determine who serves first for each pairing. 
+	In how many ways can we specify our pairs?
+    \end{enumerate}
+  \end{exampleblock}
+
+  \pause
+  \[
+    \frac{(2n)!}{2^{n}} \;\red{\text{\emph{vs.}}}\; \frac{(2n)!}{2^n \cdot \red{n!}} \pause \qquad \teal{(\text{take}\; n = 2:\; \set{A, B, C, D})}
+  \]
+
+  \pause
+  \[
+    \binom{2n}{\underbrace{2,2,\cdots,2}_{n}} \triangleq \binom{2n}{2} \binom{2n-2}{2} \cdots \binom{4}{2} \binom{2}{2} = \frac{(2n)!}{2^{n}}
+  \]
+
+  \pause
+  \[
+    \frac{(2n)!}{2^{n}} \cdot 2^n = (2n)!
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+

@@ -1,0 +1,66 @@
+% file: parts/multisets.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Multisets ($\text{CS}: 1.5-4$)}
+    Use multisets to determine the number of ways to pass out $k$ \red{\bf identical} apples to $n$ children. 
+    Assume that a child may get more than one apple.
+  \end{exampleblock}
+
+  \vspace{0.30cm}
+  \begin{columns}
+    \column{0.30\textwidth}
+      \fignocaption{width = 0.95\textwidth}{figs/apple-children}
+    \column{0.70\textwidth}
+      \pause
+      \[
+	x_i: \text{the $i$-th child gets $x_i$ apples}
+      \]
+      \[
+	x_1 + x_2 + \cdots + x_n = k, \qquad x_i \ge 0
+      \]
+      \pause
+      \[
+	\red{y_i \triangleq x_i + 1}
+      \]
+      \pause
+      \[
+	y_1 + y_2 + \cdots + y_n = n + k, \qquad \red{y_i \le 1}
+      \]
+      \pause 
+      \[
+	\binom{n+k-1}{n-1} = \binom{n+k-1}{k}
+      \]
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Multisets ($\text{CS}: 1.5-4$)}
+    Use \red{\bf multisets} to determine the number of ways to pass out $k$ \purple{identical} apples to $n$ children. 
+    Assume that a child may get more than one apple.
+  \end{exampleblock}
+
+  \vspace{0.50cm}
+  \begin{columns}
+    \column{0.50\textwidth}
+      \uncover<2->{\centerline{\textcolor<4->{red}{$k$-multiset of $[1 \cdots n]$}}}
+      \vspace{-0.50cm}
+      \fignocaption{width = 0.60\textwidth}{figs/apple-children}
+      \vspace{-0.20cm}
+      \uncover<2->{\centerline{\textcolor<4->{lightgray}{$n$-multiset of $[1 \cdots k]$}}}
+    \column{0.50\textwidth}
+      \[
+	k = 5 \qquad n = 4: [1 \cdots 4]
+      \]
+      balls into bins
+
+      \[
+	\set{1,1,1,2,3,3}
+      \]
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+

@@ -2,8 +2,8 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{Partition ($\text{CS}: 1.5-4$ Extended)}
-    What is the number of ways to pass out $k$ \purple{identical} apples to \red{$n$-胞胎}. 
+  \begin{exampleblock}{Integer Partition ($\text{CS}: 1.5-4$ Extended)}
+    What is the number of ways to pass out $k$ \red{identical} apples to \red{$n$-胞胎}. 
     Assume that a child may get more than one apple.
   \end{exampleblock}
 
@@ -17,11 +17,66 @@
 
   \pause
   \vspace{0.80cm}
-  \centerline{\red{\large partition of $k$ into $\le n$ parts}}
+  \centerline{\red{\large Integer partition of $k$ into $\le n$ parts}}
 
   \pause
+  \begin{theorem}[G. H. Hardy, Ramanujan (1918)]
+    \[
+      p(k) \triangleq \sum_{x=1}^{x=n} p_{x}(k) \;\teal{\sim}\; \frac {1} {4\sqrt{3} n} \exp\left({\pi \sqrt {\frac{2n}{3}}}\right)
+    \]
+  \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
   \[
-    \sum_{x=1}^{x=n} p_{x}(k)
+    p_{n}(k): \text{ \# of partitions of $k$ into $n$ parts}
   \]
+
+  \begin{theorem}[Recurrence for $p_{n}(k)$]
+    \[
+      p_{n}(k) = p_{n-1}(k-1) + p_{n}(k-n)
+    \]
+  \end{theorem}
+
+  \pause
+  \begin{proof}
+    \[
+      1 \le x_1 \le x_2 \le \cdots \le x_n
+    \]
+
+    \begin{columns}
+      \column{0.40\textwidth}
+	\[
+	  \red{\text{\textsc{Case} } x_1 = 1}
+	\]
+	\[
+	  1 = x_1 \le x_2 \le \cdots \le x_n
+	\]
+	\uncover<3->{
+	  \[
+	    \boxed{p_{n-1}(k-1)}
+	  \]
+	}
+      \column{0.60\textwidth}
+        \[
+	  \red{\text{\textsc{Case} } x_1 > 1}
+	\]
+	\[
+	  1 < x_1 \le x_2 \le \cdots \le x_n
+	\]
+	\uncover<4->{
+	  \[
+	    1 \le x_1-1 \le x_2-1 \le \cdots \le x_n-1
+	  \]
+	}
+	\uncover<5->{
+	  \[
+	    \boxed{p_{n}(k-n)}
+	  \]
+	}
+    \end{columns}
+  \end{proof}
 \end{frame}
 %%%%%%%%%%%%%%%

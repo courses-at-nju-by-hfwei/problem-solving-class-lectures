@@ -16,9 +16,9 @@
       \EndIf
 
       \hStatex
-      \State $sum\gets 0$
+      \State $sum \gets depth$
       \ForAll{child vertex $v$ of $r$}
-	\State $sum\gets sum+ \Call{Sum-of-Depths}{v, depth + 1}$
+	\State $sum \gets sum + \Call{Sum-of-Depths}{v, depth + 1}$
       \EndFor
       \State \Return $sum$
     \EndProcedure

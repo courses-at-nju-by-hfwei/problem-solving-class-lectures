@@ -11,17 +11,15 @@
   \fignocaption{width = 0.40\textwidth}{figs/apple-to-children-set-partition}
 
   \begin{columns}
-    \pause
     \column{0.50\textwidth}
       \fignocaption{width = 0.85\textwidth}{figs/apple-to-children-set-partition-equiv}
-    \pause
     \column{0.50\textwidth}
       \fignocaption{width = 0.85\textwidth}{figs/apple-to-children-set-partition-nonequiv}
   \end{columns}
 
   \pause
   \vspace{0.50cm}
-  \centerline{\red{\large partition of $[1 \cdots k]$ into $\le n$ parts}}
+  \centerline{\red{\large Set partition of $[1 \cdots k]$ into $\le n$ parts}}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -29,14 +27,30 @@
 \begin{frame}{}
   \begin{exampleblock}{Set Partition ($\text{CS}: 1.5-12$)}
     \[
-      S(n,k): \#\; \text{of set partitions of $[1 \cdots n]$ into $k$ classes}
+      S(n,k) \;\teal{(\stirling{n}{k})}: \#\; \text{of set partitions of $[1 \cdots n]$ into $k$ classes}
     \]
   \end{exampleblock}
 
   \pause
   \vspace{0.30cm}
-  \[
-    S(n,k) = \underbrace{S(n-1, k-1)}_{\text{\red{$n$ is alone}}} + \underbrace{k S(n-1, k)}_{\text{\red{$n$ is not alone}}}, \quad 1 < k < n
-  \]
+  \centerline{\red{Stirling number of the second kind}}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{theorem}[Recurrence for $S(n,k)$]
+    \[
+      S(0,0) = 1, \quad S(n,0) = S(0,n) = 0 \; (n > 0)
+    \]
+    \[
+      S(n,k) = S(n-1, k-1) + k S(n-1, k), \quad n > 0, k > 0
+    \]
+  \end{theorem}
+
+  \pause
+  \begin{proof}
+    \[
+      S(n,k) = \underbrace{S(n-1, k-1)}_{\text{\teal{$n$ is alone}}} + \underbrace{k S(n-1, k)}_{\text{\teal{$n$ is not alone}}}
+    \]
+  \end{proof}
 \end{frame}
 %%%%%%%%%%%%%%%

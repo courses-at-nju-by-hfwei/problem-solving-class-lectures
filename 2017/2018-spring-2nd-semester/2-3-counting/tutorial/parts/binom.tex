@@ -17,14 +17,14 @@
 
   \begin{enumerate}[(i)]
     \pause
-    \item \# of ``+'':
+    \item \teal{\# of ``+'':}
       \pause
       \[
 	A(n,k) = 1 + A(n-1, k) + A(n-1, k-1)
       \]
     \pause
     \vspace{-0.60cm}
-    \item \# of recursive calls of \textsc{Binom}:
+    \item \teal{\# of recursive calls of \textsc{Binom}:}
       \pause
       \[
 	R(n,k) = 2 + R(n-1, k) + R(n-1, k-1)
@@ -33,19 +33,73 @@
 
   \pause
   \[
-    \boxed{T(n,k) = T(n-1, k) + T(n-1, k-1) + c}
+    \boxed{T(n,k) = \left\{\begin{array}{lr}
+      \uncover<7->{\red{0}, & k = 0 \lor n = k} \\
+      T(n-1, k) + T(n-1, k-1) + c, & \uncover<7->{\text{\it o.w.}}
+    \end{array}\right.}
   \]
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \fignocaption{width = 0.50\textwidth}{figs/pascal}
+  \[
+    \boxed{T(n,k) = \left\{\begin{array}{lr}
+      0, & k = 0 \lor n = k \\
+      T(n-1, k) + T(n-1, k-1) + c, & \text{\it o.w.}
+    \end{array}\right.}
+  \]
+
+  \pause
+  \[
+    T(n,k) = T(n-1, k) + T(n-1, k-1) \implies T(n,k) = \pause \red{\alpha} \binom{n}{k}
+  \]
+
+  \pause
+  \vspace{-0.50cm}
+  \[
+    \boxed{\teal{T(n,k) = \alpha \binom{n}{k} + \beta}}
+  \]
+
+  \pause
+  \[
+    \alpha \binom{n}{k} + \beta = \alpha \binom{n-1}{k} + \beta + \alpha \binom{n-1}{k-1} + \beta + c \implies \beta = -c
+  \]
+
+  \pause
+  \[
+    \alpha \binom{n}{0} - c = 0, \quad \alpha \binom{n}{n} - c = 0 \implies \alpha = c
+  \]
+  % \[
+  %   \left.\begin{array}{lr}
+  %     \alpha \binom{n}{0} - c = 0 \\[7pt]
+  %   \alpha \binom{n}{n} - c = 0
+  %   \end{array}\right\} \implies \alpha = c
+  % \]
+
+  \pause
+  \[
+    \boxed{\red{T(n,k) = c \binom{n}{k} - c}}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fignocaption{width = 0.60\textwidth}{figs/pascal}
+
+  \pause
+  \centerline{\large \red{$Q:$} How to calculate $\binom{5}{3}$?}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \input{algs/binom-dp}
+
+  \pause
+  \[
+    (n-k+1) + (k) + k (n-k) = nk - k^2 + n + 1
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%

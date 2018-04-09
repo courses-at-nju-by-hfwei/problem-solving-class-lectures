@@ -4,14 +4,18 @@
   % \caption{Computing $\binom{n}{k}$.}
   \begin{algorithmic}[1]
     \Procedure{Binom}{$n, k$} \Comment{Required: $n \ge k \ge 0$}
-      \For{$i \gets 0 \;\text{\bf to}\; n$}
+      \For{$i \gets 0 \;\text{\bf to}\; n-k$}
 	\State $B[i][0] \gets 1$
+      \EndFor
+
+      \For{$i \gets 1 \;\text{\bf to}\; k$}
 	\State $B[i][i] \gets 1$
       \EndFor
 
-      \For{$i \gets 2 \;\text{\bf to}\; n$}
-	\For{$j \gets 1 \;\text{\bf to}\; k$}
-	  \State $B[n][k] \gets B[n-1][k] + B[n-1][k-1]$
+      \For{$j \gets 1 \;\text{\bf to}\; k$}
+	\For{$d \gets 1 \;\text{\bf to}\; n-k$}
+	  \State $i \gets j + d$
+	  \State $B[i][j] \gets B[i-1][j] + B[i-1][j-1]$
 	\EndFor
       \EndFor
       \State \Return $B[n][k]$

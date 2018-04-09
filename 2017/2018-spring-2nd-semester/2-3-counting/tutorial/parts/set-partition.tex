@@ -54,3 +54,28 @@
   \end{proof}
 \end{frame}
 %%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \text{Bell number: } B_n = \sum_{k=0}^{n} \stirling{n}{k}
+  \]
+
+  \pause
+  \begin{theorem}[Berend \& Tassa (2010)]
+    \[
+      B_n < \left( \frac{0.792 n}{\ln( n+1)} \right)^n, n \in \mathbb{Z}^{+}
+    \]
+  \end{theorem}
+
+  \pause
+  \vspace{0.50cm}
+  \begin{theorem}[de Bruijn (1981)]
+    As $n \to \infty$,
+    \[
+      \frac{\ln B_n}{n} = \ln n - \ln \ln n - 1 + \frac{\ln \ln n}{\ln n} + \frac{1}{\ln n} 
+      + \frac{1}{2}\left(\frac{\ln \ln n}{\ln n}\right)^2 + O\left(\frac{\ln \ln n}{(\ln n)^2} \right)
+    \]
+  \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%

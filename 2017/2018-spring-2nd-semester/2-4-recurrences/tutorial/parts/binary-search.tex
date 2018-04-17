@@ -4,7 +4,7 @@
 \begin{frame}{}
   \begin{exampleblock}{Binary Search (CLRS $4.5-3$)}
     \[
-      T(n) = 2T(n/2) + \Theta(1)
+      T(n) = T(n/2) + \Theta(1)
     \]
   \end{exampleblock}
 
@@ -13,7 +13,7 @@
       \input{algs/binary-search-recursive}
     \column{0.30\textwidth}
       \[
-	\boxed{\teal{T(n) = \Theta(n \log n)}}
+	\boxed{\teal{T(n) = \Theta(\log n)}}
       \]
   \end{columns}
 \end{frame}
@@ -72,11 +72,11 @@
     \end{array}\right.
   \]
 
-  \pause
-  \vspace{0.30cm}
-  \[
-    n = 2^k \implies T(n) = k + 1
-  \]
+  % \pause
+  % \vspace{0.30cm}
+  % \[
+  %   n = 2^k \implies T(n) = k + 1
+  % \]
 
   \pause
   \vspace{0.30cm}
@@ -92,7 +92,11 @@
 
   \pause
   \begin{theorem}
-    The worst case time complexity (\# of comparisons) of \textsc{BinarySearch} on an input size of $n$ \red{\bf $=$} \# of bits in the binary representation of $n$.
+    \begin{center}
+      The worst case time complexity of \textsc{BinarySearch} on an input size of $n$ \\
+      \red{\bf $=$} \\
+      \# of bits in the binary representation of $n$.
+    \end{center}
   \end{theorem}
 \end{frame}
 %%%%%%%%%%%%%%%

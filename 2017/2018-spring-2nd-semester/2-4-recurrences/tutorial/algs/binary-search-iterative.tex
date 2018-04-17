@@ -9,7 +9,7 @@
 
       \hStatex
       \While{$L \le R$}
-        \State $m \gets (L + R) / 2$
+        \State $m \gets L + (R - L) / 2$
 
 	\hStatex
 	\If{$A[m] < x$}
@@ -20,6 +20,8 @@
 	  \State \Return $m$
 	\EndIf
       \EndWhile
+
+      \State \Return $-1$
     \EndProcedure
   \end{algorithmic}
 \end{algorithm}

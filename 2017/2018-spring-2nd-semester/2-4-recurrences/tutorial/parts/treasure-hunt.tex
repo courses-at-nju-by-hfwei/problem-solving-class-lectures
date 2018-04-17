@@ -42,5 +42,30 @@
   \[
     \boxed{\teal{W(n) = W(\lfloor \frac{n}{2} \rfloor) + W(\lceil \frac{n}{2} \rceil) + (n-1)}}
   \]
+
+  \pause
+  \vspace{0.30cm}
+  \begin{theorem}
+    \begin{center}
+      The worst case time complexity of \textsc{Mergesort} on an input size of $n$ \\
+      \red{\bf $=$} \\
+      The total \# of bits in the binary representations of \red{\it all the numbers $< n$}.
+    \end{center}
+  \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \centerline{\purple{\large $S(n)$: \# of bits in the binary representations of all the numbers $< n$.}}
+
+  \pause
+  \vspace{0.30cm}
+  \[
+    S(n) = S(\lfloor \frac{n}{2} \rfloor) + S(\lceil \frac{n}{2} \rceil) + (n-1)
+  \]
+
+  \pause
+  \fignocaption{width = 0.60\textwidth}{figs/bits-smaller-n}
 \end{frame}
 %%%%%%%%%%%%%%%

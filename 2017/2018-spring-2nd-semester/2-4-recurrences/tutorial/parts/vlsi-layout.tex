@@ -1,0 +1,100 @@
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Problem (Area-Efficient VLSI Layout)}
+    Embedding a \red{complete binary tree} into a grid with minimum \purple{area}. \\[2pt]
+    \begin{itemize}
+      \item Complete binary tree circuit of 
+	\[
+	  \#\text{layer} = 3,5,7,\ldots
+	\]
+      \item Vertex on grid; no crossing edges
+      \item Area:
+	\[
+	  \text{area} = \text{width} \times \text{height}
+	\]
+    \end{itemize}
+  \end{exampleblock}
+
+  \pause
+  \fignocaption{width = 0.25\textwidth}{figs/vlsi-chip}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fignocaption{width = 0.80\textwidth}{figs/vlsi-binary-tree}
+
+  \pause
+  \[ 
+    H(n) = H(\frac{n}{2}) + \Theta(1) = \Theta(\log n) 
+  \]
+
+  \pause
+  \[ 
+    W(n) = \red{2}W(\frac{n}{2}) + \Theta(1) = \Theta(n) 
+  \]
+
+  \pause
+  \[ 
+    \boxed{\teal{A(n) = \Theta(n \log n)}}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[ 
+    \boxed{\red{Q: \boxed{H(n)} \times \boxed{W(n)} = n}}
+  \]
+  
+  \pause
+  \[
+    1 \times n
+  \]
+
+  \pause
+  \[
+    \frac{n}{\log n} \times \log n
+  \]
+
+  \pause
+  \[
+    \boxed{\red{\sqrt{n} \times \sqrt{n}}}
+  \]
+
+  \pause
+  \[
+    H(n) = \Theta(\sqrt{n}),\; W(n) = \Theta(\sqrt{n}),\; A(n) = \Theta(n)
+  \]
+
+  \pause
+  \[
+    H(n) = \Box H(\frac{n}{\Box}) + O(\Box) 
+    % H(n) = 2 H(\frac{n}{4}) + O(n^{\frac{1}{2} - \epsilon})
+  \]
+
+  \pause
+  \[ 
+    \boxed{\red{H(n) = 2H(\frac{n}{4}) + \Theta(1)}}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fignocaption{width = 0.45\textwidth}{figs/h-layout}
+
+  \pause
+  \centerline{\teal{\Large $H$-layout}}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fignocaption{width = 0.50\textwidth}{figs/h-layout-2}
+
+  \begin{center}
+    {\it ``VLSI Theory and Parallel Supercomputing''}, Charles E. Leiserson, 1989.
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%

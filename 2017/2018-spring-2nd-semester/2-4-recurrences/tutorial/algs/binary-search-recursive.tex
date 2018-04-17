@@ -1,0 +1,24 @@
+% file: algs/binary-search-recursive.tex
+
+\begin{algorithm}[H]
+  % \caption{Recursive binary search.}
+  \begin{algorithmic}[1]
+    \Procedure{BinarySearch}{$A, L, R, x$}
+      \If{$R < L$}
+	\State \Return $-1$
+      \EndIf
+
+      \hStatex
+      \State $m \gets L + (R - 1) / 2$
+
+      \hStatex
+      \If{$A[m] = x$}
+	\State \Return $m$
+      \ElsIf{$A[m] > x$}
+	\State \Return $\Call{BinarySearch}{A, L, m-1, x}$
+      \Else
+	\State \Return $\Call{BinarySearch}{A, m+1, R, x}$
+      \EndIf
+    \EndProcedure
+  \end{algorithmic}
+\end{algorithm}

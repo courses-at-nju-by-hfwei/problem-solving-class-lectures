@@ -8,32 +8,37 @@
     \]
   \end{exampleblock}
 
-  \[
-    T(n) = \Theta(n \lg n)
-  \]
+  \begin{columns}
+    \column{0.70\textwidth}
+      \input{algs/binary-search-recursive}
+    \column{0.30\textwidth}
+      \[
+	\boxed{\teal{T(n) = \Theta(n \log n)}}
+      \]
+  \end{columns}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
-\begin{frame}{}
-
-  \begin{quote}
-    {\large People who analyze algorithms have \red{double happiness}. \\[8pt]
-
-    First of all they experience the sheer \teal{beauty of elegant mathematical patterns}
-    that surround elegant computational procedures. \\[6pt]
-
-    Then they receive a \teal{practical payoff} when their theories 
-    make it possible to get other jobs done more quickly and more economically.} \\[4pt]
-
-    \begin{columns}[t]
-      \column{0.50\textwidth}
-	\fignocaption{width = 0.35\textwidth}{figs/knuth}
-      \column{0.50\textwidth}
-	--- Donald E. Knuth (1995)
-    \end{columns}
-  \end{quote}
-\end{frame}
+% \begin{frame}{}
+% 
+%   \begin{quote}
+%     {\large People who analyze algorithms have \red{double happiness}. \\[8pt]
+% 
+%     First of all they experience the sheer \teal{beauty of elegant mathematical patterns}
+%     that surround elegant computational procedures. \\[6pt]
+% 
+%     Then they receive a \teal{practical payoff} when their theories 
+%     make it possible to get other jobs done more quickly and more economically.} \\[4pt]
+% 
+%     \begin{columns}[t]
+%       \column{0.50\textwidth}
+% 	\fignocaption{width = 0.35\textwidth}{figs/knuth}
+%       \column{0.50\textwidth}
+% 	--- Donald E. Knuth (1995)
+%     \end{columns}
+%   \end{quote}
+% \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
@@ -82,9 +87,10 @@
   \pause
   \vspace{0.30cm}
   \[
-    T(n) = \lfloor \lg n \rfloor + 1
+    \boxed{\teal{T(n) = \lfloor \lg n \rfloor + 1}}
   \]
 
+  \pause
   \begin{theorem}
     The worst case time complexity (\# of comparisons) of \textsc{BinarySearch} on an input size of $n$ \red{\bf $=$} \# of bits in the binary representation of $n$.
   \end{theorem}

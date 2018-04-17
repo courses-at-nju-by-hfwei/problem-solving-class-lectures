@@ -1,0 +1,26 @@
+% file: algs/binary-search-iterative.tex
+
+\begin{algorithm}[H]
+  % \caption{Iterative binary search.}
+  \begin{algorithmic}[1]
+    \Procedure{BinarySearch}{$A[0 \cdots n-1], x$}
+      \State $L \gets 0$
+      \State $R \gets n-1$
+
+      \hStatex
+      \While{$L \le R$}
+        \State $m \gets (L + R) / 2$
+
+	\hStatex
+	\If{$A[m] < x$}
+	  \State $L \gets m + 1$
+	\ElsIf{$A[m] > x$}
+	  \State $R \gets m - 1$
+	\Else
+	  \State \Return $m$
+	\EndIf
+      \EndWhile
+    \EndProcedure
+  \end{algorithmic}
+\end{algorithm}
+

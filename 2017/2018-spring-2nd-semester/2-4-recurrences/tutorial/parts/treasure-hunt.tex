@@ -60,9 +60,13 @@
   \centerline{\purple{\large $S(n)$: \# of bits in the binary representations of all the numbers $< n$.}}
 
   \pause
-  \vspace{0.30cm}
   \[
     S(n) = S(\lfloor \frac{n}{2} \rfloor) + S(\lceil \frac{n}{2} \rceil) + (n-1)
+  \]
+
+  \pause
+  \[
+    S(15) = S(7) + S(8) + 14
   \]
 
   \pause

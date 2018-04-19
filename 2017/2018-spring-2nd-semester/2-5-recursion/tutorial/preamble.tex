@@ -1,0 +1,98 @@
+% File: preamble.tex
+\usepackage{lmodern}
+
+\usepackage{xeCJK}
+\usetheme{CambridgeUS} % try Pittsburgh
+\usecolortheme{beaver}
+\usefonttheme[onlymath]{serif} % try "professionalfonts"
+
+\setbeamertemplate{itemize items}[default]
+\setbeamertemplate{enumerate items}[default]
+
+\usepackage{comment}
+
+\usepackage{amsmath, amsfonts, latexsym, mathtools, tabu}
+\newcommand{\set}[1]{\{#1\}}
+\newcommand{\ps}[1]{\mathcal{P}(#1)}
+\usepackage{bm}
+\DeclareMathOperator*{\argmin}{\arg\!\min}
+
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\newcommand{\hStatex}[0]{\vspace{5pt}}
+
+% table
+\usepackage{amstext} % for \text macro
+\usepackage{array}   % for \newcolumntype macro
+\newcolumntype{L}{>{$}l<{$}} % math-mode version of "l" column type
+\newcolumntype{C}{>{$}c<{$}} % math-mode version of "c" column type
+\newcolumntype{R}{>{$}r<{$}} % math-mode version of "r" column type
+
+\ExplSyntaxOn
+\bool_new:N \l__xeCJK_listings_letter_bool
+\ExplSyntaxOff
+\usepackage{listings}
+
+\definecolor{bgcolor}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{CStyle}{
+    language = C,
+    basicstyle = \ttfamily\bfseries,
+    backgroundcolor = \color{bgcolor},   
+    keywordstyle = \color{blue},
+    stringstyle = \color{teal},
+    commentstyle = \color{cyan},
+    breakatwhitespace = false,
+    breaklines = true,                 
+    mathescape = true,
+    escapeinside = ||,
+    morekeywords = {procedure, end, foreach, repeat, until},
+    showspaces = false,                
+    showstringspaces = false,
+    showtabs = false,                  
+}
+
+% colors
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\redoverlay}[2]{\textcolor<#2>{red}{#1}}
+\newcommand{\green}[1]{\textcolor{green}{#1}}
+\newcommand{\greenoverlay}[2]{\textcolor<#2>{green}{#1}}
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+\newcommand{\blueoverlay}[2]{\textcolor<#2>{blue}{#1}}
+\newcommand{\purple}[1]{\textcolor{purple}{#1}}
+\newcommand{\cyan}[1]{\textcolor{cyan}{#1}}
+\newcommand{\teal}[1]{\textcolor{teal}{#1}}
+
+% colorded box
+\newcommand{\rbox}[1]{\red{\boxed{#1}}}
+\newcommand{\gbox}[1]{\green{\boxed{#1}}}
+\newcommand{\bbox}[1]{\blue{\boxed{#1}}}
+\newcommand{\pbox}[1]{\purple{\boxed{#1}}}
+
+\usepackage{pifont}
+\usepackage{wasysym}
+
+\newcommand{\cmark}{\green{\ding{51}}}
+\newcommand{\xmark}{\red{\ding{55}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% for fig without caption: #1: width/size; #2: fig file
+\newcommand{\fignocaption}[2]{
+  \begin{figure}[htp]
+    \centering
+      \includegraphics[#1]{#2}
+  \end{figure}
+}
+
+\usepackage{tikz}
+\usetikzlibrary{positioning, mindmap, shadows}
+
+\newcommand{\push}{\texttt{Push}}
+\newcommand{\pop}{\texttt{Pop}}
+
+\newcommand{\titletext}{2-4 Recurrences}
+
+\newcommand{\thankyou}{
+  \begin{frame}[noframenumbering]{}
+    \fignocaption{width = 0.50\textwidth}{figs/thankyou.png}
+  \end{frame}
+}

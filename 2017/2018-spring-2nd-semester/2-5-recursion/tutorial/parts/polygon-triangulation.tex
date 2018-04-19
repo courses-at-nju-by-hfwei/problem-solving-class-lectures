@@ -1,0 +1,166 @@
+% file: parts/polygon-triangulation.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \centerline{\teal{\Large Triangulating Polygons}}
+
+  \fignocaption{width = 0.55\textwidth}{figs/polygon-triangulation}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Ear Lemma (Problem $4.1-16$)}
+  \end{exampleblock}{}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{\# of triangles (Problem $4.1-17$)}
+    \fignocaption{width = 0.30\textwidth}{figs/polygon-triangulation}
+    \[
+      T(n) = n - 2
+    \]
+  \end{exampleblock}{}
+
+  \begin{columns}
+    \pause
+    \column{0.50\textwidth}
+      \fignocaption{width = 0.70\textwidth}{figs/polygon-ear}
+    \pause
+    \column{0.50\textwidth}
+      \fignocaption{width = 0.70\textwidth}{figs/polygon-diagonal}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{lemma}[Ear Lemma]
+    A triangle has $3$ ears, and a larger \red{\large triangulated} polygon has at least $2$ non-adjacent ears.
+  \end{lemma}
+
+  \pause
+  \vspace{0.80cm}
+  \centerline{\red{\large $Q:$ Can every polygon be triangulated?}}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[Existence of Triangulation]
+    Any polygon can be triangulated.
+  \end{theorem}
+
+  \pause
+  \begin{proof}
+    \begin{quote}
+      {\large
+	``\blue{To triangulate a polygon} one keeps \textcolor<6->{purple}{adding diagonals} connecting pairs of vertices 
+      until no more diagonals can be added. \\[8pt] \pause
+
+      These \textcolor<6->{purple}{diagonals} must lie entirely interior to the polygon and are not allowed to intersect. \\[8pt] \pause
+
+      They break the interior of the polygon into a number of triangles,
+      because any larger polygon can be split by adding a \textcolor<6->{purple}{diagonal}.''
+    }
+    \end{quote}
+  \end{proof}
+
+  \pause
+  \begin{center}
+    ``(\red{This fact is perhaps not obvious}, \\ but we won't get sidetracked by proving it here.)''
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+% \begin{frame}{}
+%   \begin{definition}[Diagonal]
+%     Given a simple polygon $P$, a \red{\emph{diagonal}} is a line segment between two non-adjacent vertices
+%     that lies entirely within the interior of the polygon.
+%   \end{definition}
+% \end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[Existence of Diagonal]
+    Every polygon with $n > 3$ has a diagonal.
+  \end{theorem}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{definition}[Convex Vertex]
+    A vertex $v$ is \red{\it convex} if the \purple{\it interior} angle at $v$ is less than $180^\circ$.
+  \end{definition}
+
+  \pause
+  \vspace{0.30cm}
+  \fignocaption{width = 0.40\textwidth}{figs/convex-vertex} % existence-diagonal
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[Coloring]
+    Any triangulated polygon polygon is $3$-colorable.
+  \end{theorem}
+
+  \only<1>{\fignocaption{width = 0.40\textwidth}{figs/polygon-triangulation}}
+
+  \only<2->{
+    \vspace{0.30cm}
+    \fignocaption{width = 0.80\textwidth}{figs/triangulation-3colorable}
+  }
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \centerline{\teal{\large The Art Gallery Problem}}
+
+  \begin{columns}
+    \column{0.50\textwidth}
+      \fignocaption{width = 0.90\textwidth}{figs/art-gallery}
+    \column{0.50\textwidth}
+      \fignocaption{width = 0.70\textwidth}{figs/watching}
+  \end{columns}
+
+  \pause
+  \vspace{0.80cm}
+  \centerline{\large \red{$Q:$ How many ``BIG BROs'' to hire?}}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fignocaption{width = 0.40\textwidth}{figs/triangulation-3coloring}
+
+  \begin{theorem}[The Art Gallery Theorem ($O$)]
+    For any art gallery with $n$ walls, $\lfloor \frac{n}{3} \rfloor$ ``BIG BROs'' suffice.
+  \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[The Art Gallery Theorem ($\Omega$)]
+    For any art gallery with $n$ walls, $\lfloor \frac{n}{3} \rfloor$ ``BIG BROs'' suffice.
+  \end{theorem}
+
+  \pause
+  \vspace{0.80cm}
+  \fignocaption{width = 0.50\textwidth}{figs/art-gallery-lowerbound}
+
+  \[
+    n = 3m
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%

@@ -1,0 +1,33 @@
+\documentclass[]{beamer}
+
+\input{preamble}
+
+%%%%%%%%%%
+\title[\titletext]{\titletext}
+\subtitle{}
+
+\author[Hengfeng Wei]{\large 魏恒峰}
+\titlegraphic{\includegraphics[height = 2.0cm]{figs/qrcode-ps-2017-2nd.png}}
+\institute{hfwei@nju.edu.cn}
+\date{2018年04月18日}
+
+\AtBeginSection[]{
+  \begin{frame}[noframenumbering, plain]
+    \frametitle{\titletext}
+    \tableofcontents[currentsection, sectionstyle=show/shaded, subsectionstyle=show/show/hide]
+  \end{frame}
+}
+%%%%%%%%%%
+\begin{document}
+
+\maketitle
+
+\input{parts/overview}
+\input{parts/mathematical-induction}
+% \input{parts/treasure-hunt}
+
+\thankyou{}
+\input{suggestion}
+
+\end{document}
+%%%%%%%%%%

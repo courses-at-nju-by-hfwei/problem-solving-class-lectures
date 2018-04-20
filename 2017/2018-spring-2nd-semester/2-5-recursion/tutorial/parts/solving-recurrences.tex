@@ -1,0 +1,280 @@
+% file: parts/solving-recurrences.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \centerline{\teal{\Large Solving Recurrence}}
+
+  \fignocaption{width = 0.50\textwidth}{figs/pencil-paper}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fignocaption{width = 0.60\textwidth}{figs/feedback}
+
+  Why again?
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fignocaption{width = 0.60\textwidth}{figs/feedback}
+
+  base cases
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{First-order Linear Recurrence (CS $4.2-11$)}
+    \[
+      T(n) = \left\{\begin{array}{lr}
+	1		& n = 0 \\
+	2T(n-1) + n 2^n & n > 0 
+      \end{array}\right.
+    \]
+  \end{exampleblock}
+
+  \pause
+  \vspace{0.50cm}
+  \begin{theorem}[First-order Linear Recurrences with \red{Constant Coefficients} (CS Theorem $4.5$)]
+    \[
+      T(n) = \left\{\begin{array}{lr}
+	a		& n = 0 \\
+	\red{r}T(n-1) + g(n) & n > 0 
+      \end{array}\right.
+    \]
+
+    \pause
+    \vspace{0.30cm}
+    \[
+      \boxed{\teal{T(n) = r^n a + \sum_{i=1}^{n} r^{n-i} g(i)}}
+    \]
+  \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[First-order Linear Recurrences]
+    \[
+      T(n) = \red{x_n} T(n-1) + y_n  \quad \text{ for } n > 0 \text{ with } T(0) = 0
+    \]
+
+    \[
+      \boxed{\teal{T(n) = y_0 + \sum_{1 \le j < n} y_j x_{j+1} x_{j+2} \cdots x_n}}
+    \]
+  \end{theorem}
+
+  \pause
+  \begin{proof}
+    \[
+      \frac{T(n)}{\underbrace{x_n x_{n-1} \cdots x_1}_{\text{\red{summation factor}}}}
+      	= \frac{T(n-1)}{x_{n-1} \cdots x_1} + \frac{y_n}{x_n x_{n-1} \cdots x_1}
+    \]
+
+    \pause
+    \[
+      S(n) \triangleq \frac{T(n)}{x_n x_{n-1} \cdots x_1}
+    \]
+  \end{proof}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    T(n) = (1 + \frac{1}{n}) T(n-1) + 2  \quad \text{ for } n > 1 \text{ with } T(1) = 0
+  \]
+
+  \pause
+  \[
+    \blue{x_n = 1 + \frac{1}{n}} \implies \pause x_n x_{n-1} \cdots x_1 = n + 1
+  \]
+
+  \pause
+  \[
+    \frac{T(n)}{n+1} = \frac{T(n-1)}{n} + \frac{2}{n+1} \quad \text{ for } n > 1
+  \]
+
+  \pause
+  \vspace{0.30cm}
+  \[
+    \frac{T(n)}{n+1} = \frac{T(1)}{2} + 2 \sum_{3 \le k \le n+1} \frac{1}{k}
+  \]
+
+  \pause
+  \vspace{0.30cm}
+  \[
+    \boxed{\teal{T(n) = 2(n+1) (H_{n+1} - \frac{3}{2})}}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{After-class Exercise}
+    \[
+      T(n) = T(n-1) - \frac{2T(n-1)}{n} + 2\left(1 - \frac{2T(n-1)}{n}\right), n > 0 \text{ with } T(0) = 0
+    \]
+  \end{exampleblock}
+
+  \begin{columns}
+    \pause
+    \column{0.50\textwidth}
+      \fignocaption{width = 0.60\textwidth}{figs/do-it-yourself}
+    \column{0.50\textwidth}
+      \fignocaption{width = 0.80\textwidth}{figs/maweidu}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[Linear Recurrences with Constant Coefficients]
+    \[
+      a_n = r_1 a_{n-1} + r_2 a_{n-2} + \cdots + r_t a_{n-t} \quad \text{for } n \ge t
+    \]
+    \[
+      a_0, a_1, \cdots, a_{t-1}
+    \]
+
+    \pause
+    \[
+      \boxed{\teal{q(x) \;\red{\equiv}\; x^t - r_1 x^{t-1} - r_2 x^{t-2} - \cdots - r_t}}
+    \]
+
+    \pause
+    \[
+      \beta_1 (m_1), \beta_2 (m_2), \cdots, \beta_i (m_i), \cdots, \beta_{k} (m_k)
+    \]
+    \[
+      m_1 + m_2 + \cdots + m_k = t
+    \]
+
+    \pause
+    \[
+      \boxed{\red{a_n = \sum_{0 \le j < m_1} c_{1j} n^j \beta_{1}^{n} + \sum_{0 \le j < m_2} c_{2j} n^j \beta_{2}^{n} + \cdots 
+	+ \sum_{0 \le j < m_k} c_{kj} n^j \beta_{k}^{n}}}
+    \]
+  \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    a_n = r_1 a_{n-1} + r_2 a_{n-2} + \cdots + r_t a_{n-t} \quad \text{for } n \ge t
+  \]
+
+  \[
+    \boxed{\teal{q(x) \;\red{\equiv}\; x^t - r_1 x^{t-1} - r_2 x^{t-2} - \cdots - r_t}}
+  \]
+
+  \pause
+  \begin{proof}
+    \[
+      \red{\beta \; (m = 2)}
+    \]
+
+    \pause
+    \[
+      \beta^n = r_1 \beta^{n-1} + r_2 \beta^{n-2} + \cdots + r_t \beta^{n-t} \quad \text{for } n \ge t
+    \]
+    \pause
+    \vspace{-0.50cm}
+    \[
+      \beta^{n-t} q(\beta) = 0
+    \]
+
+    \pause
+    \vspace{-0.50cm}
+    \[
+      n\beta^{n} = r_1 (n-1) \beta^{n-1} + r_2 (n-2) \beta^{n-2} + \cdots + r_t (n-t) \beta^{n-t} \quad \text{for } n \ge t
+    \]
+    \pause
+    \vspace{-0.50cm}
+    \[
+      \beta^{n-t} \left(\left(n-t\right)q(\beta) + \beta q'(\beta)\right) = 0
+    \]
+  \end{proof}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    a_n = 5 a_{n-1} - 8 a_{n-2} + 4 a_{n-3}, n \ge 3 \; (a_0 = 0, a_1 = 1, a_2 = 4)
+  \]
+
+  \pause
+  \[
+    \boxed{x^3 - 5 x^2 + 8 x - 4 = 0}
+  \]
+
+  \pause
+  \[
+    (x-1) (x-2)^2 = 0 \implies x_1 = 1, x_{2} = 2, x'_{2} = 2
+  \]
+
+  \pause
+  \[
+    a_n = c_1 \cdot 1^{n} + c_{2} \cdot 2^{n} + c'_{2} \cdot n 2^{n}
+  \]
+
+  \pause
+  \vspace{-0.30cm}
+  \begin{align*}
+    a_0 &= 0 = c_1 + c_2 \\
+    a_1 &= 1 = c_1 + 2c_2 + 2c'_{2} \\
+    a_2 &= 4 = c_1 + 4c_2 + 8c'_{2}
+  \end{align*}
+
+  \pause
+  \[
+    \boxed{a_n = n 2^{n-1}}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    a_n = 2a_{n-1} - a_{n-2} + 2a_{n-3}, n \ge 3 \; (a_0 = 1, a_1 = 0, a_2 = -1)
+  \]
+
+  \[
+    a_n = \frac{1}{2} i^{n} \left(1 + (-1)^n \right)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{After-class Exercise}
+    \[
+      a_n = 2a_{n-1} + a_{n-2} - 2a_{n-3}, n > 3
+    \]
+  \end{exampleblock}
+
+  \begin{columns}
+    \pause
+    \column{0.50\textwidth}
+      \fignocaption{width = 0.60\textwidth}{figs/do-it-yourself}
+    \column{0.50\textwidth}
+      \fignocaption{width = 0.80\textwidth}{figs/maweidu}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \centerline{\teal{\large First-order Linear Non-homogeneous Recurrences}}
+
+  \[
+    a_n = r_1 a_{n-1} + r_2 a_{n-2} + \cdots + r_t a_{n-t} + r \quad \text{for } n \ge t
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%

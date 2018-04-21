@@ -204,6 +204,35 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \[
+    a_n = 5a_{n-1} - 6a_{n-2} \; n \ge 2 \; (a_0 = 0, a_1 = 1)
+  \]
+
+  \pause
+  \[
+    \boxed{\teal{x^2 - 5x + 6 = (x-2) (x-3) = 0}} \implies x = 2, 3
+  \]
+
+  \pause
+  \[
+    \boxed{\teal{a_n = c_0 3^n + c_1 2^n}}
+  \]
+  
+  \pause
+  \begin{align*}
+    a_0 &= 0 = c_0 + c_1 \\
+    a_1 &= 1 = 3c_0 + 2c_1
+  \end{align*}
+
+  \pause
+  \[
+    \boxed{\red{a_n = 3^n - 2^n}}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
     a_n = 5 a_{n-1} - 8 a_{n-2} + 4 a_{n-3}, n \ge 3 \; (a_0 = 0, a_1 = 1, a_2 = 4)
   \]
 
@@ -240,11 +269,37 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \[
-    a_n = 2a_{n-1} - a_{n-2} + 2a_{n-3}, n \ge 3 \; (a_0 = 1, a_1 = 0, a_2 = -1)
+    a_n = 2a_{n-1} - a_{n-2} + 2a_{n-3},\; n \ge 3 \; (a_0 = 1, a_1 = 0, a_2 = -1)
   \]
 
+  \pause
   \[
-    a_n = \frac{1}{2} i^{n} \left(1 + (-1)^n \right)
+    \boxed{\teal{x^3 - 2x^2 + x - 2}} = (x^2 + 1) (x-2) = 0 \implies x = 2, \red{i}, \red{-i}
+  \]
+
+  \pause
+  \[
+    \boxed{\teal{a_n = c_1 2^n + c_2 i^n + c_3 (-i)^n}}
+  \]
+
+  \pause
+  \vspace{-0.50cm}
+  \begin{align*}
+    a_0 &= 1 = c_1 + c_2 + c_3 \\
+    a_1 &= 0 = 2c_1 + c_2 i - c_3 i \\
+    a_2 &= -1 = 4c_1 - c_2 - c_3
+  \end{align*}
+
+  \pause
+  \vspace{-0.30cm}
+  \[
+    \boxed{\red{a_n = \frac{1}{2} i^{n} \left(1 + (-1)^n \right)}}
+  \]
+
+  \pause
+  \[
+    \blue{1},\; \red{0},\; \blue{-1},\; \red{0},\; \blue{1},\; \red{0},\; \blue{-1},\; \red{0},\;
+    \blue{1},\; \red{0},\; \blue{-1},\; \red{0} \cdots
   \]
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -252,9 +307,16 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{exampleblock}{After-class Exercise}
+    Given initial conditions $a_0, a_1$, and $a_2$ for which the growth rate of the solution to
     \[
-      a_n = 2a_{n-1} + a_{n-2} - 2a_{n-3}, n > 3
+      a_n = 2a_{n-1} + a_{n-2} - 2a_{n-3},\; n > 2
     \]
+    is 
+    \begin{enumerate}[(i)]
+      \item constant,
+      \item exponential,
+      \item fluctuating in sign
+    \end{enumerate}
   \end{exampleblock}
 
   \begin{columns}
@@ -272,9 +334,108 @@
   \centerline{\teal{\large First-order Linear Non-homogeneous Recurrences}}
 
   \[
-    a_n = r_1 a_{n-1} + r_2 a_{n-2} + \cdots + r_t a_{n-t} + r \quad \text{for } n \ge t
+    a_n = r_1 a_{n-1} + r_2 a_{n-2} + \cdots + r_t a_{n-t} + \red{r} \quad \text{for } n \ge t
+  \]
+
+  \pause
+  \fignocaption{width = 0.50\textwidth}{figs/fib-noip}
+  \[
+    F(n) = F(n-1) + F(n-2) + 2, \; n \ge 3\; (F(1) = F(2) = 0)
+  \]
+
+  \pause
+  \vspace{-0.30cm}
+  \[
+    \boxed{T(n,k) = \left\{\begin{array}{lr}
+      0, & k = 0 \lor n = k \\
+      T(n-1, k) + T(n-1, k-1) + c, & \text{\it o.w.}
+    \end{array}\right.}
   \]
 \end{frame}
 %%%%%%%%%%%%%%%
 
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    a_n = 5a_{n-1} - 6a_{n-2} + 2, \; n \ge 2 \; (a_0 = 0, a_1 = 1)
+  \]
+
+  \pause
+  \[
+    \boxed{\teal{a_n = c_0 3^n + c_1 2^n + \red{c_2}}}
+  \]
+
+  \pause
+  \[
+    \boxed{\teal{c_2 = 5c_2 - 6c_2 + 2}} \implies c_2 = 1
+  \]
+
+  \pause
+  \begin{align*}
+    a_0 &= 0 = c_0 + c_1 + 1\\
+    a_1 &= 1 = 3c_0 + 2c_1 + 1
+  \end{align*}
+
+  \pause
+  \[
+    \red{\boxed{a_n = 2 \cdot 3^n - 3 \cdot 2^n + 1}}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \centerline{\teal{\Large More Issues about Linear Recurrences}}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    a_n = r_1 a_{n-1} + r_2 a_{n-2} + \cdots + r_t a_{n-t} + \red{g(n)} \quad \text{for } n \ge t
+  \]
+
+  \pause
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    a_n = r_1 a_{n-1} + r_2 a_{n-2} + \cdots + r_t a_{n-t} \quad \text{for } n \ge t
+  \]
+
+  \pause
+  \[
+    t \ge 5
+  \]
+
+  \pause
+  \begin{columns}
+    \column{0.50\textwidth}
+    \column{0.50\textwidth}
+  \end{columns}
+
+  \pause
+  \vspace{0.50cm}
+  \centerline{\red{Generating Functions and Asymptotic Analysis}}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    a_n = f_1(n) a_{n-1} + f_2(n) a_{n-2} + \cdots + f_t(n) a_{n-t} \quad \text{for } n \ge t
+  \]
+
+  \pause
+  \vspace{0.80cm}
+  \centerline{\red{Genearating Functions}}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fignocaption{width = 0.40\textwidth}{figs/AoA}
+\end{frame}
 %%%%%%%%%%%%%%%

@@ -14,8 +14,7 @@
 
   \begin{columns}
     \column{0.50\textwidth}
-      \only<1-2>{\fignocaption{width = 0.90\textwidth}{figs/art-gallery}}
-      \only<3->{\fignocaption{width = 0.75\textwidth}{figs/art-gallery-camera}}
+      \fignocaption{width = 0.90\textwidth}{figs/art-gallery}
     \column{0.50\textwidth}
       \fignocaption{width = 0.70\textwidth}{figs/watching}
   \end{columns}
@@ -28,13 +27,17 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{exampleblock}{Another Version of the Ear Lemma (Problem $4.1-16$)}
-    A triangulated polygon is either a triangle with three ears or has at least two ears.
+    A triangulated polygon is \teal{either} a triangle with three ears \teal{or} has at least two ears
+    (which are \red{\it not necessarily non-adjacent}).
   \end{exampleblock}{}
-\end{frame}
-%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%
-\begin{frame}{}
+  \pause
+  \vspace{0.30cm}
+  \fignocaption{width = 0.40\textwidth}{figs/weak-ear-lemma}
+
+  \pause
+  \vspace{0.30cm}
+  \centerline{\red{$Q:$ \large \it Adjacent ears?}}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -50,11 +53,15 @@
   \begin{columns}
     \pause
     \column{0.50\textwidth}
-      \fignocaption{width = 0.70\textwidth}{figs/polygon-ear}
+      \fignocaption{width = 0.60\textwidth}{figs/polygon-ear}
     \pause
     \column{0.50\textwidth}
-      \fignocaption{width = 0.70\textwidth}{figs/polygon-diagonal}
+      \fignocaption{width = 0.60\textwidth}{figs/polygon-diagonal}
   \end{columns}
+
+  \pause
+  \vspace{0.50cm}
+  \centerline{\red{$Q:$ \large \it Existence of diagonals?}}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -66,7 +73,7 @@
 
   \pause
   \vspace{0.80cm}
-  \centerline{\red{\large $Q:$ Can every polygon be triangulated?}}
+  \centerline{\red{\large $Q:$ \it Can every polygon be triangulated?}}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -146,13 +153,12 @@
 
   \begin{columns}
     \column{0.50\textwidth}
-      \only<1-2>{\fignocaption{width = 0.90\textwidth}{figs/art-gallery}}
-      \only<3->{\fignocaption{width = 0.75\textwidth}{figs/art-gallery-camera}}
+      \only<1>{\fignocaption{width = 0.90\textwidth}{figs/art-gallery}}
+      \only<2->{\fignocaption{width = 0.75\textwidth}{figs/art-gallery-camera}}
     \column{0.50\textwidth}
       \fignocaption{width = 0.70\textwidth}{figs/watching}
   \end{columns}
 
-  \pause
   \vspace{0.80cm}
   \centerline{\large \red{$Q:$ How many ``BIG BROs'' to hire?}}
 \end{frame}
@@ -162,7 +168,7 @@
 \begin{frame}{}
   \fignocaption{width = 0.40\textwidth}{figs/triangulation-3coloring}
 
-  \begin{theorem}[The Art Gallery Theorem ($O$)]
+  \begin{theorem}[The Art Gallery Theorem \red{($O$)}]
     For any art gallery with $n$ walls, $\lfloor \frac{n}{3} \rfloor$ ``BIG BROs'' suffice.
   \end{theorem}
 \end{frame}
@@ -170,8 +176,8 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{theorem}[The Art Gallery Theorem ($\Omega$)]
-    For any art gallery with $n$ walls, $\lfloor \frac{n}{3} \rfloor$ ``BIG BROs'' suffice.
+  \begin{theorem}[The Art Gallery Theorem \red{($\Omega$)}]
+    There exists an art gallery with $n$ walls such that $\lfloor \frac{n}{3} \rfloor$ ``BIG BROs'' are necessary.
   \end{theorem}
 
   \pause
@@ -181,5 +187,27 @@
   \[
     n = 3m
   \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{columns}
+    \column{0.50\textwidth}
+      \fignocaption{width = 0.60\textwidth}{figs/proofs-from-the-book}
+      \centerline{{\it ``How to Guard a Museum?''}}
+    \column{0.50\textwidth}
+      \pause
+      \fignocaption{width = 0.80\textwidth}{figs/polygon-triangulation}
+      \[
+	O(n \log n) 
+      \]
+      \[
+	O(n \log \log n)
+      \]
+      \[
+	O(n)
+      \]
+  \end{columns}
 \end{frame}
 %%%%%%%%%%%%%%%

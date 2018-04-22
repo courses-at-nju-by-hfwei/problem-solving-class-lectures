@@ -9,18 +9,42 @@
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
+% \begin{frame}{}
+%   \fignocaption{width = 0.60\textwidth}{figs/feedback}
+% 
+%   Why again?
+% \end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
 \begin{frame}{}
   \fignocaption{width = 0.60\textwidth}{figs/feedback}
 
-  Why again?
+  \vspace{0.30cm}
+  \centerline{\red{$Q:$ \large \it Recurrences without Base Cases?}}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{quote}
+    \centering
+    ``\teal{Boundary conditions} represent another class of details \\
+    that we typically \red{ignore}.''  \\[6pt]
+
+    ``We shall generally \red{omit} statements of the boundary conditions of recurrences 
+    and \teal{assume that $T(n)$ is constant for small $n$}.'' \\[6pt]
+
+    \hfill --- ``Technicalities in recurrences'', Chapter 4, CLRS
+  \end{quote}
+
+  \pause
+  \vspace{0.30cm}
+  \centerline{\red{\large Not Exactly!}}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \fignocaption{width = 0.60\textwidth}{figs/feedback}
-
-  base cases
+  \fignocaption{width = 0.40\textwidth}{figs/horse-flower}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -37,7 +61,7 @@
 
   \pause
   \vspace{0.50cm}
-  \begin{theorem}[First-order Linear Recurrences with \red{Constant Coefficients} (CS Theorem $4.5$)]
+  \begin{theorem}[First-order Linear Recurrences with \red{\it Constant Coefficients} (CS Theorem $4.5$)]
     \[
       T(n) = \left\{\begin{array}{lr}
 	a		& n = 0 \\
@@ -122,7 +146,8 @@
   \begin{columns}
     \pause
     \column{0.50\textwidth}
-      \fignocaption{width = 0.60\textwidth}{figs/do-it-yourself}
+      \fignocaption{width = 0.55\textwidth}{figs/doit-duck}
+    \pause
     \column{0.50\textwidth}
       \fignocaption{width = 0.80\textwidth}{figs/maweidu}
   \end{columns}
@@ -146,7 +171,7 @@
 
     \pause
     \[
-      \beta_1 (m_1), \beta_2 (m_2), \cdots, \beta_i (m_i), \cdots, \beta_{k} (m_k)
+      \beta_1\; (m_1), \beta_2\; (m_2), \cdots, \beta_i\; (m_i), \cdots, \beta_{k}\; (m_k)
     \]
     \[
       m_1 + m_2 + \cdots + m_k = t
@@ -174,7 +199,7 @@
   \pause
   \begin{proof}
     \[
-      \red{\beta \; (m = 2)}
+      \blue{\beta \; (m = 2)}
     \]
 
     \pause
@@ -184,7 +209,7 @@
     \pause
     \vspace{-0.50cm}
     \[
-      \beta^{n-t} q(\beta) = 0
+      \beta^{n-t} \red{q(\beta)} = 0
     \]
 
     \pause
@@ -195,7 +220,7 @@
     \pause
     \vspace{-0.50cm}
     \[
-      \beta^{n-t} \left(\left(n-t\right)q(\beta) + \beta q'(\beta)\right) = 0
+      \beta^{n-t} \left(\left(n-t\right)\red{q(\beta)} + \beta \red{q'(\beta)}\right) = 0
     \]
   \end{proof}
 \end{frame}
@@ -204,7 +229,7 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \[
-    a_n = 5a_{n-1} - 6a_{n-2} \; n \ge 2 \; (a_0 = 0, a_1 = 1)
+    a_n = 5a_{n-1} - 6a_{n-2},\; n \ge 2 \; (a_0 = 0, a_1 = 1)
   \]
 
   \pause
@@ -248,7 +273,7 @@
 
   \pause
   \[
-    a_n = c_1 \cdot 1^{n} + c_{2} \cdot 2^{n} + c'_{2} \cdot n 2^{n}
+    a_n = c_1 \cdot 1^{n} + c_{2} \cdot \red{2^{n}} + c'_{2} \cdot \red{n 2^{n}}
   \]
 
   \pause
@@ -274,7 +299,7 @@
 
   \pause
   \[
-    \boxed{\teal{x^3 - 2x^2 + x - 2}} = (x^2 + 1) (x-2) = 0 \implies x = 2, \red{i}, \red{-i}
+    \boxed{\teal{x^3 - 2x^2 + x - 2}} = (x^2 + 1) (x-2) = 0 \pause \implies x = 2, \red{i}, \red{-i}
   \]
 
   \pause
@@ -307,25 +332,16 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{exampleblock}{After-class Exercise}
-    Given initial conditions $a_0, a_1$, and $a_2$ for which the growth rate of the solution to
+    To give initial conditions $a_0, a_1$, and $a_2$ such that the growth rate of the solution to
     \[
       a_n = 2a_{n-1} + a_{n-2} - 2a_{n-3},\; n > 2
     \]
-    is 
-    \begin{enumerate}[(i)]
-      \item constant,
-      \item exponential,
-      \item fluctuating in sign
-    \end{enumerate}
+    is \blue{\it (1)} {\it constant}; \blue{\it (2)} {\it exponential}; \blue{\it (3)} {\it fluctuating in sign}.
   \end{exampleblock}
 
-  \begin{columns}
-    \pause
-    \column{0.50\textwidth}
-      \fignocaption{width = 0.60\textwidth}{figs/do-it-yourself}
-    \column{0.50\textwidth}
-      \fignocaption{width = 0.80\textwidth}{figs/maweidu}
-  \end{columns}
+  \pause
+  \vspace{0.50cm}
+  \fignocaption{width = 0.25\textwidth}{figs/doit-duck}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -396,6 +412,12 @@
   \]
 
   \pause
+  \vspace{0.50cm}
+  \[
+    a_n = a_n^{g} + a_n^{p}
+  \]
+  \centerline{\href{http://mysite.science.uottawa.ca/msajna/MAT2348/non-hom-RR.pdf}
+  {\teal{\small {\it How to Find a \red{Particular Solution} for a Non-homogeneous Recurrence Relation?}}}}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -405,7 +427,6 @@
     a_n = r_1 a_{n-1} + r_2 a_{n-2} + \cdots + r_t a_{n-t} \quad \text{for } n \ge t
   \]
 
-  \pause
   \[
     t \ge 5
   \]
@@ -418,7 +439,7 @@
 
   \pause
   \vspace{0.50cm}
-  \centerline{\red{Generating Functions and Asymptotic Analysis}}
+  \centerline{\teal{Generating Functions and Asymptotic Analysis}}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -430,7 +451,7 @@
 
   \pause
   \vspace{0.80cm}
-  \centerline{\red{Genearating Functions}}
+  \centerline{\teal{Genearating Functions}}
 \end{frame}
 %%%%%%%%%%%%%%%
 

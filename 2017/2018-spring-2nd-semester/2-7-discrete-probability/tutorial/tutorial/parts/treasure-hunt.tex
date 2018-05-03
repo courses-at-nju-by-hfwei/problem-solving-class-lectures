@@ -1,0 +1,37 @@
+% file: parts/treasure-hunt.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fignocaption{width = 0.45\textwidth}{figs/treasure-hunt}
+
+  \pause
+  \begin{columns}
+    \column{0.50\textwidth}
+      \fignocaption{width = 0.45\textwidth}{figs/hints}
+    \column{0.50\textwidth}
+      \fignocaption{width = 0.50\textwidth}{figs/help-wanted}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{}
+    \begin{enumerate}[(a)]
+      \item Given an array $A[0 \cdots n-1]$, to determine whether there is a value that \red{\it occurs more than $\lfloor n/k \rfloor$ times}
+	in $\Theta(n \lg k)$ time and $\Theta(k)$ extra space.
+      \item Prove that the \blue{\it lower bound} of this problem is $\Theta(n \lg k)$.
+    \end{enumerate}
+  \end{exampleblock}
+
+  \pause
+  \vspace{0.50cm}
+  \fignocaption{width = 0.30\textwidth}{figs/tip-1}
+  \begin{exampleblock}{}
+    \centerline{\teal{Take $k = 2.$}}
+    \[
+      \red{\Theta(n) \text{ time } \;\&\; \Theta(1) \text{ space}}
+    \]
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%

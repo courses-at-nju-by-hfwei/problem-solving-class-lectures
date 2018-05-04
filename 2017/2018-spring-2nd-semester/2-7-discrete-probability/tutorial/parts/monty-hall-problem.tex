@@ -1,0 +1,92 @@
+% file: parts/monty-hall-problem.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \centerline{\teal{\Large The Monty-Hall Problem}}
+  \fignocaption{width = 0.50\textwidth}{figs/monty-hall-problem}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fignocaption{width = 0.50\textwidth}{figs/monty-hall-problem}
+
+  \begin{description}[(S)he]
+    \centering
+    \item[You:] Randomly pick a door (No. $1$)
+    \item[I:] Open a door which has a goat (No. $3$)
+  \end{description}
+
+  \vspace{0.50cm}
+  \centerline{\red{\large $Q:$ Do you want to switch to door No. $2$?}}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    C_i: \text{The car is behind door } i\; (i = 1, 2, 3)
+  \]
+  \[
+    \teal{\boxed{\Pr\set{C_i} = \frac{1}{3}}}
+  \]
+
+  \pause
+  \[
+    Y_1: \text{you initially pick door } 1
+  \]
+  \[
+    \teal{\boxed{\Pr\set{X_1} = \frac{1}{3}}}
+  \]
+
+  \pause
+  \[
+    I_3: \text{I open door No. } 3
+  \]
+
+  \pause
+  \[
+    \red{\boxed{\Pr\set{C_2 \mid I_3, Y_1}}}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{align*}
+    \red{\Pr\set{C_2 \mid I_3, Y_1}} &= \frac{\Pr\set{C_2, I_3, Y_1}}{\Pr\set{I_3, Y_1}} 
+    = \frac{\purple{\Pr{\set{I_3, Y_1 \mid C_2}}} \Pr\set{C_2}}{\Pr\set{I_3 \mid Y_1} \Pr\set{Y_1}} \\
+    &= \frac{\purple{\Pr{\set{I_3, Y_1 \mid C_2}}}}{\Pr\set{I_3 \mid Y_1}}
+  \end{align*}
+
+  \pause
+  \begin{align*}
+    \purple{\Pr{\set{I_3, Y_1 \mid C_2}}} &= \frac{\Pr{\set{I_3, Y_1, C_2}}}{\Pr\set{C_2}} 
+    	= \frac{\Pr{\set{I_3 \mid C_2, Y_1} \Pr\set{C_2, Y_1}}}{\Pr{\set{C_2}}} \\
+	&= \frac{\Pr{\set{I_3 \mid C_2, Y_1} \Pr{\set{Y_1 \mid C_2}} \Pr\set{C_2}}}{\Pr{\set{C_2}}} \\
+	&= \frac{1}{3} \Pr{\set{I_3 \mid C_2, Y_1}}
+  \end{align*}
+
+  \begin{align*}
+    \red{\Pr\set{C_2 \mid I_3, Y_1}} = \frac{\Pr{\set{I_3 \mid C_2, Y_1}}}{3 \Pr\set{I_3 \mid Y_1}}
+  \end{align*}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{align*}
+    \red{\Pr\set{C_2 \mid I_3, Y_1}} = \frac{\Pr{\set{I_3 \mid C_2, Y_1}}}{3 \Pr\set{I_3 \mid Y_1}}
+  \end{align*}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+\end{frame}
+%%%%%%%%%%%%%%%

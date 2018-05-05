@@ -1,0 +1,190 @@
+% file: parts/family.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \centerline{\teal{\Large The Boy/Girl Puzzle}}
+  \vspace{0.30cm}
+  \fignocaption{width = 0.60\textwidth}{figs/family}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Both Girls (CS Problem $5.3-12$)}
+    Mr. and Mrs. Smith have two children of different ages,\\
+    what is the probability that they has two girls
+    \begin{enumerate}[(a)]
+      \item given that \violet{one of the children} is a girl?
+      \item given that \violet{the older child} is a girl?
+    \end{enumerate}
+  \end{exampleblock}
+
+  \fignocaption{width = 0.35\textwidth}{figs/girl}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    G_1: \text{the older child is a girl}
+  \]
+  \[
+    G_2: \text{the younger child is a girl}
+  \]
+
+  \begin{align*}
+    \onslide<2->{\teal{\Pr\set{G_1 \land G_2 \mid G_1 \lor G_2}}} 
+    \onslide<3->{&= \frac{\Pr{\set{G_1 \land G_2}}}{\Pr{\set{G_1 \lor G_2}}} \\}
+    \onslide<4->{&= \frac{\Pr\set{G_1 \land G_2}}{\Pr\set{G_1} + \Pr\set{G_2} - \Pr\set{G_1 \land G_2}} \\}
+    \onslide<5->{&= \frac{1/4}{3/4} = \frac{1}{3}}
+  \end{align*}
+
+  \begin{align*}
+    \onslide<6->{\teal{\Pr\set{G_1 \land G_2 \mid G_1}}}
+    \onslide<7->{= \frac{\Pr{\set{G_1 \land G_2}}}{\Pr\set{G_1}}}
+    \onslide<8->{= \frac{1/4}{1/2} = \frac{1}{2}}
+  \end{align*}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \boxed{(G_1, G_2), (G_1, B_2), (B_1, G_2), (B_1, B_2)}
+  \]
+
+  \pause
+  \[
+    \teal{\Pr\set{G_1 \land G_2 \mid G_1 \lor G_2} = \frac{1}{3}}
+  \]
+
+  \pause
+  \[
+    \red{(G_1, G_2)}, (G_1, B_2), (B_1, G_2), \lgray{(B_1, B_2)}
+  \]
+
+  \pause
+  \[
+    \teal{\Pr\set{G_1 \land G_2 \mid G_1} = \frac{1}{2}}
+  \]
+
+  \pause
+  \[
+    \red{(G_1, G_2)}, (G_1, B_2), \lgray{(B_1, G_2)}, \lgray{(B_1, B_2)}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \teal{\Pr\set{G_1 \land G_2 \mid G_1 \lor G_2} = \frac{1}{3}}
+  \]
+  \[
+    \teal{\Pr\set{G_1 \land G_2 \mid G_1} = \frac{1}{2}}
+  \]
+
+  \pause
+  \[
+    \Pr\set{G_1 \land G_2 \mid G_1 \lor G_2} = \red{\boxed{\frac{2}{3}}} \Pr\set{G_1 \land G_2 \mid G_1}
+  \]
+
+  \pause
+  \[
+    \Pr\set{G_1 \land G_2 \mid G_1 \lor G_2} = \red{\boxed{\Pr\set{G_1 \mid G_1 \lor G_2}}} \Pr\set{G_1 \land G_2 \mid G_1}
+  \]
+
+  \pause
+  \[
+    \Pr\set{G_1 \mid G_1 \lor G_2} = \frac{\Pr\set{G_1 \land (G_1 \lor G_2)}}{\Pr\set{G_1 \lor G_2}} 
+    \pause = \frac{\Pr\set{G_1}}{\Pr\set{G_1 \land G_2}} = \frac{2}{3}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fignocaption{width = 0.40\textwidth}{figs/easy}
+
+  \pause
+  \fignocaption{width = 0.25\textwidth}{figs/keep-calm-not-finished}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Both Girls (CS Problem $5.3-12$)}
+    Mr. and Mrs. Smith have two children of different ages,\\
+    what is the probability that they has two girls
+    \begin{enumerate}[(a)]
+      \item given that \violet{one of the children} is a girl?
+    \end{enumerate}
+  \end{exampleblock}
+
+  \pause
+  \vspace{0.50cm}
+  \centerline{\red{\large $Q:$ {\bf How} do you know that \violet{``one of the children is a girl''}?}}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \centerline{\red{\large $Q:$ {\bf How} do you know that \violet{``one of the children is a girl''}?}}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{columns}
+    \column{0.25\textwidth}
+      \fignocaption{width = 0.90\textwidth}{figs/house1}
+    \column{0.25\textwidth}
+      \fignocaption{width = 0.80\textwidth}{figs/house0}
+    \column{0.25\textwidth}
+      \fignocaption{width = 0.80\textwidth}{figs/house2}
+    \column{0.25\textwidth}
+      \fignocaption{width = 0.95\textwidth}{figs/house3}
+  \end{columns}
+
+  \pause
+  \vspace{0.80cm}
+  \begin{enumerate}[(I)]
+    \setlength{\itemsep}{8pt}
+    \item From all families with two children, at least one of whom is a girl, \\
+      \red{a {\footnotesize (Smith's)} family is chosen at random}.
+    \pause
+    \item From all families with two children, \red{one child {\footnotesize (of Smith)} is selected} \\
+      at random that happens to be a girl.
+  \end{enumerate}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \centerline{\red{\large $Q:$ {\bf How} do you know that \violet{``one of the children is a girl''}?}}
+
+  \vspace{0.60cm}
+  \begin{enumerate}[(I)]
+    \setcounter{enumi}{1}
+    \item \red{$g:$} From all families with two children, \red{one child {\footnotesize (of Smith)} is selected} \\
+      at random that happens to be a girl.
+  \end{enumerate}
+
+  \pause
+  \vspace{0.50cm}
+  \[
+    \Pr\set{G_1 \land G_2 \mid g} = \frac{\set{G_1 \land G_2 \land g}}{\Pr\set{g}} \pause = \frac{1/4}{1/2} = \frac{1}{2}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{After-class Exercise}
+    A new couple, \teal{known to have two children}, has just moved into town. \\
+    Suppose that the mother is \teal{encountered walking with one of her children}. \\
+    If this child is a girl, what is the probability that both children are girls?
+  \end{exampleblock}
+
+  \vspace{0.50cm}
+  \fignocaption{width = 0.40\textwidth}{figs/mother-girl-walking.png}
+\end{frame}
+%%%%%%%%%%%%%%%

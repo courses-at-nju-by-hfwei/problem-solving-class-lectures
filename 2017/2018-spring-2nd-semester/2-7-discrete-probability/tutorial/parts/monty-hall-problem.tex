@@ -4,13 +4,9 @@
 \begin{frame}{}
   \centerline{\teal{\Large The Monty-Hall Problem}}
   \fignocaption{width = 0.50\textwidth}{figs/monty-hall-problem}
-\end{frame}
-%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \fignocaption{width = 0.50\textwidth}{figs/monty-hall-problem}
-
+  \pause
+  \vspace{-0.40cm}
   \begin{description}[(S)he]
     \centering
     \item[You:] Randomly pick a door (No. $1$)
@@ -33,19 +29,48 @@
   \]
 
   \pause
+  \centerline{\purple{\textsc{Assumption}: The car is initially hidden randomly behind the doors.}}
+
+  \pause
+  \vspace{0.50cm}
   \[
     Y_1: \text{you initially pick door } 1
   \]
   \[
-    \teal{\boxed{\Pr\set{X_1} = \frac{1}{3}}}
+    \teal{\boxed{\Pr\set{Y_1} = \frac{1}{3}}}
   \]
 
   \pause
+  \centerline{\purple{\textsc{Assumption}: Your initial choice is random.}}
+
+  % \pause
+  % \[
+  %   \teal{\boxed{\Pr\set{C_i \mid X_1} = \pause \frac{1}{3}}}
+  % \]
+  % \pause
+  % \centerline{\purple{Independent.}}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
   \[
     I_3: \text{I open door } 3
   \]
 
+  \vspace{0.50cm}
+  \begin{description}
+    \setlength{\itemsep}{8pt}
+    \item<2->[\purple{\textsc{Assumption}:}]
+      I know what's behind the doors.
+    \item<3->[\purple{\textsc{Assumption}:}]
+      If you initially pick the car, then I open a door randomly.
+    \item<4->[\purple{\textsc{Assumption}:}]
+      I always open a door to reveal a goat and never the car.
+  \end{description}
+
   \pause
+  \vspace{0.50cm}
   \[
     \red{\boxed{\Pr\set{C_2 \mid I_3, Y_1}}}
   \]
@@ -56,20 +81,17 @@
 \begin{frame}{}
   \begin{align*}
     \red{\Pr\set{C_2 \mid I_3, Y_1}} &= \frac{\Pr\set{C_2, I_3, Y_1}}{\Pr\set{I_3, Y_1}} 
-    = \frac{\purple{\Pr{\set{I_3, Y_1 \mid C_2}}} \Pr\set{C_2}}{\Pr\set{I_3 \mid Y_1} \Pr\set{Y_1}} \\
-    &= \frac{\purple{\Pr{\set{I_3, Y_1 \mid C_2}}}}{\Pr\set{I_3 \mid Y_1}}
-  \end{align*}
-
-  \pause
-  \begin{align*}
-    \purple{\Pr{\set{I_3, Y_1 \mid C_2}}} &= \frac{\Pr{\set{I_3, Y_1, C_2}}}{\Pr\set{C_2}} 
-    	= \frac{\Pr{\set{I_3 \mid C_2, Y_1} \Pr\set{C_2, Y_1}}}{\Pr{\set{C_2}}} \\
-	&= \frac{\Pr{\set{I_3 \mid C_2, Y_1} \Pr{\set{Y_1 \mid C_2}} \Pr\set{C_2}}}{\Pr{\set{C_2}}} \\
-	&= \frac{1}{3} \Pr{\set{I_3 \mid C_2, Y_1}}
+    \onslide<2->{= \frac{\purple{\Pr{\set{I_3, Y_1 \mid C_2}}} \Pr\set{C_2}}{\Pr\set{I_3 \mid Y_1} \Pr\set{Y_1}} \\}
+    \onslide<3->{&= \frac{\purple{\Pr{\set{I_3, Y_1 \mid C_2}}}}{\Pr\set{I_3 \mid Y_1}}}
   \end{align*}
 
   \begin{align*}
-    \red{\Pr\set{C_2 \mid I_3, Y_1}} = \frac{\Pr{\set{I_3 \mid C_2, Y_1}}}{3 \Pr\set{I_3 \mid Y_1}}
+    \onslide<4->{\purple{\Pr{\set{I_3, Y_1 \mid C_2}}} &= \Pr{\set{I_3 \mid C_2, Y_1} \Pr{\set{Y_1 \mid C_2}}} \\}
+    \onslide<5->{&= \frac{1}{3} \Pr{\set{I_3 \mid C_2, Y_1}}}
+  \end{align*}
+
+  \begin{align*}
+    \onslide<6->{\red{\Pr\set{C_2 \mid I_3, Y_1}} = \frac{\Pr{\set{I_3 \mid C_2, Y_1}}}{3 \Pr\set{I_3 \mid Y_1}}}
   \end{align*}
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -81,15 +103,16 @@
   \end{align*}
 
   \begin{align*}
-    \teal{\Pr{\set{I_3 \mid Y_1}}} &= \Pr\set{I_3 \mid C_1, Y_1} \Pr\set{C_1 \mid Y_1} \\
+    \onslide<2->{\teal{\Pr\set{I_3 \mid Y_1}}} 
+    \onslide<3->{&= \Pr\set{I_3 \mid C_1, Y_1} \Pr\set{C_1 \mid Y_1} \\
       &+ \Pr\set{I_3 \mid C_2, Y_1} \Pr\set{C_2 \mid Y_1} \\
-      &+ \Pr\set{I_3 \mid C_3, Y_1} \Pr\set{C_3 \mid Y_1} \\
-      &= \frac{1}{3}\Big(\Pr\set{I_3 \mid C_1, Y_1} + \Pr\set{I_3 \mid C_2, Y_1} + \Pr\set{I_3 \mid C_3, Y_1}\Big)
+      &+ \Pr\set{I_3 \mid C_3, Y_1} \Pr\set{C_3 \mid Y_1} \\}
+    \onslide<4->{&= \frac{1}{3}\Big(\Pr\set{I_3 \mid C_1, Y_1} + \Pr\set{I_3 \mid C_2, Y_1} + \Pr\set{I_3 \mid C_3, Y_1}\Big)}
   \end{align*}
 
   \begin{align*}
-    \red{\Pr\set{C_2 \mid I_3, Y_1}} = \frac{\Pr{\set{I_3 \mid C_2, Y_1}}}
-      {\purple{\Pr\set{I_3 \mid C_1, Y_1} + \Pr\set{I_3 \mid C_2, Y_1} + \Pr\set{I_3 \mid C_3, Y_1}}}
+    \onslide<5->{\red{\Pr\set{C_2 \mid I_3, Y_1}} = \frac{\Pr{\set{I_3 \mid C_2, Y_1}}}
+    {\purple{\Pr\set{I_3 \mid C_1, Y_1} + \Pr\set{I_3 \mid C_2, Y_1} + \Pr\set{I_3 \mid C_3, Y_1}}}}
   \end{align*}
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -110,16 +133,20 @@
   \[
     \Pr\set{I_3 \mid C_1, Y_1} = \frac{1}{2}
   \]
+  \pause
+  \vspace{-0.40cm}
   \[
     \Pr\set{I_3 \mid C_2, Y_1} = 1
   \]
+  \pause
+  \vspace{-0.40cm}
   \[
     \Pr\set{I_3 \mid C_3, Y_1} = 0
   \]
 
   \pause
   \[
-    \red{\Pr\set{C_2 \mid I_3, Y_1}} = \frac{2}{3}
+    \blue{\boxed{\Pr\set{C_2 \mid I_3, Y_1} = \frac{2}{3}}}
   \]
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -164,6 +191,10 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \[
+    \red{\Pr\set{C_2 \mid I_3, Y_1}} = \frac{\Pr{\set{I_3 \mid C_2, Y_1}}}
+      {\purple{\Pr\set{I_3 \mid C_1, Y_1} + \Pr\set{I_3 \mid C_2, Y_1} + \Pr\set{I_3 \mid C_3, Y_1}}}
+  \]
+  \[
     \violet{\boxed{\Pr\set{C_2 \mid I_3, Y_1} > \Pr\set{C_1 \mid I_3, Y_1} \iff \Pr{\set{I_3 \mid C_2, Y_1}} > \Pr{\set{I_3 \mid C_1, Y_1}}}}
   \]
 
@@ -177,7 +208,7 @@
   \]
 
   \[
-    \teal{\Pr\set{C_2 \mid I_3, Y_1}} = \frac{2}{3}
+    \blue{\Pr\set{C_2 \mid I_3, Y_1} = \frac{2}{3}}
   \]
 
   \pause
@@ -202,6 +233,9 @@
   \[
     \Pr\set{I_3 \mid C_2, Y_1} = 1
   \]
+  \[
+    \lgray{\Pr\set{I_3 \mid C_3, Y_1} = 0}
+  \]
 
   \pause
   \[
@@ -213,14 +247,14 @@
   \]
 
   \pause
-  \vspace{0.30cm}
-  \centerline{\violet{\boxed{\textsl{\large Always Switch!}}}}
-
-  \pause
   \vspace{-0.20cm}
   \[
     \violet{\boxed{\Pr\set{C_2 \mid I_3, Y_1} > \Pr\set{C_1 \mid I_3, Y_1} \iff \Pr{\set{I_3 \mid C_2, Y_1}} > \Pr{\set{I_3 \mid C_1, Y_1}}}}
   \]
+
+  \pause
+  \vspace{-0.20cm}
+  \centerline{\violet{\boxed{\textsl{\large Always Switch!}}}}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -237,7 +271,7 @@
 
   \begin{columns}
     \column{0.45\textwidth}
-      \uncover<2->{\centerline{I know what's behind the doors.}}
+      \centerline{\textsc{\purple{Assumption: I know.}}}
 
       \[
 	\Pr\set{I_3 \mid C_1, Y_1} = \frac{1}{2}
@@ -247,25 +281,36 @@
       \]
 
       \[
-	\red{\Pr\set{C_2 \mid I_3, Y_1}} = \frac{2}{3}
+	\blue{\Pr\set{C_2 \mid I_3, Y_1} = \frac{2}{3}}
       \]
     \column{0.55\textwidth}
-      \uncover<3->{
-	\begin{center}
-	  {I do not know what's behind the doors,\\
-	  and opens one randomly that happens not to reveal the car.}
-	\end{center}
-	\[
-	  \Pr\set{I_3 \mid C_1, Y_1} = \frac{1}{2}
-	\]
-	\[
-	  \teal{\Pr\set{I_3 \mid C_2, Y_1} = \frac{1}{2}}
-	\]
+      \pause
+      \centerline{\textsc{\purple{Assumption: I don't know either.}}}
+      \begin{center}
+	{Opens one randomly that happens not to reveal the car.}
+      \end{center}
 
-	\[
-	  \red{\Pr\set{C_2 \mid I_3, Y_1}} = \frac{1}{2}
-	\]
-      }
+      \pause
+      \vspace{-0.50cm}
+      \[
+	\Pr\set{I_3 \mid C_1, Y_1} = \frac{1}{2}
+      \]
+      \[
+	\teal{\Pr\set{I_3 \mid C_2, Y_1} = \frac{1}{2}}
+      \]
+
+      \[
+	\blue{\Pr\set{C_2 \mid I_3, Y_1} = \frac{1}{2}}
+      \]
   \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fignocaption{width = 0.40\textwidth}{figs/qrcode-monty-hall-wiki}
+
+  \vspace{-0.30cm}
+  \centerline{Monty Hall problem (wiki)}
 \end{frame}
 %%%%%%%%%%%%%%%

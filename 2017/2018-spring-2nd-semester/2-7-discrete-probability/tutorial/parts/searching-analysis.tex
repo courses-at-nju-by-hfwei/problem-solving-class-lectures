@@ -21,17 +21,16 @@
     \exists!\; i: A[i] = x 
   \]
 
-  \pause
   \[
     \red{Y: \# \text{ of comparisons}}
   \]
 
   \pause
   \begin{align*}
-    \E[Y] &= \sum_{i = 1}^{n} i \Pr\set{Y = i} \\
-    \onslide<4->{&= \sum_{i = 1}^{n} i \Pr\set{A[i] = x} \\}
-    \onslide<5->{&= \frac{1}{n} \sum_{i = 1}^{n} i \\}
-    \onslide<6->{&= \frac{n+1}{2}}
+    \E[Y] &= \sum_{i = 1}^{n} i\; \red{\Pr\set{Y = i}} \\
+    \onslide<3->{&= \sum_{i = 1}^{n} i\; \red{\Pr\set{A[i] = x}} \\}
+    \onslide<4->{&= \frac{1}{n} \sum_{i = 1}^{n} i \\}
+    \onslide<5->{&= \frac{n+1}{2}}
   \end{align*}
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -42,7 +41,6 @@
     \exists!_{k}\; i: A[i] = x 
   \]
 
-  \pause
   \[
     \red{Y: \# \text{ of comparisons}}
   \]
@@ -51,17 +49,29 @@
   \vspace{-0.50cm}
   \begin{align*}
     \E[Y] &= \sum_{i = 1}^{\red{n-k+1}} i \Pr\set{Y = i} \\
-    \onslide<4->{&= \sum_{i = 1}^{n-k+1} i \Pr\set{i \text{ is the first index among $k$ indices {\it s.t.} } A[i] = x} \\}
-    \onslide<5->{&= \sum_{i = 1}^{n-k+1} i \red{\frac{\binom{n-i}{k-1}}{\binom{n}{k}}}}
-    \onslide<6->{= \frac{1}{\binom{n}{k}} \teal{\sum_{i = 1}^{n-k+1} i \binom{n-i}{k-1}} \\}
-    \onslide<7->{&= \frac{1}{\binom{n}{k}} \purple{\binom{n+1}{k+1}} = \frac{n+1}{k+1}}
+    \onslide<3->{&= \sum_{i = 1}^{n-k+1} i \Pr\set{i \text{ is the first index among $k$ indices {\it s.t.} } A[i] = x} \\}
+    \onslide<4->{&= \sum_{i = 1}^{n-k+1} i \red{\frac{\binom{n-i}{k-1}}{\binom{n}{k}}}}
+    \onslide<5->{= \frac{1}{\binom{n}{k}} \teal{\sum_{i = 1}^{n-k+1} i \binom{n-i}{k-1}} \\}
+    \onslide<6->{&= \frac{1}{\binom{n}{k}} \purple{\binom{n+1}{k+1}} = \frac{n+1}{k+1}}
   \end{align*}
 
-  \uncover<8->{
+  \uncover<7->{
     \[
       k = 1 \implies \E[Y] = \frac{n+1}{2}, \qquad k = n \implies \E[Y] = 1
     \]
   }
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \sum_{i=1}^{n-k+1} i \binom{n-i}{k-1} = \binom{n+1}{k+1}
+  \]
+
+  \fignocaption{width = 0.30\textwidth}{figs/qrcode-summation-wiki}
+  \vspace{-0.30cm}
+  \centerline{Summation by parts (Abel transformation; wiki)}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -74,8 +84,10 @@
   \end{exampleblock}
 
   \begin{columns}
+    \pause
     \column{0.50\textwidth}
       \fignocaption{width = 0.45\textwidth}{figs/concrete-mathematics}{\centerline{\small Chapter $5$: Binomial Coefficients}}
+    \pause
     \column{0.50\textwidth}
       \[
 	r \binom{r-1}{k-1} = k \binom{r}{k}
@@ -90,16 +102,16 @@
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
-\begin{frame}{}
-  \begin{align*}
-    \sum_{i=1}^{n-k+1} i \binom{n-i}{k-1} &= \sum_{i=0}^{n-k} (i+1) \binom{n-i-1}{k-1} \\
-    &= \sum_{i=0}^{n-k} \big((n+1) - (n-i)\big) \binom{n-i-1}{k-1} \\
-    &= \sum_{i=0}^{n-k} (n+1) \binom{n-i-1}{k-1} - \sum_{i=0}^{n-k} (n-i) \binom{n-i-1}{k-1} \\
-    &= (n+1) \sum_{i=0}^{n-k}\binom{n-i-1}{k-1} - k \sum_{i=0}^{n-k} \binom{n-i}{k} \\
-    &= (n+1) \sum_{m=k-1}^{n-1}\binom{m}{k-1} - k \sum_{m=k}^{n} \binom{m}{k} \\
-    &= (n+1) \binom{n}{k} - k \binom{n+1}{k+1} = \binom{n+1}{k+1}
-  \end{align*}
-\end{frame}
+% \begin{frame}{}
+%   \begin{align*}
+%     \sum_{i=1}^{n-k+1} i \binom{n-i}{k-1} &= \sum_{i=0}^{n-k} (i+1) \binom{n-i-1}{k-1} \\
+%     &= \sum_{i=0}^{n-k} \big((n+1) - (n-i)\big) \binom{n-i-1}{k-1} \\
+%     &= \sum_{i=0}^{n-k} (n+1) \binom{n-i-1}{k-1} - \sum_{i=0}^{n-k} (n-i) \binom{n-i-1}{k-1} \\
+%     &= (n+1) \sum_{i=0}^{n-k}\binom{n-i-1}{k-1} - k \sum_{i=0}^{n-k} \binom{n-i}{k} \\
+%     &= (n+1) \sum_{m=k-1}^{n-1}\binom{m}{k-1} - k \sum_{m=k}^{n} \binom{m}{k} \\
+%     &= (n+1) \binom{n}{k} - k \binom{n+1}{k+1} = \binom{n+1}{k+1}
+%   \end{align*}
+% \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
@@ -174,20 +186,12 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{align*}
-    \E[Y] &= \sum_{i=1}^{n-k+1} \Pr\set{Y \ge i} \\
-    \onslide<2->{&= \sum_{i=1}^{n-k+1} \frac{\binom{n-i+1}{k}}{\binom{n}{k}} \\}
+    \E[Y] &= \sum_{i = 1}^{n-k+1} i \Pr\set{Y = i} \\
+    \onslide<1->{&= \sum_{i=1}^{n-k+1} \red{\Pr\set{Y \ge i}} \\}
+    \onslide<2->{&= \sum_{i=1}^{n-k+1} \red{\frac{\binom{n-i+1}{k}}{\binom{n}{k}}} \\}
     \onslide<3->{&= \frac{1}{\binom{n}{k}} \sum_{i=1}^{n-k+1} \binom{n-i+1}{k} \\}
     \onslide<4->{&= \frac{1}{\binom{n}{k}} \sum_{r=k}^{n} \binom{r}{k} \\}
-    \onslide<5->{&= \frac{1}{\binom{n}{k}} \binom{n+1}{k+1} \\}
-    \onslide<6->{&= \frac{n+1}{k+1}}
+    \onslide<5->{&= \frac{1}{\binom{n}{k}} \binom{n+1}{k+1} = \frac{n+1}{k+1}}
   \end{align*}
-\end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{frame}{}
-  order statistics?
-
-  balls-into-bins?
 \end{frame}
 %%%%%%%%%%%%%%%

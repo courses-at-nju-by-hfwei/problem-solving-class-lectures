@@ -1,0 +1,33 @@
+% parts/conditional-expectation.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \centerline{\teal{\Large Conditional Expectation}}
+
+  \begin{definition}[Conditional Expectation on an Event]
+    \[
+      \E[X \mid E] = \sum_{x} x \Pr(X = x \mid E)
+    \]
+  \end{definition}
+
+  \pause
+  \vspace{0.50cm}
+  \begin{definition}[Conditional Expectation on a Random Variable]
+    \[
+      \E[X \mid Y = y] = \sum_{x} x \Pr(X = x \mid Y = y)
+    \]
+  \end{definition}
+
+  \begin{alertblock}{Notation:}
+    \[
+      \E[X \mid Y](y) = \E[X \mid Y = y]
+    \]
+  \end{alertblock}
+
+  \pause
+  \[
+    \E[\E[X \mid Y]] = \sum_{y} \E[X \mid Y = y] \Pr(Y = y)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+

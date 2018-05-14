@@ -2,8 +2,22 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \centerline{\teal{\Large }}
+  \centerline{\teal{\Large Expectation}}
 
+  \begin{definition}[Expectation]
+    \[
+      \E[X] = \sum_{x} x \Pr(X = x)
+    \]
+  \end{definition}
 
+  \pause
+  \vspace{0.50cm}
+  \begin{theorem}[]
+    Let $X$ be a discrete random variable that takes on only nonnegative integer values.
+
+    \[
+      \E[X] = \sum_{i=1}^{\infty} i \Pr(X = i) = \sum_{i=1}^{\infty} \Pr(X \le i)
+    \]
+  \end{theorem}
 \end{frame}
 %%%%%%%%%%%%%%%

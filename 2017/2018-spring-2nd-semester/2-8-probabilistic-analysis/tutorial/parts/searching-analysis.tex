@@ -153,6 +153,19 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \begin{align*}
+    \E[Y] &= \sum_{i = 1}^{n-k+1} i \Pr\set{Y = i} \\
+    \onslide<1->{&= \sum_{i=1}^{n-k+1} \red{\Pr\set{Y \ge i}} \\}
+    \onslide<2->{&= \sum_{i=1}^{n-k+1} \red{\frac{\binom{n-i+1}{k}}{\binom{n}{k}}} \\}
+    \onslide<3->{&= \frac{1}{\binom{n}{k}} \sum_{i=1}^{n-k+1} \binom{n-i+1}{k} \\}
+    \onslide<4->{&= \frac{1}{\binom{n}{k}} \sum_{r=k}^{n} \binom{r}{k} \\}
+    \onslide<5->{&= \frac{1}{\binom{n}{k}} \binom{n+1}{k+1} = \frac{n+1}{k+1}}
+  \end{align*}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
   \fignocaption{width = 0.40\textwidth}{figs/wrong.jpg}
 
   \pause
@@ -180,18 +193,5 @@
     {\red{\large NOT IID}}\\
     {\teal{\small (Independent and Identically Distributed)}}
   \end{center}
-\end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \begin{align*}
-    \E[Y] &= \sum_{i = 1}^{n-k+1} i \Pr\set{Y = i} \\
-    \onslide<1->{&= \sum_{i=1}^{n-k+1} \red{\Pr\set{Y \ge i}} \\}
-    \onslide<2->{&= \sum_{i=1}^{n-k+1} \red{\frac{\binom{n-i+1}{k}}{\binom{n}{k}}} \\}
-    \onslide<3->{&= \frac{1}{\binom{n}{k}} \sum_{i=1}^{n-k+1} \binom{n-i+1}{k} \\}
-    \onslide<4->{&= \frac{1}{\binom{n}{k}} \sum_{r=k}^{n} \binom{r}{k} \\}
-    \onslide<5->{&= \frac{1}{\binom{n}{k}} \binom{n+1}{k+1} = \frac{n+1}{k+1}}
-  \end{align*}
 \end{frame}
 %%%%%%%%%%%%%%%

@@ -1,9 +1,38 @@
-% parts/conditional-expectation.tex
+% file: parts/conditional-expectation.tex
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \centerline{\teal{\Large Conditional Expectation}}
 
+  \begin{definition}[Conditional Expectation on an Event]
+    \[
+      \E[X \mid E] = \sum_{x} x \Pr(X = x \mid E)
+    \]
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[\uncover<2->{The Law of Total Expectation}]
+    Let $X$ be a random variable defined on a sample space $\Omega$.
+
+    Let $E_1, E_2, \cdots, E_n$ be a \red{partition} of $\Omega$.
+
+    \[
+      \E[X] = \sum_{i=1}^{n} \E[X \mid E_i] \Pr(E_i)
+    \]
+  \end{theorem}
+
+  \uncover<3->{
+    \begin{proof}
+    \end{proof}
+  }
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
   \begin{definition}[Conditional Expectation on an Event]
     \[
       \E[X \mid E] = \sum_{x} x \Pr(X = x \mid E)
@@ -17,7 +46,11 @@
       \E[X \mid Y = y] = \sum_{x} x \Pr(X = x \mid Y = y)
     \]
   \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%
 
+%%%%%%%%%%%%%%%
+\begin{frame}{}
   \begin{alertblock}{Notation:}
     \[
       \E[X \mid Y](y) = \E[X \mid Y = y]
@@ -31,3 +64,7 @@
 \end{frame}
 %%%%%%%%%%%%%%%
 
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+\end{frame}
+%%%%%%%%%%%%%%%

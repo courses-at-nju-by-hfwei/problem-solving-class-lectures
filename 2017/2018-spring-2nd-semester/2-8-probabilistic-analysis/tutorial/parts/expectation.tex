@@ -1,0 +1,34 @@
+% file: parts/expectation.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \centerline{\teal{\Large Expectation}}
+
+  \begin{definition}[Expectation]
+    \[
+      \E[X] = \sum_{x} x \Pr(X = x)
+    \]
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \centerline{\teal{\Large Expectation}}
+
+  \begin{theorem}[Computing Expectation]
+    Let $X$ be a discrete random variable that takes on \red{only nonnegative integer values}.
+
+    \[
+      \E[X] = \sum_{i=1}^{\infty} i \Pr(X = i) = \sum_{i=1}^{\infty} \Pr(X \le i)
+    \]
+  \end{theorem}
+
+  \pause
+  \begin{proof}
+  \end{proof}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+\input{parts/searching-analysis}
+\input{parts/hat-check}

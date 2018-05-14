@@ -1,0 +1,132 @@
+% file: parts/prob-discussion.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \centerline{\red{\Large $Q:$ What is probability?}}
+
+  \pause
+  \vspace{0.50cm}
+  \begin{columns}
+    \column{0.50\textwidth}
+      \fignocaption{width = 0.80\textwidth}{figs/dice}{\centerline{\teal{Objective: Frequentist}}}
+    \column{0.50\textwidth}
+      \fignocaption{width = 0.75\textwidth}{figs/belief}{\centerline{\teal{Subjective: Bayesians}}}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{columns}
+    \column{0.50\textwidth}
+      \fignocaption{width = 0.60\textwidth}{figs/qrcode-prob-interpretation-wiki}
+      \centerline{\teal{Probability interpretations (wiki)}}
+    \pause
+    \column{0.50\textwidth}
+      \fignocaption{width = 0.70\textwidth}{figs/92}
+      \centerline{\teal{Kolmogorov axioms}}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fignocaption{width = 0.50\textwidth}{figs/independent}
+
+  \[
+    \Pr(EF) = \Pr(E) \times \Pr(F)\quad \red{(E \perp F)}
+  \]
+  \pause
+  \[
+    \Pr(E) = \Pr(E \mid F)
+  \]
+
+  \pause
+  \[
+    \red{Q: E \perp F \implies F \perp E\,?}
+  \]
+
+  \pause
+  \[
+    \red{Q: E \perp F \implies E \perp F^{C}\,?}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+% \begin{frame}{}
+%   \only<1-2>{
+%     \fignocaption{width = 0.30\textwidth}{figs/two-children}
+%     \[
+%       (b, b), (b, g), (g, b), (g, g)
+%     \]
+%   }
+%   \only<3->{
+%     \fignocaption{width = 0.40\textwidth}{figs/three-children}
+%     \[
+%       (b,b,b), (b,b,g), \cdots, (g,g,g)
+%     \]
+%   }
+% 
+%   \[
+%     E: \text{has children of both sexes}
+%   \]
+%   \[
+%     F: \text{at most one girl}
+%   \]
+% 
+%   \pause
+%   \[
+%     \red{Q: E \perp F\,?}
+%   \]
+% \end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fignocaption{width = 0.35\textwidth}{figs/two-dice}
+  \[
+    (d_1, d_2)
+  \]
+
+  \only<2-3>{
+    \[
+      E: d_1 + d_2 = 6 \qquad F: d_1 = 4
+    \]
+  }
+
+  \only<4->{
+    \[
+      E: d_1 + d_2 = \red{7} \qquad F: d_1 = 4
+    \]
+  }
+
+  \uncover<3->{
+    \[
+      \red{Q: E \perp F\,?}
+    \]
+  }
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \red{Q:} E \perp F \land E \perp G \implies E \perp (FG)\,?
+  \]
+
+  \pause
+  \fignocaption{width = 0.35\textwidth}{figs/two-dice}
+  \[
+    (d_1, d_2)
+  \]
+
+  \pause
+  \[
+    E: d_1 + d_2 = 7
+  \]
+  \[
+    F: d_1 = 4 \qquad G: d_2 = 3
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%

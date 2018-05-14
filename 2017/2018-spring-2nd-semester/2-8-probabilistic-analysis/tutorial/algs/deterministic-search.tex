@@ -1,0 +1,22 @@
+% file: algs/deterministic-search.tex
+
+\begin{algorithm}[H]
+  % \caption{Deterministic search.}
+  % \label{alg:deterministic-search}
+  \begin{algorithmic}[1]
+    \Procedure{Deterministic-Search}{$A[1 \cdots n], x$}
+      \State $i \gets 1$
+
+      \hStatex
+      \While{$i \le n$}
+	\If{$A[i] = x$}
+	  \State \Return \textsl{true}
+	\EndIf
+	\State $i \gets i + 1$
+      \EndWhile
+
+      \hStatex
+	\State \Return \textsl{false}
+    \EndProcedure
+  \end{algorithmic}
+\end{algorithm}

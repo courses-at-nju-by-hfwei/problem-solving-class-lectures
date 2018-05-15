@@ -9,29 +9,29 @@
     \begin{enumerate}[(a)]
       \setcounter{enumi}{4}
       \item \[ \exists!\; i: A[i] = x \]
-      \item \[ \exists!_{k}\; i: A[i] = x \]
+      \item \[ \red{\exists!_{k}}\; i: A[i] = x \]
     \end{enumerate}
   \end{exampleblock}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
-\begin{frame}{}
-  \[ 
-    \exists!\; i: A[i] = x 
-  \]
-
-  \[
-    \red{Y: \# \text{ of comparisons}}
-  \]
-
-  \pause
-  \begin{align*}
-    \E[Y] &= \sum_{i = 1}^{n} i\; \red{\Pr\set{Y = i}} \\
-    \onslide<3->{&= \sum_{i = 1}^{n} i\; \red{\Pr\set{A[i] = x}} \\}
-    \onslide<4->{&= \frac{1}{n} \sum_{i = 1}^{n} i = \frac{n+1}{2}}
-  \end{align*}
-\end{frame}
+% \begin{frame}{}
+%   \[ 
+%     \exists!\; i: A[i] = x 
+%   \]
+% 
+%   \[
+%     \red{Y: \# \text{ of comparisons}}
+%   \]
+% 
+%   \pause
+%   \begin{align*}
+%     \E[Y] &= \sum_{i = 1}^{n} i\; \red{\Pr\set{Y = i}} \\
+%     \onslide<3->{&= \sum_{i = 1}^{n} i\; \red{\Pr\set{A[i] = x}} \\}
+%     \onslide<4->{&= \frac{1}{n} \sum_{i = 1}^{n} i = \frac{n+1}{2}}
+%   \end{align*}
+% \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%

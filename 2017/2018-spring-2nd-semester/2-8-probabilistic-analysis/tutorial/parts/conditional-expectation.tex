@@ -6,13 +6,17 @@
     \[
       \E[X \mid E] = \sum_{x} x \Pr(X = x \mid E)
     \]
+
+    \[
+      \teal{\Big(\E[X] = \sum_{x} x \Pr(X = x)\Big)}
+    \]
   \end{definition}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{theorem}[\uncover<2->{The Law of Total Expectation}]
+  \begin{theorem}[\uncover<2->{\red{The Law of Total Expectation}} (CS Theorem $5.23$)]
     Let $X$ be a random variable defined on a sample space $\Omega$.
 
     Let $E_1, E_2, \cdots, E_n$ be a \red{partition} of $\Omega$.
@@ -22,8 +26,16 @@
     \]
   \end{theorem}
 
+  \vspace{0.50cm}
   \uncover<3->{
     \begin{proof}
+      \centerline{By definition.} 
+
+      \uncover<4->{
+	\[
+	  \sum_{x}x \sum_{i=1}^{n} \Pr(X = x, E_i) = \sum_{i=1}^{n} \sum_{x} x \Pr(X = x, E_i)
+	\]
+      }
     \end{proof}
   }
 \end{frame}
@@ -31,24 +43,81 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{definition}[Conditional Expectation on an Event]
+  \begin{exampleblock}{\red{($\nexists$) Rational Person} Playing a Card Game (CS Problem $5.6-4$)}
+    \begin{columns}
+      \column{0.50\textwidth}
+	\fignocaption{width = 0.70\textwidth}{figs/JQKA}
+      \column{0.50\textwidth}
+	\begin{description}
+	  \item[$A:$] $\$ 1.00$; \purple{Repeat}
+	  \item[$J:$] $\$ 2.00$; End
+	  \item[$K:$] $\$ 3.00$; End
+	  \item[$Q:$] $\$ 4.00$; End
+	\end{description}
+    \end{columns}
+  \end{exampleblock}
+
+  \pause
+  \centerline{Conditioning on the \red{first} draw $c$}
+  \vspace{-0.40cm}
+  \[
+    \E[X] = \frac{1}{4}\Big(\teal{\E[X \mid c = A]} + \E[X \mid c = J] + \E[X \mid c = K] + \E[X \mid c = Q]\Big)
+  \]
+
+  \pause
+  \vspace{-0.40cm}
+  \[
+    \teal{\E[X \mid c = A]} = \E[X] + 1
+  \]
+
+  \pause
+  \[
+    4 \ast A + 1 \ast Q = \$ 8.00
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{In-class Exercise: Coin Pattern (Provided by Yifan Pei)}
+    \fignocaption{width = 0.40\textwidth}{figs/coin}
+
+    \vspace{-0.30cm}
+    \[
+      X: \# \text{ of tosses to get $3$ consecutive heads } (HHH)
+    \]
+    \[
+      \E[X]
+    \]
+  \end{exampleblock}
+
+  \pause
+  \vspace{0.50cm}
+  \centerline{Conditioning on the first $3$ tosses}
+
+  \pause
+  \[
+    T, \quad HT, \quad HHT, \quad HHH
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Conditional Expectation \purple{on an Event}]
     \[
       \E[X \mid E] = \sum_{x} x \Pr(X = x \mid E)
     \]
   \end{definition}
 
   \pause
-  \vspace{0.50cm}
   \begin{definition}[Conditional Expectation \red{on a Random Variable}]
     \[
       \E[X \mid Y = y] = \sum_{x} x \Pr(X = x \mid Y = y)
     \]
   \end{definition}
-\end{frame}
-%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%
-\begin{frame}{}
+  \pause
   \begin{alertblock}{Notation:}
     \[
       \E[X \mid Y](y) = \E[X \mid Y = y]
@@ -56,13 +125,10 @@
   \end{alertblock}
 
   \pause
-  \[
-    \E[\E[X \mid Y]] = \sum_{y} \E[X \mid Y = y] \Pr(Y = y)
-  \]
-\end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{frame}{}
+  \begin{theorem}
+    \[
+      \E[X] = \E[\E[X \mid Y]] = \sum_{y} \E[X \mid Y = y] \Pr(Y = y)
+    \]
+  \end{theorem}
 \end{frame}
 %%%%%%%%%%%%%%%

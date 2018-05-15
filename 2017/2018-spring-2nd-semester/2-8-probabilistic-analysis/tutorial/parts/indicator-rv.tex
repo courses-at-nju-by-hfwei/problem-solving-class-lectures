@@ -1,0 +1,76 @@
+% file: parts/indicator-rv.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Hat-check Problem (CLRS Problem $5.2-4$)}
+    \fignocaption{width = 0.40\textwidth}{figs/hats}
+    \[
+      X: \# \text{ of customers who get back their own hat} \qquad \red{\E[X]}
+    \]
+  \end{exampleblock}
+
+  \pause
+  \[
+    I_i = \left\{\begin{array}{lc}
+      1 & \text{customer } c_i \text{ gets back his/her hat} \\
+      0 & \text{o.w.}
+    \end{array}\right.
+  \]
+
+  \pause
+  \[
+    X = \sum_{i=1}^{n} I_i \qquad \E[I_i] = \Pr\Big( c_i \text{ gets back his/her hat} \Big) = \pause \frac{1}{n}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Inversions (CLRS Problem $5.2-5$)}
+    \[
+      A[1 \cdots n] \text{ of } n \text{ distinct numbers}
+    \]
+    \[
+      (i,j) \text{ is an \purple{inversion} of } A : i < j \land A[i] > A[j]
+    \]
+    \[
+      X: \# \text{ of inversions in } A
+    \]
+
+    \pause
+    \[
+      \red{\E[X]} \quad (A \text{ is randomly ordered})
+    \]
+  \end{exampleblock}
+
+  \pause
+  \[
+    \teal{I_{ij}} = \left\{\begin{array}{lc}
+      1 & (A[i], A[j]) \text{ is an inversion} \\
+      0 & \text{o.w.}
+    \end{array}\right.
+  \]
+
+  \[
+    X = \sum_{i=1}^{n-1} \sum_{j>i}^{n} I_{ij} \qquad \pause \E[I_{ij}] = \Pr\Big((i,j) \text{ is an inversion}\Big) = \pause \frac{1}{2}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \centerline{\red{$Q:$} Average \# of \purple{swaps} (\teal{comparisons}) of \textsc{Insertion-Sort}?}
+
+  \vspace{0.30cm}
+  \begin{columns}
+    \column{0.70\textwidth}
+      \pause
+      \fignocaption{width = 0.70\textwidth}{figs/1234-inversions}
+    \column{0.25\textwidth}
+      \pause
+      \[
+	\langle 3214 \rangle \sim \langle 4123 \rangle
+      \]
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%

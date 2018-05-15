@@ -29,8 +29,7 @@
   \begin{align*}
     \E[Y] &= \sum_{i = 1}^{n} i\; \red{\Pr\set{Y = i}} \\
     \onslide<3->{&= \sum_{i = 1}^{n} i\; \red{\Pr\set{A[i] = x}} \\}
-    \onslide<4->{&= \frac{1}{n} \sum_{i = 1}^{n} i \\}
-    \onslide<5->{&= \frac{n+1}{2}}
+    \onslide<4->{&= \frac{1}{n} \sum_{i = 1}^{n} i = \frac{n+1}{2}}
   \end{align*}
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -51,11 +50,11 @@
     \E[Y] &= \sum_{i = 1}^{\red{n-k+1}} i \Pr\set{Y = i} \\
     \onslide<3->{&= \sum_{i = 1}^{n-k+1} i \Pr\set{i \text{ is the first index among $k$ indices {\it s.t.} } A[i] = x} \\}
     \onslide<4->{&= \sum_{i = 1}^{n-k+1} i \red{\frac{\binom{n-i}{k-1}}{\binom{n}{k}}}}
-    \onslide<5->{= \frac{1}{\binom{n}{k}} \teal{\sum_{i = 1}^{n-k+1} i \binom{n-i}{k-1}} \\}
-    \onslide<6->{&= \frac{1}{\binom{n}{k}} \purple{\binom{n+1}{k+1}} = \frac{n+1}{k+1}}
+    \onslide<5->{= \frac{1}{\binom{n}{k}} \teal{\sum_{i = 1}^{n-k+1} i \binom{n-i}{k-1}} \onslide<6->{= \red{\cdots}} \\}
+    \onslide<7->{&= \frac{1}{\binom{n}{k}} \purple{\binom{n+1}{k+1}} = \frac{n+1}{k+1}}
   \end{align*}
 
-  \uncover<7->{
+  \uncover<8->{
     \[
       k = 1 \implies \E[Y] = \frac{n+1}{2}, \qquad k = n \implies \E[Y] = 1
     \]
@@ -71,29 +70,33 @@
 
   \fignocaption{width = 0.30\textwidth}{figs/qrcode-summation-wiki}
   \vspace{-0.30cm}
-  \centerline{Summation by parts (Abel transformation; wiki)}
+  \centerline{Summation by parts (\teal{Abel transformation}; wiki)}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{After-class Exercise:}
+  \begin{exampleblock}{How Did \red{I (an ant)} Evaluate this Summation:}
     \[
       \sum_{i=1}^{n-k+1} i \binom{n-i}{k-1} = \binom{n+1}{k+1}
     \]
   \end{exampleblock}
 
+
   \begin{columns}
     \pause
-    \column{0.50\textwidth}
-      \fignocaption{width = 0.45\textwidth}{figs/concrete-mathematics}{\centerline{\small Chapter $5$: Binomial Coefficients}}
+    \column{0.30\textwidth}
+      \fignocaption{width = 0.70\textwidth}{figs/wolfram-mma}
     \pause
-    \column{0.50\textwidth}
+    \column{0.30\textwidth}
+      \fignocaption{width = 0.70\textwidth}{figs/concrete-mathematics}{\centerline{\small Chapter $5$: Binomial Coefficients}}
+    \pause
+    \column{0.40\textwidth}
       \[
 	r \binom{r-1}{k-1} = k \binom{r}{k}
       \]
 
-      \vspace{0.60cm}
+      \vspace{0.30cm}
       \[
 	\sum_{0 \le k \le n} \binom{k}{m} = \binom{n+1}{m+1}
       \]
@@ -102,23 +105,32 @@
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
-% \begin{frame}{}
-%   \begin{align*}
-%     \sum_{i=1}^{n-k+1} i \binom{n-i}{k-1} &= \sum_{i=0}^{n-k} (i+1) \binom{n-i-1}{k-1} \\
-%     &= \sum_{i=0}^{n-k} \big((n+1) - (n-i)\big) \binom{n-i-1}{k-1} \\
-%     &= \sum_{i=0}^{n-k} (n+1) \binom{n-i-1}{k-1} - \sum_{i=0}^{n-k} (n-i) \binom{n-i-1}{k-1} \\
-%     &= (n+1) \sum_{i=0}^{n-k}\binom{n-i-1}{k-1} - k \sum_{i=0}^{n-k} \binom{n-i}{k} \\
-%     &= (n+1) \sum_{m=k-1}^{n-1}\binom{m}{k-1} - k \sum_{m=k}^{n} \binom{m}{k} \\
-%     &= (n+1) \binom{n}{k} - k \binom{n+1}{k+1} = \binom{n+1}{k+1}
-%   \end{align*}
-% \end{frame}
+\begin{frame}{}
+  \begin{align*}
+    \sum_{i=1}^{n-k+1} i \binom{n-i}{k-1} &= \sum_{i=0}^{n-k} (i+1) \binom{n-i-1}{k-1} \\
+    &= \sum_{i=0}^{n-k} \big((n+1) - (n-i)\big) \binom{n-i-1}{k-1} \\
+    &= \sum_{i=0}^{n-k} (n+1) \binom{n-i-1}{k-1} - \sum_{i=0}^{n-k} (n-i) \binom{n-i-1}{k-1} \\
+    &= (n+1) \sum_{i=0}^{n-k}\binom{n-i-1}{k-1} - k \sum_{i=0}^{n-k} \binom{n-i}{k} \\
+    &= (n+1) \sum_{m=k-1}^{n-1}\binom{m}{k-1} - k \sum_{m=k}^{n} \binom{m}{k} \\
+    &= (n+1) \binom{n}{k} - k \binom{n+1}{k+1} = \binom{n+1}{k+1}
+  \end{align*}
+\end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \centerline{\teal{\large Indicator Random Variables}}
+  \begin{align*}
+    \E[Y] &= \sum_{i=1}^{n-k+1} \red{\Pr\set{Y \ge i}} \\
+    \onslide<2->{&= \sum_{i=1}^{n-k+1} \red{\frac{\binom{n-i+1}{k}}{\binom{n}{k}}} \\}
+    \onslide<3->{&= \frac{1}{\binom{n}{k}} \sum_{i=1}^{n-k+1} \binom{n-i+1}{k} \\}
+    \onslide<4->{&= \frac{1}{\binom{n}{k}} \sum_{r=k}^{n} \binom{r}{k} \\}
+    \onslide<5->{&= \frac{1}{\binom{n}{k}} \binom{n+1}{k+1} = \frac{n+1}{k+1}}
+  \end{align*}
+\end{frame}
+%%%%%%%%%%%%%%%
 
-  \pause
+%%%%%%%%%%%%%%%
+\begin{frame}{}
   \[
     \red{I_{i}} = \left\{\begin{array}{lr}
       1, & \text{if } A[i] \text{ is checked} \\[6pt]
@@ -153,19 +165,6 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{align*}
-    \E[Y] &= \sum_{i = 1}^{n-k+1} i \Pr\set{Y = i} \\
-    \onslide<1->{&= \sum_{i=1}^{n-k+1} \red{\Pr\set{Y \ge i}} \\}
-    \onslide<2->{&= \sum_{i=1}^{n-k+1} \red{\frac{\binom{n-i+1}{k}}{\binom{n}{k}}} \\}
-    \onslide<3->{&= \frac{1}{\binom{n}{k}} \sum_{i=1}^{n-k+1} \binom{n-i+1}{k} \\}
-    \onslide<4->{&= \frac{1}{\binom{n}{k}} \sum_{r=k}^{n} \binom{r}{k} \\}
-    \onslide<5->{&= \frac{1}{\binom{n}{k}} \binom{n+1}{k+1} = \frac{n+1}{k+1}}
-  \end{align*}
-\end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{frame}{}
   \fignocaption{width = 0.40\textwidth}{figs/wrong.jpg}
 
   \pause
@@ -187,11 +186,5 @@
   \[
     i = n \implies \Pr\set{I_{n} = 1} = 0
   \]
-
-  \pause
-  \begin{center}
-    {\red{\large NOT IID}}\\
-    {\teal{\small (Independent and Identically Distributed)}}
-  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%

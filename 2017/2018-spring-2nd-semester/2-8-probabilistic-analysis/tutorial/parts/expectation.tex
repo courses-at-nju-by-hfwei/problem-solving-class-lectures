@@ -2,33 +2,29 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \centerline{\teal{\Large Expectation}}
-
   \begin{definition}[Expectation]
     \[
       \E[X] = \sum_{x} x \Pr(X = x)
     \]
   \end{definition}
-\end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \centerline{\teal{\Large Expectation}}
-
-  \begin{theorem}[Computing Expectation]
-    Let $X$ be a discrete random variable that takes on \red{only nonnegative integer values}.
-
-    \[
-      \E[X] = \sum_{i=1}^{\infty} i \Pr(X = i) = \sum_{i=1}^{\infty} \Pr(X \le i)
-    \]
-  \end{theorem}
 
   \pause
+  \vspace{0.50cm}
+  \begin{theorem}[Computing Expectation]
+    Let $X$ be a discrete random variable that takes on \red{only nonnegative integer values} $\mathbb{N}$.
+
+    \[
+      \E[X] = \textcolor{teal!60}{\sum_{i=1}^{\infty} i \Pr(X = i)} = \sum_{i=1}^{\infty} \Pr(X \ge i)
+    \]
+  \end{theorem}
+  \pause
   \begin{proof}
+    \[
+      \sum_{j=1}^{\infty} \sum_{i=1}^{j} \Pr(X = j) = \sum_{i=1}^{\infty} \sum_{j=i}^{\infty} \Pr(X = j)
+    \]
   \end{proof}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 \input{parts/searching-analysis}
-\input{parts/hat-check}
+\input{parts/indicator-rv}

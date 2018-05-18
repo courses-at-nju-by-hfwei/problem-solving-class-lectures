@@ -48,7 +48,7 @@
   \vspace{-0.50cm}
   \begin{align*}
     \E[Y] &= \sum_{i = 1}^{\red{n-k+1}} i \Pr\set{Y = i} \\
-    \onslide<3->{&= \sum_{i = 1}^{n-k+1} i \Pr\set{i \text{ is the first index among $k$ indices {\it s.t.} } A[i] = x} \\}
+    \onslide<3->{&= \sum_{i = 1}^{n-k+1} i \Pr\set{\red{i \text{ is the first index among $k$ indices {\it s.t.} } A[i] = x}} \\}
     \onslide<4->{&= \sum_{i = 1}^{n-k+1} i \red{\frac{\binom{n-i}{k-1}}{\binom{n}{k}}}}
     \onslide<5->{= \frac{1}{\binom{n}{k}} \teal{\sum_{i = 1}^{n-k+1} i \binom{n-i}{k-1}} \onslide<6->{= \red{\cdots}} \\}
     \onslide<7->{&= \frac{1}{\binom{n}{k}} \purple{\binom{n+1}{k+1}} = \frac{n+1}{k+1}}

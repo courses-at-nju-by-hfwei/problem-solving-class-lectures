@@ -82,7 +82,7 @@
   \begin{exampleblock}{In-class Exercise: Coin Pattern (Provided by Yifan Pei)}
     \fignocaption{width = 0.40\textwidth}{figs/coin}
 
-    \vspace{-0.30cm}
+    \vspace{-0.50cm}
     \[
       X: \# \text{ of tosses to get $3$ consecutive heads } (HHH)
     \]
@@ -92,12 +92,19 @@
   \end{exampleblock}
 
   \pause
-  \vspace{0.50cm}
+  \vspace{0.30cm}
   \centerline{Conditioning on the first $3$ tosses}
 
   \pause
+  \vspace{-0.40cm}
   \[
     T, \quad HT, \quad HHT, \quad HHH
+  \]
+
+  \pause
+  \vspace{-0.40cm}
+  \[
+    \E[X] = \frac{1}{2} (\E[X] + 1) + \frac{1}{4} (\E[X] + 2) + \frac{1}{8} (\E[X] + 3) + \frac{1}{8} \times 3
   \]
 \end{frame}
 %%%%%%%%%%%%%%%

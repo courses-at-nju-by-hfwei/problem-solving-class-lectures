@@ -1,0 +1,80 @@
+% file: parts/selection.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Finding the $2$nd Smallest Element (Problem $9.1-1$)}
+    Show that the $2$nd smallest of $n$ elements can be found with $n + \lceil \log n \rceil - 2$
+    comparisons in the worst case.
+  \end{exampleblock}
+
+  \pause
+  \[
+    (n-1) + (n-1-1) = 2n-3
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    n + \lceil \log n \rceil - 2 = (n-1) + (\red{\lceil \log n \rceil} - 1)
+  \]
+
+  \pause
+  \begin{adjustbox}{max totalsize={.7\textwidth}{.6\textheight},center}
+    \input{tikz/tournament-tree}
+  \end{adjustbox}
+
+  % \# \text{Round} = \lceil \log n \rceil
+  \uncover<4->{
+    \[
+      \# \text{\red{Potential} $2$nd smallest elements} \le \lceil \log n \rceil
+    \]
+  }
+
+  \uncover<5->{
+    \centerline{\red{\large $Q:$ Can we do even better?}}
+  }
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \Omega = n + \lceil \log n \rceil - 2 \pause = (n-1) + (\red{\lceil \log n \rceil} - 1)
+  \]
+
+  \pause
+  \fignocaption{width = 0.32\textwidth}{figs/knuth-vol3}
+  \centerline{\teal{TAOCP Vol 3 (Page 209, Section 5.3.3)}}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{$k$ Numbers Closest to the Median (Problem $9.3-7$)}
+    \[
+      S: n \text{ distinct numbers} \qquad k \le n
+    \]
+  \end{exampleblock}
+
+  \pause
+  \[
+    \frac{n}{2} - \frac{k}{2} \sim \frac{n}{2} + \frac{k}{2}
+  \]
+
+  \pause
+  \[
+    S = \set{800, 6, 900, \red{50}, 7}, \quad k = 2 \implies \set{6,7}
+  \]
+
+  \pause
+  \[
+    S - 50 = \set{750, -44, 850, \red{0}, -43}
+  \]
+
+  \pause
+  \vspace{0.50cm}
+  \centerline{\teal{median + subtraction} + \red{$(k+1)$-th smallest + partition} + \teal{add}}
+\end{frame}
+%%%%%%%%%%%%%%%

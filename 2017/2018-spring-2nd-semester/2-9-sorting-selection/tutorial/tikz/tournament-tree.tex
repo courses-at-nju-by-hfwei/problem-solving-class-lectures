@@ -1,0 +1,31 @@
+% file: tournament.tex
+
+\begin{tikzpicture}[level distance = 50pt, sibling distance = 18pt,
+  edge from parent/.style= { % added code
+      draw, edge from parent path = {(\tikzparentnode) -- (\tikzchildnode)}}]
+  \tikzset{every tree node/.style = 
+    {align = center, circle, draw, fill = blue!20, font = \Large}}
+
+    \Tree [.{$x_6$}	
+	    [.\textcolor<3->{red}{{$x_4$}}
+	       [.{$x_2$}
+		 [.{$x_1$} ]
+		 [.{$x_2$} ]
+	       ] 
+	       [.{$x_4$} 
+		 [.{$x_3$} ]
+		 [.{$x_4$} ]
+	       ]
+            ]
+	    [.{$x_6$} 
+	      [.{$x_6$} 
+		[.\textcolor<3->{red}{{$x_5$}} ] 
+		[.{$x_6$} ] 
+	      ] 
+	      [.{\textcolor<3->{red}{$x_7$}} 
+		[.{$x_7$} ] 
+		[.{$x_8$} ] 
+	      ]
+	   ] 
+        ]
+\end{tikzpicture}

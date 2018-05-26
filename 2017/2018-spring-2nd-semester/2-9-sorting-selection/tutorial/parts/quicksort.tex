@@ -2,11 +2,14 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \centerline{\teal{\large \textsc{Quicksort} Invented by Tony Hoare in 1959/1960}}
-  \fignocaption{width = 0.40\textwidth}{figs/tony-hoare.png}
+  \centerline{\teal{\large \textsc{Quicksort} (Tony Hoare, 1959/1960)}}
+  \fignocaption{width = 0.35\textwidth}{figs/tony-hoare.png}
 
   \pause
-  \centerline{\texttt{null pointer}}
+  \begin{center}
+    Hoare Logic: $\set{P} S \set{Q}$  \pause \\[4pt]
+    \texttt{\red{null pointer}}
+  \end{center}
 
   \pause
   \begin{quote}
@@ -19,7 +22,7 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{exampleblock}{Best-Case Complexity of \textsc{Quicksort} ($7.4-2$)}
-    \red{\textbf{\textit{Show that}}} \textsc{Quicksort}'s best-case running time is $\Omega(n \log n)$.
+    Show that \textsc{Quicksort}'s \red{\it best-case} running time is $\Omega(n \log n)$.
   \end{exampleblock}
 
   \pause
@@ -50,8 +53,31 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \begin{exampleblock}{Sorting Almost-Sorted Inputs (Problem $7.2-4$)}
+    Argue that \textsc{Insertion-Sort} would tend to beat \textsc{Quicksort} on \red{\it almost-sorted} inputs.
+  \end{exampleblock}
+
+  \pause
+  \[
+    \# \text{ inversions} \pause = \red{\Theta(n)}
+  \]
+
+  \pause
+  \[
+    \textsc{Insertion-sort}: \Theta(n) 
+  \]
+
+  \pause
+  \[
+    \textsc{Quicksort}: \Omega(n \log n)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
   \begin{exampleblock}{Median-of-3 \textsc{Partition} (Problem $7-5$)}
-    \red{\textbf{\textit{Argue that}}} in the $\Omega(n \log n)$ running time of \textsc{Quicksort}, \\
+    Argue that in the $\Omega(n \log n)$ running time of \textsc{Quicksort}, \\
     the \red{\textit{median-of-3}} method affects only the constant factor.
   \end{exampleblock}
 
@@ -70,5 +96,16 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \begin{columns}
+    \column{0.70\textwidth}
+      \uncover<1->{\fignocaption{width = 0.95\textwidth}{figs/quicksort-analysis-paper.png}}
+      \uncover<2->{\fignocaption{width = 0.95\textwidth}{figs/median-of-3-time}}
+      \uncover<3->{\fignocaption{width = 0.95\textwidth}{figs/quicksort-time}}
+    \column{0.30\textwidth}
+      \uncover<1->{
+	\fignocaption{width = 0.60\textwidth}{figs/sedgewick}
+	\centerline{\teal{Robert Sedgewick}}
+      }
+  \end{columns}
 \end{frame}
 %%%%%%%%%%%%%%%

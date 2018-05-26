@@ -5,6 +5,21 @@
   \begin{exampleblock}{Sorting $[0, n^3-1]$ (Problem $8.3-4$)}
     Sort $n$ integers in $[0, n^3-1]$ in $O(n)$ time.
   \end{exampleblock}
+
+  \pause
+  \[
+    n\text{-ary} \qquad d = 3
+  \]
+
+  \pause
+  \[
+    n = 5: [15, 39, 20, 123, 98] = \set{030, 124, 040, 443, 343}
+  \]
+
+  \pause
+  \[
+    \Theta\Big(d (\underbrace{n}_{\teal{n}} + \underbrace{n}_{\red{k}})\Big) = \Theta(n)
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -25,22 +40,22 @@
       \fignocaption{width = 0.60\textwidth}{figs/counting-sort-cycle-example}
 
       \pause
-      \uncover<5->{\centerline{\texttt{\teal{While ($i \ge 1$):}}}}
+      \uncover<5->{\centerline{\texttt{\teal{for ($i \gets n \;\textbf{to}\; 1$):}}}}
       \fignocaption{width = 0.60\textwidth}{figs/counting-sort-cycle}
   \end{columns}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
-\begin{frame}{}
-  \begin{columns}
-    \column{0.50\textwidth}
-      \fignocaption{width = 0.60\textwidth}{figs/counting-sort-cycle-example}
-
-      \centerline{\texttt{\teal{While ($i \ge 1$):}}}
-      \fignocaption{width = 0.60\textwidth}{figs/counting-sort-cycle}
-    \column{0.50\textwidth}
-      Code here
-  \end{columns}
-\end{frame}
+% \begin{frame}{}
+%   \begin{columns}
+%     \column{0.50\textwidth}
+%       \fignocaption{width = 0.60\textwidth}{figs/counting-sort-cycle-example}
+% 
+%       \centerline{\texttt{\teal{for ($i \gets n \;\textbf{to}\; 1$):}}}
+%       \fignocaption{width = 0.60\textwidth}{figs/counting-sort-cycle}
+%     \column{0.50\textwidth}
+%       Code here
+%   \end{columns}
+% \end{frame}
 %%%%%%%%%%%%%%%

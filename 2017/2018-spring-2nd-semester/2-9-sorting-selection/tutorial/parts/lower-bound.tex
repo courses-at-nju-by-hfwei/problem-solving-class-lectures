@@ -2,8 +2,7 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{The $\frac{n}{k}$-sorted Problem (Problem $8.1-4$)}
-    \centerline{\teal{Sorts an already $\frac{n}{k}$-sorted array}}
+  \begin{exampleblock}{Sorts a $\frac{n}{k}$-sorted Array (Problem $8.1-4$)}
     \fignocaption{width = 0.40\textwidth}{figs/k-sorted}
 
     \pause
@@ -11,13 +10,18 @@
     \[
       \Omega(n \log k) \pause \qquad O(n \log k)
     \]
-
-    \pause
-    \vspace{-0.30cm}
-    \[
-      \teal{(k!)^{\frac{n}{k}}} \le \red{L} \le \teal{2^{H}}
-    \]
   \end{exampleblock}
+
+  \pause
+  \vspace{-0.30cm}
+  \[
+    \Omega: \frac{n}{k} (k \log k)
+  \]
+
+  \pause
+  \[
+    \teal{(k!)^{\frac{n}{k}}} \le \red{L} \le \teal{2^{H}}
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%
 

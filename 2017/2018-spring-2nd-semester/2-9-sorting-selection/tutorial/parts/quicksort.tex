@@ -1,0 +1,70 @@
+% file: parts/quicksort.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fignocaption{width = 0.60\textwidth}{figs/child-hole}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Best-Case Complexity of \textsc{Quicksort} ($7.4-2$)}
+    \red{\textbf{\textit{Show that}}} \textsc{Quicksort}'s best-case running time is $\Omega(n \log n)$.
+  \end{exampleblock}
+
+  \pause
+  \[
+    T(n) = 2T(\frac{n}{2}) + \Theta(n)
+  \]
+
+  \pause
+  \[
+    T(n) = \underbrace{n}_{\textsc{\blue{Partition}}} \underbrace{\log n}_{\text{\blue{Height}}} \quad \text{(Recursion Tree)}
+  \]
+
+  \pause
+  \vspace{0.30cm}
+  \[
+    \purple{\boxed{T(n) = \min_{0 \le q \le n-1} \Big( T(q) + T(n-q-1) \Big) + \Theta(n)}}
+  \]
+
+  \pause
+  \[
+    T(n) = \Omega(n \log n)
+  \]
+
+  \pause
+  \centerline{\teal{\large By substitution.}}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Median-of-3 \textsc{Partition} (Problem $7-5$)}
+    \red{\textbf{\textit{Argue that}}} in the $\Omega(n \log n)$ running time of \textsc{Quicksort}, \\
+    the \red{\textit{median-of-3}} method affects only the constant factor.
+  \end{exampleblock}
+
+  \pause
+  \fignocaption{width = 0.40\textwidth}{figs/worst-best-life}
+
+  \pause
+  \[
+    \purple{\boxed{T(n) = \min_{0 \le q \le n-1} \Big( T(q) + T(n-q-1) \Big) + \Theta(n)}}
+  \]
+  \[
+    T(n) = \Omega(n \log n)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+\end{frame}
+%%%%%%%%%%%%%%%
+

@@ -114,50 +114,52 @@
   \[
     \violet{\boxed{X: \# \text{ of tosses to get } HHH}}
   \]
+
   \[
     T, \quad HT, \quad HHT, \quad HHH
   \]
+
+  \fignocaption{width = 0.70\textwidth}{figs/HHH-automaton}
+
   \[
     \E[X] = \frac{1}{2} (\E[X] + 1) + \frac{1}{4} (\E[X] + 2) + \frac{1}{8} (\E[X] + 3) + \frac{1}{8} \times 3
   \]
 
-  \pause
-  \vspace{0.30cm}
-  \[
-    \violet{\boxed{X: \# \text{ of tosses to get } HTH}}
-  \]
-  \[
-    T, \quad HH, \quad HTT, \quad HTH
-  \]
-  \[
-    \E[X] = \frac{1}{2} (\E[X] + 1) + \frac{1}{4} (\textcolor<5->{red}{\E[X] + 2}) + \frac{1}{8} (\E[X] + 3) + \frac{1}{8} \times 3
-  \]
-
-  \pause
-  \vspace{0.30cm}
-  \[
-    \teal{\boxed{\forall P \in \set{H,T}^{3}: \E[X_{P}] = 14}}
-  \]
-  \pause
-  \vspace{-0.30cm}
-  \[
-    \teal{\boxed{\forall P \in \set{H,T}^{n}: \E[X_{P}] = 2(2^n - 1)}}
-  \]
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \fignocaption{width = 0.70\textwidth}{figs/HHH-automaton}
+  \[
+    \violet{\boxed{X: \# \text{ of tosses to get } HHT}}
+  \]
+
+  \[
+    T, \quad HT, \quad HHH, \quad HHT
+  \]
+
+  \[
+    \E[X] = \frac{1}{2} (\E[X] + 1) + \frac{1}{4} (\E[X] + 2) + \frac{1}{8} (\textcolor<2->{red}{\E[X] + 3}) + \frac{1}{8} \times 3
+  \]
+
+  % \pause
+  % \[
+  %   \teal{\boxed{\forall P \in \set{H,T}^{3}: \E[X_{P}] = 14}}
+  % \]
+  % \pause
+  % \vspace{-0.30cm}
+  % \[
+  %   \teal{\boxed{\forall P \in \set{H,T}^{n}: \E[X_{P}] = 2(2^n - 1)}}
+  % \]
 
   \pause
-  \fignocaption{width = 0.70\textwidth}{figs/HTH-automaton}
+  \fignocaption{width = 0.70\textwidth}{figs/HHT-automaton}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \fignocaption{width = 0.70\textwidth}{figs/HTH-automaton}
+  \fignocaption{width = 0.70\textwidth}{figs/HHT-automaton}
 
   \pause
   \vspace{-0.30cm}
@@ -170,18 +172,15 @@
       \pause
       \begin{align*}
 	S_0 &= \frac{1}{2}(1 + S_0 + 1 + S_1) \\
-	S_1 &= \frac{1}{2}(1 + S_1 + 1 + S_2) \\
-	S_2 &= \frac{1}{2}(1 + S_0 + 1 + S_3) \\
+	S_1 &= \frac{1}{2}(1 + S_0 + 1 + S_2) \\
+	S_2 &= \frac{1}{2}(1 + S_2 + 1 + S_3) \\
 	S_3 &= 0
       \end{align*}
     \column{0.30\textwidth}
       \pause
-      \begin{align*}
-	\red{S_0} &= 10 \\
-	S_1 &= 8 \\
-	S_2 &= 6 \\
-	S_3 &= 0
-      \end{align*}
+      \[
+	\red{S_0} = 8
+      \]
   \end{columns}
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -189,10 +188,66 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \fignocaption{width = 0.60\textwidth}{figs/HHH-automaton}
-  \fignocaption{width = 0.60\textwidth}{figs/HTH-automaton}
+  \fignocaption{width = 0.60\textwidth}{figs/HHT-automaton}
 
+  \only<1>{
+    \[
+      \E[X_{HHH}] = 14 > \E[X_{HHT}] = 8
+    \]
+  }
+
+  \only<2->{
+    \vspace{-0.60cm}
+    \fignocaption{width = 0.60\textwidth}{figs/HTH-automaton}
+  }
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
   \[
-    \E[X_{HHH}] = 14 > \E[X_{HTH}] = 10
+    A : A = \sum_{k=1}^{n} 2^{k-1} \red{[A^{(k)} = A_{(k)}]} \qquad \E[X_{A}] = 2 (A : A)
+  \]
+
+  \pause
+  \vspace{-0.30cm}
+  \fignocaption{width = 0.35\textwidth}{figs/HT-pattern}
+
+  \pause
+  \[
+    A = THTTH \qquad \E[X_A] = 2(2^1 + 2^4) = 36
+  \]
+
+  % \pause
+  % \vspace{-1.20cm}
+  % \[
+  %   A = HTHTHHTHTH \qquad \pause \E[X_A] = 2(2^0 + 2^2 + 2^4 + 2^9) = 1066
+  % \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \red{\boxed{A : A = \sum_{k=1}^{n} 2^{k-1} [A^{(k)} = A_{(k)}] \qquad \E[X_{A}] = 2 (A : A)}}
+  \]
+
+  \pause
+  \vspace{0.30cm}
+  \[
+    A = HHH \qquad A = HHT
+  \]
+
+  \pause
+  \vspace{0.30cm}
+  \[
+    \E[X_{\red{H^n}}] = 2(2^0 + 2^1 + 2^{n-1}) = 2(2^n - 1)
+  \]
+
+  \pause
+  \vspace{0.30cm}
+  \[
+    \E[X_{\red{H^{n-1} T}}] = 2(2^{n-1}) = 2^n
   \]
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -201,60 +256,28 @@
 \begin{frame}{}
   \fignocaption{width = 0.90\textwidth}{figs/THTTH-automaton}
 
-  \pause
   \vspace{-0.50cm}
-  \begin{align*}
-    S_0 &= \frac{1}{2}(1 + \textcolor<3->{red}{S_0} + 1 + S_1) \\
-    S_1 &= \frac{1}{2}(1 + \textcolor<3->{red}{S_1} + 1 + S_2) \\
-    S_2 &= \frac{1}{2}(1 + \textcolor<3->{red}{S_0} + 1 + S_3) \\
-    S_3 &= \frac{1}{2}(1 + \textcolor<3->{red}{S_2} + 1 + S_4) \\
-    S_4 &= \frac{1}{2}(1 + \textcolor<3->{red}{S_1} + 1 + S_5) \\
-    S_5 &= 0
-  \end{align*}
-\end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \[
-    A : A = \sum_{k=1}^{n} 2^{k-1} \red{[A^{(k)} = A_{(k)}]} \qquad \uncover<3->{\E[X_{A}] = 2 (A : A)}
-  \]
-
-  \pause
-  \vspace{-0.30cm}
-  \fignocaption{width = 0.40\textwidth}{figs/HT-pattern}
-
-  \uncover<4->{
-    \[
-      A = THTTH \qquad \uncover<5->{\E[X_A] = 2(2^1 + 2^4) = 36}
-    \]
-  }
-  \uncover<5->{
-    \vspace{-0.30cm}
-    \[
-      A = HTHTHHTHTH \qquad \uncover<5->{\E[X_A] = 2(2^0 + 2^2 + 2^4 + 2^9) = 1066}
-    \]
-  }
-\end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \[
-    \teal{\boxed{A : A = \sum_{k=1}^{n} 2^{k-1} [A^{(k)} = A_{(k)}] \qquad \E[X_{A}] = 2 (A : A)}}
-  \]
+  \begin{columns}
+    \column{0.60\textwidth}
+      \pause
+      \begin{align*}
+	S_0 &= \frac{1}{2}(1 + \red{S_0} + 1 + S_1) \\
+	S_1 &= \frac{1}{2}(1 + \red{S_1} + 1 + S_2) \\
+	S_2 &= \frac{1}{2}(1 + \red{S_0} + 1 + S_3) \\
+	S_3 &= \frac{1}{2}(1 + \red{S_2} + 1 + S_4) \\
+	S_4 &= \frac{1}{2}(1 + \red{S_1} + 1 + S_5) \\
+	S_5 &= 0
+      \end{align*}
+    \column{0.40\textwidth}
+      \pause
+      \fignocaption{width = 0.80\textwidth}{figs/HT-pattern}
+      \[
+	2\sum_{k=1}^{n} 2^{k-1} \red{[A^{(k)} = A_{(k)}]}
+      \]
+  \end{columns}
 
   \pause
-  \vspace{0.80cm}
-  \[
-    \E[X_{H^n}] = 2(2^0 + 2^1 + 2^{n-1}) = 2(2^n - 1)
-  \]
-
-  \pause
-  \vspace{0.30cm}
-  \[
-    \E[X_{H^{\lceil \frac{n}{2} \rceil} T^{\lfloor \frac{n}{2} \rfloor}}] = 2(2^{n-1}) = 2^n
-  \]
+  \tikz[remember picture, overlay] \node[anchor=center] at (current page.center) {\includegraphics[scale = 0.618]{figs/qrcode-mathse}};
 \end{frame}
 %%%%%%%%%%%%%%%
 

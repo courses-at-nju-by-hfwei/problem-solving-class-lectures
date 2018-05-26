@@ -1,0 +1,41 @@
+% file: parts/lower-bound.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{The $\frac{n}{k}$-sorted Problem (Problem $8.1-4$)}
+    \centerline{\teal{Sorts an already $\frac{n}{k}$-sorted array}}
+    \fignocaption{width = 0.40\textwidth}{figs/k-sorted}
+
+    \pause
+    \vspace{-0.50cm}
+    \[
+      \Omega(n \log k) \pause \qquad O(n \log k)
+    \]
+
+    \pause
+    \vspace{-0.30cm}
+    \[
+      \teal{(k!)^{\frac{n}{k}}} \le \red{L} \le \teal{2^{H}}
+    \]
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \centerline{\teal{$\frac{n}{k}$-sorts an arbitrary array}}
+  \fignocaption{width = 0.40\textwidth}{figs/k-sorted}
+
+  \pause
+  \vspace{-0.30cm}
+  \[
+    \red{O(?)} \pause \qquad \red{\Omega(?)}
+  \]
+
+  \pause
+  \vspace{-0.30cm}
+  \[
+    L \ge \red{\binom{n}{\underbrace{k, \ldots, k}_{\frac{n}{k}}}} = \frac{n!}{(k!)^{\frac{n}{k}}} \pause \implies \Omega(n \log(n/k))
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%

@@ -1,0 +1,21 @@
+% file: algs/tree-traversal/dfs/LCRS-rooted-tree-traversal.tex
+
+\begin{algorithm}[H]
+  \begin{algorithmic}[]
+    \Procedure{Recursive-DFS}{$t$}
+      \State print $t.key$
+
+      \Statex
+      \If{$t.lc \neq \textsf{NIL}$}
+	\State \Call{Recursive-DFS}{$t.lc$}
+      \EndIf
+      
+      \If{$t.rs \neq \textsf{NIL}$}
+	\State \Call{Recursive-DFS}{$t.rs$}
+      \EndIf
+    \EndProcedure
+
+    \Statex
+    \State \Call{Recursive-DFS}{$T.root$}
+  \end{algorithmic}
+\end{algorithm}

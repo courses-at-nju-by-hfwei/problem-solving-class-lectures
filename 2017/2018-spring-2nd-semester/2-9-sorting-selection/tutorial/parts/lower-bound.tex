@@ -43,3 +43,66 @@
   \]
 \end{frame}
 %%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    O(n \log k)
+  \]
+
+  \pause
+  \begin{CJK*}{UTF8}{gbsn}
+    \centerline{\red{反馈:} 这是什么意思? 我们并没学过多变量的渐近符号的定义。} 
+  \end{CJK*}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{exampleblock}{Problem $3.1-8$}
+    When $n$ and $m$ go to $\infty$ \red{independently at different rates}:
+    \begin{align*}
+      O(g(n,m)) = \{f(n,m) \mid \exists & c > 0, \exists n_0 > 0, \exists m_0 > 0: \\
+	& \forall n \ge n_0 \red{\lor} m \ge m_0, 0 \le f(n,m) \le cg(n,m)\}
+    \end{align*}
+  \end{exampleblock}
+
+  \pause
+  \vspace{0.30cm}
+  \[
+    k = C_1 \qquad k = \Theta(n); \qquad n \to \infty
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \Theta(1 + \alpha), \quad \alpha = \frac{n}{m}
+  \]
+
+  \pause
+  \vspace{0.30cm}
+  \centerline{\red{\large Two ways of understanding}}
+
+  \pause
+  \begin{columns}
+    \column{0.50\textwidth}
+      \[
+	\teal{1 + \alpha}
+      \]
+      \fignocaption{width = 0.45\textwidth}{figs/knuth-vol3}
+    \pause
+    \column{0.50\textwidth}
+      \[
+	\teal{\Theta(1 + \alpha)}
+      \]
+
+      \[
+	n \to \infty, m \to \infty
+      \]
+
+      \[
+	n = f(m), m \to \infty
+      \]
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%

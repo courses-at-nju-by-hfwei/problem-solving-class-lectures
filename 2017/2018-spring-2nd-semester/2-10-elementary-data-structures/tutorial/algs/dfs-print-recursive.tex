@@ -1,0 +1,21 @@
+% file: algs/tree-traversal/dfs/dfs-print-recursive.tex
+
+\begin{algorithm}[H]
+  \begin{algorithmic}[]
+    \Procedure{Recursive-DFS}{$t$}
+      \State \textcolor<3->{red}{print $t.key$}
+
+      \Statex
+      \If{$t.left \neq \textsf{NIL}$}
+	\State \Call{Recursive-DFS}{$t.left$}
+      \EndIf
+      
+      \If{$t.right \neq \textsf{NIL}$}
+	\State \Call{Recursive-DFS}{$t.right$}
+      \EndIf
+    \EndProcedure
+
+    \Statex
+    \State \teal{\Call{Recursive-DFS}{$T.root$}}
+  \end{algorithmic}
+\end{algorithm}

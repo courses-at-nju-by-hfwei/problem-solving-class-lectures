@@ -1,0 +1,27 @@
+% file: algs/tree-traversal/dfs/dfs-print-nonrecursive.tex
+
+\begin{algorithm}[H]
+  \begin{algorithmic}[]
+    \Procedure{Iterative-DFS}{$t$}
+      \State $S.\Call{Push}{t}$ \Comment{$S:$ stack}
+
+      \Statex
+      \While{$S \neq \emptyset$}
+	\State $v \gets S.\Call{Pop}{\null}$
+	\State print $v.key$
+
+	\Statex
+	\If{$v.right \neq \textsf{NIL}$}
+	  \State $S.\Call{Push}{v.right}$
+	\EndIf
+
+	\If{$v.left \neq \textsf{NIL}$}
+	  \State $S.\Call{Push}{v.left}$
+	\EndIf
+      \EndWhile
+    \EndProcedure
+
+    \Statex
+    \State \teal{\Call{Iterative-DFS}{$T.root$}}
+  \end{algorithmic}
+\end{algorithm}

@@ -11,20 +11,24 @@
   \end{columns}
 
   \pause
-  \vspace{0.60cm}
+  \vspace{0.80cm}
   \centerline{\red{\purple{head \& teal}: following the same direction}}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{Underflow and Overflow of a Queue (Problem 10.1-4)}
-    \fignocaption{width = 0.50\textwidth}{figs/circular-queue}
+  \begin{exampleblock}{Underflow and Overflow of a Circular Queue (Problem 10.1-4)}
+    \fignocaption{width = 0.40\textwidth}{figs/circular-queue}
   \end{exampleblock}
 
   \begin{columns}
+    \pause
     \column{0.50\textwidth}
+      \input{algs/circular-queue-dequeue}
+    \pause
     \column{0.50\textwidth}
+      \input{algs/circular-queue-enqueue}
   \end{columns}
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -39,7 +43,7 @@
 
   \pause
   \[
-    \textsc{Queue-Empty}
+    \teal{\textsc{Queue-Empty}}
   \]
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -62,15 +66,66 @@
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
-\begin{frame}{}
-  \begin{exampleblock}{Deque; Double-ended Queue (Problem 10.1-5)}
-  \end{exampleblock}
-\end{frame}
+% \begin{frame}{}
+%   \begin{exampleblock}{Deque; Double-ended Queue (Problem 10.1-5)}
+%   \end{exampleblock}
+% \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{exampleblock}{A Queue, Two Stacks (Problem 10.1-6)}
+    Show how to implement \purple{a queue} using \teal{two stacks}.
+
+    \uncover<5->{Analyze the \red{running time} of the queue operations.}
   \end{exampleblock}
+
+  \begin{columns}
+    \column{0.50\textwidth}
+      \pause
+      \input{algs/queue-2stack}
+    \column{0.50\textwidth}
+      \pause
+      \centerline{\red{\large Correctness?}}
+
+      \pause
+      \begin{gather*}
+	\textsc{Enq}(x, t_1), \textsc{Enq}(y, t_2) \land \purple{t_1 < t_2} \\
+	\implies \\
+	\textsc{Deq}(x, t_3), \textsc{Deq}(y, t_4) \land \purple{t_3 < t_4}
+      \end{gather*}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{table}
+    \begin{tabular}{ccccc}
+      {\it \red{item}} & Push into $S_1$ & Pop from $S_1$ & Push into $S_2$ & Pop from $S_2$ \\
+      \red{$x$} & $1$ & $1$ & $1$ & $1$
+    \end{tabular}
+  \end{table}
+
+  \begin{columns}
+    \column{0.50\textwidth}
+      \pause
+      \begin{align*}
+	\hat{c}_{\textsc{Enq}} &= 4 \\
+	\hat{c}_{\textsc{Deq}} &= 0
+      \end{align*}
+    \column{0.50\textwidth}
+      \pause
+      \begin{align*}
+	\hat{c}_{\textsc{Enq}} &= 3 \\
+	\hat{c}_{\textsc{Deq}} &= 1 
+      \end{align*}
+  \end{columns}
+
+  % \pause
+  % \vspace{-0.60cm}
+  % \[ 
+  %   \sum_{i=1}^{n} a_i \ge 0 \pause \Longleftarrow \sum_{i=1}^{n} a_i = \#S_1 \times 2
+  % \]
 \end{frame}
 %%%%%%%%%%%%%%%

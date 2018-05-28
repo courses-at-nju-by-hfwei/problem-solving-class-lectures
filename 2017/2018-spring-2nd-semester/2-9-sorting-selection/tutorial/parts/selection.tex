@@ -16,19 +16,20 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \[
-    n + \lceil \log n \rceil - 2 = (n-1) + (\red{\lceil \log n \rceil} - 1)
-  \]
-
-  \pause
   \begin{adjustbox}{max totalsize={.7\textwidth}{.6\textheight},center}
     \input{tikz/tournament-tree}
   \end{adjustbox}
 
-  % \# \text{Round} = \lceil \log n \rceil
-  \uncover<4->{
+  \uncover<3->{
     \[
-      \# \text{\red{Potential} $2$nd smallest elements} \le \lceil \log n \rceil
+      \#\; \text{\red{Potential} $2$nd smallest elements} \;\red{\le}\; \lceil \log n \rceil
+    \]
+  }
+
+  \uncover<4->{
+    \vspace{-0.50cm}
+    \[
+      n + \lceil \log n \rceil - 2 = (n-1) + (\red{\lceil \log n \rceil} - 1)
     \]
   }
 
@@ -40,13 +41,16 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \centerline{\teal{\large Adversary Argument}}
+
+  \pause
   \[
-    \Omega = n + \lceil \log n \rceil - 2 \pause = (n-1) + (\red{\lceil \log n \rceil} - 1)
+    \Omega = n + \lceil \log n \rceil - 2 = (n-1) + (\red{\lceil \log n \rceil} - 1)
   \]
 
   \pause
-  \fignocaption{width = 0.32\textwidth}{figs/knuth-vol3}
-  \centerline{\teal{TAOCP Vol 3 (Page 209, Section 5.3.3)}}
+  \fignocaption{width = 0.25\textwidth}{figs/knuth-vol3}
+  \centerline{\teal{TAOCP, Vol. 3 {\small (Page 209, Section 5.3.3)}}}
 \end{frame}
 %%%%%%%%%%%%%%%
 

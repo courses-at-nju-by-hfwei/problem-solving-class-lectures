@@ -28,7 +28,7 @@
   \pause
   \vspace{0.30cm}
   \[
-    \teal{3n \cdot T(\frac{\Box}{n})}
+    \teal{3n \cdot T(\Box \div n)}
   \]
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -38,7 +38,7 @@
   \begin{exampleblock}{Sorting in Place in Linear Time (Problem $8-2\; (e)$)}
     Suppose that the $n$ records have keys in the range $[\teal{0}, k]$.
 
-    Modify \textsc{Counting-Sort} to sort them \red{in place ($O(k)$)} in \red{$O(n + k)$} time.
+    Modify \textsc{Counting-Sort} to sort them \red{in place} {\teal{\small ($O(k)$)}} in \red{$O(n + k)$} time.
   \end{exampleblock}
 
   \begin{columns}
@@ -53,6 +53,17 @@
       \uncover<5->{\centerline{\texttt{\teal{for ($i \gets n \;\textbf{to}\; 1$):}}}}
       \fignocaption{width = 0.60\textwidth}{figs/counting-sort-cycle}
   \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \centerline{\teal{Assigning elements according to $C$}}
+  \fignocaption{width = 0.40\textwidth}{figs/counting-sort-noCprime}
+
+  \pause
+  \vspace{0.50cm}
+  \centerline{\large \red{$Q:$ What is the possible problem?}}
 \end{frame}
 %%%%%%%%%%%%%%%
 

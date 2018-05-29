@@ -1,11 +1,62 @@
 % file: parts/pointers.tex
 
 %%%%%%%%%%%%%%%
+% \begin{frame}{}
+%   \begin{exampleblock}{Compactation (Problem $10.3-4$)}
+%     Keep all elements of a doubly linked list compact in storage,
+%     using the first $m$ index locations in the multiple-array representation.
+% 
+%     \centerline{\textsc{Allocate-Object} \quad \textsc{Free-Object}}
+%   \end{exampleblock}
+% 
+%   \pause
+%   \vspace{0.50cm}
+%   \centerline{Using the array implementation of a stack.}
+% \end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
 \begin{frame}{}
+  \begin{exampleblock}{\textsc{Compactify-List} (Problem $10.3-5$)}
+    \[
+      \textsc{Compactify-List}(L, F)
+    \]
+
+    \[
+      L: \text{ doubly linked list},\quad |L| = n
+    \]
+    \[
+      F: \text{ doubly linked free list},\quad |F| = m - n
+    \]
+
+    \[
+      \Theta(n)
+    \]
+  \end{exampleblock}
+
+  \fignocaption{width = 0.40\textwidth}{figs/after-compact}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \fignocaption{width = 0.50\textwidth}{figs/after-compact}
+  \fignocaption{width = 0.60\textwidth}{figs/before-compact}
+
+  \pause
+  \centerline{\teal{\large Swap $(0,1)$ pairs}}
+
+  \pause
+  \[
+    \red{\Theta(n)}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \centerline{\teal{\large \textsc{Hoare-Partition}}}
+  \vspace{0.60cm}
+  \fignocaption{width = 0.80\textwidth}{figs/hoare-partition-example}
 \end{frame}
 %%%%%%%%%%%%%%%

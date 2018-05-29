@@ -55,6 +55,266 @@
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
+% \begin{frame}{}
+%   \begin{enumerate}[(I)]
+%     \setlength{\itemsep}{10pt}
+%     \item Any algorithm that finds \textsl{secondLargest} must also find \textsl{max}.
+%       \begin{itemize}
+% 	\item The \textsl{secondLargest} must have lost in one comparison.
+%       \end{itemize}
+%     \item $n-1$ comparisons with distinct losers are needed to find \textsl{max}.
+%       \begin{itemize}
+% 	\item Every other key than \textsl{max} must have lost directly or indirectly to \textsl{max}.
+%       \end{itemize}
+%     \item There is an \red{adversary strategy} that can force that \\
+%       $\lceil \log n \rceil$ distinct losers of these $n-1$ ones have lost directly to \textsl{max}.
+%     \item All but one of the $\lceil \log n \rceil$ distinct (direct) losers must lose again.
+%       \begin{itemize}
+% 	\item One of the $\lceil \log n \rceil$ losers is the \textsl{secondLargest}.
+%       \end{itemize}
+%   \end{enumerate}
+% \end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}
+    Any comparison-based algorithm to find \textsl{secondLargest} in $n$ keys
+    must do at least $n + \lceil \log n \rceil - 2$ comparisons in the worst case.
+  \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    n + \lceil \log n \rceil - 2 = (n-1) + (\lceil \log n \rceil - 1)
+  \]
+
+  \fignocaption{width = 0.55\textwidth}{figs/second-largest-roadmap}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    p \ge \lceil \log n \rceil
+  \]
+
+  \begin{columns}
+    \column{0.30\textwidth}
+      \centerline{\red{Adversary $\mathcal{A}$:}}
+      \[
+	x >=< y
+      \]
+    \column{0.40\textwidth}
+      \fignocaption{width = 0.80\textwidth}{figs/adversary-alg}
+    \column{0.30\textwidth}
+      \centerline{\teal{Algorithm $\mathbb{A}$:}}
+      \[
+	\textsc{Compare}(x,y)
+      \]
+  \end{columns}
+  
+  \pause
+  \vspace{0.50cm}
+  \[
+    \red{\exists \mathcal{A}}\; \teal{\forall \mathbb{A}}\; \Big(\ge \lceil \log n \rceil \text{ distinct keys lost directly to \textsl{max} in } \mathbb{A}\Big) 
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fignocaption{width = 0.40\textwidth}{figs/adversary}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \forall x: w(x) = 1
+  \]
+
+  % \vspace{0.60cm}
+  \[
+    \red{\textsc{Compare}(x,y)}
+  \]
+  \renewcommand{\arraystretch}{1.5}
+  \begin{center}
+    \begin{tabular}{l l c}
+      \textsc{Case} & \textsc{Reply} & \textsc{(Local) Action} \\ \hline
+      $w(x) > w(y)$ 		& $x > y$	& $w'(x) \gets w(x) + w(y); w'(y) \gets 0$ \\ \hline
+      $w(x) = w(y) > 0$ 	& $x > y$	& $w'(x) \gets w(x) + w(y); w'(y) \gets 0$ \\ \hline
+      $w(x) = w(y) = 0$ 	& \textsf{No Conflict} & \textsc{Nop} \\ \hline
+      $w(y) > w(x)$ 		& $y > x$	& $w'(y) \gets w(x) + w(y); w'(x) \gets 0$ \\ \hline
+    \end{tabular}
+  \end{center}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{CJK*}{UTF8}{gbsn}
+    \centerline{\red{\Large 赢者通吃; 败者永不得翻身}}
+  \end{CJK*}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \sum_x w(x) = n
+  \]
+
+  \pause
+  \[
+    w(x) = 0 \iff x \text{ has lost}
+  \]
+
+  \pause
+  \[
+    w(x) > 0 \iff x \text{ has not yet lost}
+  \]
+
+  \pause
+  \begin{theorem}
+    For any algorithm $\mathbb{A}$ that finds \textsl{secondLargest}, when it stops,
+    \[
+      \exists! x: w(x) > 0.
+    \]
+  \end{theorem}
+
+  \pause
+  \[
+    \red{\boxed{t = \textsl{max}, \quad w(t) = n}}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}
+    $t$ has directly won against $\ge \lceil \log n \rceil$ distinct keys.
+  \end{theorem}
+
+  \begin{proof}
+    \[
+      K: \# \text{ of comparisons } x \text{ wins against \purple{previously undefeated} keys}
+    \]
+    \pause
+    \vspace{-0.30cm}
+    \[
+      \teal{\boxed{n = w_K}}
+    \]
+
+    \pause
+    \vspace{-0.60cm}
+    \begin{align*}
+      w_k: w(t) \text{ after the } k\text{th comparison won by } t \\
+      \text{ against a previously undefeated key}
+    \end{align*}
+    \pause
+    \vspace{-0.30cm}
+    \[
+      \teal{\boxed{w_k \le 2 w_{k-1}}}
+    \]
+
+    \pause
+    \[
+      \red{\boxed{n = w_K \le 2^K w_0 = 2^K \pause \implies K \ge \log n \pause \implies K \ge \lceil \log n \rceil}}
+    \]
+  \end{proof}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{\textsl{max}\&\textsl{min} (Problem 9.1-2)}
+    Prove the lower bound of $\lceil 3n/2 \rceil - 2$ comparisons in the worst case \\
+    to find both the \textsl{max} and the \textsl{min} of $n$ numbers.
+  \end{exampleblock}
+
+  \pause
+  \[
+    \mathbb{A}: \lceil 3n/2 \rceil - 2
+  \]
+
+  \pause
+  \begin{columns}
+    \column{0.35\textwidth}
+      \centerline{\red{Adversary $\mathcal{A}$:}}
+      \[
+	n/2 + (n-2)
+      \]
+    \column{0.30\textwidth}
+      \fignocaption{width = 0.80\textwidth}{figs/adversary-alg}
+    \column{0.35\textwidth}
+      \centerline{\teal{Algorithm $\mathbb{A}$:}}
+      \[
+	2n - 2 
+      \]
+      \centerline{units of \textsc{Win/Lose} info.}
+  \end{columns}
+
+  \pause
+  \vspace{0.30cm}
+  \[
+    2n - 2 = 2 \times (n/2) + 1 \times (n-2)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{``$01$'' Pattern}
+    To check whether an array $A[1 \cdots n]$ of $n$ bits contains the ``$01$'' pattern.
+
+    Do we have to check every bit?
+  \end{exampleblock}
+
+  \pause
+  \vspace{0.50cm}
+  \begin{center}
+    No, if $n$ is odd; \\[8pt]
+    Yes, if $n$ is even.
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fignocaption{width = 0.40\textwidth}{figs/01-pattern-odd}
+
+  \centerline{\red{First checking $A[2, 4,\ldots, n-1]$}}
+  
+  \pause
+  \fignocaption{width = 0.40\textwidth}{figs/01-pattern-odd-cases}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{columns}
+    \column{0.30\textwidth}
+      \centerline{\red{Adversary $\mathcal{A}$:}}
+      \[
+	0/1
+      \]
+    \column{0.40\textwidth}
+      \fignocaption{width = 0.80\textwidth}{figs/adversary-alg}
+    \column{0.30\textwidth}
+      \centerline{\teal{Algorithm $\mathbb{A}$:}}
+      \[
+	\textsc{Check}(i)
+      \]
+  \end{columns}
+
+  \pause
+  \vspace{0.60cm}
+  \fignocaption{width = 0.95\textwidth}{figs/01-pattern-even-cases}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{exampleblock}{$k$ Numbers Closest to the Median (Problem $9.3-7$)}
     \[

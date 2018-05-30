@@ -101,11 +101,15 @@
     p \ge \lceil \log n \rceil
   \]
 
+  \pause
   \begin{columns}
     \column{0.30\textwidth}
       \centerline{\red{Adversary $\mathcal{A}$:}}
       \[
-	x >=< y
+	x > y
+      \]
+      \[
+	x < y
       \]
     \column{0.40\textwidth}
       \fignocaption{width = 0.80\textwidth}{figs/adversary-alg}
@@ -196,9 +200,10 @@
     $t$ has directly won against $\ge \lceil \log n \rceil$ distinct keys.
   \end{theorem}
 
+  \pause
   \begin{proof}
     \[
-      K: \# \text{ of comparisons } x \text{ wins against \purple{previously undefeated} keys}
+      K: \# \text{ of comparisons } t \text{ wins against \purple{previously undefeated} keys}
     \]
     \pause
     \vspace{-0.30cm}
@@ -207,11 +212,10 @@
     \]
 
     \pause
-    \vspace{-0.60cm}
-    \begin{align*}
-      w_k: w(t) \text{ after the } k\text{th comparison won by } t \\
-      \text{ against a previously undefeated key}
-    \end{align*}
+    \vspace{-0.30cm}
+    \[
+      w_k: w(t) \text{ after } t \text{ winning against } k \text{ \purple{previously undefeated} keys}
+    \]
     \pause
     \vspace{-0.30cm}
     \[
@@ -324,12 +328,12 @@
 
   \pause
   \[
-    \frac{n}{2} - \frac{k}{2} \sim \frac{n}{2} + \frac{k}{2} \pause \qquad \scalebox{2}{\red{$\times$}}
+    \frac{n}{2} - \frac{k}{2} \sim \frac{n}{2} + \frac{k}{2} \pause \quad \text{\small \teal{(By rank)}}
   \]
 
   \pause
   \[
-    S = \set{800, 6, 900, \red{50}, 7}, \quad k = 2 \implies \set{6,7}
+    S = \set{800, 6, 900, \red{50}, 7}, \quad k = 2 \implies \set{6,7} \quad \text{\small \teal{(By distance)}}
   \]
 
   \pause

@@ -1,0 +1,30 @@
+% file: parts/heap.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Heap Identity}
+    \[
+      \forall h \ge 1: \lceil \log(\lfloor \frac{1}{2}h \rfloor + 1)\rceil + 1 = \lceil \log (h+1) \rceil
+    \]
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{\# of Nodes at Height $h$ (TC $6.3-3$)}
+    There are at most $\lceil \frac{n}{2^{h+1}} \rceil$ nodes of height $h$ in any $n$-element heap.
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Sum of Heights of Nodes}
+    In an $n$-element heap, we have
+    \[
+      \sum_{\text{node } x} H(x) \le n-1
+    \]
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%

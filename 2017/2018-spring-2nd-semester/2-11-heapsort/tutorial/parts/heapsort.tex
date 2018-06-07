@@ -1,0 +1,94 @@
+% file: parts/heapsort.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Worst-case of \textsc{Max-Heapify} (TC $6.2-6$)}
+    Show that the \red{worst-case} running time of \textsc{Max-Heapify} on an $n$-element heap is $\red{\Omega}(\log n)$.
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{CJK*}{UTF8}{gbsn}
+    \begin{center}
+      {\red{\large 反馈:} $O, \Theta, \Omega$ 傻傻分不清。\\[8pt]
+      什么时候用哪个? \\[8pt]
+      这道题为什么问的是~$\Omega$, 而不问~$O$~或~$\Theta$?}
+    \end{center}
+  \end{CJK*}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    \begin{tabular}{c||c|c|c}
+      \hline
+		  & $O$ 	& $\Omega$ 	& $\Theta$ \\ \hline \hline
+      Best-case 	& 	& 		&	   \\ \hline
+      Worst-case 	& 	& 		&	   \\ \hline
+      Average-case 	& 	& 		&	   \\ \hline
+    \end{tabular}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Worst-case of \textsc{Max-Heapify} (TC $6.2-6$)}
+    Show that the \red{worst-case} running time of \textsc{Max-Heapify} on an $n$-element heap is $\red{\Omega}(\log n)$.
+  \end{exampleblock}
+
+  \pause
+  \vspace{0.50cm}
+  \centerline{\red{\Large By Example.}}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Worst-case of \textsc{Heapsort} (TC $6.4-4$)}
+    Show that the \red{worst-case} running time of \textsc{Heapsort} is $\red{\Omega}(n \log n)$.
+  \end{exampleblock}
+
+  \pause
+  \vspace{0.50cm}
+  \centerline{\red{\Large By Example.}}
+
+  \pause
+  \vspace{0.50cm}
+  \centerline{\purple{\large What kinds of examples?}}
+
+  \pause
+  \vspace{0.50cm}
+  \centerline{\teal{\large Heap in decreasing order?}}
+
+  \pause
+  \vspace{0.50cm}
+  \fignocaption{width = 0.40\textwidth}{figs/hard}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Best-case of \textsc{Heapsort} (TC $6.4-5$)}
+    Show that when \violet{all elements are distinct}, 
+    the \red{best-case} running time of \textsc{Heapsort} is $\red{\Omega}(n \log n)$.
+  \end{exampleblock}
+
+  \pause
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Best-case of \textsc{Heapsort} (TC $6.4-5$)}
+    Show that when all elements are distinct, 
+    the \red{best-case} running time of \textsc{Heapsort} is $\red{O}(n \log n)$.
+  \end{exampleblock}
+
+  \pause
+  \centerline{}
+\end{frame}
+%%%%%%%%%%%%%%%

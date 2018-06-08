@@ -22,15 +22,31 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{center}
+  \[
+    \text{Algorithm } \mathcal{A}
+  \]
+
+  \[
+    \text{Inputs } \mathcal{I} \text{ of size } n
+  \]
+
+  \begin{table}
+    \centering
+    \renewcommand*{\arraystretch}{1.5}
     \begin{tabular}{c||c|c|c}
       \hline
-		  & $O$ 	& $\Omega$ 	& $\Theta$ \\ \hline \hline
-      Best-case 	& 	& 		&	   \\ \hline
-      Worst-case 	& 	& 		&	   \\ \hline
-      Average-case 	& 	& 		&	   \\ \hline
+		  	& $O$ 				& $\Omega$ 				& $\Theta$ \\ \hline \hline
+      {\it Best-case} 	& \uncover<3->{\teal{by example}}	
+			& \uncover<3->{\purple{``weakness'' of $\mathcal{A}$}}	
+			& \uncover<2->{\violet{$O = \Omega$}}    \\ \hline
+      {\it Worst-case} 	& \uncover<4->{\purple{``power'' of $\mathcal{A}$}}
+			& \uncover<4->{\teal{by example}}	
+			& \uncover<2->{\violet{$O = \Omega$}}    \\ \hline
+      {\it Average-case}& \uncover<5->{\blue{$\le$}}		
+			& \uncover<5->{\blue{$\ge$}}			
+			& \uncover<2->{\violet{$O = \Omega$}}    \\ \hline
     \end{tabular}
-  \end{center}
+  \end{table}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -42,7 +58,10 @@
 
   \pause
   \vspace{0.50cm}
-  \centerline{\red{\Large By Example.}}
+  \centerline{\red{\large By Example.}}
+
+  \pause
+  \fignocaption{width = 0.40\textwidth}{figs/max-heapify-worst}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -54,19 +73,108 @@
 
   \pause
   \vspace{0.50cm}
-  \centerline{\red{\Large By Example.}}
+  \centerline{\red{\large By Example.}}
 
   \pause
-  \vspace{0.50cm}
-  \centerline{\purple{\large What kinds of examples?}}
+  \begin{proof}[Non-proof.]
+    \[
+      \underbrace{\Theta(n)}_{\teal{\textsc{Extract-Max}}} \times \underbrace{\Omega(\log n)}_{\teal{\textsc{Max-Heapify}}} = \Omega(n \log n)
+    \]
+  \end{proof}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Worst-case of \textsc{Heapsort} (TC $6.4-4$)}
+    Show that the \red{worst-case} running time of \textsc{Heapsort} is $\red{\Omega}(n \log n)$.
+  \end{exampleblock}
+
+  \vspace{0.30cm}
+  \fignocaption{width = 0.50\textwidth}{figs/example}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \centerline{\red{\Large Heap in decreasing order?}}
 
   \pause
-  \vspace{0.50cm}
-  \centerline{\teal{\large Heap in decreasing order?}}
+  \fignocaption{width = 0.45\textwidth}{figs/heap-decreasing-order}
 
   \pause
-  \vspace{0.50cm}
-  \fignocaption{width = 0.40\textwidth}{figs/hard}
+  \fignocaption{width = 0.30\textwidth}{figs/hard}
+
+  \pause
+  \vspace{-0.30cm}
+  \[
+    T(12) = 3 + 2 + 2 + 2 + 2 + 2 + 2 + 1 + 1 + 0 + 0 + 0 = 17
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{columns}
+    \column{0.50\textwidth}
+      \fignocaption{width = 0.70\textwidth}{figs/heapsort-selection-worst-7}
+      \pause \centerline{\footnotesize \teal{(Ex. 23, Section 5.2.3, TAOCP Vol 3)}}
+    \pause
+    \column{0.50\textwidth}
+      \fignocaption{width = 0.75\textwidth}{figs/heapsort-selection-worst-8}
+  \end{columns}
+
+  \pause
+  \vspace{0.60cm}
+  \[
+    \sum_{r=1}^{n-1} \lfloor \log r \rfloor \pause = n \lfloor \log  n \rfloor - 2^{\lfloor \log n \rfloor + 1} + 2 \pause = \Omega{n \log n}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Worst-case of \textsc{Heapsort} (TC $6.4-4$)}
+    Show that the \red{worst-case} running time of \textsc{Heapsort} is $\red{O}(n \log n)$.
+  \end{exampleblock}
+
+  \pause
+  \[
+    \sum_{r=1}^{n-1} \lfloor \log r \rfloor = n \lfloor \log  n \rfloor - 2^{\lfloor \log n \rfloor + 1} + 2 = O(n \log n)
+  \]
+
+  \pause
+  \vspace{0.30cm}
+  \centerline{\red{\Large No Examples Needed!}}
+
+  \pause
+  \vspace{0.30cm}
+  \[
+    \underbrace{\Theta(n)}_{\teal{\textsc{Extract-Max}}} \times \underbrace{\red{O}(\log n)}_{\teal{\textsc{Max-Heapify}}} = O(n \log n)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fignocaption{width = 0.40\textwidth}{figs/therefore}
+
+  \begin{exampleblock}{Worst-case of \textsc{Heapsort} (TC $6.4-4$)}
+    Show that the \red{worst-case} running time of \textsc{Heapsort} is $\red{\Theta}(n \log n)$.
+  \end{exampleblock}
+
+  \pause
+  \begin{table}
+    \centering
+    \renewcommand*{\arraystretch}{1.5}
+    \begin{tabular}{c||c|c|c}
+      \hline
+		  	& $O$ 				& $\Omega$ 				& $\Theta$ \\ \hline \hline
+      {\it Worst-case} 	& \purple{``power'' of $\mathcal{A}$}
+			& \teal{by example}	
+			& \violet{$O = \Omega$}    \\ \hline
+    \end{tabular}
+  \end{table}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -89,6 +197,92 @@
   \end{exampleblock}
 
   \pause
-  \centerline{}
+  \vspace{0.60cm}
+  \centerline{\red{\Large By Example.}}
+
+  \pause
+  \fignocaption{width = 0.35\textwidth}{figs/very-hard}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fignocaption{width = 0.40\textwidth}{figs/therefore}
+
+  \begin{exampleblock}{Best-case of \textsc{Heapsort} (TC $6.4-5$)}
+    Show that when all elements are distinct, 
+    the \red{best-case} running time of \textsc{Heapsort} is $\red{\Theta}(n \log n)$.
+  \end{exampleblock}
+
+  \pause
+  \begin{table}
+    \centering
+    \renewcommand*{\arraystretch}{1.5}
+    \begin{tabular}{c||c|c|c}
+      \hline
+		  	& $O$ 				& $\Omega$ 				& $\Theta$ \\ \hline \hline
+      {\it Best-case} 	& \teal{by example}	
+			& \purple{``weakness'' of $\mathcal{A}$}
+			& \violet{$O = \Omega$}    \\ \hline
+    \end{tabular}
+  \end{table}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Average-case of \textsc{Heapsort}}
+    Assume that all elements are distinct. 
+    Show that the \red{average-case} running time of \textsc{Heapsort} is $\red{\Theta}(n \log n)$.
+  \end{exampleblock}
+
+  \vspace{0.50cm}
+  \begin{columns}
+    \column{0.50\textwidth}
+      \pause
+      \fignocaption{width = 0.75\textwidth}{figs/simple}
+    \column{0.50\textwidth}
+      \pause
+      \fignocaption{width = 0.80\textwidth}{figs/simple-not-easy}
+  \end{columns}
+
+  \pause
+  \centerline{\red{\Large By an elegant counting argument.}}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \red{\boxed{f(n) \triangleq \text{\# of heaps of } n \text{ distinct keys}}}
+  \]
+
+  \pause
+  \[
+    f(n) = \binom{n-1}{m} f(m) f(n-1-m)
+  \]
+
+  \pause
+  \vspace{0.50cm}
+  \[
+    \frac{f(n)}{n!} = \frac{1}{n} \frac{f(m)}{m!} \frac{f(n-1-m)}{(n-1-m)!}
+  \]
+
+  \pause
+  \vspace{0.50cm}
+  \[
+    \teal{\boxed{f(n) = \frac{n!}{\prod_{1 \le i \le n} s_i}}}
+  \]
+  \[
+    s_i \triangleq \text{ size of the subtree rooted at } i
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    f(13) = \frac{13!}{13 \cdot 7 \cdot 5 \cdot 3 \cdot 3 \cdot 3} = 506880
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%

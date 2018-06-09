@@ -5,6 +5,10 @@
   \begin{exampleblock}{Worst-case of \textsc{Max-Heapify} (TC $6.2-6$)}
     Show that the \red{worst-case} running time of \textsc{Max-Heapify} on an $n$-element heap is $\red{\Omega}(\log n)$.
   \end{exampleblock}
+
+  \pause
+  \vspace{0.60cm}
+  \centerline{\red{\textsc{Exchange}} {\it vs.} \textsc{Compare}}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -67,6 +71,48 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \begin{exampleblock}{Worst-case of \textsc{Max-Heapify} (TC $6.2-6$)}
+    Show that the \red{worst-case} running time of \textsc{Max-Heapify} on an $n$-element heap is $\red{O}(\log n)$.
+  \end{exampleblock}
+
+  \pause
+  \fignocaption{width = 0.35\textwidth}{figs/heap-structure}
+
+  \vspace{-0.30cm}
+  \[
+    W(n) \le H(n)
+  \]
+
+  \pause
+  \vspace{0.20cm}
+  \centerline{\red{\Large No Examples Here!}}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fignocaption{width = 0.40\textwidth}{figs/therefore}
+
+  \begin{exampleblock}{Worst-case of \textsc{Max-Heapify} (TC $6.2-6$)}
+    Show that the \red{worst-case} running time of \textsc{Max-Heapify} on an $n$-element heap is $\red{\Theta}(\log n)$.
+  \end{exampleblock}
+
+  \begin{table}
+    \centering
+    \renewcommand*{\arraystretch}{1.5}
+    \begin{tabular}{c||c|c|c}
+      \hline
+		  	& $O$ 				& $\Omega$ 				& $\Theta$ \\ \hline \hline
+      {\it Worst-case} 	& \purple{``power'' of $\mathcal{A}$}
+			& \teal{by example}	
+			& \violet{$O = \Omega$}    \\ \hline
+    \end{tabular}
+  \end{table}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
   \begin{exampleblock}{Worst-case of \textsc{Heapsort} (TC $6.4-4$)}
     Show that the \red{worst-case} running time of \textsc{Heapsort} is $\red{\Omega}(n \log n)$.
   \end{exampleblock}
@@ -100,16 +146,17 @@
   \centerline{\red{\Large Heap in decreasing order?}}
 
   \pause
-  \fignocaption{width = 0.45\textwidth}{figs/heap-decreasing-order}
-
-  \pause
-  \fignocaption{width = 0.30\textwidth}{figs/hard}
+  \fignocaption{width = 0.45\textwidth}{figs/heap-decreasing-order-7}
 
   \pause
   \vspace{-0.30cm}
   \[
-    T(12) = 3 + 2 + 2 + 2 + 2 + 2 + 2 + 1 + 1 + 0 + 0 + 0 = 17
+    T(7) = 2 + 1 + 1 + 1 + 0 + 0 = 5
   \]
+
+  % \[
+  %   T(12) = 3 + 2 + 2 + 2 + 2 + 2 + 2 + 1 + 1 + 0 + 0 = 17
+  % \]
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -118,7 +165,11 @@
   \begin{columns}
     \column{0.50\textwidth}
       \fignocaption{width = 0.70\textwidth}{figs/heapsort-selection-worst-7}
-      \pause \centerline{\footnotesize \teal{(Ex. 23, Section 5.2.3, TAOCP Vol 3)}}
+      \pause
+      \[
+	T(7) = 2 + 2 + 2 + 1 + 1 + 0 = 8
+      \]
+      \pause \centerline{\footnotesize \teal{(Ex. $23$, Section $5.2.3$, TAOCP Vol $3$)}}
     \pause
     \column{0.50\textwidth}
       \fignocaption{width = 0.75\textwidth}{figs/heapsort-selection-worst-8}
@@ -127,7 +178,7 @@
   \pause
   \vspace{0.60cm}
   \[
-    \sum_{r=1}^{n-1} \lfloor \log r \rfloor \pause = n \lfloor \log  n \rfloor - 2^{\lfloor \log n \rfloor + 1} + 2 \pause = \Omega{n \log n}
+    \sum_{r=1}^{n-1} \lfloor \log r \rfloor \pause = n \lfloor \log  n \rfloor - 2^{\lfloor \log n \rfloor + 1} + 2 \pause = \Omega(n \log n)
   \]
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -145,7 +196,7 @@
 
   \pause
   \vspace{0.30cm}
-  \centerline{\red{\Large No Examples Needed!}}
+  \centerline{\red{\Large No Examples Here!}}
 
   \pause
   \vspace{0.30cm}
@@ -163,7 +214,6 @@
     Show that the \red{worst-case} running time of \textsc{Heapsort} is $\red{\Theta}(n \log n)$.
   \end{exampleblock}
 
-  \pause
   \begin{table}
     \centering
     \renewcommand*{\arraystretch}{1.5}
@@ -186,6 +236,28 @@
   \end{exampleblock}
 
   \pause
+  \vspace{0.30cm}
+  \centerline{\red{\large Consider the largest $m = \lceil n/2 \rceil$ elements.}}
+
+  \begin{center}
+    The largest $m$ elements form a subtree. \\[8pt] \pause
+
+    \purple{$\ge \lfloor m/2 \rfloor$ of $m$} must be nonleaves of that subtree. \\[8pt] \pause
+
+    \purple{$\ge \lfloor m/2 \rfloor$ of $m$} appear in the first $\lfloor n/2 \rfloor$ positions. \\[8pt] \pause
+
+    \teal{\purple{They} must be \red{promoted} to the root before being \textsc{Extract-Max}.}
+  \end{center}
+
+  \pause
+  \[
+    \sum_{k=1}^{\lfloor m/2 \rfloor} \lfloor \log k \rfloor = \frac{1}{2} m \log m + O(m) 
+  \]
+
+  \pause
+  \[
+    B(n) \ge \frac{1}{4} n \log n + O(n) + B(\lfloor n/2 \rfloor) \pause \implies B(n) \ge \frac{1}{2} n \log n + O(n)
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -207,6 +279,27 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \centerline{\red{\large ``On the Best Case of Heapsort''} \teal{(1994)}}
+
+  \begin{columns}
+    \column{0.33\textwidth}
+      \fignocaption{width = 0.95\textwidth}{figs/best-case-initial-heap}
+    \column{0.33\textwidth}
+      \fignocaption{width = 0.90\textwidth}{figs/best-case-heap-odd}
+    \column{0.33\textwidth}
+      \fignocaption{width = 0.90\textwidth}{figs/best-case-heap-even}
+  \end{columns}
+
+  \pause
+  \vspace{0.30cm}
+  \[
+    B(n) \le \frac{1}{2} n \log n + O(n \log \log n)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
   \fignocaption{width = 0.40\textwidth}{figs/therefore}
 
   \begin{exampleblock}{Best-case of \textsc{Heapsort} (TC $6.4-5$)}
@@ -214,7 +307,6 @@
     the \red{best-case} running time of \textsc{Heapsort} is $\red{\Theta}(n \log n)$.
   \end{exampleblock}
 
-  \pause
   \begin{table}
     \centering
     \renewcommand*{\arraystretch}{1.5}
@@ -245,16 +337,31 @@
       \pause
       \fignocaption{width = 0.80\textwidth}{figs/simple-not-easy}
   \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
 
-  \pause
-  \centerline{\red{\Large By an elegant counting argument.}}
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \centerline{\blue{\Large ``By a surprisingly short counting argument.''}}
+  \begin{columns}
+    \column{0.50\textwidth}
+      \fignocaption{width = 0.50\textwidth}{figs/sedgewick}
+      \centerline{\teal{Robert Sedgewick}}
+    \pause
+    \column{0.50\textwidth}
+      \fignocaption{width = 0.60\textwidth}{figs/knuth}
+      \centerline{\teal{D. E. Knuth}}
+  \end{columns}
+
+  \vspace{0.50cm}
+  \centerline{\red{\Large ``It is elegant. \pause see exercise $30$.''}}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \[
-    \red{\boxed{f(n) \triangleq \text{\# of heaps of } n \text{ distinct keys}}}
+    \red{\boxed{f(n) \triangleq \text{\# of heaps of } n \text{ distinct keys } [1 \cdots n]}}
   \]
 
   \pause
@@ -281,6 +388,8 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \fignocaption{width = 0.60\textwidth}{figs/heap-subtrees}
+
   \[
     f(13) = \frac{13!}{13 \cdot 7 \cdot 5 \cdot 3 \cdot 3 \cdot 3} = 506880
   \]

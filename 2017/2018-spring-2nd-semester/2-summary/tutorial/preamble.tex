@@ -1,4 +1,5 @@
-% File: preamble.tex
+% file: preamble.tex
+
 \usepackage{lmodern}
 
 \usepackage{xeCJK}
@@ -9,39 +10,7 @@
 \setbeamertemplate{itemize items}[default]
 \setbeamertemplate{enumerate items}[default]
 
-\usepackage{comment}
-\usepackage{hyperref}
 % \usepackage{ulem}
-
-\usepackage{amsmath, amsfonts, latexsym, mathtools, tabu}
-\newcommand{\set}[1]{\{#1\}}
-\newcommand{\ps}[1]{\mathcal{P}(#1)}
-\usepackage{bm}
-\DeclareMathOperator*{\argmin}{\arg\!\min}
-
-\ExplSyntaxOn
-\bool_new:N \l__xeCJK_listings_letter_bool
-\ExplSyntaxOff
-\usepackage{listings}
-
-\definecolor{bgcolor}{rgb}{0.95,0.95,0.92}
-
-\lstdefinestyle{CStyle}{
-    language = C,
-    basicstyle = \ttfamily\bfseries,
-    backgroundcolor = \color{bgcolor},   
-    keywordstyle = \color{blue},
-    stringstyle = \color{teal},
-    commentstyle = \color{cyan},
-    breakatwhitespace = false,
-    breaklines = true,                 
-    mathescape = true,
-    escapeinside = ||,
-    morekeywords = {procedure, end, foreach, repeat, until},
-    showspaces = false,                
-    showstringspaces = false,
-    showtabs = false,                  
-}
 
 % colors
 \newcommand{\red}[1]{\textcolor{red}{#1}}
@@ -74,13 +43,7 @@
   \end{figure}
 }
 
-\usepackage{tikz}
-\usetikzlibrary{positioning, mindmap, shadows}
-
-\newcommand{\push}{\texttt{Push}}
-\newcommand{\pop}{\texttt{Pop}}
-
-\newcommand{\titletext}{问题求解 (二) 算法书籍推荐}
+\newcommand{\titletext}{问题求解 (二) 书籍推荐}
 
 \newcommand{\thankyou}{
   \begin{frame}[noframenumbering]{}

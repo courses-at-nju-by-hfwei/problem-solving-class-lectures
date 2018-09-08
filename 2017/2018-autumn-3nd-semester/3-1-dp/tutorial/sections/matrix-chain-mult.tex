@@ -1,0 +1,65 @@
+% file: sections/matrix-chain-mult.tex
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \centerline{\LARGE \teal{Matrix-chain Multiplication}}
+
+  \vspace{0.50cm}
+  \fignocaption{width = 0.50\textwidth}{figs/matrix}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{description}
+    \item[Subproblem:] $m[i,j]:$ $\min$ cost to \hl{yellow}{compute the matrix $A_{i \dots j}$}
+    \item[Goal:] $m[1,n]$
+      \pause
+      \vspace{0.30cm}
+    \item[Make Choice:] \hl{yellow}{\red{Where} is the {\it \teal{last}} parentheses?}
+    \item[Recurrence:] 
+      \[
+	m[i,j] = \min_{i \le k <j} \Big(m[i,k] + m[k+1,j] + p_{i-1}p_{k}p_{j}\Big)
+      \]
+      \pause
+    \item[Init:]
+      \[
+	m[i,i] = 0
+      \]
+      \pause
+    \item[Time:] 
+      \[
+	O(n^3) = \Theta(n^2) \cdot O(n)
+      \]
+  \end{description}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Subproblem Graph for Matrix-chain Multiplication (Problem $15.2$-$4$)}
+    \fignocaption{width = 0.50\textwidth}{figs/matrix-chain-mult-graph}
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Triangulation}
+
+  \end{exampleblock}
+
+  \[
+    T(i,j): \text{ Cost of \hl{yellow}{triangulating from $v_i$ to $v_j$}}
+  \]
+
+  \[
+    T(i,j) = \min_{\red{i < k < j}} \Big(T[i,k] + T[k,j] + d_{ik} + d_{kj} \Big)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%

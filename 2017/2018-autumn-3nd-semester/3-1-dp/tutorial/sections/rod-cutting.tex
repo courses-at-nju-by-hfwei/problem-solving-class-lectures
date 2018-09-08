@@ -1,0 +1,135 @@
+% file: sections/rod-cutting.tex
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \centerline{\LARGE \teal{Rod Cutting}}
+
+  \vspace{0.50cm}
+  \fignocaption{width = 0.50\textwidth}{figs/rod-cutter}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Rod Cutting Problem}
+    \begin{columns}
+      \column{0.40\textwidth}
+	\begin{center}
+	  {\large Rod of length $n$}
+
+	  \fignocaption{width = 0.80\textwidth}{figs/rod-wukong}
+	\end{center}
+      \pause
+      \column{0.60\textwidth}
+	\begin{table}[]
+	  \centering
+	  \resizebox{\textwidth}{!}{%
+	    \begin{tabular}{c||C|C|C|C|C|C}
+	      \textbf{length $i$}  & 1 & 2 & 3 & 4 & 5  & \cdots \\ \hline
+	      \textbf{price $p_i$} & 1 & 5 & 8 & 9 & 10 & \cdots
+	    \end{tabular}% 
+	  }
+	\end{table}
+    \end{columns}
+
+    \pause
+    \vspace{0.60cm}
+    \[
+      n = i_1 + i_2 + \dots + i_k
+    \]
+    \[
+      r_n = p_{i_1} + p_{i_2} + \dots + p_{i_k}
+    \]
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  % \fignocaption{width = 0.30\textwidth}{figs/rod-wukong}
+  \begin{description}
+    \item[Subproblem:] $R(i):$ $\max$ revenue obtained from \hl{yellow}{cutting a rod of length $i$}
+    \item[Goal:] $R(n)$
+      \pause
+      \vspace{0.30cm}
+    \item[Make Choice:] \hl{yellow}{\red{Where} is the {\it \teal{first}} cut?}
+    \item[Recurrence:] 
+      \[
+	R(i) = \max_{\red{1 \le j \le i}} \Big(p_j + R(i-j)\Big)
+      \]
+      \pause
+    \item[Init:]
+      \[
+	R(0) = 0
+      \]
+      \pause
+    \item[Time:] 
+      \[
+	O(n^2) = \Theta(n) \cdot O(n)
+      \]
+  \end{description}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Rod Cutting Problem (Problem $15.1$-$3$)}
+    \[
+      \text{Each cut incurs a fixed cost of } c.
+    \]
+  \end{exampleblock}
+
+  \pause
+  \[
+    R(i) = \max_{1 \le j \le i} \Big(p_j \;\red{ -\; c} + R(i-j)\Big)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Rod Cutting Problem (Additional)}
+    \[
+      \le m \text{ cuts}
+    \]
+  \end{exampleblock}
+
+  \pause
+  \begin{description}
+    \item[Subproblem:] $R(i,k):$ $\max$ revenue obtained from \hl{yellow}{cutting a rod of length $i$ using $\le k$ cuts}
+    \item[Goal:] $R(n, m)$
+      \pause
+      \vspace{0.30cm}
+    \item[Make Choice:] \hl{yellow}{\red{Where} is the {\it \teal{first}} cut?}
+      \pause
+    \item[Recurrence:] 
+      \[
+	R(i,k) = \max_{i+1 \le j \le i} \Big(p_j + R(i-j, \red{k-1})\Big)
+      \]
+      \pause
+    \item[Init:]
+      \[
+	R(0, k) = 0	\quad R(i, 0) = p_i
+      \]
+      \pause
+    \item[Time:] 
+      \[
+	O(n^2 m) = \Theta(nm) \cdot O(n)
+      \]
+  \end{description}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+% %%%%%%%%%%%%%%%%%%%%
+% \begin{frame}{}
+%   \begin{exampleblock}{Rod Cutting Problem (Problem $15.3$-$5$)}
+%     \begin{center}
+% 
+%     \end{center}
+% 
+%     \[
+%       n = i_1 + i_2 + \dots + i_k
+%     \]
+%   \end{exampleblock}
+% \end{frame}
+% %%%%%%%%%%%%%%%%%%%%

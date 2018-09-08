@@ -12,6 +12,11 @@
 \setbeamertemplate{enumerate items}[default]
 
 \usepackage{amsmath, amsfonts, latexsym, mathtools, tabu}
+
+\usepackage{amstext} % for \text macro
+\usepackage{array}   % for \newcolumntype macro
+\newcolumntype{C}{>{$}c<{$}} % math-mode version of "l" column type
+
 \newcommand{\set}[1]{\left\{#1\right\}}
 \newcommand{\ps}[1]{\mathcal{P}(#1)}
 \usepackage{bm}
@@ -69,7 +74,7 @@
 \newcommand{\push}{\texttt{Push}}
 \newcommand{\pop}{\texttt{Pop}}
 
-\newcommand{\titletext}{3-1 Dynamic Programming}
+\newcommand{\titletext}{$3$-$1$ Dynamic Programming}
  
 \newcommand{\thankyou}{
   \begin{frame}[noframenumbering]{}

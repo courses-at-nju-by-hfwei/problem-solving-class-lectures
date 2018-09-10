@@ -87,37 +87,37 @@
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \begin{exampleblock}{Rod Cutting Problem (Additional)}
-    \[
-      \le m \text{ cuts}
-    \]
-  \end{exampleblock}
-
-  \pause
-  \begin{description}
-    \item[Subproblem:] $R(i,k):$ $\max$ revenue obtained from \hl{yellow}{cutting a rod of length $i$ using $\le k$ cuts}
-    \item[Goal:] $R(n, m)$
-      \pause
-      \vspace{0.30cm}
-    \item[Make Choice:] \hl{yellow}{\red{Where} is the {\it \teal{first}} cut?}
-      \pause
-    \item[Recurrence:] 
-      \[
-	R(i,k) = \max_{i+1 \le j \le i} \Big(p_j + R(i-j, \red{k-1})\Big)
-      \]
-      \pause
-    \item[Init:]
-      \[
-	R(0, k) = 0	\quad R(i, 0) = p_i
-      \]
-      \pause
-    \item[Time:] 
-      \[
-	O(n^2 m) = \Theta(nm) \cdot O(n)
-      \]
-  \end{description}
-\end{frame}
+% \begin{frame}{}
+%   \begin{exampleblock}{Rod Cutting Problem (Additional)}
+%     \[
+%       \le m \text{ cuts}
+%     \]
+%   \end{exampleblock}
+% 
+%   \pause
+%   \begin{description}
+%     \item[Subproblem:] $R(i,k):$ $\max$ revenue obtained from \hl{yellow}{cutting a rod of length $i$ using $\le k$ cuts}
+%     \item[Goal:] $R(n, m)$
+%       \pause
+%       \vspace{0.30cm}
+%     \item[Make Choice:] \hl{yellow}{\red{Where} is the {\it \teal{first}} cut?}
+%       \pause
+%     \item[Recurrence:] 
+%       \[
+% 	R(i,k) = \max_{i+1 \le j \le i} \Big(p_j + R(i-j, \red{k-1})\Big)
+%       \]
+%       \pause
+%     \item[Init:]
+%       \[
+% 	R(0, k) = 0	\quad R(i, 0) = p_i
+%       \]
+%       \pause
+%     \item[Time:] 
+%       \[
+% 	O(n^2 m) = \Theta(nm) \cdot O(n)
+%       \]
+%   \end{description}
+% \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
 % %%%%%%%%%%%%%%%%%%%%

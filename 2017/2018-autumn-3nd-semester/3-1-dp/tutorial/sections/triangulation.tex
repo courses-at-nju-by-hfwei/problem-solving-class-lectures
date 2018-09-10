@@ -1,0 +1,69 @@
+% file: sections/triangulation.tex
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Minimum Weight Triangulation}
+    \fignocaption{width = 0.30\textwidth}{figs/8-polygon}
+
+    \pause
+    \vspace{-0.50cm}
+    \begin{columns}
+      \column{0.50\textwidth}
+	\fignocaption{width = 0.60\textwidth}{figs/triangulation-from-v1}
+      \column{0.50\textwidth}
+	\fignocaption{width = 0.60\textwidth}{figs/triangulation}
+    \end{columns}
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fignocaption{width = 0.30\textwidth}{figs/triangulation-one-chord}
+
+  \vspace{-0.70cm}
+  \[
+    T(i,j): \text{ $\min$ cost of \hl{yellow}{triangulating $v_i \cdots v_j$ (with $v_j$ -- $v_i$), \red{\it clockwise}}}
+  \]
+
+  \pause
+  \[
+    T(i,j) = \min_{\red{\substack{i \le k < l-1 \le j \\ (k,l) \;\neq\; (i,j)}}} \Big(T[k,l] + \red{T[?,?]} + d_{ij} \Big)
+  \]
+
+  \pause
+  \[
+    O(n^4) = O(n^2) \cdot O(n^2)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fignocaption{width = 0.30\textwidth}{figs/triangulation-one-chord}
+
+  \pause
+  \centerline{\hl{red}{\it Which vertex $k$ to pair with $(i,j)$?}}
+
+  \pause
+  \vspace{-0.20cm}
+  \[
+    T(i,j) : \text{ $\min$ cost of \hl{yellow}{triangulating $v_i \cdots v_j$ (with $v_j$ -- $v_i$), \red{$i < j$}}}
+  \]
+
+  \pause
+  \[
+    T(i,j) = \min_{i < k < j} \Big(T(i,k) + T(k,j) + d_{ik} + d_{kj}\Big)
+  \]
+
+  \pause
+  \[
+    T[i, i+1] = 0, \quad 1 \le i \le n-1
+  \]
+
+  \pause
+  \[
+    O(n^3) = O(n^2) \cdot O(n)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%

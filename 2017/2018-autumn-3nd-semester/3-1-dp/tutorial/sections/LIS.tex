@@ -1,0 +1,154 @@
+% file: sections/LIS.tex
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Longest Increasing Subsequence (Problem $15.4$-$5$)}
+    \[
+      A[1 \ldots n] 
+    \]
+    \[
+      5,\; 2,\; 8,\; 6,\; 3,\; 6,\; 9,\; 7 
+    \]
+
+    \vspace{0.20cm}
+    \begin{center}
+      Find (the length of) a longest increasing (non-decreasing) subseqence.
+    \end{center}
+    \[
+      5,\; \red{2},\; 8,\; 6,\; \red{3},\; \red{6},\; \red{9},\; 7 
+    \]
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    L(i): \hl{yellow}{\text{ the length of an LIS of $A[1 \ldots i]$}}
+  \]
+  \[
+    L(n)
+  \]
+
+  \pause
+  \vspace{0.30cm}
+  \[
+    \text{\red{\it Is $A[i]$ in this LIS of $A[1 \cdots i]$?}}
+  \]
+
+  \pause
+  \vspace{0.30cm}
+  \[
+    L(i) = \max \Big(\underbrace{\blue{L(i-1)}}_{\blue{\text{NO}}},
+      \uncover<4->{\underbrace{\red{1 + \max_{j < i \;\land\; A[j] \le A[i]} L(j)}}_{\red{\text{YES}}}}\Big)
+  \]
+
+  \only<5->{
+    \fignocaption{width = 0.25\textwidth}{figs/wrong}
+  }
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    L(i): \hl{yellow}{\text{ the length of an LIS \red{\it ending with} $A[i]$}}
+  \]
+  \[
+    \max\limits_{i} L(i)
+  \]
+
+  \pause
+  \begin{center}
+    \red{\it What is the previous element?}
+  \end{center}
+
+  \pause
+  \[
+    L(i) = 1 + \max_{j < i \;\land\; A[j] \le A[i]} L(j)
+  \]
+
+  \pause
+  \[
+    L(1) = 1
+  \]
+
+  \pause
+  \[
+    O(n^2) = \Theta(n) \cdot O(n)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \text{LIS(A)} = \text{LCS} \Big(A, \red{\textsc{Sort}(A)} \Big)
+  \]
+
+  \pause
+  \[
+    O(n^2) = O(n \log n) + O(n^2)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Longest Increasing Subsequence (Problem $15.4$-$6$)}
+    \[
+      O(n \log n)
+    \]
+  \end{exampleblock}
+
+  \[
+    \text{LIS}[i]: \hl{yellow}{\text{all increasing subsequences of length $1 \le l \le i$ using $A[1 \cdots i]$}}
+  \]
+
+  \pause
+  \[
+    E: \red{E[l]} = \text{all increasing subsequences of length $l$}, \quad 1 \le l \le n
+  \]
+
+  \pause
+  \[
+    \max \{k \mid E[k] \neq \emptyset \}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \red{E[l]} = \text{all increasing subsequences of length $l$}, \quad 1 \le l \le n
+  \]
+
+  \pause
+  \[
+    \{3\quad 9\quad 11\quad 13\}
+  \]
+
+  \[
+    \{4\quad 6\quad 10\quad 15\}
+  \]
+
+  \pause
+  \[
+    \text{\hl{red}{Keep only the \blue{\it smallest} ending number per distinct length $l$}}
+  \]
+
+  \[
+    \text{LIS}[i]: \red{E[l]} = \hl{yellow}{\text{the smallest ending number for the increasing subsequence of length $l$ using $A[1 \cdots i]$}}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%

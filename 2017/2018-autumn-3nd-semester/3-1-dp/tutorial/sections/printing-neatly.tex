@@ -1,0 +1,119 @@
+% file: sections/printing-neatly.tex
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Printing Neatly (Problem $15$-$4$)}
+    \[
+      \text{A sequence of $n$ words of lengths } l_1, l_2, \cdots, l_n
+    \]
+
+    \[
+      \text{Line width } M
+    \]
+
+    \[
+      \text{\it extra}[i,j] = M - (j-i) - \sum_{k=i}^{j} l_k
+    \]
+
+    \pause
+    \begin{center}
+      To minimize the sum, over all lines \red{\it except the last}, of the \blue{cubes} of the numbers of
+      extra space characters at the ends of lines.
+    \end{center}
+
+    \[
+      c(n) = \min_{\blue{L}} \sum_{\red{l_{[i,j]} \,\in\, L \;\land\; j \,\neq\, n}} \Big(\text{\it extra}[i,j]\Big)^3
+    \]
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fignocaption{width = 0.30\textwidth}{figs/knuth-tex}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \text{A \hl{yellow}{sequence} of $n$ words of lengths } l_1, l_2, \cdots, l_n
+  \]
+
+  \pause
+  \vspace{0.50cm}
+  \[
+    C(i): \min \text{ cost of neatly printing the \teal{\it first} $i$ words}
+  \]
+
+  \[
+    C(i): \min \text{ cost of neatly printing the \red{\it last} words $i$ through $n$}
+  \]
+
+  \[
+    C(i,j): \min \text{ cost of neatly printing \blue{\it words $i$ through $j$}}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    C(i): \min \text{ cost of neatly printing the \red{\it last} words $i$ through $n$}
+  \]
+
+  \pause
+  \[
+    \fbox{\text{\it How many words to place on the \red{first} line?}}
+  \]
+
+  \pause
+  \vspace{0.50cm}
+  \[
+    C(i) = \min_{\red{\substack{0 \;<\; k \;\le\; (n-i+1) \\ \text{\it extra}[i,\, i+k-1] \;\ge\; 0}}} \Big(\text{\it extra}[i, i+k-1]\Big)^3 + C(i+k)
+  \]
+
+  \pause
+  \vspace{0.30cm}
+  \[
+    C(i) = 0, \quad \text{if {\it extra}}[i,n] \ge 0 
+  \]
+
+  \pause
+  \[
+    O(nW)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \input{algs/printing-neatly}
+
+  \[
+    \uncover<3->{B[1],} \quad \uncover<4->{B[B[1] + 1], \quad \cdots}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \text{A \hl{yellow}{sequence} of $n$ words of lengths } l_1, l_2, \cdots, l_n
+  \]
+
+  \pause
+  \[
+    \text{A \hl{red}{set} of $n$ words of lengths } l_1, l_2, \cdots, l_n
+  \]
+
+  \pause
+  \vspace{0.30cm}
+  \begin{center}
+    \red{\it Greedy? \hspace{10pt} DP? \hspace{10pt} \textsf{NP}-hard?}
+  \end{center}
+
+  \pause
+  \fignocaption{width = 0.30\textwidth}{figs/dont-know-panda}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%

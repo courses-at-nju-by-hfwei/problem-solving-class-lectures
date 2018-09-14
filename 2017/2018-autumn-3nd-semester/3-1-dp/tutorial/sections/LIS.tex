@@ -33,7 +33,7 @@
   \pause
   \vspace{0.30cm}
   \[
-    \text{\red{\it Is $A[i]$ in this LIS of $A[1 \cdots i]$?}}
+    \text{\red{\fbox{\it Is $A[i]$ in this LIS of $A[1 \cdots i]$?}}}
   \]
 
   \pause
@@ -60,7 +60,7 @@
 
   \pause
   \begin{center}
-    \red{\it What is the previous element?}
+    \red{\fbox{\it What is the previous element?}}
   \end{center}
 
   \pause
@@ -101,45 +101,108 @@
     \]
   \end{exampleblock}
 
-  \[
-    \text{LIS}[i]: \hl{yellow}{\text{all increasing subsequences of length $1 \le l \le i$ using $A[1 \cdots i]$}}
-  \]
-
-  \pause
-  \[
-    E: \red{E[l]} = \text{all increasing subsequences of length $l$}, \quad 1 \le l \le n
-  \]
-
-  \pause
-  \[
-    \max \{k \mid E[k] \neq \emptyset \}
-  \]
+  \begin{columns}
+    \pause
+    \column{0.50\textwidth}
+      \fignocaption{width = 0.75\textwidth}{figs/nanjing-subway}
+    \pause
+    \column{0.50\textwidth}
+      \fignocaption{width = 0.55\textwidth}{figs/qrcode-quora-lis-answer}
+      \centerline{Answer by \blue{Eugene Yarovoi} @ \blue{Quora}}
+  \end{columns}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
   \[
-    \red{E[l]} = \text{all increasing subsequences of length $l$}, \quad 1 \le l \le n
+    \red{E[l]} = \set{\text{\it all increasing subsequences of length $l$}}
+  \]
+
+  \pause
+
+  \input{algs/LIS-all}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \red{E[l]} = \set{\text{\it all increasing subsequences of length $l$}}
   \]
 
   \pause
   \[
-    \{3\quad 9\quad 11\quad 13\}
+    \langle 3\quad 9\quad 11\quad 13 \rangle
   \]
 
   \[
-    \{4\quad 6\quad 10\quad 15\}
+    \langle 4\quad 6\quad 10\quad 15 \rangle
+  \]
+
+  \[
+    \langle 2\quad 5\quad 12\quad 18 \rangle
   \]
 
   \pause
   \[
-    \text{\blue{Keep only the \red{\it smallest} ending number per distinct length $l$}}
+    \red{\Big|E[l]\Big| = 1}: \text{\it the one with the \red{\it smallest} ending number}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \input{algs/LIS-one}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \red{E[l]} = \set{\text{\it all increasing subsequences of length $l$}}
   \]
 
+  \[
+    \red{\Big|E[l]\Big| = 1}: \text{\it the one with the \red{\it smallest} ending number}
+  \]
+
+  \pause
+  \[
+    \langle 2\quad 8\quad 15 \rangle
+  \]
+  
+  \[
+    \langle 4\quad 6\quad 11\quad 13 \rangle
+  \]
+
+  \[
+    \langle 3\quad 9\quad 11\quad 12\quad 13 \rangle
+  \]
+
+  \pause
+  \[
+    \forall i < j: \text{\it the ending number of } E[i] \;\red{<}\; \text{\it the ending number of } E[j]
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \input{algs/LIS-binary-search}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    {\Large \it \teal{Extending}} \\[6pt] \pause
+    {\large \it by looking at only \red{the ending number} of the inc. subseq}
+  \end{center}
+
+  \pause
   \begin{gather*}
-    \text{LIS}[i]: \\
-    \red{E[l]} = \hl{yellow}{\text{the \red{\it smallest ending number} for the increasing subsequence}} \\
+    \red{E[l]} = \hl{yellow}{\text{the \red{\it smallest ending number} for the inc. subseq.}} \\
       \hl{yellow}{\text{of length $l$ using $A[1 \cdots i]$}}
   \end{gather*}
 \end{frame}
@@ -147,7 +210,7 @@
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
-
+  \input{algs/LIS-nlogn}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 

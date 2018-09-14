@@ -6,7 +6,7 @@
   \begin{algorithmic}[1]
     \Procedure{Printing-Neatly}{$n$}
       \For{$i \gets n \red{\;\downarrow\;} 1$}
-      \If{$\text{\it extra}[i, n] \ge 0$}	\Comment{put $w_i$ through $w_n$ on a line}
+	\If{$\text{\it extra}[i, n] \ge 0$}	\Comment{put $w_i$ through $w_n$ on a line}
 	  \State $C[i] \gets 0$
 	  \uncover<2->{\State \red{$B[i] \gets n$}}
 	\Else

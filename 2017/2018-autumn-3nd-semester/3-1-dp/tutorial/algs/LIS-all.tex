@@ -1,0 +1,20 @@
+% file: algs/LIS-all.tex
+
+\begin{algorithm}[H]
+  % \caption{LIS-All.}
+  % \label{alg:lis-all}
+  \begin{algorithmic}[1]
+    \Procedure{\textsl{LIS}}{$n$}
+      \State $E[l] \gets \emptyset, \quad \forall 1 \le i \le n$
+
+      \hStatex
+      \For{$i \gets 1 \;\uparrow\; n$}	
+	\State $\forall 1 \le l \le i : E[l] \gets$	\uncover<4->{\Comment{\red{\it By extending each shorter subseq.}}}
+	\State \quad $\set{\text{\it all inc. subseq. of length $l$}}$
+      \EndFor
+
+      \hStatex
+      \State \Return \uncover<3->{\blue{$\max \set{l \mid E[l] \neq \emptyset}$}}
+    \EndProcedure
+  \end{algorithmic}
+\end{algorithm}

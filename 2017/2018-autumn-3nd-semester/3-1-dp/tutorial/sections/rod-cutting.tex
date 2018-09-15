@@ -19,7 +19,6 @@
 
 	  \fignocaption{width = 0.80\textwidth}{figs/rod-wukong}
 	\end{center}
-      \pause
       \column{0.60\textwidth}
 	\begin{table}[]
 	  \centering
@@ -32,7 +31,6 @@
 	\end{table}
     \end{columns}
 
-    \pause
     \vspace{0.60cm}
     \[
       n = i_1 + i_2 + \dots + i_k
@@ -46,28 +44,33 @@
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
-  % \fignocaption{width = 0.30\textwidth}{figs/rod-wukong}
-  \begin{description}
-    \item[Subproblem:] $R(i):$ $\max$ revenue obtained from \hl{yellow}{cutting a rod of length $i$}
-    \item[Goal:] $R(n)$
-      \pause
-      \vspace{0.30cm}
-    \item[Make Choice:] \hl{yellow}{\red{Where} is the {\it \teal{first}} cut?}
-    \item[Recurrence:] 
-      \[
-	R(i) = \max_{\red{1 \le j \le i}} \Big(p_j + R(i-j)\Big)
-      \]
-      \pause
-    \item[Init:]
-      \[
-	R(0) = 0
-      \]
-      \pause
-    \item[Time:] 
-      \[
-	O(n^2) = \Theta(n) \cdot O(n)
-      \]
-  \end{description}
+  \[
+    R(i): \max \text{ revenue obtained from \hl{yellow}{\it cutting a rod of length $i$}}
+  \]
+
+  \[
+    R(n)
+  \]
+
+  \pause
+  \[
+    \red{\fbox{\it Where is the {\teal{first}} cut?}}
+  \]
+
+  \pause
+  \[
+    R(i) = \max_{\red{1 \le j \le i}} \Big(p_j + R(i-j)\Big)
+  \]
+
+  \pause
+  \[
+    R(0) = 0
+  \]
+
+  \pause
+  \[
+    O(n^2) = \Theta(n) \cdot O(n)
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
@@ -119,17 +122,3 @@
 %   \end{description}
 % \end{frame}
 %%%%%%%%%%%%%%%%%%%%
-
-% %%%%%%%%%%%%%%%%%%%%
-% \begin{frame}{}
-%   \begin{exampleblock}{Rod Cutting Problem (Problem $15.3$-$5$)}
-%     \begin{center}
-% 
-%     \end{center}
-% 
-%     \[
-%       n = i_1 + i_2 + \dots + i_k
-%     \]
-%   \end{exampleblock}
-% \end{frame}
-% %%%%%%%%%%%%%%%%%%%%

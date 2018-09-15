@@ -1,0 +1,23 @@
+% file: sections/optimal-bst.tex
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{exampleblock}{\textsc{Construct-Optimal-BST}(root) (Problem $15.5$-$1$)}
+    \[ 
+      e[i,j] = \left\{ \begin{array}{ll}
+	\blue{q_{i-1}} 	& \mbox{if \red{$j = i-1$}}, \\
+	\min\limits_{i \le \purple{r} \le j} \{e[i, r-1] + e[r+1, j] + w(i,j) \}    & \mbox{if $i \le j$}.
+      \end{array} \right. 
+    \] 
+  \end{exampleblock}
+
+  \pause
+  \input{algs/construct-optimal-bst}
+
+  \pause
+  \vspace{-0.50cm}
+  \[
+    \textsc{Construct-Optimal-BST}(root, 1, n)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%

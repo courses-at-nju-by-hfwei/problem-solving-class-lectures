@@ -201,20 +201,29 @@
   \end{center}
 
   \pause
-  \begin{gather*}
-    \red{E[l]} = \hl{yellow}{\text{the \red{\it smallest ending number} for the inc. subseq.}} \\
-      \hl{yellow}{\text{of length $l$ using $A[1 \cdots i]$}}
-  \end{gather*}
+  \input{algs/LIS-ending-number}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \input{algs/LIS-nlogn}
-\end{frame}
+% \begin{frame}{}
+%   \input{algs/LIS-nlogn}
+% \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
+  % \[
+  %   \langle 0, 8, 4, 12, 2, 10, 6, 14, 1, 9, 5, 13, 3, 11, 7, 15 \rangle
+  % \]
+
+  % \animategraphics[autoplay, loop, height = 5cm]{1}{figs/LISDemo/LISDemo}{0}{33}
+  % \transduration<0-33>{0}
+  % \multiinclude[<+->][format=png, graphics = {width = 0.40\textwidth}]{figs/LISDemo/LISDemo}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
+
+% \begin{gather*}
+%   \red{E[l]} = \hl{yellow}{\text{the \red{\it smallest ending number} for the inc. subseq.}} \\
+%     \hl{yellow}{\text{of length $l$ using $A[1 \cdots i]$}}
+% \end{gather*}

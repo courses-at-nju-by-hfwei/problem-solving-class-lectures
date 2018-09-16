@@ -28,6 +28,9 @@
 
 \usepackage{algorithm}
 \usepackage[noend]{algpseudocode}
+% \algrenewcommand\alglinenumber[1]{$#1:$}
+\algnewcommand{\IfThen}[2]{% \IfThenElse{<if>}{<then>}
+  \State \algorithmicif\ #1\ \algorithmicthen\ #2}
 \newcommand{\hStatex}[0]{\vspace{5pt}}
 
 % colors

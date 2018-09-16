@@ -3,6 +3,25 @@
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}
   \begin{exampleblock}{\textsc{Construct-Optimal-BST}(root) (Problem $15.5$-$1$)}
+    \begin{columns}
+      \column{0.50\textwidth}
+	\fignocaption{width = 0.65\textwidth}{figs/optimal-bst-root}
+      \column{0.50\textwidth}
+	\fignocaption{width = 0.65\textwidth}{figs/optimal-bst}
+    \end{columns}
+  \end{exampleblock}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{center}
+    \red{\large \it What about $d_0, d_1, \cdots, d_n$?}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{exampleblock}{\textsc{Construct-Optimal-BST}(root) (Problem $15.5$-$1$)}
     \[ 
       e[i,j] = \left\{ \begin{array}{ll}
 	\blue{q_{i-1}} 	& \mbox{if \red{$j = i-1$}}, \\
@@ -19,5 +38,11 @@
   \[
     \textsc{Construct-Optimal-BST}(root, 1, n)
   \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \input{algs/print-optimal-bst}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%

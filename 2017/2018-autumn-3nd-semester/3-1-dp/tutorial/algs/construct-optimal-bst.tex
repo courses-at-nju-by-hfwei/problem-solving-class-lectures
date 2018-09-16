@@ -10,12 +10,12 @@
       \EndIf
 
       \hStatex
-      \State $\purple{r} \gets \text{ node with key } k_{root[i,j]}$
-      \State $r.\textsl{left} \gets \Call{Construct-Optimal-BST}{root, i, root[i,j]-1}$
-      \State $r.\textsl{right} \gets \Call{Construct-Optimal-BST}{root, root[i,j]+1, j}$
+      \State $\purple{rn} \gets \text{ node with key } k_{root[i,j]}$
+      \State $rn.\textsl{left} \gets \Call{Construct-Optimal-BST}{root, i, root[i,j]-1}$
+      \State $rn.\textsl{right} \gets \Call{Construct-Optimal-BST}{root, root[i,j]+1, j}$
 
       \hStatex
-      \State \Return $r$
+      \State \Return $rn$
     \EndProcedure
   \end{algorithmic}
 \end{algorithm}

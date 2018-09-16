@@ -1,0 +1,19 @@
+% file: algs/print-optimal-bst-wrapper.tex
+
+\begin{algorithm}[H]
+  % \caption{Printing out Optimal BST.}
+  % \label{alg:print-optimal-bst-wrapper}
+  \begin{algorithmic}[1]
+    \Procedure{Construct-Optimal-BST-Wrapper}{$root$, $1$, $n$}
+      \State $r \gets root[1,n]$
+
+      \hStatex
+      \State {\bf print} ``$k_r$ is the root''
+
+      \hStatex
+      \State \Call{Construct-Optimal-BST}{$root, 1, r-1, \red{r}$}
+      \State \Call{Construct-Optimal-BST}{$root, r+1, n, \red{r}$}
+    \EndProcedure
+  \end{algorithmic}
+\end{algorithm}
+

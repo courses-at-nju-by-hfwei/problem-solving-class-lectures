@@ -86,6 +86,11 @@
   \[
     R(i) = \max_{1 \le j \le i} \Big(p_j \;\red{ -\; c} + R(i-j)\Big)
   \]
+
+  \pause
+  \[
+    R(i) = \max \Big( \red{p_i}, \max_{1 \le j \red{<} i} \big(p_j - c + R(i-j)\big) \Big)
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 

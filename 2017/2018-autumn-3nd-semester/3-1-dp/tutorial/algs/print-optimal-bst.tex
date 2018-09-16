@@ -1,0 +1,35 @@
+% file: algs/print-optimal-bst.tex
+
+\begin{algorithm}[H]
+  % \caption{Printing out Optimal BST.}
+  % \label{alg:print-optimal-bst}
+  \begin{algorithmic}[1]
+    \Procedure{Construct-Optimal-BST}{$root$, $i$, $j$, \red{$r$}}	\Comment{\red{$r:$ \it parent}}
+      \If{\blue{$r = i$}}
+	\State {\bf print} ``$d_{i-1}$ is the \blue{\it left} child of $k_{r}$'' \quad \Return node with $d_{i-1}$
+      \EndIf
+      \If{\teal{$r = j$}}
+	\State {\bf print} ``$d_{i-1}$ is the \teal{\it right} child of $k_{r}$'' \quad \Return node with $d_{i-1}$
+      \EndIf
+
+      \hStatex
+      \State $r' \gets root[i,j]$ \qquad $rn \gets \text{ node with key } k_{r'}$
+
+      \hStatex
+      \If{\red{$r = 0$}}
+	\State \textbf{print} ``$k_{r'}$ is the root''
+      \ElsIf{\blue{$j < r$}} 
+        \State \textbf{print} ``$k_{r'}$ is the \blue{\it left} child of $k_{r}$''
+      \ElsIf{\teal{$i > r$}} 
+        \State \textbf{print} ``$k_{r'}$ is the \teal{\it right} child of $k_{r}$''
+      \EndIf
+
+      \hStatex
+      \State $rn.\textsl{left} \gets \Call{Construct-Optimal-BST}{root, i, r'-1, \red{r'}}$
+      \State $rn.\textsl{right} \gets \Call{Construct-Optimal-BST}{root, r'+1, j, \red{r'}}$
+
+      \hStatex
+      \State \Return $rn$
+    \EndProcedure
+  \end{algorithmic}
+\end{algorithm}

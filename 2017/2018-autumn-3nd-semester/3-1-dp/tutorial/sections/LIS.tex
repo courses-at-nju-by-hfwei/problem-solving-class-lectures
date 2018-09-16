@@ -22,31 +22,31 @@
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \[
-    L(i): \hl{yellow}{\text{ the length of an LIS of $A[1 \ldots i]$}}
-  \]
-  \[
-    L(n)
-  \]
-
-  \pause
-  \vspace{0.30cm}
-  \[
-    \text{\red{\fbox{\it Is $A[i]$ in this LIS of $A[1 \cdots i]$?}}}
-  \]
-
-  \pause
-  \vspace{0.30cm}
-  \[
-    L(i) = \max \Big(\underbrace{\blue{L(i-1)}}_{\blue{\text{NO}}},
-      \uncover<4->{\underbrace{\red{1 + \max_{j < i \;\land\; A[j] \le A[i]} L(j)}}_{\red{\text{YES}}}}\Big)
-  \]
-
-  \only<5->{
-    \fignocaption{width = 0.25\textwidth}{figs/wrong}
-  }
-\end{frame}
+% \begin{frame}{}
+%   \[
+%     L(i): \hl{yellow}{\text{ the length of an LIS of $A[1 \ldots i]$}}
+%   \]
+%   \[
+%     L(n)
+%   \]
+% 
+%   \pause
+%   \vspace{0.30cm}
+%   \[
+%     \text{\red{\fbox{\it Is $A[i]$ in this LIS of $A[1 \cdots i]$?}}}
+%   \]
+% 
+%   \pause
+%   \vspace{0.30cm}
+%   \[
+%     L(i) = \max \Big(\underbrace{\blue{L(i-1)}}_{\blue{\text{NO}}},
+%       \uncover<4->{\underbrace{\red{1 + \max_{j < i \;\land\; A[j] \le A[i]} L(j)}}_{\red{\text{YES}}}}\Big)
+%   \]
+% 
+%   \only<5->{
+%     \fignocaption{width = 0.25\textwidth}{figs/wrong}
+%   }
+% \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%

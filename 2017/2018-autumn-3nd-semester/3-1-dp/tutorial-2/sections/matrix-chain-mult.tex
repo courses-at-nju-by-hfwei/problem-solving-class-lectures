@@ -1,0 +1,64 @@
+% file: sections/matrix-chain-mult.tex
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \centerline{\LARGE \teal{Matrix-chain Multiplication}}
+
+  \vspace{0.50cm}
+  \fignocaption{width = 0.50\textwidth}{figs/matrix}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    m[i,j]: \min \text{ cost to \hl{yellow}{compute the matrix $A_{i} \cdots A_j$}}
+  \]
+
+  \[
+    m[1,n]
+  \]
+
+  \pause
+  \[
+    \red{\fbox{\it Where is the {\teal{last}} parentheses?}}
+  \]
+
+  \pause
+  \[
+    m[i,j] = \min_{i \le k <j} \Big(m[i,k] + m[k+1,j] + p_{i-1}p_{k}p_{j}\Big)
+  \]
+
+  \pause
+  \[
+    m[i,i] = 0
+  \]
+
+  \pause
+  \[
+    O(n^3) = \Theta(n^2) \cdot O(n)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Subproblem Graph for Matrix-chain Multiplication (Problem $15.2$-$4$)}
+    \[
+      m[i,j] = \min_{i \le k <j} \Big(m[i,k] + m[k+1,j] + p_{i-1}p_{k}p_{j}\Big)
+    \]
+
+    \fignocaption{width = 0.45\textwidth}{figs/matrix-chain-mult-graph}
+  \end{exampleblock}
+
+  \pause
+  \[
+    \Big\vert \set{(i,j) \big\vert 1 \le i \le j \le n} \Big\vert = \frac{n (n+1)}{2}
+  \]
+
+  \pause
+  \[
+    \sum_{1 \le i \le j \le n} \red{2}(j - i) = \frac{n^3 - n}{3} % \overset{\purple{k \triangleq j-i}}{=} \sum_{0 \le k \le n-1} 2k \teal{(n-k)}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%

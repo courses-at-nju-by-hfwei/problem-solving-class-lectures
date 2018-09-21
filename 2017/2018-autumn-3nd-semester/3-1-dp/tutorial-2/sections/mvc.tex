@@ -1,0 +1,49 @@
+% file: sections/mvc.tex
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Minimum Vertex Cover on Trees (Additional Problem)}
+    \begin{itemize}
+      \item Undirected tree $T = (V, E)$; \textcolor{red}{No designated root!}
+      \item Compute (the size of) a minimum vertex cover of $T$
+    \end{itemize}
+  \end{exampleblock}
+
+  \vspace{0.50cm}
+  \fignocaption{width = 0.50\textwidth}{figs/vertex-cover.png}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \centerline{\blue{Rooted $T$ at any node $r$.}}
+
+  \pause
+  \[
+    I(u): \text{the size of an MVC of \hl{yellow}{subtree $T_{u}$ rooted at $u$}}
+  \]
+  \[
+    I(r)
+  \]
+
+  \pause
+  \[
+    \red{\fbox{\it Is $u$ in $\text{MVC}[u]$?}}
+  \]
+
+  \pause
+  \begin{align*} 
+    I(u) = \min \Big\{\text{\# children of } u &+ \sum_{v: \text{ grandchildren of } u} I(v), \\
+	    1 &+ \sum_{v: \text{ children of } u} I(v)\Big\}
+  \end{align*}
+
+  \pause
+  \[
+    I(u) = 0, \text{ if $u$ is a leave}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fignocaption{width = 0.45\textwidth}{figs/is-greed-good}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%

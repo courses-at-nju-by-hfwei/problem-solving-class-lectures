@@ -1,0 +1,20 @@
+% file: algs/printing-neatly.tex
+
+\begin{algorithm}[H]
+  % \caption{Printing Neatly.}
+  % \label{alg:printing-neatly}
+  \begin{algorithmic}[1]
+    \Procedure{Printing-Neatly}{$n$}
+      \For{$i \gets n \red{\;\downarrow\;} 1$}
+	\If{$\text{\it extra}[i, n] \ge 0$}	\Comment{put $w_i$ through $w_n$ on a line}
+	  \State $C[i] \gets 0$
+	  \uncover<2->{\State \red{$B[i] \gets n$}}
+	\Else
+	  \State $C(i) = \min\limits_{\substack{0 \;<\; k \;\le\; (n-i+1) \\ \text{\it extra}[i,\, i+k-1] \;\ge\; 0}} 
+	  	\Big(\text{\it extra}[i, i+k-1]\Big)^3 + C(i+k)$
+	  \uncover<2->{\State \red{$B[i] = i + k$}		\Comment{line break}}
+	\EndIf
+      \EndFor
+    \EndProcedure
+  \end{algorithmic}
+\end{algorithm}

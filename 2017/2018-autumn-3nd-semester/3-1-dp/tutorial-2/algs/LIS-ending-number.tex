@@ -1,0 +1,20 @@
+% file: algs/LIS-ending-number.tex
+
+\begin{algorithm}[H]
+  % \caption{LIS-Ending-Number.}
+  % \label{alg:lis-ending-number}
+  \begin{algorithmic}[1]
+    \Procedure{\textsl{LIS}}{$n$}
+      \State $E[l] \gets \uncover<4->{\blue{\infty}} \quad \forall 1 \le i \le n$
+
+      \hStatex
+      \For{$i \gets 1 \;\uparrow\; n$}	
+        \State $E[l] \gets$ \Comment{\teal{\it Extending only one subseq using binary search}}
+	\State \quad {\it the \red{smallest ending number} for the inc. subseq. of length $l$}
+      \EndFor
+
+      \hStatex
+      \State \Return \uncover<5->{\blue{$\max \set{l \mid E[l] < \infty}$}}
+    \EndProcedure
+  \end{algorithmic}
+\end{algorithm}

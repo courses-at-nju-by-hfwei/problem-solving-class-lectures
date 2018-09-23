@@ -1,0 +1,71 @@
+% file: sections/longest-path.tex
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Longest Path Problem}
+    To find a \red{\it simple} path of maximum length from $s$ to $t$ in a graph.
+  \end{exampleblock}
+
+  \pause
+  \fignocaption{width = 0.60\textwidth}{figs/currency-1-j-i-n}
+
+  \vspace{-0.80cm}
+  \begin{gather*}
+    1 \;\teal{\leadsto j}\; \blue{\leadsto}\; n \\
+    \only<2>{\ge 1 \leadsto j \leadsto i \leadsto j \leadsto n \\}
+    \only<3->{\red{\ge 1 \leadsto j \leadsto i \leadsto j \leadsto n} \\}
+    = 1 \leadsto j \leadsto i \leadsto n \\
+    > 1 \leadsto i \leadsto n
+  \end{gather*}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    {\Large \it Does the longest path problem really \\[6pt] have no optimal substructure?}
+  \end{center}
+
+  \pause
+  \fignocaption{width = 0.40\textwidth}{figs/wwdtm-logo}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    l(s, t, A): \text{\it the longest path from $s$ to $t$ \hl{yellow}{avoiding the vertices in $A$}}
+  \]
+
+  \pause
+  \[
+    \red{\fbox{\large \it What is the next vertice?}}
+  \]
+
+  \pause
+  \[
+    l(s, t, A) = 1 + \max_{x \notin A \cup \set{s}: (s, x) \in E} l(x, t, A \cup \set{s})  \quad (s \neq t)
+  \]
+
+  \pause
+  \[
+    l(t, t, A) = 0
+  \]
+
+  \pause
+  \[
+    O(n 2^n)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  efficiency $\cdots$
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%

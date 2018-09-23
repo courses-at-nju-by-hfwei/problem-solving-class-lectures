@@ -1,0 +1,87 @@
+% file: sections/currency-exchange.tex
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Currency Exchange (Problem $15.3$-$6$)}
+    \begin{columns}
+      \column{0.50\textwidth}
+	\fignocaption{width = 0.70\textwidth}{figs/currency}
+	\[
+	  1, 2, \cdots, n \text{ currencies}
+	\]
+      \column{0.50\textwidth}
+	\fignocaption{width = 0.90\textwidth}{figs/currency-1-n}
+
+	\fignocaption{width = 0.70\textwidth}{figs/currency-i-j}
+    \end{columns}
+
+    \pause
+    \vspace{0.50cm}
+    \[
+      c_k: \text{ Commission charged for $k$ trades}
+    \]
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fignocaption{width = 0.40\textwidth}{figs/currency-i-less-j}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{center}
+    {\large \it An \red{optimal} sequence of trades from $1$ to $n$ through $i$:}
+  \end{center}
+
+  \fignocaption{width = 0.50\textwidth}{figs/currency-1-i-n}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  % \fignocaption{width = 0.35\textwidth}{figs/currency-i-j}
+  \fignocaption{width = 0.45\textwidth}{figs/currency-no-positive-cycle}
+
+  \pause
+  \vspace{0.20cm}
+  \begin{center}
+    {\large \it An \red{optimal} sequence of trades from $1$ to $n$ through $i$:}
+  \end{center}
+
+  \fignocaption{width = 0.50\textwidth}{figs/currency-1-i-n}
+
+  \pause
+  \begin{center}
+    {\large \it \teal{By Contradiction.}}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fignocaption{width = 0.60\textwidth}{figs/currency-1-i-n-alternative}
+  \[
+    \textsc{Case I}: s_{\teal{1 \leadsto i}} \cap s_{i \leadsto n} = \emptyset
+  \]
+
+  \pause
+  \fignocaption{width = 0.25\textwidth}{figs/cut-paste}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fignocaption{width = 0.60\textwidth}{figs/currency-1-j-i-n}
+  \[
+    \textsc{Case II}: j \in s_{\teal{1 \leadsto i}} \cap s_{\blue{i \leadsto n}}
+  \]
+
+  \begin{gather*}
+    1 \;\teal{\leadsto j}\; \blue{\leadsto}\; n \\
+    \ge 1 \leadsto j \leadsto i \leadsto j \leadsto n \\
+    = 1 \leadsto j \leadsto i \leadsto n \\
+    > 1 \leadsto i \leadsto n
+  \end{gather*}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%

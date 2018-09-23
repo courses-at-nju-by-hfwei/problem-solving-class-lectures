@@ -7,14 +7,87 @@
   \vspace{0.50cm}
   \begin{columns}
     \column{0.50\textwidth}
-      \fignocaption{width = 0.50\textwidth}{figs/rod-cutter}
+      \fignocaption{width = 0.80\textwidth}{figs/rod-cutter}
     \column{0.50\textwidth}
-      \fignocaption{width = 0.80\textwidth}{figs/rod-wukong}
+      \fignocaption{width = 0.75\textwidth}{figs/rod-wukong}
   \end{columns}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
+  \begin{exampleblock}{Optimal Substructure of Rod-Cutting (Problem $15.3$-$5$)}
+    \[
+      \text{\red{\it Limit }} l_i: \# \text{ of pieces of length } i, \quad 1 \le i \le n
+    \]
+  \end{exampleblock}
+
+  \vspace{0.30cm}
+  \begin{columns}
+    \pause
+    \column{0.50\textwidth}
+      \[
+	n = 4
+      \]
+
+      \begin{table}[]
+	\centering
+	\begin{tabular}{c||C|C|C|C}
+	  \textbf{length $i$}  & 1 & 2 & 3 & 4 \\ \hline
+	  \textbf{price $p_i$} & 1 & 1 & 1 & 1 
+	\end{tabular}% 
+      \end{table}
+
+      \begin{table}[]
+	\centering
+	\begin{tabular}{c||C|C|C|C}
+	  \textbf{length $i$}  & 1 & 2 & 3 & 4 \\ \hline
+	  \textbf{limit $l_i$} & \red{2} & 1 & 1 & 1 
+	\end{tabular}% 
+      \end{table}
+    \pause
+    \column{0.50\textwidth}
+      \fignocaption{width = 0.50\textwidth}{figs/rod-cutting-opt}
+      \[
+	R(4) = 3
+      \]
+
+      \pause
+      \fignocaption{width = 0.50\textwidth}{figs/rod-cutting-substructure}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fignocaption{width = 0.35\textwidth}{figs/well-done-dog}
+
+  \pause
+  \begin{quote}
+    {\large \it ``Show that the optimal-substructure property \textcolor<3->{red}{described in Section $15.1$} no longer holds.''}
+  \end{quote}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    R(i, L): \max \text{\it revenue obtainable by cutting up a rod of length $i$}
+  \]
+  \[
+    \hl{yellow}{\it with the length limit array $L$}
+  \]
+
+  \pause
+  \vspace{0.30cm}
+  \[
+    \red{\fbox{\large \it Where is the \teal{leftmost} cut?}}
+  \]
+
+  \pause
+  \vspace{0.50cm}
+  \[
+    R(i, L) = \max_{1 \le j \le i} \Big(p_j + R\big(i-j, \brown{L[j \mapsto L_j-1]}\big)\Big)
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%

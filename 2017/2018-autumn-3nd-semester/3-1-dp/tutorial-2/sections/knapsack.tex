@@ -2,12 +2,6 @@
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
-  \centerline{\teal{\Large The Knapsack Problem}}
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{}
   \begin{exampleblock}{The Change-making Problem}
     \[
       \text{Coins values: } x_{1}, x_{2}, \cdots, x_{n}
@@ -29,7 +23,7 @@
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{The Change-making Problem (a.k.a Subset Sum)}
+  \begin{exampleblock}{The Change-making Problem}
     \begin{quote}
       \centering
       Without repetition: $0/1$
@@ -62,6 +56,34 @@
   
   \[
     O(nv)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{The $0/1$ Knapsack Problem (Problem $16.2$-$2$)}
+    \[
+      \text{Values}: v_{i}  \qquad \text{Weights}: w_{i}  \qquad \text{Capacity}: W
+    \]
+
+    \begin{quote}
+      \centering
+      Taking as valuable a load as possible
+    \end{quote}
+  \end{exampleblock}
+
+  \pause
+  \[
+    C[i, w]: \text{Knapsack with capacity $w$ using only items of values $v_{1} \dots v_{i}$}
+  \]
+
+  \[
+    \red{\fbox{\it Using value $v_{i}$ or not?}}
+  \]
+
+  \[
+    C[i,w] = \max \Big(\underbrace{C[i-1, w]}_{\red{\notin}}, \big(\underbrace{w \ge x_{i} \implies C[i-1, w-w_{i}] + v_{i}}_{\red{\in}}\big) \Big)
   \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
@@ -155,15 +177,58 @@
   \end{exampleblock}
 
   \[
-    C[i,w] \text{\emph{ vs. }} C[w]
+    \red{C[i,w] \text{\emph{ vs. }} C[w]}
   \]
 
   \[
-    C[i,w] = C[i-1, w] \lor (C[i, w-x_{i}] \land w \ge x_{i})
+    C[i,w] = C[i-1, w] \lor \big(C[i, w-x_{i}] \land w \ge x_{i}\big)
   \]
 
   \[
     C[w] = \bigvee_{i: \; x_i \le w} C[w-x_i]
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{The Change-making Problem (Problem $16$-$1$ $(d)$)}
+    \begin{quote}
+      \centering
+      Unbounded repetition: $\infty$ \\[8pt]
+      Using the fewest number of coins
+    \end{quote}
+  \end{exampleblock}
+
+  \pause
+  \[
+    \red{\fbox{\it Using value $x_{i}$ or not?}}
+  \]
+
+  \vspace{0.30cm}
+  \[
+    C[i,w] = \min\Big( \underbrace{C[i-1, w]}_{\red{\notin}}, \big(\underbrace{w \ge x_{i} \implies C[i, w-x_{i}] + 1}_{\red{\in}} \big) \Big)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{The Change-making Problem (Problem $16$-$1$ $(d)$)}
+    \begin{quote}
+      \centering
+      Unbounded repetition: $\infty$ \\[8pt]
+      Using the fewest number of coins
+    \end{quote}
+  \end{exampleblock}
+
+  \[
+    \red{\fbox{\it What is the first coin to use?}}
+  \]
+
+  \vspace{0.30cm}
+  \[
+    C[w] = \min_{i: \; x_i \le w} C[w-x_i] + 1
   \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%

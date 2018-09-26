@@ -1,0 +1,36 @@
+\documentclass[]{beamer}
+
+\input{preamble}
+
+%%%%%%%%%%%%%%%%%%%%
+\title[\titletext]{\titletext}
+\subtitle{\teal{(How to justify your greed?)}}
+
+\author[Hengfeng Wei]{Hengfeng Wei}
+\titlegraphic{\includegraphics[height = 2.0cm]{figs/qrcode-alg-ta-tutorial-2018-autumn}}
+\institute{hfwei@nju.edu.cn}
+\date{September 29, 2018}
+
+\AtBeginSection[]{
+  \begin{frame}[noframenumbering, plain]
+    \frametitle{\titletext}
+    \tableofcontents[currentsection, sectionstyle=show/shaded, subsectionstyle=show/show/hide]
+  \end{frame}
+}
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+{
+  \usebackgroundtemplate{
+    \tikz\node[opacity = 0.8]{\includegraphics[height = 0.92\paperheight, width = 0.98\paperwidth]{figs/snake-game.jpg}};
+  }
+  \maketitle
+}
+
+\input{sections/change-making-greedy}
+
+\thankyou{}
+\input{suggestion}
+
+\end{document}
+%%%%%%%%%%%%%%%%%%%%

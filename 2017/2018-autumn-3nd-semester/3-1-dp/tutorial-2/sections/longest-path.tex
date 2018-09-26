@@ -34,38 +34,61 @@
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
   \[
-    l(s, t, A): \text{\it the longest path from $s$ to $t$ \hl{yellow}{avoiding the vertices in $A$}}
+    L(s, t, A): \text{\it the longest path from $s$ to $t$}
+  \]
+  \[
+    \text{\hl{yellow}{\it through \red{exactly} the intermediate vertices in $I$}}
   \]
 
   \pause
   \[
-    \red{\fbox{\large \it What is the next vertice?}}
+    L(s,t) = \pause \max_{I \subseteq V} L(s, t, I)
   \]
 
   \pause
   \[
-    l(s, t, A) = 1 + \max_{x \notin A \cup \set{s}: (s, x) \in E} l(x, t, A \cup \set{s})  \quad (s \neq t)
+    \red{\fbox{\large \it What is the next vertex from $s$?}}
   \]
 
   \pause
   \[
-    l(t, t, A) = 0
+    L(s, t, I) = 1 + \max_{\substack{(s, x) \;\in\; E \\ x \;\in\; I}} l(x, t, I \setminus \set{x})
+  \]
+
+  \pause
+  \[
+    L(t, t, I) = 0, \qquad
+    L(s, t, \emptyset) = \begin{cases}
+      1, & \mbox{if } (s, t) \in E \\
+      0, & \mbox{otherwise}
+    \end{cases}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    L(s, t, I) = 1 + \max_{\substack{(s, x) \;\in\; E \\ x \;\in\; I}} l(x, t, I \setminus \set{x})
   \]
 
   \pause
   \[
     O(n 2^n)
   \]
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{}
-  efficiency $\cdots$
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%
+  \pause
+  \vspace{0.30cm}
+  \begin{center}
+    {\large \it Cycle $\implies$ No \red{Order} on Vertices}
 
-%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{}
+    \pause
+    \vspace{0.60cm}
+    {\large \it DP does \purple{not} necessarily lead to efficient (polynomial) algorithms.}
+
+    \pause
+    \vspace{0.60cm}
+    {\large \it The (decision version of the) longest path problem is \teal{\textsf{NP}-hard}!}
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%

@@ -1,0 +1,145 @@
+% file: sections/deadline-greedy.tex
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Live with Your Deadlines (Additional Problem)}
+    \begin{columns}
+      \column{0.40\textwidth}
+        \pause
+	\fignocaption{width = 0.90\textwidth}{figs/national-day}
+      \column{0.60\textwidth}
+        \pause
+	\[
+	  \textsl{HW}_{i}: (\textsl{Length}: t_{i},\; \textsl{Deadline}: d_{i})
+	\]
+	\vspace{-0.60cm}
+	\fignocaption{width = 0.50\textwidth}{figs/hw-deadline}
+    \end{columns}
+  \end{exampleblock}
+
+  \pause
+  \[
+    \textsl{Finish time}: f_{i} = s_{i} + t_{i}
+  \]
+  \[
+    \blue{\textsl{Lateness}}: l_i = f_{i} - d_{i}
+  \]
+
+  \pause
+  \[
+    \red{\min \big(L \triangleq \max_{i} l_i\big)}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{quote}
+    \centering
+    {\Large What are your greedy strategies?}
+  \end{quote}
+
+  \fignocaption{width = 0.40\textwidth}{figs/deadline-fly}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{columns}
+    \column{0.50\textwidth}
+      \centerline{\large Shortest Job First: $\min t_{i}$}
+    \column{0.50\textwidth}
+      \centerline{\large Urgentest Job First: $\min (d_{i} - t_{i})$}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{quote}
+    \centering
+    {\Large \red{Earliest Deadline First}}
+  \end{quote}
+
+  \fignocaption{width = 0.50\textwidth}{figs/deadline-coming}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    \teal{\large \red{Proof:} Exchange Argument.}
+  \end{center}
+
+  \[
+    \textsl{OPT}: J_{1}^{\ast},\; J_{2}^{\ast},\; \cdots,\; J_{n}^{\ast}
+  \]
+
+  \[
+    \textsl{G}: J_1,\; J_2,\; \cdots,\; J_n, \quad (d_i \le d_j,\; \forall i \le j)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}
+    The greedy solution has no idle time and no inversions.
+  \end{theorem}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{theorem}
+    There is an optimal schedule with no idle time.
+  \end{theorem}
+
+  \pause
+  \begin{theorem}
+    There is an optimal schedule with no idle time and no inversions.
+  \end{theorem}
+  \pause
+  \centerline{\it \teal{By Exchange Argument.}}
+
+  \pause
+  \vspace{0.10cm}
+  \begin{theorem}
+    All schedules with no idle time and no inversions have the same maximum lateness.
+  \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}
+    There is an optimal schedule with no idle time and no inversions.
+  \end{theorem}
+
+  \pause
+  \vspace{0.50cm}
+  \begin{quote}
+    \centering
+    \red{Immediate Inversion}
+  \end{quote}
+
+  \pause
+  \vspace{0.50cm}
+  \begin{columns}
+    \column{0.50\textwidth}
+      \pause
+      \[
+	d_j < d_i
+      \]
+
+      \fignocaption{width = 0.85\textwidth}{figs/deadline-swap}
+    \column{0.50\textwidth}
+      \pause
+      \[
+	l'_j \le l_j
+      \]
+      \pause
+      \[
+	\red{l'_i} = f_j - d_i < f_j - d_j = \red{l_j}
+      \]
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%

@@ -79,15 +79,17 @@
   \]
 
   \pause
-  \vspace{0.30cm}
+  \vspace{0.20cm}
   \[
     \red{\fbox{\large \it Where is the \teal{leftmost} cut?}}
   \]
 
   \pause
-  \vspace{0.50cm}
   \[
-    R(i, L) = \max_{1 \le j \le i} \Big(p_j + R\big(i-j, \brown{L[j \mapsto L_j-1]}\big)\Big)
+    R(i, L) = \max_{\substack{1 \le j \le i \\ \red{L_j \ge 1}}} \Big(p_j + R\big(i-j, \brown{L[j \mapsto L_j-1]}\big)\Big)
   \]
+
+  \pause
+  \fignocaption{width = 0.30\textwidth}{figs/rod-cutting-limit-substructure}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%

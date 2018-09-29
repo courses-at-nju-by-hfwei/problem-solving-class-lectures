@@ -22,7 +22,7 @@
     \textsl{Finish time}: f_{i} = s_{i} + t_{i}
   \]
   \[
-    \blue{\textsl{Lateness}}: l_i = f_{i} - d_{i}
+    \blue{\textsl{Lateness}}: l_i = f_{i} - d_{i} \quad (0 \text{ if } f_{i} \le d_{i})
   \]
 
   \pause
@@ -48,8 +48,28 @@
   \begin{columns}
     \column{0.50\textwidth}
       \centerline{\large Shortest Job First: $\min t_{i}$}
+
+      \pause
+      \vspace{0.50cm}
+      \[
+	t_1 = 1,\; d_1 = 100
+      \]
+
+      \[
+	t_2 = 10,\; d_2 = 10
+      \]
     \column{0.50\textwidth}
       \centerline{\large Urgentest Job First: $\min (d_{i} - t_{i})$}
+
+      \pause
+      \vspace{0.50cm}
+      \[
+	t_1 = 1,\; d_1 = 2
+      \]
+
+      \[
+	t_2 = 10,\; d_2 = 10
+      \]
   \end{columns}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
@@ -68,7 +88,7 @@
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{center}
-    \teal{\large \red{Proof:} Exchange Argument.}
+    \teal{\large \red{Proof:} Inductive Exchange Argument.}
   \end{center}
 
   \[
@@ -77,6 +97,115 @@
 
   \[
     \textsl{G}: J_1,\; J_2,\; \cdots,\; J_n, \quad (d_i \le d_j,\; \forall i \le j)
+  \]
+
+  \[
+    \red{\exists J_i: d_{J_i} < d_{J_{1}^{\ast}}}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    d_{J_i} < d_{J_{1}^{\ast}}
+  \]
+
+  \fignocaption{width = 0.80\textwidth}{figs/deadline-first-swap-long}
+
+  \pause
+  \[
+    \red{l'_{J_{1}^{\ast}}} = f'_{J_{1}^{\ast}} - d_{J_{1}^{\ast}} \;\teal{=}\; f_{J_{i}} - d_{J_{1}^{\ast}} \;\teal{<}\; f_{J_{i}} - d_{J_{i}} = \blue{l_{J_{i}}}
+  \]
+
+  \pause
+  \[
+    \red{l'_{J_{i}^{\ast}}} = f'_{J_{i}^{\ast}} - d_{J_{i}^{\ast}} \;\teal{<}\; f_{J_{i}} - d_{J_{i}^{\ast}} \;\teal{\le}\; f_{J_{i}} - d_{J_{i}} = \blue{l_{J_{i}}}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}
+    All schedules with no idle time and no inversions have the same maximum lateness.
+  \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[Optimal Substructure Property]
+    A problem exhibits \emph{\red{optimal substructure}} if
+    an optimal solution to the problem contains within it optimal solutions to subproblems.
+  \end{theorem}
+
+  \pause
+  \[
+    \red{L(s, S)}
+  \]
+
+  \begin{quote}
+    \centering
+    {The optimal lateness obtainable from scheduling \hl{yellow}{the jobs in $S$}} \\[6pt]
+    {which are available to start \hl{yellow}{at the common start time $s$}}. 
+  \end{quote}
+
+  \pause
+  \[
+    \red{\fbox{\it What is the first job to schedule?}}
+  \]
+
+  \[
+    L(s, S) = \min_{1 \le i \le n} \Big(\max\big(L(0, \{J_i\}), L(t_i, J \setminus \{J_i\})\big)\Big)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    J = \set{J_1, J_2, J_3}
+  \]
+
+  \[
+    t_1 = 6, t_2 = 2, t_3 = 2
+  \]
+  \[
+    d_1 = 2, d_2 = 7, d_3 = 8
+  \]
+
+  \pause
+  \vspace{0.30cm}
+  \begin{columns}
+    \column{0.50\textwidth}
+      \[
+	\mathcal{O}: J_1, J_3, J_2
+      \]
+
+      \[
+	L(0, \set{J_1, J_2, J_3}) = 4
+      \]
+    \column{0.50\textwidth}
+      \pause
+      \[
+	\mathcal{O'}: J_2, J_3
+      \]
+
+      \[
+	L(6, \{J_2, J_3\}) = 2
+      \]
+  \end{columns}
+
+  \pause
+  \vspace{0.40cm}
+  \[
+    \red{\mathcal{O'} \not\subset \mathcal{O}}
+  \]
+
+  \pause
+  \[
+    \red{\exists}\; \mathcal{O} \triangleq J_1, J_2, J_3: \mathcal{O'} \subset \mathcal{O}
   \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%

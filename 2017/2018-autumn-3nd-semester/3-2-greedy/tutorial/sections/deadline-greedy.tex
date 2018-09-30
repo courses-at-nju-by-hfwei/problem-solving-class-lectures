@@ -49,27 +49,29 @@
     \column{0.50\textwidth}
       \centerline{\large Shortest Job First: $\min t_{i}$}
 
-      \pause
-      \vspace{0.50cm}
-      \[
-	t_1 = 1,\; d_1 = 100
-      \]
+      \uncover<2->{
+	\vspace{0.50cm}
+	\[
+	  t_1 = 1,\; d_1 = 100
+	\]
 
-      \[
-	t_2 = 10,\; d_2 = 10
-      \]
+	\[
+	  t_2 = 10,\; d_2 = 10
+	\]
+      }
     \column{0.50\textwidth}
       \centerline{\large Urgentest Job First: $\min (d_{i} - t_{i})$}
 
-      \pause
-      \vspace{0.50cm}
-      \[
-	t_1 = 1,\; d_1 = 2
-      \]
+      \uncover<3->{
+	\vspace{0.50cm}
+	\[
+	  t_1 = 1,\; d_1 = 2
+	\]
 
-      \[
-	t_2 = 10,\; d_2 = 10
-      \]
+	\[
+	  t_2 = 10,\; d_2 = 10
+	\]
+      }
   \end{columns}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
@@ -92,15 +94,11 @@
   \end{center}
 
   \[
-    \textsl{OPT}: J_{1}^{\ast},\; J_{2}^{\ast},\; \cdots,\; J_{n}^{\ast}
+    \mathcal{O}: J_{1}^{\ast},\; J_{2}^{\ast},\; \cdots,\; J_{n}^{\ast}
   \]
 
   \[
-    \textsl{G}: J_1,\; J_2,\; \cdots,\; J_n, \quad (d_i \le d_j,\; \forall i \le j)
-  \]
-
-  \[
-    \red{\exists J_i: d_{J_i} < d_{J_{1}^{\ast}}}
+    \mathcal{G}: J_1,\; J_2,\; \cdots,\; J_n, \quad (d_i \le d_j,\; \forall i \le j)
   \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
@@ -108,19 +106,20 @@
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
   \[
+    J_i: \text{\it a job with the \red{earliest} deadline}
+  \]
+  \[
     d_{J_i} < d_{J_{1}^{\ast}}
+  \]
+  \[
+    d_{J_i} \le d_{J_{i}^{\ast}}
   \]
 
   \fignocaption{width = 0.80\textwidth}{figs/deadline-first-swap-long}
 
   \pause
   \[
-    \red{l'_{J_{1}^{\ast}}} = f'_{J_{1}^{\ast}} - d_{J_{1}^{\ast}} \;\teal{=}\; f_{J_{i}} - d_{J_{1}^{\ast}} \;\teal{<}\; f_{J_{i}} - d_{J_{i}} = \blue{l_{J_{i}}}
-  \]
-
-  \pause
-  \[
-    \red{l'_{J_{i}^{\ast}}} = f'_{J_{i}^{\ast}} - d_{J_{i}^{\ast}} \;\teal{<}\; f_{J_{i}} - d_{J_{i}^{\ast}} \;\teal{\le}\; f_{J_{i}} - d_{J_{i}} = \blue{l_{J_{i}}}
+    \red{l'_{J_{i}^{\ast}}} = f'_{J_{i}^{\ast}} - d_{J_{i}^{\ast}} \;\teal{\le}\; f_{J_{i}} - d_{J_{i}^{\ast}} \;\teal{\le}\; f_{J_{i}} - d_{J_{i}} = \blue{l_{J_{i}}}
   \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%

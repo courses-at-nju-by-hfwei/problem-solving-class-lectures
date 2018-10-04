@@ -1,0 +1,87 @@
+% file: sections/overview.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{columns}
+    \column{0.50\textwidth}
+      \fignocaption{width = 0.45\textwidth}{figs/tarjan}{\centerline{\teal{Robert Tarjan}}}
+    \column{0.50\textwidth}
+      \fignocaption{width = 0.50\textwidth}{figs/hopcroft}{\centerline{\teal{John Hopcroft}}}
+  \end{columns}
+
+  \vspace{0.30cm}
+  \begin{quote}
+    \centering
+    \purple{\large For fundamental achievements \\ in the design and analysis of algorithms and data structures.} \\[4pt]
+
+    \hfill --- Turing Award, 1986
+  \end{quote}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fignocaption{width = 0.80\textwidth}{figs/tarjan-amortized-paper}
+
+  \begin{quote}
+    \centering
+    \teal{``Amortized Computational Complexity'', 1985}
+  \end{quote}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{quote}
+    \centering
+    {\large
+      \red{\Large Amortized analysis} is \\[6pt]
+      \blue{an algorithm analysis technique} for \\[6pt]
+      \purple{analyzing a sequence of operations} \\[6pt]
+      \blue{irrespective of the input} to show that \\[6pt]
+      \cyan{the average cost per operation} is small, even though \\[6pt]
+      \teal{a single operation within the sequence might be expensive}.
+    }
+  \end{quote}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{quote}
+    \centering
+    By \violet{averaging the cost per operation over a worst-case sequence}, \\[6pt]
+    \red{\large amortized analysis} can yield a time complexity that is \\[6pt]
+    more \purple{robust} than \purple{average-case analysis}, since \\[6pt]
+    its \cyan{probabilistic assumptions on inputs} may be false, \\[6pt]
+    and more \purple{realistic} than \purple{worst-case analysis}, since it may be \\[6pt]
+    \cyan{impossible for every operation to take the worst-case time}, \\[6pt]
+    \brown{as occurs often in manipulation of data structures}.
+  \end{quote}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{columns}
+    \column{0.50\textwidth}
+      \fignocaption{width = 0.60\textwidth}{figs/three-roads}
+      \begin{enumerate}[(I)]
+	\setlength{\itemsep}{3pt}
+	\item Summation Method
+	\item Accounting Method
+	\item Potential Method
+      \end{enumerate}
+    \column{0.50\textwidth}
+      \fignocaption{width = 0.70\textwidth}{figs/example}
+      \centerline{Dynamic Tables}
+
+      \pause
+      \begin{center}
+	``Move-to-Front'' List \\[6pt]
+	Splay Tree
+      \end{center}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%

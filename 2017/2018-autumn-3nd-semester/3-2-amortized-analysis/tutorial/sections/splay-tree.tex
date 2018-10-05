@@ -25,7 +25,7 @@
 
   \begin{quote}
     \centering
-    \teal{``Self-Adjusting Binary Search Trees'', JACM, 1985}
+    \teal{``Self-Adjusting Binary Search Trees -- \red{\it Splay Tree}'', JACM, 1985}
   \end{quote}
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -34,17 +34,264 @@
 \begin{frame}{}
   \centerline{\large \teal{Self-Adjusting Binary Search Trees}}
 
-  \fignocaption{width = 0.25\textwidth}{figs/self-adjusting-tree}
+  \fignocaption{width = 0.35\textwidth}{figs/self-adjusting-tree}
+
+  \centerline{\large \red{\it vs.} Balanced Binary Search Trees}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \begin{center}
+    $\splay(x)$:  \\[8pt]
+    Moving node $x$ to the root of the tree by performing a sequence of \red{rotations}
+    along the path from $x$ to the root.
+  \end{center}
+
+  \pause
+  \fignocaption{width = 0.75\textwidth}{figs/rotation}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \fignocaption{width = 0.40\textwidth}{figs/splay-tree-case-I}
+
+  \vspace{0.30cm}
+  \centerline{\textsc{Case I}: $x$ is the root}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fignocaption{width = 0.80\textwidth}{figs/splay-tree-case-II}
+
+  \vspace{0.30cm}
+  \centerline{\textsc{Case II}: $y = p(x)$ is the root}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fignocaption{width = 0.85\textwidth}{figs/splay-tree-case-III}
+
+  \vspace{0.30cm}
+  \centerline{\textsc{Case III}: zig-zig}
+  \[
+    y = p(x) \qquad z = p(y)
+  \]
+  \[
+    x = lc(y) \qquad y = lc(z)
+  \]
+
+  \pause
+  \[
+    \red{(1): y - z \qquad (2): x - y}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fignocaption{width = 0.80\textwidth}{figs/splay-tree-case-IV}
+
+  \vspace{0.30cm}
+  \centerline{\textsc{Case IV}: zig-zag}
+  \[
+    y = p(x) \qquad z = p(y)
+  \]
+  \[
+    x = rc(y) \qquad y = lc(z)
+  \]
+
+  \pause
+  \[
+    \red{(1): x - y \qquad (2): x - z}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fignocaption{width = 0.95\textwidth}{figs/splay-at-1}{\centerline{$\textsc{Splay}(1)$}}
+
+  \pause
+  \fignocaption{width = 0.50\textwidth}{figs/splay-at-2}{\centerline{$\textsc{Splay}(2)$}}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    \teal{\large Amortized analysis of \textsc{Splay}} \\[30pt] \pause
+
+    A splay tree $T$ of \red{$n$}-node \\[6pt]
+    An arbitrary sequence of \red{$m$} \textsc{Splay} operations
+  \end{center}
+
+  \pause
+  \vspace{0.50cm}
+  \begin{theorem}
+    \[
+      \hat{c}_{\splay} = O(\log n).
+    \]
+  \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \Phi_{0}\;\; \splay_{1} \;\;
+    \Phi_{1}\;\; \splay_{2} \;\;
+    \Phi_{2}\;
+    \cdots\;
+    \underbrace{\Phi_{i-1}\;\; \splay_{i}\;\; \Phi_{i}\;}_{\purple{\text{the $i$-th \textsc{Splay}}}}
+    \cdots\;
+    \splay_{m}\;\; 
+    \Phi_{m}
+  \]
+
+  \[
+    \hat{c}_{\splay_{i}} =  c_{\splay_{i}} + (\Phi_{\splay_{i}} - \Phi_{\splay_{i-1}})
+  \]
+
+  \pause
+  \vspace{0.60cm}
+  \begin{center}
+    \red{\Large \it How to define $\Phi$?}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    s(x): \# \text{ of nodes in the subtree rooted at } x
+  \]
+
+  \pause
+  \[
+    r(x) = \log s(x)
+  \]
+
+  \pause
+  \[
+    \Phi = \sum_{x \in T} r(x)
+  \]
+
+  \pause
+  \vspace{0.50cm}
+  \begin{center}
+    \red{\Large \it How to calculate $(\Phi_{\splay_{i}} - \Phi_{\splay_{i-1}})$ and $c_{\splay_{i}}$?}
+  \end{center}
+
+  \[
+    \hat{c}_{\splay_{i}} =  c_{\splay_{i}} + (\Phi_{\splay_{i}} - \Phi_{\splay_{i-1}})
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \Phi_{0}\;\; \splay_{1} \;\;
+    \Phi_{1}\;\; \splay_{2} \;\;
+    \Phi_{2}\;
+    \cdots\;
+    \underbrace{\Phi_{i-1}\;\; \splay_{i}\;\; \Phi_{i}\;}_{\purple{\text{the $i$-th \textsc{Splay}}}}
+    \cdots\;
+    \splay_{m}\;\; 
+    \Phi_{m}
+  \]
+
+  \pause
+  \begin{gather*}
+    \underbrace{\Phi_{i-1}\;\; \splay_{i}\;\; \Phi_{i}}_{\purple{\text{the $i$-th \textsc{Splay}}}}: \\
+    \Phi_{i-1} \;\triangleq\; \Phi_{0'}\; \iter_{1}\; \Phi_{1'}\; 
+    \cdots\;
+    \underbrace{\Phi_{k-1}\; \iter_{k}\; \Phi_{k}\;}_{\purple{\text{the $k$-th \textsc{Iteration}}}}
+    \cdots\;
+    \iter_{l}\; \Phi_{l} \;\triangleq\; \Phi_{i}\;
+  \end{gather*}
+
+  \pause
+  \begin{align*}
+    \hat{c}_{\splay_{i}} &= \sum_{1 \le j \le l} \hat{c}_{\iter_{j}} \\
+      &= \sum_{1 \le j \le n} c_{\iter_{j}} + (\Phi_{\iter_{j}} - \Phi_{\iter_{j-1}})
+  \end{align*}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \hat{c}_{\iter_{j}} =  c_{\iter_{j}} + (\Phi_{\iter_{j}} - \Phi_{\iter_{j-1}})
+  \]
+
+  \pause
+  \vspace{0.60cm}
+  \center{\large \it \red{By Case Analysis.}}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fignocaption{width = 0.40\textwidth}{figs/splay-tree-case-I}
+
+  \centerline{\textsc{Case I}}
+
+  \pause
+  \begin{align*}
+    \hat{c}_{\iter_{j}} &=  c_{\iter_{j}} + (\Phi_{\iter_{j}} - \Phi_{\iter_{j-1}}) \\
+	&= 0 + 0 \\
+	&= 0
+  \end{align*}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fignocaption{width = 0.80\textwidth}{figs/splay-tree-case-II}
+
+  \centerline{\textsc{Case II}}
+
+  \pause
+  \begin{align*}
+    \hat{c}_{\iter_{j}} &=  c_{\iter_{j}} + (\Phi_{\iter_{j}} - \Phi_{\iter_{j-1}}) \\
+	&= 0 + 0 \\
+	&= 0
+  \end{align*}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fignocaption{width = 0.80\textwidth}{figs/splay-tree-case-III}
+
+  \centerline{\textsc{Case III}}
+
+  \pause
+  \begin{align*}
+    \hat{c}_{\iter_{j}} &=  c_{\iter_{j}} + (\Phi_{\iter_{j}} - \Phi_{\iter_{j-1}}) \\
+	&= 0 + 0 \\
+	&= 0
+  \end{align*}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fignocaption{width = 0.80\textwidth}{figs/splay-tree-case-IV}
+
+  \centerline{\textsc{Case IV}}
+
+  \pause
+  \begin{align*}
+    \hat{c}_{\iter_{j}} &=  c_{\iter_{j}} + (\Phi_{\iter_{j}} - \Phi_{\iter_{j-1}}) \\
+	&= 0 + 0 \\
+	&= 0
+  \end{align*}
 \end{frame}
 %%%%%%%%%%%%%%%
 

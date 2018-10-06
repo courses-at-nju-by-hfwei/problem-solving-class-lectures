@@ -55,28 +55,31 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \fignocaption{width = 0.40\textwidth}{figs/splay-tree-case-I}
+  \fignocaption{width = 0.40\textwidth}{figs/splay-tree-case-zero}
 
   \vspace{0.30cm}
-  \centerline{\textsc{Case I}: $x$ is the root}
+  \centerline{\textsc{Case $0$}: $x$ is the root}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \fignocaption{width = 0.80\textwidth}{figs/splay-tree-case-II}
+  \fignocaption{width = 0.80\textwidth}{figs/splay-tree-case-zig}
 
   \vspace{0.30cm}
-  \centerline{\textsc{Case II}: $y = p(x)$ is the root}
+  \centerline{\textsc{Case $1$}: zig}
+  \[
+    y = p(x) \text{ is the root}
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \fignocaption{width = 0.85\textwidth}{figs/splay-tree-case-III}
+  \fignocaption{width = 0.85\textwidth}{figs/splay-tree-case-zigzig}
 
   \vspace{0.30cm}
-  \centerline{\textsc{Case III}: zig-zig}
+  \centerline{\textsc{Case $2$}: zig-zig}
   \[
     y = p(x) \qquad z = p(y)
   \]
@@ -93,10 +96,10 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \fignocaption{width = 0.80\textwidth}{figs/splay-tree-case-IV}
+  \fignocaption{width = 0.80\textwidth}{figs/splay-tree-case-zigzag}
 
   \vspace{0.30cm}
-  \centerline{\textsc{Case IV}: zig-zag}
+  \centerline{\textsc{Case $3$}: zig-zag}
   \[
     y = p(x) \qquad z = p(y)
   \]
@@ -128,6 +131,11 @@
     A splay tree $T$ of \red{$n$}-node \\[6pt]
     An arbitrary sequence of \red{$m$} \textsc{Splay} operations
   \end{center}
+
+  \pause
+  \[
+    \# \text{ of rotations}
+  \]
 
   \pause
   \vspace{0.50cm}
@@ -170,25 +178,31 @@
     s(x): \# \text{ of nodes in the subtree rooted at } x
   \]
 
-  \pause
-  \[
-    r(x) = \log s(x)
-  \]
+  \begin{columns}
+    \column{0.50\textwidth}
+      \pause
+      \[
+	r(x) = \log s(x)
+      \]
 
-  \pause
-  \[
-    \Phi = \sum_{x \in T} r(x)
-  \]
+      \pause
+      \[
+	\purple{\Phi = \sum_{x \in T} r(x)}
+      \]
+    \column{0.50\textwidth}
+      \pause
+      \fignocaption{width = 0.50\textwidth}{figs/magic}
+  \end{columns}
 
   \pause
   \vspace{0.50cm}
-  \begin{center}
-    \red{\Large \it How to calculate $(\Phi_{\splay_{i}} - \Phi_{\splay_{i-1}})$ and $c_{\splay_{i}}$?}
-  \end{center}
-
   \[
     \hat{c}_{\splay_{i}} =  c_{\splay_{i}} + (\Phi_{\splay_{i}} - \Phi_{\splay_{i-1}})
   \]
+
+  \begin{center}
+    \red{\large \it How to calculate $(\Phi_{\splay_{i}} - \Phi_{\splay_{i-1}})$ and $c_{\splay_{i}}$?}
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -218,7 +232,7 @@
   \pause
   \begin{align*}
     \hat{c}_{\splay_{i}} &= \sum_{1 \le j \le l} \hat{c}_{\iter_{j}} \\
-      &= \sum_{1 \le j \le n} c_{\iter_{j}} + (\Phi_{\iter_{j}} - \Phi_{\iter_{j-1}})
+      &= \sum_{1 \le j \le l} c_{\iter_{j}} + (\Phi_{\iter_{j}} - \Phi_{\iter_{j-1}})
   \end{align*}
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -232,75 +246,191 @@
   \pause
   \vspace{0.60cm}
   \center{\large \it \red{By Case Analysis.}}
+
+  \pause
+  \[
+    \hat{c}_{j} =  c_{j} + (\Phi_{j} - \Phi_{j-1})
+  \]
+
+  \vspace{0.30cm}
+  \centerline{\blue{Remember:} \iter{}}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \fignocaption{width = 0.40\textwidth}{figs/splay-tree-case-I}
+  \fignocaption{width = 0.40\textwidth}{figs/splay-tree-case-zero}
 
-  \centerline{\textsc{Case I}}
+  \centerline{\textsc{Case $0$}}
 
   \pause
   \begin{align*}
-    \hat{c}_{\iter_{j}} &=  c_{\iter_{j}} + (\Phi_{\iter_{j}} - \Phi_{\iter_{j-1}}) \\
-	&= 0 + 0 \\
-	&= 0
+    \hat{c}_{j} &=  c_{j} + (\Phi_{j} - \Phi_{j-1}) \\
+	\onslide<3->{
+	  &= 0 + 0 \\
+	  &= 0
+	}
   \end{align*}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \fignocaption{width = 0.80\textwidth}{figs/splay-tree-case-II}
+  \fignocaption{width = 0.80\textwidth}{figs/splay-tree-case-zig}
 
-  \centerline{\textsc{Case II}}
+  \centerline{\textsc{Case $1$}: zig}
 
-  \pause
   \begin{align*}
-    \hat{c}_{\iter_{j}} &=  c_{\iter_{j}} + (\Phi_{\iter_{j}} - \Phi_{\iter_{j-1}}) \\
-	&= 0 + 0 \\
-	&= 0
+    \hat{c}_{j} &=  c_{j} + (\Phi_{j} - \Phi_{j-1}) \\
+      \onslide<2->{
+	&= 1 + r_{j}(x) + r_{j}(y) - r_{j-1}(x) - r_{j-1}(y) \\
+      }
+      \onslide<3->{
+	&\le 1 + r_{j}(x) - r_{j-1}(x) \\
+      }
+      \onslide<4->{
+	&\red{\;\le\;} 1 + 3\big(r_{j}(x) - r_{j-1}(x)\big)
+      }
   \end{align*}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \fignocaption{width = 0.80\textwidth}{figs/splay-tree-case-III}
+  \fignocaption{width = 0.80\textwidth}{figs/splay-tree-case-zigzig}
 
-  \centerline{\textsc{Case III}}
+  \centerline{\textsc{Case $2$}: zig-zig}
 
-  \pause
   \begin{align*}
-    \hat{c}_{\iter_{j}} &=  c_{\iter_{j}} + (\Phi_{\iter_{j}} - \Phi_{\iter_{j-1}}) \\
-	&= 0 + 0 \\
-	&= 0
+    \hat{c}_{j} &=  c_{j} + (\Phi_{j} - \Phi_{j-1}) \\
+      \onslide<2->{
+	&= 2 + r_{j}(x) + r_{j}(y) + r_{j}(y)- r_{j-1}(x) - r_{j-1}(y) - r_{j-1}(z) \\
+      }
+      \onslide<3->{
+	&= 2 + r_{j}(y) + r_{j}(y)- r_{j-1}(x) - r_{j-1}(y) \\
+      }
+      \onslide<4->{
+	&\le 2 + r_{j}(x) + r_{j}(z) - 2r_{j-1}(x) \\
+      }
+      \onslide<5->{
+	&\red{\;\le\;} 3\big(r_{j}(x) - r_{j-1}(x)\big)
+      }
   \end{align*}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \fignocaption{width = 0.80\textwidth}{figs/splay-tree-case-IV}
+  \fignocaption{width = 0.80\textwidth}{figs/splay-tree-case-zigzag}
 
-  \centerline{\textsc{Case IV}}
+  \centerline{\textsc{Case $3$}: zig-zag}
 
-  \pause
   \begin{align*}
-    \hat{c}_{\iter_{j}} &=  c_{\iter_{j}} + (\Phi_{\iter_{j}} - \Phi_{\iter_{j-1}}) \\
-	&= 0 + 0 \\
-	&= 0
+    \hat{c}_{j} &=  c_{j} + (\Phi_{j} - \Phi_{j-1}) \\
+      \onslide<2->{
+	&= 2 + r_{j}(x) + r_{j}(y) + r_{j}(y)- r_{j-1}(x) - r_{j-1}(y) - r_{j-1}(z) \\
+      }
+      \onslide<3->{
+	&\le 2 + r_{j}(y) + r_{j}(z) - 2r_{j-1}(x) \\
+      }
+      \onslide<4->{
+	&\red{\;\le\;} 3\big(r_{j}(x) - r_{j-1}(x)\big)
+      }
   \end{align*}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \[
+    \hat{c}_{\iter_{j}} \le \left.
+    \begin{cases}
+      0, & \text{\textsc{Case} $0$} \\
+      1 + 3\big(r_{j}(x) - r_{j-1}(x)\big), & \text{\textsc{Case} $1$} \\
+      3\big(r_{j}(x) - r_{j-1}(x)\big), & \text{\textsc{Case} $2$} \\
+      3\big(r_{j}(x) - r_{j-1}(x)\big), & \text{\textsc{Case} $3$} \\
+    \end{cases} \right.
+  \]
+
+  \pause
+  \begin{align*}
+    \hat{c}_{\splay_{i}} &= \sum_{1 \le j \le l} \hat{c}_{\iter_{j}} \\
+      &= \sum_{1 \le j \le l} c_{\iter_{j}} + (\Phi_{\iter_{j}} - \Phi_{\iter_{j-1}}) \\
+    \onslide<3->{
+      &\le 3\big(r_{\iter_{l}}(x) - r_{\iter_{0}}(x)\big) \red{\; + 1} \\
+    }
+    \onslide<4->{
+      &= 3\big(\log n - r_{\iter_{0}}(x)\big) + 1 \\
+    }
+    \onslide<5->{
+      &\le 3 \log n + 1 \\
+      &= O(\log n)
+    }
+  \end{align*}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \fignocaption{width = 0.80\textwidth}{figs/splay-tree-case-zigzig}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{center}
+    \teal{MTR (Move To Root) heuristic:} \\[6pt]
+    Keeping rotate the edge joining $x$ to its parent.
+  \end{center}
+
+  \pause
+  \vspace{0.30cm}
+  \centerline{\large \red{Does this work?}}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{columns}
+    \column{0.50\textwidth}
+      \[
+	\purple{\Phi = \sum_{x \in T} r(x)}
+      \]
+
+      \fignocaption{width = 0.80\textwidth}{figs/idea}
+    \column{0.50\textwidth}
+      \pause
+      \fignocaption{width = 0.60\textwidth}{figs/qrcode-cstheory-splay-tree-potential}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{columns}
+    \column{0.40\textwidth}
+      \begin{center}
+	\[
+	  \red{\textsc{Splay}(x)}
+	\]
+	\pause
+	\[
+	  \textsc{Search}(x, t)
+	\]
+	\[
+	  \textsc{Insert}(x, t)
+	\]
+	\[
+	  \textsc{Delete}(x, t)
+	\]
+	\[
+	  \textsc{Join}(t_1, t_2)
+	\]
+	\[
+	  \textsc{Split}(x, t)
+	\]
+      \end{center}
+    \column{0.60\textwidth}
+      \pause
+      \fignocaption{width = 0.85\textwidth}{figs/self-adjusting-bst-paper}
+  \end{columns}
 \end{frame}
 %%%%%%%%%%%%%%%

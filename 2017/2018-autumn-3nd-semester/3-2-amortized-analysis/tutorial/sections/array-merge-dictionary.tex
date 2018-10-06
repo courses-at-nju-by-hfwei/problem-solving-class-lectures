@@ -1,0 +1,51 @@
+% file: sections/array-merge-dictionary.tex
+
+%%%%%%%%%%%%%
+\begin{frame}{Array Merging Dictionary: the summation method}
+  \centerline{\textsc{Create} ($1$); \textsc{Merge} ($2m$)}
+
+  \begin{columns}
+	\column{0.40\textwidth}
+	  \pause
+	  \begin{align*}
+		i & \quad c_i \\
+		1 & \quad 1  \\
+		2 & \quad 1 + 2 \\
+		3 & \quad 1 \\
+		4 & \quad 1 + 2 + 4 \\
+		5 & \quad 1 \\
+		6 & \quad 1 + 2 \\
+		7 & \quad 1 \\
+		8 & \quad 1 + 2 + 4 \\
+		\vdots & \quad \cdots
+	  \end{align*}
+	\column{0.55\textwidth}
+	  \pause
+	  \[
+		\sum_{i=1}^{n} c_i = \sum_{j=0}^{\lfloor \log n \rfloor} \lfloor \frac{n}{2^j} \rfloor 2^j \le n (\lfloor \log n \rfloor + 1)
+	  \]
+
+	  \pause
+	  \[
+		\forall i, \hat{c_i} = 1 + \lfloor \log n \rfloor
+	  \]
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%
+\begin{frame}{Array Merging Dictionary: the accounting method}
+  \[
+	\hat{c_i} = 1 + \lfloor \log n \rfloor
+  \]
+
+  \pause
+  \vspace{0.60cm}
+  \centerline{What does it mean?}
+
+  \pause
+  \vspace{0.80cm}
+  \[
+	\forall n, \sum_{i=1}^{n} a_i \geq 0
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%
+

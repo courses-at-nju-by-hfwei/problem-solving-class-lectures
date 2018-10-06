@@ -1,0 +1,92 @@
+% file: sections/queue-stack.tex
+
+%%%%%%%%%%%%%
+\begin{frame}{}
+  \centerline{\teal{\large Simulating a queue $Q$ using two stacks $S_1, S_2$ {\small (Problem $\mathbb{E}3$)}}}
+
+  \begin{algorithm}[H]
+    \begin{algorithmic}[]
+      \Procedure{Enq}{$x$}
+	\State \textsl{Push}($S_1, x$)
+      \EndProcedure
+
+      \Statex
+      \Procedure{Deq}{\null}
+        \If{$S_2 = \emptyset$}
+          \While{$S_1 \neq \emptyset$}
+            \State \textsl{Push}($S_2$, \textsl{Pop}($S_1$))
+          \EndWhile
+        \EndIf
+        \textsl{Pop}($S_2$)
+      \EndProcedure
+    \end{algorithmic}
+  \end{algorithm}
+\end{frame}
+%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%
+\begin{frame}{}
+  \centerline{\teal{\large The Summation Method for Queue Simulation}}
+
+  \vspace{0.30cm}
+  \[
+    \frac{\left(\sum\limits_{i = 1}^{n} c_i\right)}{n}
+  \]
+
+  \pause
+  \vspace{0.50cm}
+  \centerline{The operation sequence is \red{\it NOT} known.}
+\end{frame}
+%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%
+\begin{frame}{}
+  \centerline{\teal{\large The Accounting Method for Queue Simulation}}
+
+  \begin{table}
+    \begin{tabular}{ccccc}
+      {\it item}: & Push into $S_1$ & Pop from $S_1$ & Push into $S_2$ & Pop from $S_2$ \\
+      & $1$ & $1$ & $1$ & $1$
+    \end{tabular}
+  \end{table}
+
+  \pause
+  \vspace{-0.60cm}
+  \begin{align*}
+    \hat{c}_{\textsc{Enq}} &= 3 \\
+    \hat{c}_{\textsc{Deq}} &= 1 \\
+  \end{align*}
+
+  \pause
+  \vspace{-0.60cm}
+  \[ 
+    \sum_{i=1}^{n} a_i \ge 0 \pause \Longleftarrow \sum_{i=1}^{n} a_i = \#S_1 \times 2
+  \]
+\end{frame}
+%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%
+\begin{frame}{}
+  \centerline{\teal{\large The Accounting Method for Queue Simulation}}
+
+  \begin{align*}
+    \hat{c}_{\textsc{Enq}} &= 3 \\
+    \hat{c}_{\textsc{Deq}} &= 1 \\
+  \end{align*}
+
+  \vspace{-0.60cm}
+  \[
+    \#S_1 = t
+  \]
+
+  \begin{table}
+    \begin{tabular}{c|ccc}
+      & $\hat{c_i}$ & $c_i$ {\it (actual cost)} & $a_i$ {\it (accounting cost)} \\
+      \textsc{Enqueue} & $3$ & $1$ & $2$ \\
+      \textsc{Dequeue} ($S_2 = \emptyset$) & $1$ & $1$ & $0$ \\
+      \textsc{Dequeue} ($S_2 \neq \emptyset$) & $1$ & $1+2t$ & $-2t$
+    \end{tabular}
+  \end{table}
+\end{frame}
+%%%%%%%%%%%%%
+

@@ -2,66 +2,14 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \centerline{\teal{\large The Summation Method}}
+  \centerline{\teal{\Large The Summation Method}}
 
-  \[
-    o_1, o_2, \ldots, o_n
-  \]
-
-  \[
-    c_1, c_2, \ldots, c_n
-  \]
-
-  \pause
-  \[
-    \boxed{\red{\forall i,\; \hat{c_i} = \frac{\left(\sum\limits_{i = 1}^{n} c_i\right)}{n}}}
-  \]
+  \fignocaption{width = 0.40\textwidth}{figs/sigma}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \centerline{\teal{\large The Summation Method for Array Doubling}}
-
-  \pause
-  \vspace{0.30cm}
-  \centerline{On \red{any sequence} of $n$ \textsc{Insert}s on an \blue{initially empty} array.}
-
-  \pause
-  \vspace{0.30cm}
-  \[
-    \begin{array}{ccccccccccc}
-      o_i:  & o_1 & \red{o_2} & \red{o_3} & o_4 & \red{o_5} & o_6 & o_7 & o_8 & \red{o_9} & o_{10} \\[3pt]
-      c_i:  & 1 & \red{2} & \red{3} & 1 & \red{5} & 1 & 1 & 1 & \red{9} & 1  \\
-    \end{array}
-  \]
-
-  \pause
-  \vspace{0.30cm}
-  \begin{displaymath}
-    c_i = \left\{ \begin{array}{ll}
-      (i-1)+1 = i & \textrm{if $i - 1$ is an exact power of 2}\\
-      1 & \textrm{o.w.}
-    \end{array} \right.
-  \end{displaymath}
-
-  \pause
-  \vspace{0.30cm}
-  \[
-    \sum_{i=1}^{n} c_i \le n + \sum_{j=0}^{\lceil \lg n \rceil - 1} 2^{j} = n +
-    (2^{\lceil \lg n \rceil} - 1) \le n + 2n = 3n
-  \]
-
-  \pause
-  \[
-    \boxed{\teal{\forall i,\; \hat{c_i} = 3}}
-  \]
-\end{frame}
-%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \centerline{\teal{\large The Summation Method}}
-
   \[
     o_1, o_2, \ldots, o_n
   \]

@@ -2,35 +2,273 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \centerline{\teal{\Large The Potential Method}}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \[
+    \red{D_0},\; o_1,\; \red{D_1},\; o_2,\; \cdots,\; \underbrace{\red{D_{i-1}},\; o_{i},\; \red{D_{i}}}_{\text{\purple{the $i$-th operation}}},\; 
+    \cdots,\; \red{D_{m-1}},\; o_{m},\; \red{D_{m}}
+  \]
+
+  \pause
+  \[
+    \Phi: \set{D_{i} \mid 0 \le i \le m} \to \mathcal{R}
+  \]
+
+  \pause
+  \[
+    \boxed{\red{\hat{c_i} = c_i + \Big(\Phi(D_{i}) - \Phi(D_{i-1})\Big)}}
+  \]
+
+  \pause
+  \[
+    \sum_{1 \le i \le m} \hat{c_i} = \left( \sum_{1 \le i \le m} c_i \right) + \Big(\Phi(D_{m}) - \Phi(D_0) \Big)
+  \]
+
+  \pause
+  \[
+    \forall m,\; \sum_{i=1}^{m} c_i \red{\;\le\;} \sum_{i=1}^{m} \hat{c_i} \pause \quad\Longleftarrow\quad \boxed{\red{\forall i:\; \Phi(D_{i}) \ge \Phi(D_{0})}}
+  \]
+
+  \pause
+  \[
+    \Phi(D_{0}) = 0,\quad \forall i:\; \Phi(D_{i}) \ge 0 \pause \quad \text{\teal{\footnotesize (Typically)}}
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \centerline{\teal{\large The Potential Method for Dynamic Tables}}
+
+  \[
+    \alpha = \frac{T.num}{T.size}
+  \]
+
+  \pause
+  \vspace{0.30cm}
+  \[
+    \textsc{Expansion}: \left.
+    \begin{cases}
+      \text{When to expand?}		& \onslide<3->{\alpha = 1} \\
+      \text{How large to expand?} 	& \onslide<3->{\alpha = 1/2}
+    \end{cases}
+    \right.
+  \]
+
+  \onslide<4->{
+    \vspace{0.30cm}
+    \[
+      \textsc{Contraction}: \left.
+      \begin{cases}
+	\text{When to contract?}	& \onslide<5->{\alpha = 1/4} \\
+	\text{How small to contract?} 	& \onslide<5->{\alpha = 1/2}
+      \end{cases} \right.
+    \]
+  }
+
+  \onslide<6->{
+    \vspace{0.30cm}
+    \[
+      \frac{1}{4} \le \alpha \le 1
+    \]
+  }
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \[
+    \Phi(T) = \left.
+    \begin{cases}
+      2 \cdot T.num - T.size & \text{ if } \alpha(T) \ge 1/2	\\
+      T.size/2 - T.num	     & \text{ if } \alpha(T) < 1/2
+    \end{cases} \right.
+  \]
+
+  \pause
+  \[
+    \Phi(T_0) = 0,\quad \Phi(T_{i}) \ge 0
+  \]
+
+  \pause
+  \vspace{0.30cm}
+  \[
+    \alpha = 1/2 \implies \Phi(T) = 0
+  \]
+
+  \vspace{0.30cm}
+  \pause
+  \[
+    \alpha = 1/2 \leadsto \alpha = 1 \implies \Phi(T): 0 \leadsto T.num
+  \]
+
+  \pause
+  \[
+    \alpha = 1/2 \leadsto \alpha = 1/4 \implies \Phi(T): 0 \leadsto T.num
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \[
+    \Phi(T) = \left.
+    \begin{cases}
+      2 \cdot T.num - T.size & \text{ if } \alpha(T) \ge 1/2	\\
+      T.size/2 - T.num	     & \text{ if } \alpha(T) < 1/2
+    \end{cases} \right.
+  \]
+  \[
+    \hat{c}_i = c_i + \Big(\Phi_{i} - \Phi_{i-1}\Big)
+  \]
+
+  \pause
+  \vspace{0.20cm}
+  \centerline{\large \it \red{By Case Analysis.}}
+
+  \pause
+  \vspace{0.60cm}
+  \begin{columns}
+    \column{0.45\textwidth}
+      \pause
+      \centerline{\large \textsc{\teal{Table-Insert}}}
+      \[
+	\left.
+	\begin{cases}
+	  \alpha_{i-1} < 1/2 \left.
+	  \begin{cases}
+	    \alpha_{i} < 1/2 \\[6pt]
+	    \alpha_{i} \ge 1/2
+	  \end{cases} \right.
+	  \\[20pt]
+	  \alpha_{i-1} \ge 1/2 \left.
+	    \begin{cases}
+	      \alpha_{i-1} < 1 \\[6pt] 
+	      \alpha_{i-1} = 1
+	    \end{cases} \right.
+	\end{cases} \right.
+      \]
+    \column{0.55\textwidth}
+      \pause
+      \centerline{\large \textsc{\teal{Table-Delete}}}
+      \[
+	\left.
+	\begin{cases}
+	  \alpha_{i-1} < 1/2 \left.
+	    \begin{cases}
+	      \red{\frac{num_{i-1} - 1}{size_{i-1}} \ge \frac{1}{4}} \\[6pt]
+	      \frac{num_{i-1} - 1}{size_{i-1}} < \frac{1}{4}
+	    \end{cases} \right.
+	  \\[20pt]
+	  \alpha_{i-1} \ge 1/2 \left.
+	  \begin{cases}
+	    \alpha_{i} < 1/2\; \onslide<5->{(\purple{\frac{num_{i-1} - 1}{size_{i-1}} < \frac{1}{4}?})}  \\[6pt]
+	    \alpha_{i} \ge 1/2
+	  \end{cases} \right.
+	\end{cases} \right.
+      \]
+  \end{columns}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \centerline{\large \textsc{\teal{Table-Delete}}}
+
+  \[
+    \alpha_{i-1} < 1/2 \;\land\; \frac{num_{i-1} - 1}{size_{i-1}} < \frac{1}{4}
+  \]
+
+  \begin{align*}
+    \hat{c}_i &= c_i + \Big(\Phi_{i} - \Phi_{i-1}\Big) \\
+      \onslide<2->{
+	&= 1 + (size_i/2 - num_i) - (size_{i-1}/2 - num_{i-1}) \\
+      }
+      \onslide<3->{
+	&= \red{2}
+      }
+  \end{align*}
+
+  \only<4->{
+    \fignocaption{width = 0.30\textwidth}{figs/why}
+  }
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \centerline{\large \textsc{\teal{Table-Delete}}}
+
+  \[
+    \alpha_{i-1} \ge 1/2 \;\land\; \alpha_{i} \ge 1/2
+  \]
+
+  \begin{align*}
+    \hat{c}_i &= c_i + \Big(\Phi_{i} - \Phi_{i-1}\Big) \\
+      \onslide<2->{
+	&= 1 + (2 \cdot num_i - size_i) - (2 \cdot num_{i-1} - size_{i-1}) \\
+      }
+      \onslide<3->{
+	&= \red{-1}
+      }
+  \end{align*}
+
+  \only<4->{
+    \fignocaption{width = 0.20\textwidth}{figs/wtf-panda}
+  }
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{columns}
+    \column{0.50\textwidth}
+      \centerline{\large \textsc{\teal{Table-Insert}}}
+
+      \[
+	\left.
+	\begin{cases}
+	  \alpha_{i-1} < 1/2 \left.
+	  \begin{cases}
+	    \alpha_{i} < 1/2 \; \red{(0)}\\[6pt]
+	    \alpha_{i} \ge 1/2 \; \red{(3)}
+	  \end{cases} \right.
+	  \\[20pt]
+	  \alpha_{i-1} \ge 1/2 \left.
+	    \begin{cases}
+	      \alpha_{i-1} < 1 \; \red{(3)} \\[6pt] 
+	      \alpha_{i-1} = 1 \; \red{(3)}
+	    \end{cases} \right.
+	\end{cases} \right.
+      \]
+    \column{0.50\textwidth}
+      \centerline{\large \textsc{\teal{Table-Delete}}}
+
+      \[
+	\left.
+	\begin{cases}
+	  \alpha_{i-1} < 1/2 \left.
+	    \begin{cases}
+	      \frac{num_{i-1} - 1}{size_{i-1}} \ge \frac{1}{4} \; \red{(1)} \\[6pt]
+	      \frac{num_{i-1} - 1}{size_{i-1}} < \frac{1}{4} \; \red{(2)}
+	    \end{cases} \right.
+	  \\[20pt]
+	  \alpha_{i-1} \ge 1/2 \left.
+	  \begin{cases}
+	    \alpha_{i} < 1/2 \; \red{(1/2)} \\[6pt]
+	    \alpha_{i} \ge 1/2 \; \red{(-1)}
+	  \end{cases} \right.
+	\end{cases} \right.
+      \]
+  \end{columns}
+
+  \only<2->{
+    \vspace{0.50cm}
+    \fignocaption{width = 0.40\textwidth}{figs/why-why-why}
+  }
 \end{frame}
 %%%%%%%%%%%%%%%

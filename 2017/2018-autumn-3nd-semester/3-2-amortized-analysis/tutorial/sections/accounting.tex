@@ -2,13 +2,18 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \centerline{\teal{\large The Accounting Method}}
+  \centerline{\teal{\Large The Accounting Method}}
 
-  \vspace{-0.50cm}
+  \fignocaption{width = 0.40\textwidth}{figs/accounting}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
   \begin{gather*}
-    o_1, o_2, \ldots, o_n \\[5pt]
-    c_1, c_2, \ldots, c_n \\[5pt]
-    \red{a_1, a_2, \ldots, a_n}
+    o_1, o_2, \ldots, o_m \\[5pt]
+    c_1, c_2, \ldots, c_m \\[5pt]
+    \red{a_1, a_2, \ldots, a_m}
   \end{gather*}
 
   \pause
@@ -23,7 +28,7 @@
 
   \pause
   \[
-    \forall n,\; \sum_{i=1}^{n} c_i \le \sum_{i=1}^{n} \hat{c_i} \pause \implies \boxed{\red{\forall n,\; \sum_{i=1}^{n} a_i \geq 0}}
+    \forall m,\; \sum_{i=1}^{m} c_i \red{\;\le\;} \sum_{i=1}^{m} \hat{c_i} \pause \implies \boxed{\red{\forall m,\; \sum_{i=1}^{m} a_i \geq 0}}
   \]
 
   \pause
@@ -59,140 +64,3 @@
   \end{table}
 \end{frame}
 %%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-% \begin{frame}{Array merging (Problem 4.13): the summation method}
-%   \centerline{\textsc{Create} ($1$); \textsc{Merge} ($2m$)}
-% 
-%   \begin{columns}
-% 	\column{0.40\textwidth}
-% 	  \pause
-% 	  \begin{align*}
-% 		i & \quad c_i \\
-% 		1 & \quad 1  \\
-% 		2 & \quad 1 + 2 \\
-% 		3 & \quad 1 \\
-% 		4 & \quad 1 + 2 + 4 \\
-% 		5 & \quad 1 \\
-% 		6 & \quad 1 + 2 \\
-% 		7 & \quad 1 \\
-% 		8 & \quad 1 + 2 + 4 \\
-% 		\vdots & \quad \cdots
-% 	  \end{align*}
-% 	\column{0.55\textwidth}
-% 	  \pause
-% 	  \[
-% 		\sum_{i=1}^{n} c_i = \sum_{j=0}^{\lfloor \log n \rfloor} \lfloor \frac{n}{2^j} \rfloor 2^j \le n (\lfloor \log n \rfloor + 1)
-% 	  \]
-% 
-% 	  \pause
-% 	  \[
-% 		\forall i, \hat{c_i} = 1 + \lfloor \log n \rfloor
-% 	  \]
-%   \end{columns}
-% \end{frame}
-%%%%%%%%%%%%%%%%%%%%
-% \begin{frame}{Array merging (Problem 4.13): the accounting method}
-%   \[
-% 	\hat{c_i} = 1 + \lfloor \log n \rfloor
-%   \]
-% 
-%   \pause
-%   \vspace{0.60cm}
-%   \centerline{What does it mean?}
-% 
-%   \pause
-%   \vspace{0.80cm}
-%   \[
-% 	\forall n, \sum_{i=1}^{n} a_i \geq 0
-%   \]
-% \end{frame}
-%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \centerline{\teal{\large Simulating a queue $Q$ using two stacks $S_1, S_2$ {\small (Problem $\mathbb{E}3$)}}}
-
-  \begin{algorithm}[H]
-    \begin{algorithmic}[]
-      \Procedure{Enq}{$x$}
-	\State \textsl{Push}($S_1, x$)
-      \EndProcedure
-
-      \Statex
-      \Procedure{Deq}{\null}
-        \If{$S_2 = \emptyset$}
-          \While{$S_1 \neq \emptyset$}
-            \State \textsl{Push}($S_2$, \textsl{Pop}($S_1$))
-          \EndWhile
-        \EndIf
-        \textsl{Pop}($S_2$)
-      \EndProcedure
-    \end{algorithmic}
-  \end{algorithm}
-\end{frame}
-%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%
-\begin{frame}{}
-  \centerline{\teal{\large The Summation Method for Queue Simulation}}
-
-  \vspace{0.30cm}
-  \[
-    \frac{\left(\sum\limits_{i = 1}^{n} c_i\right)}{n}
-  \]
-
-  \pause
-  \vspace{0.50cm}
-  \centerline{The operation sequence is \red{\it NOT} known.}
-\end{frame}
-%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%
-\begin{frame}{}
-  \centerline{\teal{\large The Accounting Method for Queue Simulation}}
-
-  \begin{table}
-    \begin{tabular}{ccccc}
-      {\it item}: & Push into $S_1$ & Pop from $S_1$ & Push into $S_2$ & Pop from $S_2$ \\
-      & $1$ & $1$ & $1$ & $1$
-    \end{tabular}
-  \end{table}
-
-  \pause
-  \vspace{-0.60cm}
-  \begin{align*}
-    \hat{c}_{\textsc{Enq}} &= 3 \\
-    \hat{c}_{\textsc{Deq}} &= 1 \\
-  \end{align*}
-
-  \pause
-  \vspace{-0.60cm}
-  \[ 
-    \sum_{i=1}^{n} a_i \ge 0 \pause \Longleftarrow \sum_{i=1}^{n} a_i = \#S_1 \times 2
-  \]
-\end{frame}
-%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%
-\begin{frame}{}
-  \centerline{\teal{\large The Accounting Method for Queue Simulation}}
-
-  \begin{align*}
-    \hat{c}_{\textsc{Enq}} &= 3 \\
-    \hat{c}_{\textsc{Deq}} &= 1 \\
-  \end{align*}
-
-  \vspace{-0.60cm}
-  \[
-    \#S_1 = t
-  \]
-
-  \begin{table}
-    \begin{tabular}{c|ccc}
-      & $\hat{c_i}$ & $c_i$ {\it (actual cost)} & $a_i$ {\it (accounting cost)} \\
-      \textsc{Enqueue} & $3$ & $1$ & $2$ \\
-      \textsc{Dequeue} ($S_2 = \emptyset$) & $1$ & $1$ & $0$ \\
-      \textsc{Dequeue} ($S_2 \neq \emptyset$) & $1$ & $1+2t$ & $-2t$
-    \end{tabular}
-  \end{table}
-\end{frame}
-%%%%%%%%%%%%%

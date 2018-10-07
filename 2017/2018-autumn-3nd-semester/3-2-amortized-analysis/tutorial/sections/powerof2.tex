@@ -2,24 +2,130 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \centerline{\teal{\large The Potential Method}}
+  \begin{exampleblock}{The Summation Method for ``Power of $2$'' (Problem $17.1$-$3$)}
+    \begin{displaymath}
+      c_i = \left\{ \begin{array}{ll}
+	i & \textrm{if $i$ is an exact power of 2}\\
+	1 & \textrm{o.w.}
+      \end{array} \right.
+    \end{displaymath}
+
+    \[
+      \begin{array}{ccccccccccc}
+	o_i:  & \red{o_1} & \red{o_2} & o_3 & \red{o_4} & o_5 & o_6 & o_7 & \red{o_8} & o_9 & o_{10} \\[3pt]
+	c_i:  & \red{1}   & \red{2}   & 1   & \red{4}   & 1   & 1   & 1   & \red{8}   & 1   & 1  \\
+      \end{array}
+    \]
+  \end{exampleblock}
+
+  \pause
+  \begin{align*}
+    \sum_{i=1}^{n} c_i &= (n - \lfloor \log n \rfloor - 1) + \sum_{j=0}^{\lfloor \log n \rfloor} 2^{j} \\
+      &= (n - \lfloor \log n \rfloor - 1) + (2^{\lfloor \log n \rfloor + 1} - 1) \\
+      &\le (n - \lfloor \log n \rfloor - 1) + (2n - 1) \\
+      &< 3n
+  \end{align*}
+
+  \pause
+  \[
+    \boxed{\teal{\forall i,\; \hat{c_i} = 3}}
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \centerline{\teal{\large The Potential Method}}
+  \begin{exampleblock}{The Accounting Method for ``Power of $2$'' (Problem $17.2$-$2$)}
+    \begin{displaymath}
+      c_i = \left\{ \begin{array}{ll}
+	i & \textrm{if $i$ is an exact power of 2}\\
+	1 & \textrm{o.w.}
+      \end{array} \right.
+    \end{displaymath}
+
+    \[
+      \begin{array}{ccccccccccc}
+	o_i:  & \red{o_1} & \red{o_2} & o_3 & \red{o_4} & o_5 & o_6 & o_7 & \red{o_8} & o_9 & o_{10} \\[3pt]
+	c_i:  & \red{1}   & \red{2}   & 1   & \red{4}   & 1   & 1   & 1   & \red{8}   & 1   & 1  \\
+	\onslide<3->{a_i:  & \teal{2}  & \teal{1}  & 2   & \teal{-1} & 2   & 2   & 2   & \teal{-5} & 2   & 2}
+      \end{array}
+    \]
+  \end{exampleblock}
+
+  \pause
+  \begin{columns}
+    \column{0.45\textwidth}
+      \[
+	\boxed{\teal{\forall i,\; \hat{c_i} = 3}}
+      \]
+      \[
+	\hat{c_i} = c_i + a_i \implies a_i = 3 - c_i
+      \]
+
+      \uncover<4->{
+	\[
+	  \forall n, \sum_{1 \le i \le n} a_i \ge 0.
+	\]
+      }
+    \column{0.55\textwidth}
+      \uncover<6->{
+	\[
+	  2^k \quad (2^k, 2^{k+1}) \quad 2^{k+1}
+	\]
+      }
+      \uncover<7->{
+	\[
+	  \Big(\sum_{1 \le i \le 2^k} a_i\Big) + 2(2^k-1) + (3- 2^{k+1}) \ge 0
+	\]
+      }
+  \end{columns}
+
+  \uncover<5->{
+    \centerline{\purple{Prove by Mathematical Induction on $n$.}}
+  }
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \centerline{\teal{\large The Potential Method}}
-\end{frame}
-%%%%%%%%%%%%%%%
+  \begin{exampleblock}{The Potential Method for ``Power of $2$'' (Problem $17.1$-$3$)}
+    \begin{displaymath}
+      c_i = \left\{ \begin{array}{ll}
+	i & \textrm{if $i$ is an exact power of 2}\\
+	1 & \textrm{o.w.}
+      \end{array} \right.
+    \end{displaymath}
 
-%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \centerline{\teal{\large The Potential Method}}
+    \[
+      \begin{array}{ccccccccccc}
+	o_i:  & \red{o_1} & \red{o_2} & o_3 & \red{o_4} & o_5 & o_6 & o_7 & \red{o_8} & o_9 & o_{10} \\[3pt]
+	c_i:  & \red{1}   & \red{2}   & 1   & \red{4}   & 1   & 1   & 1   & \red{8}   & 1   & 1  \\
+	a_i:  & \teal{2}  & \teal{1}  & 2   & \teal{-1} & 2   & 2   & 2   & \teal{-5} & 2   & 2
+      \end{array}
+    \]
+  \end{exampleblock}
+
+  \pause
+  \begin{align*}
+    \Phi(D_i) &= \onslide<3->{\sum_{j=1}^{i} a_j}
+      \onslide<4->{
+	= 2 (i - \lfloor \log i \rfloor - 1) + \sum_{j=0}^{\lfloor \log i \rfloor} (3- 2^{j}) \\
+      }
+      \onslide<5->{
+	&= 2(i - 2^{\lfloor \log i \rfloor} + 1) + \lfloor \log i \rfloor
+      }
+  \end{align*}
+
+  \uncover<6->{
+    \[
+      \Phi(D_0) \;\red{\triangleq}\; 0, \quad \Phi(D_i) \ge 0
+    \]
+  }
+  \vspace{-0.30cm}
+  \uncover<7->{
+    \[
+      \hat{c_i} = c_i + \Big(\Phi(D_{i}) - \Phi(D_{i-1})\Big) \;\red{= 3}
+    \]
+  }
 \end{frame}
 %%%%%%%%%%%%%%%

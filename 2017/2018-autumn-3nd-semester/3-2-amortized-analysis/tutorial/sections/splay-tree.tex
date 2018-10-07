@@ -372,6 +372,28 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \begin{theorem}[\textsc{Balance Theorem}]
+    \[
+      \sum_{1 \le i \le m} c_{\splay_{i}} = O\Big((m + n) \log n\Big)
+    \]
+  \end{theorem}
+
+  \pause
+  \vspace{0.50cm}
+  \begin{proof}
+    \begin{align*}
+      \sum_{1 \le i \le m} c_{\splay_{i}} &= \sum_{1 \le i \le m} \hat{c}_{\splay_{i}} + \Big(\Phi_{\splay_{0}} - \Phi_{\splay_{m}}\Big) \\
+      \onslide<3->{
+        &\le m \log n + \;\red{n \log n} \\
+        &= (m + n) \log n
+      }
+    \end{align*}
+  \end{proof}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
   \fignocaption{width = 0.80\textwidth}{figs/splay-tree-case-zigzig}
 
   \pause

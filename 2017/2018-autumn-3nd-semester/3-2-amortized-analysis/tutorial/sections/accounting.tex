@@ -4,6 +4,7 @@
 \begin{frame}{}
   \centerline{\teal{\Large The Accounting Method}}
 
+  \vspace{0.50cm}
   \fignocaption{width = 0.40\textwidth}{figs/accounting}
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -11,15 +12,15 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{gather*}
-    o_1, o_2, \ldots, o_m \\[5pt]
-    c_1, c_2, \ldots, c_m \\[5pt]
-    \red{a_1, a_2, \ldots, a_m}
+    o_1, o_2, \ldots, o_n \\[5pt]
+    c_1, c_2, \ldots, c_n \\[5pt]
+    \red{a_1, a_2, \ldots, a_n}
   \end{gather*}
 
   \pause
   \vspace{-0.30cm}
   \[
-    \boxed{\red{\hat{c_i} = c_i + a_i, \; a_i >=< 0}}
+    \boxed{\red{\hat{c_i} = c_i + a_i} \;\; (a_i >=< 0)}
   \]
 
   \[
@@ -28,7 +29,8 @@
 
   \pause
   \[
-    \forall m,\; \sum_{i=1}^{m} c_i \red{\;\le\;} \sum_{i=1}^{m} \hat{c_i} \pause \implies \boxed{\red{\forall m,\; \sum_{i=1}^{m} a_i \geq 0}}
+    \forall n,\; \sum_{i=1}^{n} c_i \red{\;\le\;} \sum_{i=1}^{n} \hat{c_i} \pause 
+    \;\purple{\Longleftarrow}\; \boxed{\red{\forall n,\; \sum_{i=1}^{n} a_i \geq 0}}
   \]
 
   \pause
@@ -40,7 +42,7 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \centerline{\teal{\large The Accounting Method for Array Doubling}}
+  \centerline{\teal{\large The Accounting Method for Dynamic Tables}}
 
   \[
     \red{Q:}\; \hat{c_i} = 3 \text{\emph{ vs. }} \hat{c_i} = 2
@@ -48,18 +50,18 @@
 
   \pause
   \[
-    \hat{c_i} = 3 = \underbrace{1}_{\textrm{insert}} +
-    \underbrace{1}_{\textrm{move itself}} + \underbrace{1}_{\textrm{\red{help move another}}}
+    \hat{c_i} = 3 = \pause
+    \underbrace{1}_{\textrm{insert}} + \underbrace{1}_{\textrm{move itself}} + \underbrace{1}_{\textrm{\red{help move another}}}
   \]
 
   \pause
   \vspace{0.30cm}
   \begin{table}
     \begin{tabular}{c|ccc}
-      & $\hat{c_i}$ & $c_i$ {\it (actual cost)} & $a_i$ {\it (accounting cost)}
+      & $\hat{c_i}$ & $c_i$ & $a_i$
       \\ \hline
-      \textsc{Insert} {\it (normal)} & $3$ & $1$ & $2$\\
-      \textsc{Insert} {\it (expansion)} & $3$ & $1 + t$ & $-t + 2$
+      \textsc{Table-Insert} \textsl{(normal)} & $3$ & $1$ & $2$\\
+      \textsc{Table-Insert} \textsl{(expansion)} & $3$ & $1 + t$ & $-t + 2$
     \end{tabular}
   \end{table}
 \end{frame}

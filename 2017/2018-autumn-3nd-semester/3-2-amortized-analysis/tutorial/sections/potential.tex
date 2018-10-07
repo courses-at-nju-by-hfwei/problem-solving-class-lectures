@@ -3,6 +3,9 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \centerline{\teal{\Large The Potential Method}}
+
+  \vspace{0.50cm}
+  \fignocaption{width = 0.55\textwidth}{figs/potential}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -10,32 +13,63 @@
 \begin{frame}{}
   \[
     \red{D_0},\; o_1,\; \red{D_1},\; o_2,\; \cdots,\; \underbrace{\red{D_{i-1}},\; o_{i},\; \red{D_{i}}}_{\text{\purple{the $i$-th operation}}},\; 
-    \cdots,\; \red{D_{m-1}},\; o_{m},\; \red{D_{m}}
+    \cdots,\; \red{D_{n-1}},\; o_{n},\; \red{D_{n}}
   \]
 
   \pause
+  \vspace{0.50cm}
   \[
-    \Phi: \set{D_{i} \mid 0 \le i \le m} \to \mathcal{R}
+    \Phi: \Big\{D_{i} \mid 0 \le i \le n\Big\} \to \mathcal{R}
   \]
 
   \pause
+  \vspace{0.30cm}
   \[
     \boxed{\red{\hat{c_i} = c_i + \Big(\Phi(D_{i}) - \Phi(D_{i-1})\Big)}}
   \]
 
   \pause
+  \vspace{0.50cm}
   \[
-    \sum_{1 \le i \le m} \hat{c_i} = \left( \sum_{1 \le i \le m} c_i \right) + \Big(\Phi(D_{m}) - \Phi(D_0) \Big)
+    \sum_{1 \le i \le n} c_i = \left( \sum_{1 \le i \le n} \hat{c_i} \right) 
+      + \Big(\underbrace{\Phi(D_{0}) - \Phi(D_{n})}_{\text{\purple{net decrease in potential}}} \Big)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \sum_{1 \le i \le n} c_i = \left( \sum_{1 \le i \le n} \hat{c_i} \right) 
+      + \Big(\underbrace{\Phi(D_{0}) - \Phi(D_{n})}_{\text{\purple{net decrease in potential}}} \Big)
   \]
 
   \pause
+  \vspace{0.30cm}
   \[
-    \forall m,\; \sum_{i=1}^{m} c_i \red{\;\le\;} \sum_{i=1}^{m} \hat{c_i} \pause \quad\Longleftarrow\quad \boxed{\red{\forall i:\; \Phi(D_{i}) \ge \Phi(D_{0})}}
+    \underbrace{\Phi(D_{0}) - \Phi(D_{n})}_{\text{\purple{net decrease in potential}}} \le \red{\Box}
+    \implies
+    \boxed{\sum_{1 \le i \le n} c_i \le \left( \sum_{1 \le i \le n} \hat{c_i} \right) + \red{\Box}}
   \]
 
   \pause
+  \vspace{0.30cm}
   \[
-    \Phi(D_{0}) = 0,\quad \forall i:\; \Phi(D_{i}) \ge 0 \pause \quad \text{\teal{\footnotesize (Typically)}}
+    \red{\Box} = 0 \;\big(\red{\forall i,\; \Phi(D_i) \ge \Phi(D_0)}\big)
+    \implies 
+    \forall n,\; \sum_{1 \le i \le n} c_i \le \sum_{1 \le i \le n} \hat{c_i}
+  \]
+
+  % \pause
+  % \[
+  %   \forall m,\; \sum_{i=1}^{m} c_i \red{\;\le\;} \sum_{i=1}^{m} \hat{c_i} 
+  %   \pause \quad\Longleftarrow\quad \boxed{\red{\forall i:\; \Phi(D_{i}) \ge \Phi(D_{0})}}
+  % \]
+
+  \pause
+  \vspace{0.30cm}
+  \[
+    \Phi(D_{0}) = 0,\quad \forall 1 \le i \le n:\; \Phi(D_{i}) \ge 0 \pause \quad \text{\brown{\footnotesize (Typically)}}
   \]
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -45,7 +79,7 @@
   \centerline{\teal{\large The Potential Method for Dynamic Tables}}
 
   \[
-    \alpha = \frac{T.num}{T.size}
+    \boxed{\red{\alpha = \frac{T.num}{T.size}}}
   \]
 
   \pause
@@ -54,7 +88,7 @@
     \textsc{Expansion}: \left.
     \begin{cases}
       \text{When to expand?}		& \onslide<3->{\alpha = 1} \\
-      \text{How large to expand?} 	& \onslide<3->{\alpha = 1/2}
+      \text{How large to expand to?} 	& \onslide<3->{\alpha = 1/2}
     \end{cases}
     \right.
   \]
@@ -65,7 +99,7 @@
       \textsc{Contraction}: \left.
       \begin{cases}
 	\text{When to contract?}	& \onslide<5->{\alpha = 1/4} \\
-	\text{How small to contract?} 	& \onslide<5->{\alpha = 1/2}
+	\text{How small to contract to?} 	& \onslide<5->{\alpha = 1/2}
       \end{cases} \right.
     \]
   }
@@ -73,7 +107,7 @@
   \onslide<6->{
     \vspace{0.30cm}
     \[
-      \frac{1}{4} \le \alpha \le 1
+      \boxed{\frac{1}{4} \le \alpha \le 1}
     \]
   }
 \end{frame}
@@ -130,7 +164,6 @@
   \vspace{0.20cm}
   \centerline{\large \it \red{By Case Analysis.}}
 
-  \pause
   \vspace{0.60cm}
   \begin{columns}
     \column{0.45\textwidth}
@@ -180,7 +213,7 @@
   \centerline{\large \textsc{\teal{Table-Delete}}}
 
   \[
-    \alpha_{i-1} < 1/2 \;\land\; \frac{num_{i-1} - 1}{size_{i-1}} < \frac{1}{4}
+    \alpha_{i-1} < 1/2 \;\land\; \frac{num_{i-1} - 1}{size_{i-1}} \ge \frac{1}{4}
   \]
 
   \begin{align*}
@@ -189,11 +222,13 @@
 	&= 1 + (size_i/2 - num_i) - (size_{i-1}/2 - num_{i-1}) \\
       }
       \onslide<3->{
+	&= 1 + (size_i/2 - num_i) - (size_i/2 - (num_i + 1)) \\
 	&= \red{2}
       }
   \end{align*}
 
   \only<4->{
+    \vspace{-0.30cm}
     \fignocaption{width = 0.30\textwidth}{figs/why}
   }
 \end{frame}
@@ -213,11 +248,13 @@
 	&= 1 + (2 \cdot num_i - size_i) - (2 \cdot num_{i-1} - size_{i-1}) \\
       }
       \onslide<3->{
+	&= 1 + (2 \cdot num_i - size_i) - (2 \cdot (num_i + 1) -size_i) \\
 	&= \red{-1}
       }
   \end{align*}
 
   \only<4->{
+    \vspace{-0.30cm}
     \fignocaption{width = 0.20\textwidth}{figs/wtf-panda}
   }
 \end{frame}

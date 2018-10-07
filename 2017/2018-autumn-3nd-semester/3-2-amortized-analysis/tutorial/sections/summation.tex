@@ -4,7 +4,8 @@
 \begin{frame}{}
   \centerline{\teal{\Large The Summation Method}}
 
-  \fignocaption{width = 0.40\textwidth}{figs/sigma}
+  \vspace{0.50cm}
+  \fignocaption{width = 0.20\textwidth}{figs/sigma}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -27,11 +28,11 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \centerline{\teal{\large The Summation Method for Array Doubling}}
+  \centerline{\teal{\large The Summation Method for Dynamic Tables}}
 
   \pause
   \vspace{0.30cm}
-  \centerline{On \red{any sequence} of $n$ \textsc{Insert}s on an \blue{initially empty} array.}
+  \centerline{On \red{any sequence} of $n$ \textsc{Table-Insert} on an \blue{\it initially empty} array.}
 
   \pause
   \vspace{0.30cm}
@@ -54,8 +55,8 @@
   \pause
   \vspace{0.30cm}
   \[
-    \sum_{i=1}^{n} c_i \le n + \sum_{j=0}^{\lceil \lg n \rceil - 1} 2^{j} = n +
-    (2^{\lceil \lg n \rceil} - 1) \le n + 2n = 3n
+    \sum_{i=1}^{n} c_i \;\red{=}\;\purple{n}\; + \sum_{j=0}^{\lceil \log n \rceil - 1} 2^{j} 
+      = n + (2^{\lceil \log n \rceil} - 1) < n + 2n = 3n
   \]
 
   \pause

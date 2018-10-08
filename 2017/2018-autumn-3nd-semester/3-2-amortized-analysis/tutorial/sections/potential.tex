@@ -76,6 +76,16 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \fignocaption{width = 0.30\textwidth}{figs/how-to}
+
+  \pause
+  \vspace{0.30cm}
+  \fignocaption{width = 0.35\textwidth}{figs/works-why}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
   \centerline{\teal{\large The Potential Method for Dynamic Tables}}
 
   \[
@@ -252,11 +262,6 @@
 	&= \red{-1}
       }
   \end{align*}
-
-  \only<4->{
-    \vspace{-0.30cm}
-    \fignocaption{width = 0.20\textwidth}{figs/wtf-panda}
-  }
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -307,5 +312,26 @@
     \vspace{0.50cm}
     \fignocaption{width = 0.40\textwidth}{figs/why-why-why}
   }
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \Phi(T) = \left.
+    \begin{cases}
+      2 \cdot T.num - T.size & \text{ if } \alpha(T) \ge 1/2	\\
+      T.size/2 - T.num	     & \text{ if } \alpha(T) < 1/2
+    \end{cases} \right.
+  \]
+
+  \pause
+  \vspace{0.500cm}
+  \[
+    \hat{c}_{\textsc{Table-Insert}} = \pause 3
+  \]
+  \[
+    \hat{c}_{\textsc{Table-Delete}} = \pause 2
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%

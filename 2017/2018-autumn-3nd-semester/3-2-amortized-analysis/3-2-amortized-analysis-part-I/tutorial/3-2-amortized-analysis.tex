@@ -1,0 +1,36 @@
+\documentclass[]{beamer}
+
+\input{preamble}
+
+%%%%%%%%%%%%%%%%%%%%
+\title[\titletext]{\titletext}
+% \subtitle{\teal{}}
+
+\author[Hengfeng Wei]{Hengfeng Wei}
+\titlegraphic{\includegraphics[height = 2.0cm]{figs/qrcode-alg-ta-tutorial-2018-autumn}}
+\institute{hfwei@nju.edu.cn}
+\date{October 08, 2018}
+
+\AtBeginSection[]{
+  \begin{frame}[noframenumbering, plain]
+    \frametitle{\titletext}
+    \tableofcontents[currentsection, sectionstyle=show/shaded, subsectionstyle=show/show/hide]
+  \end{frame}
+}
+
+%%%%%%%%%%
+\begin{document}
+\maketitle
+
+\input{sections/overview}
+\input{sections/summation}
+\input{sections/accounting}
+\input{sections/potential}
+\input{sections/powerof2}
+\input{sections/array-merge-dictionary}
+
+\thankyou{}
+\input{suggestion}
+
+\end{document}
+%%%%%%%%%%

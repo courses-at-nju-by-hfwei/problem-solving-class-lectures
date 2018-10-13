@@ -1,0 +1,78 @@
+% file: sections/potential.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \centerline{\teal{\LARGE The Potential Method}}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \red{D_0},\; o_1,\; \red{D_1},\; o_2,\; \cdots,\; \underbrace{\red{D_{i-1}},\; o_{i},\; \red{D_{i}}}_{\text{\purple{the $i$-th operation}}},\; 
+    \cdots,\; \red{D_{n-1}},\; o_{n},\; \red{D_{n}}
+  \]
+
+  \pause
+  \vspace{0.50cm}
+  \[
+    \Phi: \Big\{D_{i} \mid 0 \le i \le n\Big\} \to \mathcal{R}
+  \]
+
+  \pause
+  \vspace{0.30cm}
+  \[
+    \boxed{\red{\hat{c_i} = c_i + \Big(\Phi(D_{i}) - \Phi(D_{i-1})\Big)}}
+  \]
+
+  \pause
+  \vspace{0.50cm}
+  \[
+    \sum_{1 \le i \le n} c_i = \left( \sum_{1 \le i \le n} \hat{c_i} \right) 
+      + \Big(\underbrace{\Phi(D_{0}) - \Phi(D_{n})}_{\text{\purple{net decrease in potential}}} \Big)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \sum_{1 \le i \le n} c_i = \left( \sum_{1 \le i \le n} \hat{c_i} \right) 
+      + \Big(\underbrace{\Phi(D_{0}) - \Phi(D_{n})}_{\text{\purple{net decrease in potential}}} \Big)
+  \]
+
+  \pause
+  \vspace{0.80cm}
+  \[
+    \underbrace{\Phi(D_{0}) - \Phi(D_{n})}_{\text{\purple{net decrease in potential}}} \le \red{\Box}
+    \implies
+    \boxed{\sum_{1 \le i \le n} c_i \le \left( \sum_{1 \le i \le n} \hat{c_i} \right) + \red{\Box}}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \[
+    \boxed{\sum_{1 \le i \le n} c_i \le \left( \sum_{1 \le i \le n} \hat{c_i} \right) + \red{\Box}}
+  \]
+
+  \pause
+  \vspace{0.50cm}
+  \[
+    \red{\Box} = 0 \;\big(\red{\forall i,\; \Phi(D_i) \ge \Phi(D_0)}\big)
+    \implies 
+    \forall n,\; \sum_{1 \le i \le n} c_i \le \sum_{1 \le i \le n} \hat{c_i}
+  \]
+
+  \pause
+  \vspace{0.50cm}
+  \[
+    \Phi(D_{0}) = 0
+  \]
+
+  \[
+    \forall 1 \le i \le n:\; \Phi(D_{i}) \ge 0
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%

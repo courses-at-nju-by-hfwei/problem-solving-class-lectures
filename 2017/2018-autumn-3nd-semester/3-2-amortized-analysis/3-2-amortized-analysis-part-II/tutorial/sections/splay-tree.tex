@@ -6,13 +6,18 @@
     \centering
     \purple{\Large What work are you proudest of?} \\[12pt]
 
-    \fignocaption{width = 0.25\textwidth}{figs/qrcode-tarjan-interview}
+    \begin{columns}
+      \column{0.50\textwidth}
+	\fignocaption{width = 0.50\textwidth}{figs/qrcode-tarjan-interview}
+      \column{0.50\textwidth}
+	\uncover<3->{\fignocaption{width = 0.50\textwidth}{figs/self-adjusting-tree}}
+    \end{columns}
 
     \pause
     \vspace{0.60cm}
     \brown{\large Proudest? It’s hard to choose. \\[5pt] \pause
       I like the \red{\Large self-adjusting search tree} data structure \\[4pt]
-      that Danny Sleator and I developed. \\[5pt]
+      that Daniel Sleator and I developed. \\[5pt] % \pause
       % That’s a nice one.
     }
   \end{quote}
@@ -21,8 +26,14 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \fignocaption{width = 0.75\textwidth}{figs/self-adjusting-bst-paper}
+  \begin{columns}
+    \column{0.50\textwidth}
+      \fignocaption{width = 0.80\textwidth}{figs/daming.png}
+    \column{0.50\textwidth}
+      \fignocaption{width = 0.98\textwidth}{figs/self-adjusting-bst-paper}
+  \end{columns}
 
+  \vspace{0.80cm}
   \begin{quote}
     \centering
     \teal{``Self-Adjusting Binary Search Trees -- \red{\it Splay Tree}'', JACM, $1985$}
@@ -32,22 +43,67 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \centerline{\large \teal{Self-Adjusting Binary Search Trees}}
+  \begin{center}
+    \[
+      \red{\textsc{Splay}(x, T):}
+    \]
 
-  \fignocaption{width = 0.35\textwidth}{figs/self-adjusting-tree}
+    Moving node $x$ to the \red{\large \it root} of the tree $T$ by $\cdots$
+  \end{center}
+
+  \pause
+  \vspace{-0.50cm}
+  \begin{align*}
+    \textsc{Search}(x, T) & \quad \purple{\text{\footnotesize RETURN }} x^{\ast}/\Lambda \\
+    \textsc{Insert}(x, T) & \quad \purple{\text{\footnotesize ASSUME }} x \notin T \\
+    \textsc{Delete}(x, T) & \quad \purple{\text{\footnotesize ASSUME }} x \in T \\
+  \end{align*}
+
+  \pause
+  \vspace{-0.80cm}
+  \begin{align*}
+    T \gets \textsc{Join}(T_1, T_2) & \quad \purple{\text{\footnotesize ASSUME }} x \in T_1 < y \in T_2 \\
+    (T_1, T_2) \gets \textsc{Split}(x, T) & \quad \purple{\text{\footnotesize RETURN }} x \in T_1 \le i \land y \in T_2 > i
+  \end{align*}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{center}
-    $\splay(x)$:  \\[8pt]
-    Moving node $x$ to the root of the tree by performing a sequence of \red{rotations}
+    \[
+      \red{\textsc{Splay}(x, T):}
+    \]
+
+    Moving node $x$ to the \red{\large \it root} of the tree $T$ by performing a sequence of \purple{\large \it rotations}
     along the path from $x$ to the root.
   \end{center}
 
   \pause
   \fignocaption{width = 0.75\textwidth}{figs/rotation}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    A chain of length $n$ \\[8pt]
+    A sequence of $n$ \splay{}
+  \end{center}
+
+  \begin{columns}
+    \column{0.50\textwidth}
+      \fignocaption{width = 0.60\textwidth}{figs/splay-tree-chain}
+    \column{0.50\textwidth}
+      \pause
+      \[
+	\sum_{i = 1}^{n} c_i = \Theta(n^2)
+      \]
+
+      \[
+	\bar{c_i} = \Theta(n)
+      \]
+  \end{columns}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -65,7 +121,7 @@
   \fignocaption{width = 0.80\textwidth}{figs/splay-tree-case-zig}
 
   \vspace{0.30cm}
-  \centerline{\textsc{Case $1$}: zig}
+  \centerline{\textsc{Case $1$}: zig (zag)}
   \[
     y = p(x) \text{ is the root}
   \]
@@ -77,7 +133,7 @@
   \fignocaption{width = 0.85\textwidth}{figs/splay-tree-case-zigzig}
 
   \vspace{0.30cm}
-  \centerline{\textsc{Case $2$}: zig-zig}
+  \centerline{\textsc{Case $2$}: zig-zig (zag-zag)}
   \[
     y = p(x) \qquad z = p(y)
   \]
@@ -97,7 +153,7 @@
   \fignocaption{width = 0.80\textwidth}{figs/splay-tree-case-zigzag}
 
   \vspace{0.30cm}
-  \centerline{\textsc{Case $3$}: zig-zag}
+  \centerline{\textsc{Case $3$}: zig-zag (zag-zig)}
   \[
     y = p(x) \qquad z = p(y)
   \]
@@ -114,6 +170,17 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \begin{columns}
+    \column{0.20\textwidth}
+    \column{0.60\textwidth}
+      \input{algs/splay}
+    \column{0.20\textwidth}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
   \fignocaption{width = 0.95\textwidth}{figs/splay-at-1}{\centerline{$\textsc{Splay}(1)$}}
 
   \pause
@@ -124,10 +191,10 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{center}
-    \teal{\Large Amortized analysis of \textsc{Splay}} \\[30pt] \pause
+    \purple{\Large Amortized Analysis of \textsc{Splay}} \\[30pt] \pause
 
     A splay tree $T$ of \red{$n$}-node \\[6pt]
-    An arbitrary sequence of \red{$m$} \textsc{Splay} operations
+    An arbitrary sequence of \red{$m$} \splay
   \end{center}
 
   \pause
@@ -146,6 +213,10 @@
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
+\input{sections/potential}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
 \begin{frame}{}
   \[
     \Phi_{0}\;\; \splay_{1} \;\;
@@ -158,15 +229,13 @@
     \Phi_{m}
   \]
 
+  \vspace{0.30cm}
   \[
     \hat{c}_{\splay_{i}} =  c_{\splay_{i}} + (\Phi_{\splay_{i}} - \Phi_{\splay_{i-1}})
   \]
 
   \pause
-  \vspace{0.60cm}
-  \begin{center}
-    \red{\Large \it How to define $\Phi$?}
-  \end{center}
+  \fignocaption{width = 0.25\textwidth}{figs/Phi}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -176,31 +245,21 @@
     s(x): \# \text{ of nodes in the subtree rooted at } x
   \]
 
-  \begin{columns}
-    \column{0.50\textwidth}
-      \pause
-      \[
-	r(x) = \log s(x)
-      \]
+  \pause
+  \[
+    r(x) = \log s(x)
+  \]
 
-      \pause
-      \[
-	\purple{\Phi = \sum_{x \in T} r(x)}
-      \]
-    \column{0.50\textwidth}
-      \pause
-      \fignocaption{width = 0.50\textwidth}{figs/magic}
-  \end{columns}
+  \pause
+  \[
+    \purple{\Phi = \sum_{x \in T} r(x)}
+  \]
 
   \pause
   \vspace{0.50cm}
   \[
     \hat{c}_{\splay_{i}} =  c_{\splay_{i}} + (\Phi_{\splay_{i}} - \Phi_{\splay_{i-1}})
   \]
-
-  \begin{center}
-    \red{\large \it How to calculate $(\Phi_{\splay_{i}} - \Phi_{\splay_{i-1}})$ and $c_{\splay_{i}}$?}
-  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -230,7 +289,7 @@
   \pause
   \begin{align*}
     \hat{c}_{\splay_{i}} &= \sum_{1 \le j \le l} \hat{c}_{\iter_{j}} \\
-      &= \sum_{1 \le j \le l} c_{\iter_{j}} + (\Phi_{\iter_{j}} - \Phi_{\iter_{j-1}})
+      &= \sum_{1 \le j \le l} \Big(c_{\iter_{j}} + (\Phi_{\iter_{j}} - \Phi_{\iter_{j-1}})\Big)
   \end{align*}
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -319,6 +378,26 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \begin{align*}
+    r_{j-1}(x) + r_{j}(z) &= \log s_{j-1} (x) + \log s_i(z) \\
+      \onslide<2->{&\red{\le}\; 2 \log \left(\frac{s_{j-1}(x) + s_{j}(z)}{2}\right) \\}
+      \onslide<3->{&\le 2 \log \left(\frac{s_{j}(x)}{2}\right) \\}
+    \onslide<4->{
+      &= 2 \log s_{j}(x) - 2 \\
+      &= 2 r_{j}(x) - 2
+    }
+  \end{align*}
+
+  \uncover<5->{
+    \[
+      r_{j}(z) \le 2 r_{j}(x) - r_{j-1}(x) - 2
+    \]
+  }
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
   \fignocaption{width = 0.80\textwidth}{figs/splay-tree-case-zigzag}
 
   \centerline{\textsc{Case $3$}: zig-zag}
@@ -353,7 +432,7 @@
   \pause
   \begin{align*}
     \hat{c}_{\splay_{i}} &= \sum_{1 \le j \le l} \hat{c}_{\iter_{j}} \\
-      &= \sum_{1 \le j \le l} c_{\iter_{j}} + (\Phi_{\iter_{j}} - \Phi_{\iter_{j-1}}) \\
+      &= \sum_{1 \le j \le l} \Big(c_{\iter_{j}} + (\Phi_{\iter_{j}} - \Phi_{\iter_{j-1}})\Big) \\
     \onslide<3->{
       &\le 3\big(r_{\iter_{l}}(x) - r_{\iter_{0}}(x)\big) \red{\; + 1} \\
     }
@@ -376,11 +455,11 @@
     \]
   \end{theorem}
 
-  \pause
   \vspace{0.50cm}
   \begin{proof}
     \begin{align*}
-      \sum_{1 \le i \le m} c_{\splay_{i}} &= \sum_{1 \le i \le m} \hat{c}_{\splay_{i}} + \Big(\Phi_{\splay_{0}} - \Phi_{\splay_{m}}\Big) \\
+      \sum_{1 \le i \le m} c_{\splay_{i}} &= \left(\sum_{1 \le i \le m} \hat{c}_{\splay_{i}}\right) + 
+      \big(\underbrace{\Phi_{\splay_{0}} - \Phi_{\splay_{m}}}_{\purple{\text{net decrease in potential}}}\big) \\
       \onslide<3->{
         &\le m \log n + \;\red{n \log n} \\
         &= (m + n) \log n
@@ -391,20 +470,19 @@
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
-\begin{frame}{}
-  \fignocaption{width = 0.80\textwidth}{figs/splay-tree-case-zigzig}
-
-  \pause
-  \vspace{0.30cm}
-  \begin{center}
-    \teal{MTR (Move To Root) heuristic:} \\[6pt]
-    Keeping rotate the edge joining $x$ to its parent.
-  \end{center}
-
-  \pause
-  \vspace{0.30cm}
-  \centerline{\large \red{Does this work?}}
-\end{frame}
+% \begin{frame}{}
+%   \fignocaption{width = 0.80\textwidth}{figs/splay-tree-case-zigzig}
+% 
+%   \vspace{0.30cm}
+%   \begin{center}
+%     \teal{MTR (Move To Root) heuristic:} \\[6pt]
+%     Keeping rotate the edge joining $x$ to its parent.
+%   \end{center}
+% 
+%   \pause
+%   \vspace{0.30cm}
+%   \centerline{\large \red{Does this work?}}
+% \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
@@ -431,7 +509,7 @@
 	\[
 	  \red{\textsc{Splay}(x)}
 	\]
-	\pause
+
 	\[
 	  \textsc{Search}(x, t)
 	\]
@@ -441,6 +519,7 @@
 	\[
 	  \textsc{Delete}(x, t)
 	\]
+
 	\[
 	  \textsc{Join}(t_1, t_2)
 	\]
@@ -450,7 +529,7 @@
       \end{center}
     \column{0.60\textwidth}
       \pause
-      \fignocaption{width = 0.80\textwidth}{figs/iceberg}
+      \fignocaption{width = 0.75\textwidth}{figs/iceberg}
       \pause
       \fignocaption{width = 0.85\textwidth}{figs/self-adjusting-bst-paper}
   \end{columns}

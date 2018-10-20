@@ -26,14 +26,9 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{columns}
-    \column{0.50\textwidth}
-      \fignocaption{width = 0.80\textwidth}{figs/daming.png}
-    \column{0.50\textwidth}
-      \fignocaption{width = 0.98\textwidth}{figs/self-adjusting-bst-paper}
-  \end{columns}
+  \fignocaption{width = 0.70\textwidth}{figs/self-adjusting-bst-paper}
 
-  \vspace{0.80cm}
+  \vspace{0.60cm}
   \begin{quote}
     \centering
     \teal{``Self-Adjusting Binary Search Trees -- \red{\it Splay Tree}'', JACM, $1985$}
@@ -63,7 +58,7 @@
   \vspace{-0.80cm}
   \begin{align*}
     T \gets \textsc{Join}(T_1, T_2) & \quad \purple{\text{\footnotesize ASSUME }} x \in T_1 < y \in T_2 \\
-    (T_1, T_2) \gets \textsc{Split}(x, T) & \quad \purple{\text{\footnotesize RETURN }} x \in T_1 \le i \land y \in T_2 > i
+    (T_1, T_2) \gets \textsc{Split}(x, T) & \quad \purple{\text{\footnotesize RETURN }} x \in T_1 \le x \land y \in T_2 > x
   \end{align*}
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -361,7 +356,7 @@
   \begin{align*}
     \hat{c}_{j} &=  c_{j} + (\Phi_{j} - \Phi_{j-1}) \\
       \onslide<2->{
-	&= 2 + r_{j}(x) + r_{j}(y) + r_{j}(y)- r_{j-1}(x) - r_{j-1}(y) - r_{j-1}(z) \\
+	&= 2 + r_{j}(x) + r_{j}(y) + r_{j}(z)- r_{j-1}(x) - r_{j-1}(y) - r_{j-1}(z) \\
       }
       \onslide<3->{
 	&= 2 + r_{j}(y) + r_{j}(y)- r_{j-1}(x) - r_{j-1}(y) \\

@@ -7,5 +7,56 @@
       \forall v \in V(G): \text{deg}(v) \ge 2 \implies G \text{ contains a cycle}
     \]
   \end{exampleblock}
+
+  \pause
+  \vspace{0.60cm}
+  \begin{center}
+    \red{By Contradiction.}
+  \end{center}
+
+  \pause
+  \[
+    m = n - k(G) \le n - 1
+  \]
+
+  \pause
+  \[
+    \sum_{v \in V(G)} \text{deg}(v) \le 2 (n-1)
+  \]
 \end{frame}
 %%%%%%%%%%%%%
+
+%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Existence of Cycle (Problem $4.8$)}
+    \[
+      \forall v \in V(G): \text{deg}(v) \ge 2 \implies G \text{ contains a cycle}
+    \]
+  \end{exampleblock}
+
+  \vspace{0.60cm}
+  \fignocaption{width = 0.85\textwidth}{figs/maximal-path-degree2}
+  \centerline{\red{\large maximal path $P_{u,v}$}}
+\end{frame}
+%%%%%%%%%%%%
+
+%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Existence of Cycle (Problem $4.8$)}
+    \[
+      \forall v \in V(G): \text{deg}(v) \ge 2 \implies G \text{ contains a cycle}
+    \]
+  \end{exampleblock}
+
+  \begin{align*}
+    \forall v &\in V(G): \text{deg}(v) \ge 2 \\[6pt]
+    \onslide<2->{&\implies \nexists v \in V(G): \text{deg}(v) = 1 \\[6pt]}
+    \onslide<3->{&\xRightarrow[]{\teal{\text{Theorem } 4.3}} G \text{ is not a tree} \\[6pt]}
+    \only<7->{&\text{\red{Consider each component $G'$ of $G$}} \\[6pt]}
+    \onslide<4->{&\xRightarrow[]{\teal{\text{Theorem } 4.2}} 
+    	\exists u, v \in V(G\only<7->{'}): u, v \text{ are \textcolor<6->{red}{connected} by $\ge 2$ paths} \\[6pt]}
+    \onslide<5->{&\implies G\only<7->{'} \text{ contains a cycle} \\[6pt]}
+    \only<8->{&\implies G \text{ contains a cycle}}
+  \end{align*}
+\end{frame}
+%%%%%%%%%%%%

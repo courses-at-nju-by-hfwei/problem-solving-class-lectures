@@ -3,25 +3,21 @@
 %%%%%%%%%%%%
 \begin{frame}{}
   \centerline{\teal{\Large Cut Property}}
-
-  \[
-    G = (V, E, w)
-  \]
 \end{frame}
 %%%%%%%%%%%%%
 
 %%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{Cut Property (I)}
+  \begin{exampleblock}{Cut Property (Version I)}
     \begin{description}
       \item[$X:$] A part of some MST $T$ of $G$
-      \item[$(S, V \setminus S):$] A \red{\it cut} such that $X$ does \red{\it not} cross $(S, V \setminus S)$
-    ­ \item[$e:$] \brown{\it A} lightest edge across $(S, V \setminus S)$
+      \item[$(S, V \setminus S):$] A \teal{\it cut} such that $X$ does \teal{\it not} cross $(S, V \setminus S)$
+    ­ \item[$e:$] \red{A} lightest edge across $(S, V \setminus S)$
     \end{description}
 
     \pause
     \vspace{0.30cm}
-    \centerline{Then \blue{$X \cup \set{e}$} is a part of some MST $T'$ of $G$.}
+    \centerline{Then \blue{$X \cup \set{e}$} is a part of \red{some} MST $T'$ of $G$.}
   \end{exampleblock}
 
   \pause
@@ -50,7 +46,7 @@
 
 %%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{Cut Property (II)}
+  \begin{exampleblock}{Cut Property (Version II)}
     \begin{center}
       A cut $(S, V \setminus S)$ \\[6pt]
       Let $e = (u,v)$ be \red{\emph{a}} lightest edge across $(S, V \setminus S)$
@@ -93,7 +89,7 @@
 
 %%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{Application of Cut Property \pno{$10.15\; (3)$}}
+  \begin{exampleblock}{Application of Cut Property}
     \centerline{$e = (u,v) \in G$ is a lightest edge $\implies$ $e \in \exists$ MST of $G$}
   \end{exampleblock}
 
@@ -103,29 +99,15 @@
     \]
   }
 
-  \begin{exampleblock}{Application of Cut Property \pno{$10.15\; (4)$}}
+  \begin{exampleblock}{Application of Cut Property}
     \centerline{$e = (u,v) \in G$ is the unique lightest edge $\implies$ $e \in \forall$ MST}
   \end{exampleblock}
-\end{frame}
-%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%
-\begin{frame}<presentation:0>[noframenumbering]
-  \begin{exampleblock}{Application of Cut Property \pno{$10.15\; (4)$}}
-    \centerline{$e = (u,v) \in G$ is the unique lightest edge $\implies$ $e \in \forall$ MST}
-  \end{exampleblock}
-
-  \pause
-  \vspace{0.50cm}
-  \[
-    T' = \underbrace{T + \set{e}}_{\red{\text{if } e \;\notin\; T}} - \set{e'} \implies w(T') < w(T)
-  \]
 \end{frame}
 %%%%%%%%%%%%%
 
 %%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{Wrong Divide\&Conquer Algorithm for MST \pno{$10.21$}}
+  \begin{exampleblock}{Wrong Divide\&Conquer Algorithm for MST}
     \[
       (V_{1}, V_{2}): \Big\rvert |V_{1}| - |V_{2}| \Big\rvert \le 1
     \]

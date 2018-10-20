@@ -8,7 +8,7 @@
 
 %%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{block}{Cycle Property \pno{$10.19 (b)$}}
+  \begin{block}{Cycle Property}
     \begin{itemize}
       \item Let $C$ be any cycle in $G$
       \item Let $e = (u,v)$ be \red{\it a} maximum-weight edge in $C$
@@ -31,26 +31,26 @@
 %%%%%%%%%%%%%
 
 %%%%%%%%%%%%%
-\begin{frame}<presentation:0>[noframenumbering]
-  \begin{proof}
-    Basic idea: pick any MST $T$ of $G$
-    \begin{itemize}
-      \item $e \notin T$
-      \item $e \in T \Rightarrow e \notin T'$
-	\begin{itemize}
-	  \item $T - \set{e}$ $\Rightarrow$ $(S, V \setminus S)$
-	  \item $\exists e' = (u', v') \in C$ ($e' \in P_{u,v}$) across the cut
-	  \item \textcolor{red}{$T' = T - \set{e} + \set{e'}$}: spanning tree
-	  \item $w(e') \leq w(e) \Rightarrow w(T') \leq w(T) \Rightarrow w(T') = w(T)$
-	\end{itemize}
-    \end{itemize}
-  \end{proof}
-\end{frame}
+% \begin{frame}{}
+%   \begin{proof}
+%     Basic idea: pick any MST $T$ of $G$
+%     \begin{itemize}
+%       \item $e \notin T$
+%       \item $e \in T \Rightarrow e \notin T'$
+% 	\begin{itemize}
+% 	  \item $T - \set{e}$ $\Rightarrow$ $(S, V \setminus S)$
+% 	  \item $\exists e' = (u', v') \in C$ ($e' \in P_{u,v}$) across the cut
+% 	  \item \textcolor{red}{$T' = T - \set{e} + \set{e'}$}: spanning tree
+% 	  \item $w(e') \leq w(e) \Rightarrow w(T') \leq w(T) \Rightarrow w(T') = w(T)$
+% 	\end{itemize}
+%     \end{itemize}
+%   \end{proof}
+% \end{frame}
 %%%%%%%%%%%%%
 
 %%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{Anti-Kruskal algorithm \pno{$10.19\; (c)$}}
+  \begin{exampleblock}{Anti-Kruskal Algorithm}
     \centerline{\href{https://en.wikipedia.org/wiki/Reverse-delete_algorithm}{Reverse-delete algorithm \teal{\small (wiki; clickable)}}}
   \end{exampleblock}
 
@@ -86,7 +86,7 @@
 
 %%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{Application of Cycle Property \pno{$10.15\; (1)$}}
+  \begin{exampleblock}{Application of Cycle Property}
     \[
       G = (V, E), \quad \red{|E| > |V| - 1}
     \]
@@ -109,7 +109,7 @@
 
 %%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{Application of Cycle Property \pno{$10.15\; (2)$}}
+  \begin{exampleblock}{Application of Cycle Property}
     \[
       C \subseteq G, \quad \red{e \in C}
     \]
@@ -132,7 +132,7 @@
 
 %%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{Application of Cycle Property \pno{$10.15\; (5)$}}
+  \begin{exampleblock}{Application of Cycle Property}
     \[
       C \subseteq G, \quad e \in C
     \]

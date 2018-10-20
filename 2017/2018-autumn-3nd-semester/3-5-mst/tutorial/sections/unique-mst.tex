@@ -8,7 +8,7 @@
 
 %%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{Uniqueness of MST \pno{$10.18\; (1)$}}
+  \begin{exampleblock}{Uniqueness of MST (Problem $4.29$)}
     \centerline{Distinct weights $\implies$ Unique MST.}
   \end{exampleblock}
 
@@ -40,11 +40,7 @@
 
 %%%%%%%%%%%%
 \begin{frame}{}
-  \[
-    e \in T_1 \setminus T_2
-  \]
-
-  \fignocaption{width = 0.40\textwidth}{figs/mst-unique.pdf}
+  \fignocaption{width = 0.50\textwidth}{figs/mst-unique.pdf}
 
   \pause
   \vspace{-0.30cm}
@@ -68,8 +64,8 @@
 
 %%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{Condition for Uniqueness of MST \pno{$10.18\; (2)$}}
-    \centerline{Unique MST $\centernot\implies$ Equal weights.}
+  \begin{exampleblock}{Condition for Uniqueness of MST}
+    \centerline{Unique MST $\centernot\implies$ Distinct weights.}
   \end{exampleblock}
 
   \pause
@@ -79,23 +75,7 @@
 
 %%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{Unique MST \pno{$10.21\; (3)$}}
-    \centerline{Unique MST $\centernot\implies$ Minimum-weight edge across any cut is unique.}
-  \end{exampleblock}
-
-  \pause
-  \fignocaption{width = 0.30\textwidth}{figs/unique-mst-cut-counterexample.pdf}
-
-  \pause
-  \begin{theorem}[After-class Exercise]
-    \centerline{Minimum-weight edge across any cut is unique $\implies$ Unique MST.}
-  \end{theorem}
-\end{frame}
-%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%
-\begin{frame}{}
-  \begin{exampleblock}{Unique MST \pno{$10.21\; (3)$}}
+  \begin{exampleblock}{Unique MST (Problem $4.30$)}
     Unique MST $\centernot\implies$ Maximum-weight edge in any cycle is unique.
   \end{exampleblock}
 
@@ -112,22 +92,38 @@
 \end{frame}
 %%%%%%%%%%%%
 
-%%%%%%%%%%%%
+%%%%%%%%%%%%%
 \begin{frame}{}
-  \fignocaption{width = 0.20\textwidth}{figs/qrcode-jeffe-unique-mst}
+  \begin{exampleblock}{Unique MST}
+    \centerline{Unique MST $\centernot\implies$ Minimum-weight edge across any cut is unique.}
+  \end{exampleblock}
 
-  \begin{columns}
-    \column{0.50\textwidth}
-      \fignocaption{width = 0.40\textwidth}{figs/qrcode-cut-unique-mst}
-    \column{0.50\textwidth}
-      \fignocaption{width = 0.40\textwidth}{figs/qrcode-cycle-unique-mst}
-  \end{columns}
+  \pause
+  \fignocaption{width = 0.30\textwidth}{figs/unique-mst-cut-counterexample.pdf}
+
+  \pause
+  \begin{theorem}[After-class Exercise]
+    \centerline{Minimum-weight edge across any cut is unique $\implies$ Unique MST.}
+  \end{theorem}
 \end{frame}
+%%%%%%%%%%%%%
+
+%%%%%%%%%%%%
+% \begin{frame}{}
+%   \fignocaption{width = 0.20\textwidth}{figs/qrcode-jeffe-unique-mst}
+% 
+%   \begin{columns}
+%     \column{0.50\textwidth}
+%       \fignocaption{width = 0.40\textwidth}{figs/qrcode-cut-unique-mst}
+%     \column{0.50\textwidth}
+%       \fignocaption{width = 0.40\textwidth}{figs/qrcode-cycle-unique-mst}
+%   \end{columns}
+% \end{frame}
 %%%%%%%%%%%%
 
 %%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{Unique MST \pno{$10.21\; (4)$}}
+  \begin{exampleblock}{Unique MST}
     To decide whether a graph has a unique MST.
   \end{exampleblock}
 
@@ -150,39 +146,39 @@
 %%%%%%%%%%%%
 
 %%%%%%%%%%%%
-\begin{frame}{}
-  \begin{exampleblock}{Critical Edges \pno{$10.12$}}
-    \[
-      G \to T, \qquad G' \triangleq G \setminus \red{\set{e}} \to T'
-    \]
-    \[
-      w(T') > w(T)
-    \]
-
-    \pause
-    \vspace{0.30cm}
-    \centerline{To find all critical edges in $O(m \log m)$ time.}
-  \end{exampleblock}
-
-  \pause
-  \begin{columns}
-    \column{0.50\textwidth}
-      \fignocaption{width = 0.50\textwidth}{figs/critical-edges}
-      \[
-	w(e) = 3 \quad w(e) = 2
-      \]
-    \column{0.50\textwidth}
-      \pause
-      \centerline{\teal{By Kruskal Algorithm.}}
-
-      \pause
-      \vspace{0.50cm}
-      \centerline{\purple{No missing: Check all cycles.}}
-
-      \pause
-      \[
-	\red{O(m \log m)}
-      \]
-  \end{columns}
-\end{frame}
+% \begin{frame}{}
+%   \begin{exampleblock}{Critical Edges}
+%     \[
+%       G \to T, \qquad G' \triangleq G \setminus \red{\set{e}} \to T'
+%     \]
+%     \[
+%       w(T') > w(T)
+%     \]
+% 
+%     \pause
+%     \vspace{0.30cm}
+%     \centerline{To find all critical edges in $O(m \log m)$ time.}
+%   \end{exampleblock}
+% 
+%   \pause
+%   \begin{columns}
+%     \column{0.50\textwidth}
+%       \fignocaption{width = 0.50\textwidth}{figs/critical-edges}
+%       \[
+% 	w(e) = 3 \quad w(e) = 2
+%       \]
+%     \column{0.50\textwidth}
+%       \pause
+%       \centerline{\teal{By Kruskal Algorithm.}}
+% 
+%       \pause
+%       \vspace{0.50cm}
+%       \centerline{\purple{No missing: Check all cycles.}}
+% 
+%       \pause
+%       \[
+% 	\red{O(m \log m)}
+%       \]
+%   \end{columns}
+% \end{frame}
 %%%%%%%%%%%%

@@ -1,0 +1,36 @@
+% file: sections/spanning-tree.tex
+
+%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Bridge and Spanning Trees (Problem $4.26$)}
+    \[
+      G: \text{ a connected graph}
+    \]
+    \[
+      e \in E(G) \text{ is a bridge } \iff e \in \forall \text{ST of } G
+    \]
+  \end{exampleblock}
+
+  \pause
+  \[
+    ``\Longleftarrow"
+  \]
+  \pause
+  \centerline{\red{By Contradiction.}}
+
+  \begin{columns}
+    \pause
+    \column{0.50\textwidth}
+    \[
+      \text{ST of } G - e
+    \]
+    \pause
+    \column{0.50\textwidth}
+      \fignocaption{width = 0.50\textwidth}{figs/bridge-spanning-tree}
+      \vspace{-0.40cm}
+      \[
+	T' = \underbrace{T - \set{e}}_{\red{e \;\in\; T}} + \set{e'}
+      \]
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%

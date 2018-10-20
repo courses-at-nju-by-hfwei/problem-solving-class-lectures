@@ -75,7 +75,23 @@
 
 %%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{Unique MST (Problem $4.30$)}
+  \begin{exampleblock}{Unique MST}
+    \centerline{Unique MST $\centernot\implies$ Minimum-weight edge across any cut is unique.}
+  \end{exampleblock}
+
+  \pause
+  \fignocaption{width = 0.30\textwidth}{figs/unique-mst-cut-counterexample.pdf}
+
+  \pause
+  \begin{theorem}[After-class Exercise]
+    \centerline{Minimum-weight edge across any cut is unique $\implies$ Unique MST.}
+  \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Unique MST}
     Unique MST $\centernot\implies$ Maximum-weight edge in any cycle is unique.
   \end{exampleblock}
 
@@ -92,22 +108,6 @@
 \end{frame}
 %%%%%%%%%%%%
 
-%%%%%%%%%%%%%
-\begin{frame}{}
-  \begin{exampleblock}{Unique MST}
-    \centerline{Unique MST $\centernot\implies$ Minimum-weight edge across any cut is unique.}
-  \end{exampleblock}
-
-  \pause
-  \fignocaption{width = 0.30\textwidth}{figs/unique-mst-cut-counterexample.pdf}
-
-  \pause
-  \begin{theorem}[After-class Exercise]
-    \centerline{Minimum-weight edge across any cut is unique $\implies$ Unique MST.}
-  \end{theorem}
-\end{frame}
-%%%%%%%%%%%%%
-
 %%%%%%%%%%%%
 % \begin{frame}{}
 %   \fignocaption{width = 0.20\textwidth}{figs/qrcode-jeffe-unique-mst}
@@ -122,27 +122,27 @@
 %%%%%%%%%%%%
 
 %%%%%%%%%%%%
-\begin{frame}{}
-  \begin{exampleblock}{Unique MST}
-    To decide whether a graph has a unique MST.
-  \end{exampleblock}
-
-  \pause
-  \vspace{0.80cm}
-  \centerline{\large \red{Ties} in Prim's and Kruskal's algorithms}
-
-  \pause
-  \fignocaption{width = 0.25\textwidth}{figs/unique-mst-cut-counterexample.pdf}
-
-  \pause
-  \vspace{-0.30cm}
-  \[
-    \underbrace{\red{T}}_{\teal{\text{Any MST}}} +\; \underbrace{\red{\set{e}}, \forall e \notin T}_{\teal{\text{Cycle}}}
-  \]
-
-  \pause
-  \centerline{\purple{By Kruskal Algorithm.}}
-\end{frame}
+% \begin{frame}{}
+%   \begin{exampleblock}{Unique MST}
+%     To decide whether a graph has a unique MST.
+%   \end{exampleblock}
+% 
+%   \pause
+%   \vspace{0.80cm}
+%   \centerline{\large \red{Ties} in Prim's and Kruskal's algorithms}
+% 
+%   \pause
+%   \fignocaption{width = 0.25\textwidth}{figs/unique-mst-cut-counterexample.pdf}
+% 
+%   \pause
+%   \vspace{-0.30cm}
+%   \[
+%     \underbrace{\red{T}}_{\teal{\text{Any MST}}} +\; \underbrace{\red{\set{e}}, \forall e \notin T}_{\teal{\text{Cycle}}}
+%   \]
+% 
+%   \pause
+%   \centerline{\purple{By Kruskal Algorithm.}}
+% \end{frame}
 %%%%%%%%%%%%
 
 %%%%%%%%%%%%

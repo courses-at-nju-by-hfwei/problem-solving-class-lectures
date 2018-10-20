@@ -51,7 +51,7 @@
       A cut $(S, V \setminus S)$ \\[6pt]
       Let $e = (u,v)$ be \red{\emph{a}} lightest edge across $(S, V \setminus S)$
       \[
-	\purple{\red{\exists} \text{ MST $T$ of } G: e \in T}
+	\red{\exists \text{ MST $T$ of } G: e \in T}
       \]
     \end{center}
   \end{exampleblock}
@@ -70,39 +70,39 @@
 %%%%%%%%%%%%%
 
 %%%%%%%%%%%%%
-\begin{frame}<presentation:0>[noframenumbering]
-  \begin{exampleblock}{Converse of Cut Property (II)}
-    \begin{center}
-      $e = (u,v) \in \exists$ MST $T$ of $G$ \\[6pt]
-      $\implies$ \\[6pt]
-      $e$ is a lightest edge across some cut $(S, V \setminus S)$
-    \end{center}
-  \end{exampleblock}
-
-  \pause
-  \fignocaption{width = 0.40\textwidth}{figs/cut-property-no-name}
-  \[
-    T' = \underbrace{T - \set{e}}_{\teal{\text{to find } (S, V \setminus S)}} +\; \underbrace{\set{e'}}_{\red{\exists?}}
-  \]
-\end{frame}
+% \begin{frame}{}
+%   \begin{exampleblock}{Converse of Cut Property (Version II)}
+%     \begin{center}
+%       $e = (u,v) \in \exists$ MST $T$ of $G$ \\[6pt]
+%       $\implies$ \\[6pt]
+%       $e$ is a lightest edge across some cut $(S, V \setminus S)$
+%     \end{center}
+%   \end{exampleblock}
+% 
+%   \pause
+%   \fignocaption{width = 0.40\textwidth}{figs/cut-property-no-name}
+%   \[
+%     T' = \underbrace{T - \set{e}}_{\teal{\text{to find } (S, V \setminus S)}} +\; \underbrace{\set{e'}}_{\red{\exists?}}
+%   \]
+% \end{frame}
 %%%%%%%%%%%%%
 
 %%%%%%%%%%%%%
-\begin{frame}{}
-  \begin{exampleblock}{Application of Cut Property}
-    \centerline{$e = (u,v) \in G$ is a lightest edge $\implies$ $e \in \exists$ MST of $G$}
-  \end{exampleblock}
-
-  \uncover<2->{
-    \[
-      \Big(S = \set{u}, V \setminus S\Big)
-    \]
-  }
-
-  \begin{exampleblock}{Application of Cut Property}
-    \centerline{$e = (u,v) \in G$ is the unique lightest edge $\implies$ $e \in \forall$ MST}
-  \end{exampleblock}
-\end{frame}
+% \begin{frame}{}
+%   \begin{exampleblock}{Application of Cut Property}
+%     \centerline{$e = (u,v) \in G$ is a lightest edge $\implies$ $e \in \exists$ MST of $G$}
+%   \end{exampleblock}
+% 
+%   \uncover<2->{
+%     \[
+%       \Big(S = \set{u}, V \setminus S\Big)
+%     \]
+%   }
+% 
+%   \begin{exampleblock}{Application of Cut Property}
+%     \centerline{$e = (u,v) \in G$ is the unique lightest edge $\implies$ $e \in \forall$ MST}
+%   \end{exampleblock}
+% \end{frame}
 %%%%%%%%%%%%%
 
 %%%%%%%%%%%%%

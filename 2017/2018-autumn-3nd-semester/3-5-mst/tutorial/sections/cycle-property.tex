@@ -84,71 +84,90 @@
 \end{frame}
 %%%%%%%%%%%%%
 
-%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{Application of Cycle Property}
+  \begin{exampleblock}{Application of Cycle Property (Problem $4.30$)}
     \[
-      G = (V, E), \quad \red{|E| > |V| - 1}
+      T: \text{ a MST of a connected weight graph } G
     \]
-    \[
-      e: \text{the unique maximum-weighted edge of } G
-    \]
-    \[
-      \red{\implies^{?}} 
-    \]
-    \[
-      e \notin \text{ any MST}
-    \]
+    \begin{gather*}
+      T \text{ is a \red{unique} MST of } G \\
+      \iff \\
+      \forall e \in G \setminus T:
+      w(e) > w(\text{every other edge on the cycle in $T + e$})
+    \end{gather*}
   \end{exampleblock}
 
   \pause
-  \vspace{0.60cm}
-  \centerline{\large Bridge}
+  \fignocaption{width = 0.35\textwidth}{figs/spanning-tree}
 \end{frame}
 %%%%%%%%%%%%%
 
 %%%%%%%%%%%%%
-\begin{frame}{}
-  \begin{exampleblock}{Application of Cycle Property}
-    \[
-      C \subseteq G, \quad \red{e \in C}
-    \]
-    \[
-      e: \text{ the unique maximum-weighted edge of } G
-    \]
-    \[
-      \implies
-    \]
-    \[
-      e \notin \text{ any MST}
-    \]
-  \end{exampleblock}
-
-  \pause
-  \vspace{0.50cm}
-  \centerline{\teal{Cycle Property}}
-\end{frame}
+% \begin{frame}{}
+%   \begin{exampleblock}{Application of Cycle Property}
+%     \[
+%       G = (V, E), \quad \red{|E| > |V| - 1}
+%     \]
+%     \[
+%       e: \text{the unique maximum-weighted edge of } G
+%     \]
+%     \[
+%       \red{\implies^{?}} 
+%     \]
+%     \[
+%       e \notin \text{ any MST}
+%     \]
+%   \end{exampleblock}
+% 
+%   \pause
+%   \vspace{0.60cm}
+%   \centerline{\large Bridge}
+% \end{frame}
 %%%%%%%%%%%%%
 
 %%%%%%%%%%%%%
-\begin{frame}{}
-  \begin{exampleblock}{Application of Cycle Property}
-    \[
-      C \subseteq G, \quad e \in C
-    \]
-    \[
-      e: \text{ the unique lightest edge of } C
-    \]
-    \[
-      \red{\implies^{?}}
-    \]
-    \[
-      e \in \forall \text{ MST}
-    \]
-  \end{exampleblock}
+% \begin{frame}{}
+%   \begin{exampleblock}{Application of Cycle Property}
+%     \[
+%       C \subseteq G, \quad \red{e \in C}
+%     \]
+%     \[
+%       e: \text{ the unique maximum-weighted edge of } G
+%     \]
+%     \[
+%       \implies
+%     \]
+%     \[
+%       e \notin \text{ any MST}
+%     \]
+%   \end{exampleblock}
+% 
+%   \pause
+%   \vspace{0.50cm}
+%   \centerline{\teal{Cycle Property}}
+% \end{frame}
+%%%%%%%%%%%%%
 
-  \pause
-  \vspace{0.50cm}
-  \fignocaption{width = 0.30\textwidth}{figs/cycle-property-inverse.pdf}
-\end{frame}
+%%%%%%%%%%%%%
+% \begin{frame}{}
+%   \begin{exampleblock}{Application of Cycle Property}
+%     \[
+%       C \subseteq G, \quad e \in C
+%     \]
+%     \[
+%       e: \text{ the unique lightest edge of } C
+%     \]
+%     \[
+%       \red{\implies^{?}}
+%     \]
+%     \[
+%       e \in \forall \text{ MST}
+%     \]
+%   \end{exampleblock}
+% 
+%   \pause
+%   \vspace{0.50cm}
+%   \fignocaption{width = 0.30\textwidth}{figs/cycle-property-inverse.pdf}
+% \end{frame}
 %%%%%%%%%%%%%

@@ -10,14 +10,14 @@
 \begin{frame}{}
   \begin{exampleblock}{Cut Property (Version I)}
     \begin{description}
-      \item[$X:$] A part of some MST $T$ of $G$
+      \item[$X:$] A part of some MST $T_1$ of $G$
       \item[$(S, V \setminus S):$] A \teal{\it cut} such that $X$ does \teal{\it not} cross $(S, V \setminus S)$
     ­ \item[$e:$] \red{A} lightest edge across $(S, V \setminus S)$
     \end{description}
 
     \pause
     \vspace{0.30cm}
-    \centerline{Then \blue{$X \cup \set{e}$} is a part of \red{some} MST $T'$ of $G$.}
+    \centerline{Then \blue{$X \cup \set{e}$} is a part of \red{some} MST $T_2$ of $G$.}
   \end{exampleblock}
 
   \pause
@@ -36,7 +36,7 @@
 
   \pause
   \[
-    T' = \underbrace{T + \set{e}}_{\red{\text{if } e \;\notin\; T}} - \set{e'}
+    T' = \underbrace{\underbrace{T}_{\blue{X \subseteq T}} + \set{e}}_{\red{\text{if } e \;\notin\; T}} - \set{e'}
   \]
 
   \pause
@@ -107,7 +107,7 @@
 
 %%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{Wrong Divide\&Conquer Algorithm for MST}
+  \begin{exampleblock}{A Wrong Divide\&Conquer Algorithm for MST}
     \[
       (V_{1}, V_{2}): \Big\rvert |V_{1}| - |V_{2}| \Big\rvert \le 1
     \]

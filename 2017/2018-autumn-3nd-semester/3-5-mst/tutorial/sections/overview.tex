@@ -2,6 +2,32 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \begin{exampleblock}{Uniqueness of MST (Problem $4.30$)}
+    \vspace{-0.30cm}
+    \begin{gather*}
+      T \text{ is a \red{unique} MST of } G \\
+      \iff \\
+      \forall e \in G \setminus T:
+      w(e) > w(\text{every other edge on the cycle in $T + e$})
+    \end{gather*}
+  \end{exampleblock}
+  
+  \vspace{0.50cm}
+  \begin{exampleblock}{Uniqueness of MST (Problem $4.29$)}
+    \centerline{Distinct weights $\implies$ Unique MST}
+  \end{exampleblock}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{center}
+    \blue{\large Cut Property} \\[12pt]
+    \blue{\large Cycle Property}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
   \fignocaption{width = 0.50\textwidth}{figs/careful-think}
   {\centerline{\red{\LARGE Be Careful with Your Proofs!!!}}}
 \end{frame}
@@ -22,6 +48,7 @@
       \begin{theorem}[A ``Faked'' Theorem]
       \end{theorem}
 
+      \pause
       \begin{proof}
 	\fignocaption{width = 0.55\textwidth}{figs/hushuo}
       \end{proof}

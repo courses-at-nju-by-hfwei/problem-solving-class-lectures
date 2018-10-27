@@ -1,0 +1,54 @@
+% file: sections/2sat.tex
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}<presentation:0>[noframenumbering]
+  \begin{exampleblock}{2SAT (Problem $4.23$)}
+    \[
+      I: (x_1 \lor \overline{x_2}) \land (\overline{x_1} \lor \overline{x_3}) \land (x_1 \lor x_2) \land (\overline{x_3} \lor x_4) \land (\overline{x_1} \lor x_4)
+    \]
+  \end{exampleblock}
+
+  \pause
+  \[
+    \alpha \lor \beta \equiv \overline{\alpha} \to \beta \equiv \overline{\beta} \to \alpha
+  \]
+
+  \pause
+  \begin{center}
+    Implication graph $G_I$.
+  \end{center}
+
+  \pause
+  \begin{theorem}[2SAT]
+    \[
+      \exists \text{ SCC } \exists x: v_x \in \text{SCC} \land v_{\overline{x}} \in \text{SCC} \iff I \text{ is not satisfiable}.
+    \]
+  \end{theorem}
+
+  \pause
+  \begin{alertblock}{Reference:}
+    \begin{itemize}
+      \item {\it ``A Linear-time Algorithm for Testing the Truth of Certain Quantified Boolean Formulas''} 
+	by Bengt Aspvall, Michael Plass, and Robert Tarjan, $1979$.
+    \end{itemize}
+  \end{alertblock}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}<presentation:0>[noframenumbering]
+  % \begin{gather*}
+  %   (x_0\lor x_2)\land(x_0\lor\lnot x_3)\land(x_1\lor\lnot x_3)\land(x_1\lor\lnot x_4)\land\\
+  %   (x_2\lor\lnot x_4)\land (x_0\lor\lnot x_5)\land (x_1\lor\lnot x_5)\land (x_2\lor\lnot x_5)\land\\
+  %   (x_3\lor x_6)\land (x_4\lor x_6)\land (x_5\lor x_6)
+  % \end{gather*}
+  \begin{columns}
+    \column{0.50\textwidth}
+      % \fignocaption{width = 0.80\textwidth}{figs/2sat-implication-graph-wiki.png}
+      \fignocaption{width = 0.80\textwidth}{figs/2sat-implication-graph.pdf}
+    \column{0.50\textwidth}
+      \pause
+      \fignocaption{width = 0.80\textwidth}{figs/2sat-implication-graph.png}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%

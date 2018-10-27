@@ -158,18 +158,18 @@
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{theorem}[Disjoint or Contained Lifttime of Vertices in DFS]
-    \[
-      \forall u,v: [_{u} \; ]_{u} \cap [_{v} \; ]_{v} = \emptyset \bigvee 
-      \Big([_{u} \; ]_{u} \subset [_{v} \; ]_{v} \lor [_{v} \; ]_{v} \subset [_{u} \; ]_{u}\Big)
-    \]
-  \end{theorem}
-
-  \pause
-
-  \begin{proof}
-	\fignocaption{width = 0.30\textwidth}{figs/stack.png}
-  \end{proof}
+  \begin{columns}
+    \column{0.20\textwidth}
+      \fignocaption{width = 0.60\textwidth}{figs/dfs-tree-edge}
+    \column{0.20\textwidth}
+      \pause
+      \fignocaption{width = 0.60\textwidth}{figs/dfs-back-edge}
+    \pause
+    \column{0.20\textwidth}
+      \fignocaption{width = 0.60\textwidth}{figs/dfs-forward-edge}
+    \column{0.40\textwidth}
+      \fignocaption{width = 0.90\textwidth}{figs/dfs-cross-edge}
+  \end{columns}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
@@ -192,7 +192,6 @@
   \[
     \text{f}[v] < \text{d}[u] \iff \text{ \uncover<3->{\brown{cross}} edge}
   \]
-
 
   \[
     \uncover<4->{\text{f}[u] < \text{f}[v] \iff } \uncover<5->{\text{ \red{back} edge }}

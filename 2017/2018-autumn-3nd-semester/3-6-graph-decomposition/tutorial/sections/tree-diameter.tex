@@ -1,0 +1,75 @@
+% file: sections/tree-diameter.tex
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Height and diameter of tree (Problem $5.4$)}
+    Binary tree $T = (V, E)$ with $|V| = n$ and the root $r$:
+    \begin{enumerate}[(I)]
+      \item Height $H(T)$ in $O(n)$
+      \item Diameter $D(T)$ in $O(n)$
+    \end{enumerate}
+  \end{exampleblock}
+
+  \pause
+  \vspace{0.20cm}
+  \[
+    \left\{\begin{array}{ll}
+      \onslide<3->{H(T) = 0, & T \text{ is a leave} \\}
+      H(T) = \max\Big(H(L_T), H(R_T)\Big) + 1, & \onslide<3->{\text{o.w.}}
+    \end{array}\right.
+  \]
+
+  \pause
+  \vspace{0.20cm}
+  \onslide<4->{
+    \[
+      \left\{\begin{array}{ll}
+	D(T) = 0, & T \text{ is a leave} \\
+	\onslide<4->{D(T) = \max\Big(D(L_T), D(R_T), \onslide<5->{\underbrace{\red{H(L_T) + H(R_T) + 2}}_{\teal{\text{through the root}}}}\Big), & \text{o.w.}}
+      \end{array}\right.
+    \]
+  }
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \centerline{Binary tree $T = (V, E)$ with $|V| = n$ and the root $r$}
+
+  \pause
+  \vspace{0.80cm}
+  \centerline{\red{$Q:$ Diameter of a \blue{\it tree} \teal{\it without} a designated root}}
+
+  \pause
+  \fignocaption{width = 0.40\textwidth}{figs/tree-no-root}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \centerline{\red{$Q:$ Diameter of a tree \teal{\it without} a designated root}}
+
+  \pause
+  \vspace{0.80cm}
+  \begin{columns}
+    \column{0.60\textwidth}
+      {\large A beautiful algorithm:}
+      \begin{itemize}
+	\item Pick any $u$
+	\item Run BFS from $u$, obtain the farthest $v$
+	\item Run BFS from $v$, obtain the farthest $w$
+      \end{itemize}
+      \[
+	(v, w)
+      \]
+    \pause
+    \column{0.20\textwidth}
+      \centerline{\red{\blue{Your Job:} Prove it!}}
+  \end{columns}
+
+  \pause
+  \vspace{0.50cm}
+  \centerline{\teal{Back to our original problem with $u \gets r$.}}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+

@@ -1,0 +1,204 @@
+% file: sections/dfs-bfs.tex
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{} 
+  \centerline{\large Graph \red{\it structure} induced by DFS:}
+
+  \vspace{0.50cm}
+  \begin{columns}
+    \column{0.50\textwidth}
+      \begin{center}
+	\purple{states} of \tikz{\node[draw, circle]{$v$}} \\[15pt]
+
+	\purple{types} of \tikz{\node (u) [draw, circle]{$u$}; \node (v) [draw, circle, right = of u] {$v$}; \draw (u) -- (v);}
+      \end{center}
+    \pause
+    \column{0.50\textwidth}
+      \begin{center}
+	\purple{life time} of \tikz{\node[draw, circle]{$v$}}: \\[15pt]
+
+	$\brown{v}: \text{d}[v], \text{f}[v]$ \\[10pt]
+
+	\brown{$\text{d}[v]$:} \textsc{Bicomp} \\[10pt]
+
+	\brown{$\text{f}[v]$:} \textsc{Toposort}, \textsc{SCC}
+      \end{center}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Classification of Edges]
+    We can define four edge edges in terms of the depth-first forest $G_{\pi}$ produced by a DFS on $G$:
+    \begin{description}[Forward edge:]
+      \setlength{\itemsep}{5pt}
+      \item[Tree edge:] edge in $G_{\pi}$
+      \item[Back edge:] $\to$ ancestor
+      \item[Forward edge:] $\to$ descendant (nontree edge)
+      \item[Cross edge:] $\to$ $(\lnot \text{ancestor}) \land (\lnot \text{descendant})$
+    \end{description}
+  \end{definition}
+
+  \fignocaption{width = 0.40\textwidth}{figs/dfs-digraph}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{DFS on \red{Undirected} Graphs (Problem $22.3$-$6$)}
+    \begin{center}
+      Classifying an edge $(u,v)$ as a tree edge or a back edge 
+      according to \purple{whether $(u,v)$ or $(v,u)$ is encountered first} during the depth-first search \\[6pt] 
+
+      \red{\large is equivalent to} \\[6pt]
+      
+      classifying it according to \purple{the ordering of the four types in the classification scheme}.
+    \end{center}
+  \end{exampleblock}
+
+  \only<2>{
+    \fignocaption{width = 0.40\textwidth}{figs/what-is-this}
+  }
+  \only<3>{
+    \fignocaption{width = 0.38\textwidth}{figs/dfs-undirected}
+  }
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[Theorem $22.10$]
+    In a depth-first search of an undirected graph $G$, 
+    every edge of $G$ is either a tree edge or a back edge.
+  \end{theorem}
+
+  \begin{proof}
+    Let $(u,v)$ be an arbitrary edge of $G$, 
+    and suppose without loss of generality that $u.d < v.d$. 
+    Then the search must discover and finish $v$ before it finishes $u$
+    (while $u$ is gray), since $v$ is on $u$’s adjacency list. \\[6pt]
+
+    If \textcolor<2->{red}{the first time} that the search explores edge $(u,v)$, 
+    it is in the direction from $u$ to $v$, 
+    then $v$ is undiscovered (white) until that time, 
+    for otherwise the search would have explored this edge
+    already in the direction from $v$ to $u$. 
+    Thus, $(u,v)$ becomes a tree edge. \\[6pt]
+    
+    If the search explores $(u,v)$ \textcolor<2->{red}{first} in the direction from $v$ to $u$, 
+    then $(u,v)$ is a back edge,
+    since $u$ is still gray at the time the edge is first explored.
+  \end{proof}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fignocaption{width = 0.30\textwidth}{figs/keep-calm-prove-it}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{DFS on \red{Undirected} Graphs (Problem $22.3$-$6$)}
+    \begin{center}
+      Classifying an edge $(u,v)$ as a tree edge or a back edge 
+      according to \purple{whether $(u,v)$ or $(v,u)$ is encountered first} during the depth-first search \\[6pt] 
+
+      \red{\large is equivalent to} \\[6pt]
+      
+      classifying it according to \purple{the ordering of the four types in the classification scheme}.
+    \end{center}
+  \end{exampleblock}
+
+  \vspace{0.60cm}
+  \begin{table}[]
+    \begin{tabular}{ccc}
+      \teal{``First Types''} & {\it vs.} & \teal{``First Time''} \\[8pt]
+      tree edge     & $\iff$    & tree edge    \\[6pt]
+      back edge     & $\iff$    & back edge   
+    \end{tabular}
+  \end{table}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{table}[]
+    \begin{tabular}{ccc}
+      \teal{``First Types''} & \purple{$\Longleftarrow$} & \teal{``First Time''} \\[8pt]
+      tree edge     & \purple{$\Longleftarrow$}    & tree edge    \\[6pt]
+      back edge     & \purple{$\Longleftarrow$}    & back edge   
+    \end{tabular}
+  \end{table}
+
+  \begin{columns}
+    \column{0.50\textwidth}
+      \pause
+      \fignocaption{width = 0.50\textwidth}{figs/dfs-undirected-firsttime-tree}
+    \column{0.50\textwidth}
+      \pause
+      \fignocaption{width = 0.50\textwidth}{figs/dfs-undirected-firsttime-back}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{table}[]
+    \begin{tabular}{ccc}
+      \teal{``First Types''} & \purple{$\implies$}    & \teal{``First Time''} \\[8pt]
+      tree edge     	     & \purple{$\implies$}    & tree edge    \\[6pt]
+      back edge              & \purple{$\implies$}    & back edge   
+    \end{tabular}
+  \end{table}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[Disjoint or Contained Lifttime of Vertices in DFS]
+    \[
+      \forall u,v: [_{u} \; ]_{u} \cap [_{v} \; ]_{v} = \emptyset \bigvee 
+      \Big([_{u} \; ]_{u} \subset [_{v} \; ]_{v} \lor [_{v} \; ]_{v} \subset [_{u} \; ]_{u}\Big)
+    \]
+  \end{theorem}
+
+  \pause
+
+  \begin{proof}
+	\fignocaption{width = 0.30\textwidth}{figs/stack.png}
+  \end{proof}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Edge Types and Lifetime of Vertices in DFS}
+    \[
+      \forall u \to v:
+    \]
+    \vspace{-0.30cm}
+    \begin{itemize}
+      \setlength{\itemsep}{5pt}
+      \item tree/forward edge: $\red{[_{u}}\; \teal{[_{v}\; ]_{v}}\; \red{]_{u}}$
+      \item back edge: $\teal{[_{v}}\; \red{[_{u}\; ]_{u}}\; \teal{]_{v}}$
+      \item cross edge: $\teal{[_{v}\; ]_{v}}\; \red{[_{u}\; ]_{u}}$
+    \end{itemize}
+  \end{exampleblock}
+
+  \pause
+  \[
+    \text{f}[v] < \text{d}[u] \iff \text{ \uncover<3->{\brown{cross}} edge}
+  \]
+
+
+  \[
+    \uncover<4->{\text{f}[u] < \text{f}[v] \iff } \uncover<5->{\text{ \red{back} edge }}
+  \]
+  \[
+    \uncover<6->{\nexists \text{ cycle} \implies \red{\boxed{u \to v \iff \text{f}[v] < \text{f}[u]}}}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%

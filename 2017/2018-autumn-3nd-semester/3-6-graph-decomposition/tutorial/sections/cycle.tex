@@ -2,7 +2,26 @@
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{Cycle detection (Problem $5.8-1$)}
+  \begin{exampleblock}{Cycle Detection (Problem $22.4$-$3$)}
+    \begin{center}
+      Whether an undirected graph $G$ contains a cycle?
+    \end{center}
+    \[
+      O(|V|)
+    \]
+  \end{exampleblock}
+
+  \pause
+  \vspace{0.60cm}
+  \[
+    \text{tree: } |E| = |V| - 1 \implies \text{ check } |E| \ge |V|
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Cycle Detection}
     \begin{table}[ht]
       \centering
       \renewcommand{\arraystretch}{1.3}
@@ -20,24 +39,5 @@
   \end{exampleblock}
 
   \uncover<6->{\fignocaption{width = 0.20\textwidth}{figs/bfs-digraph-cycle-without-back.png}}
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \begin{exampleblock}{Cycle Deletion (Problem $22.4$-$3$)}
-    \begin{center}
-      Whether an undirected graph $G$ contains a cycle?
-    \end{center}
-    \[
-      O(|V|)
-    \]
-  \end{exampleblock}
-
-  \pause
-  \vspace{0.60cm}
-  \[
-    \text{tree: } |E| = |V| - 1 \implies \text{ check } |E| \ge |V|
-  \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%

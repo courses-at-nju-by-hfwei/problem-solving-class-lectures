@@ -15,13 +15,13 @@
     \pause
     \column{0.50\textwidth}
       \begin{center}
-	\purple{life time} of \tikz{\node[draw, circle]{$v$}}: \\[15pt]
+	\purple{lifetime} of \tikz{\node[draw, circle]{$v$}}: \\[15pt]
 
-	$\brown{v}: \text{d}[v], \text{f}[v]$ \\[10pt]
+	$\brown{v:} \text{d}[v], \text{f}[v]$ \\[10pt]
 
-	\brown{$\text{d}[v]$:} \textsc{Bicomp} \\[10pt]
+	\brown{$\text{f}[v]$:} \textsc{Toposort}, \textsc{SCC} \\[10pt]
 
-	\brown{$\text{f}[v]$:} \textsc{Toposort}, \textsc{SCC}
+	\brown{$\text{d}[v]$:} \textsc{Bicomp} {\footnotesize \teal{(Problem $22$-$2$)}}
       \end{center}
   \end{columns}
 \end{frame}
@@ -30,17 +30,17 @@
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{definition}[Classification of Edges]
-    We can define four edge edges in terms of the depth-first forest $G_{\pi}$ produced by a DFS on $G$:
+    We can \red{define} four edge edges \cyan{in terms of the depth-first forest $G_{\pi}$} produced by a DFS on $G$:
     \begin{description}[Forward edge:]
       \setlength{\itemsep}{5pt}
-      \item[Tree edge:] edge in $G_{\pi}$
+      \item[Tree edge:] \purple{edge in $G_{\pi}$} \\[12pt]
       \item[Back edge:] $\to$ ancestor
-      \item[Forward edge:] $\to$ descendant (nontree edge)
+      \item[Forward edge:] $\to$ descendant {\small ({\it nontree} edge)}
       \item[Cross edge:] $\to$ $(\lnot \text{ancestor}) \land (\lnot \text{descendant})$
     \end{description}
   \end{definition}
 
-  \fignocaption{width = 0.40\textwidth}{figs/dfs-digraph}
+  % \fignocaption{width = 0.40\textwidth}{figs/dfs-digraph}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
@@ -63,6 +63,14 @@
   \only<3>{
     \fignocaption{width = 0.38\textwidth}{figs/dfs-undirected}
   }
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  % \fignocaption{width = 0.20\textwidth}{figs/qrcode-stackexchange-dfs-undirected}
+
+  \fignocaption{width = 1.00\textwidth}{figs/cs-stackexchange-dfs-comment-color}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
@@ -115,7 +123,7 @@
   \vspace{0.60cm}
   \begin{table}[]
     \begin{tabular}{ccc}
-      \teal{``First Types''} & {\it vs.} & \teal{``First Time''} \\[8pt]
+      \teal{``First Type''} & {\it vs.} & \teal{``First Time''} \\[8pt]
       tree edge     & $\iff$    & tree edge    \\[6pt]
       back edge     & $\iff$    & back edge   
     \end{tabular}
@@ -127,7 +135,7 @@
 \begin{frame}{}
   \begin{table}[]
     \begin{tabular}{ccc}
-      \teal{``First Types''} & \purple{$\Longleftarrow$} & \teal{``First Time''} \\[8pt]
+      \teal{``First Type''} & \purple{$\Longleftarrow$} & \teal{``First Time''} \\[8pt]
       tree edge     & \purple{$\Longleftarrow$}    & tree edge    \\[6pt]
       back edge     & \purple{$\Longleftarrow$}    & back edge   
     \end{tabular}
@@ -136,10 +144,10 @@
   \begin{columns}
     \column{0.50\textwidth}
       \pause
-      \fignocaption{width = 0.50\textwidth}{figs/dfs-undirected-firsttime-tree}
+      \fignocaption{width = 0.45\textwidth}{figs/dfs-undirected-firsttime-tree}
     \column{0.50\textwidth}
       \pause
-      \fignocaption{width = 0.50\textwidth}{figs/dfs-undirected-firsttime-back}
+      \fignocaption{width = 0.45\textwidth}{figs/dfs-undirected-firsttime-back}
   \end{columns}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
@@ -148,11 +156,20 @@
 \begin{frame}{}
   \begin{table}[]
     \begin{tabular}{ccc}
-      \teal{``First Types''} & \purple{$\implies$}    & \teal{``First Time''} \\[8pt]
+      \teal{``First Type''} & \purple{$\implies$}    & \teal{``First Time''} \\[8pt]
       tree edge     	     & \purple{$\implies$}    & tree edge    \\[6pt]
       back edge              & \purple{$\implies$}    & back edge   
     \end{tabular}
   \end{table}
+
+  \begin{columns}
+    \column{0.50\textwidth}
+      \pause
+      \fignocaption{width = 0.40\textwidth}{figs/dfs-undirected-firsttype-tree}
+    \column{0.50\textwidth}
+      \pause
+      \fignocaption{width = 0.40\textwidth}{figs/dfs-undirected-firsttype-back}
+  \end{columns}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
@@ -190,14 +207,16 @@
 
   \pause
   \[
-    \text{f}[v] < \text{d}[u] \iff \text{ \uncover<3->{\brown{cross}} edge}
+    \text{f}[v] < \text{d}[u] \iff \text{ \purple{cross edge}}
   \]
 
+  \pause
   \[
-    \uncover<4->{\text{f}[u] < \text{f}[v] \iff } \uncover<5->{\text{ \red{back} edge }}
+    \text{f}[u] < \text{f}[v] \iff  \text{ \red{back edge}}
   \]
+  \pause
   \[
-    \uncover<6->{\nexists \text{ cycle} \implies \red{\boxed{u \to v \iff \text{f}[v] < \text{f}[u]}}}
+    \nexists \text{ cycle} \implies \red{\boxed{u \to v \iff \text{f}[v] < \text{f}[u]}}
   \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%

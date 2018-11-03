@@ -1,0 +1,17 @@
+% file: algs/component-graph-foreach-component.tex
+
+\begin{algorithm}[H]
+  % \caption{Construct Component Graph of a Digraph.}
+  % \label{alg:component-graph-foreach-component}
+  \begin{algorithmic}[1]
+    \Procedure{CompGraph}{$G$, $\mathcal{C}$}
+      \For{$C, C' \in \mathcal{C}$}
+	\For{$u \in C, v \in C'$}
+	  \If{$u \to v$}
+	    \State $C \to C'$
+	  \EndIf
+	\EndFor
+      \EndFor
+    \EndProcedure
+  \end{algorithmic}
+\end{algorithm}

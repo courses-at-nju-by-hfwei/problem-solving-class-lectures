@@ -1,0 +1,13 @@
+% file: algs/component-graph-foreach-edge.tex
+
+\begin{algorithm}[H]
+  % \caption{Construct Component Graph of a Digraph.}
+  % \label{alg:component-graph-foreach-edge}
+  \begin{algorithmic}[1]
+    \Procedure{CompGraph}{$G$, $\mathcal{C}$}
+      \For{$(u, v) \in E$}
+      \State $C[u] \to C[v]$
+      \EndFor
+    \EndProcedure
+  \end{algorithmic}
+\end{algorithm}

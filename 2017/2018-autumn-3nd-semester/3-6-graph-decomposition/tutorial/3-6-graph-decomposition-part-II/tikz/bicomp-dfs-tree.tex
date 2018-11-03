@@ -1,0 +1,27 @@
+% file: sections/bicomp-dfs-tree.tex
+
+\begin{tikzpicture} [level distance = 50pt, sibling distance = 20pt,
+  edge from parent/.style= { % added code
+      draw, thick, edge from parent path = {(\tikzparentnode) -- (\tikzchildnode)}}]
+  \tikzset{every tree node/.style = 
+    {align = center, circle, draw, fill = blue!20, font = \Large, minimum size = 20pt}}
+    \Tree [.\textcolor{red}{$r$}
+	    [.\node (x) {$x$};
+	       [.\node (ll) {};
+	        \node (w) {\textcolor{blue}{$w$}};
+		$$
+	       ]
+	       [.\node (v) {\textcolor{red}{$v$}};
+		 \node (u) {\textcolor{teal}{$u$}};
+	       ]
+            ]
+	    [.$$ 
+	      $$
+	      $$
+	    ] 
+        ]
+
+  \uncover<2->{\draw[thick, teal, bend left] (u) to (x);}
+  \uncover<3->{\draw[thick, red, bend right] (v) to (r);}
+  \uncover<4->{\draw[thick, blue, bend left = 45] (w) to (r);}
+\end{tikzpicture}

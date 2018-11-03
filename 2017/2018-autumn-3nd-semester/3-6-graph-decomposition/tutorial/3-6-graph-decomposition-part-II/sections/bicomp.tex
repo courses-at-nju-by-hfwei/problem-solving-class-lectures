@@ -1,0 +1,157 @@
+% file: sections/biconn.tex
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Biconnected Graph]
+    A connected undirected graph is \red{\it biconnected} if it contains no ``cut-nodes''.
+  \end{definition}
+
+  \pause
+  \vspace{0.80cm}
+  \begin{definition}[Biconnected Component \teal{(Bicomponent)}]
+    A \red{\it bicomponent} of an undirected graph is a maximal biconnected subgraph.
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{columns}
+    \column{0.50\textwidth}
+      \fignocaption{width = 0.80\textwidth}{figs/bicomponent-example-graph}
+    \column{0.50\textwidth}
+      \pause
+      \fignocaption{width = 0.80\textwidth}{figs/bicomponent-example-bicomponents}
+  \end{columns}
+
+  \pause
+  \vspace{0.30cm}
+  \centerline{\red{Paritition of edges} \teal{(not of nodes)}}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    {\large The Power of the Hammer of DFS on \red{Undirected Graphs}}
+  \end{center}
+
+  \fignocaption{width = 0.50\textwidth}{figs/luo-hammer}
+
+  \pause
+  \begin{theorem}[Theorem $22.10$]
+    In a depth-first search of an undirected graph $G$, 
+    every edge of $G$ is either a \red{tree edge} or a \red{back edge}.
+  \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fignocaption{width = 0.50\textwidth}{figs/bicomponent-dfs-tree}
+
+  \pause
+  \begin{center}
+    \red{\large Cut-nodes? \qquad \pause Bicomponents?}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \centerline{\Large \textsc{Bicomp}: \red{Back!}}
+
+  \begin{center}
+    \input{tikz/bicomp-dfs-tree}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fignocaption{width = 0.35\textwidth}{figs/back-to-past}
+
+  \pause
+  \[
+    \red{\back{v}:}
+  \]
+
+  \begin{center}
+    The \teal{earliest ancestor} $v$ can get \\[6pt]
+    by following tree edges $\T$ and back edges $\B$. \\[15pt]
+
+    \pause
+    \begin{enumerate}[(I)]
+      \centering
+      \item \red{\large When and how to \cyan{initialize\&update} $\back{v}$?}
+    \end{enumerate}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fignocaption{width = 0.40\textwidth}{figs/bicomp-cutnode-theorem}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[Characterization of Cut-nodes]
+    \centerline{In a DFS tree, $v$ is a cut-node}
+
+    \[
+      \iff
+    \]
+
+    \begin{columns}
+      \column{0.10\textwidth}
+      \column{0.80\textwidth}
+	\begin{enumerate}[(a)]
+	  \item $v$ is the \red{root} and $\text{deg}(v) \ge 2$
+	  \item $v$ is not the root and \red{some} subtree of $v$ has no back edge to a \teal{proper ancestor} of $v$
+	\end{enumerate}
+      \column{0.10\textwidth}
+    \end{columns}
+  \end{theorem}
+
+  \pause
+  \vspace{0.80cm}
+  \begin{enumerate}[(I)]
+    \centering
+    \setcounter{enumi}{1}
+    \item \red{When and how to \teal{identify} a bicomponent?}
+  \end{enumerate}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \red{\back{v}:}
+  \]
+
+  \begin{center}
+    The \teal{earliest ancestor} $v$ can get \\[6pt]
+    by following tree edges $\T$ and back edges $\B$.
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%   \[
+%     \back{v} = \min\left{\set{v} \cup {w | }\right}
+%   \]
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{description}[backtracking from $w$:]
+    \item[tree edge ($\to v$):]   $\text{back}[v] = \red{d[v]}$
+    \item[back edge ($v \to w$):] $\text{back}[v] = \min \set{\text{back}[v], d[w]}$
+    \item[backtracking from $w$:] $\text{back}[v] = \min \set{\text{back}[v], \text{back}[w] = \teal{\text{wBack}}}$
+  \end{description}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fignocaption{width = 0.60\textwidth}{figs/cutnode-types.png}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%

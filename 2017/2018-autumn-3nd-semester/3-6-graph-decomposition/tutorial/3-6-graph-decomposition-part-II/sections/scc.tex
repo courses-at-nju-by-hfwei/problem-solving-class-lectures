@@ -1,0 +1,125 @@
+% file: sections/scc.tex
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[Digraph as DAG]
+    Every digraph is a dag of its SCCs.
+  \end{theorem}
+
+  \fignocaption{width = 0.40\textwidth}{figs/scc-dag}
+
+  \pause
+  \begin{center}
+    \red{\large Two tiered structure of digraphs:} \\[15pt] 
+
+    digraph $\equiv$ a \teal{dag} of SCCs \\[6pt]
+
+    SCC: equivalence class over \teal{reachability}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Semiconnected Digraph (Problem $4.14$)}
+    \[
+      \forall u,v \in V: u \leadsto v \lor v \leadsto u
+    \]
+  \end{exampleblock}
+
+  \pause
+  \vspace{0.50cm}
+  \centerline{\red{\fbox{\large \text{digraph} $\equiv$ a \teal{dag} of SCCs}}}
+
+  \pause
+  \vspace{0.50cm}
+  \fignocaption{width = 0.70\textwidth}{figs/hamiltonian-path-dag}
+
+  \pause
+  \[
+    \red{\boxed{\text{DAG: } \text{ Semiconnected} \iff \exists! \text{ topo. ordering}}}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \red{\boxed{\text{DAG: } \text{ Semiconnected} \iff \exists! \text{ topo. ordering}}}
+  \]
+
+  \pause
+  \vspace{0.80cm}
+  \centerline{Tarjan's \textsc{Toposort} + \purple{Check edges $(v_i, v_{i+1})$}}
+
+  \pause
+  \vspace{0.30cm}
+  \fignocaption{width = 0.70\textwidth}{figs/hamiltonian-path-dag-topo}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \centerline{\red{\fbox{\large \text{digraph} $\equiv$ a \teal{dag} of SCCs}}}
+
+  \begin{theorem}
+    \begin{center}
+      Let $C$ and $C'$ be two SCCs in directed graph $G$.
+      \[
+	u \in C \to v \in C' \red{\;\implies\;} \f{C} > \f{C'}
+      \]
+    \end{center}
+  \end{theorem}
+
+  \pause
+  \vspace{0.30cm}
+  \[
+    \d{U} = \red{\min}_{u \in U} \set{\d{u}} \qquad \f{U} = \red{\max}_{u \in U} \set{\f{u}}
+  \]
+
+  \vspace{0.30cm}
+  \[
+    \text{ DAG } \implies \red{\boxed{u \to v \iff \f{v} < \f{u}}}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Kosaraju's SCC algorithm, $1978$}
+    \begin{quote}
+      \begin{center}
+	{\large SCCs can be \red{topo-sorted} in \red{decreasing} order of their $\f{\cdot}$.}
+      \end{center}
+    \end{quote}
+  \end{exampleblock}
+
+  \pause
+  \vspace{0.60cm}
+  \centerline{The vertice $v$ with the \red{highest} $\f{v}$ is in a \red{source} SCC.}
+
+  \pause
+  \vspace{0.60cm}
+  \begin{enumerate}[(I)]
+    \centering
+      \item DFS on $G$; \; DFS\only<6->{\teal{/BFS}} on $G^{T}$ ($\f{\cdot} \red{\;\downarrow}$) \\[8pt]
+      \pause
+      \item DFS on $G^{T}$;\; DFS\only<6->{\teal{/BFS}} on $G$ \pause ($\f{\cdot} \red{\;\downarrow}$)
+  \end{enumerate}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{}
+  \begin{exampleblock}{Component Graph of a Digraph (Problem $22.5$-$5$)}
+    \fignocaption{width = 0.40\textwidth}{figs/scc-dag}
+  \end{exampleblock}
+
+  \begin{columns}
+    \column{0.50\textwidth}
+      \input{algs/component-graph-foreach-component}
+    \column{0.50\textwidth}
+      \input{algs/component-graph-foreach-edge}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%

@@ -32,6 +32,32 @@
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
+  \begin{columns}
+    \column{0.40\textwidth}
+      \fignocaption{width = 0.80\textwidth}{figs/bicomponent-example-bicomponents-common-node}
+    \column{0.65\textwidth}
+    \begin{theorem}[Cut-nodes and Bicomponents]
+	Let $G_i = (V_i, E_i)$ be the bicomponents of a connected undirected graph $G = (V, E)$.
+	
+	\begin{enumerate}[(a)]
+	  \pause
+	  \item 
+	    \[
+	      \forall i \neq j: \Big\lvert V_i \cap V_j \Big\rvert \le 1
+	    \]
+	  \pause
+	  \item
+	    \[
+	      v \text{ is a cut-node } \red{\iff} \exists i \neq j: v \in V_i \cap V_j
+	    \]
+	\end{enumerate}
+      \end{theorem}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
   \begin{center}
     {\large The Power of the Hammer of DFS on \red{Undirected Graphs}}
   \end{center}
@@ -69,28 +95,6 @@
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
-  \fignocaption{width = 0.35\textwidth}{figs/back-to-past}
-
-  \pause
-  \[
-    \red{\back{v}:}
-  \]
-
-  \begin{center}
-    The \teal{earliest ancestor} $v$ can get \\[6pt]
-    by following tree edges $\T$ and back edges $\B$. \\[15pt]
-
-    \pause
-    \begin{enumerate}[(I)]
-      \centering
-      \item \red{\large When and how to \cyan{initialize\&update} $\back{v}$?}
-    \end{enumerate}
-  \end{center}
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{}
   \fignocaption{width = 0.40\textwidth}{figs/bicomp-cutnode-theorem}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
@@ -119,9 +123,30 @@
   \vspace{0.80cm}
   \begin{enumerate}[(I)]
     \centering
-    \setcounter{enumi}{1}
     \item \red{When and how to \teal{identify} a bicomponent?}
   \end{enumerate}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fignocaption{width = 0.35\textwidth}{figs/back-to-past}
+
+  \[
+    \red{\back{v}:}
+  \]
+
+  \begin{center}
+    The \teal{earliest ancestor} $v$ can get \\[6pt]
+    by following tree edges $\T$ and back edges $\B$. \\[15pt]
+
+    \pause
+    \begin{enumerate}[(I)]
+      \centering
+      \setcounter{enumi}{1}
+      \item \red{\large When and how to \cyan{initialize\&update} $\back{v}$?}
+    \end{enumerate}
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
@@ -130,28 +155,53 @@
   \[
     \red{\back{v}:}
   \]
-
   \begin{center}
-    The \teal{earliest ancestor} $v$ can get \\[6pt]
+    The \teal{earliest ancestor} $v$ can get \\[3pt]
     by following tree edges $\T$ and back edges $\B$.
   \end{center}
+
+  \pause
+  \[
+    \back{v} = \min \begin{cases} 
+      \set{v} \\[5pt]
+      \set{w \mid (v, w) \in \B} \\[5pt]
+      \set{\back{w} \mid (v,w) \in \T}
+    \end{cases}
+  \]
+
+  \pause
+  \begin{columns}
+    \column{0.10\textwidth}
+    \column{0.80\textwidth}
+      \begin{description}[backtracking from $w$:]
+	\item[tree edge ($\to v$):]   $\back{v} = \red{\d{v}}$
+	\item[back edge ($v \to w$):] $\back{v} = \min \set{\back{v}, \red{\d{w}}}$
+	\item[backtracking from $w$:] $\back{v} = \min \set{\back{v}, \purple{\back{w}}}$
+      \end{description}
+    \column{0.10\textwidth}
+  \end{columns}
+
+  \pause
+  \vspace{0.30cm}
+  \[
+    \red{\text{Backtracking from $w$ to $v$}: \back{w} \ge \d{v}}
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
-%   \[
-%     \back{v} = \min\left{\set{v} \cup {w | }\right}
-%   \]
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{}
+  \begin{exampleblock}{After-class Exercise: \textsc{Bicomp}}
+    \input{algs/bicomp-proc}
+  \end{exampleblock}
+
+  \vspace{0.60cm}
+  \fignocaption{width = 0.30\textwidth}{figs/highly-recommended}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{description}[backtracking from $w$:]
-    \item[tree edge ($\to v$):]   $\text{back}[v] = \red{d[v]}$
-    \item[back edge ($v \to w$):] $\text{back}[v] = \min \set{\text{back}[v], d[w]}$
-    \item[backtracking from $w$:] $\text{back}[v] = \min \set{\text{back}[v], \text{back}[w] = \teal{\text{wBack}}}$
-  \end{description}
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \fignocaption{width = 0.60\textwidth}{figs/cutnode-types.png}
+  \fignocaption{width = 0.55\textwidth}{figs/cutnode-types.png}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%

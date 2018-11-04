@@ -21,18 +21,36 @@
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{Semiconnected Digraph (Problem $4.14$)}
+  \begin{exampleblock}{Semiconnected Digraph (Problem $22.5$-$7$)}
+    \[
+      G = (V, E)
+    \]
     \[
       \forall u,v \in V: u \leadsto v \lor v \leadsto u
     \]
   \end{exampleblock}
 
   \pause
-  \vspace{0.50cm}
+  \vspace{0.60cm}
   \centerline{\red{\fbox{\large \text{digraph} $\equiv$ a \teal{dag} of SCCs}}}
 
   \pause
-  \vspace{0.50cm}
+  \vspace{0.80cm}
+  \[
+    G \text{ is semiconnected } \iff \text{The \teal{dag} of SCCs is semiconnected}
+  \]
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    \red{Is a DAG semiconnected?} \\[20pt] \pause
+    A DAG is semiconnected $\implies \exists!$ topo. ordering \\[15pt] \pause
+    A DAG is semiconnected \red{$\Longleftarrow$} $\exists!$ topo. ordering
+  \end{center}
+
+  \pause
+  \vspace{0.30cm}
   \fignocaption{width = 0.70\textwidth}{figs/hamiltonian-path-dag}
 
   \pause
@@ -50,7 +68,7 @@
 
   \pause
   \vspace{0.80cm}
-  \centerline{Tarjan's \textsc{Toposort} + \purple{Check edges $(v_i, v_{i+1})$}}
+  \centerline{\textsc{Toposort} + \purple{Check edges $(v_i, v_{i+1})$}}
 
   \pause
   \vspace{0.30cm}
@@ -62,24 +80,25 @@
 \begin{frame}{}
   \centerline{\red{\fbox{\large \text{digraph} $\equiv$ a \teal{dag} of SCCs}}}
 
-  \begin{theorem}
+  \begin{lemma}[$22.14$]
     \begin{center}
-      Let $C$ and $C'$ be two SCCs in directed graph $G$.
+      Let $C$ and $C'$ be two SCCs in a digraph $G$.
       \[
 	u \in C \to v \in C' \red{\;\implies\;} \f{C} > \f{C'}
       \]
     \end{center}
-  \end{theorem}
+  \end{lemma}
 
   \pause
   \vspace{0.30cm}
   \[
-    \d{U} = \red{\min}_{u \in U} \set{\d{u}} \qquad \f{U} = \red{\max}_{u \in U} \set{\f{u}}
+    \d{U} = \red{\min\limits_{u \in U}}\; \d{u} \qquad \f{U} = \red{\max\limits_{u \in U}}\; \f{u}
   \]
 
+  \pause
   \vspace{0.30cm}
   \[
-    \text{ DAG } \implies \red{\boxed{u \to v \iff \f{v} < \f{u}}}
+    \text{ DAG } \implies \red{\boxed{u \to v \iff \f{u} > \f{v}}}
   \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
@@ -110,16 +129,16 @@
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{}
-  \begin{exampleblock}{Component Graph of a Digraph (Problem $22.5$-$5$)}
-    \fignocaption{width = 0.40\textwidth}{figs/scc-dag}
-  \end{exampleblock}
-
-  \begin{columns}
-    \column{0.50\textwidth}
-      \input{algs/component-graph-foreach-component}
-    \column{0.50\textwidth}
-      \input{algs/component-graph-foreach-edge}
-  \end{columns}
-\end{frame}
+% \begin{frame}[fragile]{}
+%   \begin{exampleblock}{Component Graph of a Digraph (Problem $22.5$-$5$)}
+%     \fignocaption{width = 0.40\textwidth}{figs/scc-dag}
+%   \end{exampleblock}
+% 
+%   \begin{columns}
+%     \column{0.50\textwidth}
+%       \input{algs/component-graph-foreach-component}
+%     \column{0.50\textwidth}
+%       \input{algs/component-graph-foreach-edge}
+%   \end{columns}
+% \end{frame}
 %%%%%%%%%%%%%%%%%%%%

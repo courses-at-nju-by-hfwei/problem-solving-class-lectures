@@ -1,0 +1,22 @@
+% file: algs/sssp-dag-alg-vminus1.tex
+
+\begin{algorithm}[H]
+  % \caption{Little Modification to the SSSP Algorithm on DAG.}
+  % \label{alg:sssp-dag-vminus1}
+  \begin{algorithmic}[1]
+    \Procedure{DAG-SSSP}{$G, w, s$}
+      \State \Call{Init-Single-Source}{$G, s$}
+
+      \hStatex
+      \State $\Call{Topo-Sort}{G}$
+
+      \hStatex
+      \For{\red{the first $|V|-1$ vertices} $u \in V$ in topo. order}
+	\For{$v \in G.Adj[u]$}
+	  \State $\Call{Relax}{u, v, w}$
+	\EndFor
+      \EndFor
+    \EndProcedure
+  \end{algorithmic}
+\end{algorithm}
+

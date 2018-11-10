@@ -3,29 +3,36 @@
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
   \fignocaption{width = 0.30\textwidth}{figs/dijkstra}
+
+  \begin{quote}
+    {\small
+      For fundamental contributions to \red{programming} as a high, intellectual challenge; \\[3pt]
+      for eloquent insistence and practical demonstration that programs should be composed correctly,
+      not just debugged into \red{correctness}; \\[3pt]
+      for illuminating \red{perception of problems} at the foundations of program design.
+    }
+
+    \hfill --- \teal{Turing Award}, $1972$
+  \end{quote}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]
   \begin{columns}
-    \column{0.20\textwidth}
     \column{0.60\textwidth}
-      \input{algs/dijkstra-alg}
-    \column{0.20\textwidth}
+      \input{algs/dijkstra-alg-emph}
   \end{columns}
 
   \pause
   \vspace{0.50cm}
   \begin{columns}
-    \column{0.30\textwidth}
     \column{0.40\textwidth}
       \begin{description}[Min-heap:]
 	\item[Array:] $O(n^2)$
 	\item[Min-heap:] \red{$O(E \log V)$}
 	\item[Fib-heap:] $O(V \log V + E)$
       \end{description}
-    \column{0.30\textwidth}
   \end{columns}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
@@ -48,18 +55,16 @@
 \begin{frame}{}
   \begin{exampleblock}{Negative-weight Edges for Dijkstra's Algorithm (Additional Problem $24.3$-$10$)}
     \begin{columns}
-      \column{0.20\textwidth}
       \column{0.60\textwidth}
 	\begin{itemize}
 	  \item All negative-weight egdes are from $s$
 	  \item No negative-weight cycles
 	\end{itemize}
-      \column{0.20\textwidth}
     \end{columns}
   \end{exampleblock}
 
   \pause
-  \fignocaption{width = 0.30\textwidth}{figs/dijkstra-correctness}
+  \fignocaption{width = 0.35\textwidth}{figs/dijkstra-correctness}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 

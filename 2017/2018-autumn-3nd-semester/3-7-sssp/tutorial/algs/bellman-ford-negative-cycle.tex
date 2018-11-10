@@ -1,0 +1,27 @@
+% file: algs/bellman-ford-negative-cycle.tex
+
+\begin{algorithm}[H]
+  % \caption{Deal with Negative-weight Cycles in Bellam-Ford Algorithm.}
+  % \label{alg:bellman-ford-negative-cycle}
+  \begin{algorithmic}[1]
+    \Procedure{Bellman-Ford-NC-Wrong}{$G, w, s$}
+      \State \Call{Init-Single-Source}{$G, s$}
+
+      \hStatex
+      \For{$i \gets 1 \;\text{\bf to}\; |V| - 1$}
+	\For{$(u,v) \in E$}
+	  \State $\Call{Relax}{u,v,w}$
+	\EndFor
+      \EndFor
+
+      \hStatex
+      \For{\red{$i \gets 1 \;\text{\bf to}\; |V| - 1$}} \Comment{\uncover<3->{\teal{$\Theta(VE)$}}}
+	\For{$(u,v) \in E$}
+	  \If{$v.d > u.d + w(u,v)$}
+	    \State \red{$v.d = -\infty$}
+	  \EndIf
+	\EndFor
+      \EndFor
+    \EndProcedure
+  \end{algorithmic}
+\end{algorithm}

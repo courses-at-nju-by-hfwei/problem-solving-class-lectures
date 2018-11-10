@@ -1,0 +1,22 @@
+% file: algs/sssp-dag-alg-cmp.tex
+
+\begin{algorithm}[H]
+  % \caption{SSSP Algorithm on DAG.}
+  % \label{alg:sssp-dag}
+  \begin{algorithmic}[1]
+    \Procedure{DAG-SSSP}{$G, w, s$}
+      \State \Call{Init-Single-Source}{$G, s$}
+
+      \hStatex
+      \State $\Call{Topo-Sort}{G}$
+
+      \hStatex
+      \For{\textcolor<2->{purple}{$u \in V$ in topo. order}}
+	\For{$v \in G.Adj[u]$}
+	  \State $\Call{Relax}{u, v, w}$
+	\EndFor
+      \EndFor
+    \EndProcedure
+  \end{algorithmic}
+\end{algorithm}
+

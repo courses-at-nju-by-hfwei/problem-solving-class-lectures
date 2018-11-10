@@ -1,4 +1,4 @@
-% file: algs/dijkstra-alg.tex
+% file: algs/dijkstra-alg-emph.tex
 
 \begin{algorithm}[H]
   % \caption{Dijkstra Algorithm.}
@@ -8,9 +8,11 @@
       \State \Call{Init-Single-Source}{$G, s$}
 
       \hStatex
+      \State \textcolor<3->{red}{$S = \emptyset$}
       \State $Q = G.V$
       \While{$Q \neq \emptyset$}
 	\State $u \gets \Call{Extract-Min}{Q}$
+	\State \textcolor<3->{red}{$S \gets S \cup \set{u}$}
 
 	\hStatex
 	\For{$v \in G.Adj[u]$}

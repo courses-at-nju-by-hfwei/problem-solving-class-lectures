@@ -1,0 +1,25 @@
+% file: algs/bellman-ford-negative-cycle-wrong.tex
+
+\begin{algorithm}[H]
+  % \caption{Deal with Negative-weight Cycles in Bellam-Ford Algorithm (Wrong!).}
+  % \label{alg:bellman-ford-negative-cycle-wrong}
+  \begin{algorithmic}[1]
+    \Procedure{Bellman-Ford-NC-Wrong}{$G, w, s$}
+      \State \Call{Init-Single-Source}{$G, s$}
+
+      \hStatex
+      \For{$i \gets 1 \;\text{\bf to}\; |V| - 1$}
+	\For{$(u,v) \in E$}
+	  \State $\Call{Relax}{u,v,w}$
+	\EndFor
+      \EndFor
+
+      \hStatex
+      \For{\textcolor<3->{purple}{$(u,v) \in E$}}
+	\If{$v.d > u.d + w(u,v)$}
+	  \State \red{$v.d = -\infty$}
+	\EndIf
+      \EndFor
+    \EndProcedure
+  \end{algorithmic}
+\end{algorithm}

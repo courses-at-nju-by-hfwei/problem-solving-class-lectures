@@ -1,0 +1,24 @@
+% file: algs/dijkstra-alg.tex
+
+\begin{algorithm}[H]
+  % \caption{Dijkstra Algorithm.}
+  % \label{alg:dijkstra}
+  \begin{algorithmic}[1]
+    \Procedure{Dijkstra}{$G, w, s$}
+      \State \Call{Init-Single-Source}{$G, s$}
+
+      \hStatex
+      \State \textcolor<3->{red}{$S = \emptyset$}
+      \State $Q = G.V$
+      \While{$Q \neq \emptyset$}
+	\State $u \gets \Call{Extract-Min}{Q}$
+	\State \textcolor<3->{red}{$S \gets S \cup \set{u}$}
+
+	\hStatex
+	\For{$v \in G.Adj[u]$}
+	  \State $\Call{Relax}{u,v,w}$
+	\EndFor
+      \EndWhile
+    \EndProcedure
+  \end{algorithmic}
+\end{algorithm}

@@ -1,0 +1,26 @@
+% file: algs/floyd-warshall-alg.tex
+
+\begin{algorithm}[H]
+  % \caption{Floyd-Warshall Algorithm.}
+  % \label{alg:floyd-warshall}
+  \begin{algorithmic}[1]
+    \Procedure{Floyd-Warshall}{$W$}
+      \State $D^{(0)} = W$
+
+      \hStatex
+      \For{$k \gets 1 \;\text{\bf to}\; n$}
+	\State $D^{(k)} \triangleq \Big( d_{ij}^{(k)} \Big) \gets$ a \red{new} $n \times n$ matrix
+
+	\hStatex 
+	\For{$i \gets 1 \;\text{\bf to}\; n$}
+	  \For{$j \gets 1 \;\text{\bf to}\; n$}
+	    \State $d_{ij}^{(k)} = \min \Big\{ d_{ij}^{(k-1)}, d_{ik}^{(k-1)} + d_{kj}^{(k-1)} \Big\}$
+	  \EndFor
+	\EndFor
+      \EndFor
+
+      \hStatex
+      \State \Return $D^{(n)}$
+    \EndProcedure
+  \end{algorithmic}
+\end{algorithm}

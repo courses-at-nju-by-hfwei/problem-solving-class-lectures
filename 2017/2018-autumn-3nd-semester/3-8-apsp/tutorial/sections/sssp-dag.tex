@@ -1,0 +1,52 @@
+% file: sections/sssp-dag.tex
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{columns}
+    \column{0.60\textwidth}
+      \input{algs/sssp-dag-alg}
+  \end{columns}
+
+  \pause
+  \vspace{0.60cm}
+  \[
+    \Theta(V + E)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{columns}
+    \column{0.52\textwidth}
+      \input{algs/sssp-dag-alg-cmp}
+    \column{0.50\textwidth}
+      \input{algs/dijkstra-alg-cmp}
+  \end{columns}
+
+  \vspace{0.80cm}
+  \uncover<3->{
+    \[
+      \red{Q: \text{ Why is } \delta(s, u) \text{ determined right now?}}
+    \]
+  }
+
+  % \vspace{-0.80cm}
+  % \uncover<4->{
+  % \[
+  %    \red{Q_2: \text{Is } \delta(s,u) \text{ determined in non-decreasing order?}}
+  % \]
+  % }
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Little Modification to \textsc{DAG-SSSP} (Problem $24.2$-$2$)}
+    \begin{columns}
+      \column{0.85\textwidth}
+	\input{algs/sssp-dag-alg-vminus1}
+    \end{columns}
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%% 

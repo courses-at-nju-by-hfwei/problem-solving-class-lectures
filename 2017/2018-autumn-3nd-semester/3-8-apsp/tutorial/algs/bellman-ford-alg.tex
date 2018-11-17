@@ -1,0 +1,28 @@
+% file: algs/bellman-ford-alg.tex
+
+\begin{algorithm}[H]
+  % \caption{Bellam-Ford Algorithm.}
+  % \label{alg:bellman-ford}
+  \begin{algorithmic}[1]
+    \Procedure{Bellman-Ford}{$G, w, s$}
+      \State \Call{Init-Single-Source}{$G, s$}
+
+      \hStatex
+      \For{$i \gets 1 \;\text{\bf to}\; |V| - 1$}
+	\For{$(u,v) \in E$}
+	  \State $\Call{Relax}{u,v,w}$
+	\EndFor
+      \EndFor
+
+      \hStatex
+      \For{$(u,v) \in E$}
+	\If{$v.d > u.d + w(u,v)$}
+	  \State \Return \textsc{False}
+	\EndIf
+      \EndFor
+
+      \hStatex
+      \State \Return \textsc{True} 
+    \EndProcedure
+  \end{algorithmic}
+\end{algorithm}

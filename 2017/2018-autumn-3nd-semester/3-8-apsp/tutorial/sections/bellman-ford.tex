@@ -1,0 +1,161 @@
+% file: sections/bellman-ford.tex
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{columns}
+    \column{0.50\textwidth}
+      \fignocaption{width = 0.60\textwidth}{figs/Richard-Bellman}
+      \centerline{\teal{Richard Bellman ($1920$---$1984$)}}
+    \column{0.55\textwidth}
+      \fignocaption{width = 0.52\textwidth}{figs/Lester-Ford}
+      \centerline{\teal{Lester Randolph Ford Jr. ($1927$---$2017$)}}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{columns}
+    \column{0.60\textwidth}
+      \input{algs/bellman-ford-alg}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Deal with Negative-weight Cycles (Problem $24.1$-$4$)}
+    \fignocaption{width = 0.60\textwidth}{figs/reachable-negative-cycle}
+  \end{exampleblock}
+
+  \pause
+  \begin{columns}
+    \column{0.80\textwidth}
+      \input{algs/bellman-ford-negative-cycle-wrong}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fignocaption{width = 0.80\textwidth}{figs/bellman-ford-negative-cycle}
+
+  \pause
+  \vspace{-0.50cm}
+  \begin{columns}
+    \column{0.80\textwidth}
+      \input{algs/bellman-ford-negative-cycle}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \red{O(V + E)}
+  \]
+
+  \vspace{-0.80cm}
+  \begin{columns}
+    \column{0.50\textwidth}
+      \pause
+      \fignocaption{width = 0.80\textwidth}{figs/reachable-negative-cycle}
+    \column{0.50\textwidth}
+      \pause
+      \fignocaption{width = 0.80\textwidth}{figs/bellman-ford-two-negative-cycles}
+  \end{columns}
+
+  \pause
+  \vspace{-0.50cm}
+  \begin{theorem}[The $|V|$-th Pass of Bellman-Ford Algorithm]
+    For \red{every} reachable negative-weight cycle, \red{at least one edge} of it has been relaxed in the $|V|$-th pass.
+  \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Terminate Early in Bellman-Ford Algorithm (Problem $24.1$-$3$)}
+    \[
+      G = (V, E) \text{ \textcolor<3->{red}{without negative-weight cycles}}
+    \]
+    \[
+      m \triangleq \min_{v \in V} \Big\{ \text{Len}\big(\delta(s, v)\big) \Big\} \text{ \purple{(Unknown!)}}
+    \]
+  \end{exampleblock}
+
+  \pause
+  \begin{columns}
+    \column{0.60\textwidth}
+      \input{algs/bellman-ford-alg-early-terminate}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \centerline{\teal{\large Two Different Views of Bellman-Ford Algorithms}}
+
+  \fignocaption{width = 0.90\textwidth}{figs/different-views}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[noframenumbering]{}
+  \begin{columns}
+    \column{0.50\textwidth}
+      \input{algs/dijkstra-alg}
+    \column{0.62\textwidth}
+      \input{algs/bellman-ford-alg}
+  \end{columns}
+
+  \pause
+  \vspace{0.50cm}
+  \begin{center}
+    \fbox{Bellman-Ford Algorithm \red{$\equiv$} Dijkstra's Algorithm with \teal{\textsc{Queue}}}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[noframenumbering]{}
+  \begin{center}
+    \fbox{Bellman-Ford Algorithm \red{$\equiv$} Dijkstra's Algorithm with \teal{\textsc{Queue}}}
+  \end{center}
+
+  \fignocaption{width = 0.95\textwidth}{figs/bellman-ford-example-clrs}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[noframenumbering]{}
+  \begin{center}
+    \fbox{Bellman-Ford Algorithm is a \red{DP} Algorithm.}
+  \end{center}
+
+  \pause
+  \[
+    \red{d[i, v]: \text{ the length of the shortest path } s \leadsto v \text{ consisting of } \le i \text{ edges}}
+  \]
+
+  \pause
+  \[
+    d[i,v] = \begin{cases}
+      0 & i = 0 \land v = s \\
+      \infty & i = 0 \land v \neq s \\
+      \min\Big\{ d[i-1, v], \min\limits_{(u,v) \in E} \big\{ d[i-1, u] + w(u,v) \big\} \Big\} & \text{o.w.}
+    \end{cases}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[noframenumbering]{}
+  \input{algs/bellman-ford-dp}
+
+  \pause
+  \[
+    \red{Q: d[i, v] \implies d[v]?}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%

@@ -1,0 +1,152 @@
+% file: sections/floyd-warshall-alg.tex
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.20\textwidth}{figs/floyd}
+  {\centerline{\teal{Robert W. Floyd ($1936$--$1901$)}}}
+
+  \begin{quote}
+    {\small
+      For having a clear influence on \red{methodologies} for the creation of efficient and reliable software,
+      and for helping to \red{found} the following important subfields of computer science: \\[3pt]
+      \violet{the theory of parsing, the semantics of programming languages, \\ automatic program verification, 
+      automatic program synthesis, \\ and analysis of algorithms}
+    }
+
+    \hfill --- \teal{Turing Award}, $1978$
+  \end{quote}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \red{\boxed{d_{ij}^{(k)}:}}
+  \]
+  \begin{center}
+    the weight of a shortest path from $i$ to $j$ \\[3pt]
+    for which all \purple{\it intermediate} vertices are in $\set{1, 2, \cdots, k}$
+  \end{center}
+
+  \pause
+  \[
+    \blue{\boxed{D^{(n)} \triangleq \Big(d_{ij}^{(n)}\Big)}}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \red{k \in \text{SP}_{ij}^{(k)}?}
+  \]
+
+  \fig{width = 0.50\textwidth}{figs/floyd-warshall-dp}
+
+  \[
+    d_{ij}^{(k)} = \begin{cases}
+      w_{ij}	& k = 0 \\
+      \min\Big\{ d_{ij}^{(k-1)}, d_{ik}^{(k-1)} + d_{kj}^{(k-1)} \Big\} & k \ge 1
+    \end{cases}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \input{algs/floyd-warshall-alg}
+
+  \pause
+  \[
+    \text{Space}: \Theta(n^3) \pause \implies \Theta(n^2)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{\textsc{Floyd-Warshall} Made Simple (Problem $25.2$-$4$)}
+    \input{algs/floyd-warshall-alg-simplified}
+  \end{exampleblock}
+
+  \pause
+  \[
+    \blue{D^{(k-1)} \implies D^{(k)}} \pause \qquad \red{D \implies D}
+  \]
+
+  \pause
+  \centerline{``Decrease'' does no harm.}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Negative-weight Cycle Detection (Problem $25.2$-$6$)}
+    To detect negative-weight cycle (\textsf{NC}) using \textsc{Floyd-Warshall}.
+  \end{exampleblock}
+
+  \pause
+  \[
+    \red{\exists i: d_{ii}^{(n)} < 0}
+  \]
+
+  \begin{proof}
+    \begin{columns}
+      \column{0.50\textwidth}
+	\pause
+	\fig{width = 0.40\textwidth}{figs/trivial-proof}
+      \column{0.50\textwidth}
+	\pause
+	\fig{width = 0.60\textwidth}{figs/show-me-your-proof}
+    \end{columns}
+
+    \pause
+    \vspace{0.50cm}
+    \[
+      \exists i: d_{ii}^{(n)} < 0 \iff \exists\; \textsf{NC} \subseteq G
+    \]
+  \end{proof}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \exists i: d_{ii}^{(n)} < 0 \iff \exists\; \textsf{NC} \subseteq G
+  \]
+
+  \begin{proof}
+    \begin{columns}
+      \column{0.50\textwidth}
+        \pause
+	\[
+	  ``\implies"
+	\]
+	\fig{width = 0.50\textwidth}{figs/this-is-trivial}
+
+	\pause
+	\vspace{-0.60cm}
+	\fig{width = 0.80\textwidth}{figs/negative-weight-cycle}
+	{\vspace{-0.30cm}\centerline{\teal{A Cycle}}}
+      \column{0.50\textwidth}
+	\[
+	  ``\Longleftarrow"
+	\]
+
+	\pause
+	\fig{width = 0.80\textwidth}{figs/negative-weight-cycle}
+	{\vspace{-0.30cm}\centerline{\teal{A Simple Cycle}}}
+
+	\pause
+	\[
+	  d_{ii}^{(n)} < 0
+	\]
+    \end{columns}
+  \end{proof}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%

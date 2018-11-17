@@ -1,0 +1,27 @@
+% file: sections/overview.tex
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Shortest Path]
+    \[
+      G = (V, E, w): \text{ weighted digraph}
+    \]
+
+    \[
+      \delta(u,v) = \begin{cases}
+	\min \big\{ w(p): u \leadsto^{p} v \big\} & \text{if } u \leadsto v \\
+	\infty	& \text{o.w.}
+      \end{cases}
+    \]
+  \end{definition}
+
+  \pause
+  \vspace{0.60cm}
+  \begin{center}
+    \blue{Path \quad {\it vs.} \quad Simple path} \\[20pt]
+
+    % \pause
+    % \red{$Q:$ What about undirected graphs?}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%

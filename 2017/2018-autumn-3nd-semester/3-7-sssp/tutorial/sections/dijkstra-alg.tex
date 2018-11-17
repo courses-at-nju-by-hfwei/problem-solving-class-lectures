@@ -71,29 +71,119 @@
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{exampleblock}{Checking Output of Dijkstra's Algorithm (Problem $24.3$-$4$)}
+    \[
+      \forall v \in V: v.\pi, v.d
+    \]
+
+    \begin{center}
+      To check whether $\pi$ and $d$ match some shortest-paths tree?
+    \end{center}
+    \[
+      O(V + E)
+    \]
   \end{exampleblock}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
+  \[
+    (1)\; \pi \text{ forms a tree}
+  \]
+  
+  \pause
+  \[
+    (2)\; s.d = 0
+  \]
+  
+  \pause
+  \[
+    \blue{\boxed{u \triangleq v.\pi}}
+  \]
+  
+  \[
+    (3)\; \forall v \in V: v.d = u.d + w(u, v)
+  \]
+  
+  \pause
+  \[
+    (4)\; \forall v \in V: u.d + w(u, v) = \min\limits_{(v', v) \in E} \Big\{ v'.d + w(v', v) \Big\}
+  \]
+  
+  \pause
+  \[
+    \red{(4)\;   \forall (v', v) \in E: v'.d + w(v', v) \ge v.d}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fignocaption{width = 0.45\textwidth}{figs/ever-want}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \blue{\boxed{\forall v \in V: v.d = \delta(s, v)}}
+  \]
+  
+  \pause
+  \[
+    \red{\exists v \in V: v.d \neq \delta(s, v)}
+  \]
+  
+  \pause
+  \begin{columns}
+    \column{0.50\textwidth}
+      \[
+        \teal{v.d < \delta(s, v)}
+      \]
+      
+      \pause
+      \begin{align*}
+        v.d &= u.d + w(u,v) \\
+            &< \delta(s ,v) \\
+            &\le \delta(s, u) + w(u,v)
+      \end{align*}
+      
+      \pause
+      \[
+        \red{\boxed{u.d < \delta(s, u)}}
+      \]
+    \column{0.50\textwidth}
+      \pause
+      \[
+        \teal{v.d > \delta(s, v)}
+      \]
+      
+      \pause
+      \[
+        v.d = u.d + w(u,v) > \delta(s,v)
+      \]
+      
+      \pause
+      \[
+        \begin{cases}
+          u.d = \delta(s, u) & \uncover<9->{\red{\boxed{v.\pi}}} \\[10pt]
+          \red{\boxed{u.d > \delta(s, u)}}
+        \end{cases}
+      \]
+  \end{columns}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{center}
-    \uncover<2->{
-      \purple{Lawler's Algorithm} on \teal{DAG} \\[6pt]
-      $\Longleftarrow$ \\[30pt]
-    }
+    \purple{Lawler's Algorithm} on \teal{DAG} \\[6pt]
+    $\Longleftarrow$ \\[30pt]
 
     \red{Dijkstra's Algorithm} on Digraph with \teal{Nonnegative-weight} Edges \\[30pt]
-
-    \uncover<2->{
-      $\implies$ \\[6pt]
-      \purple{Bellman-Ford} Algorithm on Digraph with \teal{Negative-weight} Edges
-    }
+    
+    $\implies$ \\[6pt]
+    \purple{Bellman-Ford} Algorithm on Digraph with \teal{Negative-weight} Edges
   \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%

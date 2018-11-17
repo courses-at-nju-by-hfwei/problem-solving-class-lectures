@@ -10,12 +10,10 @@
       \hStatex
       \State $Q = G.V$
       \While{$Q \neq \emptyset$}
-	\State \textcolor<2->{purple}{$u \gets \Call{Extract-Min}{Q}$}
-
-	\hStatex
-	\For{$v \in G.Adj[u]$}
-	  \State $\Call{Relax}{u,v,w}$
-	\EndFor
+    	\State \textcolor<2->{purple}{$u \gets \Call{Extract-Min}{Q}$}
+    	\For{$v \in G.Adj[u]$}
+    	  \State $\Call{Relax}{u,v,w}$
+    	\EndFor
       \EndWhile
     \EndProcedure
   \end{algorithmic}

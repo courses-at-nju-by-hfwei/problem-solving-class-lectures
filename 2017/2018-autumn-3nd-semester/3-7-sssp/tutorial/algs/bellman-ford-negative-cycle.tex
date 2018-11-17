@@ -15,12 +15,12 @@
       \EndFor
 
       \hStatex
-      \For{\red{$i \gets 1 \;\text{\bf to}\; |V| - 1$}} \Comment{\uncover<3->{\teal{$\Theta(VE)$}}}
-	\For{$(u,v) \in E$}
-	  \If{$v.d > u.d + w(u,v)$}
-	    \State \red{$v.d = -\infty$}
-	  \EndIf
-	\EndFor
+      \For{\red{$i \gets 1 \;\text{\bf to}\; |V|$}} \Comment{\uncover<3->{\teal{$\Theta(VE)$}}}
+    	\For{$(u,v) \in E$}
+    	  \If{$v.d > u.d + w(u,v)$}
+    	    \State \red{$v.d = -\infty$}
+    	  \EndIf
+    	\EndFor
       \EndFor
     \EndProcedure
   \end{algorithmic}

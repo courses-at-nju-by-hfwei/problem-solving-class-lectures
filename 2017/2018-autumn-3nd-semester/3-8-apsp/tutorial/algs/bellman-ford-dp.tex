@@ -13,9 +13,9 @@
       \hStatex
       \For{$i \gets 1 \;\text{\bf to}\; |V| - 1$}
 	\For{$v \in V$}
-	  \State $d[i,v] = d[i-1, v]$
+	  \State $d[i,v] = \infty$
 	  \For{$(u,v) \in E$}
-	    \If{$d[i-1, v] > d[i-1, u] + w(u, v)$}
+	    \If{$d[i, v] > d[i-1, u] + w(u, v)$} \Comment{\onslide<2->{\textcolor{red}{Simplify?}}}
 	      \State $d[i, v] = d[i-1, u] + w(u, v)$
 	    \EndIf
 	  \EndFor

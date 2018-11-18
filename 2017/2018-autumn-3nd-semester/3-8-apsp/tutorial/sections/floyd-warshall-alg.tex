@@ -8,7 +8,7 @@
   \begin{quote}
     {\small
       For having a clear influence on \red{methodologies} for the creation of efficient and reliable software,
-      and for helping to \red{found} the following important subfields of computer science: \\[3pt]
+      and for helping to \red{found} the following important subfields of computer science: \\[3pt] \pause
       \violet{the theory of parsing, the semantics of programming languages, \\ automatic program verification, 
       automatic program synthesis, \\ and analysis of algorithms}
     }
@@ -41,14 +41,23 @@
     \red{k \in \text{SP}_{ij}^{(k)}?}
   \]
 
+  \vspace{-0.20cm}
   \fig{width = 0.50\textwidth}{figs/floyd-warshall-dp}
 
+  \vspace{-0.20cm}
   \[
     d_{ij}^{(k)} = \begin{cases}
       w_{ij}	& k = 0 \\
-      \min\Big\{ d_{ij}^{(k-1)}, d_{ik}^{(k-1)} + d_{kj}^{(k-1)} \Big\} & k \ge 1
+      \min\Big\{ d_{ij}^{(k-1)}, \underbrace{d_{ik}^{(k-1)} + d_{kj}^{(k-1)}}_{\onslide<2->{\red{\text{why?}}}} \Big\} & k \ge 1
     \end{cases}
   \]
+
+  \uncover<3->{
+    \begin{quote}
+      $\cdots$, but we assume that there are \red{no} negative-weight cycles. \\
+      \hfill --- Section $25.2$ of CLRS
+    \end{quote}
+  }
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
@@ -70,12 +79,8 @@
   \end{exampleblock}
 
   \pause
-  \[
-    \blue{D^{(k-1)} \implies D^{(k)}} \pause \qquad \red{D \implies D}
-  \]
-
-  \pause
-  \centerline{``Decrease'' does no harm.}
+  \vspace{0.60cm}
+  \centerline{``Decrease'' does no harm to the correctness.}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
@@ -90,6 +95,7 @@
     \red{\exists i: d_{ii}^{(n)} < 0}
   \]
 
+  \pause
   \begin{proof}
     \begin{columns}
       \column{0.50\textwidth}
@@ -120,33 +126,32 @@
       \column{0.50\textwidth}
         \pause
 	\[
-	  ``\implies"
+	  \teal{``\implies"}
 	\]
-	\fig{width = 0.50\textwidth}{figs/this-is-trivial}
 
 	\pause
-	\vspace{-0.60cm}
 	\fig{width = 0.80\textwidth}{figs/negative-weight-cycle}
-	{\vspace{-0.30cm}\centerline{\teal{A Cycle}}}
+	{\vspace{-0.30cm}\centerline{\teal{A Negative Cycle}}}
       \column{0.50\textwidth}
+        \pause
 	\[
-	  ``\Longleftarrow"
+	  \teal{``\Longleftarrow"}
 	\]
 
 	\pause
-	\fig{width = 0.80\textwidth}{figs/negative-weight-cycle}
-	{\vspace{-0.30cm}\centerline{\teal{A Simple Cycle}}}
+	\fig{width = 0.30\textwidth}{figs/negative-weight-cycle-k}
+	{\vspace{-0.30cm}\centerline{\teal{A Simple Negative Cycle}}}
+	\[
+	  k: \max \#
+	\]
 
 	\pause
 	\[
-	  d_{ii}^{(n)} < 0
+	  \red{d_{ii}^{(k)} < 0}
 	\]
     \end{columns}
   \end{proof}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{}
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%
+% problem 25.2-8

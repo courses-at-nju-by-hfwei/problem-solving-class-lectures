@@ -1,0 +1,25 @@
+% file: algs/bellman-ford-dp-simplified.tex
+
+\begin{algorithm}[H]
+  % \caption{Bellam-Ford Algorithm as a DP Algorithm (Simplified).}
+  % \label{alg:bellman-ford-dp-simplified}
+  \begin{algorithmic}[1]
+    \Procedure{Bellman-Ford-DP-Simplified}{$G, w, s$}
+      \State $d[s] \gets 0$
+      \For{$(v \neq s) \in V$}
+	\State $d[v] \gets \infty$
+      \EndFor
+
+      \hStatex
+      \For{$i \gets 1 \;\text{\bf to}\; |V| - 1$}
+	\For{$v \in V$}
+	  \For{$(u,v) \in E$}
+	    \If{$d[v] > d[u] + w(u, v)$}  \Comment{\uncover<2->{\textcolor{red}{Relax!}}}
+	      \State $d[v] = d[u] + w(u, v)$
+	    \EndIf
+	  \EndFor
+	\EndFor
+      \EndFor
+    \EndProcedure
+  \end{algorithmic}
+\end{algorithm}

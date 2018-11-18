@@ -3,15 +3,33 @@
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
   \[
-    l_{ij}^{(m)}: \text{ the length of a shortest path from $i$ to $j$ consisting of $\le m$ edges}
+    \red{l_{ij}^{(m)}: \text{ the length of a shortest path from $i$ to $j$ consisting of $\le m$ edges}}
   \]
 
   \pause
-  \begin{align*}
-    l_{ij}^{(m)} &= \min \Big\{ l_{ij}^{(m-1)}, \min_{1 \le k \le n} \big\{ l_{ik}^{(m-1)} + w_{kj} \big\} \Big\} \\[5pt]
-		 &= \min_{1 \le k \le n} \big\{ l_{ik}^{(m-1)} + w_{kj} \big\} \\[5pt]
-		 &= \min_{\red{k \to j}} \big\{ l_{ik}^{(m-1)} + w_{kj} \big\}
-  \end{align*}
+  \[
+    l_{ij}^{(m)} = \min_{1 \le k \le n} \big\{ l_{ik}^{(m-1)} + w_{kj} \big\}, \quad m \ge 2
+  \]
+
+  \pause
+  \[
+    l_{ij}^{(1)} = w_{ij}
+  \]
+
+  \pause
+  \[
+    \blue{L^{(n-1)} \triangleq \left(l_{ij}^{(n-1)}\right)}
+  \]
+
+  \pause
+  \[
+    L^{(n-1)} = W^{n-1} \triangleq \underbrace{\left(\left(W \cdot W\right) \cdot \ldots\right) \cdot W}_{n-1}
+  \]
+  % \begin{align*}
+  %   l_{ij}^{(m)} &= \min \Big\{ l_{ij}^{(m-1)}, \min_{1 \le k \le n} \big\{ l_{ik}^{(m-1)} + w_{kj} \big\} \Big\} \\[5pt]
+  %       	 &= \min_{1 \le k \le n} \big\{ l_{ik}^{(m-1)} + w_{kj} \big\} \\[5pt]
+  %       	 &= \min_{\red{k \to j}} \big\{ l_{ik}^{(m-1)} + w_{kj} \big\}
+  % \end{align*}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
@@ -23,14 +41,12 @@
 
   \pause
   \[
-    (W^{a} W^{b}) W^{c} = W^{a} (W^{b} W^{c})
+    (W^{a} W^{b}) W^{c} = W^{a} (W^{b} W^{c}) \quad \only<6->{\teal{\text{\it vs.}\quad (WW)W = W(WW)}}
   \]
-
   \pause
   \[
     \red{(i,j)}
   \]
-
   \begin{columns}
     \column{0.50\textwidth}
       \begin{align*}
@@ -43,11 +59,130 @@
 	= &\min_{1 \le k \le n} \Big( W^{a}_{ik} + \min_{1 \le q \le n} (W^{b}_{kq} + W^{c}_{qj}) \Big)
       \end{align*}
   \end{columns}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{center}
+    \red{$Q:$ Why do we care about this?} \\[6pt] \pause
+    \blue{$A:$ Repeated squaring.}
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
+  \begin{center}
+    SSSP from $s$
+  \end{center}
+  \pause
+  \[
+    \red{l_{v}^{(m)}: \text{ the length of a shortest path } s \leadsto v \text{ consisting of } \le m \text{ edges}}
+  \]
+
+  \pause
+  \[
+    l_{v}^{(m)} = \min_{1 \le u \le n} \set{l_{u}^{(m-1)} + w_{uv}}, \quad m \ge 2
+  \]
+
+  \pause
+  \[
+    l_{v}^{(1)} = w_{sv}
+  \]
+
+  \pause
+  \[
+    \blue{L^{(n-1)} \triangleq \left(l_{v}^{(n-1)}\right)}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%% 
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{SSSP as a Product of Matrices and a Vector (Problem $25.1$-$5$)}
+    To express SSSP as a \red{product} of matrices and a vector.
+  \end{exampleblock}
+
+  \pause
+  \begin{align*}
+    L^{(1)} &= \langle w_{sv} \rangle_{v \in V} \\
+    L^{(2)} &= L^{(1)} \cdot W \\
+    \cdots &= \cdots \\
+    L^{(n-1)} &= \left(\left(\left(L^{(1)} \cdot W \right) \cdot W \right) \cdot \ldots \cdot W\right)
+  \end{align*}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%% 
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{SSSP as a Product of Matrices and a Vector (Problem $25.1$-$5$)}
+    What is the \red{relationship} between it and the Bellman-Ford algorithm?
+  \end{exampleblock}
+
+  \pause
+  \[
+    l_{v}^{(m)} = \min_{1 \le u \le n} \set{l_{u}^{(i-1)} + w_{uv}}, \quad m \ge 2
+  \]
+
+  \pause
+  \[
+    d_{v}^{(i)} = \min_{\red{u \to v}} \set{d_{u}^{(i-1)} + w_{uv}}, \quad \red{i \ge 1}
+  \]
+
+  \pause
+  \[
+    d_{v}^{(0)} = \begin{cases}
+      0 & v = s \\
+      \infty & v \neq s
+    \end{cases}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%% 
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \input{algs/bellman-ford-dp}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%% 
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \input{algs/bellman-ford-dp-simplified}
+
+  \vspace{-0.20cm}
+  \uncover<3->{
+    \input{algs/bellman-ford-alg-no-nc}
+  }
+\end{frame}
+%%%%%%%%%%%%%%%%%%%% 
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    Bellman-Ford: $L \cdot W$ \\[20pt]
+    \textsc{Slow-All-Pairs-Shortest-Paths}: $W \cdot W$ \\[40pt]
+
+    \pause
+    \red{\textsc{Slow-All-Pairs-Shortest-Paths} is $n$ instances of Bellman-Ford, one for each source.}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%% 
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{SSSP as a Product of Matrices and a Vector (Problem $25.1$-$5$)}
+    To express SSSP as a \red{product} of matrices and a vector.
+  \end{exampleblock}
+
+  \vspace{0.60cm}
+  \[
+    L^{(n-1)} = \left(\left(\left(L^{(1)} \cdot W \right) \cdot W \right) \cdot \ldots \cdot W\right)
+  \]
+
+  \pause
+  \vspace{0.60cm}
+  \begin{center}
+    \red{$Q:$ Associative? Repeated Squaring?}
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%% 
 
@@ -64,20 +199,5 @@
   \begin{exampleblock}{Minimum-length Negative-weight Cycle (Problem $25.1$-$10$)}
     To find the length of a minimum-length negative-weight cycle (\textsf{NC}).
   \end{exampleblock}
-\end{frame}
-%%%%%%%%%%%%%%%%%%%% 
-
-%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{}
-\end{frame}
-%%%%%%%%%%%%%%%%%%%% 
-
-%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{}
-\end{frame}
-%%%%%%%%%%%%%%%%%%%% 
-
-%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%% 

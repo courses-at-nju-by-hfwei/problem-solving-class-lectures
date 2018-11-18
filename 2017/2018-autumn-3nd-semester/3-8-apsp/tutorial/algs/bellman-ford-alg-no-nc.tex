@@ -1,0 +1,18 @@
+% file: algs/bellman-ford-alg-no-ne.tex
+
+\begin{algorithm}[H]
+  % \caption{Bellam-Ford Algorithm without Negative-weight Cycles.}
+  % \label{alg:bellman-ford-no-ne}
+  \begin{algorithmic}[1]
+    \Procedure{Bellman-Ford-Without-NE}{$G, w, s$}
+      \State \Call{Init-Single-Source}{$G, s$}
+
+      \hStatex
+      \For{$i \gets 1 \;\text{\bf to}\; |V| - 1$}
+	\For{$(u,v) \in E$}
+	  \State $\Call{Relax}{u,v,w}$
+	\EndFor
+      \EndFor
+    \EndProcedure
+  \end{algorithmic}
+\end{algorithm}

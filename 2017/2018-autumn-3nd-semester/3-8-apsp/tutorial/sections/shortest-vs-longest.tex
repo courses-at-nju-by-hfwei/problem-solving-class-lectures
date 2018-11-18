@@ -1,0 +1,105 @@
+% file: sections/shortest-vs-longest.tex
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    \red{Single Source \qquad Digraph} \\[25pt]
+
+    Shortest-path Problem \quad {\it vs.} \quad Longest-path Problem \\[15pt] \pause
+
+    \textsf{SP} in $G$ $\iff$ \textsf{LP} in $-G$ \\[15pt] \pause
+
+    $O(VE)$ {\small \teal{(Bellman-Ford)}} \quad {\it vs.} \quad \textsf{NP}-hard {\small \teal{(I just told you.)}} \pause
+  \end{center}
+
+  \begin{columns}
+    \column{0.50\textwidth}
+      \pause
+      \fig{width = 0.30\textwidth}{figs/p-np-prize}
+    \column{0.50\textwidth}
+      \pause
+      \fig{width = 0.65\textwidth}{figs/something-must-be-wrong}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Shortest \red{Path}]
+    \[
+      G = (V, E, w): \text{ weighted digraph}
+    \]
+
+    \[
+      \delta(u,v) = \begin{cases}
+	\min \big\{ w(p): \purple{\underbrace{u \leadsto^{p} v}_{\text{Path}}} \big\} & \text{if } u \leadsto v \\
+	\infty	& \text{o.w.}
+      \end{cases}
+    \]
+  \end{definition}
+
+  \pause
+  \vspace{0.60cm}
+  \begin{center}
+    \red{$Q:$ How does Bellman-Ford Handle with Negative-weight Cycles?} \\[15pt] \pause
+
+    \teal{$A:$ Report it and Treat Shortest Path as ``Undefined''.} \\[15pt] \pause
+
+    $O(VE)$
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Shortest \red{Simple Path}]
+    \[
+      G = (V, E, w): \text{ weighted digraph}
+    \]
+
+    \[
+      \delta(u,v) = \begin{cases}
+	\min \big\{ w(p): \purple{\underbrace{u \leadsto^{p} v}_{\text{Simple Path}}} \big\} & \text{if } u \leadsto v \\
+	\infty	& \text{o.w.}
+      \end{cases}
+    \]
+  \end{definition}
+
+  \pause
+  \vspace{0.60cm}
+  \begin{center}
+    \red{$Q:$ How Should an Algorithm for Shortest Simple Path Problem Handle with Negative-weight Cycles?} \\[15pt] \pause
+
+    \teal{$A:$ Still to Find Shortest Simple Path.} \\[15pt] \pause
+
+    \textsf{NP}-hard
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{columns}[b]
+    \column{0.45\textwidth}
+      \begin{center}
+	Shortest Path Problem \\[30pt]
+
+	Shortest Simple Path Problem
+      \end{center}
+    \column{0.10\textwidth}
+      \uncover<3->{
+	$\iff$ \\[30pt]
+
+	$\iff$
+      }
+    \column{0.45\textwidth}
+      \uncover<2->{
+	\begin{center}
+	  Longest Path Problem \\[30pt]
+
+	  Longest Simple Path Problem
+	\end{center}
+      }
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%

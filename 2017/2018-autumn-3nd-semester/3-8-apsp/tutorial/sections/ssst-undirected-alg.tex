@@ -1,0 +1,109 @@
+% file: sections/ssst-undirected-alg.tex
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Perfect Matching $\mathcal{M}$]
+    \begin{center}
+      Undirected weighted graph with $n = 2k$ vertices \\[15pt] \pause
+
+      $\mathcal{M}:$ a set of $n/2$ edges such that
+      \[
+	\red{\boxed{\forall e, e' \in \mathcal{M}: e, e' \text{ have no common vertices}}}
+      \]
+    \end{center}
+
+    \fig{width = 0.25\textwidth}{figs/perfect-matching-petersen}
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{columns}
+    \column{0.50\textwidth}
+      \pause
+      \fig{width = 0.40\textwidth}{figs/perfect-matching-no}
+      {\centerline{\teal{No $\mathcal{M}$'s}}}
+    \column{0.50\textwidth}
+      \pause
+      \fig{width = 0.80\textwidth}{figs/perfect-matching-not-unique}
+      {\centerline{\teal{Multiple $\mathcal{M}$'s}}}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Minimum-weight Perfect Matching $\mathcal{M}$]
+    \begin{center}
+      Undirected weighted graph with $n = 2k$ vertices \\[15pt] \pause
+
+      $\mathcal{M}:$ a set of $n/2$ edges such that
+      \[
+	\red{\boxed{\forall e, e' \in \mathcal{M}: e, e' \text{ have no common vertices}}}
+      \]
+    \end{center}
+
+    \fig{width = 0.25\textwidth}{figs/perfect-matching-petersen}
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{columns}
+    \column{0.50\textwidth}
+      \pause
+      \fig{width = 0.40\textwidth}{figs/perfect-matching-no}
+      {\centerline{\teal{No $\mathcal{M}$'s}}}
+    \column{0.50\textwidth}
+      \pause
+      \fig{width = 0.80\textwidth}{figs/perfect-matching-not-unique}
+      {\centerline{\teal{Multiple $\mathcal{M}$'s}}}
+  \end{columns}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{definition}[Minimum-weight Perfect Matching]
+    \[
+      w(\mathcal{M}) = \sum_{e \in \mathcal{M}} w(e)
+    \]
+
+    \vspace{0.20cm}
+    \[
+      \red{\min w(\mathcal{M})}
+    \]
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.50\textwidth}{figs/undirected-graph}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.20\textwidth}{figs/vertex-split}
+  \[
+    \teal{\forall v \neq s, t}
+  \]
+
+  \pause
+  \vspace{0.60cm}
+  \fig{width = 0.60\textwidth}{figs/uv-gadget}
+  \[
+    \teal{\forall u, v \neq s, t}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.70\textwidth}{figs/sv-gadget}
+
+  \pause
+  \vspace{0.60cm}
+  \fig{width = 0.70\textwidth}{figs/vt-gadget}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+

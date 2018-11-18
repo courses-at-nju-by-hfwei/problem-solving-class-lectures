@@ -1,0 +1,83 @@
+% file: sections/shortest-path-dp.tex
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    l_{ij}^{(m)}: \text{ the length of a shortest path from $i$ to $j$ consisting of $\le m$ edges}
+  \]
+
+  \pause
+  \begin{align*}
+    l_{ij}^{(m)} &= \min \Big\{ l_{ij}^{(m-1)}, \min_{1 \le k \le n} \big\{ l_{ik}^{(m-1)} + w_{kj} \big\} \Big\} \\[5pt]
+		 &= \min_{1 \le k \le n} \big\{ l_{ik}^{(m-1)} + w_{kj} \big\} \\[5pt]
+		 &= \min_{\red{k \to j}} \big\{ l_{ik}^{(m-1)} + w_{kj} \big\}
+  \end{align*}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Associative \textsc{Extend-Shortest-Paths}}
+    Show that matrix multiplication defined by \textsc{Extend-Shortest-Paths} is associative.
+  \end{exampleblock}
+
+  \pause
+  \[
+    (W^{a} W^{b}) W^{c} = W^{a} (W^{b} W^{c})
+  \]
+
+  \pause
+  \[
+    \red{(i,j)}
+  \]
+
+  \begin{columns}
+    \column{0.50\textwidth}
+      \begin{align*}
+	&\min_{1 \le k \le n} \Big( (W^{a} W^{b})_{ik} + W^{c}_{kj} \Big) \\
+	= &\min_{1 \le k \le n} \Big( \min_{1 \le q \le n} (W^{a}_{iq} + W^{b}_{qk}) + W^{c}_{kj} \Big)
+      \end{align*}
+    \column{0.50\textwidth}
+      \begin{align*}
+	&\min_{1 \le k \le n} \Big( W^{a}_{ik} + (W^{b} W^{c})_{kj} \Big) \\
+	= &\min_{1 \le k \le n} \Big( W^{a}_{ik} + \min_{1 \le q \le n} (W^{b}_{kq} + W^{c}_{qj}) \Big)
+      \end{align*}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%% 
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Negative-weight Cycle Detection (Problem $25.1$-$9$)}
+    To detect negative-weight cycle (\textsf{NC}) using \textsc{Faster-All-Pairs-Shortest-Paths}.
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%% 
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Minimum-length Negative-weight Cycle (Problem $25.1$-$10$)}
+    To find the length of a minimum-length negative-weight cycle (\textsf{NC}).
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%% 
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%% 
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%% 
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%% 

@@ -1,0 +1,113 @@
+% file: sections/2conn.tex
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{2-Connectivity (Problem $5.10$)}
+    \begin{center}
+      A connected graph $G$ with $m \ge 2$ is \red{\it nonseparable} \\[3pt]
+      $\iff$ \\[3pt]
+      any two \red{\it adjacent} edges of $G$ lie on a common cycle of $G$.
+    \end{center}
+  \end{exampleblock}
+
+  \pause
+  \begin{proof}
+    \begin{center}
+      ``$\implies$''
+    \end{center}
+
+    \pause
+    \vspace{-0.30cm}
+    \begin{columns}
+      \column{0.65\textwidth}
+	\begin{align*}
+	  &G \text{ is nonseparable} \\
+	  &\implies u, w \text{ lie on a common cycle} \\
+	  \uncover<4->{
+	    &\implies \exists \text{ path } u \sim w \uncover<6->{\red{\text{ that does not contain $v$}}} \\
+	    &\implies \exists \text{ cycle } u - v - w \sim u
+	  }
+	\end{align*}
+      \column{0.30\textwidth}
+	\input{tikz/2conn-adjacent-edges}
+    \end{columns}
+  \end{proof}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{2-Connectivity (Problem $5.10$)}
+    \begin{center}
+      A connected graph $G$ with $m \ge 2$ is \red{\it nonseparable} \\[3pt]
+      $\iff$ \\[3pt]
+      any two \red{\it adjacent} edges of $G$ lie on a common cycle of $G$.
+    \end{center}
+  \end{exampleblock}
+
+  \begin{proof}
+    \begin{center}
+      ``$\Longleftarrow$'' \\[6pt]
+      \purple{By Contradiction.}
+    \end{center}
+
+    \pause
+    \vspace{-0.30cm}
+    \begin{columns}
+      \column{0.65\textwidth}
+	\begin{align*}
+	  &\text{Suppose } v \text{ is a cut-vertex of } G \\
+	  &\implies G - v \text{ contains} \ge 2 \text{ comps } G_1, G_2, \cdots \\
+	  &\implies \exists u \in G_1, w \in G_2: v-u \land v-w \\
+	  &\implies v-u, v-w \text{ lie on a common cycle} \\
+	  &\implies \exists \text{ path } u \sim w \text{ that does not contain } v \\
+	\end{align*}
+      \column{0.35\textwidth}
+	\fig{width = 0.70\textwidth}{figs/2conn-cut-vertex}
+    \end{columns}
+  \end{proof}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{columns}
+    \column{0.50\textwidth}
+      \fig{width = 0.70\textwidth}{figs/cut-vertex-structure}
+
+      \[
+	\forall G_i\; \exists v_i \in G_i\; v - v_i
+      \]
+    \column{0.50\textwidth}
+      \pause
+      \fig{width = 0.70\textwidth}{figs/2conn-cut-vertex}
+
+      \pause
+      \[
+	\red{\forall v \in S}\; \forall G_i\; \exists v_i \in G_i\; v - v_i
+      \]
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{2-Connectivity (Problem $5.10$)}
+    \begin{center}
+      A connected graph $G$ with $m \ge 2$ is \red{\it nonseparable} \\[3pt]
+      $\iff$ \\[3pt]
+      any two \red{\it adjacent} edges of $G$ lie on a common cycle of $G$.
+    \end{center}
+  \end{exampleblock}
+
+  \pause
+  \vspace{0.60cm}
+  \begin{exampleblock}{2-Connectivity (Extended Problem)}
+    \begin{center}
+      A connected graph $G$ with $m \ge 2$ is \red{\it nonseparable} \\[3pt]
+      $\iff$ \\[3pt]
+      \red{any two edges} of $G$ lie on a common cycle of $G$.
+    \end{center}
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%

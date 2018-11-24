@@ -1,0 +1,139 @@
+% file: sections/remove-edge.tex
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Effects of Removing an Edge on Connectivity (Problem $5.22$\; (a))}
+    \begin{enumerate}[(a)]
+      \item If $G$ is $k$-connected and $e = uv \in E(G)$, then $G - e$ is $(k-1)$-connected.
+    \end{enumerate}
+  \end{exampleblock}
+
+  \pause
+  \[
+    \text{To prove } \kappa(G) \ge k \implies \kappa(G - e) \ge k-1
+  \]
+
+  \pause
+  \vspace{0.50cm}
+  \begin{center}
+    Choose any $U \subseteq V(G)$ with $|U| < k - 1$. \\[6pt]
+    \red{We prove that $G - e - U$ is connected.}
+  \end{center}
+\end{frame}
+% \red{We prove that $\kappa(G - e) < \kappa(G) \implies \kappa(G - e) \ge k - 1$}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    Choose any $U \subseteq V(G)$ with $|U| < k - 1$. \\[6pt]
+    \red{We prove that $G - e - U$ is connected.}
+  \end{center}
+
+  \pause
+  \[
+    G \text{ is } k\text{-connected} \implies G - U \text{ is connected}
+  \]
+
+  \pause
+  \begin{center}
+    \teal{Suppose, by contradiction, that $G - e - U$ is not connected.} \\[8pt] \pause
+    $e = uv$ is a bridge of $G - U$ \\[8pt] \pause
+    \textcolor<8>{red}{$U \cup \set{u}$ is a vertex-cut of $G$} \pause
+    \[
+      \text{But } \Big\lvert U \cup \set{u} \Big \rvert < k
+    \]
+  \end{center}
+
+  \only<7->{
+    \vspace{-0.50cm}
+    \fig{width = 0.30\textwidth}{figs/wrong}
+  }
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.30\textwidth}{figs/bridge}
+
+  \begin{columns}
+    \column{0.50\textwidth}
+      \pause
+      \[
+	\textsc{Case I}: |X| \ge 2 \lor |Y| \ge 2
+      \]
+
+      \pause
+      \begin{center}
+	\red{$U \cup \set{u}$ is a vertex-cut of $G$}
+      \end{center}
+      \[
+	\text{But } \Big\lvert U \cup \set{u} \Big \rvert < k
+      \]
+    \column{0.50\textwidth}
+      \pause
+      \[
+	\textsc{Case II}: |X| = |Y| = 1
+      \]
+
+      \pause
+      \vspace{-0.60cm}
+      \begin{gather*}
+	\onslide<5->{|U| = n - 2 < k - 1} \\[6pt]
+	\onslide<6->{\red{\kappa(G) \ge k > n - 1}} \\[6pt]
+	\onslide<7->{\text{But } 0 \le \kappa(G) \le n - 1}
+      \end{gather*}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Effects of Removing an Edge on Connectivity (Problem $5.22$\; (b))}
+    \begin{enumerate}[(a)]
+      \setcounter{enumi}{1}
+      \item If $G$ is $k$-edge-connected and $e = uv \in E(G)$, then $G - e$ is $(k-1)$-edge-connected.
+    \end{enumerate}
+  \end{exampleblock}
+
+  \[
+    \lambda(G) \ge k \implies \lambda(G - e) \ge k-1
+  \]
+
+  \pause
+  \vspace{0.50cm}
+  \begin{center}
+    Choose any $X \subseteq E(G)$ with $|X| < k - 1$. \\[6pt]
+    \red{We prove that $G - e - X$ is connected.}
+  \end{center}
+
+  \pause
+  \[
+    G - e - X = G - (e + E) \text{ is connected} \only<4->{\;\teal{(\because \lambda(G) \ge k)}}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \pause
+  \[
+    \kappa(G - e) \le \kappa(G)
+  \]
+
+  \pause
+  \vspace{0.50cm}
+  \begin{exampleblock}{Effects of Removing a Vertex on Connectivity (Extended Problem)}
+    \[
+      \text{Is } \kappa(G - \red{v}) \le \kappa(G)?
+    \]
+    \[
+      \text{Is } \lambda(G - \red{v}) \le \lambda(G)?
+    \]
+  \end{exampleblock}
+
+  \pause
+  \vspace{0.30cm}
+  \fig{width = 0.30\textwidth}{figs/k4-k1}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%

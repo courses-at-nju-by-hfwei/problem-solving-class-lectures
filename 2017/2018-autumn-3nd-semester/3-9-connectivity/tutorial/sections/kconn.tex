@@ -1,0 +1,93 @@
+% file: sections/kconn.tex
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Expansion Lemma (Problem $5.34$; Theorem $5.18$)}
+    Let $G$ be a $k$-connected graph and let $S$ be any set of $k$ vertices. \\[8pt]
+    If a graph $H$ is obtained from $G$ by \red{adding a new vertex $w$ and joining $w$ to the vertices of $S$},
+    then $H$ is also $k$-connected.
+  \end{exampleblock}
+
+  \vspace{0.80cm}
+  \fig{width = 0.40\textwidth}{figs/expansion-lemma}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{columns}
+    \column{0.40\textwidth}
+      \fig{width = 0.80\textwidth}{figs/expansion-lemma}
+    \column{0.60\textwidth}
+      \[
+	\text{To prove } \kappa(H) \ge k
+      \]
+
+      \pause
+      \begin{center}
+	Let $U$ be a vertex-cut of $H$. \\[5pt]
+	\red{We prove that $|U| \ge k$.}
+      \end{center}
+  \end{columns}
+
+  \pause
+  \vspace{0.50cm}
+  \begin{columns}[t]
+    \column{0.50\textwidth}
+      \begin{center}
+	\purple{\textsc{Case I:} $U$ is a vertex-cut of $G$}
+      \end{center}
+
+      \uncover<4->{
+	\[
+	  |U| \ge k
+	\]
+      }
+    \column{0.50\textwidth}
+      \begin{center}
+	\purple{\textsc{Case II:} $U$ is not a vertex-cut of $G$}
+      \end{center}
+
+      \vspace{-0.60cm}
+      \begin{gather*}
+	\uncover<5->{ w \in U } \\[3pt]
+	\uncover<6->{ U - w \text{ is a vertex-cut of } G } \\[3pt]
+	\uncover<7->{ |U| \ge k + 1 }
+      \end{gather*}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{2-Connectivity (Extended Problem)}
+    \begin{center}
+      A connected graph $G$ with $m \ge 2$ is \red{\it nonseparable} \\[3pt]
+      $\iff$ \\[3pt]
+      \red{any two edges} of $G$ lie on a common cycle of $G$.
+    \end{center}
+  \end{exampleblock}
+
+  \pause
+  \[
+    \implies
+  \]
+  \begin{center}
+    Consider two edges $uv$ and $xy$.
+  \end{center}
+
+  \pause
+  \begin{columns}
+    \column{0.50\textwidth}
+      \uncover<4->{
+	\begin{center}
+	  Add $w, z$ \\[5pt]
+	  Add $wu, wv; zx, zy$ \\[5pt]
+	  $w$ and $z$ lie on a common cycle
+	\end{center}
+      }
+    \column{0.50\textwidth}
+      \fig{width = 0.60\textwidth}{figs/2conn-edges-cycle}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%

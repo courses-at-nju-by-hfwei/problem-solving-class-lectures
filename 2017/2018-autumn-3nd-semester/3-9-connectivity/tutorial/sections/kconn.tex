@@ -15,6 +15,34 @@
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
+
+  \begin{center}
+    We need to prove that
+  \end{center}
+  \[
+    \forall v \in V(G): \text{ there exist $k$ internally disjoint $v-w$ paths}
+  \]
+
+  \fig{width = 0.30\textwidth}{figs/expansion-lemma}
+
+  \pause
+  \begin{center}
+    This holds because
+  \end{center}
+  \[
+    \forall v \in V(G): \text{ there exist internally disjoint $v-s_i\; (\forall s_i \in S)$ paths }
+  \]
+
+  \pause
+  \begin{corollary}[$5.19$; \teal{Proved using Theorem $5.18$}]
+    If $G$ is a $k$-connected graph and $u, v_1, v_2, \cdots, v_k$ are $k+1$ distinct vertices of $G$,
+    then there exist internally disjoint $u-v_i$ paths ($1 \le i \le k$) in $G$.
+  \end{corollary}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
   \begin{columns}
     \column{0.40\textwidth}
       \fig{width = 0.80\textwidth}{figs/expansion-lemma}

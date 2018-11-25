@@ -116,7 +116,6 @@
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
-  \pause
   \[
     \kappa(G - e) \le \kappa(G)
   \]
@@ -132,8 +131,18 @@
     \]
   \end{exampleblock}
 
-  \pause
   \vspace{0.30cm}
-  \fig{width = 0.30\textwidth}{figs/k4-k1}
+  \only<3>{\fig{width = 0.30\textwidth}{figs/k4-k1}}
+
+  \uncover<4->{
+    \begin{exampleblock}{Effects of Removing a Vertex on Connectivity (After-class Exercise)}
+      \[
+	\text{Is } \kappa(G) \ge k \implies \kappa(G - v) \ge k-1?
+      \]
+      \[
+	\text{Is } \lambda(G) \ge k \implies \lambda(G - v) \ge k-1?
+      \]
+    \end{exampleblock}
+  }
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%

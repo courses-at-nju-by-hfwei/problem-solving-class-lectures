@@ -5,5 +5,43 @@
   \begin{exampleblock}{Degree Condition for $\lambda(G) = \delta(G)$ (Problem $5.26$)}
     If $G$ is graph of order $n$ such that $\delta(G) \ge (n-1)/2$, then $\lambda(G) = \delta(G)$.
   \end{exampleblock}
+
+  \pause
+  \[
+    \lambda(G) \le \delta(G)
+  \]
+
+  \begin{center}
+    \red{We prove that $\lambda(G) \ge \delta(G)$.}
+  \end{center}
+
+  \pause
+  \begin{columns}
+    \column{0.40\textwidth}
+      \fig{width = 0.60\textwidth}{figs/edge-cut-structure}
+    \column{0.60\textwidth}
+      \[
+	\lambda(G) = |X|
+      \]
+
+      \pause
+      \vspace{-0.50cm}
+      \[
+	1 \le |S| = k \;\red{\le n/2}, \quad |V - S| = n - k
+      \]
+
+      \pause
+      \vspace{-0.50cm}
+      \[
+	\lambda \ge k \Big(\delta - (k - 1) \Big) \pause \ge \delta
+      \]
+  \end{columns}
+\end{frame}
+% \lambda &\ge \min \Big\{ k\big(\delta-(k-1)\big), \\ &\qquad\qquad (n-k) \big(\delta - (n-k-1) \big) \Big\} 
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \fig{width = 0.85\textwidth}{figs/connectivity-algs-table}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%

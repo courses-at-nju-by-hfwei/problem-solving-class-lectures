@@ -17,7 +17,7 @@
 \begin{frame}{}
 
   \begin{center}
-    We need to prove that
+    We prove that
   \end{center}
   \[
     \forall v \in V(G): \text{ there exist $k$ internally disjoint $v-w$ paths}
@@ -61,7 +61,7 @@
   \pause
   \vspace{0.50cm}
   \begin{columns}[t]
-    \column{0.50\textwidth}
+    \column{0.25\textwidth}
       \begin{center}
 	\purple{\textsc{Case I:} $U$ is a vertex-cut of $G$}
       \end{center}
@@ -71,17 +71,29 @@
 	  |U| \ge k
 	\]
       }
-    \column{0.50\textwidth}
+    \column{0.75\textwidth}
       \begin{center}
 	\purple{\textsc{Case II:} $U$ is not a vertex-cut of $G$}
       \end{center}
 
       \vspace{-0.60cm}
-      \begin{gather*}
-	\uncover<5->{ w \in U } \\[3pt]
-	\uncover<6->{ U - w \text{ is a vertex-cut of } G } \\[3pt]
-	\uncover<7->{ |U| \ge k + 1 }
-      \end{gather*}
+      \begin{columns}
+	\column{0.50\textwidth}
+	  \begin{gather*}
+	    \uncover<5->{\cyan{ w \in U }} \\[3pt]
+	    \uncover<6->{ U - w \text{ is a vertex-cut of } G } \\[3pt]
+	    \uncover<6->{\teal{(\because U \text{ is a vertex-cut of } H)}} \\[3pt]
+	    \uncover<7->{ |U| \ge k + 1 }
+	  \end{gather*}
+	\column{0.50\textwidth}
+	  \begin{align*}
+	    &\uncover<5->{\cyan{w \notin U}} \\[3pt]
+	    &\uncover<8->{\implies U \subseteq G} \\[3pt]
+	    &\uncover<9->{\implies S \subseteq U \subseteq G} \\[3pt]
+	    &\uncover<10->{\teal{(\because U \text{ is a vertex-cut of } H)}} \\[3pt]
+	    &\uncover<11->{\implies |U| \ge k}
+	  \end{align*}
+      \end{columns}
   \end{columns}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%

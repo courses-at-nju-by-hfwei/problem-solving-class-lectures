@@ -4,7 +4,34 @@
   % \caption{Fleury Algorithm (1883).}
   % \label{alg:fleury-alg}
   \begin{algorithmic}[1]
-    \Procedure{Fleury}{$G, w, s$}
+    \Procedure{Fleury}{$G$}
+      \State $v_0 \in V(G)$ \Comment{\teal{Choose any starting vertex}}
+      \State $C \gets v_0$  \Comment{\teal{Keep track of the circuit}}
+      \State $i \gets 0,\; V_0 \gets V(G),\; E_0 \gets E(G)$
+
+      \pause
+      \Statex
+      \While{\red{$\text{deg}(v_i) > 0$ in $E_i$}} \Comment{\red{Stop otherwise}}
+        \onslide<3->{
+	  \If{\purple{$\text{deg}(v_i) = 1$ in $E_i$}} \Comment{\purple{No alternative: go the bridge}}
+	    \State $e_{i+1} \triangleq v_i v_{i+1}$
+	    \State \onslide<5->{\cyan{$V_{i+1} \gets V_{i} - \set{v_{i}}$}}	\Comment{\cyan{Delete the isolated vertex $v_i$}}
+	    \Else	\Comment{\purple{Have alternatives: don't go the bridge}}
+	    \State Choose $e_{i+1} \triangleq v_i v_{i+1}$ that is not a bridge of $(V_i, E_i)$
+	    \State \onslide<5->{\cyan{$V_{i+1} \gets V_{i}$}}	\Comment{\cyan{No isolated vertex produced}}
+	  \EndIf
+
+	  \onslide<4->{
+	    \hStatex
+	    \State $C \gets C e_{i+1} v_{i+1}$
+	    \State $E_{i+1} \gets E_{i} - \set{e_{i+1}}$
+	    \State $i \gets i + 1$
+	  }
+	}
+      \EndWhile
+
+      \hStatex
+      \State \Return $C$
     \EndProcedure
   \end{algorithmic}
 \end{algorithm}

@@ -3,11 +3,103 @@
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
   \input{algs/hierholzer-alg}
+
+  \begin{columns}
+    \column{0.50\textwidth}
+      \fig{width = 0.60\textwidth}{figs/hierholzer-proof}
+    \column{0.50\textwidth}
+      \begin{center}
+	\pause
+	\red{$Q:$ Time Complexity?} \\[5pt]
+	\pause
+	\red{$Q:$ Data Structures?} \\[5pt]
+	\pause
+	\teal{$O(m):$ Using doubly linked list}
+      \end{center}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Fleury's Algorithm ($1883$)}
+    \begin{enumerate}[(I)]
+      \setlength{\itemsep}{8pt}
+      \item $v_0 \in V(G); \quad P_0 = v_0$
+      \item Suppose $C_i = v_0 e_1 v_1 e_2 \cdots e_i v_i$. \\[4pt]
+	\blue{Choose $e_{i+1}$ from $E(G) - \{e_1, e_2, \cdots, e_i\}$} as follows:
+	\begin{enumerate}[(a)]
+	  \setlength{\itemsep}{4pt}
+	  \item $e_{i+1}$ is incident with $v_i$
+	  \item \textcolor<4->{red}{Unless there is no alternative}, $e_{i+1}$ is not a bridge of $G - \{e_1, e_2, \cdots, e_i\}$ 
+	\end{enumerate}
+      \item Stop when \textcolor<3->{red}{step (II) can no longer be implemented}
+    \end{enumerate}
+  \end{exampleblock}
+
+  \begin{columns}
+    \column{0.50\textwidth}
+      \uncover<2->{
+	\fig{width = 0.60\textwidth}{figs/is-that-ok}
+      }
+    \column{0.50\textwidth}
+      \uncover<5->{
+	\fig{width = 0.70\textwidth}{figs/proof}
+      }
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[Bridges in Fleury's Algorithm]
+    At any stage, $v_i$ is incident with $\le 1$ bridge in $E(G) - \set{e_1, e_2, \cdots, e_i}$.
+  \end{theorem}
+
+  \pause
+  \begin{center}
+    \red{By Contradiction.} \\[6pt]
+    Suppose that $v_i$ is incident with $\ge 2$ bridges in $E(G) - \set{e_1, e_2, \cdots, e_i}$.
+  \end{center}
+
+  \pause
+  \vspace{0.20cm}
+  \begin{columns}
+    \column{0.50\textwidth}
+      \input{tikz/fleury-bridge}
+    \column{0.50\textwidth}
+      \pause
+      \[
+	\exists x' \in C_x: \text{deg}(x) \text{ is odd}
+      \]
+      \pause
+      \vspace{-0.60cm}
+      \[
+	\exists y' \in C_y: \text{deg}(y) \text{ is odd}
+      \]
+
+      \begin{center}
+	\pause
+	We have found $2$ odd vertices. \\[5pt]
+
+	\pause
+	\red{$Q:$ What is the contradiction?} \\[8pt]
+
+	\pause
+	\teal{Is $\text{deg}(v_i)$ odd or even?}
+      \end{center}
+  \end{columns}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
   \input{algs/fleury-alg}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  complexity
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%

@@ -5,6 +5,19 @@
   % \label{alg:hierholzer-alg}
   \begin{algorithmic}[1]
     \Procedure{Hierholzer}{$G$}
+      \State $u \in V(G)$
+      \State $C \gets \text{ any circuit } u \sim u$ in $G$
+
+      \hStatex
+      \While{\textcolor{red}{$\exists v \in C: \text{deg}(v) > 0$}}
+	\State $H \gets G - E(C)$
+	\State $v \gets \text{ any vertex in } V(C)$ such that $\text{deg}(v) > 0$
+	\State $C' \gets \text{ any circuit } v \sim v$ in $H$
+	\State $C \gets C \otimes C'$ \Comment{\teal{Glue $C' = v \sim v$ with $C$ via $v$}}
+      \EndWhile
+
+      \hStatex
+      \State \Return $C$
     \EndProcedure
   \end{algorithmic}
 \end{algorithm}

@@ -19,15 +19,15 @@
 
     \pause
     \begin{center}
-      Let $T = u \sim v$ be any trail in $G$ of the maximum length.
+      Let $C = u \sim v$ be any trail in $G$ of the maximum length.
     \end{center}
     \pause
     \[
-      v = u \pause \implies T = u \sim u
+      v = u \pause \implies C = u \sim u
     \]
     \pause
     \[
-      \purple{H = G - E(T) = \bigcup H_i}
+      \purple{H = G - E(C) = \bigcup H_i}
     \]
   \end{proof}
 \end{frame}
@@ -36,33 +36,33 @@
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
   \[
-    \purple{H = G - E(T) = \bigcup H_i}
+    \purple{H = G - E(C) = \bigcup H_i}
   \]
 
   \begin{columns}
     \column{0.40\textwidth}
-      \fig{width = 0.80\textwidth}{figs/hierholzer-proof}
-    \column{0.60\textwidth}
+      \fig{width = 0.85\textwidth}{figs/hierholzer-proof}
+    \column{0.65\textwidth}
       \pause
       \begin{enumerate}[(I)]
 	\item $\forall v \in H: \text{deg}(v)$ is even
-	\item $\forall i: E(H_i) < m$
+	\item $\forall i: \Big\lvert E(H_i) \Big\rvert < m$
       \end{enumerate}
 
       \pause
       \vspace{0.30cm}
       \begin{center}
-	\teal{By I.H., each $H_i$ has an Eulerian trail $T_i$.}
+	\teal{By I.H., each $H_i$ has an Eulerian circuit $C_i$.}
       \end{center}
 
       \pause
       \[
-	\forall i: V(H_i) \cap V(T) \neq \emptyset
+	\forall i: V(H_i) \cap V(C) \neq \emptyset
       \]
 
       \pause
       \begin{center}
-	Combine each $T_i$ with $T$ to get an Eulerian circuit of $G$.
+	Glue together each $C_i$ with $C$ to get an Eulerian circuit of $G$.
       \end{center}
   \end{columns}
 \end{frame}

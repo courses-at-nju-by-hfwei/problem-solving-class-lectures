@@ -1,7 +1,3 @@
-# 3-7-sssp
+# 3-8-apsp
 
-## The Time Complexity of Dijkstra's SSSP Algorithm
-- The original Dijkstra's Algorithm invented/published
-- Array
-- Min-heap
-- Fibonacci heap
+## The Lower Bound of APSP Problem

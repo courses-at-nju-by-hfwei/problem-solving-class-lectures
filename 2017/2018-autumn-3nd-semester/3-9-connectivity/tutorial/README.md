@@ -1,7 +1,3 @@
-# 3-7-sssp
+# 3-9-connectivity
 
-## The Time Complexity of Dijkstra's SSSP Algorithm
-- The original Dijkstra's Algorithm invented/published
-- Array
-- Min-heap
-- Fibonacci heap
+## Menger's Theorem

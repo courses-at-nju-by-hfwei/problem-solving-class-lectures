@@ -1,0 +1,69 @@
+% file: sections/eulerian-graph.tex
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[Leonhard Euler $1735$]
+    A connected graph $G$ is \red{Eulerian} if and only if the degree of each vertex of $G$ is even.
+  \end{theorem}
+
+  \pause
+  \begin{proof}[``$\Longleftarrow$'' (Carl Hierholzer $1873$); \pause\teal{\small (Proofs on PPT from Tao \& on CZ)}]
+    \pause
+    \begin{center}
+      By strong mathematical \red{induction on the number $m$ of edges} of $G$.
+    \end{center}
+    \pause
+    \[
+      \text{Inductive Step}: m = k + 1
+    \]
+
+    \pause
+    \begin{center}
+      Let $T = u \sim v$ be any trail in $G$ of the maximum length.
+    \end{center}
+    \pause
+    \[
+      v = u \pause \implies T = u \sim u
+    \]
+    \pause
+    \[
+      \purple{H = G - E(T) = \bigcup H_i}
+    \]
+  \end{proof}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \purple{H = G - E(T) = \bigcup H_i}
+  \]
+
+  \begin{columns}
+    \column{0.40\textwidth}
+      \fig{width = 0.80\textwidth}{figs/hierholzer-proof}
+    \column{0.60\textwidth}
+      \pause
+      \begin{enumerate}[(I)]
+	\item $\forall v \in H: \text{deg}(v)$ is even
+	\item $\forall i: E(H_i) < m$
+      \end{enumerate}
+
+      \pause
+      \vspace{0.30cm}
+      \begin{center}
+	\teal{By I.H., each $H_i$ has an Eulerian trail $T_i$.}
+      \end{center}
+
+      \pause
+      \[
+	\forall i: V(H_i) \cap V(T) \neq \emptyset
+      \]
+
+      \pause
+      \begin{center}
+	Combine each $T_i$ with $T$ to get an Eulerian circuit of $G$.
+      \end{center}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%

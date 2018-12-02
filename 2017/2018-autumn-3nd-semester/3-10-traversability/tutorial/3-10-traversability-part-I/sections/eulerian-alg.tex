@@ -94,12 +94,121 @@
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
+  \begin{columns}
+    \column{0.50\textwidth}
+      \input{tikz/fleury-bridge}
+    \column{0.50\textwidth}
+      \begin{center}
+	We have found $2$ odd vertices. \\[5pt]
+
+	\red{Is $\text{deg}(v_i)$ odd or even?}
+      \end{center}
+    \end{columns}
+  % \noindent\rule{\textwidth}{1pt}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{columns}
+    \column{0.55\textwidth}
+      \begin{center}
+	\teal{\textsc{Case I:} $\text{deg}(v_i)$ is odd.} \\[8pt] \pause
+	\red{Contradiction:} \\[6pt] \pause
+	Only $v_0$ and $v_i$ can have odd degrees!
+      \end{center}
+    \column{0.45\textwidth}
+      \pause
+      \teal{\textsc{Case II:} $\text{deg}(v_i)$ is even.}
+      \pause
+      \[
+	v_i = v_0
+      \]
+      \pause
+      \red{Contradiction:} \pause No odd vertices!
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
   \input{algs/fleury-alg}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
-  complexity
+  \fig{width = 0.25\textwidth}{figs/proof}
+
+  \vspace{-0.80cm}
+  \begin{center}
+    \red{We need to prove that \pause $C$ returned by \textsc{Fleury} is an Eulerian circuit.}
+  \end{center}
+
+  \pause
+  \begin{definition}[Eulerian Circuit]
+    A connected graph is \red{Eulerian} if there exists a \purple{closed} \teal{trail} that \cyan{includes every edge of $G$}. \\[6pt]
+
+    A \teal{trail} is a walk in which all the edges are distinct.
+  \end{definition}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{columns}
+    \column{0.25\textwidth}
+      \begin{center}
+	\purple{Closed} \\[6pt]
+	\uncover<5->{$\because$ even degrees}
+      \end{center}
+    \column{0.35\textwidth}
+      \begin{center}
+	\teal{Trail} \\[6pt]
+	\uncover<6->{$\because$ used edges are deleted}
+      \end{center}
+    \column{0.40\textwidth}
+      \begin{center}
+	\cyan{Include every edge of $G$} \\[6pt]
+	\uncover<7->{By Contradiction.}
+      \end{center}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{columns}
+    \column{0.50\textwidth}
+      \fig{width = 0.70\textwidth}{figs/hierholzer-proof}
+    \column{0.50\textwidth}
+      \begin{center}
+	\cyan{Include every edge of $G$} \\[6pt]
+	\red{By Contradiction.}
+      \end{center}
+  \end{columns}
+
+  \pause
+  \vspace{0.30cm}
+  \[
+    \blue{\text{We know that } C: v_0 \sim v_0 \qquad \pause E' \triangleq E(G) - E(C) \neq \emptyset}
+  \]
+  \pause
+  \[
+    \text{deg}(v_0) = 0 \quad \pause \teal{(\text{\small Otherwise, \textsc{Fleury} is not terminated.})}
+  \]
+  \pause
+  \[
+    G|_{E'} \text{ is disconnected from } v_0
+  \]
+  \pause
+  \begin{center}
+    \red{Impossible:}
+  \end{center}
+
+  \pause
+  \begin{columns}
+    \column{0.80\textwidth}
+      \begin{enumerate}[(I)]
+	\item Don't go the bridge unless there is no alternative.
+	\item Delete the isolated vertex left by going the bridge.
+      \end{enumerate}
+  \end{columns}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%

@@ -1,5 +1,9 @@
 # 3-10-traversability-part-I: Eulerian Graphs
 
-## Fleury's Algorithm 
+## Algorithms for Finding an Eulerian Circuit
+### Fleury's Algorithm 
+### Hierholzer's Algorithm 
+
+## Counting the Number of Eulerian Circuits
 
 ## Chinese Postman Problem (CPP)

@@ -1,0 +1,325 @@
+% file: sections/menger-theorem.tex
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{theorem}[Menger's Theorem (Theorem $5.16$)]
+    \begin{center}
+      Let $u$ and $v$ be \purple{nonadjacent} vertices in a graph $G$. \\[5pt]
+      The \red{minimum number of vertices in a $u-v$ separating set} \\
+      equals the \blue{maximum number of internally disjoint $u-v$ paths in $G$}.
+    \end{center}
+  \end{theorem}
+
+  \pause
+  \begin{center}
+    How do \textsc{Case 1}, \textsc{Case 2}, and \textsc{Case 3} cover all possibilities? \\[8pt] \pause
+    Are \textsc{Case 1} and \textsc{Case 2} mutually exclusive? \\[4pt] \pause
+    What is the key to use the induction hypothesis in \textsc{Case 2}? \\[8pt] \pause
+    Are \textsc{Case 1} and \textsc{Case 3} mutually exclusive? \\[4pt] \pause
+    What will fail if we do not exclude \textsc{Case 1} from \textsc{Case 3}? \\[8pt] \pause
+    Can you restate these three cases in terms of $N(u)$ and $N(v)$? \\[4pt] \pause
+    Can you rearrange these three cases to make them (hopefully) easier to understand?
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{center}
+    \red{By induction on the number $m$ of edges of $G$.} \pause
+  \end{center}
+
+  \pause
+  \begin{description}
+    \item[\textsc{Case I}:] There exists a minimum $u-v$ separating set $W$ in $G$ 
+      containing \blue{a vertex $x$ that is adjacent to both $u$ and $v$}.
+  \end{description}
+
+  \fig{width = 0.40\textwidth}{figs/menger-theorem-case-I}
+
+  \pause
+  \[
+    W - \set{x} \text{ is a minimum } u-v \text{ separating set in } G - x
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{center}
+    \red{By induction on the number $m$ of edges of $G$.}
+  \end{center}
+
+  \begin{description}
+    \item[\textsc{Case II}:] There exists a minimum $u-v$ separating set $W$ in $G$
+      containing \blue{a vertex in $W$ that is not adjacent to $u$} \\
+      and \blue{a vertex in $W$ that is not adjacent to $v$}.
+  \end{description}
+
+  \begin{columns}
+    \column{0.30\textwidth}
+      \fig{width = 0.90\textwidth}{figs/menger-theorem-case-II}
+    \column{0.40\textwidth}
+      \pause
+      \fig{width = 0.80\textwidth}{figs/menger-theorem-case-II-gv}
+      \uncover<3->{
+	\[ 
+	  \red{\boxed{m(G'_v) < m(G)}}
+	\]
+      }
+    \column{0.40\textwidth}
+      \uncover<4->{
+	\fig{width = 0.80\textwidth}{figs/menger-theorem-case-II-gu}
+	\[ 
+	  \red{\boxed{m(G'_u) < m(G)}}
+	\]
+      }
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{center}
+    \red{By induction on the number $m$ of edges of $G$.}
+  \end{center}
+
+  \begin{description}
+    \item[\textsc{Case III}:] For each minimum $u-v$ separating set $W$ in $G$,
+      either \blue{every vertex of $W$ is adjacent to $u$ and not adjacent to $v$}
+      or \blue{every vertex of $W$ is adjacent to $v$ and not adjacent to $u$}.
+  \end{description}
+
+  \begin{columns}
+    \column{0.50\textwidth}
+      \fig{width = 0.80\textwidth}{figs/menger-theorem-case-III}
+    \column{0.50\textwidth}
+      \pause
+      \begin{center}
+	\red{$\boxed{P = u, x, y, \ldots, v}$ \\[5pt] A $u-v$ shortest simple path in $G$}
+      \end{center}
+      \pause
+      \[
+	m(G - e) < m(G)
+      \]
+      \begin{center}
+	A minimum $u-v$ separating set \\ in $G - e$ contains $k$ vertices.
+      \end{center}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{description}
+    \item[\textsc{Case I}:] There exists a minimum $u-v$ separating set $W$ in $G$ 
+      containing \purple{a vertex $x$ that is adjacent to both $u$ and $v$}.
+      \only<2->{
+	\[
+	  \exists W: \exists x \in W: x-u \land x-v
+	\]
+      }
+    \item[\textsc{Case II}:] There exists a minimum $u-v$ separating set $W$ in $G$
+      containing \purple{a vertex in $W$ that is not adjacent to $u$} \\
+      and \purple{a vertex in $W$ that is not adjacent to $v$}.
+      \only<3->{
+	\begin{align*}
+	  \exists W:\; &\exists x \in W: x \nadj u \\
+	  	     \land\; &\exists y \in W: y \nadj v
+	\end{align*}
+      }
+    \item[\textsc{Case III}:] For each minimum $u-v$ separating set $W$ in $G$,
+      either \purple{every vertex of $W$ is adjacent to $u$ and not adjacent to $v$}
+      or \purple{every vertex of $W$ is adjacent to $v$ and not adjacent to $u$}.
+      \only<4->{
+	\begin{align*}
+	  \forall W:\; &\forall x \in W: x - u \land x \nadj v \\
+	  	     \lor\; &\forall x \in W: x - v \land x \nadj u 
+	\end{align*}
+      }
+  \end{description}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{columns}[t]
+    \column{0.50\textwidth}
+      \[
+	\teal{\textsc{I}:}\; \exists W: \exists x \in W: x-u \land x-v
+      \]
+
+      \begin{align*}
+	\teal{\textsc{II}:}\;
+	\exists W:\; &\exists x \in W: x \nadj u \\
+		   \land\; &\exists y \in W: y \nadj v
+      \end{align*}
+
+
+      \begin{align*}
+	\teal{\textsc{III}:}\;
+	\forall W:\; &\forall x \in W: x - u \land x \nadj v \\
+		   \lor\; &\forall x \in W: x - v \land x \nadj u 
+      \end{align*}
+  \column{0.50\textwidth}
+    \uncover<3->{
+      \[
+	\red{\textsc{I}':}\; \forall W: \forall x \in W: x \nadj u \lor x \nadj v
+      \]
+    }
+
+    \uncover<2->{
+      \begin{align*}
+	\red{\textsc{II}':}\;
+	\forall W:\; &\forall x \in W: x-u\\
+		   \lor\; &\forall y \in W: y - v
+      \end{align*}
+    }
+
+    \uncover<4->{
+      \[
+	\teal{\textsc{III}} \equiv \red{\textsc{II}'} \land \red{\textsc{I}'}
+      \]
+    }
+  \end{columns}
+
+  \vspace{-0.50cm}
+  \only<5->{
+    \begin{columns}
+      \column{0.10\textwidth}
+	\begin{description}[$\red{\textsc{II}'}$]
+	  \item[$\teal{\textsc{II}}$]
+	  \item[$\red{\textsc{II}'}$] \textcolor{white}{dummy}
+	    \vspace{-1.00cm}
+	    \[
+	      \teal{\textsc{I}}
+	    \]
+	    \vspace{-0.60cm}
+	    \[
+	      \teal{\textsc{III}}
+	    \]
+	\end{description}
+    \end{columns}
+  }
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{columns}[t]
+    \column{0.50\textwidth}
+      \begin{description}[$\red{\textsc{II}'}$]
+	\item[$\teal{\textsc{II}}$]
+	  \begin{align*}
+	    \teal{\textsc{II}:}\;
+	    \exists W:\; &\exists x \in W: x \nadj u \\
+		       \land\; &\exists y \in W: y \nadj v
+	  \end{align*}
+	\item[$\red{\textsc{II}'}$] \textcolor{white}{dummy}
+	  \[
+	    \teal{\textsc{I}:}\; \exists W: \exists x \in W: x-u \land x-v
+	  \]
+
+	  \begin{align*}
+	    \teal{\textsc{III}:}\;
+	    \forall W:\; &\forall x \in W: x - u \land x \nadj v \\
+		       \lor\; &\forall x \in W: x - v \land x \nadj u 
+	  \end{align*}
+    \end{description}
+    \column{0.50\textwidth}
+      \pause
+      \begin{description}[$\red{\textsc{II}'}$]
+	\item[$\teal{\textsc{II}}$]
+	  \begin{align*}
+	    % \teal{\textsc{II}:}\; 
+	    \exists W:\; &W \nsubseteq N(u) \\
+		  \land\; &W \nsubseteq N(v)
+	  \end{align*}
+	\item[$\red{\textsc{II}'}$] \textcolor{white}{dummy}
+	  \pause
+	  \[
+	    % \teal{\textsc{I}:}\; 
+	    \exists W: \exists x \in W: x \in N(u) \cap N(v)
+	  \]
+
+	  \pause
+	  \begin{align*}
+	    % \teal{\textsc{III}:}\; 
+	    \forall W: \;&W \subseteq N(u) \land W \cap N(v) = \emptyset \\
+		  \lor\; &W \subseteq N(v) \land W \cap N(u) = \emptyset
+	  \end{align*}
+      \end{description}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{description}[$\red{\textsc{II}'}$]
+    \item[$\teal{\textsc{II}}$]
+      \begin{align*}
+	\teal{\textsc{II}:}\; 
+	\exists W:\; &W \nsubseteq N(u) \\
+	      \land\; &W \nsubseteq N(v)
+      \end{align*}
+
+      % \uncover<2->{
+      %   \begin{center}
+      %     \red{$Q:$ What is the key to use the induction hypothesis in \textsc{Case II}?}
+      %   \end{center}
+      % }
+    \item[$\red{\textsc{II}'}$] \textcolor{white}{dummy}
+      \[
+	\teal{\textsc{I}:}\; 
+	\exists W: \exists x \in W: x \in N(u) \cap N(v)
+      \]
+
+      \begin{align*}
+	\teal{\textsc{III}:}\; 
+	\forall W: \;&W \subseteq N(u) \land W \cap N(v) = \emptyset \\
+	      \lor\; &W \subseteq N(v) \land W \cap N(u) = \emptyset
+      \end{align*}
+
+      % \uncover<3->{
+      %   \begin{center}
+      %     \red{$Q:$ What will fail if we do not exclude \textsc{Case I} from \textsc{Case III}?}
+      %   \end{center}
+      % }
+  \end{description}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[Menger's Theorem for Edge-Connectivity (Theorem $5.21$)]
+    \begin{center}
+      For distinct vertices $u$ and $v$ in a graph $G$, \\[5pt]
+      the \red{minimum number of edges of $G$ that separate $u$ and $v$} \\
+      equals the \blue{maximum number of pairwise edge-disjoint $u-v$ paths in $G$}.
+    \end{center}
+  \end{theorem}
+
+  \pause
+  \begin{center}
+    \red{Line Graph}
+  \end{center}
+
+  \vspace{-0.30cm}
+  \begin{columns}
+    \column{0.25\textwidth}
+      \fig{width = 0.80\textwidth}{figs/line-graph-1}
+    \column{0.25\textwidth}
+      \fig{width = 0.80\textwidth}{figs/line-graph-2}
+    \column{0.25\textwidth}
+      \fig{width = 0.80\textwidth}{figs/line-graph-3}
+    \column{0.25\textwidth}
+      \fig{width = 0.80\textwidth}{figs/line-graph-4}
+  \end{columns}
+
+  \pause
+  \begin{center}
+    Definition $4.2.18$ \& Theorem $4.2.19$ \\
+    of ``Introduction to Graph Theory'' by Douglas B. West
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%

@@ -30,7 +30,29 @@
 \begin{frame}{}
   \begin{exampleblock}{Perfect Matching on Trees (Problem $8.5$)}
     \begin{center}
-      Prove that every tree has $\le 1$ perfect matching.
+      Prove that every tree $T$ has $\le 1$ perfect matching.
+    \end{center}
+  \end{exampleblock}
+
+  \pause
+  \vspace{0.60cm}
+  \begin{columns}
+    \column{0.50\textwidth}
+      \fig{width = 0.50\textwidth}{figs/hui}
+    \column{0.50\textwidth}
+      \fig{width = 0.50\textwidth}{figs/kong-yiji}
+  \end{columns}
+
+  \begin{center}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Perfect Matching on Trees (Problem $8.5$)}
+    \begin{center}
+      Prove that every tree $T$ has $\le 1$ perfect matching.
     \end{center}
   \end{exampleblock}
 
@@ -52,13 +74,42 @@
 \begin{frame}{}
   \begin{exampleblock}{Perfect Matching on Trees (Problem $8.5$)}
     \begin{center}
-      Prove that every tree has $\le 1$ perfect matching.
+      Prove that every tree $T$ has $\le 1$ perfect matching.
+    \end{center}
+  \end{exampleblock}
+
+  \begin{center}
+    \red{By strong mathematical induction on the order $n$ of trees.} \\[6pt]
+    \blue{Inductive step: Consider a tree of order $n$.}
+  \end{center}
+
+  \pause
+  \input{algs/tree-perfect-matching-leaf}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Perfect Matching on Trees (Problem $8.5$)}
+    \begin{center}
+      Prove that every tree $T$ has $\le 1$ perfect matching.
     \end{center}
   \end{exampleblock}
 
   \pause
   \begin{center}
-    \red{A tree is a bipartite graph.}
+    \red{By Contradiction.} \\[6pt]
+    \teal{Suppose that there are two different perfect matchings $M$ and $M'$ on $T$.} \\[10pt] \pause
+    \blue{$\exists v:$ $v$ is matched with different vertices in $M$ and $M'$.}
+  \end{center}
+
+  \pause
+  \fig{width = 0.40\textwidth}{figs/tree-perfect-matching-diff-cycle}
+
+  \pause
+  \begin{center}
+    \red{$Q:$ What about $u$ and $w$?} \\[8pt] \pause
+    \blue{Contradiction: Cycle}
   \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
@@ -67,9 +118,56 @@
 \begin{frame}{}
   \begin{exampleblock}{Perfect Matching on Trees (Problem $8.5$)}
     \begin{center}
-      Prove that every tree has $\le 1$ perfect matching.
+      Prove that every tree $T$ has $\le 1$ perfect matching.
     \end{center}
   \end{exampleblock}
+
+  \begin{center}
+    \red{By Contradiction.} \\[6pt]
+    \teal{Suppose that there are two different perfect matchings $M$ and $M'$ on $T$.}
+  \end{center}
+
+  \pause
+  \vspace{-0.30cm}
+  \[
+    M \Delta M' = (M - M') \cup (M' - M)
+  \]
+  \begin{center}
+    \blue{Consider the subgraph $\mathcal{M}$ with $V(T)$ and $M \Delta M'$.}
+  \end{center}
+
+  \begin{columns}
+    \column{0.60\textwidth}
+      \pause
+      \begin{columns}
+	\column{0.50\textwidth}
+	  \fig{width = 0.60\textwidth}{figs/perfect-matching-diff-same-edge}
+	  \vspace{-0.20cm}
+	  \centerline{\teal{\textsc{Case I}}}
+	\column{0.50\textwidth}
+	  \fig{width = 0.70\textwidth}{figs/perfect-matching-diff-not-same-edge}
+	  \vspace{-0.20cm}
+	  \centerline{\teal{\textsc{Case II}}}
+      \end{columns}
+    \column{0.40\textwidth}
+      \pause
+      \[
+	\forall v \in V(\mathcal{M}):
+      \]
+      \[
+	\text{deg}(v) = 0 \lor \text{deg}(v) = 2
+      \]
+      \pause
+      \vspace{-0.50cm}
+      \[
+	\purple{T \text{ is a tree } \implies \text{deg}(v) = 0}
+      \]
+      \pause
+      \vspace{-0.50cm}
+      \[
+	\text{deg}(v) = 0 \implies \text{\teal{\textsc{ Case I}}}
+      \]
+  \end{columns}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
@@ -143,7 +241,11 @@
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
   \uncover<2->{
-    \begin{theorem}[]
+    \begin{theorem}[K\"onig, $1931$; Egerv\'ary, $1931$]
+      If $G$ is a \red{bipartite graph}, then
+      \[
+	\alpha'(G) = \beta(G).
+      \]
     \end{theorem}
   }
 
@@ -155,7 +257,11 @@
   \end{align*}
 
   \uncover<2->{
-    \begin{theorem}[]
+    \begin{theorem}[K\"onig, $1931$]
+      If $G$ is a \red{bipartite graph}, then
+      \[
+	\alpha(G) = \beta'(G).
+      \]
     \end{theorem}
   }
 \end{frame}

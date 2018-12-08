@@ -8,10 +8,10 @@
       \State \uncover<5->{\cyan{\# Perfect Matching $= 0$}}
     \Else	\Comment{\teal{$n$ is even}}
       \uncover<6->{
-	\State Consider $G - r$ \Comment{\teal{$r:$ root of $G$}}
-	\If{$k_o(G - r) > 1$}
+	\State Consider $T - r$ \Comment{\teal{$r:$ root of $G$}}
+	\If{$k_o(T - r) > 1$}
 	  \State \uncover<7->{\cyan{\# Perfect Matching $= 0$}}
-	\Else	\Comment{\teal{$k_o(G - r) = 1$}}
+	\Else	\Comment{\teal{$k_o(T - r) = 1$}}
 	  \State \uncover<8->{\red{By Induction Hypothesis.}}
 	\EndIf
       }

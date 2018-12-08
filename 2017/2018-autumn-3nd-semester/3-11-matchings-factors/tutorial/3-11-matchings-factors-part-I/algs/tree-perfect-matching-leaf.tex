@@ -1,0 +1,21 @@
+% file: algs/tree-perfect-matching-leaf.tex
+
+\begin{algorithm}[H]
+  % \caption{Perfect Matching on Tree}
+  % \label{alg:perfect-matching-tree-leaf}
+  \begin{algorithmic}[1]
+    \If{$T$ has no perfect matchings}
+      \State \cyan{\# Perfect Matching $= 0$}
+    \Else	\Comment{\teal{$T$ has perfect matchings}}
+      \uncover<3->{
+	\State Consider a leaf $v$
+      }
+      \uncover<4->{
+	\State $v$ \purple{must} be matched with its parent $u$
+      }
+      \uncover<5->{
+	\State \red{By Induction Hypothesis} on each component of $G - \set{u, v}$
+      }
+    \EndIf
+  \end{algorithmic}
+\end{algorithm}

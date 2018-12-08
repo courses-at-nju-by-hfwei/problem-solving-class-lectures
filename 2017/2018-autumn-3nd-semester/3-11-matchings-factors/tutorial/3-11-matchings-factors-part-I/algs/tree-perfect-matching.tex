@@ -1,0 +1,20 @@
+% file: algs/tree-perfect-matching.tex
+
+\begin{algorithm}[H]
+  % \caption{Perfect Matching on Tree}
+  % \label{alg:perfect-matching-tree}
+  \begin{algorithmic}[1]
+    \If{$n$ is odd}
+      \State \uncover<5->{\cyan{\# Perfect Matching $= 0$}}
+    \Else	\Comment{\teal{$n$ is even}}
+      \uncover<6->{
+	\State Consider $G - r$ \Comment{\teal{$r:$ root of $G$}}
+	\If{$k_o(G - r) > 1$}
+	  \State \uncover<7->{\cyan{\# Perfect Matching $= 0$}}
+	\Else	\Comment{\teal{$k_o(G - r) = 1$}}
+	  \State \uncover<8->{\red{By Induction Hypothesis.}}
+	\EndIf
+      }
+    \EndIf
+  \end{algorithmic}
+\end{algorithm}

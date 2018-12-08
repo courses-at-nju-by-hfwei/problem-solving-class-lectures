@@ -1,0 +1,13 @@
+% file: algs/independent-set-construction.tex
+
+\begin{algorithm}[H]
+  % \caption{Independent Set Construction}
+  % \label{alg:independent-set-construction}
+  \begin{algorithmic}[1]
+    \While{$|V(G) > 0|$}
+      \State Choose $v \in V(G)$
+      \State \red{$S \gets S \cup \set{v}$}
+      \State $G \gets G - \set{v} - N(v)$
+    \EndWhile
+  \end{algorithmic}
+\end{algorithm}

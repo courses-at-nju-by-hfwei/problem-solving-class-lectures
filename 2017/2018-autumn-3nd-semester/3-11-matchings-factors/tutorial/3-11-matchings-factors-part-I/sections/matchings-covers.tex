@@ -28,33 +28,199 @@
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{}
+  \begin{exampleblock}{Perfect Matching on Trees (Problem $8.5$)}
+    \begin{center}
+      Prove that every tree has $\le 1$ perfect matching.
+    \end{center}
+  \end{exampleblock}
+
+  \pause
+  \begin{center}
+    \red{By strong mathematical induction on the order $n$ of trees.} \\[6pt] \pause
+    \blue{Inductive step: Consider a tree of order $n$.}
+  \end{center}
+
+  \pause
+  \begin{columns}
+    \column{0.60\textwidth}
+      \input{algs/tree-perfect-matching}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Perfect Matching on Trees (Problem $8.5$)}
+    \begin{center}
+      Prove that every tree has $\le 1$ perfect matching.
+    \end{center}
+  \end{exampleblock}
+
+  \pause
+  \begin{center}
+    \red{A tree is a bipartite graph.}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Perfect Matching on Trees (Problem $8.5$)}
+    \begin{center}
+      Prove that every tree has $\le 1$ perfect matching.
+    \end{center}
   \end{exampleblock}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{}
-  \end{exampleblock}
+  \uncover<3->{
+    \begin{theorem}[Callai Identities, $1959$; Theorem $8.7$]
+      If $G$ is graph without isolated vertices, then
+      \[
+	\alpha'(G) + \beta'(G) = n(G).
+      \]
+    \end{theorem}
+  }
+
+  \begin{align*}
+    \alpha(G) 	& \onslide<2->{\text{\quad Maximum size of independent set}} \\[8pt]
+    \beta(G) 	& \onslide<2->{\text{\quad Minimum size of vertex cover}} \\[8pt]
+    \alpha'(G)  & \onslide<2->{\text{\quad Maximum size of matching}} \\[8pt]
+    \beta'(G) 	& \onslide<2->{\text{\quad Minimum size of edge cover}}
+  \end{align*}
+
+  \uncover<4->{
+    \begin{theorem}[Callai Identities, $1959$; Theorem $8.8$]
+      If $G$ is graph without isolated vertices, then
+      \[
+	\alpha(G) + \beta(G) = n(G).
+      \]
+    \end{theorem}
+  }
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{}
+  \begin{exampleblock}{Matching and Edge Cover (Problem $8.14$)}
+    A graph $G$ without isolated vertices has a perfect matching if and only if $\alpha'(G) = \beta'(G)$.
   \end{exampleblock}
+
+  \begin{columns}
+    \column{0.50\textwidth}
+      \pause
+      \begin{center}
+	\teal{``$\implies$''}
+      \end{center}
+
+      \pause
+      \vspace{-0.30cm}
+      \begin{align*}
+	G &\text{ has a perfect matching} \\[5pt]
+	&\implies n \text{ is even } \land \alpha'(G) = n/2 \\[5pt]
+	&\implies \beta'(G) = n/2 % \\[5pt]
+	% &\implies \alpha'(G) = \beta'(G)
+      \end{align*}
+    \column{0.50\textwidth}
+      \pause
+      \begin{center}
+	\teal{``$\Longleftarrow$''}
+      \end{center}
+
+      \pause
+      \vspace{-0.30cm}
+      \begin{align*}
+	\alpha'&(G) = \beta'(G) \\[5pt]
+	&\implies \alpha'(G) = n/2 \land n \text{ is even} \\[5pt]
+	&\implies G \text{ has a perfect matching}
+      \end{align*}
+  \end{columns}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{}
-  \end{exampleblock}
+  \uncover<2->{
+    \begin{theorem}[]
+    \end{theorem}
+  }
+
+  \begin{align*}
+    \alpha(G) 	& \text{\quad Maximum size of independent set} \\[8pt]
+    \beta(G) 	& \text{\quad Minimum size of vertex cover} \\[8pt]
+    \alpha'(G)  & \text{\quad Maximum size of matching} \\[8pt]
+    \beta'(G) 	& \text{\quad Minimum size of edge cover}
+  \end{align*}
+
+  \uncover<2->{
+    \begin{theorem}[]
+    \end{theorem}
+  }
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
+  \begin{exampleblock}{Vertex Covering Number (Problem $8.16$)}
+    If $G$ is a graph of order $n$, maximum degree $\Delta$ 
+    and \textcolor<2->{red}{having no isolated vertices}, then 
+    \[
+      \beta(G) \ge \frac{n}{\Delta + 1}.
+    \]
+  \end{exampleblock}
+
+  \begin{columns}
+    \column{0.45\textwidth}
+      \uncover<3->{
+	\fig{width = 0.50\textwidth}{figs/isolated-vertex}
+
+	\[
+	  n = 3, \Delta = 1, \purple{\frac{n}{\Delta + 1} = \frac{3}{2}}, \beta = 1
+	\]
+      }
+    \column{0.55\textwidth}
+      \uncover<4->{
+	\begin{center}
+	  \red{By Contradiction: $\beta < \frac{n}{\Delta + 1}$.}
+	\end{center}
+      }
+      \vspace{-0.20cm}
+      \uncover<5->{
+	\begin{align*}
+	  \beta \cdot \Delta &< \frac{n \Delta}{\Delta + 1} \\
+	  &= n - \frac{n}{\Delta + 1} \\
+	  &\le n - 1
+	\end{align*}
+      }
+      \vspace{-0.30cm}
+      \uncover<6->{
+	\centerline{\red{Contradiction: No isolated vertices.}}
+      }
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Vertex Independence Number (Additional Problem)}
+    If $G$ is a graph of order $n$, maximum degree $\Delta$, then
+    \[
+      \alpha(G) \ge \frac{n}{\Delta + 1}.
+    \]
+  \end{exampleblock}
+
+  \pause
+  \begin{center}
+    \red{By Construction.} \\[6pt] \pause
+    \teal{To construct an independent set $S$ with $|S| \ge \frac{n}{\Delta + 1}$.}
+  \end{center}
+
+  \pause
+  \begin{columns}
+    \column{0.50\textwidth}
+      \input{algs/independent-set-construction}
+  \end{columns}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%

@@ -15,10 +15,10 @@
         \onslide<3->{
 	  \If{\purple{$\text{deg}(v_i) = 1$ in $E_i$}} \Comment{\purple{No alternative: go the bridge}}
 	    \State $e_{i+1} \triangleq v_i v_{i+1}$
-	    \State \onslide<5->{\cyan{$V_{i+1} \gets V_{i} - \set{v_{i}}$}}	\Comment{\cyan{Delete the isolated vertex $v_i$}}
+	    \State \onslide<5->{\cyan{$V_{i+1} \gets V_{i} - \set{v_{i}}$}	\Comment{\cyan{Delete the isolated vertex $v_i$}}}
 	    \Else	\Comment{\purple{Have alternatives: don't go the bridge}}
 	    \State Choose $e_{i+1} \triangleq v_i v_{i+1}$ that is not a bridge of $(V_i, E_i)$
-	    \State \onslide<5->{\cyan{$V_{i+1} \gets V_{i}$}}	\Comment{\cyan{No isolated vertex produced}}
+	    \State \onslide<5->{\cyan{$V_{i+1} \gets V_{i}$}	\Comment{\cyan{No isolated vertex produced}}}
 	  \EndIf
 
 	  \onslide<4->{

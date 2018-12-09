@@ -301,11 +301,42 @@
 	  &\le n - 1
 	\end{align*}
       }
-      \vspace{-0.30cm}
+      \vspace{-0.80cm}
       \uncover<6->{
-	\centerline{\red{Contradiction: No isolated vertices.}}
+	\fig{width = 0.40\textwidth}{figs/wrong}
       }
   \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Vertex Covering Number (Problem $8.16$)}
+    If $G$ is a graph of order $n$, maximum degree $\Delta$ 
+    and having no isolated vertices, then 
+    \[
+      \beta(G) \ge \frac{n}{\Delta + 1}.
+    \]
+  \end{exampleblock}
+
+  \pause
+  \begin{center}
+    \red{Double Counting:} \\[5pt]
+    What is the number of \purple{neighbors} of a vertex cover $C$?
+  \end{center}
+
+  \pause
+  \[
+    N(C) \le |C| \cdot \Delta
+  \]
+  \pause
+  \[
+    N(C) = n - |C|
+  \]
+  \pause
+  \[
+    n - |C| \le |C| \cdot \Delta \implies |C| \ge \frac{n}{\Delta + 1}
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 

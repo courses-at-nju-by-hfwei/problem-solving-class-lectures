@@ -8,6 +8,18 @@
       k(G - S) \le \big\lvert S \big\rvert.
     \]
   \end{theorem}
+
+  \pause
+  \[
+    \implies \text{ Hamiltonian graphs are } 2\text{-connected.} \quad \red{(\text{Why?})}
+  \]
+
+  \pause
+  \vspace{0.30cm}
+  \begin{center}
+    Hamiltonian graphs has ``good'' connectedness. \\[10pt] \pause
+    \teal{Graphs with ``bad'' connectedness are \red{not} Hamiltonian.}
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
@@ -25,8 +37,14 @@
   \pause
   \begin{proof}
     \begin{center}
-      By \red{Extremality} and \purple{Contradiction}.
+      By \purple{Contradiction} and \red{Extremality}. \\[10pt] \pause
+      By \purple{Contradiction}: \\ [5pt]
+      \teal{$\exists G$ satisfying Ore's Condition, but $G$ is \red{not} Hamiltonian.} \\[8pt]
+      By \red{Extremality}: \\[5pt]
+      \teal{Consider a \red{critical} $G$: $G$ is not Hamiltonian but $G + uv$ is Hamiltonian.} \\[8pt]
+      \blue{Contradiction: This critical $G$ \red{is} actually Hamiltonian.}
     \end{center}
+
   \end{proof}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
@@ -54,6 +72,7 @@
   \end{theorem}
 
   \pause
+  \vspace{0.50cm}
   \begin{definition}[Closure $C(G)$]
     The closure $C(G)$ of a graph $G$ is the graph obtained from $G$
     by iteratively adding edges joining pairs of nonadjacent vertices
@@ -65,22 +84,24 @@
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{theorem}[Bondy-Chavatal Theorem, $1976$; Theorem $6.9$]
+  \begin{theorem}[Bondy-Chav\'atal Theorem, $1976$; Theorem $6.9$]
     $G$ is Hamiltonian \textcolor<2->{red}{$\iff$} $C(G)$ is Hamiltonian.
   \end{theorem}
   
+  \vspace{0.50cm}
   \uncover<3->{
     \begin{corollary}[Corollary $6.10$]
-      If $G$ is a graph of order $n \ge 3$ such that $C(G) = K_{n}$,
+      If $G$ is a graph of order $n \ge 3$ such that $C(G) = K_{n}$, \\
       then $G$ is Hamiltonian.
     \end{corollary}
   }
 
+  \vspace{0.50cm}
   \uncover<4->{
-    \begin{theorem}[Lajos Posa]
+    \begin{theorem}[Lajos P\'osa]
       Let $G$ be a graph of order $n \ge 3$.
-      If for each integer $j$ with $1 \le j \le \frac{n}{2}$,
-      the number of vertices of $G$ with degree at most $j$ is less than $j$,
+      \red{If} for each integer $j$ with $1 \le j \le \frac{n}{2}$,
+      the number of vertices of $G$ with degree at most $j$ is less than $j$, \\
       then $G$ is Hamiltonian.
     \end{theorem}
   }
@@ -89,36 +110,65 @@
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{theorem}[]
+  \begin{theorem}[Well-definedness of $C(G)$]
     \begin{center}
-      $C(G)$ is well-defined.
+      $C(G)$ is well-defined. \\[6pt] \pause
+      $C(G)$ does not depend on the order in which we choose to add edges. 
+      \pause
+      \[
+	\red{\boxed{\Big(G + \langle e_1, \cdots, e_r \rangle = G_1\Big) \land 
+	\Big(G + \langle f_1, \cdots, f_s \rangle = G_2\Big) \implies G_1 = G_2}}
+      \]
     \end{center}
   \end{theorem}
+
+  \pause
+  \[
+    G_1 \subseteq G_2 \land G_2 \subseteq G_1
+  \]
+  \pause
+  \[
+    \forall e_i \in G_1: e_i \in G_2
+  \]
+  \pause
+  \begin{center}
+    \red{By induction on the order $e_i$ is added to $G_1$.}
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{(Problem $6.20$)}
+  \begin{exampleblock}{Hamiltonian Graphs and $2$-Connectedness (Problem $6.20$)}
     Let $G$ be a graph of order $n \ge 3$ having the property that
-    for each $v \in V(G)$, there is a Hamiltonian path with initial vertex $v$.
-    Show that $G$ is $2$-connected but not necessarily Hamiltonian.
+    for each $v \in V(G)$, there is a Hamiltonian path with initial vertex $v$. \\
+    Show that \red{$G$ is $2$-connected} but not necessarily Hamiltonian.
   \end{exampleblock}
 
   \pause
   \begin{center}
-    $2$-connected: Connected + No cut-vertex
+    \teal{$2$-connected: Connected + No cut-vertex}
   \end{center}
 
   \pause
-  \begin{columns}
-    \column{0.50\textwidth}
-    \column{0.50\textwidth}
-  \end{columns}
+  \begin{center}
+    Suppose, \red{by contradiction}, $v$ is a cut-vertex of $G$. \pause
+    \fig{width = 0.25\textwidth}{figs/cut-vertex-structure}
+    \pause
+    \red{Contradiction:} No Hamiltonian path with initial vertex $v$.
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
+  \begin{exampleblock}{Hamiltonian Graphs and $2$-Connectedness (Problem $6.20$)}
+    Let $G$ be a graph of order $n \ge 3$ having the property that
+    for each $v \in V(G)$, there is a Hamiltonian path with initial vertex $v$. \\
+    Show that $G$ is $2$-connected but \red{not necessarily Hamiltonian}.
+  \end{exampleblock}
+
+  \pause
+  \fig{width = 0.30\textwidth}{figs/petersen-graph}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%

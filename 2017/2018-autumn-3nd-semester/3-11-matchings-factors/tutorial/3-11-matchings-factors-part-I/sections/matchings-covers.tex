@@ -311,6 +311,32 @@
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
+  \begin{exampleblock}{Vertex Covering Number (Problem $8.16$; Solution Provided by Dai)}
+    If $G$ is a graph of order $n$, maximum degree $\Delta$ 
+    and having no isolated vertices, then 
+    \[
+      \beta(G) \ge \frac{n}{\Delta + 1}.
+    \]
+  \end{exampleblock}
+
+  \begin{center}
+    \red{By Contradiction: $\beta < \frac{n}{\Delta + 1}$.}
+  \end{center}
+
+  \begin{align*}
+    \beta \cdot \Delta &< \frac{n \Delta}{\Delta + 1} \\
+    &= n - \frac{n}{\Delta + 1} \\
+    \onslide<2->{&\purple{< n - \beta}}
+  \end{align*}
+
+  \uncover<3->{
+    \centerline{\red{Contradiction: $\exists$ isolated vertices in the other $n - \beta$ vertices.}}
+  }
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
   \begin{exampleblock}{Vertex Covering Number (Problem $8.16$)}
     If $G$ is a graph of order $n$, maximum degree $\Delta$ 
     and having no isolated vertices, then 

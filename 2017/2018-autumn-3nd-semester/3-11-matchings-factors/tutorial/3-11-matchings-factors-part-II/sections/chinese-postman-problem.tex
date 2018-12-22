@@ -1,0 +1,117 @@
+% file: sections/chinese-postman-problem.tex
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    \teal{\LARGE Chinese Postman Problem (CPP)} \\[5pt]
+    \cyan{(Postman Tour Problem, Route Inspection Problem)}
+  \end{center}
+
+  \fig{width = 0.60\textwidth}{figs/postman}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{columns}
+    \column{0.40\textwidth}
+      \fig{width = 0.70\textwidth}{figs/guan}
+      \begin{CJK*}{UTF8}{gbsn}
+        \centerline{\teal{管梅谷 ($1934$-)}}
+      \end{CJK*}
+    \column{0.60\textwidth}
+      \fig{width = 0.80\textwidth}{figs/guan-cpp-paper}
+      \begin{CJK*}{UTF8}{gbsn}
+	\begin{center}
+	  \teal{《奇偶点图上作业法》, $1960$ \\[6pt]
+	    Translated into English in $1962$
+	  }
+	\end{center}
+      \end{CJK*}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{columns}
+    \column{0.40\textwidth}
+      \fig{width = 0.70\textwidth}{figs/jack-edmonds}
+      \centerline{\teal{Jack Edmonds ($1934$-)}}
+    \column{0.60\textwidth}
+      \fig{width = 0.85\textwidth}{figs/edmonds-cpp-paper}
+      \begin{center}
+	\teal{``Matching, Euler Tours and \\ the Chinese Postman'', $1973$}
+      \end{center}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Chinese Postman Problem]
+    \begin{center}
+      Given an undirected weighted graph $G$ with \teal{$w(e) > 0$}, \\[5pt]
+      to find the shortest \purple{tour} such that \red{each edge is traversed at least once}.
+    \end{center}
+  \end{definition}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{center}
+    \red{$Q:$ What is the relation between Postman Tour and Eulerian Tour?}
+  \end{center}
+
+  \begin{columns}
+    \column{0.50\textwidth}
+      \fig{width = 0.70\textwidth}{figs/postman}
+    \column{0.50\textwidth}
+      \fig{width = 0.30\textwidth}{figs/Leonhard-Euler}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    \teal{$P$: A postman tour of $G$} \\[5pt] \pause
+    $P$ contains every edge $e$ at least once. \\[5pt] \pause
+    Let \purple{$1 + x_{e}$} be the number of times edge $e$ is in $P$. \pause
+    \[
+      \blue{\text{Construct } G' = G + e \cdot x_{e}}
+    \]
+    \pause
+    \red{\fbox{$P$ is an Eulerian tour of $G'$.}}
+  \end{center}
+
+  \pause
+  \vspace{0.20cm}
+  \begin{definition}[Chinese Postman Problem]
+    Given an undirected weighted graph with \teal{$w(e) > 0$}, \\[5pt]
+    to find $x_e \ge 0$ for each edge $e$ of $G$, such that \\
+    $\sum_{e} w(e) x_e$ is minimized 
+    
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \input{algs/chinese-postman-problem}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%

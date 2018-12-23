@@ -1,0 +1,24 @@
+% file: chinese-postman-problem-alg-question.tex
+
+\begin{algorithm}[H]
+  % \caption{Chinese Postman Problem.}
+  % \label{alg:chinese-postman-problem}
+  \begin{algorithmic}[1]
+    \State $V_{o} \gets \set{v \in V(G): \text{deg}(v) \text{ is odd}}$
+
+    \Statex
+    \State Construct a complete weighted graph $G_{p}$ with vertices $V_{o}$:
+    \For{$u, v \in V_{o}$} 
+      \State $w(u,v) \gets \text{ the length of the shortest path between $u$ and $v$}$ 
+    \EndFor
+
+    \Statex
+    \State Find a minimum-weighted perfect matching $M$ of $G_p$
+
+    \Statex
+    \For{$(u,v) \in M$}
+      \State $p \gets$ the shortest path between $u$ and $v$
+      \State \red{$\forall e \in p: x_e \gets 1$}
+    \EndFor
+  \end{algorithmic}
+\end{algorithm}

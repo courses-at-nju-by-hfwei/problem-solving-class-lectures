@@ -1,0 +1,50 @@
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{$2.$ 常用证明方法}
+    证明: 从 $\{1,2,3, \cdots, 3n\}\; (n \in \mathbb{Z}^{+})$中任选 $n+1$ 个数, 则总存在两个数, 它们的差不超过2。
+  \end{exampleblock}
+
+  \pause
+  \begin{proof}[Proof by the pigeonhole principle:]
+    \pause
+    \[
+      \set{1,2,3},\quad \set{4,5,6},\quad\cdots,\quad \set{3n-2, 3n-1, 3n}
+    \]
+
+  \end{proof}
+
+  \pause
+  \vspace{0.10cm}
+  \begin{proof}[Proof by contradiction:]
+    \pause
+    \[
+      1,\; 4,\; 7,\; \cdots,\; 3n + 1 
+    \]
+  \end{proof}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{常用证明方法}
+    令 $S \subseteq \{x \mid 1 \le x \le 50, x \in \mathbb{N}\}$ 且 $|S| = 10$。
+    
+    证明: 存在两个大小均为$4$的不同集合 $A, B \subseteq S$ ($A, B$ 可相交),
+    它们的元素之和相等。
+  \end{exampleblock}
+
+  \pause
+  \begin{proof}[Proof by the pigeonhole principle:]
+    \pause
+    \[
+      \binom{10}{4} = 210
+    \]
+
+    \centerline{\red{\Large \emph{vs.}}}
+
+    \[
+      \Big\lvert \set{1+2+3+4=10 \le x \le 47+48+49+50 = 194} \Big\rvert
+    \]
+  \end{proof}
+\end{frame}
+%%%%%%%%%%%%%%%

@@ -1,0 +1,172 @@
+% file: internal-direct-product.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+	G = H \times K
+  \]
+
+  \begin{definition}
+	\[
+	  H' = H \times \set{e_{K}} = \set{(h', e_{K}): h' \in H)}
+	\]
+	\[
+	  K' = \set{e_{H}} \times K = \set{(e_{H}, k'): k' \in K)}
+	\]
+  \end{definition}
+
+  \pause
+  \[
+	H' \cong H, \quad K' \cong K
+  \]
+  \pause \vspace{-0.50cm}
+  \[
+	H' \le G, \quad K' \le G
+  \]
+
+  \pause
+  \vspace{-0.60cm}
+  \begin{center}
+	\rule{8cm}{0.6pt}
+  \end{center}
+  \vspace{-0.60cm}
+
+  \[
+	G = H'K'
+  \]
+  \pause \vspace{-0.50cm}
+  \[
+	H' \cap K' = \set{(e_{H}, e_{K})} = \set{e}
+  \]
+  \pause \vspace{-0.50cm}
+  \[
+	H' \text{ and } K' \text{ commute}.
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}
+	\begin{center}
+	  If $G = H \times K$, \\[5pt]
+	  then $\exists H' \cong H, K' \cong K$, \\[5pt]
+	  such that $G$ is the internal direct product of $H'$ and $K'$.
+	\end{center}
+  \end{theorem}
+
+  \pause
+  \vspace{0.50cm}
+  \begin{definition}[Internal Direct Product]
+	Let $G$ be a group with subgroups $H$ and $K$ satisfying
+	\[
+	  G = HK
+	\]
+	\[
+	  H \cap K = \set{e}
+	\]
+	\[
+	  H \text{ and } K \text{ commute}.
+	\]
+
+	Then, $G$ is the internal direct product of $H$ and $K$.
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+	G = H \times K
+  \]
+
+  \begin{definition}
+	\[
+	  H' = H \times \set{e_{K}} = \set{(h', e_{K}): h' \in H)}
+	\]
+	\[
+	  K' = \set{e_{H}} \times K = \set{(e_{H}, k'): k' \in K)}
+	\]
+  \end{definition}
+
+  \[
+	H' \cong H, \quad K' \cong K
+  \]
+  \[
+	\only<1>{H' \le G, \quad K' \le G}
+	\only<2->{\red{H' \triangleleft G, \quad K' \triangleleft G}}
+  \]
+
+  \vspace{-0.60cm}
+  \begin{center}
+	\rule{8cm}{0.6pt}
+  \end{center}
+  \vspace{-0.60cm}
+
+  \[
+	G = H'K'
+  \]
+  \[
+	H' \cap K' = \set{e}
+  \]
+  \[
+	\textcolor<3>{lightgray}{H' \text{ and } K' \text{ commute}.}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Internal Direct Product]
+	Let $G$ be a group with subgroups $H$ and $K$ satisfying
+	\[
+	  G = HK
+	\]
+	\[
+	  H \cap K = \set{e}
+	\]
+	\[
+	  H \text{ and } K \text{ commute}
+	\]
+	Then, $G$ is the internal direct product of $H$ and $K$.
+  \end{definition}
+
+  \pause
+  \begin{definition}[Internal Direct Product (Equivalent)]
+	Let $G$ be a group with \red{normal} subgroups $H$ and $K$ satisfying
+	\[
+	  G = HK
+	\]
+	\[
+	  H \cap K = \set{e}
+	\]
+	Then, $G$ is the internal direct product of $H$ and $K$.
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+	\z_{2} \times \z_{3} = G \cong \z_{6}
+  \]
+
+  \begin{columns}
+	\column{0.30\textwidth}
+	  \fig{width = 0.20\textwidth}{figs/z2}
+	  \[
+		\z_{2}
+	  \]
+	\column{0.30\textwidth}
+	  \fig{width = 0.90\textwidth}{figs/z3}
+	  \[
+		\z_{3}
+	  \]
+	\column{0.30\textwidth}
+	  \fig{width = 1.00\textwidth}{figs/z2xz3}
+	  \[
+		\z_{2} \times \z_{3}
+	  \]
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%

@@ -8,18 +8,15 @@
 
   \begin{definition}
 	\[
-	  H' = H \times \set{e_{K}} = \set{(h', e_{K}): h' \in H)}
+	  H' = H \times \set{e_{K}} = \set{(h', e_{K}): h' \in H)} \pause \;\red{\cong H}
 	\]
+	\pause \vspace{-0.50cm}
 	\[
-	  K' = \set{e_{H}} \times K = \set{(e_{H}, k'): k' \in K)}
+	  K' = \set{e_{H}} \times K = \set{(e_{H}, k'): k' \in K)} \;\red{\cong K}
 	\]
   \end{definition}
 
   \pause
-  \[
-	H' \cong H, \quad K' \cong K
-  \]
-  \pause \vspace{-0.50cm}
   \[
 	H' \le G, \quad K' \le G
   \]
@@ -34,11 +31,11 @@
   \[
 	G = H'K'
   \]
-  \pause \vspace{-0.50cm}
+  \pause \vspace{-0.30cm}
   \[
 	H' \cap K' = \set{(e_{H}, e_{K})} = \set{e}
   \]
-  \pause \vspace{-0.50cm}
+  \pause \vspace{-0.30cm}
   \[
 	H' \text{ and } K' \text{ commute}.
   \]
@@ -82,16 +79,13 @@
 
   \begin{definition}
 	\[
-	  H' = H \times \set{e_{K}} = \set{(h', e_{K}): h' \in H)}
+	  H' = H \times \set{e_{K}} = \set{(h', e_{K}): h' \in H)} \cong H
 	\]
 	\[
-	  K' = \set{e_{H}} \times K = \set{(e_{H}, k'): k' \in K)}
+	  K' = \set{e_{H}} \times K = \set{(e_{H}, k'): k' \in K)} \cong K
 	\]
   \end{definition}
 
-  \[
-	H' \cong H, \quad K' \cong K
-  \]
   \[
 	\only<1>{H' \le G, \quad K' \le G}
 	\only<2->{\red{H' \triangleleft G, \quad K' \triangleleft G}}
@@ -147,10 +141,6 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \[
-	\z_{2} \times \z_{3} = G \cong \z_{6}
-  \]
-
   \begin{columns}
 	\column{0.30\textwidth}
 	  \fig{width = 0.20\textwidth}{figs/z2}
@@ -166,6 +156,28 @@
 	  \fig{width = 1.00\textwidth}{figs/z2xz3}
 	  \[
 		\z_{2} \times \z_{3}
+	  \]
+  \end{columns}
+
+  \begin{columns}
+	\column{0.30\textwidth}
+	  \uncover<2->{
+		\fig{width = 0.20\textwidth}{figs/z2-of-z6}
+		\[
+		  \z_{2} \cong \set{0, 3} \le \z_{6}
+		\]
+	  }
+	\column{0.30\textwidth}
+	  \uncover<2->{
+		\fig{width = 0.90\textwidth}{figs/z3-of-z6}
+		\[
+		  \z_{3} \cong \set{0, 2, 4} \le \z_{6}
+		\]
+	  }
+	\column{0.30\textwidth}
+	  \fig{width = 0.80\textwidth}{figs/z6}
+	  \[
+		\z_{6}
 	  \]
   \end{columns}
 \end{frame}

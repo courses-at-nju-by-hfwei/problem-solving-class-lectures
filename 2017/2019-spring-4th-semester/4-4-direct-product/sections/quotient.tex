@@ -1,2 +1,55 @@
 % file: quotient.tex
 
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{definition}[Internal Direct Product (Equivalent)]
+	Let $G$ be a group with \red{normal} subgroups $H$ and $K$ satisfying
+	\[
+	  G = HK
+	\]
+	\[
+	  H \cap K = \set{e}
+	\]
+	Then, $G$ is the internal direct product of $H$ and $K$.
+  \end{definition}
+
+  \only<2>{\fig{width = 0.35\textwidth}{figs/get-it-kenan}}
+
+  \only<3->{
+	\vspace{0.60cm}
+	\begin{theorem}[The Second Isomorphism Theorem \only<4->{\red{(Diamond Theorem)}}]
+	  \[
+		H \le G, N \triangleleft G \red{\implies} H/(H \cap N) \cong HN/N.
+	  \]
+	\end{theorem}
+  }
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{theorem}
+	\begin{center}
+	  If $G$ is the internal direct product of its normal subgroups $H$ and $K$, \\[5pt]
+	  then $G/H \cong K, \quad G/K \cong H$.	
+	\end{center}
+  \end{theorem}
+
+  \pause
+  \[
+	D_6 = \langle r^2, s \rangle \set{1, r^3} \pause \implies D_6/\langle r^2, s \rangle \cong \set{1, r^3} \cong \z_{2}
+  \]
+
+  \only<3>{\fig{width = 0.30\textwidth}{figs/d6-internal-direct-product}}
+
+  \only<4->{
+	\vspace{0.50cm}
+	\begin{theorem}
+	  \begin{center}
+		If $G \cong H \times K$ \\[5pt] \pause
+		then $G/H \times 1 \cong K, \quad G/K \times 1 \cong H$.	
+	  \end{center}
+	\end{theorem}
+  }
+\end{frame}
+%%%%%%%%%%%%%%%

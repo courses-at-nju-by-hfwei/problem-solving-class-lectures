@@ -30,24 +30,6 @@
 \DeclareMathOperator*{\argmin}{\arg\!\min}
 \DeclareMathOperator*{\E}{\mathbb{E}}
 
-\usepackage{algorithm}
-\usepackage[noend]{algpseudocode}
-% \algrenewcommand\alglinenumber[1]{$#1:$}
-\algnewcommand{\IfThen}[2]{% \IfThenElse{<if>}{<then>}
-  \State \algorithmicif\ #1\ \algorithmicthen\ #2}
-\newcommand{\hStatex}[0]{\vspace{5pt}}
-% See https://tex.stackexchange.com/a/53359/23098
-% New definitions
-\algnewcommand\algorithmicswitch{\textbf{switch}}
-\algnewcommand\algorithmiccase{\textbf{case}}
-\algnewcommand\algorithmicassert{\texttt{assert}}
-\algnewcommand\Assert[1]{\State \algorithmicassert(#1)}%
-% New "environments"
-\algdef{SE}[SWITCH]{Switch}{EndSwitch}[1]{\algorithmicswitch\ #1\ \algorithmicdo}{\algorithmicend\ \algorithmicswitch}%
-\algdef{SE}[CASE]{Case}{EndCase}[1]{\algorithmiccase\ #1}{\algorithmicend\ \algorithmiccase}%
-\algtext*{EndSwitch}%
-\algtext*{EndCase}%
-
 % colors
 \newcommand{\red}[1]{\textcolor{red}{#1}}
 \newcommand{\redoverlay}[2]{\textcolor<#2>{red}{#1}}
@@ -92,15 +74,9 @@
 
 \usepackage{adjustbox}
 \usepackage{tikz}
-\usepackage{tikz-qtree}
 \usetikzlibrary{shapes}
 
-\newcommand{\push}{\texttt{Push}}
-\newcommand{\pop}{\texttt{Pop}}
-\newcommand{\splay}{\textsc{\teal{Splay}}}
-\newcommand{\iter}{\textsc{\teal{Iter}}}
-
-\newcommand{\titletext}{Direct Products and Quotient Groups}
+\newcommand{\titletext}{4-4 Direct Products}
  
 \newcommand{\thankyou}{
   \begin{frame}[noframenumbering]{}

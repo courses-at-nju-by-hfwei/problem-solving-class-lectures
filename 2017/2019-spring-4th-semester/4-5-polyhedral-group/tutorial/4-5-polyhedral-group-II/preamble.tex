@@ -24,7 +24,9 @@
 \usepackage{array}   % for \newcolumntype macro
 \newcolumntype{C}{>{$}c<{$}} % math-mode version of "l" column type
 
-\newcommand{\set}[1]{\left\{#1\right\}}
+\newcommand{\set}[1]{\left\{ #1 \right\}}
+\newcommand{\bset}[1]{\big\{ #1 \big\}}
+\newcommand{\Bset}[1]{\Big\{ #1 \Big\}}
 \newcommand{\ps}[1]{\mathcal{P}(#1)}
 \usepackage{bm}
 \DeclareMathOperator*{\argmin}{\arg\!\min}

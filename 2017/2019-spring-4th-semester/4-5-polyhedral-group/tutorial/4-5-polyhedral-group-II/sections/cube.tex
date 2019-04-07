@@ -1,155 +1,374 @@
-% cube
+% cube.tex
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
-  % \[
-  %   Sym(c) \cong S_4
-  % \]
+  \fig{width = 0.25\textwidth}{figs/cube}
 
   \[
-    |C| \le 24
+	\sym(C) \cong S_4
   \]
 
   \pause
-  \vspace{0.6cm}
-  \centerline{1. facing upward}
+  \vspace{-0.30cm}
+  \[
+	\Bcard{\big\{H: H \le \sym(C)\big\}} = 30
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
 
-  \vspace{0.4cm}
-  \centerline{2. 24 \textcolor{red}{oriented} edges}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+	\Bcard{\sym(C)} \le 24
+  \]
+
+  \pause
+  \fig{width = 0.30\textwidth}{figs/cube-diag}
+  \[
+	\red{\sym(C) \le S_4}
+  \]
 
   \pause
   \[
-    |C| = 24 \Leftarrow 4 \text{ main diagonals}
+	\Bcard{\sym(C)} = \underbrace{6}_{\text{Facing Upward}} \times \underbrace{4}_{\text{Rotation}}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+
+  \begin{center}
+	Order of $1$: id \blue{($\# = 1$)} \\[6pt]
+
+	\fig{width = 0.25\textwidth}{figs/cube-diag}
+
+	\pause
+	Order of $4$: face-to-face \blue{($\# = 9$)}
+	\begin{align*} 
+	  f_{td} = (1\;2\;3\;4) \quad f_{td}^{2} = (1\;3) (2\;4) \quad f_{td}^{3} = (1\;4\;3\;2) \\
+	  f_{lr} = (1\;3\;2\;4) \quad f_{lr}^{2} = (1\;2) (3\;4) \quad f_{lr}^{3} = (1\;4\;2\;3) \\
+	  f_{fb} = (1\;2\;4\;3) \quad f_{fb}^{2} = (1\;4) (2\;3) \quad f_{fb}^{3} = (1\;3\;4\;2)
+	\end{align*}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.25\textwidth}{figs/cube-diag}
+
+  \begin{center}
+	Order of $3$: vertex-to-vertex \blue{($\# = 8$)}
+	\begin{align*}
+	  v_{1} = (2\;3\;4) \quad v_{1}^{2} = (2\;4\;3) \\
+	  v_{2} = (1\;4\;3) \quad v_{2}^{2} = (1\;3\;4) \\
+	  v_{3} = (1\;2\;4) \quad v_{3}^{2} = (1\;4\;2) \\
+	  v_{4} = (1\;2\;3) \quad v_{4}^{2} = (1\;3\;2) \\
+	\end{align*}
+	\end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.60\textwidth}{figs/cube-diag-transpose}
+
+  \begin{center}
+	Order of $2$: edge-to-edge \blue{($\# = 6$)}
+	\begin{align*}
+	  e_{12} = (1\;2) \quad e_{13} = (1\;3) \quad e_{14} = (1\;4) \\
+	  e_{23} = (2\;3) \quad e_{24} = (2\;4) \quad e_{34} = (3\;4)
+	\end{align*}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.30\textwidth}{figs/flag}
+
+  \[
+	\Bcard{\big\{H: H \le \sym(C)\big\}} = 30
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \only<1>{\fig{width = 0.50\textwidth}{figs/s4-subgroup}}
+  \only<2>{\fig{width = 0.60\textwidth}{figs/s4-subgroup-diagram}}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+	\red{Order of $1$}: id \blue{($\# = 1$)} \\[6pt]
+
+	\red{Order of $4$}: face-to-face \blue{($\# = 9$)}
+	\begin{align*} 
+	  f_{td} = (1\;2\;3\;4) \quad f_{td}^{2} = (1\;3) (2\;4) \quad f_{td}^{3} = (1\;4\;3\;2) \\
+	  f_{lr} = (1\;3\;2\;4) \quad f_{lr}^{2} = (1\;2) (3\;4) \quad f_{lr}^{3} = (1\;4\;2\;3) \\
+	  f_{fb} = (1\;2\;4\;3) \quad f_{fb}^{2} = (1\;4) (2\;3) \quad f_{fb}^{3} = (1\;3\;4\;2)
+	\end{align*}
+	\red{Order of $3$}: vertex-to-vertex \blue{($\# = 8$)}
+	\begin{align*}
+	  v_{1} = (2\;3\;4) \quad v_{1}^{2} = (2\;4\;3) \\
+	  v_{2} = (1\;4\;3) \quad v_{2}^{2} = (1\;3\;4) \\
+	  v_{3} = (1\;2\;4) \quad v_{3}^{2} = (1\;4\;2) \\
+	  v_{4} = (1\;2\;3) \quad v_{4}^{2} = (1\;3\;2) \\
+	\end{align*}
+
+	\vspace{-0.50cm}
+	\red{Order of $2$}: edge-to-edge \blue{($\# = 6$)}
+	\begin{align*}
+	  e_{12} = (1\;2) \quad e_{13} = (1\;3) \quad e_{14} = (1\;4) \\
+	  e_{23} = (2\;3) \quad e_{24} = (2\;4) \quad e_{34} = (3\;4)
+	\end{align*}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+	H \le S_4 \red{\implies} \bcard{H} = 1,\quad 2,\quad 3,\quad 4,\quad 6,\quad 8,\quad 12,\quad 24
+  \]
+
+  \[
+	\bcard{H} = \begin{cases}
+	  1: & \text{id} \quad \blue{(\# = 1)} \\[3pt]
+	  2: & \blue{(\# = 6 + 3 = 9)} \\[3pt]
+	  3: & v_1, v_2, v_3, v_4 \quad \blue{(\# = 4)} \\[3pt]
+	  4: & \red{(\# = 7)} \\[3pt]
+	  6: & \red{(\# = 4)} \\[3pt]
+	  8: & \red{(\# = 3)} \\[3pt]
+	  12: & A_4 \quad \red{(\# = 1)} \\[3pt]
+	  24: & S_4 \quad \blue{(\# = 1)} \\[3pt]
+	\end{cases}
   \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{itemize}
-    \item Order of $1$: id ($\# = 1$)
-    \item Order of $4$: face-to-face
-      \begin{align*} 
-		f_{td} = (1\;2\;3\;4) \quad f_{td}^{2} = (1\;3) (2\;4)  \quad f_{td}^{3} = (1\;4\;3\;2) \\
-		f_{lr} = (1\;2\;4\;3) \quad f_{lr}^{2} = (1\;4) (2\;3)  \quad f_{lr}^{3} = (1\;3\;4\;2) \\
-		f_{fb} = (1\;4\;2\;3) \quad f_{fb}^{2} = (1\;2) (3\;4)  \quad f_{fb}^{3} = (1\;3\;2\;4)
-      \end{align*}
-  \end{itemize}
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{$C \cong S_4$}
-  \begin{itemize}
-    \item Order of $3$: vertex-to-vertex
-      \begin{align*}
-        v_{1} = (2\;3\;4) \quad v_{1}^{2} = (2\;4\;3) \\
-        v_{2} = (1\;4\;3) \quad v_{2}^{2} = (1\;3\;4) \\
-        v_{3} = (1\;2\;4) \quad v_{3}^{2} = (1\;4\;2) \\
-        v_{4} = (1\;2\;3) \quad v_{4}^{2} = (1\;3\;2) \\
-      \end{align*}
-    \item Order of $2$: edge-to-edge
-      \begin{align*}
-        e_{12} = (1\;2) \quad e_{13} = (1\;3) \quad e_{14} = (1\;4) \\
-        e_{23} = (2\;3) \quad e_{24} = (2\;4) \quad e_{34} = (3\;4)
-      \end{align*}
-  \end{itemize}
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{Subgroups of $S_4$}
-  Possible orders: $1 \quad 2 \quad 3 \quad 4 \quad 6 \quad 8 \quad 12 \quad 24$
-
-  \begin{itemize}
-    \item $|H| = 1$: $\# = 1$
-    \item $|H| = 24$: $\# = 1$
-    \item $|H| = 2$: $\# = 6 + 3 = 9$
-    \item $|H| = 3$: $\# = 4$
-  \end{itemize}
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{Subgroups of order 4}
-  \begin{itemize}
-    \item $H \cong \mathbb{Z}_{4}$: $\# = 3$
-    \item $H \cong K_{4} = \set{e, a, b, c} (a^2 = b^2 = (ab)^2 = e)$
-      \[ \set{(1), (1\; 2), (3\; 4), (1\; 2) (3\; 4)} \]
-      \[ \set{(1), (1\; 3), (2\; 4), (1\; 3) (2\; 4)} \]
-      \[ \set{(1), (1\; 4), (2\; 3), (1\; 4) (2\; 3)} \]
-      \[ \textcolor{red}{\set{(1), (1\; 2) (1\; 3), (2\; 4), (1\; 4) (2\; 3)}} \]
-  \end{itemize}
-
   \[
-    \# = 3 + 4 = 7
+	\purple{\boxed{\bcard{G} = 4 \red{\implies} G \cong \z_{4} \lor G \cong K_4 \cong \z_{2} \times \z_{2}}}
+  \]
+
+  \pause
+  \[
+	H \cong \z_{4}: \pause f_{fd}, f_{lr}, f_{fb} \quad \blue{(\# = 3)}
+  \]
+
+  \pause
+  \vspace{-0.80cm}
+  \[
+	H \cong K_{4} = \set{e, a, b, ab} \quad \purple{(a^2 = b^2 = e, ab = ba)}
+  \]
+
+  \pause
+  \vspace{-0.50cm}
+  \brown{
+	\begin{align*}
+	  e_{12} = (1\;2) \quad e_{13} = (1\;3) \quad e_{14} = (1\;4) \\
+	  e_{23} = (2\;3) \quad e_{24} = (2\;4) \quad e_{34} = (3\;4)
+	\end{align*}
+	\[
+	  f_{td}^{2} = (1\;3) (2\;4) \quad f_{lr}^{2} = (1\;2) (3\;4) \quad f_{fb}^{2} = (1\;4) (2\;3)
+	\]
+  }
+
+  \pause
+  \vspace{-0.60cm}
+  \[ 
+  	\set{(1), (1\; 2), (3\; 4), (1\; 2) (3\; 4)} 
+  \]
+  \[ 
+  	\set{(1), (1\; 3), (2\; 4), (1\; 3) (2\; 4)} 
+  \]
+  \[ 
+  	\set{(1), (1\; 4), (2\; 3), (1\; 4) (2\; 3)} 
+  \]
+  \pause
+  \vspace{-0.40cm}
+  \[ 
+  	\textcolor{red}{\set{(1), (1\; 2) (3\; 4), (1\; 3) (2\; 4), (1\; 4) (2\; 3)}} 
   \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
-\begin{frame}{Subgroups of order 6}
+\begin{frame}{}
+  \[
+	\purple{\boxed{\bcard{G} = 6 \red{\implies} G \cong \z_{6} \lor G \cong D_3}}
+  \]
+
+  \pause
   \[
     H \ncong \mathbb{Z}_{6}
   \]
 
+  \pause
   \[
-    H \cong S_3 = \set{1, r, r^2, s, rs, r^2s} \quad (r^3 = 1, s^2 = 1, srs = r^{-1})
+	H \cong D_3 = \set{1, r, r^2, s, rs, r^2s} \quad (r^3 = 1, s^2 = 1, \red{srs = r^{-1}})
   \]
 
-  \centerline{Figure here.}
+  \pause
+  \vspace{-0.60cm}
+  \brown{
+	\begin{align*}
+	  \red{v_{1}} = (2\;3\;4) \quad v_{1}^{2} = (2\;4\;3) \\
+	  \red{v_{2}} = (1\;4\;3) \quad v_{2}^{2} = (1\;3\;4) \\
+	  \red{v_{3}} = (1\;2\;4) \quad v_{3}^{2} = (1\;4\;2) \\
+	  \red{v_{4}} = (1\;2\;3) \quad v_{4}^{2} = (1\;3\;2) \\
+	\end{align*}
+  }
 
+  \pause
+  \vspace{-1.20cm}
   \begin{theorem}
-    There are only 4 subgroups of order 6 in $S_4$.
+	There are only 4 subgroups \red{$\cong D_3$} in $S_4$.
   \end{theorem}
 
-  \[
-    r = (1\;3\;2), \quad s = (1\;3)
-  \]
-
-  \centerline{What does $srs = r^{-1}$ mean?}
+  % \[
+  %   r = (1\;3\;2), \quad s = (1\;3)
+  % \]
+  % \centerline{What does $srs = r^{-1}$ mean?}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
-\begin{frame}{Subgroups of order 8}
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \fig{width = 0.40\textwidth}{figs/triangles-in-cube}
+
+  \begin{columns}
+	\column{0.33\textwidth}
+	  \pause
+	  \fig{width = 0.80\textwidth}{figs/triangle-in-cube}
+	\column{0.33\textwidth}
+	  \pause
+	  \fig{width = 1.00\textwidth}{figs/triangle-in-cube-rotate}
+	\column{0.33\textwidth}
+	  \pause
+	  \fig{width = 1.00\textwidth}{figs/triangle-in-cube-reflect}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+	\purple{\boxed{\bcard{G} = 8 \red{\implies} G \cong \z_{8},\quad \z_2 \times \z_2 \times \z_2,\quad \z_4 \times \z_2,\quad D_4,\quad Q_8}}
+  \]
+
+  \pause
+  \[
+	Q_8 = \set{\pm 1, \pm I, \pm J, \pm K} \quad \blue{(\text{Example } 3.15)}
+  \]
+
+  \pause
   \[
     H \ncong \mathbb{Z}_{8}
   \]
 
+  \pause
   \[
     H \ncong \mathbb{Z}_{2} \times \mathbb{Z}_{2} \times \mathbb{Z}_{2}
   \]
 
+  \pause
   \[
     H \ncong \mathbb{Z}_{4} \times \mathbb{Z}_{2}
   \]
 
+  \pause
   \[
-    H \ncong Q_8: \implies |H| \ge 9
+	H \ncong Q_8 \implies |H| \ge 9
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+	\purple{\boxed{\bcard{G} = 8 \red{\implies} G \cong \z_{8},\quad \z_2 \times \z_2 \times \z_2,\quad \z_4 \times \z_2,\quad D_4,\quad Q_8}}
   \]
 
   \[
     H \cong D_4 = \set{1, r, r^2, r^3, s, rs, r^2s, r^3s} \quad (r^4 = 1, s^2 = 1, srs = r^{-1})
   \]
 
-  \centerline{Figure here.}
+  \pause
+  \brown{
+	\begin{align*} 
+	  \red{f_{td}} = (1\;2\;3\;4) \quad f_{td}^{2} = (1\;3) (2\;4) \quad f_{td}^{3} = (1\;4\;3\;2) \\
+	  \red{f_{lr}} = (1\;3\;2\;4) \quad f_{lr}^{2} = (1\;2) (3\;4) \quad f_{lr}^{3} = (1\;4\;2\;3) \\
+	  \red{f_{fb}} = (1\;2\;4\;3) \quad f_{fb}^{2} = (1\;4) (2\;3) \quad f_{fb}^{3} = (1\;3\;4\;2)
+	\end{align*}
+  }
 
+  \pause
   \begin{theorem}
-    There are only 3 subgroups of order 8 of $S_4$.
+	There are only $3$ subgroups \red{$\cong D_4$} of $S_4$.
   \end{theorem}
-
-  \[
-    r = (1\;2\;4\;3), \quad s = (2\;3)
-  \]
-
-  \centerline{What does $srs = r^{-1}$ mean?}
+  % \[
+  %   r = (1\;2\;4\;3), \quad s = (2\;3)
+  % \]
+  % \centerline{What does $srs = r^{-1}$ mean?}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
-\begin{frame}{Subgroups of order 12}
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.50\textwidth}{figs/d4-in-s4}
+
+  \pause
+  \vspace{-1.00cm}
+  \begin{align*}
+	H_{\rm \green{green}} &= \langle (1\ 2\ 3\ 4), (1\ 3) \rangle \\
+	H_{\rm \blue{blue}}   &= \langle (1\ 2\ 4\ 3), (1\ 4) \rangle \\
+	H_{\rm \red{red}}     &= \langle (1\ 3\ 2\ 4), (1\ 2) \rangle 
+  \end{align*}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
   \[
-    H \cong \mathbb{Z}_{12}, \mathbb{Z}_{6} \times \mathbb{Z}_{2}, D_{6}, A_{4}, Dic_{12}
+	\purple{\boxed{\bcard{G} = 12 \red{\implies} G \cong \z_{12},\quad \z_6 \times \z_2,\quad D_6,\quad A_4,\quad \text{Dic}_{12}}}
   \]
 
+  \pause
   \[
     H \cong A_4
   \]
 
-  \centerline{Figure here.}
-
+  \pause
   \begin{theorem}
     There is only one subgroup of order $12$ in $S_4$.
   \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
 
-  \begin{proof}
-  \end{proof}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \fig{width = 0.30\textwidth}{figs/arthur-cayley}
+  \begin{center}
+	\teal{Arthur Cayley ($1821$ -- $1895$)}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \fig{width = 0.60\textwidth}{figs/s4-cayley}
+
+  \begin{center}
+	$\sym(C) \cong S_4$ arranged on a \red{\it truncated} cube
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \fig{width = 0.50\textwidth}{figs/flag-art}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%

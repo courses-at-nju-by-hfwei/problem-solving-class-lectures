@@ -1,0 +1,140 @@
+% isomorphic-groups.tex
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \fig{width = 0.60\textwidth}{figs/day-night}
+
+  \begin{center}
+	\Large{\red{$Q:$ Do isomorphic groups behave exactly the same?}}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{exampleblock}{}
+    \[
+      H \triangleleft G,\; K \triangleleft G,\; H \cong K \red{\implies} G/H \cong G/K.
+    \]
+  \end{exampleblock}
+
+  \pause
+  \vspace{0.50cm}
+  \fig{width = 0.30\textwidth}{figs/wrong.jpg}
+
+  \pause
+  \vspace{-0.50cm}
+  \begin{columns}
+	\column{0.30\textwidth}
+	  \[
+		H = \set{(0,0), (1,0)}
+	  \]
+	\column{0.40\textwidth}
+	  \fig{width = 0.90\textwidth}{figs/z2xz4}
+	  \vspace{-0.40cm}
+	  \[
+		G = Z_2 \times Z_4
+	  \]
+	\column{0.30\textwidth}
+	  \[
+		K = \set{(0,0), (0,2)}
+	  \]
+  \end{columns}
+
+  \pause
+  \vspace{0.50cm}
+  \[
+	G = \z,\; H = 2\z,\; K = 3\z
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{exampleblock}{Problem $9.3$-$23$}
+	\[
+	  G \times H \cong H \times K \red{\implies} G \cong K
+	\]
+  \end{exampleblock}
+
+  \begin{columns}
+	\column{0.50\textwidth}
+	  \pause
+	  \fig{width = 0.50\textwidth}{figs/cancel}
+	\column{0.50\textwidth}
+	  \pause
+	  \fig{width = 0.50\textwidth}{figs/wrong}
+  \end{columns}
+
+  \pause
+  \vspace{0.60cm}
+  \[
+	G = \z,\quad H = \set{e},\quad \red{K = \prod_{n \in \mathbb{N}} \z}
+  \]
+
+  \pause
+  \begin{alertblock}{\it ``On Cancellation in Groups'' by R. Hirshon, $1969$}
+	\[
+	  G \times H \cong H \times K,\; \red{\big\lvert K \big\rvert < \infty} \implies G \cong K
+	\]
+  \end{alertblock}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{exampleblock}{Problem $11.4$-$17$}
+	\begin{center}
+	  $\phi: G_1 \to G_2$ is a surjective group homomorphism.
+	  \[
+		H_1 \triangleleft G_1, \quad \phi(H_1) = H_2 \red{\implies} G_1/H_1 \;\teal{\cong}\; G_2/H_2
+	  \]
+	\end{center}
+  \end{exampleblock}
+
+  \pause
+  \fig{width = 0.25\textwidth}{figs/wrong}
+
+  \[
+	G_1 = \z_{2},\quad G_2 = \set{e},\quad H_1 = \set{0},\quad H_2 = \set{e}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{exampleblock}{Problem $11.4$-$5$}
+	Find all homomorphisms from $\z_{24}$ to $\z_{18}$.
+  \end{exampleblock}
+
+  \[
+	\phi: \z_{24} \to \z_{18}
+  \]
+
+  \pause
+  \[
+	\red{\phi(1) = a?} \quad \blue{\phi(x) = xa \; (\text{mod } 18)}
+  \]
+
+  \pause
+  \[
+	\phi(1) = a \implies \text{ord}(a) \mid \text{ord}(1)
+  \]
+
+  \pause
+  \begin{theorem}
+	\[
+	  \red{\boxed{\text{ord}(\phi(x)) \mid \text{ord}(x)}}
+	\]
+  \end{theorem}
+
+  \pause
+  \[
+	\text{ord}(a) \mid \text{gcd}(24, 18) = 6
+  \]
+  \pause
+  \[
+	\phi(1) = \teal{0}, \brown{9}, \red{6}, \red{12}, \blue{3}, \blue{15}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%

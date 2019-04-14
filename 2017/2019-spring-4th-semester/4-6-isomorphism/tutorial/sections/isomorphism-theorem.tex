@@ -2,50 +2,354 @@
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}
+  \fig{width = 0.30\textwidth}{figs/Noether}
+  \centerline{\teal{Emmy Noether ($1882 \sim 1935$)}}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}
+  \begin{theorem}[The First Isomorphism Theorem]
+	\[
+	  \psi: G \to H \red{\implies} \frac{G}{\text{Ker } \psi} \cong \psi(G)
+	\]
+  \end{theorem}
+  
+  \begin{theorem}[The Second Isomorphism Theorem]
+	\[
+	  H \le G, N \triangleleft G \red{\implies} \frac{H}{H \cap N} \cong \frac{HN}{N} 
+	\]
+  \end{theorem}
+
+  \begin{theorem}[The Third Isomorphism Theorem]
+	\[
+	  H \triangleleft G, N \triangleleft G, N \subseteq H \red{\implies} \frac{G}{H} \cong \frac{G/N}{H/N}
+	\]
+  \end{theorem}
+
+  \begin{theorem}[The Fourth Isomorphism Theorem \purple{(Correspondence)}]
+	\vspace{-0.50cm}
+	\begin{gather*}
+	  N \triangleleft G \red{\implies} \\
+	  \big\{\text{\blue{(normal)} subgroups of $G$ containing $N$}\big\} 
+	  \leftrightarrow \big\{\text{\blue{(normal)} subgroups of $G/N$}\big\}
+	\end{gather*}
+  \end{theorem}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}
+  \begin{theorem}[The First Isomorphism Theorem]
+	\[
+	  \psi: G \to H \red{\implies} \frac{G}{\text{Ker } \psi} \cong \psi(G)
+	\]
+  \end{theorem}
+
+  \pause
+  \begin{center}
+	\red{\it \large $Q:$ What if $\psi$ is injective?} \pause
+	\[
+	  G \cong \psi(G)
+	\]
+	\pause
+	\red{\it \large $Q:$ How to decide whether $\psi$ is injective or not?}
+  \end{center}
+
+  \pause
+  \begin{theorem}[$\text{Ker } \psi$ and Injectivity]
+	\[
+	  \psi: G \to H \text{ is injective } \red{\iff} \kernel \psi = \set{e_G}
+	\]
+  \end{theorem}
+
+  \pause
+  \vspace{-0.80cm}
+  \begin{center}
+	\[
+	  \violet{\boxed{\frac{G}{\kernel \psi}: \text{Quotient } G \text{ out by } \kernel \psi}}
+	\]
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}
+  \begin{columns}
+	\column{0.60\textwidth}
+	  \begin{align*}
+		\rho_{1} = (2\; 3\; 4)\quad \rho_{1}^{2} = (2\; 4\; 3) \\[3pt]
+		\rho_{2} = (1\; 3\; 4)\quad \rho_{2}^{2} = (1\; 4\; 3) \\[3pt]
+		\rho_{3} = (1\; 2\; 4)\quad \rho_{3}^{2} = (1\; 4\; 2) \\[3pt]
+		\rho_{4} = (1\; 2\; 3)\quad \rho_{4}^{2} = (1\; 3\; 2)
+	  \end{align*}
+	\column{0.40\textwidth}
+	  \begin{align*}
+		r_1 = (1\; 4) (2\; 3) \\[6pt]
+		r_2 = (1\; 2) (3\; 4) \\[6pt]
+		r_3 = (1\; 3) (2\; 4)
+	  \end{align*}
+  \end{columns}
+
+  \vspace{0.60cm}
+  \[
+	\red{\boxed{\sym(T) \cong A_4 = \set{\text{id},\quad \underbrace{\text{3-cycle}}_{\# = 8},\quad \underbrace{\text{2-2-cycle}}_{\# = 3}}}}
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}
+  \fig{width = 0.75\textwidth}{figs/iso-a4toc3}
+  \[
+	\phi: A_4 \to C_3 \qquad \red{(\kernel \phi = K_4)}
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}
+  \begin{theorem}[The First Isomorphism Theorem]
+	\[
+	  \psi: G \to H \red{\implies} \frac{G}{\text{Ker } \psi} \cong \psi(G)
+	\]
+  \end{theorem}
+
+  \pause
+  \[
+	\text{To show } \frac{G_1}{N} \cong G_2.
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}
+  \[
+	\frac{\z \times \z}{\langle (1, 1) \rangle} \cong \z
+  \]
+
+  \pause
+  \[
+	f: \z \times \z \to \z
+  \]
+
+  \pause
+  \[
+	f(m, n) = m - n
+  \]
+
+  \pause
+  \[
+	\kernel f = \langle (1, 1) \rangle
+  \]
+  % \pause
+  % \vspace{0.80cm}
+  % \[
+  %   \mathbb{R}/\z \cong \mathbb{T} \qquad (\mathbb{T} = \set{z \in \mathbb{C}: |z| = 1})
+  % \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}
+  \begin{theorem}[The Second Isomorphism Theorem]
+	\[
+	  H \le G, N \triangleleft G \red{\implies} \frac{H}{H \cap N} \cong \frac{HN}{N} 
+	\]
+  \end{theorem}
+
+  \pause
+  \[
+	\red{\it \text{What if } H \cap N = \set{e}?}
+  \]
+
+  \pause
+  \[
+	H \cong \frac{HN}{N}
+  \]
+  \pause
+  \[
+	h \in H \leftrightarrow hN \;\teal{\subseteq}\; HN 
+  \]
+
+  \pause
+  \[
+	\red{\it \text{What if } h \in H \cap N\; (h \neq e)?}
+  \]
+  
+  \pause
+  \[
+	h \in H \cap N \implies hN = N
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}
+  \begin{theorem}[The Second Isomorphism Theorem]
+	\[
+	  H \le G, N \triangleleft G \red{\implies} \frac{H}{H \cap N} \cong \frac{HN}{N} 
+	\]
+  \end{theorem}
+
+  \vspace{0.20cm}
+  \begin{exampleblock}{Problem $11.4$-$7$}
+	\[
+	  G = \z_{24},\quad H = \langle 4 \rangle,\quad N = \langle 6 \rangle
+	\]
+  \end{exampleblock}
+
+  \pause
+  \[
+	H \cap N = \pause \langle 12 \rangle
+  \]
+
+  \pause
+  \vspace{-0.80cm}
+  \[
+	HN = \pause \langle 2 \rangle \pause \;\red{= \bigcup_{h \in H} hN}
+  \]
+
+  \pause
+  \[
+	\frac{H}{H \cap N} \cong \frac{HN}{N} \blue{\implies} 
+	\frac{\langle 4 \rangle}{\langle 12 \rangle} \cong \frac{\langle 2 \rangle}{\langle 6 \rangle}
+  \]
+
+  \pause
+  \[
+	ab = \text{gcd}(a, b) \cdot \text{lcm}(a,b)
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}
+  \begin{theorem}[The Third Isomorphism Theorem]
+	\[
+	  H \triangleleft G, N \triangleleft G, N \subseteq H \red{\implies} \frac{G}{H} \cong \frac{G/N}{H/N}
+	\]
+  \end{theorem}
+
+  \begin{columns}
+	\column{0.50\textwidth}
+	  \pause
+	  \fig{width = 0.60\textwidth}{figs/cancel}
+	\column{0.50\textwidth}
+	  \pause
+	  \fig{width = 0.70\textwidth}{figs/no-not-really}
+  \end{columns}
 \end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{theorem}[The Third Isomorphism Theorem]
+	\[
+	  H \triangleleft G, N \triangleleft G, N \subseteq H \red{\implies} \frac{G}{H} \cong \frac{G/N}{H/N}
+	\]
+  \end{theorem}
+
+  \begin{table}[]
+	\begin{tabular}{|c|c|c|c|c|c|}
+	\hline
+	 &  &  &  &  &  \\ \hline
+	 &  &  &  &  &  \\ \hline
+	 &  &  &  &  &  \\ \hline
+	 &  &  &  &  &  \\ \hline
+	 &  &  &  &  &  \\ \hline
+	\end{tabular}
+  \end{table}
+
+  \begin{center}
+	\blue{\large \it View $G$ and $H$ from the point of view of $N$}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{theorem}[The Third Isomorphism Theorem]
+	\[
+	  H \triangleleft G, N \triangleleft G, N \subseteq H \red{\implies} \frac{G}{H} \cong \frac{G/N}{H/N}
+	\]
+  \end{theorem}
+  
+  \begin{center}
+	\red{\it $Q:$ What do the elements in $\frac{G}{H}$ look like?} \pause
+	\[
+	  gH \in \frac{G}{H}
+	\]
+	\pause
+	\red{\it $Q:$ What do the elements in $\frac{G/N}{H/N}$ look like?} \pause
+	\[
+	  gN \cdot (H/N)
+	\]
+  \end{center}
+
+  \pause
+  \vspace{-0.60cm}
+  \[
+	\blue{\boxed{gN \cdot (H/N) \mapsto gH}}
+  \]
+
+  \pause
+  \begin{center}
+	\red{\large Absorption!!!}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{theorem}[The Third Isomorphism Theorem]
+	\[
+	  H \triangleleft G, N \triangleleft G, N \subseteq H \red{\implies} \frac{G}{H} \cong \frac{G/N}{H/N}
+	\]
+  \end{theorem}
+
+  \vspace{0.60cm}
+  \begin{columns}
+	\column{0.50\textwidth}
+	  \[
+		n \mid m
+	  \]
+
+	  \[
+		m\z \triangleleft n\z \triangleleft \z
+	  \]
+
+	  \pause
+	  \[
+		\frac{\z}{n\z} \cong \frac{\z/m\z}{n\z/m\z}
+	  \]
+	\column{0.50\textwidth}
+	  \pause
+	  \[
+		10\z \triangleleft 2\z \triangleleft \z
+	  \]
+
+	  \[
+		\frac{\z}{2\z} \cong \frac{\z/10\z}{2\z/10\z}
+	  \]
+
+	  \pause
+	  \[
+		\set{0,1} \cong \frac{\set{0, 1, 2, \cdots, 9}}{\uncover<5->{\red{\set{0, 2, 4, 6, 8}}}}
+	  \]
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+% \begin{frame}
+%   \begin{theorem}[The Fourth Isomorphism Theorem \purple{(Correspondence)}]
+% 	\vspace{-0.50cm}
+% 	\begin{gather*}
+% 	  N \triangleleft G \red{\implies} \\
+% 	  \big\{\text{\blue{(normal)} subgroups of $G$ containing $N$}\big\} 
+% 	  \leftrightarrow \big\{\text{\blue{(normal)} subgroups of $G/N$}\big\}
+% 	\end{gather*}
+%   \end{theorem}
+% \end{frame}
 %%%%%%%%%%%%%%%%%%%%

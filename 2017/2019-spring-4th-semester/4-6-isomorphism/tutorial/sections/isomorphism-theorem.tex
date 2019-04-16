@@ -23,7 +23,7 @@
 
   \begin{theorem}[The Third Isomorphism Theorem]
 	\[
-	  H \triangleleft G, N \triangleleft G, N \subseteq H \red{\implies} \frac{G}{H} \cong \frac{G/N}{H/N}
+	  N \triangleleft H \triangleleft G \red{\implies} \frac{G}{H} \cong \frac{G/N}{H/N}
 	\]
   \end{theorem}
 
@@ -40,6 +40,22 @@
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}
+  \begin{theorem}[The Fourth Isomorphism Theorem \purple{(Correspondence)}]
+	\vspace{-0.50cm}
+	\begin{gather*}
+	  N \triangleleft G \red{\implies} \\
+	  \big\{\text{\blue{(normal)} subgroups of $G$ containing $N$}\big\} 
+	  \leftrightarrow \big\{\text{\blue{(normal)} subgroups of $G/N$}\big\}
+	\end{gather*}
+  \end{theorem}
+
+  \pause
+  \fig{width = 0.35\textwidth}{figs/4th-iso}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
   \begin{theorem}[The First Isomorphism Theorem]
 	\[
 	  \psi: G \to H \red{\implies} \frac{G}{\text{Ker } \psi} \cong \psi(G)
@@ -48,12 +64,12 @@
 
   \pause
   \begin{center}
-	\red{\it \large $Q:$ What if $\psi$ is injective?} \pause
+	\red{\large $Q:$ \it What if $\psi$ is injective?} \pause
 	\[
 	  G \cong \psi(G)
 	\]
 	\pause
-	\red{\it \large $Q:$ How to decide whether $\psi$ is injective or not?}
+	\red{\large $Q:$ \it How to decide whether $\psi$ is injective or not?}
   \end{center}
 
   \pause
@@ -95,6 +111,11 @@
   \[
 	\red{\boxed{\sym(T) \cong A_4 = \set{\text{id},\quad \underbrace{\text{3-cycle}}_{\# = 8},\quad \underbrace{\text{2-2-cycle}}_{\# = 3}}}}
   \]
+
+  \pause
+  \[
+	\frac{A_4}{\set{1, r_1, r_2, r_3}} \cong C_3
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
@@ -102,7 +123,7 @@
 \begin{frame}
   \fig{width = 0.75\textwidth}{figs/iso-a4toc3}
   \[
-	\phi: A_4 \to C_3 \qquad \red{(\kernel \phi = K_4)}
+	\phi: A_4 \to C_3 \qquad \red{(\kernel \phi = \set{1, x, y, z})}
   \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
@@ -147,6 +168,19 @@
   % \[
   %   \mathbb{R}/\z \cong \mathbb{T} \qquad (\mathbb{T} = \set{z \in \mathbb{C}: |z| = 1})
   % \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{theorem}[The Second Isomorphism Theorem]
+	\[
+	  H \le G, N \triangleleft G \red{\implies} \frac{H}{H \cap N} \cong \frac{HN}{N} 
+	\]
+  \end{theorem}
+
+  \pause
+  \fig{width = 0.40\textwidth}{figs/2nd-iso-texse}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
@@ -227,7 +261,7 @@
 \begin{frame}
   \begin{theorem}[The Third Isomorphism Theorem]
 	\[
-	  H \triangleleft G, N \triangleleft G, N \subseteq H \red{\implies} \frac{G}{H} \cong \frac{G/N}{H/N}
+	  N \triangleleft H \triangleleft G \red{\implies} \frac{G}{H} \cong \frac{G/N}{H/N}
 	\]
   \end{theorem}
 
@@ -246,7 +280,7 @@
 \begin{frame}
   \begin{theorem}[The Third Isomorphism Theorem]
 	\[
-	  H \triangleleft G, N \triangleleft G, N \subseteq H \red{\implies} \frac{G}{H} \cong \frac{G/N}{H/N}
+	  N \triangleleft H \triangleleft G \red{\implies} \frac{G}{H} \cong \frac{G/N}{H/N}
 	\]
   \end{theorem}
 
@@ -271,7 +305,7 @@
 \begin{frame}
   \begin{theorem}[The Third Isomorphism Theorem]
 	\[
-	  H \triangleleft G, N \triangleleft G, N \subseteq H \red{\implies} \frac{G}{H} \cong \frac{G/N}{H/N}
+	  N \triangleleft H \triangleleft G \red{\implies} \frac{G}{H} \cong \frac{G/N}{H/N}
 	\]
   \end{theorem}
   
@@ -304,7 +338,7 @@
 \begin{frame}
   \begin{theorem}[The Third Isomorphism Theorem]
 	\[
-	  H \triangleleft G, N \triangleleft G, N \subseteq H \red{\implies} \frac{G}{H} \cong \frac{G/N}{H/N}
+	  N \triangleleft H \triangleleft G \red{\implies} \frac{G}{H} \cong \frac{G/N}{H/N}
 	\]
   \end{theorem}
 

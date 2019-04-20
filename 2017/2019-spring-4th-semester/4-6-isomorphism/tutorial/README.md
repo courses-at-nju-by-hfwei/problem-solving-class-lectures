@@ -7,7 +7,11 @@
 - [ ] More about Emmy Noether
   - [ ] Video
 - [ ] Visualization of (four) isomorphism theorems
-  - [ ] Animation
+  - [ ] 3rd
+    - [ ] Table Visualization
+	- [ ] "Finer-grained/C-grained"; 两层筛子示意图
+  - [ ] 4th
+    - [ ] Animation
 - [ ] More examples
   - [ ] 1st
     - G/Z(G) \cong Inn(G)

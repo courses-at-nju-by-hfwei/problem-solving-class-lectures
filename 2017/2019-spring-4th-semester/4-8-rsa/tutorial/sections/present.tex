@@ -1,0 +1,290 @@
+% present.tex
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \fig{width = 0.65\textwidth}{figs/rsa-people}
+
+  \pause
+  \begin{quote}
+	\centering
+	\violet{\large ``也许、大概、或许并不存在这样的 \\ Trapdoor One-Way Functions''}
+  \end{quote}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{center}
+	\purple{\Large RSA} \\
+	\teal{(Ron Rivest; April $1977$)}
+  \end{center}
+
+  \begin{columns}
+	\column{0.50\textwidth}
+	  \pause
+	  \fig{width = 0.55\textwidth}{figs/wine}
+	\column{0.50\textwidth}
+	  \pause
+	  \fig{width = 0.90\textwidth}{figs/rsa-cacm}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \[
+	\red{p,\quad q}
+  \]
+
+  \pause
+  \[
+	\blue{n} = p q
+  \]
+
+  \pause
+  \[
+	\red{\phi(n)} = (p - 1) (q - 1)
+  \]
+
+  \pause
+  \[
+	\blue{e} : (e, \phi(n)) = 1
+  \]
+
+  \pause
+  \[
+	\red{d} : ed \equiv 1 \;\text{mod}\; \phi(n)
+  \]
+
+  \begin{columns}
+	\column{0.50\textwidth}
+	  \pause
+	  \[
+		\violet{P = (e, n)}
+	  \]
+	\column{0.50\textwidth}
+	  \pause
+	  \[
+		\violet{S = (d, n)}
+	  \]
+  \end{columns}
+
+  \vspace{0.40cm}
+  \begin{columns}
+	\column{0.50\textwidth}
+	  \pause
+	  \[
+		\blue{P(M) = M^{e} \;\text{mod}\; n}
+	  \]
+	\column{0.50\textwidth}
+	  \pause
+	  \[
+		\red{S(C) = C^{d} \;\text{mod}\; n}
+	  \]
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{center}
+	\red{\large $Q:$ What is the trapdoor one-way function in RSA?}
+  \end{center}
+
+  \fig{width = 0.40\textwidth}{figs/trapdoor}
+
+  \pause
+  \[
+	f(x) = x^{e} \;\text{mod}\; n
+  \]
+
+  \pause
+  \[
+	\red{d}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \fig{width = 0.70\textwidth}{figs/one-way-functions-exist}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \[
+	\red{\text{RSA-number}: n = p q}
+  \]
+
+  \fig{width = 0.60\textwidth}{figs/rsa-number}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{exampleblock}{``Small $e$ Attack'' (CLRS $31.7$-$2$)}
+	\[
+	  e = 3
+	\]
+	\[
+	  0 < d < \phi(n)
+	\]
+
+	\pause
+	\vspace{-0.30cm}
+	\[
+	  \purple{n = pq}
+	\]
+  \end{exampleblock}
+
+  \pause
+  \begin{center}
+	\red{\large Why do I factor $n$ if I have obtained $d$?}
+  \end{center}
+
+  \pause
+  \fig{width = 0.30\textwidth}{figs/org-common-n}
+  \begin{center}
+	\violet{Common $n$; Different $e$'s and $d$'s}
+  \end{center}
+  \end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \[
+	ed \equiv 1 \;(\text{mod}\; \phi(n))
+  \]
+
+  \pause
+  \[
+	ed = 1 + k \phi(n) (k \in \mathbb{Z})
+  \]
+
+  \pause
+  \[
+	\boxed{ed = 1 + k \phi(n) \;(\red{k \in \mathbb{N}, k < \min\set{e, d}})}
+  \]
+
+  \pause
+  \[
+	3d = 1 + k \phi(n) \;(\red{k \in {1, 2}})
+  \]
+
+  \pause
+  \[
+	\phi(n) = (p-1)(q-1) = n - (p + q) + 1
+  \]
+  \[
+	n = pq
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+% \begin{frame}
+%   \begin{exampleblock}{TJ $7$-$12$}
+% 	Find integers $n$, $e$, $M$ such that
+% 	\[
+% 	  M^{e} = M \;(\text{mod}\; n)
+% 	\]
+% 	Is this a potential problem in RSA?
+%   \end{exampleblock}
+% \end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+% \begin{frame}
+%   \begin{center}
+% 	\purple{\large Iterated Encryption Attack}
+%   \end{center}
+% 
+%   \begin{align*}
+% 	\onslide<2->{E_1 &= M^e \;\text{mod}\; n \\[4pt]}
+% 	\onslide<3->{E_2 &= E_1^e \;\text{mod}\; n \\[4pt]}
+% 	\onslide<4->{E_3 &= E_2^e \;\text{mod}\; n \\[4pt]}
+% 	\onslide<5->{&\cdots \\[4pt]}
+% 	\onslide<6->{E_k &= E_{k-1}^e \;\text{mod}\; n \\[4pt]}
+%   \end{align*}
+% 
+%   \vspace{-0.60cm}
+%   \uncover<7->{
+% 	\[
+% 	  \red{E_k = M^{(e^k)} \;\text{mod}\; n}
+% 	\]
+%   }
+% \end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{exampleblock}{Common Modulus Attack}
+	\fig{width = 0.30\textwidth}{figs/org-common-n}
+	\begin{center}
+	  \violet{Common $n$; Different $e$'s and $d$'s}
+	\end{center}
+
+	\pause
+	\vspace{-0.50cm}
+	\[
+	  (e_i, e_j) = 1
+	\]
+  \end{exampleblock}
+
+  \pause
+  \[
+	E = M^{e_1} \;(\text{mod}\; n) \qquad F = M^{e_2} \;(\text{mod}\; n)
+  \]
+
+  \pause
+  \vspace{-0.30cm}
+  \[
+	(e_1, e_2) = 1 \pause\red{\implies}\; e_1 x + e_2 y = 1
+  \]
+
+  \pause
+  \vspace{-0.60cm}
+  \[
+	\red{M = E^x \cdot F^y \;(\text{mod}\; n)}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{columns}
+	\column{0.50\textwidth}
+	  \fig{width = 0.80\textwidth}{figs/rsa-3people}
+	\column{0.50\textwidth}
+	  \fig{width = 0.70\textwidth}{figs/turing-award}
+  \end{columns}
+
+  \vspace{0.50cm}
+  \begin{quote}
+	\center
+	\violet{``For their ingenious contribution for \\ making public-key cryptography useful in practice.''} \\[5pt]
+
+	\hfill \teal{--- ACM Turing Award, $2002$}
+  \end{quote}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{columns}
+	\column{0.50\textwidth}
+	  \fig{width = 0.50\textwidth}{figs/diffie-hellman}
+	\column{0.50\textwidth}
+	  \fig{width = 0.70\textwidth}{figs/turing-award}
+  \end{columns}
+
+  \vspace{0.50cm}
+  \begin{quote}
+	\center
+	\violet{``For fundamental contributions to modern cryptography.''} \\[5pt]
+
+	\hfill \teal{--- ACM Turing Award, $2015$}
+  \end{quote}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%

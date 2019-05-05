@@ -1,0 +1,182 @@
+% key-exchange.tex
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{center}
+	\red{\fbox{\large $Q:$ How to share this \textsc{Key}?}}
+  \end{center}
+
+  \begin{columns}
+	\column{0.50\textwidth}
+	  \pause
+	  \fig{width = 0.60\textwidth}{figs/mission-impossible}
+	\column{0.50\textwidth}
+	  \pause
+	  \fig{width = 0.80\textwidth}{figs/diffie}
+	  \begin{center}
+		\violet{\large Whitfield Diffie \teal{($1944 \sim$)}}
+	  \end{center}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{columns}
+	\column{0.50\textwidth}
+	  \fig{width = 0.60\textwidth}{figs/ibm-watson}
+	  \begin{center}
+		\violet{\large Whitfield Diffie@IBM Watson'1974}
+	  \end{center}
+	\column{0.50\textwidth}
+	  \pause
+	  \fig{width = 0.70\textwidth}{figs/Martin-Hellman}
+	  \begin{center}
+		\violet{\large Martin Hellman \teal{($1945 \sim$)}}
+	  \end{center}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \uncover<3->{
+  \begin{alertblock}{两千多年来的密码学``公理'':}
+	\centering
+	\red{``不管采用什么方法, 密钥就是一定得发送, \\ 这个动作无论如何避免不了''}
+  \end{alertblock}
+  }
+
+  \begin{columns}
+	\column{0.50\textwidth}
+	  \fig{width = 0.55\textwidth}{figs/diffie-hellman}
+	  \begin{center}
+		\violet{Martin Hellman, Whitfield Diffie}
+	  \end{center}
+	\column{0.50\textwidth}
+	  \pause
+	  \fig{width = 0.70\textwidth}{figs/diffie-hellman-merkle}
+	  \begin{center}
+		\violet{$+$ Ralph Merkle}
+	  \end{center}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{definition}[One-Way Functions]
+	\fig{width = 0.60\textwidth}{figs/one-way-function}
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \fig{width = 0.50\textwidth}{figs/one-way-function-color}
+
+  \pause
+  \vspace{0.50cm}
+  \begin{center}
+	\href{https://youtu.be/3QnD2c4Xovk}{\large $Q:$ How to share a \textsc{Color}?}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{center}
+	\purple{\Large Diffie-Hellman-Merkle Key Exchange} \\
+	\teal{(Martin Hellman; Spring, $1976$)}
+  \end{center}
+
+  \pause
+  \begin{definition}[Discrete Logarithm]
+	\[
+	  g^{\red{x}} \equiv a \;(\text{mod } p)
+	\]
+  \end{definition}
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \[
+	\red{p} \qquad \red{g} \;\text{(generator for $\mathbb{Z}_{p}$)} 
+  \]
+
+  \pause
+  \begin{columns}
+	\column{0.50\textwidth}
+	  \begin{center}
+		\blue{\large Alice}
+	  \end{center}
+
+	  \begin{enumerate}
+		\setlength{\itemsep}{6pt}
+		\item Randomly choose $a$
+		\item Compute $A = g^a \text{ mod } p$
+		\item Send $A$ to Bob
+		\item Compute $K = B^x \text{ mod } p$
+	  \end{enumerate}
+	\column{0.50\textwidth}
+	  \begin{center}
+		\blue{\large Bob}
+	  \end{center}
+
+	  \begin{enumerate}
+		\setlength{\itemsep}{6pt}
+		\item Randomly choose $b$
+		\item Compute $B = g^b \text{ mod } p$
+		\item Send $B$ to Alice 
+		\item Compute $K = A^y \text{ mod } p$
+	  \end{enumerate}
+  \end{columns}
+
+  \pause
+  \vspace{0.60cm}
+  \[
+	\red{K = g^{ab} \text{ mod } p}
+  \]
+
+  \pause
+  \begin{center}
+	\blue{$K$ used for DES}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \fig{width = 0.50\textwidth}{figs/middleman-attack}
+
+  \begin{center}
+	\violet{\large Man-in-the-Middle Attack}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \fig{width = 0.50\textwidth}{figs/timing}
+
+  \begin{center}
+	\red{\large Alice and Bob need to be online simultaneously.}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{alertblock}{两千多年来的密码学``公理'':}
+	\centering
+	\red{``不管采用什么方法, 密钥就是一定得发送, \\ 这个动作无论如何避免不了''}
+  \end{alertblock}
+
+  \pause
+  \begin{proof}
+	\fig{width = 0.40\textwidth}{figs/wrong}
+  \end{proof}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%

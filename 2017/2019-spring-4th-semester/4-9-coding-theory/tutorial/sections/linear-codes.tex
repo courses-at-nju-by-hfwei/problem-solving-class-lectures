@@ -1,0 +1,531 @@
+% linear-code
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{definition}[Linear Code]
+	A linear code $C$ of length $n$ is a \red{linear subspace} of the vector space \blue{$\mathbb{Z}_2^n$} \teal{\small ($\mathbb{F}_{q}^{n}$)}.
+  \end{definition}
+
+  \[
+	c_1 \in C, c_2 \in C \implies c_1 + c_2 \in C
+  \]
+
+  \pause
+  \begin{align*}
+    \red{d(C)} &= \min \big\{ d(c_1, c_2) \mid c_1 \neq c_2, c_1, c_2 \in C \big\} \\[5pt]
+			   &= \min \big\{ w(c_1 + c_2) \mid c_1 \neq c_2, c_1, c_2 \in C \big\} \\[5pt]
+			   &= \red{\min \big\{ w(c) \mid c \neq 0, c \in C \big\}}
+  \end{align*}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{exampleblock}{Problem $8.5$-$19$}
+	\begin{center}
+	  Let $C$ be a linear code. \\[5pt]
+
+	  Show that either \violet{every codeword has even weight} \\[3pt]
+	  or \violet{exactly half of them have even weight}.
+	\end{center}
+  \end{exampleblock}
+
+  \pause
+  \[
+	\text{Parity: } w(c_1) + w(c_2) \emph{ vs. } w(c_1 + c_2)
+  \]
+
+  \pause
+  \[
+	\red{C = C_e \cup C_o}
+  \]
+
+  \pause
+  \[
+	C_e \neq \emptyset \qquad \purple{c_o \in C_o}
+  \]
+
+  \pause
+  \[
+	\red{\boxed{f: x \in C_e \mapsto x + c_o \in C_o}}
+  \]
+
+  \pause
+  \[
+	\blue{C_e \le C; \quad C = C_e \cup C_o}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{definition}[Linear Code]
+	An \red{$(n,k)$} linear code $C$ of length $n$ and \red{rank $k$} is a linear subspace with dimension $k$ of the vector space $\mathbb{Z}_2^n$.
+  \end{definition}
+
+  \pause
+  \[
+	\text{Basis: } c_1, c_2, \dots, c_k \quad \teal{(n \times 1)\; \text{\footnotesize column vector}}
+  \]
+
+  \[
+	c_i = \alpha_1 c_1 + \alpha_2 c_2 + \cdots + \alpha_k c_k
+  \]
+
+  \pause
+  \[
+	\red{C = \text{Span}(c_1, c_2, \cdots, c_k)}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{definition}[Generator Matrix]
+	A matrix $G_{n \times k}$ is a \red{generator matrix} for an $(n,k)$ linear code $C$ if 
+	\[
+	  C = \text{Col}(G)
+	\]
+  \end{definition}
+
+  \[
+	\red{\boxed{
+	  G_{n \times k} = 
+		\begin{bmatrix}
+	      c_1 & c_2 & \cdots & c_k
+		\end{bmatrix}
+	  }}
+  \]
+
+  \pause
+  \vspace{0.40cm}
+  \[
+	G_{(n \times k)} \cdot d_{k \times 1} = c_{n \times 1} \in C
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{exampleblock}{Problem $8.5$-$7$}
+	Generator matrices are \red{NOT} unique.
+  \end{exampleblock}
+
+  \pause
+  \vspace{0.30cm}
+  \fig{width = 0.40\textwidth}{figs/change-of-basis}
+
+  \pause
+  \begin{definition}[Standard Generator Matrix]
+	\[
+	  G_{n \times k} = \begin{bmatrix}
+		\red{I_k} \\ \blue{A_{(n-k) \times k}}
+	  \end{bmatrix}
+	\]
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{center}
+	\purple{\large Generator matrix for Hamming code $(7,4,3)$}
+  \end{center}
+
+  \begin{columns}
+	\column{0.45\textwidth}
+	  \fig{width = 0.70\textwidth}{figs/hamming74-venn}
+	\column{0.45\textwidth}
+	  \[
+		G = \begin{bmatrix}
+		  \red{1} & 0 & 0 & 0 \\
+		  0 & \red{1} & 0 & 0 \\
+		  0 & 0 & \red{1} & 0 \\
+		  0 & 0 & 0 & \red{1} \\
+		  1 & 1 & 0 & 1 \\
+		  0 & 1 & 1 & 1 \\
+		  1 & 0 & 1 & 1 \\
+		\end{bmatrix}
+	  \]
+
+  \end{columns}
+
+  \pause
+  \[
+	G \cdot \begin{pmatrix}
+	  1 \\ 0 \\ 1 \\ 0
+	\end{pmatrix}
+	= \begin{pmatrix}
+	  \red{1} \\ \red{0} \\ \red{1} \\ \red{0} \\ \blue{1} \\ \blue{1} \\ \blue{0}
+	\end{pmatrix}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+	G \cdot \begin{pmatrix}
+      d_1 \\ d_2 \\ d_3 \\ d_4
+	\end{pmatrix}
+	= \begin{bmatrix}
+		\red{1} & 0 & 0 & 0 \\
+		0 & \red{1} & 0 & 0 \\
+		0 & 0 & \red{1} & 0 \\
+		0 & 0 & 0 & \red{1} \\
+		1 & 1 & 0 & 1 \\
+		0 & 1 & 1 & 1 \\
+		1 & 0 & 1 & 1 \\
+	\end{bmatrix} 
+	\cdot \begin{pmatrix}
+      d_1 \\ d_2 \\ d_3 \\ d_4 \\
+	\end{pmatrix}
+	\pause
+	= \begin{pmatrix}
+	  \red{d_1} \\ \red{d_2} \\ \red{d_3} \\ \red{d_4} \\
+	  \blue{p_1} = d_1 + d_2  \qquad + d_4 \\
+	  \blue{p_2} = \qquad d_2 + d_3 + d_4 \\
+	  \blue{p_3} = d_1 \qquad + d_3 + d_4 \\
+	\end{pmatrix}
+  \]
+
+  \pause
+  \begin{center}
+	\red{\it \large Each parity-check bit is a linear combination of some data bits.}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{gather*}
+	d_1 + d_2  \qquad + d_4 + \blue{p_1} \qquad\qquad = 0 \\
+	\qquad d_2 + d_3 + d_4 \qquad + \blue{p_2} \qquad = 0 \\
+	d_1 \qquad + d_3 + d_4 \qquad \qquad + \blue{p_3} = 0 \\
+  \end{gather*}
+
+  \pause
+  \[
+	\begin{bmatrix}
+	  1 & 1 & 0 & 1 & \red{1} & 0 & 0 \\
+	  0 & 1 & 1 & 1 & 0 & \red{1} & 0 \\
+	  1 & 0 & 1 & 1 & 0 & 0 & \red{1} \\
+	\end{bmatrix} \begin{pmatrix}
+	  d_1 \\ d_2 \\ d_3 \\ d_4 \\ \blue{p_1} \\ \blue{p_2} \\ \blue{p_3}
+	\end{pmatrix}
+	= 0
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Parity-check Matrix]
+	A matrix $H_{(n - k) \times n}$ is a \red{parity-check} matrix for an $(n,k)$ linear code $C$ if
+	\[
+	  C = \text{Nul}(H)
+	\]
+  \end{definition}
+
+  \pause
+  \[
+	\text{rank}(H) = n - k \quad \text{\teal{\small (full row rank)}}
+  \]
+  \begin{center}
+	\red{\it \large Each row represents a parity-check equation.}
+  \end{center}
+
+  \pause
+  \[
+	H_{(n - k) \times n} \cdot c_{n \times 1} = 0_{(n - k) \times 1}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{exampleblock}{}
+	Parity-check matrices are \red{NOT} unique.
+  \end{exampleblock}
+
+  \begin{center}
+	\purple{\Large Elementary Row Operations.}
+  \end{center}
+
+  \pause
+  \begin{definition}[Standard Parity-check Matrix]
+	\[
+	  H_{(n-k) \times n} = \begin{bmatrix}
+		\blue{A_{(n-k) \times k}} \mid \red{I_{n-k}}
+	  \end{bmatrix}
+	\]
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \[
+	\red{\boxed{\text{Col}(G_{n \times k}) = \blue{C} = \text{Nul}(H_{(n-k) \times n})}}
+  \]
+
+  \pause
+  \[
+	G_{n \times k} \cdot d_{k \times 1} = \blue{c_{n \times 1}} \in \text{Nul}(H_{(n-k) \times n})
+  \]
+
+  \pause
+  \[
+	H_{(n-k) \times n} \cdot G_{n \times k} \cdot d_{k \times 1} = 0_{(n-k) \times 1}
+  \]
+
+  \pause
+  \begin{align*}
+	H_{(n-k) \times n} &\cdot G_{n \times k} \\
+	&= \begin{bmatrix}
+	  \blue{A_{(n-k) \times k}} \mid \red{I_{n-k}}
+	\end{bmatrix}
+	\cdot
+	\begin{bmatrix}
+	  \red{I_k} \\ \blue{A_{(n-k) \times k}}
+	\end{bmatrix} \\
+	&= A_{(n-k) \times k} \cdot I_k + I_{n-k} \cdot A_{(n-k) \times k} \\
+	&= A_{(n-k) \times k} + A_{(n-k) \times k} \\
+	&= 0_{(n-k) \times k}
+  \end{align*}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \[
+	r = c + e_i
+  \]
+
+  \[
+	r = c + (e_{i} + e_{j} + \cdots)
+  \]
+
+  \pause
+  \begin{definition}[Syndrome]
+	\begin{align*}
+	  S(r) &= H r \\
+		&= H(\red{c} + (e_{i} + e_{j} + \cdots)) \\
+		&= H (e_{i} + e_{j} + \cdots) \\
+		&= H e_{i} + H e_{j} + \cdots \\
+	\end{align*}
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[Extracting $d(C)$ from $H$]
+	\begin{center}
+	  If $H$ is the parity-check matrix for a linear code $C$, then \\
+	  $d(C)$ equals the \purple{minimum number of linearly dependent columns of $H$}.
+	\end{center}
+  \end{theorem}
+
+  \pause
+  \begin{proof}
+	\pause
+	\[
+	  d(C) = \min \big\{ w(c) \mid c \neq 0, c \in C \big\}
+	\]
+
+	\pause
+	\[
+	  H c = 0
+	\]
+
+	\pause
+	\[
+	  \sum_{i=1}^{n} (c_i \cdot H_i) = 0 
+	\]
+	\[
+	  \teal{H_i: \text{\small the } i^{\text{th}} \text{ column of } H}
+	\]
+  \end{proof}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[Single Error-detecting Code (Theorem $8.31$)]
+	\vspace{-0.40cm}
+	\begin{align*}
+		d(C) &\ge 2 \\
+		&\iff \forall \set{c_i} \text{ linearly independent} \\
+		&\iff \text{no zero column}
+	\end{align*}
+  \end{theorem}
+
+  \pause
+  \vspace{0.60cm}
+  \begin{theorem}[Single Error-correcting Code (Theorem $8.34$)]
+	\vspace{-0.40cm}
+	\begin{align*}
+		d(C) &\ge 3 \\
+		&\iff \forall \set{c_i, c_j} \text{ linearly independent} \\
+		&\iff \text{no zero column, no identical columns}
+	\end{align*}
+  \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Problem $8.5$-$21$}
+	If we are to use an \red{error-correcting} linear code to transmit the 128 ASCII characters,
+	what size matrix must be used?
+  \end{exampleblock}
+
+  \pause
+  \begin{center}
+	\blue{\large We consider \red{single} error-correcting code.}
+  \end{center}
+
+  \pause
+  \[
+	H_{(n-k) \times n} = \begin{bmatrix}
+	  \blue{A_{(n-k) \times k}} \mid \red{I_{n-k}}
+	\end{bmatrix}
+  \]
+
+  \pause
+  \[
+	\teal{r \triangleq n - k} \quad \brown{(k = 7)}
+  \]
+  \[
+	k \le 2^r - 1 - r \implies r \ge 4
+  \]
+
+  \pause
+  \[
+	H_{4 \times 11}: \quad (11, 7) \text{ code}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{columns}
+	\column{0.50\textwidth}
+	  \fig{width = 0.60\textwidth}{figs/keep-calm-not-done}
+	\column{0.50\textwidth}
+	  \pause
+	  \fig{width = 0.80\textwidth}{figs/qrcode-wiki-hamming-code}
+	  \begin{center}
+		% \href{https://en.wikipedia.org/wiki/Hamming\_code#General\_algorithm}
+		\teal{Hamming Code (wiki): \\ General Algorithm}
+	  \end{center}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Problem $8.5$-$21$}
+	If we are to use an error-correcting linear code to transmit the 128 ASCII characters,
+	what size matrix must be used? What if we require only \red{error detection}?
+  \end{exampleblock}
+
+  \pause
+  \begin{center}
+	\blue{\large We consider \red{single} error-detecting code.}
+  \end{center}
+
+  \pause
+  \[
+	\teal{r \triangleq n - k} \;\red{= 1} \text{ is sufficient}: (8, 7) \text{ code}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Problem $8.5$-$23$}
+	How many check positions are needed for a single error-correcting code with $k = 20$?
+  \end{exampleblock}
+
+  \pause
+  \[
+	\teal{r \triangleq n - k} \quad \brown{(k = 20)}
+  \]
+
+  \[
+	k \le 2^r - 1 - r \implies r \ge 5
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Problem $8.5$-$22$}
+	Find the standard $H$ and $G$ that gives the \red{even parity check bit} code with $k = 3$.
+  \end{exampleblock}
+
+  \pause
+  \[
+	\teal{r \triangleq n - k} \;\red{= 1}
+  \]
+
+  \pause
+  \[
+	d_1 + d_2 + d_3 + \red{p} = 0
+  \]
+
+  \begin{columns}
+	\column{0.50\textwidth}
+	  \pause
+	  \[
+		H_{(n-k) \times n} = H_{1 \times 4} = [1, 1, 1, \red{1}]
+	  \]
+	\column{0.50\textwidth}
+	  \pause
+	  \[
+		G_{n \times k} = G_{4 \times 3} = 
+		\begin{bmatrix}
+		  \red{1} & 0 & 0  \\
+		  0 & \red{1} & 0  \\
+		  0 & 0 & \red{1}  \\
+		  1 & 1 & 1 \\
+		\end{bmatrix}
+	  \]
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{center}
+	\red{\it Detect} $d-1$ errors \\[6pt]
+	\red{\it Correct} $\lfloor \frac{d-1}{2} \rfloor$ errors
+  \end{center}
+
+  \fig{width = 0.50\textwidth}{figs/understand}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \[
+	\blue{\boxed{\text{Hamming} (7, 4, 3)}}
+  \]
+
+  \begin{columns}
+	\column{0.50\textwidth}
+	  \fig{width = 0.50\textwidth}{figs/hamming74-venn}
+	\column{0.50\textwidth}
+	  \pause
+	  \fig{width = 0.50\textwidth}{figs/hamming74-1011}
+  \end{columns}
+
+  \pause
+  \fig{width = 0.25\textwidth}{figs/hamming74-1011-error}
+
+  \pause
+  \begin{center}
+	\red{$\text{Hamming}(7,4,3)$ cannot distinguish \\ between single-bit errors and two-bit errors.}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%

@@ -1,0 +1,39 @@
+% notations
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \[
+	\red{\boxed{(n, k, d)}}
+  \]
+
+  \fig{width = 0.40\textwidth}{figs/agreement-hands}
+
+  \pause
+  \[
+	n: \text{length}
+  \]
+  \[
+	k: \text{\# of information bits}
+  \]
+  \[
+	d: \text{distance}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \[
+	\blue{\boxed{\text{Hamming} (7, 4, \red{3})}}
+  \]
+
+  \only<3->{\fig{width = 0.50\textwidth}{figs/understand}}
+  \only<1-2>{\fig{width = 0.60\textwidth}{figs/distance}}
+
+  \pause
+  \begin{center}
+	\red{\it Detect} $d-1$ errors \\[6pt]
+	\red{\it Correct} $\lfloor \frac{d-1}{2} \rfloor$ errors
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%

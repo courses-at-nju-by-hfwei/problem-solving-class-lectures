@@ -1,0 +1,38 @@
+% hamming-code.tex
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Generalized Hamming codes}
+  \[
+	C_{Ham} = (7,4)
+  \]
+
+  \[
+	H_{3 \times 7}: r = 3, n = 2^3 - 1 = 7
+  \]
+
+  \[
+	\begin{bmatrix}
+	  1 & 1 & 0 & 1 & 1 & 0 & 0 \\
+	  0 & 1 & 1 & 1 & 0 & 1 & 0 \\
+	  1 & 0 & 1 & 1 & 0 & 0 & 1 \\
+	\end{bmatrix} \begin{pmatrix}
+      d_1 \\ d_2 \\ d_3 \\ d_4 \\ p_1 \\ p_2 \\ p_3
+	\end{pmatrix}
+	= 0
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Generalized Hamming codes}
+  \begin{definition}[Generalized Hamming codes]
+	\[
+	  H_r \triangleq H_{r \times (2^r-1)}: \text{all nonzero binary vectors of length } r
+	\]
+
+	\[
+	  C_{Ham}^{r} = (n = 2^r-1, k = 2^r-1-r)
+	\]
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%

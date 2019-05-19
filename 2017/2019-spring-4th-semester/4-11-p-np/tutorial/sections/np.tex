@@ -10,10 +10,10 @@
 	  \iff
 	\]
 	\begin{center}
-	  \red{$\exists$} \blue{poly.} time \emph{verifier} $V(x,c)$ \violet{such that} $\forall x \in \set{0,1}^{\ast}$:
+	  \red{$\exists$} \blue{poly.} time \emph{verifier} $V(x,c)$ such that
 	\end{center}
 	\[
-	  x \in L \iff \exists c \in \set{0,1}^{\ast}, V(x,c) = 1.
+	  \forall x \in \set{0,1}^{\ast}: x \in L \iff \exists c \text{ with } |c| = O(|x|^{k}), V(x,c) = 1.
 	\]
   \end{definition}
 
@@ -78,56 +78,5 @@
 	  e_1 \cup e_2,\quad e_1 \cdot e_2,\quad \red{e^{2}}
 	\]
   \end{exampleblock}
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%
-\begin{frame}
-  \begin{exampleblock}{Closure of \np{} (CLRS $34.2$-$4$)}
-	\begin{center}
-	  \np{} is closed under $\cup, \cap, \cdot, \ast$.
-	\end{center}
-
-	\[
-	  L_1 \in \np, L_2 \in \np \implies L = L_1 \circ L_2 \in \np
-	\]
-  \end{exampleblock}
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%
-\begin{frame}
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%
-\begin{frame}
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%
-\begin{frame}
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%
-\begin{frame}
-  \begin{theorem}{}
-	\np{} is closed under ``$\ast$''.
-  \end{theorem}
-
-  \[
-	c = c_1\#c_2\#\dots\#c_k\#m_1\&m_2\&\dots\&m_{k-1}
-  \]
-
-  $A^{\ast}(x,y): \forall 1 \le k \le |x|$
-  \begin{align*}
-	c = &c_1\#c_2\#\dots\#c_k\#m_1\&m_2\&\dots\&m_{k-1} \\
-	  &\bigwedge \land_{i=1}^{i=k} A(x_i, c_i)
-  \end{align*}
-
-  \[
-	x \in L^{\ast} \iff \exists c, A(x,c) = 1
-  \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%

@@ -1,0 +1,103 @@
+% np-closure.tex
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{exampleblock}{Closure of \np{} (CLRS $34.2$-$4$)}
+	\begin{center}
+	  \np{} is closed under $\cup, \cap, \cdot, \star$.
+	\end{center}
+
+	\[
+	  L_1 \in \np, L_2 \in \np \implies L = L_1 \circ L_2 \in \np
+	\]
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \[
+	L_1 \in \np, L_2 \in \np \implies L = L_1 \cup L_2 \in \np
+  \]
+
+  \pause
+  \begin{columns}
+	\column{0.25\textwidth}
+	\column{0.50\textwidth}
+	  \input{algs/np-union}
+	\column{0.25\textwidth}
+  \end{columns}
+
+  \pause
+  \vspace{0.60cm}
+  \[
+	\purple{x \in L_1 \cup L_2 \iff \exists c, V(x,c) = 1}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \[
+	L_1 \in \np, L_2 \in \np \implies L = L_1 \cap L_2 \in \np
+  \]
+
+  \pause
+  \begin{columns}
+	\column{0.25\textwidth}
+	\column{0.50\textwidth}
+	  \input{algs/np-intersection}
+	\column{0.25\textwidth}
+  \end{columns}
+
+  \pause
+  \vspace{0.60cm}
+  \[
+	\purple{x \in L_1 \cap L_2 \iff \exists c, V(x,c) = 1}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \[
+	L_1 \in \np, L_2 \in \np \implies L = L_1 \cdot L_2 \in \np
+  \]
+
+  \pause
+  \begin{columns}
+	\column{0.15\textwidth}
+	\column{0.70\textwidth}
+	  \input{algs/np-concat}
+	\column{0.15\textwidth}
+  \end{columns}
+
+  \pause
+  \vspace{0.60cm}
+  \[
+	\purple{x \in L_1 \cdot L_2 \iff \exists c, V(x,c) = 1}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \[
+	L \in \np \implies L^{\star} \in \np
+  \]
+
+  \pause
+  \begin{columns}
+	\column{0.05\textwidth}
+	\column{0.90\textwidth}
+	  \input{algs/np-star}
+	\column{0.05\textwidth}
+  \end{columns}
+
+  \pause
+  \vspace{0.60cm}
+  \[
+	\purple{x \in L^{\star} \iff \exists c, A(x,c) = 1}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%

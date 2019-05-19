@@ -1,0 +1,18 @@
+% np-star.tex
+
+\begin{algorithm}[H]
+  % \caption{NP is closed under $\star$.}
+  % \label{alg:np-star}
+  \begin{algorithmic}[1]
+    \Procedure{V}{$x, c$}
+	  \For{\purple{$k \gets 1 \;\text{\bf to } |x|$}}
+		\State $m_0 \gets 0, m_k \gets |x|$
+
+		\hStatex
+		\If{\red{$c = c_1 \# c_2 \# \cdots \# c_k \& m_1 \& m_2 \& \cdots \& m_{k-1}$}}
+		  \State \Return \blue{$\bigwedge\limits_{i=1}^{i=k} V(x_{m_{i-1}+1 \ldots m_i}, c_i)$}
+		\EndIf
+	  \EndFor
+	\EndProcedure
+  \end{algorithmic}
+\end{algorithm}

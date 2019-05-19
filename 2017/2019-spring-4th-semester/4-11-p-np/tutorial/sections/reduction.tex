@@ -1,0 +1,69 @@
+% reduction.tex
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{definition}[Polynomial-time Reduction]
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \[
+	\forall L \in \np, \red{L \pr L'} \implies L' \text{ is } \nph
+  \]
+
+  \[
+	\npc = \np \cap \nph
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{exampleblock}{CLRS $34.5$-$6$}
+	\[
+	  \text{HAM-PATH is } \npc
+	\]
+  \end{exampleblock}
+
+  \pause
+  \[
+	\text{HAM-CYCLE} \pr \text{HAM-PATH}
+  \]
+
+  \centerline{$\pr$: split $v$ into $v_1, v_2$; add $s, t, (s,v_1), (v_2, t)$}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \[
+	\text{HAM-PATH} \pr \text{HAM-CYCLE}
+  \]
+
+  \centerline{$\pr$: add $v'; (v', v), \forall v \in V $}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \[
+	\text{HAM-PATH is } \npc
+  \]
+
+  \[
+	\text{HAM-CYCLE} \pr \text{HAM-PATH}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%

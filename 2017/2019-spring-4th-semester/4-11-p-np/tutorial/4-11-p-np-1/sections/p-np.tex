@@ -1,0 +1,126 @@
+% p-np.tex
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{\p}
+  \begin{exampleblock}{TC 34.1--5}
+	\[ 
+	  f(n) = O(n^c) \qquad t(n) = O(n^d)
+	\]
+  \end{exampleblock}
+
+  \[
+	\hbox{\sout{$T(n) = kf(n) + t(n)$}}
+  \]
+
+  \[
+	T_{k}(n) = \sum_{i=1}^{k}f^{(i)}(n) + t(n) 
+  \]
+
+  \[
+	k = O(1) \text{\emph{ vs. }} k = \Theta(n^{O(1)}) \qquad O \emph{\text{ vs. }} \Theta, \Omega
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{\conp{}}
+  \[
+	L \in \np \xLongrightarrow{?} \overline{L} \in \np
+  \]
+
+  \[
+	\overline{\text{SAT}} = \set{\phi: \phi \text{ is not satisfiable}}
+  \]
+
+  \[
+	\text{TAUT} = \set{\phi: \phi \text{ is a tautology}}
+  \]
+
+  \[
+	\conp = \set{L: \bar{L} \in \np}
+  \]
+
+  \begin{definition}[\conp]
+	$L \in \conp$ if $\exists$ polynomial-time \emph{verifier} $V(x,c)$ such that $\forall x \in \set{0,1}^{\ast}$,
+	\[
+	  x \in L \iff \red{\forall} c \in \set{0,1}^{\ast}, V(x,c) = 1.
+	\]
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{\np{} \emph{vs.} \conp{}}
+  \[
+	\conp{} \red{\neq} \set{0,1}^{\ast} \setminus \np
+  \]
+
+  \[
+	\p \subseteq \np \cap \conp
+  \]
+
+  \[
+	\p = \np \implies \np = \conp
+  \]
+
+  \[
+	\np \neq \conp \implies \p \neq \np
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{If $\hc \in \p$}
+  \begin{exampleblock}{TC 34.2--3}
+    \[
+	  \hc \in \p \implies \hc\text{-LIST} \in \p
+	\]
+  \end{exampleblock}
+
+  \begin{enumerate}
+	\item starting from $v$
+	\item removing each edge $e$ on $v$
+	\item checking $G \setminus e$
+	\item restoring and marking the critical edge $e = (v, u)$
+	\item $v = u$
+  \end{enumerate}
+
+  \begin{alertblock}{Question}
+	\centerline{remove $e \in E$ in arbitrary order if $(G \setminus e) \in \hc$?}
+  \end{alertblock}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{$G^3 \in \hc$}
+  \begin{exampleblock}{TC 34.2--11 (Karaganis, 1968)}
+	\[
+	  G^3 \in \hc
+	\]
+  \end{exampleblock}
+
+  \begin{alertblock}{References}
+	\begin{itemize}
+	  \item ``On the Cube of a Graph'' by Jerome J. Karaganis, 1968
+	  \item ``The Cube of Every Connected Graph is 1-Hamiltonian'' by Gary Chartrand and S. F. Kapoor, 1968
+	  \item \url{http://www.aco.gatech.edu/sites/default/files/documents/comp-fa14sol.pdf}
+	  \end{itemize}
+  \end{alertblock}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{$G^3 \in \hc$}
+  \begin{theorem}[$T^3 \in \hc$]
+	Let $T = (V, E)$ be a tree. For any edge $e \in E$, there is a Hamilton cycle on $T^3$ that contains $e$.
+  \end{theorem}
+
+  \begin{proof}
+	\centerline{By induction on subtrees obtained by removing any edge $e = (u,v)$.}
+  \end{proof}
+
+  \begin{alertblock}{Question}
+	In I.S., choose edge $e = (u,v)$ with $u$ or $v$ being a leaf?
+  \end{alertblock}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%

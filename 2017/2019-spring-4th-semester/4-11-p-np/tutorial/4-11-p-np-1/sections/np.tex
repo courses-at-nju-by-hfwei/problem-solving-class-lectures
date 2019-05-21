@@ -1,0 +1,84 @@
+% np.tex
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{definition}[\np]
+	\[
+	  L \in \np
+	\]
+	\[
+	  \iff
+	\]
+	\begin{center}
+	  \red{$\exists$} \blue{poly.} time \emph{verifier} $V(x,c)$ such that
+	\end{center}
+	\[
+	  \forall x \in \set{0,1}^{\ast}: x \in L \iff \exists c \text{ with } |c| = O(|x|^{k}), V(x,c) = 1.
+	\]
+  \end{definition}
+
+  \vspace{0.50cm}
+  \begin{center}
+	{\large \np-problems has short \red{certificates} that are easy to verify.}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \[
+	\red{\exists L: L \notin \np?}
+  \]
+
+  \pause
+  \fig{width = 0.50\textwidth}{figs/halting-problem}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \[
+	\red{\exists L: L \notin \np \land L \text{ is decidable}?}
+  \]
+
+  \pause
+  \begin{theorem}[Deterministic Time Hierarchy Theorem ($1965$)]
+	\[
+	  f(n) \log f(n) = o\big(g(n)\big) \implies \dtime\big(f(n)\big) \subsetneqq \dtime\big(g(n)\big)
+	\]
+  \end{theorem}
+
+  \pause
+  \[
+	\p \subsetneqq \text{EXP}
+  \]
+
+  \pause
+  \begin{theorem}[Non-deterministic Time Hierarchy Theorem (Cook, $1972$)]
+	\[
+	  f(n + 1) = o(g(n)) \implies \ntime(f(n)) \subsetneqq \ntime(g(n))
+	\]
+  \end{theorem}
+
+  \pause
+  \[
+	\np \subsetneqq \nexp
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \[
+	\red{\exists L: L \notin \np \land L \text{ is decidable}?}
+  \]
+
+  \pause
+  \vspace{0.50cm}
+  \begin{exampleblock}{``Equivalence of Regular Expressions \red{with Squaring}'' is \nexpc:}
+	\[
+	  e_1 \cup e_2,\quad e_1 \cdot e_2,\quad \red{e^{2}}
+	\]
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%

@@ -1,0 +1,76 @@
+% decide.tex
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{columns}
+	\column{0.50\textwidth}
+	  \fig{width = 0.80\textwidth}{figs/decide}
+	\column{0.50\textwidth}
+	  \fig{width = 0.65\textwidth}{figs/accept}
+  \end{columns}
+
+  \begin{columns}
+	\column{0.50\textwidth}
+	  \pause
+	  \fig{width = 0.75\textwidth}{figs/decide-yes-no}
+
+	  \pause
+	  \begin{center}
+		\red{\large Always terminate.}
+	  \end{center}
+	\column{0.50\textwidth}
+	  \pause
+	  \fig{width = 0.70\textwidth}{figs/loop}
+	  \begin{center}
+		\red{\large May loop forever for ``NO'' instance.}
+	  \end{center}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{definition}[Halting Problem]
+	\begin{description}
+	  \item[Input:] An arbitrary program and input
+	  \item[Output:] Will the program eventually halt?
+	\end{description}
+  \end{definition}
+
+  \begin{columns}
+	\column{0.50\textwidth}
+	  \fig{width = 0.50\textwidth}{figs/turing-16}
+	\column{0.50\textwidth}
+	  \fig{width = 0.80\textwidth}{figs/halting-problem}
+  \end{columns}
+
+  \pause
+  \begin{center}
+	\red{\large Undecidable} \pause \\[4pt] 
+    \blue{\large But Acceptable (Semi-decidable)}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \[
+	\p = \Big\{ L: L \text{ is \red{\large decided} by a poly. time algorithm} \Big\}
+  \]
+
+  \pause
+  \vspace{0.30cm}
+  \begin{theorem}[Theorem $34.2$]
+	\[
+	  \p = \Big\{ L: L \text{ is \red{\large accepted} by a poly. time algorithm} \Big\}
+	\]
+  \end{theorem}
+
+  \pause
+  \vspace{0.60cm}
+  \begin{quote}
+	\centering
+	\purple{\large You can safely forget ``semi-decidable'' \\ in computational complexity theory.}
+  \end{quote}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%

@@ -1,0 +1,68 @@
+% overview.tex
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \fig{width = 0.50\textwidth}{figs/godel-letter}
+
+  \begin{columns}
+	\column{0.50\textwidth}
+	  \fig{width = 0.90\textwidth}{figs/godel}
+	  \begin{center}
+		\href{https://en.wikipedia.org/wiki/Kurt\_G\%C3\%B6del}{Kurt G\"odel ($1906 \sim 1978$)}
+	  \end{center}
+	\column{0.50\textwidth}
+	  \fig{width = 0.80\textwidth}{figs/von-neumann}
+	  \begin{center}
+		\href{https://en.wikipedia.org/wiki/John\_von\_Neumann}{John von Neumann ($1903 \sim 1957$)}
+	  \end{center}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \[
+	\purple{\vdash F} \pause : F \text{ is provable}
+  \]
+
+  \pause
+  \[
+	\vdash^{n} F: F \text{ has a first-order proof of \red{$\le n$ symbols}}
+  \]
+
+  \pause
+  \[
+	\red{\thm{} = \Big\{ (F, \blue{1^{n}}):\; \vdash^{n} F \Big\}}
+  \]
+
+  \pause
+  \vspace{0.50cm}
+  \begin{quote} 
+	\centering
+	``If there really were a machine with \\[3pt]
+	$\varphi(n) \sim k \cdot n$ (or even $\sim k \cdot n^2$), \\[3pt]
+	this would have consequences of the greatest importance.''
+  \end{quote}
+\end{frame}
+%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \[
+	\red{\thm{} = \Big\{ (F, \blue{1^{n}}):\; \vdash^{n} F \Big\}}
+  \]
+
+  \pause
+  \[
+	\thm{} \in \np
+  \]
+
+  \pause
+  \[
+	\thm{} \text{ is NP-complete.}
+  \]
+
+  \pause
+  \fig{width = 0.25\textwidth}{figs/qrcode-theorem-npc}
+\end{frame}
+%%%%%%%%%%%%%%%%%

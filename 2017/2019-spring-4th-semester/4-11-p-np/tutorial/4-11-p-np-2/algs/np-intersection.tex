@@ -1,0 +1,16 @@
+% np-intersection.tex
+
+\begin{algorithm}[H]
+  % \caption{NP is closed under $\cap$.}
+  % \label{alg:np-intersection}
+  \begin{algorithmic}[1]
+    \Procedure{V}{$x, c$}
+	\If{\red{$c \neq c_1 \# c_2$}}
+	  \State \Return $0$
+	\EndIf
+
+	\Statex
+	\State \Return \blue{$V(x, c_1) \land V(x, c_2)$}
+    \EndProcedure
+  \end{algorithmic}
+\end{algorithm}

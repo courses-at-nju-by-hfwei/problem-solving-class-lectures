@@ -1,0 +1,134 @@
+% preamble.tex
+
+\usepackage{lmodern}
+
+% \usepackage{CJKutf8}
+\usepackage{xeCJK}
+\usetheme{CambridgeUS} % try Pittsburgh
+\usecolortheme{beaver}
+\usefonttheme[]{serif} % try "professionalfonts"
+
+\setbeamertemplate{itemize items}[default]
+\setbeamertemplate{enumerate items}[default]
+
+\usepackage{animate}
+\usepackage{xmpmulti}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks = true,
+    linkcolor = purple,
+    filecolor = magenta,      
+    urlcolor = cyan,
+}
+
+% \usepackage{cancel, ulem}
+
+\usepackage{amsmath, amsfonts, latexsym, mathtools, tabu}
+\usepackage{centernot}
+\newcommand{\z}{\mathbb{Z}}
+
+\usepackage{amstext} % for \text macro
+\usepackage{array}   % for \newcolumntype macro
+\newcolumntype{C}{>{$}c<{$}} % math-mode version of "l" column type
+
+\newcommand{\set}[1]{\left\{ #1 \right\}}
+\newcommand{\bset}[1]{\big\{ #1 \big\}}
+\newcommand{\Bset}[1]{\Big\{ #1 \Big\}}
+\newcommand{\ps}[1]{\mathcal{P}(#1)}
+\usepackage{bm}
+\DeclareMathOperator*{\argmin}{\arg\!\min}
+\DeclareMathOperator*{\E}{\mathbb{E}}
+
+% colors
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\redoverlay}[2]{\textcolor<#2>{red}{#1}}
+\newcommand{\green}[1]{\textcolor{green}{#1}}
+\newcommand{\greenoverlay}[2]{\textcolor<#2>{green}{#1}}
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+\newcommand{\blueoverlay}[2]{\textcolor<#2>{blue}{#1}}
+\newcommand{\purple}[1]{\textcolor{purple}{#1}}
+\newcommand{\cyan}[1]{\textcolor{cyan}{#1}}
+\newcommand{\violet}[1]{\textcolor{violet}{#1}}
+\newcommand{\brown}[1]{\textcolor{brown}{#1}}
+\newcommand{\lgray}[1]{\textcolor{lightgray}{#1}}
+\newcommand{\teal}[1]{\textcolor{teal}{#1}}
+
+% colorded box
+\newcommand{\rbox}[1]{\red{\boxed{#1}}}
+\newcommand{\gbox}[1]{\green{\boxed{#1}}}
+\newcommand{\bbox}[1]{\blue{\boxed{#1}}}
+\newcommand{\pbox}[1]{\purple{\boxed{#1}}}
+
+\usepackage[linewidth = 1pt, framemethod = TikZ]{mdframed}
+\mdfsetup{frametitlealignment=\center}
+
+% #1: color; #2: text
+\newcommand{\hl}[2]{\fcolorbox{#1}{#1!50}{#2}}
+
+\usepackage{pifont}
+\usepackage{wasysym}
+
+\newcommand{\pno}[1]{\textcolor{blue}{\scriptsize [Problem: #1]}}
+
+\newcommand{\cmark}{\green{\ding{51}}}
+\newcommand{\xmark}{\red{\ding{55}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% for fig without caption: #1: width/size; #2: fig file
+\newcommand{\fig}[2]{
+  \begin{figure}[htp]
+    \centering
+      \includegraphics[#1]{#2}
+  \end{figure}
+}
+
+\newcommand{\sym}{\textsl{Sym}}
+\newcommand{\gen}[1]{\langle #1 \rangle}
+\newcommand{\card}[1]{\lvert #1 \rvert}
+\newcommand{\bcard}[1]{\big\lvert #1 \big\rvert}
+\newcommand{\Bcard}[1]{\Big\lvert #1 \Big\rvert}
+
+\usepackage{adjustbox}
+\usepackage{tikz}
+\usetikzlibrary{shapes, positioning, fit}
+
+% algorithm
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\newcommand{\hStatex}[0]{\vspace{5pt}}
+
+\newcommand{\p}{\text{P}}
+\newcommand{\np}{\text{NP}}
+\newcommand{\conp}{\text{coNP}}
+\newcommand{\pr}{\le_{p}} % polynomial reduction
+\newcommand{\nph}{\text{NP-hard}}
+\newcommand{\npc}{\text{NP-complete}}
+\newcommand{\npi}{\text{NP-intermediate}}
+\newcommand{\conpc}{\text{coNP-complete}}
+\newcommand{\expcls}{\text{EXP}}
+\newcommand{\rcls}{\text{R}}
+\newcommand{\dtime}{\text{DTIME}}
+\newcommand{\ntime}{\text{NTIME}}
+\newcommand{\nexp}{\text{NEXP}}
+\newcommand{\nexpc}{\text{NEXP-complete}}
+\newcommand{\dspace}{\text{SPACE}}
+\newcommand{\pspace}{\text{PSPACE}}
+\newcommand{\pspacec}{\text{PSPACE-complete}}
+\newcommand{\expspacec}{\text{EXPSPACE-complete}}
+\newcommand{\ph}{\text{PH}}
+\newcommand{\hp}{\text{HAM-PATH}}
+\newcommand{\hc}{\text{HAM-CYCLE}}
+\newcommand{\partition}{\text{3-PARTITION}}
+\newcommand{\tetris}{\text{TETRIS}}
+\newcommand{\taut}{\text{TAUT}}
+\newcommand{\sat}{\text{SAT}}
+\newcommand{\unsat}{\text{UNSAT}}
+\newcommand{\thm}{\text{THEOREM}}
+
+\newcommand{\titletext}{4-11 P and NP (II)}
+ 
+\newcommand{\thankyou}{
+  \begin{frame}[noframenumbering]{}
+    \fig{width = 0.55\textwidth}{figs/thankyou}
+  \end{frame}
+}

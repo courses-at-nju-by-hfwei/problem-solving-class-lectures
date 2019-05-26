@@ -1,0 +1,16 @@
+% np-concat.tex
+
+\begin{algorithm}[H]
+  % \caption{NP is closed under $\cdot$.}
+  % \label{alg:np-concat}
+  \begin{algorithmic}[1]
+    \Procedure{V}{$x, c$}
+	\If{\teal{$c \neq c_1 \# c_2 \red{\&m}$}}
+	  \State \Return $0$
+	\EndIf
+
+	\Statex
+	\State \Return \blue{$V(x_{\red{1 \ldots m}}, c_1) \land V(x_{\red{m+1 \ldots |x|}}, c_2)$}
+    \EndProcedure
+  \end{algorithmic}
+\end{algorithm}

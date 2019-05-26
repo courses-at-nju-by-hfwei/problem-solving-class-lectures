@@ -1,4 +1,4 @@
-# 4-11-p-np
+# 4-11-p-np-2
 
 ## TODO
-- [ ] Survey of Reductions (History)
+- [ ] Godel: THEOREM \in NP-complete

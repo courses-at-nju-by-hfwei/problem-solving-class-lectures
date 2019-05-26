@@ -1,0 +1,109 @@
+% np.tex
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{definition}[\np]
+	\[
+	  L \in \np
+	\]
+	\[
+	  \iff
+	\]
+	\begin{center}
+	  \red{$\exists$} \blue{poly.} time \emph{verifier} $V(x,c)$ such that
+	\end{center}
+	\[
+	  \forall x \in \set{0,1}^{\ast}: x \in L \iff \red{\exists} c \text{ with } |c| = O(|x|^{k}), V(x,c) = 1.
+	\]
+  \end{definition}
+
+  \vspace{0.50cm}
+  \begin{center}
+	{\large \np-problems has short \red{certificates} that are easy to verify.}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{theorem}
+	\[
+	  \p{} \subseteq \np{} \subseteq \expcls{}
+	\]
+  \end{theorem}
+
+  \pause
+  \[
+	\p = \Big\{ L: L \text{ is decided by a poly. time \red{($O(n^k)$)} algorithm } A \Big\}
+  \]
+  \[
+	\expcls = \Big\{ L: L \text{ is decided by an exp. time \red{($O(2^{n^{k}})$)} algorithm } A \Big\}
+  \]
+
+  \pause
+  \begin{proof}
+	\begin{columns}
+	  \column{0.50\textwidth}
+		\pause
+		\[
+		  \p{} \subseteq \np{}
+		\]
+
+		\pause
+		\[
+		  \purple{V \gets A}
+		\]
+		\[
+		  \purple{c \gets \epsilon}
+		\]
+	  \column{0.50\textwidth}
+		\pause
+		\[
+		  \np{} \subseteq \expcls{}
+		\]
+
+		\pause
+		\begin{center}
+		  \purple{Enumerate all possible $c$'s ($\# = 2^{O(|x|^{k})}$)}
+		\end{center}
+	\end{columns}
+  \end{proof}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \fig{width = 0.50\textwidth}{figs/yan-np}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{exampleblock}{HC-SUBGRAPH}
+	\begin{description}
+	  \item[\textsc{Instance}:] Graph $G = (V, E)$, $k \in \mathbb{N}$
+	  \item[\textsc{Question}:] Is there a $V'$-induced subgraph $G[V']$ of $G$ with $|V'| \ge k$ which is Hamiltonian?
+	\end{description}
+  \end{exampleblock}
+
+  \pause
+  \[
+	\red{Q: \text{HC-SUBGRAPH} \in \np?}
+  \]
+
+  \pause
+  \[
+	\blue{c: V' \text{ in HC order}}
+  \]
+
+  \pause
+  \[
+	\red{Q: \text{HC-SUBGRAPH} \in \npc?}
+  \]
+
+  \pause
+  \[
+	\blue{\hc{} \pr{} \text{HC-SUBGRAPH}}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%

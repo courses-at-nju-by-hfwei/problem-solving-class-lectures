@@ -228,3 +228,28 @@
 %   \centerline{$\pr$: add $v'; (v', v), \forall v \in V $}
 % \end{frame}
 %%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{theorem}[CLRS $34.5$-$2$]
+	\[
+	  0/1\; \ilp{} \text{ is NP-complete.}
+	\]
+  \end{theorem}
+
+  \pause
+  \[
+	0/1\; \ilp{} \in \np
+  \]
+
+  \pause
+  \[
+	\red{3\text{-CNF-SAT} \pr 0/1\; \ilp}
+  \]
+
+  \pause
+  \[
+	\blue{x_1 \lor \overline{x_2} \lor \overline{x_3} \iff \pause x_1 + (1-x_2) + (1-x_3) \ge 1, \quad x_i \in \set{0, 1}}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%

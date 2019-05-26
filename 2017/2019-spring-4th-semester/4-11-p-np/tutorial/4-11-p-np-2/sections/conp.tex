@@ -21,13 +21,41 @@
 	  \iff
 	\]
 	\begin{center}
-	  \red{$\exists$} \blue{poly.} time \emph{verifier} $V(x,u)$ such that
+	  \red{$\exists$} \blue{poly.} time \emph{verifier} $V(x,c)$ such that
 	\end{center}
 	\pause 
 	\[
-	  \forall x \in \set{0,1}^{\ast}: x \in L \iff \red{\forall} u \text{ with } |u| = O(|x|^{k}), V(x,u) = 1.
+	  \forall x \in \set{0,1}^{\ast}: \red{x \notin L} \iff \red{\exists} c \text{ with } |c| = O(|x|^{k}), V(x,c) = 1.
 	\]
   \end{definition}
+
+  \pause
+  \begin{center}
+	{\large \conp-problems has short \red{counterexamples} that are easy to verify.}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \[
+	\text{PM} = \Big\{ G: G \text{ is bipartite ($V = X \uplus Y$) and has a perfect matching} \Big\}
+  \]
+
+  \pause
+  \[
+	\text{PM} \in \np
+  \]
+
+  \pause
+  \[
+	\text{PM} \in \conp
+  \]
+
+  \pause
+  \[
+	\forall A \subseteq X: \Big\lvert N(A) \Big\rvert \ge \big\lvert A \big\rvert \only<5->{\quad \text{\teal{(Hall's Condition)}}}
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
@@ -52,7 +80,7 @@
 
   \pause
   \[
-	\np \neq \conp \;\red{\xRightarrow{?}}\; \p \neq \np
+	\np \neq \conp \;\red{\xRightarrow{\;?\;}}\; \p \neq \np
   \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%

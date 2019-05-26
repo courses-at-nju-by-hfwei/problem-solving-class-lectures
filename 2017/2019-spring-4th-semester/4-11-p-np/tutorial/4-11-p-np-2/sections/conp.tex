@@ -2,25 +2,57 @@
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}
+  \pause
+  \[
+	\conp = \set{L: \overline{L} \in \np}
+  \]
+
+  \pause
+  \[
+	\unsat = \Big\{ \varphi: \varphi \text{ is unsatisfiable.} \Big\}
+  \]
+
+  \pause
+  \begin{definition}[\conp]
+	\[
+	  L \in \conp
+	\]
+	\[
+	  \iff
+	\]
+	\begin{center}
+	  \red{$\exists$} \blue{poly.} time \emph{verifier} $V(x,u)$ such that
+	\end{center}
+	\pause 
+	\[
+	  \forall x \in \set{0,1}^{\ast}: x \in L \iff \red{\forall} u \text{ with } |u| = O(|x|^{k}), V(x,u) = 1.
+	\]
+  \end{definition}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%
+  \[
+	\conp{} \;\red{\neq}\; \set{0,1}^{\ast} \setminus \np
+  \]
 
-%%%%%%%%%%%%%%%%%%%%
-\begin{frame}
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%
+  \pause
+  \[
+	\p \subseteq \np \cap \conp
+  \]
 
-%%%%%%%%%%%%%%%%%%%%
-\begin{frame}
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%
+  \pause
+  \[
+	\p = \np \implies \np = \conp
+  \]
 
-%%%%%%%%%%%%%%%%%%%%
-\begin{frame}
+  \pause
+  \fig{width = 0.40\textwidth}{figs/np-conp-open}
+
+  \pause
+  \[
+	\np \neq \conp \;\red{\xRightarrow{?}}\; \p \neq \np
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%

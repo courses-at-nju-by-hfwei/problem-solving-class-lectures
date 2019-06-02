@@ -1,0 +1,96 @@
+% apx-class.tex
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  % \begin{center}
+  %   \red{NPO = \set{Optimization problems that have decision counterparts in NP}}
+  % \end{center}
+
+  \begin{definition}[NPO: NP Optimization]
+	\[
+	  \Pi = (L, sol, cost, goal)
+	\]
+
+	\pause
+	\begin{columns}
+	  \column{0.15\textwidth}
+	  \column{0.70\textwidth}
+		\begin{description}
+		  \item[$L:$] $l \in L$ is an instance \\ 
+			\red{\it decidable in poly. time}
+		  \item[$sol:$] $x \in sol(l)$ is a feasible solution of $l$ \\ 
+			\red{\it verifiable in poly. time}
+		  \item[$cost:$] $cost(x)$ is the cost of $x$ \\
+			\red{\it computable in poly. time}
+		  \item[$goal:$] $goal \in \set{\min, \max}$
+		\end{description}
+	  \column{0.15\textwidth}
+	\end{columns}
+  \end{definition}
+
+  % \begin{center}
+  %   \red{PO = \{Poly. time solvable optimization problems\}}
+  % \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{columns}
+	\column{0.10\textwidth}
+	\column{0.80\textwidth}
+	  \begin{description}
+		\setlength{\itemsep}{12pt}
+		\item[$f(n)$-APX:] $f(n)$-approximation
+		  \begin{description}
+			\setlength{\itemsep}{4pt}
+			\item[Exp-APX:] $f(n) = O(2^{n^{c}})$
+			\item[Poly-APX:] $f(n) = O(n^{c})$
+			\item[Log-APX:] $f(n) = O(\log n)$
+			\item[APX:] $f(n) = c\; (c > 1)$
+		  \end{description}
+		\pause
+		\item[PTAS:] Poly. time approximation scheme
+		  \begin{itemize}
+			\item $\forall \epsilon > 0: \purple{(1 + \epsilon)}$-approximation
+			\item $\red{\p: \poly(n)} \qquad \blue{O((1/\epsilon) \cdot n^2)} \quad \blue{O(n^{2/\epsilon})}$
+		  \end{itemize}
+		\item[FPTAS:] Fully poly. time approximation scheme
+		  \begin{itemize}
+			\item $\forall \epsilon > 0: \purple{(1 + \epsilon)}$-approximation
+			\item $\red{\fp: \poly(n, 1/\epsilon)} \qquad \blue{O((1/\epsilon)^2 \cdot n^3)}$
+		  \end{itemize}
+	  \end{description}
+	\column{0.10\textwidth}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \[
+	\red{(\text{if } \p{} \neq \np{})}
+  \]
+  \begin{align*}
+	\po &\subsetneq \fptas \subsetneq \ptas \\
+	&\subsetneq \apx \subsetneq \logapx \subsetneq \polyapx \subsetneq \expapx \\
+	&\subsetneq \npo
+  \end{align*}
+
+  \pause
+  \begin{columns}
+	\column{0.17\textwidth}
+	\column{0.65\textwidth}
+	  \begin{itemize}
+		\setlength{\itemsep}{5pt}
+		\item $\text{Knapsack} \in \fptas \setminus \po$
+		\item \red{$\text{Makespan} \in \ptas \setminus \fptas$ ({\small TODAY})}
+		\item $\text{Vertex Cover} \in \apx \setminus \ptas$ 
+		\item $\text{Set Cover} \in \logapx \setminus \apx$ ({\small \blue{CLRS 35.3}})
+		\item $\text{Clique} \in \polyapx \setminus \logapx$
+		\item $\text{TSP} \in \expapx \setminus \polyapx$
+	  \end{itemize}
+	\column{0.17\textwidth}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%

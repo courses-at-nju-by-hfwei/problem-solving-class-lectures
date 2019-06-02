@@ -1,141 +1,21 @@
 \documentclass{beamer}
-\usepackage{lmodern}
 
-\usepackage{xeCJK}
-
-\usepackage[safe]{silence}
-\WarningFilter*{latexfont}{Font}
-
-\usetheme{CambridgeUS} % try Madrid, Pittsburgh
-\usecolortheme{beaver}
-\usefonttheme[onlymath]{serif} % try "professionalfonts"
-
-\setbeamertemplate{theorems}[normal font]
-\setbeamertemplate{itemize items}[default]
-\setbeamertemplate{enumerate items}[default]
-
-\usepackage{amsmath, amsfonts, latexsym, mathtools, extarrows}
-% \usepackage{kbordermatrix}
-% \usepackage{ntheorem}
-
-\usepackage{centernot}
-
-\DeclareMathOperator*{\argmin}{arg\,min}
-\DeclareMathOperator*{\argmax}{arg\,max}
-
-% colors
-\newcommand{\red}[1]{\textcolor{red}{#1}}
-\newcommand{\green}[1]{\textcolor{green}{#1}}
-\newcommand{\blue}[1]{\textcolor{blue}{#1}}
-\newcommand{\purple}[1]{\textcolor{purple}{#1}}
-
-% color box
-\newcommand{\rbox}[1]{\red{\boxed{#1}}}
-\newcommand{\gbox}[1]{\green{\boxed{#1}}}
-\newcommand{\bbox}[1]{\blue{\boxed{#1}}}
-\newcommand{\pbox}[1]{\purple{\boxed{#1}}}
-
-\usepackage{tikz}
-% see http://tex.stackexchange.com/a/7045/23098
-\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
-            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
-\usepackage{tikz-qtree}
-\usetikzlibrary{backgrounds, fit}
-
-\usepackage{pifont}
-\usepackage{wasysym}
-
-\usepackage[normalem]{ulem}
-\newcommand{\middlewave}[1]{\raisebox{0.5em}{\uwave{\hspace{#1}}}}
-
-\usepackage{graphicx, subcaption}
-
-\usepackage{algorithm}
-\usepackage[noend]{algpseudocode}
-
-\newcommand{\pno}[1]{\textcolor{blue}{\scriptsize [Problem: #1]}}
-\newcommand{\set}[1]{\{#1\}}
-\DeclareMathOperator{\lcm}{lcm}
-
-\newcommand{\cmark}{\green{\ding{51}}}
-\newcommand{\xmark}{\red{\ding{55}}}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% for fig without caption: #1: width/size; #2: fig file
-\newcommand{\fignocaption}[2]{
-  \begin{figure}[htp]
-    \centering
-      \includegraphics[#1]{#2}
-  \end{figure}
-}
-
-% for fig with caption: #1: width/size; #2: fig file; #3: fig caption
-\newcommand{\fig}[3]{
-  \begin{figure}[htp]
-    \centering
-      \includegraphics[#1]{#2}
-      \caption[labelInTOC]{#3}
-  \end{figure}
-}
-
-\newcommand{\p}{\text{P}}
-\newcommand{\np}{\text{NP}}
-\newcommand{\conp}{\text{coNP}}
-\newcommand{\pr}{\le_{p}} % polynomial reduction
-\newcommand{\nph}{\text{NP-hard}}
-\newcommand{\npc}{\text{NP-complete}}
-\newcommand{\npi}{\text{NP-intermediate}}
-\newcommand{\conpc}{\text{coNP-complete}}
-\newcommand{\expcls}{\text{EXP}}
-\newcommand{\rcls}{\text{R}}
-\newcommand{\dtime}{\text{DTIME}}
-\newcommand{\dspace}{\text{SPACE}}
-\newcommand{\pspace}{\text{PSPACE}}
-\newcommand{\pspacec}{\text{PSPACE-complete}}
-\newcommand{\ph}{\text{PH}}
-\newcommand{\hp}{\text{HAM-PATH}}
-\newcommand{\hc}{\text{HAM-CYCLE}}
-\newcommand{\fp}{\text{FP}}
-\newcommand{\poly}{\text{Poly}}
-\newcommand{\po}{\text{PO}}
-\newcommand{\fptas}{\text{FPTAS}}
-\newcommand{\ptas}{\text{PTAS}}
-\newcommand{\apx}{\text{APX}}
-\newcommand{\logapx}{\text{Log-APX}}
-\newcommand{\polyapx}{\text{Poly-APX}}
-\newcommand{\expapx}{\text{Exp-APX}}
-\newcommand{\npo}{\text{NPO}}
-\newcommand{\ms}{\text{MS}}
-
-\newcommand{\titletext}{Approximation Algorithms}
-
-\newcommand{\tx}{%
-  \section*{}
-  \begin{frame}[noframenumbering]
-	\fignocaption{width = 0.50\textwidth}{figs/thankyou.jpg}
-  \end{frame}
-}
+\input{preamble}
 %%%%%%%%%%%%%%%%%%%%
 \title[\titletext]{\titletext}
 % \subtitle{}
 
 \author[Hengfeng Wei]{Hengfeng Wei}
-\titlegraphic{\includegraphics[height = 1.5cm]{figs/qrcode-approx-alg-20170518.png}}
+\titlegraphic{\includegraphics[height = 1.5cm]{figs/qrcode-problem-solving-2017-4}}
 \institute{hfwei@nju.edu.cn}
-\date{May 14 $\sim$ May 18, 2017}
-
-\AtBeginSection[]{
-  \begin{frame}[noframenumbering, plain]
-    \frametitle{\titletext}
-    \tableofcontents[currentsection, sectionstyle=show/shaded, subsectionstyle=show/show/hide]
-  \end{frame}
-}
+\date{June 03, 2019}
 %%%%%%%%%%
 \begin{document}
 \maketitle
 
-\input{sections/approx-class}
-\input{sections/approx-alg}
-\tx{}
+\input{sections/overview}
+\input{sections/apx-class}
+\input{sections/apx-alg}
 
 \end{document}
 %%%%%%%%%%

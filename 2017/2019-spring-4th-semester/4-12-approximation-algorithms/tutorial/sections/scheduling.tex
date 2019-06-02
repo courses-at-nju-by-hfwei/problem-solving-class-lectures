@@ -1,0 +1,402 @@
+% scheduling.tex
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{exampleblock}{Makespan Scheduling Problem (\ms{})}
+	\begin{itemize}
+	  \item $n$ jobs: $J_1, \dots, J_n$
+	  \item processing time: $p_1, \dots, p_n$
+	  \item $m \ge 2$ machines: $M_1, \dots, M_m$
+	 ­\item goal: minimize the makespan
+	\end{itemize}
+  \end{exampleblock}
+
+  \pause
+  \[
+	r = \red{\frac{T}{T^{\ast}} \le \Box}
+  \]
+
+  \pause
+  \[
+	\blue{T \le \bigtriangleup}
+  \]
+  \[
+	\blue{T^{\ast} \ge \bigtriangledown}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{columns}
+	\column{0.50\textwidth}
+	  \[
+		\red{T^{\ast} \ge \bigtriangledown}
+	  \]
+
+	  \uncover<2->{
+		\[
+		  \blue{T^{\ast} \ge \frac{1}{m} \sum_{j} p_j}
+		\]
+
+		\[
+		  \blue{T^{\ast} \ge \max_{j} p_j}
+		\]
+	  }
+	\column{0.50\textwidth}
+	  \[
+		\red{T \le \bigtriangleup}
+	  \]
+
+	  \uncover<3->{
+		\[
+		  \purple{J_i: \text{the last job to complete}}
+		\]
+
+		\pause
+		\vspace{-0.50cm}
+		\blue{
+		\begin{align*}
+		  T &= s_i + p_i \\
+			&\le\; ? + ?
+		\end{align*}}
+	  }
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{exampleblock}{LS (List-Scheduling) Algorithm (JH $4.2.1.4$)}
+	\begin{itemize}
+	  \item Online scheduling
+	  \item Assign job to the least heavily loaded
+	\end{itemize}
+  \end{exampleblock}
+
+  \pause
+  \begin{columns}
+	\column{0.50\textwidth}
+	  \[
+		\red{ms_i \le \sum_{j} p_j} 
+	  \]
+
+	  \[
+		\blue{s_i \le \frac{1}{m} \sum_{j} p_j \le T^{\ast}}
+	  \]
+
+	  \pause
+	  \begin{align*}
+		T &= s_i + p_i \\
+		  &\purple{\le T^{\ast} + T^{\ast}} \\
+		  &= 2T^{\ast}
+	  \end{align*}
+	\column{0.50\textwidth}
+	  \pause
+	  \[
+		\red{ms_i \le \sum_{\red{j \neq i}} p_j} 
+	  \]
+
+	  \[
+		\blue{s_i \le \frac{1}{m} \sum_{j} p_j - \frac{1}{m} p_{i}}
+	  \]
+
+	  \pause
+	  \begin{align*}
+		T &= s_i + p_i \\
+		&\le \frac{1}{m} \sum_{j} p_j + (1 - \frac{1}{m}) p_{i} \\
+		&\purple{\le T^{\ast} + (1 - \frac{1}{m}) T^{\ast}} \\
+		&= (2 - \frac{1}{m}) T^{\ast}
+	  \end{align*}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \[
+	\red{\text{$(2-\frac{1}{m})$ is tight}}
+  \]
+
+  \pause
+  \vspace{0.30cm}
+  \[
+	\frac{T}{T^{\ast}} = 2 - \frac{1}{m} = \frac{2m - 1}{m}
+  \]
+
+  \pause
+  \vspace{0.30cm}
+  \[
+	\blue{n \text{ jobs } = \Big\{ \underbrace{p_i = 1}_{\# = m(m - 1)},\; \underbrace{p_i = m}_{\# = 1} \Big\}}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{exampleblock}{Longest Processing Time (LPT) Rule (JH $4.2.1.5$)}
+	\begin{itemize}
+	  \item Sorting non-increasingly
+	  \item Applying LS
+	\end{itemize}
+  \end{exampleblock}
+
+  \pause
+  \[
+	T = s_i + p_i 
+  \]
+
+  \begin{columns}
+	\column{0.50\textwidth}
+	  \[
+		s_i \le T^{\ast}
+	  \]
+	  \[
+		s_i \le \frac{1}{m} \sum_{j} p_j - \frac{1}{m} p_{i}
+	  \]
+	\column{0.50\textwidth}
+	  \[
+		p_i \le T^{\ast}
+	  \]
+  \end{columns}
+
+  \pause
+  \vspace{0.50cm}
+  \[
+	\red{\Big|M_i\Big| \ge 2 \implies p_i \le \frac{1}{2} T^{\ast}} \qquad \blue{(J_i \text{ is on } M_i)}
+  \]
+
+  \pause
+  \[
+	T = s_i + p_i \le \purple{\frac{1}{m} \sum_{j} p_j + (1 - \frac{1}{m}) p_{i}} \le (\frac{3}{2} - \frac{1}{2m}) T^{\ast}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \[
+	\red{T = s_i + p_i \le \frac{1}{m} \sum_{j} p_j + (1 - \frac{1}{m}) p_{i}} \le \blue{\frac{4}{3} - \frac{1}{3m}}
+  \]
+
+  \pause
+  \[
+	p_1 \ge \cdots \ge \blue{p_i} \ge \cdots \ge p_n
+  \]
+
+  \begin{description}
+	\item[CASE $p_i \le \frac{1}{3} T^{\ast}$:] 
+	  \[
+		T \le (\frac{4}{3} - \frac{1}{3m}) T^{\ast}
+	  \]
+	\item[CASE $p_i > \frac{1}{3} T^{\ast}$:]
+	  \pause
+	  \[
+		\purple{\text{Consider } p_1 \ge \cdots \ge p_i > \frac{1}{3} T^{\ast}}
+	  \]
+
+	  \pause
+	  \[
+		\text{\teal{Upper bound for $\frac{T}{T^{\ast}}$} \small ($T$ unchanged; $T^{\ast}$ not smaller)}
+	  \]
+
+	  \pause
+	  \[
+		\red{T = T^{\ast}}
+	  \]
+
+	  \vspace{-0.60cm}
+	  \begin{columns}
+		\column{0.30\textwidth}
+		  \pause
+		  \[
+			\forall i: \Big|M_i\Big| \le 2
+		  \]
+		  \[
+			n = 2m - h 
+		  \]
+		\column{0.70\textwidth}
+		  \pause
+		  \[
+			J_1, J_2, \cdots, J_h, \quad  J_{h+1}, J_{h+2}, \cdots, J_{n-1}, J_{n}
+		  \]
+	  \end{columns}
+  \end{description}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+	\red{(\frac{4}{3} - \frac{1}{3m}) \text{ is tight}}
+  \]
+
+  \pause
+  \[
+	\frac{4}{3} - \frac{1}{3m} = \frac{4m-1}{3m}
+  \]
+
+  \pause
+  \[
+	n = 2m + 1
+  \]
+
+  \[
+	J = \set{2m-1, 2m-1,\dots, m+1, m+1, m,m,m}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+% %%%%%%%%%%%%%%%%%%%%
+% \begin{frame}{\ptas{} for \ms{}}
+%   \[
+% 	T = s_i + p_i \le T^{\ast} + p_i
+%   \]
+% 
+%   \begin{enumerate}
+% 	\item $J = J_{L} \triangleq \set{\text{long jobs}} \uplus J_{S} \triangleq \set{\text{short jobs}}$
+% 	\item $S_L$: the optimal schedule for $J_L$
+% 	\item $S$: apply List-Scheduling to $S_L$ and $J_S$
+%   \end{enumerate}
+% \end{frame}
+% %%%%%%%%%%%%%%%%%%%%
+% \begin{frame}{\ptas{} for \ms{}}
+%   \begin{enumerate}
+% 	\item Split $J$:
+% 	  \begin{gather*}
+% 		J_i \in J_{S} \iff p_i \le \epsilon \cdot \frac{1}{m} \sum_{j} p_j \\
+% 		\implies |J_L| < \frac{1}{\epsilon} \cdot m
+% 	  \end{gather*}
+% 	\item Time for $S_L$ (\textcolor{red}{$m$ being a constant!}):
+% 	  \[
+% 		m^{\frac{1}{\epsilon} \cdot m} \cdot O(n)
+% 	  \]
+% 	\item Approx. ratio ($p_i \in J_{S}$ case):
+% 	  \begin{align*}
+% 		T &= s_i + p_i \le \frac{1}{m} \sum_{j} p_j + \epsilon \cdot \frac{1}{m} \sum_{j} p_j \\
+% 		&= (1 + \epsilon) \frac{1}{m} \sum_{j} p_j \\
+% 		&\le (1 + \epsilon) T^{\ast}
+% 	  \end{align*}
+%   \end{enumerate}
+% \end{frame}
+% %%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+% \begin{frame}
+%   \begin{definition}[Partition]
+% 	\begin{description}
+% 	  \item[Instance:] 
+% 		\[
+% 		  A \subseteq \mathbb{Z}^{+} 
+% 		\]
+% 	  \item[Question:]
+% 		\[
+% 		  \exists A' \subseteq A: \sum_{a \in A'} a = \sum_{a \in A \setminus A'} a \;?
+% 		\]
+% 	\end{description}
+%   \end{definition}
+% 
+%   \pause
+%   \[
+% 	A = \set{5,1,3,4,8,2,7} 
+%   \]
+%   \[
+% 	A' = \set{5,3,7},\quad A \setminus A' = \set{1,2,4,8}
+%   \]
+% \end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{definition}[$3$-Partition]
+	\begin{description}
+	  \item[Instance:] 
+		\[
+		  A \subseteq \mathbb{Z}^{+},\quad \big|A\big| = 3m
+		\]
+		\[
+		  B \in \mathbb{Z}^{+}
+		\]
+		\[
+		  \forall a \in A: B/4 < a < B/2
+		\]
+	  \item[Question:] Can $A$ be partitioned into $m$ disjoint sets $S_1,\dots,S_m$:
+		\[
+		  \forall 1 \le i \le m: \sum_{a \in S_i} a = B
+		\]
+	\end{description}
+  \end{definition}
+
+  \pause
+  \[
+	A = \big\{1,2,2,3,3,4,6,7,8\big\},\quad m = 3,\quad B = 12 
+  \]
+  \[
+	\Big\{1,3,8;\quad 2,4,6;\quad 2,3,7\Big\}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \[
+	\red{3\text{-Partition} \pr \ms{}}
+  \]
+
+  \pause
+  \[
+	\ms: (J, m, \red{t})
+  \]
+
+  \pause
+  \[
+	\blue{t = B}
+  \]
+
+  \pause
+  \[
+	\ms{} \text{ is strongly } \npc{} 
+  \]
+
+  \pause
+  \[
+	\red{\ms{} \text{ with } (\max_{j} p_j) \le q(n) \text{ is still } \npc{}}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{theorem}[$\ms \in \ptas \setminus \fptas$]
+	\centerline{No \fptas{} for \ms{}.}
+  \end{theorem}
+
+  \pause
+  \[
+	\red{\exists \fptas{} \text{ for } \ms{} \implies \ms \in \p{}}
+  \]
+
+  \pause
+  \[
+	A_{\epsilon}: \epsilon = \frac{1}{\lceil 2n q(n) \rceil}
+  \]
+
+  \pause
+  \[
+	\text{Time: } \text{Poly}(\frac{1}{\epsilon}, n) = \text{Poly}(\lceil 2n q(n) \rceil, n) = \text{Poly}(n)
+  \]
+
+  \pause
+  \begin{align*}
+	T &\le (1 + \epsilon) T^{\ast} = T^{\ast} + \epsilon \cdot T^{\ast} \\
+	  &\le T^{\ast} + \frac{1}{\lceil 2n q(n) \rceil} \cdot \red{n q(n)} \\
+	  &\le T^{\ast} + \frac{1}{2}
+  \end{align*}
+
+  \pause
+  \vspace{-0.30cm}
+  \[
+	\blue{T = T^{\ast}}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%

@@ -70,7 +70,7 @@
   \begin{exampleblock}{LS (List-Scheduling) Algorithm (JH $4.2.1.4$)}
 	\begin{itemize}
 	  \item Online scheduling
-	  \item Assign job to the least heavily loaded
+	  \item \purple{Assign job to the least heavily loaded}
 	\end{itemize}
   \end{exampleblock}
 
@@ -137,7 +137,7 @@
   \begin{exampleblock}{Longest Processing Time (LPT) Rule (JH $4.2.1.5$)}
 	\begin{itemize}
 	  \item Sorting non-increasingly
-	  \item Applying LS
+	  \item \purple{Assign job to the least heavily loaded}
 	\end{itemize}
   \end{exampleblock}
 
@@ -190,7 +190,14 @@
 		T \le (\frac{4}{3} - \frac{1}{3m}) T^{\ast}
 	  \]
 	\item[CASE $p_i > \frac{1}{3} T^{\ast}$:]
-	  \pause
+  \end{description}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{description}
+	\item[CASE $p_i > \frac{1}{3} T^{\ast}$:]
 	  \[
 		\purple{\text{Consider } p_1 \ge \cdots \ge p_i > \frac{1}{3} T^{\ast}}
 	  \]
@@ -202,10 +209,9 @@
 
 	  \pause
 	  \[
-		\red{T = T^{\ast}}
+		\red{\text{We show that } T = T^{\ast}.}
 	  \]
 
-	  \vspace{-0.60cm}
 	  \begin{columns}
 		\column{0.30\textwidth}
 		  \pause
@@ -217,11 +223,22 @@
 		  \]
 		\column{0.70\textwidth}
 		  \pause
+		  \vspace{0.50cm}
 		  \[
 			J_1, J_2, \cdots, J_h, \quad  J_{h+1}, J_{h+2}, \cdots, J_{n-1}, J_{n}
 		  \]
+		  \pause
+		  \[
+			\purple{J_1, J_2, \cdots, J_h, (J_{h+1}, J_{n}), (J_{h+2}, J_{n-1}), \cdots}
+		  \]
 	  \end{columns}
   \end{description}
+
+  \pause
+  \vspace{0.50cm}
+  \[
+	\red{\text{By Exchange Argument.}}
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
@@ -345,12 +362,17 @@
 
   \pause
   \[
-	\ms: (J, m, \red{t})
+	\ms: (J, \blue{m}, \red{t})
   \]
 
   \pause
   \[
-	\blue{t = B}
+	3\text{-Partition}: (A, B)
+  \]
+
+  \pause
+  \[
+	\blue{m = m},\quad \red{t = B}
   \]
 
   \pause
@@ -389,14 +411,15 @@
   \pause
   \begin{align*}
 	T &\le (1 + \epsilon) T^{\ast} = T^{\ast} + \epsilon \cdot T^{\ast} \\
-	  &\le T^{\ast} + \frac{1}{\lceil 2n q(n) \rceil} \cdot \red{n q(n)} \\
-	  &\le T^{\ast} + \frac{1}{2}
+	  \onslide<6->{&\le T^{\ast} + \frac{1}{\lceil 2n q(n) \rceil} \cdot \red{n q(n)} \\}
+	  \onslide<7->{&\le T^{\ast} + \frac{1}{2}}
   \end{align*}
 
-  \pause
-  \vspace{-0.30cm}
-  \[
-	\blue{T = T^{\ast}}
-  \]
+  \uncover<8->{
+	\vspace{-0.30cm}
+	\[
+	  \blue{T = T^{\ast}}
+	\]
+  }
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%

@@ -144,31 +144,193 @@
 
   \pause
   \begin{center}
-	\red{\large $Q:$ Why $1/2$?} \pause
-	\red{\large $Q:$ Why $\epsilon$?} \pause
-	\[
-	  \blue{RP_{\delta}: RP_{1/3} = RP_{1/2} = RP_{2/3}}
-	\]
+	\red{\large $Q:$ Why $1/2$?} \\[8pt] \pause
+	\red{\large $Q:$ Why $\epsilon$?}
   \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}
+  \[
+	\blue{L \in BPP_{p \triangleq (\frac{1}{2} + \delta)}}
+  \]
+
+  \pause
+  \[
+	A^{(k)}: \text{Repeat } A\; k \text{ times independently}
+  \]
+
+  \pause
+  \begin{center}
+	\purple{Output the ``majority'' ($\# \ge \lceil k/2 \rceil$) value}
+  \end{center}
+
+  \pause
+  \[
+	\violet{L \in BPP_{\alpha} \text{ for some } \alpha}
+  \]
+
+  \pause
+  \[
+	Pr\Big(A^{(k)}(x) = L(x)\Big) \ge 1 - \sum_{i=0}^{\lfloor k/2 \rfloor} \binom{t}{i} p^i (1-p)^{k-i} > 1 - \frac{1}{2}(1-4\delta^2)^{k/2}
+  \]
+
+  \pause
+  \[
+	\red{L \in BPP_{1 - \epsilon}} \implies k \ge \frac{2 \ln 2\epsilon}{\ln (1-4\delta^2)}
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}
+  \begin{definition}[$BPP$: Bounded-error Probabilistic Polynomial time (Two-Sided Error)]
+	\[
+	  L \in BPP
+	\]
+	\[
+	  \iff
+	\]
+	\[
+	  \exists A \text{ (\it probabilistic polynomial-time algorithm)}: 
+	\]
+	\[
+	  \exists \epsilon, 0 < \epsilon \le 1/2: Pr\Big(A(x) = L(x)\Big) \ge \frac{1}{2} + \epsilon
+	\]
+  \end{definition}
+
+  \begin{center}
+	\red{\large $Q:$ Why $\epsilon$?}
+  \end{center}
+
+  \pause
+  \[
+	\blue{Q: \text{What about } Pr\Big(A(x) = L(x)\Big) > \frac{1}{2}?}
+  \]
+
+  \pause
+  \vspace{-0.50cm}
+  \[
+	\blue{Q: \text{What about } Pr\Big(A(x) = L(x)\Big) \ge \frac{1}{2} + n^{-c} \text{ for some constant } c?}
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}
+  \[
+	Pr\Big(A(x) = L(x)\Big) \ge \frac{1}{2} + n^{-c} \text{ for some constant } c
+  \]
+
+  \pause
+  \[
+	\blue{L \in BPP_{p \triangleq (\frac{1}{2} + n^{-c})}}
+  \]
+
+  \pause
+  \[
+	A^{(k)}: \text{Repeat } A\; k \text{ times independently}
+  \]
+
+  \pause
+  \begin{center}
+	\purple{Output the ``majority'' ($\# \ge \lceil k/2 \rceil$) of $x_1, x_2, \ldots, x_k$}
+  \end{center}
+
+  \pause
+  \[
+	\violet{L \in BPP_{\alpha} \text{ for some } \alpha}
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}
+  \centerline{Indicator random variables} 
+  \[
+	X_i = \begin{cases}
+	  1, & x_i = L(x) \\
+	  0, & \text{otherwise}
+	\end{cases}
+  \]
+
+  \pause
+  \[
+	\purple{X = \sum_{i=1}^{k} X_i}
+  \]
+
+  \pause
+  \[
+	Pr\Big(X \ge \frac{1}{2} k \Big) \ge \cdots
+  \]
+
+  \pause
+  \[
+	\blue{\boxed{\forall 0 < \delta < 1: Pr\Big(X < (1-\delta)pk\Big) < e^{-\frac{\delta^2}{3}pk}}}
+  \]
+
+  \pause
+  \[
+	\teal{\text{Fix } \delta = 1 - \frac{1}{2p}}
+  \]
+
+  \pause
+  \[
+	Pr\Big(X \ge \frac{1}{2} k \Big) \ge 1 - e^{\frac{k}{3n^c}}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \[
+	Pr\Big(X \ge \frac{1}{2} k \Big) \ge 1 - e^{\frac{k}{3n^c}}
+  \]
+
+  \pause
+  \[
+	\teal{\text{Choose } k = 3n^{c+d} \text{ for some constant } d}
+  \]
+
+  \pause
+  \[
+	Pr\Big(X \ge \frac{1}{2} k \Big) \ge 1 - e^{-n^{d}}
+  \]
+
+  \pause
+  \[
+	\red{L \in BPP_{1 - e^{-n^d}}}
+  \]
+
+  \pause
+  \[
+	\red{\boxed{\forall \text{ constant } c, d > 0: BPP_{\frac{1}{2} + \frac{1}{n^c}} = BPP_{1-\frac{1}{e^{n^d}}}}}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{definition}[$PP$: Probabilistic Polynomial time (Unbounded Error)]
+	\[
+	  L \in BPP
+	\]
+	\[
+	  \iff
+	\]
+	\[
+	  \exists A \text{ (\it probabilistic polynomial-time algorithm)}: 
+	\]
+	\[
+	  Pr\Big(A(x) = L(x)\Big) > \frac{1}{2}
+	\]
+  \end{definition}
+
+  \pause
+  \[
+	\blue{Pr\Big(A^{(k)}(x) = L(x)\Big) \ge 1 - \delta}
+  \]
+  \[
+	\red{k \text{ may be exponential of } n}
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%

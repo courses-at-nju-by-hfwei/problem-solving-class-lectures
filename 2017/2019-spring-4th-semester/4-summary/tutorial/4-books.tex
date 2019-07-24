@@ -1,0 +1,31 @@
+\documentclass[hyperref = {colorlinks, citecolor=DeepPink4, linkcolor=DarkRed, urlcolor=DarkBlue}]{beamer}
+
+\input{preamble}
+
+%%%%%%%%%%
+\title[\titletext]{\titletext}
+\subtitle{}
+
+\author[Hengfeng Wei]{\large 魏恒峰}
+\titlegraphic{\includegraphics[height = 2.0cm]{figs/qrcode-problem-solving-2017-4}}
+\institute{hfwei@nju.edu.cn}
+\date{2019年07月24日}
+
+\AtBeginSection[]{
+  \begin{frame}[noframenumbering, plain]
+    \frametitle{\titletext}
+    \tableofcontents[currentsection, sectionstyle=show/shaded, subsectionstyle=show/show/hide]
+  \end{frame}
+}
+%%%%%%%%%%
+\begin{document}
+
+\maketitle
+
+\input{parts/books}
+\input{parts/suggestion}
+
+\thankyou{}
+
+\end{document}
+%%%%%%%%%%

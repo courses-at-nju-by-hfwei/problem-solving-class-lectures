@@ -1,0 +1,195 @@
+% counterfeit-coin.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{quote}
+    You have \blue{eight} similar coins and a beam balance.
+
+    \blue{At most one} coin is counterfeit and hence underweight.
+
+    How can you detect whether there is an underweight coin, 
+
+    and if so, which one, using the balance only \blue{twice}? \\[8pt]
+
+    \hfill --- E.D. Schell, 1945 (American Mathematical Monthly)
+  \end{quote}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{quote}
+
+    \hfill --- Problem 1.8 of UD
+  \end{quote}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  The \red{minimum} number of weighings $\dots$
+
+  In the worst-case scenario
+
+  Decision tree
+
+  ``min-max''
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \centerline{Put equal numbers of coins on opposite sides of the balance.}
+
+  Same?
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{What is the First Step?}
+  \[
+    L = x \qquad R = x
+  \]
+
+  Possible outcomes:
+  \begin{description}
+    \item[Balanced]
+    \item[$L$ Rises]
+    \item[$R$ Rises]
+  \end{description}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{Balanced: The ``Standard Coin'' Variation}
+  Key point: G
+
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{$L$ Rises: The ``Labelled Coin'' Variation}
+  Key point: PH \& PL \& G
+
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{A Special Case of the ``Labelled Coin'' Variation}
+  \centerline{The counterfeit coin is known to be light.}
+
+  Recursive algorithm: 
+  \[
+    \frac{1}{3}
+  \]
+
+  Lower bound: 
+  \begin{quote}
+    a single weighing of any sort cannot do better than trisection
+  \end{quote}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{The ``Labelled Coin'' Variation}
+  Recursive algorithm:
+  \begin{quote}
+    Whenever we place coins on the scale, 
+    we must be sure to put \red{equal} number of PL (therefore PH) coins on the two sides.
+  \end{quote}
+
+  Lower bound:
+  \begin{quote}
+    cannot do better than in the ``Light Coin'' variation
+  \end{quote}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{The ``Labelled Coin'' Variation in the 12 Coins Example}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{The ``Standard Coin'' Variation}
+  \[
+    M(n) = (3^n - 1) / 2
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{The Weighing Algorithm (0)}
+  Compute $n$, the minimum number of weighings:
+
+  \[
+    (3^{n-1} - 3) / 2 < |S| \le (3^n - 3) / 2
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{The Weighing Algorithm (1)}
+  \[
+    S = S_1 \cup S_2 \cup S_3
+  \]
+
+  \[
+    |S_1| = |S_2| \qquad |S_1 \cup S_2| \le 3^{n-1} - 1 
+  \]
+
+  \[
+    |S_3| \le (3^{n-1} - 1) / 2
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{The Weighing Algorithm (2: Balanced)}
+  \[
+    S_3 \cup \set{\text{a standard coin}}
+  \]
+
+  \[
+    S_3 = S'_1 \cup S'_2 \cup S'_3
+  \]
+
+  \[
+    |S_3| \le (3^{n-1} - 1) / 2
+  \]
+
+  \[
+    |S'_1| = |S'_2| + 1 \text{ (the standard coin)} \qquad |S_1 \cup S_2| \dots
+  \]
+
+  \[
+    |S'_3| \le (3^{n-2} - 1) / 2
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{The Weighing Algorithm (2: Not Balanced)}
+  \[
+    |S_1 \cup S_2| \le 3^{n-1} - 1 
+  \]
+
+  \[
+    |S_1 \cup S_2| = S'_1 \cup S'_2 \cup S'_3
+  \]
+
+  \[
+    |S'_1| = |S'_2| \le 3^{n-2} \qquad |S'_1|_{PH}| = |S'_2|_{PL}|
+  \]
+
+  \[
+    |S'_3| \le 3^{n-2}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{The Weighing Algorithm (3: Recurse)}
+  \fig{width = 0.65\textwidth}{figs/recurse.pdf}
+\end{frame}
+%%%%%%%%%%%%%%%

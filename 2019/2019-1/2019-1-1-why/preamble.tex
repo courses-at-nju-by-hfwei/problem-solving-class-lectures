@@ -1,0 +1,68 @@
+% preamble.tex
+
+\usepackage{lmodern}
+
+% for chinese
+\usepackage{xeCJK}
+
+% theme
+\usetheme{CambridgeUS} % try Madrid, Pittsburgh
+\usecolortheme{beaver}
+\usefonttheme[]{serif} % try "professionalfonts"
+
+\setbeamertemplate{itemize items}[default]
+\setbeamertemplate{enumerate items}[default]
+
+% math
+\usepackage{amsmath, amsfonts, latexsym, mathtools}
+
+\newcommand{\nn}{\mathbb{N}}
+\newcommand{\zz}{\mathbb{Z}}
+\newcommand{\rr}{\mathbb{R}}
+
+\newcommand{\set}[1]{\{#1\}}
+\newcommand{\bset}[1]{\big\{ #1 \big\}}
+\newcommand{\Bset}[1]{\Big\{ #1 \Big\}}
+
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+
+% colors
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\green}[1]{\textcolor{green}{#1}}
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+\newcommand{\purple}[1]{\textcolor{purple}{#1}}
+
+% colorded box
+\newcommand{\rbox}[1]{\red{\boxed{#1}}}
+\newcommand{\gbox}[1]{\green{\boxed{#1}}}
+\newcommand{\bbox}[1]{\blue{\boxed{#1}}}
+\newcommand{\pbox}[1]{\purple{\boxed{#1}}}
+
+\usepackage{adjustbox}
+
+% tikz
+\usepackage{tikz}
+\usetikzlibrary{shapes, positioning, fit}
+
+% algorithm
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\newcommand{\hStatex}[0]{\vspace{5pt}}
+
+% for fig without caption: #1: width/size; #2: fig file
+\newcommand{\fig}[2]{
+  \begin{figure}[htp]
+    \centering
+      \includegraphics[#1]{#2}
+  \end{figure}
+}
+
+% thankyou
+\newcommand{\thankyou}{
+  \begin{frame}[noframenumbering]{}
+    \fig{width = 0.55\textwidth}{figs/thankyou}
+  \end{frame}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\titletext}{1-1: The Counterfeit Coin Problem}

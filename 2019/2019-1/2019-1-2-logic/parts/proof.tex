@@ -1,0 +1,108 @@
+% proof
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{UD 2.16: Liar}
+    \begin{itemize}
+      \item Each inhabitant is either a truth-teller or a liar (not both).
+      \item A truth-teller always tells the truth and a liar always lies.
+      \item Arnie and Barnie live on the island.
+    \end{itemize}
+
+    \pause
+    \begin{enumerate}[(a)]
+      \item \red{Arnie}: ``If I am a truth-teller, then each person living on this island is either a truth-teller or a liar.''
+      \item \red{Arnie}: ``If I am a truth-teller, then so is Barnie.''
+    \end{enumerate}
+  \end{exampleblock}
+
+  \pause
+  \vspace{0.20cm}
+  \begin{enumerate}[(a)]
+    \item Is Arnie a truth-teller or a liar?
+    \item Can you tell what Arnie and Barnie are?
+  \end{enumerate}
+
+  \vspace{0.20cm}
+  \pause
+  \centerline{更重要的是, 你能\red{\LARGE ``算''}出来吗?}
+  \pause
+  \[
+    (b) \; \red{A \leftrightarrow (A \to B)}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{UD 3.10: Breakfast}
+    Matilda always eats at least one of the following for breakfast: \\
+    \begin{enumerate}
+      \item cereal, bread, or yogurt. 
+    \end{enumerate}
+    On Monday, she is especially picky.
+
+    \begin{enumerate}
+      \setcounter{enumi}{1}
+      \item If she eats cereal and bread, she also eats yogurt.
+      \item If she eats bread or yogurt, she also eats cereal.
+      \item She never eats both cereal and yogurt.
+      \item She always eats bread or cereal.
+    \end{enumerate}
+
+    Can you say what Matilda eats on Monday? If so, what does she eat?
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  引入命题符号：你觉得这有什么问题吗?
+  \begin{columns}
+    \column{0.50\textwidth}
+      \begin{description}
+	\item[$A:$] Cereal
+	\item[$B:$] Bread
+	\item[$C:$] Yogurt
+      \end{description}
+    \column{0.50\textwidth}
+      \begin{description}
+	\item[$P:$] Cereal
+	\item[$Q:$] Bread
+	\item[$R:$] Yogurt
+      \end{description}
+  \end{columns}
+
+  \pause
+  \vspace{0.30cm}
+  \fig{width = 0.50\textwidth}{figs/text-color-puzzle.jpg}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    C: \text{ Cereal} \qquad B: \text{ Bread} \qquad Y: \text{ Yogurt}
+  \]
+
+  \pause
+  \begin{columns}
+    \column{0.25\textwidth}
+    \column{0.50\textwidth}
+      \begin{gather}
+	C \lor B \lor Y \\
+	(C \land B) \to Y \\
+	(B \lor Y) \to C \\
+	\lnot (C \land Y) \\
+	B \lor C
+      \end{gather}
+    \column{0.25\textwidth}
+  \end{columns}
+
+  \pause
+  \vspace{0.80cm}
+  \begin{quote}
+    \centerline{\red{\LARGE Let us calculate [calculemus].}}
+  \end{quote}
+\end{frame}
+%%%%%%%%%%%%%%%

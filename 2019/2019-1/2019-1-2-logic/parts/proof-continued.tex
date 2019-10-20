@@ -1,0 +1,323 @@
+% proof-continued.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{UD 4.20: 一阶谓词逻辑的推理规则与语义}
+    Decide whether (3) is true \red{\large if} (1) and (2) are both true.
+  \end{exampleblock}
+
+  \pause
+  \vspace{0.30cm}
+  \red{$Q$:} 该如何理解这道题? 依据什么 ``decide'' 真假?
+  
+  \pause
+  \begin{description}
+    \item[逻辑知识] 
+      \[
+	(1) \land (2) \to (3)
+      \]
+    \pause
+    \item[数学知识] ``True'' 是语义概念 
+      \begin{itemize}
+	\item 与选定的``结构''中的知识有关
+      \end{itemize}
+  \end{description}
+
+  \pause
+  \fig{width = 0.30\textwidth}{figs/mass.png}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{UD 4.20 (a): 一阶谓词逻辑的推理规则与语义}
+    Decide whether (3) is true \red{\large if} (1) and (2) are both true.
+
+    \begin{enumerate}[(a)]
+      \item 
+	\begin{enumerate}[(1)]
+	  \item Everyone who loves Bill loves Sam.
+	  \item I don't love Sam.
+	  \item I don't love Bill.
+	\end{enumerate}
+    \end{enumerate}
+  \end{exampleblock}
+
+  \vspace{0.50cm}
+  \pause
+  \begin{center}
+    {\red{$Q$:} 如何在一阶谓词逻辑框架中``\red{\large 算出来}''?}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{UD 4.20 (b): 一阶谓词逻辑的推理规则与语义}
+    Decide whether (3) is true \red{\large if} (1) and (2) are both true.
+
+    \begin{enumerate}[(a)]
+      \setcounter{enumi}{1}
+      \item 
+	\begin{enumerate}[(1)]
+	  \item If Susie goes to the ball in the red dress, I will stay home.
+	  \item Susie went to the ball in the green dress.
+	  \item I did not stay home.
+	\end{enumerate}
+    \end{enumerate}
+  \end{exampleblock}
+
+  \begin{center}
+    {\red{$Q$}: 这是真的吗?}
+  \end{center}
+
+  \pause
+  \vspace{0.30cm}
+  到底是真是假?
+  \vspace{0.30cm}
+  \begin{columns}
+    \column{0.45\textwidth}
+      \begin{itemize}
+	\item (3) is true:
+
+	Whether I stay at home or not, (3) is always true.
+      \end{itemize}
+    \column{0.45\textwidth}
+      \begin{itemize}
+        \item (3) is false:
+
+	No matter what I do, the implication is always true.
+      \end{itemize}
+  \end{columns}
+
+  \pause
+  \vspace{0.50cm}
+  \centerline{实际上，仅根据 (1)、(2), 我们无法判断 (3) 的真假。}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{UD 4.20 (c): 一阶谓词逻辑的推理规则与语义}
+    Decide whether (3) is true \red{\large if} (1) and (2) are both true.
+
+    \begin{enumerate}[(a)]
+      \setcounter{enumi}{2}
+      \item 
+	\begin{enumerate}[(1)]
+	  \item If $l$ is a positive real number, then there exists a real number $m$ such that $m > l$.
+	  \item Every real number $m$ is less than $t$.
+	  \item The real number $t$ is not positive.
+	\end{enumerate}
+    \end{enumerate}
+  \end{exampleblock}
+
+  \vspace{0.30cm}
+  \pause
+  \red{$Q:$ 如何符号化 (1)、(2)、(3)?}
+
+  \begin{columns}
+    \column{0.60\textwidth}
+      \begin{enumerate}[(1)]
+	\pause
+	\item $\forall l$ 还是仅是 $l$?
+	\pause
+	\item $t$ 究竟是不是实数?
+	\pause
+	\item $R(t) \land \lnot P(t)$ 还是 $R(t) \to \lnot P(t)$?
+      \end{enumerate}
+    \column{0.40\textwidth}
+      \pause
+      \begin{enumerate}[(1)]
+	\item $\forall l$
+	\item $R(t)$
+	\item $R(t) \to \lnot P(t)$
+      \end{enumerate}
+  \end{columns}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{center}
+    {现在，让我们来``\red{\large 算}''一下吧。}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{UD 4.20 (d): 一阶谓词逻辑的推理规则与语义}
+    Decide whether (3) is true \red{\large if} (1) and (2) are both true.
+
+    \begin{enumerate}[(a)]
+      \setcounter{enumi}{3}
+      \item 
+	\begin{enumerate}[(1)]
+	  \item Every little breeze seems to whisper Louise or my name is Igor.
+	  \item My name is Stewart.
+	  \item Every little breeze seems to whisper Louise.
+	\end{enumerate}
+    \end{enumerate}
+  \end{exampleblock}
+
+  \pause
+  \begin{center}
+    \red{$Q:$ 命题逻辑公式还是一阶谓词逻辑公式?}
+
+    \pause
+    \[
+      \set{p \lor q, \lnot q} \vdash p
+    \]
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{UD 4.20 (e): 一阶谓词逻辑的推理规则与语义}
+    Decide whether (3) is true \red{\large if} (1) and (2) are both true.
+
+    \begin{enumerate}[(a)]
+      \setcounter{enumi}{4}
+      \item 
+	\begin{enumerate}[(1)]
+	  \item There is a house on every street such that if that house is blue,
+	    the one next to it is black.
+	  \item There is no blue house on my street.
+	  \item There is no black house on my street.
+	\end{enumerate}
+    \end{enumerate}
+  \end{exampleblock}
+
+  \vspace{0.30cm}
+  \only<1-2>{
+    \begin{center}
+      {(1) 在说什么? 翻译成汉语是什么意思?}
+    \end{center}
+  }
+
+  \only<2>{\fig{width = 0.40\textwidth}{figs/what.jpg}}
+
+  \uncover<3->{
+    \[
+      \forall s\in S\, \exists h \in H 
+      \Big(\text{On}(h,s) \land \big(\text{Blue}(h) \to \text{Black}\big(\text{next-to}(h)\big) \big)\Big)
+    \]
+  }
+
+  \uncover<4->{
+    \[
+      (1) \land (2) \to (3)?
+    \]
+  }
+  \uncover<5->{
+    \[
+      (1) \land (3) \to (2)?
+    \]
+  }
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{UD 4.20 (f): 一阶谓词逻辑的推理规则与语义}
+    Decide whether (3) is true \red{\large if} (1) and (2) are both true.
+
+    \begin{enumerate}[(a)]
+      \setcounter{enumi}{5}
+      \item Let $x$ and $y$ be real numbers.
+	\begin{enumerate}[(1)]
+	  \item If $x > 5$, then $y < 1/5$.
+	  \item We know $y = 1$.
+	  \item So $x \le 5$.
+	\end{enumerate}
+    \end{enumerate}
+  \end{exampleblock}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{center}
+    {\red{先``算一算''}} \\[15pt] \pause
+    {\red{$Q$}: 在推理过程中, 我们用到了哪些数学知识 (\blue{非逻辑}知识)?}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{UD 4.20 (g): 一阶谓词逻辑的推理规则与语义}
+    Decide whether (3) is true \red{\large if} (1) and (2) are both true.
+
+    \begin{enumerate}[(a)]
+      \setcounter{enumi}{6}
+      \item Let $M$ and $n$ be real numbers.
+	\begin{enumerate}[(1)]
+	  \item If $n > M$, then $n^2 > M^2$.
+	  \item We know $n < M$.
+	  \item So $n^2 \le M^2$.
+	\end{enumerate}
+    \end{enumerate}
+  \end{exampleblock}
+
+  \begin{columns}[t]
+    \pause
+    \column{0.30\textwidth}
+      \begin{itemize}
+	\item (3) is false: 
+	  \[
+	    n = -2, \; M = -1
+	  \]
+      \end{itemize}
+    \pause
+    \column{0.30\textwidth}
+      \begin{itemize}
+        \item (3) is true:
+	\begin{align*}
+	  (1)\; & n > 0 \\
+	  (2)\; & 0 < n < M
+	\end{align*}
+      \end{itemize}
+    \pause
+    \column{0.30\textwidth}
+      \begin{itemize}
+        \item 无法判断
+	\[
+	  (1) \land (2) \to (3)
+	\]
+      \end{itemize}
+  \end{columns}
+  \pause
+  \begin{columns}
+    \column{0.45\textwidth}
+      \fig{width = 0.45\textwidth}{figs/yun.jpg}
+    \column{0.50\textwidth}
+      \fig{width = 0.30\textwidth}{figs/qrcode-math-stackexchange.png}
+      \vspace{-0.80cm}
+      \centerline{\scriptsize \url{https://math.stackexchange.com/q/2471687/51434}}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{UD 4.20 (h): 一阶谓词逻辑的推理规则与语义}
+    Decide whether (3) is true \red{\large if} (1) and (2) are both true.
+
+    \begin{enumerate}[(a)]
+      \setcounter{enumi}{7}
+      \item Let $x,y$, and $z$ be real numbers.
+	\begin{enumerate}[(1)]
+	  \item If $y > x$ and $y > 0$, then $y > z$.
+	  \item We know that $y \le z$.
+	  \item Then $y \le x$ or $y \le 0$.
+	\end{enumerate}
+    \end{enumerate}
+  \end{exampleblock}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{center}
+    {\red{先``算一算''}} \\[15pt] \pause
+    {\red{$Q$}: 在推理过程中, 我们用到了哪些数学知识 (\blue{非逻辑}知识)?}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%

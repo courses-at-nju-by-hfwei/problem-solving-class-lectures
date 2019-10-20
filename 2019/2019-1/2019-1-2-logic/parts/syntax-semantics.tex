@@ -1,0 +1,69 @@
+% syntax-semantics.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{UD 2.5: 命题逻辑公式的语义}
+    \[
+      P \to \lnot (Q \land \lnot P)
+    \]
+
+    \vspace{0.40cm}
+    \begin{center}
+      {\red{\large 真值表 (truth table)}}
+    \end{center}
+  \end{exampleblock}
+
+  \vspace{0.60cm}
+  \begin{center}
+    命题逻辑公式的语义就是它的真值表，与原子命题的真假有关。
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{一阶谓词逻辑公式的语义}
+    \[
+      L = \set{<}
+    \]
+    \[
+      \psi: \forall x \exists y \; (y < x)
+    \]
+
+    \pause
+    \begin{center}
+      {\red{$Q:$} $\psi$ 是真是假?}
+    \end{center}
+  \end{exampleblock}
+
+  \pause
+  \[
+    \mathcal{U} = \mathbb{N}
+  \]
+  \pause
+  \[
+    \mathcal{U} = \mathbb{Z}
+  \]
+
+  \pause
+  \begin{center}
+    一阶谓词逻辑公式的语义与它的\red{\bf 结构 (Structure)}有关。
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    一阶谓词逻辑中的重言式
+  \end{center}
+
+  \[
+    \Big(\forall y \lnot P(y) \to \lnot P(x)\Big) \to \Big(P(x) \to \exists y P(y)\Big)
+  \]
+
+  \[
+    \Big(\forall x (\alpha \to \beta)\Big) \to (\forall x \alpha \to \forall x \beta)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%

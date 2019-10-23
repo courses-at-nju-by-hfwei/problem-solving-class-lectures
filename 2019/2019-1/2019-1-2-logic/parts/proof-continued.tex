@@ -2,6 +2,12 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \fig{width = 0.50\textwidth}{figs/proof}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
   \begin{exampleblock}{UD 4.20: 一阶谓词逻辑的推理规则与语义}
     Decide whether (3) is true \red{\large if} (1) and (2) are both true.
   \end{exampleblock}
@@ -167,7 +173,36 @@
     \[
       \set{p \lor q, \lnot q} \vdash p
     \]
+
+    \pause
+    \[
+      (p \lor q) \leftrightarrow (\lnot q \to p)
+    \]
   \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \set{p \lor q, \lnot q} \vdash p
+  \]
+
+  \setcounter{equation}{0}
+  \begin{columns}
+    \column{0.25\textwidth}
+    \column{0.50\textwidth}
+      \begin{gather}
+	\lnot q \to (q \to \lnot q) \\
+	q \to \lnot q \\
+	q \to q \\
+	q \to p \\
+	p \to p \\
+	(p \lor q) \to p \\
+	p
+      \end{gather}
+    \column{0.25\textwidth}
+  \end{columns}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -236,8 +271,8 @@
   \pause
   \vspace{0.30cm}
   \begin{center}
-    {\red{先``算一算''}} \\[15pt] \pause
-    {\red{$Q$}: 在推理过程中, 我们用到了哪些数学知识 (\blue{非逻辑}知识)?}
+    {\red{先``{\large 算一算}''}} \\[15pt] \pause
+    {\red{$Q$}: 在推理过程中, 我们用到了哪些数学知识 (\blue{元语言}知识)?}
   \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -316,8 +351,14 @@
   \pause
   \vspace{0.30cm}
   \begin{center}
-    {\red{先``算一算''}} \\[15pt] \pause
-    {\red{$Q$}: 在推理过程中, 我们用到了哪些数学知识 (\blue{非逻辑}知识)?}
+    {\red{先``{\large 算一算}''}} \\[15pt] \pause
+    {\red{$Q$}: 在推理过程中, 我们用到了哪些数学知识 (\blue{元语言}知识)?}
   \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.50\textwidth}{figs/qed}
 \end{frame}
 %%%%%%%%%%%%%%%

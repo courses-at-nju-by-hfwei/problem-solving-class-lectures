@@ -2,6 +2,26 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \fig{width = 0.50\textwidth}{figs/syntax-semantics}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{UD 2.5}
+    \[
+      P \to \lnot (Q \land \lnot P)
+    \]
+  \end{exampleblock}
+
+  \begin{center}
+    从\red{语法}的角度讲, 这仅仅是一个字符串。
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
   \begin{exampleblock}{UD 2.5: 命题逻辑公式的语义}
     \[
       P \to \lnot (Q \land \lnot P)
@@ -15,8 +35,31 @@
 
   \vspace{0.60cm}
   \begin{center}
-    命题逻辑公式的语义就是它的真值表，与原子命题的真假有关。
+    命题逻辑公式的\red{语义}就是它的真值表，与原子命题的真假有关。\\[20pt]
+
+    \pause
+    \purple{``真''这个概念是属于``元语言''的。}
   \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    命题逻辑中的重言式
+  \end{center}
+
+  \[
+    \alpha \to (\beta \to \alpha)
+  \]
+
+  \[
+    \big(\alpha \to (\beta \to \gamma)\big) \to \big((\alpha \to \beta) \to (\alpha \to \gamma)\big)
+  \]
+
+  \[
+    (\lnot \beta \to \lnot \alpha) \to \big((\lnot \beta \to \alpha) \to \beta \big)
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -47,7 +90,10 @@
 
   \pause
   \begin{center}
-    一阶谓词逻辑公式的语义与它的\red{\bf 结构 (Structure)}有关。
+    一阶谓词逻辑公式的\red{语义}与它的\red{\bf 结构 (Structure)}有关。\\[20pt]
+
+    \pause
+    \purple{``真''这个概念是属于``元语言''的。}
   \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%

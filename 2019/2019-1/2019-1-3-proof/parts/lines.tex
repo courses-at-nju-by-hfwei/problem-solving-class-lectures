@@ -1,0 +1,69 @@
+% lines.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Lines in the Plane}
+    \begin{enumerate}[(1)]
+      \item What is the maximum number $L_n$ of regions 
+	determined by $n$ straight lines in the plane?
+    \end{enumerate}
+
+    \fig{width = 0.50\textwidth}{figs/straight-line-ln}
+  \end{exampleblock}
+
+  \pause
+  \[
+    L_n = L_{n-1} + n = \frac{1}{2} n(n+1) + 1
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Lines in the Plane}
+    \begin{enumerate}[(1)]
+      \setcounter{enumi}{1}
+      \item What is the maximum number $Z_n$ of regions 
+	determined by $n$ bent lines, each containing one ``zig'', 
+	in the plane?
+    \end{enumerate}
+
+    \fig{width = 0.50\textwidth}{figs/bent-line-zn}
+  \end{exampleblock}
+
+  \begin{columns}
+    \column{0.50\textwidth}
+      \pause
+      \fig{width = 0.50\textwidth}{figs/zig-extension}
+    \column{0.50\textwidth}
+      \pause
+      \[
+	Z_n = L_{2n} - 2n = 2n^2 - n + 1
+      \]
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Lines in the Plane}
+    \begin{enumerate}[(1)]
+      \setcounter{enumi}{2}
+      \item What's the maximum number $ZZ_n$ of regions
+	determined by $n$ ``zig-zag'' lines in the plane?
+    \end{enumerate}
+
+    \fig{width = 0.50\textwidth}{figs/zigzag-zzn}
+  \end{exampleblock}
+
+  \pause
+  \[
+    ZZ_n = ZZ_{n-1} + 9n - 8 = \frac{9}{2} n^2 - \frac{7}{2} n + 1
+  \]
+
+  \pause
+  \[
+    \red{9n - 8 = 9 (n-1) + 1}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%

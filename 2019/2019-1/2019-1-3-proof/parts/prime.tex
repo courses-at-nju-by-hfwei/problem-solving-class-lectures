@@ -1,0 +1,102 @@
+% prime.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{Theorem}[Primes 3 (Mod 4) Theorem]
+    There are infinitely many primes that are congruent to 3 modulo 4.
+  \end{Theorem}
+
+  \pause
+  \begin{center}
+    \red{\it By Contradiction.} \\
+    \red{\it Suppose there are only a finite number of such primes.} 
+    
+    \pause
+    \vspace{-0.50cm}
+    \[
+      P = \set{p_1, p_2, \cdots, p_r} \quad \only<10->{\purple{(3 \notin P)}}
+    \]
+
+    \pause
+    \vspace{-1.00cm}
+    \[
+      \blue{\boxed{A = 4 p_1 p_2 \cdots p_r + 3}}
+    \]
+
+    \pause
+    $A$ is \red{\it not} a prime: $A = q_1 q_2 \cdots q_s$
+  \end{center}
+
+  \hrule
+  \begin{columns}
+    \column{0.50\textwidth}
+      \pause
+      \[
+	\exists i: q_i \equiv 3\; (\text{mod } 4)
+      \]
+      \pause
+      \vspace{-0.80cm}
+      \begin{center}
+	{\blue{\small (By Contradiction.)}}
+      \end{center}
+    \column{0.50\textwidth}
+      \pause
+      \[
+	q_i \notin P
+      \]
+      \pause
+      \vspace{-0.40cm}
+      \[
+	\blue{(q_i \vert A,\quad p_i \nmid A)}
+      \]
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{Theorem}[Primes 3 (Mod 4) Theorem]
+    There are infinitely many primes that are congruent to 3 modulo 4.
+  \end{Theorem}
+
+  \pause
+  \[
+    P = \set{7}
+  \]
+
+  \pause
+  \[
+    A = 4 \cdot 7 + 3 = 31
+  \]
+
+  \pause
+  \[
+    P = \set{7, 31}
+  \]
+
+  \pause
+  \[
+    A = 4 \cdot 7 \cdot 31 + 3 = 871 = 13 \cdot 67
+  \]
+
+  \pause
+  \[
+    P = \set{7, 31, 67}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{Theorem}[Primes 3 (Mod 4) Theorem]
+    There are infinitely many primes that are congruent to 3 modulo 4.
+  \end{Theorem}
+
+  \pause
+  \fig{width = 0.25\textwidth}{figs/what-about-this}
+
+  \begin{Theorem}[Primes 1 (Mod 4) Theorem]
+    There are infinitely many primes that are congruent to 1 modulo 4.
+  \end{Theorem}
+\end{frame}
+%%%%%%%%%%%%%%%

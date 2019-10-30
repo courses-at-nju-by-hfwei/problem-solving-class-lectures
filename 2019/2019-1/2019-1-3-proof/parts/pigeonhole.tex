@@ -1,0 +1,71 @@
+% pigeonhole.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Numbers}
+    Suppose $A \subseteq \set{1, 2, \cdots, 2n}$ with $|A| = n + 1$.
+    Please prove that:
+    \begin{enumerate}[(1)]
+      \item There are two numbers in $A$ which are relatively prime.
+      \item There are two numbers in $A$ such that one divides the other.
+    \end{enumerate}
+  \end{exampleblock}
+
+  \vspace{0.50cm}
+  \begin{columns}
+    \pause
+    \column{0.50\textwidth}
+      \begin{center}
+	There must be two numbers \\ \red{which are only 1 apart}.
+      \end{center}
+    \column{0.50\textwidth}
+      \pause
+      \[
+	\blue{a = 2^{k} m\; (k \in \mathbb{N}, m \text{ is odd})}
+      \]
+      \pause
+      \begin{center}
+	Only $n$ different odd parts \\[5pt] \pause
+	$|A| = n + 1$ \\[15pt] \pause
+	{There must be two numbers in $A$ \\ \red{with the same odd part}.}
+      \end{center}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{columns}
+    \column{0.45\textwidth}
+      \fig{width = 0.55\textwidth}{figs/erdos}{\centerline{Paul Erd\H{o}s (1913 -- 1996)}}
+    \column{0.45\textwidth}
+      \pause
+      \fig{width = 0.75\textwidth}{figs/erdos-tao}
+      {\centerline{Paul Erd\H{o}s with Terence Tao}}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[Erd\H{o}s-Szekeres Theorem]
+    Let $n$ be a positive integer. 
+
+    Every sequence of \red{$n^{2}+1$} distinct integers must contain a monotone subsequence
+    of length \red{$n+1$}.
+  \end{theorem}
+
+  \pause
+  \begin{center}
+    \purple{\it Fail for $n^2$}
+  \end{center}
+
+  \pause
+  \[
+    n = 3
+  \]
+  \[
+    \red{7, 8, 9}, \blue{4, 5, 6}, \teal{1, 2, 3}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%

@@ -1,0 +1,208 @@
+% induction.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[First Principle of Mathematical Induction (Theorem 18.1)]
+    For an integer $n$, let $P(n)$ denote an assertion. Suppose that
+    \begin{enumerate}[(i)]
+      \item $P(1)$ is true, and
+      \item for all positive integers $n$, if $P(n)$ is true, then $P(n+1)$ is true.
+    \end{enumerate}
+    Then $P(n)$ holds for all positive integers $n$.
+  \end{theorem}
+
+  \pause
+  \vspace{0.60cm}
+  \[
+    \uncover<3>{\red{\forall P:}}\; 
+    \Big[ P(1) \land \forall n \in \mathbb{N}^{+} \big(P(n) \to P(n+1) \big) \Big]
+      \to \forall n \in \mathbb{N}^{+} P(n).
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[Second Principle of Mathematical Induction (Theorem 18.9)]
+    For an integer $n$, let $Q(n)$ denote an assertion. Suppose that
+    \begin{enumerate}[(i)]
+      \item $Q(1)$ is true, and
+      \item for all positive integers $n$, if $Q(1), \cdots, Q(n)$ are true,
+	then $Q(n+1)$ is true.
+    \end{enumerate}
+    Then $Q(n)$ holds for all positive integers $n$.
+  \end{theorem}
+
+  \pause
+  \vspace{0.30cm}
+  \[
+    \red{\forall Q:}\; 
+    \Big[ Q(1) \land \forall n \in \mathbb{N}^{+} \Big(\big(Q(1) \land \cdots \land Q(n)\big) \to Q(n+1) \Big) \Big] 
+      \to \forall n \in \mathbb{N}^{+} Q(n).
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \teal{\text{PMI(II)} \leftrightarrow \text{PMI(I)}}
+  \]
+
+  \[
+    \red{\forall P:}\; 
+    \Big[ P(1) \land \forall n \in \mathbb{N}^{+} \big(P(n) \to P(n+1) \big) \Big]
+      \to \forall n \in \mathbb{N}^{+} P(n).
+  \]
+
+  \[
+    \red{\forall Q:}\; 
+    \Big[ Q(1) \land \forall n \in \mathbb{N}^{+} \Big(\big(Q(1) \land \cdots \land Q(n)\big) \to Q(n+1) \Big) \Big] 
+      \to \forall n \in \mathbb{N}^{+} Q(n).
+  \]
+
+  \pause
+  \vspace{0.50cm}
+  \begin{center}
+    {\it \red{\Large Let us calculate [calculemus].}}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \teal{\text{PMI(II)} \to \text{PMI(I)}}
+  \]
+
+  \[
+    \red{\forall Q:}\; 
+    \Big[ Q(1) \land \forall n \in \mathbb{N}^{+} \Big(\big(Q(1) \land \cdots \land Q(n)\big) \to Q(n+1) \Big) \Big] 
+      \to \forall n \in \mathbb{N}^{+} Q(n).
+  \]
+
+  \[
+    \red{\forall P:}\; 
+    \Big[ P(1) \land \forall n \in \mathbb{N}^{+} \big(P(n) \to P(n+1) \big) \Big]
+      \to \forall n \in \mathbb{N}^{+} P(n).
+  \]
+
+  \pause
+  \[
+    \blue{Q(n) \triangleq P(n)}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \teal{\text{PMI(I)} \to \text{PMI(II)}}
+  \]
+
+  \[
+    \red{\forall P:}\; 
+    \Big[ P(1) \land \forall n \in \mathbb{N}^{+} \big(P(n) \to P(n+1) \big) \Big]
+      \to \forall n \in \mathbb{N}^{+} P(n).
+  \]
+
+  \[
+    \red{\forall Q:}\; 
+    \Big[ Q(1) \land \forall n \in \mathbb{N}^{+} \Big(\big(Q(1) \land \cdots \land Q(n)\big) \to Q(n+1) \Big) \Big] 
+      \to \forall n \in \mathbb{N}^{+} Q(n).
+  \]
+
+  \pause
+  \[
+    \blue{P(n) \triangleq Q(1) \land \cdots \land Q(n)}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.50\textwidth}{figs/wait}{\centerline{\large 说好的数学归纳法呢?}}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+% \begin{frame}{}
+%   \begin{columns}
+%     \column{0.50\textwidth}
+%       \begin{proof}
+% 	\[
+% 	  P(n) \triangleq Q(1) \land \cdots \land Q(n)
+% 	\]
+% 
+% 	\uncover<3->{
+% 	  \blue{用\red{(第一)数学归纳法}证明 $P(n)$ 对一切正整数都成立。}
+% 	}
+%       \end{proof}
+%     \pause
+%     \column{0.50\textwidth}
+%       \fig{width = 0.60\textwidth}{figs/de-morgan.jpg}{\centerline{De Morgan (1806-1871)}}
+%   \end{columns}
+% 
+%   \vspace{0.50cm}
+%   \begin{quote}
+%     {\large ``$\ldots$ introduced the term mathematical induction, making its idea rigorous.''} \hfill --- (1938)
+%   \end{quote}
+% \end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{$\text{PMI(I)} \to \text{PMI(II)}$ (``标准''证明示例)}
+    \[
+      P(n) \triangleq Q(1) \land \cdots \land Q(n)
+    \]
+
+    \blue{用\red{第一数学归纳法}证明 $\forall n \in \mathbb{N}^{+}: P(n)$。}
+  \end{exampleblock}
+
+  \vspace{0.60cm}
+  \pause
+  \begin{proof}
+    By mathematical induction on $\mathbb{N}^{+}$.
+
+    \begin{description}[Inductive Hypothesis]
+      \item[Basis Step:] $P(1)$
+      \item[\textcolor{cyan}{Inductive Hypothesis:}] $P(n)$
+      \item[Inductive Step:] $P(n) \to P(n+1)$
+    \end{description}
+
+    Therefore, $P(n)$ holds for all positive integers.
+  \end{proof}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[Second Principle of Mathematical Induction]
+    For an integer $n$, let $Q(n)$ denote an assertion. Suppose that
+    \begin{enumerate}[(i)]
+      \item $Q(1)$ is true, and
+      \item for all positive integers $n$, if $Q(1), \cdots, Q(n)$ are true,
+	then $Q(n+1)$ is true.
+    \end{enumerate}
+    Then $Q(n)$ holds for all positive integers $n$.
+  \end{theorem}
+
+  \begin{theorem}[Well-ordering Principle of $\mathbb{N}$]
+    Every non-empty subset of the natural numbers contains a minimum.
+  \end{theorem}
+
+  \pause
+  \begin{center}
+    \red{By contradiction.}
+    \[
+      \exists S \neq \emptyset: S \text{ has no minimum element.}
+    \]
+    \pause
+    \vspace{-0.30cm}
+    \[
+      \purple{Q(n) \triangleq n \notin S}
+    \]
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%

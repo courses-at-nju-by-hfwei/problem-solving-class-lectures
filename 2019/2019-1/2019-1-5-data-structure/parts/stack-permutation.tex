@@ -1,10 +1,8 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \centerline{\LARGE Stackable Permutations}
-
-  \vspace{0.40cm}
-  \pause
-  \fig{width = 0.45\textwidth}{figs/hard}
+  \begin{center}
+    {\LARGE Stackable Permutations}
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -20,7 +18,7 @@
   \begin{definition}[Stackable Permutations]
     \uncover<2->{
       \[
-	\fbox{$\texttt{out} = (a_1, \cdots, a_n) \blue{\xleftarrow[X = 0]{S = \emptyset}} \texttt{in} = (1, \cdots, n)$}
+	\fbox{$\texttt{out} = (a_1, \cdots, a_n) \blue{\xleftarrow[\;X \;=\; 0\;]{\;S \;=\; \emptyset\;}} \texttt{in} = (1, \cdots, n)$}
       \]
     }
 
@@ -35,32 +33,52 @@
     \fig{width = 0.50\textwidth}{figs/stack-perm-x}
   \end{definition}
 
-  \vspace{0.40cm}
-  \pause
-  \red{$Q_1:$} \cyan{Meaning} of ``\texttt{read, print, push, pop}''?
-
   \vspace{0.20cm}
   \pause
-  \red{$Q_2:$} Using \cyan{only} ``\texttt{read, print, push, pop}''?
-    \[
-      a == X  \pause \qquad a > X \; (a < X) \pause \qquad \texttt{top}(S)
-    \]
+  \begin{center}
+    \red{$Q_2:$} Using \cyan{only} ``\texttt{read, print, push, pop}''?
+  \end{center}
+
+  \pause
+  \[
+    a == X  \pause \qquad \texttt{top}(S) \pause \qquad \red{a > X \; (a < X)}
+  \]
 \end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.50\textwidth}{figs/stack-perm-x}
+
+  \begin{center}
+    \red{We can assume that $X$ is always blank.}
+  \end{center}
+
+  \pause
+  \begin{proof}
+    \begin{center}
+      What are the possible operations following \texttt{read(X)}/\texttt{pop(X, S)}? \\
+    \end{center}
+  \end{proof}
+\end{frame}
+%%%%%%%%%%%%%%%
+
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{exampleblock}{DH 2.12: Stackable Permutations}
     \begin{enumerate}[(a)]
-      \item \redoverlay{\bf Show}{2-} that the following permutations \emph{\blue{are}} stackable:
+      \item Show that the following permutations \emph{\blue{are}} stackable:
 	\begin{enumerate}[(i)]
 	  \item $(3, 2, 1)$
-	  \item \textcolor{gray}{$(3, 4, 2, 1)$}
+	  \item \textcolor{purple}{$(3, 4, 2, 1)$}
 	  \item $(3, 5, 7, 6, 8, 4, 9, 2, 10, 1)$
 	\end{enumerate}
     \end{enumerate}
   \end{exampleblock}
 
+  \pause
   \vspace{0.50cm}
-  \uncover<3->{\fig{width = 0.40\textwidth}{figs/no-choice}}
+  \fig{width = 0.40\textwidth}{figs/no-choice}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -69,14 +87,10 @@
   \begin{exampleblock}{DH 2.13: Stackable Permutations Checking Algorithm}
     To check whether a given permutation can be obtained by a stack.
 
-    \centerline{\texttt{read} \quad \texttt{print} \quad \texttt{push} \quad \texttt{pop} \quad \blue{\texttt{is-empty}}}
+    \centerline{\texttt{read} \quad \texttt{print} \quad \texttt{push} \quad \texttt{pop} \quad \red{\texttt{is-empty}}}
   \end{exampleblock}
 
 
-  % // not necessary!
-  % if ('a' == X)
-  %   print(X) 
-  %   break
   \begin{lstlisting}[style = Cstyle]
               X = 0    S = $\emptyset$    in != EOF
   \end{lstlisting}
@@ -90,7 +104,6 @@ foreach 'a' in out:
       && 'a' == top(S))
     pop(S, X)
     print(X)
-  else $\cdots$ // T.B.C
       \end{lstlisting}
     \pause
     \column{0.45\textwidth}
@@ -103,7 +116,8 @@ foreach 'a' in out:
         break
       else
         push(X, S)
-    |\redoverlay{ERR}{4-}|  |\uncover<4->{\red{// How???}}|
+    if (in == EOF)
+      ERR
       \end{lstlisting}
   \end{columns}
 \end{frame}
@@ -114,7 +128,7 @@ foreach 'a' in out:
   \begin{exampleblock}{DH 2.12: Stackable Permutations}
     \begin{enumerate}[(a)]
       \setcounter{enumi}{1}
-    \item \redoverlay{\bf Prove}{2-} that the following permutations are \emph{\blue{not}} stackable:
+    \item \red{\bf Prove} that the following permutations are \emph{\blue{not}} stackable:
 	\begin{enumerate}[(i)]
 	  \item $(3, 1, 2)$
 	  \item $(4, 5, 3, 7, 2, 1, 6)$
@@ -122,7 +136,7 @@ foreach 'a' in out:
     \end{enumerate}
   \end{exampleblock}
 
-  \uncover<3->{
+  \uncover<2->{
     \[
       (\red{3}, \red{1}, \red{2})
     \]
@@ -132,13 +146,13 @@ foreach 'a' in out:
     \]
   }
 
-  \uncover<4->{
+  \uncover<3->{
     \[
       \fbox{$\texttt{out} = \cdots a_i \cdots a_j \cdots a_k: i < j < k \land a_j < a_k < a_i$}
     \]
   }
 
-  \uncover<5->{
+  \uncover<4->{
     \[
       312\text{-Pattern}
     \]
@@ -264,13 +278,15 @@ foreach 'a' in out:
       \fig{width = 0.90\textwidth}{figs/stack-perm}
   \end{columns}
 
-  \vspace{1.00cm}
   \pause
-  \centerline{\red{$Q:$} Are $S+X$ and $S$ are \redoverlay{\bf equivalent}{4-}?}
-  \vspace{0.40cm}
-  \uncover<5->{\centerline{\blue{Producing the same set of permutations.}}}
-  \vspace{0.40cm}
-  \uncover<6->{\centerline{\purple{Accepting the same set of \emph{admissible} operation sequences.}}}
+  \vspace{1.00cm}
+
+  \begin{center}
+    {\red{$Q:$} Are $S+X$ and $S$ are \red{\bf equivalent}?} \\[15pt]
+
+    \pause
+    {\blue{Producing the same set of permutations.}}
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -307,20 +323,20 @@ foreach 'a' in out:
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
-\begin{frame}{}
-  \fig{width = 0.50\textwidth}{figs/stack-perm}
-
-  \[
-    (1, 2, 3): \push{}\;\; \pop{}\;\; \push{}\;\; \pop{}\;\; \push{}\;\; \pop{}\;\;
-  \]
-
-  \[
-    (3, 2, 1): \push{}\;\;\push{}\;\;\push{}\;\;\pop{}\;\;\pop{}\;\;\pop{}\;\;
-  \]
-  % \[
-  %   (3, 2, 5, 6, 1, 4): \push{}\;\;\push{}\;\;\push{}\;\;\pop{}\;\;\pop{}\;\;\push{}\;\;\push{}\;\;\pop{}\;\;\push{}\;\;\pop{}\;\;\pop{}\;\;\pop{}\;\;
-  % \]
-\end{frame}
+% \begin{frame}{}
+%   \fig{width = 0.50\textwidth}{figs/stack-perm}
+% 
+%   \[
+%     (1, 2, 3): \push{}\;\; \pop{}\;\; \push{}\;\; \pop{}\;\; \push{}\;\; \pop{}\;\;
+%   \]
+% 
+%   \[
+%     (3, 2, 1): \push{}\;\;\push{}\;\;\push{}\;\;\pop{}\;\;\pop{}\;\;\pop{}\;\;
+%   \]
+%   % \[
+%   %   (3, 2, 5, 6, 1, 4): \push{}\;\;\push{}\;\;\push{}\;\;\pop{}\;\;\pop{}\;\;\push{}\;\;\push{}\;\;\pop{}\;\;\push{}\;\;\pop{}\;\;\pop{}\;\;\pop{}\;\;
+%   % \]
+% \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
@@ -350,7 +366,9 @@ foreach 'a' in out:
 
   \vspace{0.50cm}
   \pause
-  \centerline{\fbox{\# of stackable perms $=$ \# of admissible operation sequences}}
+  \begin{center}
+    \red{\fbox{\# of stackable perms $=$ \# of admissible operation sequences}}
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -430,7 +448,9 @@ foreach 'a' in out:
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \centerline{\Large For more about ``Stackable Permutations'' {\large (Section $2.2.1$)}:}
+  \begin{center}
+    {\Large For more about ``Stackable Permutations'' {\large (Section $2.2.1$)}}
+  \end{center}
 
   \vspace{0.30cm}
   \begin{columns}

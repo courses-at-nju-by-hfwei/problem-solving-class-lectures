@@ -32,7 +32,7 @@
   \vspace{0.30cm}
   \pause
   \begin{center}
-    \href{https://github.com/hengxin/learning-c/blob/master/problems/permutation/generate-perms.c}{\texttt{\cyan{\large generate-perms.c}}}
+    \href{https://github.com/hengxin/problem-solving-class-lectures/blob/master/2019/2019-1/2019-1-5-data-structure/parts/code/generate-perms.c}{\texttt{\cyan{\large generate-perms.c}}}
   \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -43,7 +43,7 @@
     \column{0.45\textwidth}
       \fig{width = 0.70\textwidth}{figs/error-crazy}
       \begin{center}
-	\href{}{\texttt{\cyan{\large 4perms.md}}}
+	\href{https://github.com/hengxin/problem-solving-class-lectures/blob/master/2019/2019-1/2019-1-5-data-structure/parts/code/4perms.md}{\texttt{\cyan{\large 4perms.md}}}
       \end{center}
     \pause
     \column{0.45\textwidth}
@@ -75,7 +75,7 @@
     else 
       for (int i = 0; i < n; ++i)
         perms(|\purple{prefix $\gets$ prefix ++ A[i]}|, 
-            |\redoverlay{A $\gets$ A $\setminus$ A[i]}{3-}|, n - 1) |\uncover<3->{\red{// Space???}}|
+            A $\gets$ A $\setminus$ A[i], n - 1) 
         print ''\n''
   }
   \end{lstlisting}

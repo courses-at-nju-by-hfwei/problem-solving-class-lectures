@@ -206,3 +206,45 @@
   \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[First Principle of Mathematical Induction]
+  \end{theorem}
+
+  \begin{theorem}[Well-ordering Principle of $\mathbb{N}$]
+    Every non-empty subset of $\mathbb{N}$ contains a minimum.
+  \end{theorem}
+
+  \pause
+  \begin{center}
+    \red{By mathematical induction on the size $n$ of non-empty subsets of $\mathbb{N}$.}
+
+    \vspace{-0.30cm}
+    \[
+      P(k): \text{All subsets of size $k$ contain a minimum.}
+    \]
+
+    \pause
+    \begin{description}[Inductive Hypothesis:]
+      \item[Basis Step:] $P(1)$
+      \item[\textcolor{cyan}{Inductive Hypothesis:}] $P(n)$
+      \item[Inductive Step:] $P(n) \to P(n+1)$
+	\only<4>{
+	  \begin{itemize}
+	    \item $A' \gets A \setminus {a}$
+	    \item $x \gets \min A'$
+	    \item Compare $x$ with $a$
+	  \end{itemize}
+	}
+    \end{description}
+
+    \only<5>{
+      \vspace{-0.50cm}
+      \[
+	\red{\forall n \in \mathbb{N}: P(n) \quad \text{\it vs. } \quad P(\infty)}
+      \]
+    }
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%

@@ -1,0 +1,272 @@
+% simulation.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.50\textwidth}{figs/is-simulation}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{}
+  \begin{exampleblock}{DH 2.5: Simulations}
+    Perform the following simulations of some control constructs by others.
+    \begin{enumerate}[(a)]
+      \item ``\texttt{for-do}'' by ``\texttt{while-do}''
+    \end{enumerate}
+  \end{exampleblock}
+
+  \vspace{0.40cm}
+  \pause
+  \begin{lstlisting}[style = Cstyle, backgroundcolor = \color{teal!10!lightgray}]
+  for (int i = 0; i < N; ++i) |\uncover<3->{\red{// not general!}}|
+    statement
+  \end{lstlisting}
+
+  \vspace{0.20cm}
+  \begin{lstlisting}[style = Cstyle]
+  int i = 0;
+  while (i < N)
+    statement
+    ++i
+  \end{lstlisting}
+\end{frame}
+%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{}
+  \begin{exampleblock}{DH 2.5: Simulations}
+    Perform the following simulations of some control constructs by others.
+    \begin{enumerate}[(a)]
+      \item ``\texttt{for-do}'' by ``\texttt{while-do}''
+    \end{enumerate}
+  \end{exampleblock}
+
+  \begin{columns}
+    \column{0.45\textwidth}
+      \begin{lstlisting}[style = Cstyle, backgroundcolor = \color{teal!10!lightgray}]
+  for (init; cond; inc)
+    statement
+      \end{lstlisting}
+    \column{0.45\textwidth}
+      \begin{lstlisting}[style = Cstyle]
+  init;
+  while (cond)
+    statement
+    inc
+      \end{lstlisting}
+  \end{columns}
+
+  \vspace{0.50cm}
+  \pause
+  \begin{quote}
+    Whether to use ``while'' or ``for'' is largely a matter of personal preference.
+     
+    \hfill --- K\&R C Bible
+  \end{quote}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{}
+  \begin{exampleblock}{DH 2.5: Simulations}
+    Perform the following simulations of some control constructs by others.
+    \begin{enumerate}[(a)]
+      \setcounter{enumi}{(1)}
+      \item ``\texttt{if-then} \& \texttt{if-then-else}'' by ``\texttt{while-do}''
+    \end{enumerate}
+  \end{exampleblock}
+
+  \begin{columns}
+    \column{0.40\textwidth}
+      \begin{lstlisting}[style = Cstyle, backgroundcolor = \color{teal!10!lightgray}]
+  if (A)
+    B
+      \end{lstlisting}
+
+    \column{0.55\textwidth}
+      \pause
+      \begin{lstlisting}[style = Cstyle]
+  while (A)
+    B
+    $\lnot$ A |\pause \textcolor{cyan}{// \red{Wrong:} side effects?}|
+      \end{lstlisting}
+
+      \pause
+      \begin{lstlisting}[style = Cstyle]
+  flag = 1
+  while (A && flag)
+    B
+    flag = 0
+      \end{lstlisting}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{}
+  \begin{exampleblock}{DH 2.5: Simulations}
+    Perform the following simulations of some control constructs by others.
+    \begin{enumerate}[(a)]
+      \setcounter{enumi}{(1)}
+      \item ``\texttt{if-then} \& \texttt{if-then-else}'' by ``\texttt{while-do}''
+    \end{enumerate}
+  \end{exampleblock}
+
+  \begin{columns}
+    \column{0.55\textwidth}
+      \begin{lstlisting}[style = Cstyle, backgroundcolor = \color{teal!10!lightgray}]
+  if (A)
+    B
+  else
+    C
+      \end{lstlisting}
+
+      \pause
+      \begin{lstlisting}[style = Cstyle]
+  flag_if = 1
+  while (A && flag_if)
+    B  |\uncover<3->{\textcolor{cyan}{// \red{Wrong:} side effects?}}|
+    flag_if = 0
+  flag_else = 1
+  while ($\lnot$ A && flag_else)
+    C
+    flag_else = 0
+      \end{lstlisting}
+
+    \column{0.45\textwidth}
+      \begin{onlyenv}<4->
+      \begin{lstlisting}[style = Cstyle]
+  flag = 1
+  while (A && flag)
+    B
+    flag = 0
+  |\uncover<5->{\textcolor{cyan}{// $\lnot A$ not necessary}}|
+  while ($\lnot$ A && flag)
+    C
+    flag = 0
+      \end{lstlisting}
+      \end{onlyenv}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{}
+  \begin{exampleblock}{DH 2.5: Simulations}
+    Perform the following simulations of some control constructs by others.
+    \begin{enumerate}[(a)]
+      \setcounter{enumi}{(2)}
+      \item ``\texttt{while-do}'' by ``\texttt{if-then} \& \texttt{goto}''
+      \item ``\texttt{while-do}'' by ``\texttt{repeat-until} \& \texttt{if-then}''
+    \end{enumerate}
+  \end{exampleblock}
+
+  \begin{lstlisting}[style = Cstyle, backgroundcolor = \color{teal!10!lightgray}]
+                      while (A)
+                        B
+  \end{lstlisting}
+
+  \begin{columns}
+    \column{0.40\textwidth}
+      \pause
+      \begin{lstlisting}[style = Cstyle]
+  L: if (A)
+       B
+       goto L
+      \end{lstlisting}
+    \column{0.55\textwidth}
+      \pause
+      \begin{lstlisting}[style = Cstyle]
+  if (A)  |\uncover<4->{\red{// no ''\texttt{if}''?}}|
+    repeat
+      B
+    until ($\lnot$ A)
+      \end{lstlisting}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{}
+  \begin{exampleblock}{DH 2.8: Simulations}
+    Simulate ``\texttt{while-do}'' by ``\texttt{if-then-else} \& \texttt{recursive}''.
+  \end{exampleblock}
+
+  \begin{columns}
+    \column{0.30\textwidth}
+      \begin{lstlisting}[style = Cstyle, backgroundcolor = \color{teal!10!lightgray}]
+  while (A)
+    B
+      \end{lstlisting}
+    \column{0.70\textwidth}
+      \pause
+      \begin{lstlisting}[style = Cstyle]
+  simulateWhile() { |\uncover<3->{\textcolor{cyan}{// define function}}|
+    if (A)
+      B
+      simulateWhile();
+
+    return;
+  }
+      \end{lstlisting}
+  \end{columns}
+
+  \uncover<4->{\fig{width = 0.30\textwidth}{figs/recursion-draw}}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{}
+  \begin{columns}
+    \column{0.40\textwidth}
+      \begin{enumerate}[(1)]
+	\item \texttt{A;B}
+	\item \texttt{if-then} 
+	\item \texttt{if-then-else} 
+	\item \texttt{for-do} 
+	\item \red{\texttt{while-do}} 
+	\item \blueoverlay{\texttt{repeat-until}}{2-}
+      \end{enumerate}
+    \column{0.55\textwidth}
+      \pause
+      \begin{lstlisting}[style = Cstyle, backgroundcolor = \color{teal!10!lightgray}]
+  repeat
+    B
+  until ($\lnot$ A)
+      \end{lstlisting}
+      \pause
+      \begin{lstlisting}[style = Cstyle]
+  B
+  while (A)
+    B
+      \end{lstlisting}
+  \end{columns}
+
+  \vspace{0.60cm}
+  \pause
+  \begin{theorem}[``On Folk Theorems'' (David Harel, 1980)]
+     Any \blue{computable function} can be computed by a 
+    ``\red{\textsf{while-do}}'' (and ``\red{\textsf{;}}'') program
+    (with additional Boolean variables).
+  \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{columns}
+    \column{0.45\textwidth}
+      \fig{width = 0.80\textwidth}{figs/minimalism}
+    \column{0.45\textwidth}
+    \uncover<3->{\centerline{\Large \textcolor{cyan}{Simulations} for Equivalence}}
+  \end{columns}
+
+  \pause
+  \begin{columns}
+    \column{0.30\textwidth}
+      \fig{width = 0.85\textwidth}{figs/turing-machine}
+    \column{0.30\textwidth}
+      \fig{width = 0.50\textwidth}{figs/lambda}
+    \column{0.30\textwidth}
+      \fig{width = 0.80\textwidth}{figs/mu}
+    %\column{0.25\textwidth}
+    %  \fig{width = 0.80\textwidth}{figs/abacus}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%

@@ -1,0 +1,34 @@
+% iteration.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \centerline{\LARGE Bounded Iterations \emph{vs.} Unbounded Iterations}
+
+  \vspace{0.80cm}
+  \fig{width = 0.40\textwidth}{figs/sisyphus}
+
+  \vspace{0.40cm}
+  \pause
+  \centerline{\Large \red{$Q:$} Why unbounded iterations?}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.15\textwidth}{figs/mu}{\vspace{-0.50cm} \centerline{$\mu$-Recursive Functions}}
+
+  \vspace{0.20cm}
+  \[
+    \red{\mu} y \big(g(x, y)\big) = \Big(\argmin_{y} g(x,y) = 0\Big)
+  \]
+
+  \pause
+  \centerline{\red{Unbounded} iterations: ``\texttt{while-do}''}
+
+  \vspace{0.40cm}
+  \pause
+  \begin{theorem}[Ackermann Function]
+    The Ackermann function is \red{$\mu$}-recursive but not \blue{primitive} recursive (which contains \blue{bounded} iterations.).
+  \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%

@@ -1,0 +1,77 @@
+% preamble.tex
+
+\usepackage{lmodern}
+
+\usepackage{xeCJK}
+\usetheme{CambridgeUS} % try Madrid, Pittsburgh
+\usecolortheme{beaver}
+\usefonttheme[]{serif} % try "professionalfonts"
+
+\setbeamertemplate{itemize items}[default]
+\setbeamertemplate{enumerate items}[default]
+
+\usepackage{amsmath, amsfonts, latexsym, mathtools}
+\newcommand{\set}[1]{\{#1\}}
+\DeclareMathOperator*{\argmin}{\arg\!\min}
+
+\definecolor{bgcolor}{rgb}{0.95,0.95,0.92}
+
+\usepackage{listings}
+\lstdefinestyle{CStyle}{
+    language = C,
+    basicstyle = \ttfamily\bfseries,
+    backgroundcolor = \color{bgcolor},   
+    keywordstyle = \color{blue},
+    stringstyle = \color{red},
+    commentstyle = \color{cyan},
+    breakatwhitespace = false,
+    breaklines = true,                 
+    mathescape = true,
+    escapeinside = ||,
+    morekeywords = {repeat, until},
+    showspaces = false,                
+    showstringspaces = false,
+    showtabs = false,                  
+}
+
+% colors
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\redoverlay}[2]{\textcolor<#2>{red}{#1}}
+\newcommand{\green}[1]{\textcolor{green}{#1}}
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+\newcommand{\blueoverlay}[2]{\textcolor<#2>{blue}{#1}}
+\newcommand{\teal}[1]{\textcolor{teal}{#1}}
+\newcommand{\purple}[1]{\textcolor{purple}{#1}}
+\newcommand{\cyan}[1]{\textcolor{cyan}{#1}}
+
+% colorded box
+\newcommand{\rbox}[1]{\red{\boxed{#1}}}
+\newcommand{\gbox}[1]{\green{\boxed{#1}}}
+\newcommand{\bbox}[1]{\blue{\boxed{#1}}}
+\newcommand{\pbox}[1]{\purple{\boxed{#1}}}
+
+\usepackage{pifont}
+\usepackage{wasysym}
+
+\newcommand{\cmark}{\green{\ding{51}}}
+\newcommand{\xmark}{\red{\ding{55}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% for fig without caption: #1: width/size; #2: fig file
+\newcommand{\fig}[2]{
+  \begin{figure}[htp]
+    \centering
+      \includegraphics[#1]{#2}
+  \end{figure}
+}
+
+\usepackage{tikz}
+
+\newcommand{\titletext}{1-5 Data Structures}
+\newcommand{\push}{\texttt{Push}}
+\newcommand{\pop}{\texttt{Pop}}
+
+\newcommand{\thankyou}{
+\begin{frame}[noframenumbering]{}
+  \fig{width = 0.50\textwidth}{figs/thankyou.png}
+\end{frame}
+}

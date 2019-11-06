@@ -1,0 +1,102 @@
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{description}
+    \centering
+    \item[\Large Generating All Permutations]
+  \end{description}
+
+  \fig{width = 0.30\textwidth}{figs/simple-but-not-easy}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{}
+  \begin{exampleblock}{DH 2.11: Generate All Permutations}
+    Design an algorithm which, given a positive integer $n$,
+    generates/\blue{prints} all the permutations of $[0 \cdots n)$.
+  \end{exampleblock}
+
+  \pause
+  \begin{lstlisting}[style = Cstyle]
+  void perms (A[], n) {
+    if (n == 1)
+      print ''A[0]''
+    else 
+      for (int i = 0; i < n; ++i)
+        print ''A[i]''
+        perms(A $\gets$ A $\setminus$ A[i], n - 1)
+        print ''\n''
+  }
+  \end{lstlisting}
+
+  \vspace{0.30cm}
+  \pause
+  \begin{center}
+    \href{https://github.com/hengxin/learning-c/blob/master/problems/permutation/generate-perms.c}{\texttt{\cyan{\large generate-perms.c}}}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{columns}
+    \column{0.45\textwidth}
+      \fig{width = 0.70\textwidth}{figs/error-crazy}
+      \begin{center}
+	\href{}{\texttt{\cyan{\large 4perms.md}}}
+      \end{center}
+    \pause
+    \column{0.45\textwidth}
+      \fig{width = 0.80\textwidth}{figs/recursion-draw}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    A = [0,1,2,3] \qquad n = 4
+  \]
+
+  \fig{width = 0.50\textwidth}{figs/4-permtree}
+
+  \begin{center}
+    ``手动单步调试''
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{}
+  \begin{lstlisting}[style = Cstyle]
+  void perms (|\purple{prifix}|, A[], n) {
+    if (n == 1)
+      print ''prifix ++ A[0]''
+    else 
+      for (int i = 0; i < n; ++i)
+        perms(|\purple{prefix $\gets$ prefix ++ A[i]}|, 
+            |\redoverlay{A $\gets$ A $\setminus$ A[i]}{3-}|, n - 1) |\uncover<3->{\red{// Space???}}|
+        print ''\n''
+  }
+  \end{lstlisting}
+
+  \pause
+  \begin{lstlisting}[style = Cstyle]
+  perms('''', A, n);
+  \end{lstlisting}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \centerline{\Large For more about ``Generating All Permutations'':}
+
+  \vspace{0.30cm}
+  \begin{columns}
+    \column{0.45\textwidth}
+      \fig{width = 0.70\textwidth}{figs/taocp-perms}
+    \column{0.45\textwidth}
+      \fig{width = 0.60\textwidth}{figs/knuth}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%

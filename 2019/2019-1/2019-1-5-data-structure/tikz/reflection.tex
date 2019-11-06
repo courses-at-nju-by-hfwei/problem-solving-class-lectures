@@ -1,0 +1,43 @@
+\begin{tikzpicture}
+  \draw[help lines] (0,0) grid (8,8);
+
+  \node (00) [] {$(0,0)$};
+  \node (01) [] at (0,1) {};
+  \node (nn) [blue] at (8,8) {$(n,n)$};
+
+  \draw [dashed] (0,0) to (8,8);
+
+  \pause
+  \draw[very thick] (0,0) -- (1,0) -- (2,0) --
+	(2,1) -- (2,2) -- (2,3);
+  \draw[very thick] (2,3) -- (2,4) --
+	(3,4) -- (4,4) --
+	(4,5) -- (4,6) -- (4,7) --
+	(5,7) -- (6,7) -- (7,7) -- (8,7) --
+	(8,8);
+
+  \pause
+  \node (nn1) [] at (8,9) {};
+  \draw [dashed] (0,1) to (8,9);
+
+  \pause
+  \node () [circle, draw, fill = blue] at (2,3) {};
+
+  \pause
+  \draw[very thick, cyan] (0,0) -- (1,0) -- (2,0) --
+	(2,1) -- (2,2) -- (2,3);
+  \draw[very thick, blue] (2,3) -- (2,4) --
+	(3,4) -- (4,4) --
+	(4,5) -- (4,6) -- (4,7) --
+	(5,7) -- (6,7) -- (7,7) -- (8,7) --
+	(8,8);
+
+  \pause
+  \draw[help lines, dashed] (0,8) grid (7,9);
+  \draw[very thick, red] 
+	(2,3) -- (3,3) --
+	(3,4) -- (3,5) --
+	(4,5) -- (5,5) -- (6,5) --
+	(6,6) -- (6,7) -- (6,8) -- (6,9) --
+	(7,9) node[above] () {$(n-1, n+1)$};
+\end{tikzpicture}

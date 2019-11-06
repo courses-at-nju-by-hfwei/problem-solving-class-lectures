@@ -15,20 +15,56 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \fig{width = 0.15\textwidth}{figs/mu}{\vspace{-0.50cm} \centerline{$\mu$-Recursive Functions}}
+  \begin{definition}[Primitive Recursive]
+    \[
+      \begin{cases}
+	h(\blue{0}) &= k, \\
+	h(\blue{t + 1}) &= g(\blue{t}, h(\blue{t}))
+      \end{cases}
+    \]
 
-  \vspace{0.20cm}
+    \pause
+    \[
+      \begin{cases}
+	h(x_1, \cdots, x_n, \red{0}) &= f(x_1, \cdots, x_n), \\
+	h(x_1, \cdots, x_n, \red{t + 1}) &= g(\red{t}, h(x_1, \cdots, x_n, \red{t}), x_1, \cdots, x_n)
+      \end{cases}
+    \]
+  \end{definition}
+
+  \pause
   \[
-    \red{\mu} y \big(g(x, y)\big) = \Big(\argmin_{y} g(x,y) = 0\Big)
+    \forall/\exists\; t \red{\le y}: P(t, x_1, \cdots, x_n)
   \]
+\end{frame}
+%%%%%%%%%%%%%%%
 
-  \pause
-  \centerline{\red{Unbounded} iterations: ``\texttt{while-do}''}
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.15\textwidth}{figs/mu}
 
-  \vspace{0.40cm}
-  \pause
   \begin{theorem}[Ackermann Function]
-    The Ackermann function is \red{$\mu$}-recursive but not \blue{primitive} recursive (which contains \blue{bounded} iterations.).
+    The \purple{Ackermann function} is \red{$\mu$-recursive} but not \blue{primitive recursive}.
+
+    \pause
+    \[
+      A(m, n) =
+      \begin{cases}
+	n+1 & \mbox{if } m = 0 \\
+	A(m-1, 1) & \mbox{if } m > 0 \mbox{ and } n = 0 \\
+	A(m-1, A(m, n-1)) & \mbox{if } m > 0 \mbox{ and } n > 0.
+      \end{cases}
+    \]
+
+    \pause
+    \[
+      \red{A(4,2) = ?}
+    \]
   \end{theorem}
+
+  \pause
+  \[
+    g(x) \triangleq \red{\mu} y \big(g(x, y)\big) \triangleq \Big(\argmin_{y} g(x,y) = 0\Big)
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%

@@ -16,19 +16,27 @@
   \end{exampleblock}
 
   \vspace{0.40cm}
-  \pause
+  \begin{columns}
+    \pause
+    \column{0.60\textwidth}
   \begin{lstlisting}[style = Cstyle, backgroundcolor = \color{teal!10!lightgray}]
-  for (int i = 0; i < N; ++i) |\uncover<3->{\red{// not general!}}|
+  for (int i = 0; i < N; ++i)
     statement
   \end{lstlisting}
-
-  \vspace{0.20cm}
+    \pause
+    \column{0.40\textwidth}
   \begin{lstlisting}[style = Cstyle]
   int i = 0;
   while (i < N)
     statement
     ++i
   \end{lstlisting}
+  \end{columns}
+
+  \pause
+  \begin{center}
+    \red{\it Not General}
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
 \begin{frame}[fragile]{}
@@ -53,14 +61,6 @@
     inc
       \end{lstlisting}
   \end{columns}
-
-  \vspace{0.50cm}
-  \pause
-  \begin{quote}
-    Whether to use ``while'' or ``for'' is largely a matter of personal preference.
-     
-    \hfill --- K\&R C Bible
-  \end{quote}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -120,6 +120,7 @@
       \end{lstlisting}
 
       \pause
+      \vspace{-0.20cm}
       \begin{lstlisting}[style = Cstyle]
   flag_if = 1
   while (A && flag_if)
@@ -170,10 +171,10 @@
        B
        goto L
       \end{lstlisting}
-    \column{0.55\textwidth}
+    \column{0.60\textwidth}
       \pause
       \begin{lstlisting}[style = Cstyle]
-  if (A)  |\uncover<4->{\red{// no ''\texttt{if}''?}}|
+  if (A)  |\uncover<4->{\red{// ''\texttt{if}'' in ''\texttt{repeat}''?}}|
     repeat
       B
     until ($\lnot$ A)
@@ -201,13 +202,9 @@
     if (A)
       B
       simulateWhile();
-
-    return;
   }
       \end{lstlisting}
   \end{columns}
-
-  \uncover<4->{\fig{width = 0.30\textwidth}{figs/recursion-draw}}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -250,21 +247,59 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{columns}
-    \column{0.45\textwidth}
-      \fig{width = 0.80\textwidth}{figs/minimalism}
-    \column{0.45\textwidth}
-    \uncover<3->{\centerline{\Large \textcolor{cyan}{Simulations} for Equivalence}}
-  \end{columns}
+  \fig{width = 0.40\textwidth}{figs/minimalism}
 
   \pause
+  \begin{center}
+    \red{\it What are \blue{``Computable Functions''}?}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
   \begin{columns}
-    \column{0.30\textwidth}
+    \column{0.33\textwidth}
+      \fig{width = 0.70\textwidth}{figs/mu}
+      \vspace{-0.80cm} 
+      \begin{center}
+	{$\mu$-Recursive Functions \\ (1931-1934)}
+      \end{center}
+
+      \vspace{-0.60cm} 
+      \fig{width = 0.60\textwidth}{figs/godel}
+      \vspace{-0.80cm} 
+      \begin{center}
+	{\small Kurt G\"{o}del (1906-1978)}
+      \end{center}
+    \column{0.35\textwidth}
+      \pause
+      \fig{width = 0.46\textwidth}{figs/lambda}
+      \vspace{-0.80cm} 
+      \begin{center}
+	{Lambda Calculus \\ (1933-1935)}
+      \end{center}
+
+      \vspace{-0.60cm} 
+      \fig{width = 0.55\textwidth}{figs/church}
+      \vspace{-0.80cm} 
+      \begin{center}
+	{\small Alonzo Church (1903-1995)}
+      \end{center}
+    \column{0.33\textwidth}
+      \pause
       \fig{width = 0.85\textwidth}{figs/turing-machine}
-    \column{0.30\textwidth}
-      \fig{width = 0.50\textwidth}{figs/lambda}
-    \column{0.30\textwidth}
-      \fig{width = 0.80\textwidth}{figs/mu}
+      \vspace{-0.80cm} 
+      \begin{center}
+	{Turing Machines \\ (1936-1937)}
+      \end{center}
+
+      \vspace{-0.60cm} 
+      \fig{width = 0.60\textwidth}{figs/turing}
+      \vspace{-0.80cm} 
+      \begin{center}
+	{\small Alan Turing (1912-1954)}
+      \end{center}
     %\column{0.25\textwidth}
     %  \fig{width = 0.80\textwidth}{figs/abacus}
   \end{columns}

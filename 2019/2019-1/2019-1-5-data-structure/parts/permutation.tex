@@ -5,87 +5,140 @@
     \item[\Large Generating All Permutations]
   \end{description}
 
-  \fig{width = 0.30\textwidth}{figs/simple-but-not-easy}
-\end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{}
-  \begin{exampleblock}{DH 2.11: Generate All Permutations}
-    Design an algorithm which, given a positive integer $n$,
-    generates/\blue{prints} all the permutations of $[0 \cdots n)$.
-  \end{exampleblock}
-
-  \pause
-  \begin{lstlisting}[style = Cstyle]
-  void perms (A[], n) {
-    if (n == 1)
-      print ''A[0]''
-    else 
-      for (int i = 0; i < n; ++i)
-        print ''A[i]''
-        perms(A $\gets$ A $\setminus$ A[i], n - 1)
-        print ''\n''
-  }
-  \end{lstlisting}
-
-  \vspace{0.30cm}
-  \pause
-  \begin{center}
-    \href{https://github.com/hengxin/problem-solving-class-lectures/blob/master/2019/2019-1/2019-1-5-data-structure/parts/code/generate-perms.c}{\texttt{\cyan{\large generate-perms.c}}}
-  \end{center}
+  \fig{width = 0.60\textwidth}{figs/recursion}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{columns}
-    \column{0.45\textwidth}
-      \fig{width = 0.70\textwidth}{figs/error-crazy}
-      \begin{center}
-	\href{https://github.com/hengxin/problem-solving-class-lectures/blob/master/2019/2019-1/2019-1-5-data-structure/parts/code/4perms.md}{\texttt{\cyan{\large 4perms.md}}}
-      \end{center}
-    \pause
-    \column{0.45\textwidth}
-      \fig{width = 0.80\textwidth}{figs/recursion-draw}
+    \column{0.20\textwidth}
+    \column{0.60\textwidth}
+      \begin{algorithm}[H]
+      \begin{algorithmic}[1]
+	\Procedure{Perms}{$A[], l$}
+	  \If{$l = A.size - 1$}
+	    \State {\bf print} $A$
+	  \Else
+	    \For{$i \gets l \;{\bf to}\; A.size - 1$}
+	      \State \Call{Swap}{$A[i], A[l]$}
+	      \State \Call{Perms}{$A, l + 1$}
+	      \onslide<2->{\State \red{\Call{Swap}{$A[i], A[l]$}}}
+	    \EndFor
+	  \EndIf
+	\EndProcedure
+      \end{algorithmic}
+      \end{algorithm}
+    \column{0.20\textwidth}
   \end{columns}
+
+  % \pause
+  % \vspace{0.60cm}
+  % \[
+  %   \textsc{Perms}(\set{1, 2, 3}, 0)
+  % \]
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \[
-    A = [0,1,2,3] \qquad n = 4
-  \]
+  \fig{width = 0.45\textwidth}{figs/talk-code}
 
-  \fig{width = 0.50\textwidth}{figs/4-permtree}
-
+  \pause
+  \vspace{-1.00cm}
   \begin{center}
-    ``手动单步调试''
+    \red{\Huge 大型``车祸''现场}
   \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
-\begin{frame}[fragile]{}
-  \begin{lstlisting}[style = Cstyle]
-  void perms (|\purple{prifix}|, A[], n) {
-    if (n == 1)
-      print ''prifix ++ A[0]''
-    else 
-      for (int i = 0; i < n; ++i)
-        perms(|\purple{prefix $\gets$ prefix ++ A[i]}|, 
-            A $\gets$ A $\setminus$ A[i], n - 1) 
-        print ''\n''
-  }
-  \end{lstlisting}
+\begin{frame}{}
+  \fig{width = 0.45\textwidth}{figs/challenge}
 
-  \pause
-  \begin{lstlisting}[style = Cstyle]
-  perms('''', A, n);
-  \end{lstlisting}
+  \begin{center}
+    \red{\Large Iteration Version of \textsc{Perms}}
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
+
+% %%%%%%%%%%%%%%%
+% \begin{frame}[fragile]{}
+%   \begin{exampleblock}{DH 2.11: Generate All Permutations}
+%     Design an algorithm which, given a positive integer $n$,
+%     generates/\blue{prints} all the permutations of $[0 \cdots n)$.
+%   \end{exampleblock}
+% 
+%   \pause
+%   \begin{lstlisting}[style = Cstyle]
+%   void perms (A[], n) {
+%     if (n == 1)
+%       print ''A[0]''
+%     else 
+%       for (int i = 0; i < n; ++i)
+%         print ''A[i]''
+%         perms(A $\gets$ A $\setminus$ A[i], n - 1)
+%         print ''\n''
+%   }
+%   \end{lstlisting}
+% 
+%   \vspace{0.30cm}
+%   \pause
+%   \begin{center}
+%     \href{https://github.com/hengxin/problem-solving-class-lectures/blob/master/2019/2019-1/2019-1-5-data-structure/parts/code/generate-perms.c}{\texttt{\cyan{\large generate-perms.c}}}
+%   \end{center}
+% \end{frame}
+% %%%%%%%%%%%%%%%
+% 
+% %%%%%%%%%%%%%%%
+% \begin{frame}{}
+%   \begin{columns}
+%     \column{0.45\textwidth}
+%       \fig{width = 0.70\textwidth}{figs/error-crazy}
+%       \begin{center}
+% 	\href{https://github.com/hengxin/problem-solving-class-lectures/blob/master/2019/2019-1/2019-1-5-data-structure/parts/code/4perms.md}{\texttt{\cyan{\large 4perms.md}}}
+%       \end{center}
+%     \pause
+%     \column{0.45\textwidth}
+%       \fig{width = 0.80\textwidth}{figs/recursion-draw}
+%   \end{columns}
+% \end{frame}
+% %%%%%%%%%%%%%%%
+% 
+% %%%%%%%%%%%%%%%
+% \begin{frame}{}
+%   \[
+%     A = [0,1,2,3] \qquad n = 4
+%   \]
+% 
+%   \fig{width = 0.50\textwidth}{figs/4-permtree}
+% 
+%   \begin{center}
+%     ``手动单步调试''
+%   \end{center}
+% \end{frame}
+% %%%%%%%%%%%%%%%
+% 
+% %%%%%%%%%%%%%%%
+% \begin{frame}[fragile]{}
+%   \begin{lstlisting}[style = Cstyle]
+%   void perms (|\purple{prifix}|, A[], n) {
+%     if (n == 1)
+%       print ''prifix ++ A[0]''
+%     else 
+%       for (int i = 0; i < n; ++i)
+%         perms(|\purple{prefix $\gets$ prefix ++ A[i]}|, 
+%             A $\gets$ A $\setminus$ A[i], n - 1) 
+%         print ''\n''
+%   }
+%   \end{lstlisting}
+% 
+%   \pause
+%   \begin{lstlisting}[style = Cstyle]
+%   perms('''', A, n);
+%   \end{lstlisting}
+% \end{frame}
+% %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}

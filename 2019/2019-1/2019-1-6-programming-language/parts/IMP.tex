@@ -1,0 +1,33 @@
+% IMP.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{IMP}
+    考虑程序设计语言 {\bf IMP} (Imperative), 它包含如下元素:
+
+    \begin{itemize}
+      \item 整数集合 $\mathbb{Z}$ (可用 $m,n$ 表示其中的元素)
+      \item 真值集合 $\mathbb{T} = \set{T, F}$
+      \item 变量集合 $\mathbb{V}$ (可用 $v$ 表示其中的元素)
+      \item 算法表达式 {\bf Aexp}, 支持 ``$+, -, \times$'' 三则运算
+      \item 布尔表达式 {\bf Bexp}, 支持 ``$=, \le$'' 比较操作与基本的逻辑操作
+      \item 语句 {\bf St}, 包括赋值语句 ($:=$)、顺序语句 ($;$)、选择语句 (if-then-else)与循环语句 (while-do)
+    \end{itemize}
+
+    \begin{center}
+      \blue{请为 {\bf IMP} 设计语法，并使用 BNF 描述。}
+    \end{center}
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.80\textwidth}{figs/imp-bnf}
+
+  \pause
+  \[
+    \red{Q:}\; 2 + 3 \times 4 - 5 \red{\;=\;?}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%

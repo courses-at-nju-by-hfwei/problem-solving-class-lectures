@@ -1,0 +1,23 @@
+% stack-perm-alg-fail.tex
+
+\begin{algorithm}[H]
+  \begin{algorithmic}[1]
+    \Procedure{Stackable}{$out$}
+      \ForAll{$a_j \in out$}
+	\While{$\blue{\textsf{top}(S) \neq a_j \land in \neq \emptyset}$}
+	  \State \purple{$\textsf{Push}(in, S)$}
+	\EndWhile
+
+	\hStatex
+	\If{\teal{$\textsf{top}(S) = a_j$}}
+	  \State \purple{$\textsf{Pop}(out, S)$}
+	\Else  \Comment{\cyan{$\textsf{top}(S) \neq a_j \land in = \emptyset$}}
+	  \State \Return $F$
+	\EndIf
+      \EndFor
+
+      \hStatex
+      \State \Return $T$
+    \EndProcedure
+  \end{algorithmic}
+\end{algorithm}

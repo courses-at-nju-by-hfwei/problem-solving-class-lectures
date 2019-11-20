@@ -1,0 +1,60 @@
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \centerline{\LARGE Treesort Algorithm on BST}
+
+  \vspace{0.30cm}
+  \fig{width = 0.35\textwidth}{figs/bst}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{columns}
+    \column{0.48\textwidth}
+      \input{algs/build-bst}
+    \column{0.53\textwidth}
+      \input{algs/bst-insert}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+% \begin{frame}[fragile]{}
+%   \begin{lstlisting}[style = Cstyle]
+%   procedure |\purple{put x into a BST t}|:
+%     ... call |\purple{put x into t$'$s left subtree}|
+%     ... call |\purple{put x into t$'$s right subtree}|
+%   end procedure
+%   \end{lstlisting}
+% 
+%   \pause
+%   \vspace{0.30cm}
+%   \centerline{\red{\Large should be:}}
+%   \vspace{0.20cm}
+%   \begin{lstlisting}[style = Cstyle]
+%   procedure |\purple{put-x-into-BST}| (t):
+%     ... call |\purple{put-x-into-BST}| (t$'$s left subtree)
+%     ... call |\purple{put-x-into-BST}| (t$'$s right subtree)
+%   end procedure
+%   \end{lstlisting}
+% \end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{}
+  \begin{exampleblock}{DH 2.16: Treesort}
+    \begin{enumerate}[(i)]
+      \setcounter{enumi}{1}
+      \item right; \quad val; \quad left
+    \end{enumerate}
+  \end{exampleblock}
+
+  \vspace{0.30cm}
+  \fig{width = 0.35\textwidth}{figs/bst}
+
+  \pause
+  \[
+    14,\quad 13,\quad 10,\quad 8,\quad 7,\quad 6,\quad 4,\quad 3,\quad 1
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%

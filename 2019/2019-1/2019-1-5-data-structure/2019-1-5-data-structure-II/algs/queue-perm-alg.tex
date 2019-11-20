@@ -1,0 +1,24 @@
+% queue-perm-alg.tex
+
+\begin{algorithm}[H]
+  \begin{algorithmic}[1]
+    \Procedure{Queueable}{$out$}
+      \ForAll{$a \in in$}
+	\State $\textsl{read}(X)$
+	\State $\textsl{add}(X, Q)$
+      \EndFor
+
+      \hStatex
+      \ForAll{$a \in out$}
+	\While{$\teal{\textsl{Head}(Q) \neq a}$}
+	  \State $\textsl{remove}(X, Q)$
+	  \State $\textsl{add}(X, Q)$
+	\EndWhile
+        
+	\hStatex
+	\State $\textsl{remove}(X, Q)$
+	\State $\textsl{print}(X)$
+      \EndFor
+    \EndProcedure
+  \end{algorithmic}
+\end{algorithm}

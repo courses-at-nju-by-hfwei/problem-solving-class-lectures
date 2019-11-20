@@ -1,0 +1,139 @@
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \centerline{\LARGE Queueable Permutations}
+
+  \vspace{0.30cm}
+  \fig{width = 0.35\textwidth}{figs/queue-child}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{DH 2.14: Queueable Permutations}
+    \uncover<2->{
+      \[
+	\fbox{$\texttt{out} = (a_1, \cdots, a_n) \;\blue{\xleftarrow[X \;=\; \bot]{Q \;=\; \emptyset}}\; \texttt{in} = (1, \cdots, n)$}
+      \]
+    }
+
+    \fig{width = 0.80\textwidth}{figs/queue-perm-x}
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{DH 2.14: Queueable Permutations}
+    \begin{enumerate}[(a)]
+      \setcounter{enumi}{1}
+      \item Prove that every permutation are \blue{queueable}.
+    \end{enumerate}
+  \end{exampleblock}
+
+  \begin{columns}
+    \column{0.50\textwidth}
+      \fig{width = 0.90\textwidth}{figs/queue-perm-x}
+    \column{0.50\textwidth}
+      \pause
+      \input{algs/queue-perm-alg}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{DH 2.14: Queueable Permutations}
+    \begin{enumerate}[(a)]
+      \setcounter{enumi}{2}
+      \item Prove that every permutation can be obtained by \blue{two stacks}.
+    \end{enumerate}
+  \end{exampleblock}
+
+  \begin{columns}
+    \column{0.45\textwidth}
+      \fig{width = 1.00\textwidth}{figs/two-stacks-perm-x}
+    \column{0.60\textwidth}
+      \pause
+      \input{algs/two-stack-perm-alg}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{columns}
+    \column{0.60\textwidth}
+      \fig{width = 0.90\textwidth}{figs/queue-perm-x}
+      \begin{center}
+	\blue{\it All are queueable.}
+      \end{center}
+    \column{0.40\textwidth}
+      \fig{width = 0.45\textwidth}{figs/not-interesting}
+  \end{columns}
+
+  \vspace{0.80cm}
+  \begin{columns}
+    \pause
+    \column{0.60\textwidth}
+      \fig{width = 0.90\textwidth}{figs/queue-perm}
+      \begin{center}
+	\blue{\it Only one is queueable.}
+      \end{center}
+    \pause
+    \column{0.40\textwidth}
+      \fig{width = 0.60\textwidth}{figs/boring}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{columns}
+    \column{0.60\textwidth}
+      \fig{width = 0.90\textwidth}{figs/queue-perm-x-no-circle}
+
+      \pause
+      \vspace{0.50cm}
+      \fig{width = 0.90\textwidth}{figs/queue-perm-direct}
+
+      \pause
+      \[
+	\mbox{\Large \red{$3\; 2\; 1$ \text{\it\; is not queueable}}}
+      \]
+    \column{0.40\textwidth}
+      \pause
+      \fig{width = 0.60\textwidth}{figs/yisi}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{theorem}[Queueable Permutations]
+     A permutation $(a_1, \cdots, a_n)$ is \red{queueable} $\iff$ it is not the case that
+     \[
+       321\text{\it -Pattern}: \fbox{$\texttt{\it out} = \cdots a_i \cdots a_j \cdots a_k: i < j < k \land a_i > a_j > a_k$}
+     \]
+  \end{theorem}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{proof}
+    \fig{width = 0.40\textwidth}{figs/your-turn}
+  \end{proof}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[\# of Queueable Permutations]
+    The number of queueable permutations of $[1 \cdots n]$ is ${2n \choose n} - {2n \choose n-1}$.
+  \end{theorem}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{proof}
+    \fig{width = 0.40\textwidth}{figs/your-turn}
+  \end{proof}
+\end{frame}
+%%%%%%%%%%%%%%%

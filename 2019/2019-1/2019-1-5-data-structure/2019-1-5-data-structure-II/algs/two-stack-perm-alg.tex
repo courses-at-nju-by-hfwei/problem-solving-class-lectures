@@ -1,0 +1,30 @@
+% two-stack-perm-alg.tex
+
+\begin{algorithm}[H]
+  \begin{algorithmic}[1]
+    \Procedure{DoubleStackable}{$out$}
+      \ForAll{$a \in in$}
+	\State $\textsl{read}(X)$
+	\State $\textsl{push}(X, S)$
+      \EndFor
+
+      \hStatex
+      \ForAll{$a \in out$}
+	\While{$\teal{\textsl{top}(S) \neq a}$}
+	  \State $\textsl{pop}(X, S)$
+	  \State $\textsl{push}(X, S')$
+	\EndWhile
+        
+	\hStatex
+	\State $\textsl{pop}(X, S)$
+	\State $\textsl{print}(X)$
+
+	\hStatex
+	\While{$S' \neq \emptyset$}
+	  \State $\textsl{pop}(X, S')$
+	  \State $\textsl{push}(X, S)$
+	\EndWhile
+      \EndFor
+    \EndProcedure
+  \end{algorithmic}
+\end{algorithm}

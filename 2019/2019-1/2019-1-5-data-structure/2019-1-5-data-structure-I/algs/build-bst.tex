@@ -1,0 +1,14 @@
+% build-bst.tex
+
+\begin{algorithm}[H]
+  \begin{algorithmic}[1]
+    \Procedure{BuildBST}{$eles$}
+      \State \textsl{Node} $root(eles[0])$
+
+      \Statex
+      \ForAll{$e \in eles[1 \ldots]$}
+	\State \Call{insert}{$root, e$}
+      \EndFor
+    \EndProcedure
+  \end{algorithmic}
+\end{algorithm}

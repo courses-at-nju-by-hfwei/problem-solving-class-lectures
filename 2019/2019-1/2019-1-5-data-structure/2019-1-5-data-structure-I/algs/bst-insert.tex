@@ -1,0 +1,21 @@
+% bst-insert.tex
+
+\begin{algorithm}[H]
+  \begin{algorithmic}[1]
+    \Procedure{Insert}{$T$, $e$}
+      \If{\red{$e < T.val$}}
+	\If{$T.left = \Lambda$}
+	  \State $T.left = \textsl{new Node}(e)$
+	\Else
+	  \State \blue{\Call{Insert}{$T.left, e$}}
+	\EndIf
+      \Else 
+	\If{$T.right = \Lambda$}
+	  \State $T.right = \textsl{new Node}(e)$
+	\Else
+	  \State \blue{\Call{Insert}{$T.right, e$}}
+	\EndIf
+      \EndIf
+    \EndProcedure
+  \end{algorithmic}
+\end{algorithm}

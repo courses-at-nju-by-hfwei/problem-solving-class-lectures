@@ -1,0 +1,128 @@
+% set-operation-set-family.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    {\Large Set Operations (II)}
+  \end{center}
+
+  \[
+    \text{\Large $\bigcap \qquad \bigcup$}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{UD Problem 8.1}
+    \[
+      A_n = [0, 1/n) \quad B_n = [0, 1/n] \quad C_n = (0, 1/n)
+    \]
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{UD Problem 8.1}
+    \[
+      A_n = [0, 1/n) \quad B_n = [0, 1/n] \quad C_n = (0, 1/n)
+    \]
+
+    \begin{enumerate}[(a)]
+      \setcounter{enumi}{1}
+      \item Find $\bigcap_{n=1}^{\infty} A_n \uncover<2->{\blue{\;= \set{0}}}
+	\quad \bigcap_{n=1}^{\infty} B_n \uncover<2->{\red{\;= \set{0}}} 
+	\quad \bigcap_{n=1}^{\infty} C_n \uncover<2->{\blue{\;= \emptyset}}$
+    \end{enumerate}
+  \end{exampleblock}
+
+  \vspace{0.50cm}
+  \only<3>{
+    \begin{columns}
+      \column{0.45\textwidth}
+	\fig{width = 0.85\textwidth}{figs/math-help}
+      \column{0.45\textwidth}
+	\fig{width = 0.70\textwidth}{figs/wunai}
+    \end{columns}
+  }
+  
+  \vspace{0.30cm}
+  \only<4->{
+    \begin{theorem}[The Nested Interval Theorem (Cantor)]
+      设 $\set{[a_n, b_n]}$ 为递降闭区间套序列, 即
+      \[
+	[a_1, b_1] \supset [a_2, b_2] \supset \cdots \supset [a_n, b_n] \supset \cdots.
+      \]
+      如果 $\lim\limits_{n\to \infty} (b_n - a_n) = 0$, 则存在唯一的点 $c$, 
+      使得 $c \in [a_n, b_n], \forall n \ge 1$.
+    \end{theorem}
+  }
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{UD Problem 8.6}
+    \[
+      \forall n \in \mathbb{Z}^{+}: A_n \subset B_n \red{\;\nRightarrow} \bigcap_{n=1}^{\infty} A_n \subset \bigcap_{n=1}^{\infty} B_n
+    \]
+  \end{exampleblock}
+
+  \[
+    A_n = [0, 1/n) \quad B_n = [0, 1/n]
+  \]
+
+  \pause
+  \vspace{0.40cm}
+  \fig{width = 0.35\textwidth}{figs/think-be-careful}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{UD Problem 8.14}
+    \[
+      A = \mathbb{R} \setminus \bigcap_{n \in \mathbb{Z}^{+}} (\mathbb{R} \setminus \set{-n, -n+1, \cdots, 0, \cdots, n-1, n})
+    \]
+  \end{exampleblock}
+
+  \pause
+  \[
+    X_n = \set{-n, -n+1, \cdots, 0, \cdots, n-1, n}
+  \]
+
+  \pause
+  \begin{align*}
+    \onslide<3->{A &= \mathbb{R} \setminus \bigcap_{n \in \mathbb{Z}^{+}} (\mathbb{R} \setminus X_n) \\}
+      \onslide<4->{&= \mathbb{R} \setminus \Big(\mathbb{R} \setminus \bigcup_{n \in \mathbb{Z}^{+}} X_n \Big) \\}
+      \onslide<5->{&= \mathbb{R} \setminus \Big(\mathbb{R} \setminus \mathbb{Z} \Big) \\}
+      \onslide<6->{&= \mathbb{Z}}
+  \end{align*}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{UD Problem 8.15}
+     \[
+      A = \mathbb{Q} \setminus \bigcap_{n \in \mathbb{Z}} (\mathbb{R} \setminus \set{2n})
+    \]
+  \end{exampleblock}
+
+  \pause
+  \vspace{0.50cm}
+  \begin{center}
+    {\red{$Q:$} What is the \purple{temporary} universe?}
+  \end{center}
+
+  \pause
+  \begin{align*}
+     A &= \mathbb{Q} \setminus \bigcap_{n \in \mathbb{Z}} (\mathbb{R} \setminus \set{2n}) \\
+     &= \mathbb{Q} \setminus \Big(\mathbb{R} \setminus \bigcup_{n \in \mathbb{Z}} \set{2n} \Big) \\
+     &= \mathbb{Q} \setminus \Big(\bigcup_{n \in \mathbb{Z}} \set{2n}\Big)^{c} \\
+     &= \mathbb{Q} \cap \bigcup_{n \in \mathbb{Z}} \set{2n}\\
+     &= \set{2n: n \in \mathbb{Z}}
+  \end{align*}
+\end{frame}
+%%%%%%%%%%%%%%%

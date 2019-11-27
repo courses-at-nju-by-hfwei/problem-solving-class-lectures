@@ -28,6 +28,40 @@
   \]
 
   \pause
+  \begin{columns}
+    \column{0.50\textwidth}
+      \[
+	\blue{1.\; A \subseteq B \implies (X \setminus B) \subseteq (X \setminus A)}
+      \]
+
+      \uncover<4->{
+	\begin{center}
+	  \teal{By Contradiction.}
+	\end{center}
+      }
+    \column{0.50\textwidth}
+      \[
+	\blue{2.\; (X \setminus B) \subseteq (X \setminus A) \implies A \subseteq B}
+      \]
+
+      \uncover<5->{
+	\begin{center}
+	  \teal{By Contradiction.}
+	\end{center}
+      }
+  \end{columns}
+
+  \uncover<6->{
+    \vspace{0.80cm}
+    \[
+      \red{(2)\; \text{ needs } A \subseteq X}
+    \]
+  }
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
   \begin{exampleblock}{UD Problem 7.1 (f)}
     \[
       A \cap B = B \iff B \subseteq A
@@ -55,12 +89,22 @@
   \[
     \blue{\text{We need only } B \subseteq X.}
   \]
+
+  \pause
+  \begin{exampleblock}{UD Problem 7.19}
+    Let $A, B, C \subseteq X$.
+
+    \[
+      A \cap (B^{c} \cap C^{c}) = \emptyset \iff A \subseteq B \cup C
+    \]
+  \end{exampleblock}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{exampleblock}{UD Problem 7.14}
+    \blue{Let $A, B \subseteq X$.}
     Prove that the union of two sets can be rewritten as the union of two \red{disjoint} sets.
     \begin{enumerate}[(a)]
       \item Prove that $(A \setminus B) \cap B = \emptyset$
@@ -72,40 +116,30 @@
   \begin{columns}
     \column{0.35\textwidth}
       \uncover<3->{
-	\centerline{By contradiction.}
+	\begin{center}
+	  \blue{By Contradiction.}
+	\end{center}
       }
     \column{0.35\textwidth}
       \pause
-      \fig{width = 0.80\textwidth}{figs/leng}{\centerline{``太容易了，一时没反应过来''}}
+      \fig{width = 0.80\textwidth}{figs/leng}
+      \vspace{-0.60cm}
+      \begin{center}
+	{\footnotesize ``太容易了，一时没反应过来''}
+      \end{center}
     \column{0.35\textwidth}
-      \uncover<4->{
-	\[
-	  (A \setminus B) \cup B = \cdots
-	\]
-      }
+      \begin{align*}
+	\onslide<4->{\blue{(A \setminus B) \cup B = \ldots}} \\
+	\onslide<5->{(A \cap \red{\bar{B}^{(X)}}) \cup B}
+      \end{align*}
   \end{columns}
-\end{frame}
-%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%
-\begin{frame}
-  \begin{exampleblock}{UD Problem 7.19}
-    Let $A, B, C \subseteq X$.
-
+  \uncover<6->{
+    \vspace{0.50cm}
     \[
-      A \cap (B^{c} \cap C^{c}) = \emptyset \iff A \subseteq B \cup C
+      \blue{A, B \subseteq X \text{ is not necessary.}}
     \]
-  \end{exampleblock}
-
-  \pause
-  \vspace{0.60cm}
-  \begin{exampleblock}{UD Problem 7.2}
-    Let \blue{$B \subseteq X$}.
-
-    \[
-      A \cap B = \emptyset \iff B \subseteq (X \setminus A)
-    \]
-  \end{exampleblock}
+  }
 \end{frame}
 %%%%%%%%%%%%%%%
 

@@ -19,6 +19,33 @@
       A \subseteq B \iff \ps{A} \subseteq \ps{B}
     \]
   \end{exampleblock}
+
+  \pause
+  \vspace{0.60cm}
+  \begin{columns}
+    \column{0.50\textwidth}
+      \[
+	\red{A \subseteq B \implies \ps{A} \subseteq \ps{B}}
+      \]
+      \begin{align*}
+	\onslide<3->{&\textcolor{white}{\implies}\; x \in \ps{A} \\}
+	\onslide<4->{&\implies x \subseteq A \\}
+	\onslide<5->{&\implies x \subseteq B \\}
+	\onslide<6->{&\implies x \in \ps{B}}
+      \end{align*}
+    \column{0.50\textwidth}
+      \[
+	\red{\ps{A} \subseteq \ps{B} \implies A \subseteq B}
+      \]
+      \begin{align*}
+	\onslide<7->{&\textcolor{white}{\implies}\; x \in A \\}
+	\onslide<8->{&\implies \red{\set{x} \subseteq A} \\}
+	\onslide<9->{&\implies \set{x} \in \ps{A} \\}
+	\onslide<10->{&\implies \set{x} \in \ps{B} \\}
+	\onslide<11->{&\implies \set{x} \subseteq B \\}
+	\onslide<12->{&\implies x \in B}
+      \end{align*}
+  \end{columns}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -30,6 +57,13 @@
     \]
   \end{exampleblock}
 
+  \begin{align*}
+    \onslide<2->{&\textcolor{white}{\iff}\;\; x \in \bigcup_{\alpha \in I} \ps{A_{\alpha}} \\}
+    \onslide<3->{&\implies \exists \alpha \in I: x \in \ps{A_{\alpha}} \\}
+    \onslide<4->{&\implies \exists \alpha \in I: x \subseteq A_{\alpha} \\}
+    \onslide<5->{&\implies x \subseteq \bigcup_{\alpha \in I} A_{\alpha} \\}
+    \onslide<6->{&\implies x \in \ps{\bigcup_{\alpha \in I} A_{\alpha}}}
+  \end{align*}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -41,15 +75,13 @@
     \]
   \end{exampleblock}
 
-  \begin{proof}
-    \begin{align*}
-      \onslide<2->{&\textcolor{white}{\iff}\;\; x \in \bigcap_{\alpha \in I} \ps{A_{\alpha}} \\}
-      \onslide<3->{&\iff \forall \alpha \in I: x \in \ps{A_{\alpha}} \\}
-      \onslide<4->{&\iff \forall \alpha \in I: x \subseteq A_{\alpha} \\}
-      \onslide<5->{&\iff x \subseteq \bigcap_{\alpha \in I} A_{\alpha} \\}
-      \onslide<6->{&\iff x \in \ps{\bigcap_{\alpha \in I} A_{\alpha}}}
-    \end{align*}
-  \end{proof}
+  \begin{align*}
+    \onslide<2->{&\textcolor{white}{\iff}\;\; x \in \bigcap_{\alpha \in I} \ps{A_{\alpha}} \\}
+    \onslide<3->{&\iff \forall \alpha \in I: x \in \ps{A_{\alpha}} \\}
+    \onslide<4->{&\iff \forall \alpha \in I: x \subseteq A_{\alpha} \\}
+    \onslide<5->{&\iff x \subseteq \bigcap_{\alpha \in I} A_{\alpha} \\}
+    \onslide<6->{&\iff x \in \ps{\bigcap_{\alpha \in I} A_{\alpha}}}
+  \end{align*}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -60,5 +92,11 @@
       A \times (B \setminus C) = (A \times B) \setminus (A \times C)
     \]
   \end{exampleblock}
+
+  \pause
+
+  \[
+    (a, d) \in A \times (B \setminus C)
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%

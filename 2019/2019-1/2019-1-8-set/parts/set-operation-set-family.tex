@@ -18,6 +18,12 @@
     \[
       A_n = [0, 1/n) \quad B_n = [0, 1/n] \quad C_n = (0, 1/n)
     \]
+
+    \begin{enumerate}[(a)]
+      \item $\bigcup_{n=1}^{\infty} A_n \uncover<2->{\blue{\;= [0,1)}}
+	\quad \bigcup_{n=1}^{\infty} B_n \uncover<3->{\red{\;= [0, 1]}} 
+	\quad \bigcup_{n=1}^{\infty} C_n \uncover<4->{\teal{\;= (0, 1)}}$
+    \end{enumerate}
   \end{exampleblock}
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -31,51 +37,56 @@
 
     \begin{enumerate}[(a)]
       \setcounter{enumi}{1}
-      \item Find $\bigcap_{n=1}^{\infty} A_n \uncover<2->{\blue{\;= \set{0}}}
-	\quad \bigcap_{n=1}^{\infty} B_n \uncover<2->{\red{\;= \set{0}}} 
-	\quad \bigcap_{n=1}^{\infty} C_n \uncover<2->{\blue{\;= \emptyset}}$
+      \item $\bigcap_{n=1}^{\infty} A_n \uncover<2->{\blue{\;= \set{0}}}
+	\quad \bigcap_{n=1}^{\infty} B_n \uncover<3->{\red{\;= \set{0}}} 
+	\quad \bigcap_{n=1}^{\infty} C_n \uncover<4->{\blue{\;= \emptyset}}$
     \end{enumerate}
   \end{exampleblock}
 
-  \vspace{0.50cm}
-  \only<3>{
-    \begin{columns}
-      \column{0.45\textwidth}
-	\fig{width = 0.85\textwidth}{figs/math-help}
-      \column{0.45\textwidth}
-	\fig{width = 0.70\textwidth}{figs/wunai}
-    \end{columns}
-  }
-  
-  \vspace{0.30cm}
-  \only<4->{
-    \begin{theorem}[The Nested Interval Theorem (Cantor)]
-      设 $\set{[a_n, b_n]}$ 为递降闭区间套序列, 即
-      \[
-	[a_1, b_1] \supset [a_2, b_2] \supset \cdots \supset [a_n, b_n] \supset \cdots.
-      \]
-      如果 $\lim\limits_{n\to \infty} (b_n - a_n) = 0$, 则存在唯一的点 $c$, 
-      使得 $c \in [a_n, b_n], \forall n \ge 1$.
-    \end{theorem}
+  \uncover<5->{
+    \begin{proof}
+      \uncover<6>{
+	\begin{columns}
+	  \column{0.45\textwidth}
+	    \fig{width = 0.85\textwidth}{figs/math-help}
+	  \column{0.45\textwidth}
+	    \fig{width = 0.70\textwidth}{figs/wunai}
+	\end{columns}
+      }
+    \end{proof}
   }
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{UD Problem 8.6}
+  \begin{exampleblock}{UD Problem 8.1}
     \[
-      \forall n \in \mathbb{Z}^{+}: A_n \subset B_n \red{\;\nRightarrow} \bigcap_{n=1}^{\infty} A_n \subset \bigcap_{n=1}^{\infty} B_n
+      A_n = [0, 1/n) \quad B_n = [0, 1/n] \quad C_n = (0, 1/n)
     \]
-  \end{exampleblock}
 
-  \[
-    A_n = [0, 1/n) \quad B_n = [0, 1/n]
-  \]
+    \begin{enumerate}[(a)]
+      \setcounter{enumi}{1}
+      \item $\bigcap_{n=1}^{\infty} A_n \blue{\;= \set{0}}
+	\quad \bigcap_{n=1}^{\infty} B_n \red{\;= \set{0}} 
+	\quad \bigcap_{n=1}^{\infty} C_n \blue{\;= \emptyset}$
+    \end{enumerate}
+  \end{exampleblock}
+  
+  \vspace{0.30cm}
+  \begin{theorem}[The Nested Interval Theorem (Cantor)]
+    设 $\set{[a_n, b_n]}$ 为递降闭区间套序列, 即
+    \[
+      [a_1, b_1] \supset [a_2, b_2] \supset \cdots \supset [a_n, b_n] \supset \cdots.
+    \]
+    如果 $\lim\limits_{n\to \infty} (b_n - a_n) = 0$, 则存在唯一的点 $c$, 
+    使得 $c \in [a_n, b_n], \forall n \ge 1$.
+  \end{theorem}
 
   \pause
-  \vspace{0.40cm}
-  \fig{width = 0.35\textwidth}{figs/think-be-careful}
+  \[
+    \forall n \in \mathbb{Z}^{+}: A_n \subset B_n \red{\;\nRightarrow} \bigcap_{n=1}^{\infty} A_n \subset \bigcap_{n=1}^{\infty} B_n
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -111,18 +122,18 @@
   \end{exampleblock}
 
   \pause
-  \vspace{0.50cm}
+  \vspace{0.30cm}
   \begin{center}
     {\red{$Q:$} What is the \purple{temporary} universe?}
   \end{center}
 
   \pause
   \begin{align*}
-     A &= \mathbb{Q} \setminus \bigcap_{n \in \mathbb{Z}} (\mathbb{R} \setminus \set{2n}) \\
-     &= \mathbb{Q} \setminus \Big(\mathbb{R} \setminus \bigcup_{n \in \mathbb{Z}} \set{2n} \Big) \\
-     &= \mathbb{Q} \setminus \Big(\bigcup_{n \in \mathbb{Z}} \set{2n}\Big)^{c} \\
-     &= \mathbb{Q} \cap \bigcup_{n \in \mathbb{Z}} \set{2n}\\
-     &= \set{2n: n \in \mathbb{Z}}
+    \onslide<3->{A &= \mathbb{Q} \setminus \bigcap_{n \in \mathbb{Z}} (\mathbb{R} \setminus \set{2n}) \\}
+    \onslide<4->{&= \mathbb{Q} \setminus \Big(\mathbb{R} \setminus \bigcup_{n \in \mathbb{Z}} \set{2n} \Big) \\}
+    \onslide<5->{&= \mathbb{Q} \setminus \Big(\bigcup_{n \in \mathbb{Z}} \set{2n}\Big)^{c} \\}
+    \onslide<6->{&= \mathbb{Q} \cap \bigcup_{n \in \mathbb{Z}} \set{2n}\\}
+    \onslide<7->{&= \set{2n: n \in \mathbb{Z}}}
   \end{align*}
 \end{frame}
 %%%%%%%%%%%%%%%

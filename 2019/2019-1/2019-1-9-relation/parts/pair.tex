@@ -1,0 +1,63 @@
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \centerline{\LARGE Ordered Pair and Cartesian Product}
+
+  \fig{width = 0.80\textwidth}{figs/cards}
+
+  % \[
+  %   \set{1 \cdots K} \times \set{\spadesuit, \red{\varheartsuit}, \clubsuit, \red{\vardiamondsuit}}
+  % \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{UD Problem 9.19: Distributive Laws}
+    \begin{align*}
+      A \times (B \cup C) &= (A \times B) \cup (A \times C) \\
+      A \times (B \cap C) &= (A \times B) \cap (A \times C) \\
+      A \times (B \setminus C) &= (A \times B) \setminus (A \times C)
+    \end{align*}
+  \end{exampleblock}
+
+  \pause
+  \fig{width = 0.60\textwidth}{figs/cp-distributive}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{UD Problem 9.18: Cartesian Product and ``$\subseteq$''}
+    \[
+      A \times B \subseteq C \times D \red{\iff} A \subseteq C \land B \subseteq D
+    \]
+  \end{exampleblock}
+
+  \pause
+  \begin{proof}
+    \begin{columns}
+      \column{0.60\textwidth}
+	\begin{align*}
+	  (x,y) \in A \times B &\implies (x,y) \in C \times D  \\
+	  x \in A \land y \in B &\implies x \in C \land y \times D \\
+	  \redoverlay{(x \in A \implies x \in C)}{3-}\; &\redoverlay{\land\; (y \in B \implies y \in D)}{3-} \\
+	  (A \subseteq C) &\land (B \subseteq D)
+	\end{align*}
+      \column{0.40\textwidth}
+	\pause
+	\[
+	  \red{A = \emptyset \lor B = \emptyset}
+	\]
+    \end{columns}
+  \end{proof}
+
+  \pause
+  \[
+    A \times B \subseteq C \times D \;\blue{\xRightarrow{\uncover<3->{A, B \;\neq\; \emptyset}}}\; A \subseteq C \land B \subseteq D
+  \]
+
+  \uncover<5->{
+    \centerline{\blue{By contradiction.}}
+  }
+\end{frame}
+%%%%%%%%%%%%%%%

@@ -1,0 +1,240 @@
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    {\LARGE Partition}
+  \end{center}
+
+  \fig{width = 0.60\textwidth}{figs/partition}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Partition]
+    A family of sets \red{$\set{A_{\alpha}: \alpha \in I}$} is a \blue{\it partition} of \purple{$X$} if
+
+    \begin{enumerate}[(i)]
+      \item 
+	\[
+	  \forall \alpha \in I: A_{\alpha} \neq \emptyset
+	\]
+	\[
+	  \textcolor{teal}{\forall \alpha \in I \; \exists x \in X: x \in A_{\alpha}}
+	\]
+      \item 
+	\[
+	  \bigcup_{\alpha \in I} A_{\alpha} = X
+	\]
+	\[
+	  \textcolor{teal}{\forall x \in X \; \exists \alpha \in I: x \in A_{\alpha}}
+	\]
+      \item 
+	\[
+	  \forall \alpha, \beta \in I: A_{\alpha} \cap A_{\beta} = \emptyset \lor A_{\alpha} = A_{\beta}
+	\]
+	\[
+	  \textcolor{teal}{\forall \alpha, \beta \in I: A_{\alpha} \cap A_{\beta} \neq \emptyset \implies A_{\alpha} = A_{\beta}}
+	\]
+    \end{enumerate}
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{UD Problem 11.8: Partitions of the Set of Polynomials}
+    \[
+      p(x) = a_n x^n + a_{n-1} x^{n-1} + \cdots + a_1 x^1 + a_0 \quad (a_j \in \mathbb{R}, n \in \mathbb{N})
+    \]
+    \[
+      \text{deg}(p = 0) = -\infty
+    \]
+
+    \begin{enumerate}[(a)]
+      \item
+	\[
+	  A_m = \set{p: \text{deg}(p) = m} \quad m \in \mathbb{N}
+	\]
+
+	\pause
+	\[
+	  \red{(p = 0) \notin \bigcup\limits_{m \in \mathbb{N}} A_m}
+	\]
+      \setcounter{enumi}{2}
+      \item 
+	\pause
+	\[
+	  A_q = \set{p: \exists r (p = qr)} \quad q \in P
+	\]
+	\pause
+	\vspace{-0.30cm}
+	\[
+	  \textcolor{teal}{q \in A_q}
+	\]
+	\pause
+	\vspace{-0.50cm}
+	\[
+	  \textcolor{cyan}{p \in A_p}
+	\]
+	\pause
+	\vspace{-0.50cm}
+	\[
+	  \textcolor{purple}{p \neq q \land r = pq \implies (r \in A_p \cap A_q) \land (A_p \neq A_q)}
+	\]
+    \end{enumerate}
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{UD Problem 11.8: Partitions of the Set of Polynomials}
+    \[
+      p(x) = a_n x^n + a_{n-1} x^{n-1} + \cdots + a_1 x^1 + a_0 \quad (a_j \in \mathbb{R}, n \in \mathbb{N})
+    \]
+    \[
+      \text{deg}(p = 0) = -\infty
+    \]
+
+    \begin{enumerate}[(a)]
+      \setcounter{enumi}{1}
+      \item 
+	\[
+	  A_c = \set{p: p(0) = c} \quad c \in \mathbb{R}
+	\]
+      \setcounter{enumi}{3}
+      \item 
+	\pause
+	\[
+	  A_c = \set{p: p(c) = 0} \quad c \in \mathbb{R}
+	\]
+	\pause
+	\vspace{-0.20cm}
+	\[
+	  \red{(p(x) = x^2 + 1) \notin \bigcup\limits_{c \in \mathbb{R}} A_c}
+	\]
+    \end{enumerate}
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{UD Problem 11.4: Partitions of $\mathbb{R}^{3}$}
+    Is $\set{A_r \mid r \in \mathbb{R}}$ a partition of $\mathbb{R}^{3}$?
+
+    \[
+      A_{r} = \set{(x,y,z) \in \mathbb{R}^{3}: x + y + z = r}
+    \]
+  \end{exampleblock}
+
+  \pause
+  \fig{width = 0.32\textwidth}{figs/xyzr}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{UD Problem 11.4: Partitions of $\mathbb{R}^{3}$}
+    Is $\set{A_r \mid r \in \mathbb{R}}$ a partition of $\mathbb{R}^{3}$?
+
+    \[
+      A_{r} = \set{(x,y,z) \in \mathbb{R}^{3}: x^2 + y^2 + z^2 = r^2}
+    \]
+  \end{exampleblock}
+
+  \pause
+  \fig{width = 0.35\textwidth}{figs/x2y2z2r2}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{UD Problem 11.9: Subset and Partition}
+    \begin{center}
+      Let $\set{A_{\alpha}: \alpha \in I}$ be a partition of $X \neq \emptyset$.
+    \end{center}
+
+    \begin{enumerate}[(a)]
+      \item 
+	\[
+	  B \subseteq X, \quad \forall \alpha \in I: A_{\alpha} \cap B \neq \emptyset
+	\]
+
+	To prove that
+	\[
+	  \set{A_{\alpha} \cap B: \alpha \in I} \text{ \red{\it is} a partition of } B.
+	\]
+    \end{enumerate}
+  \end{exampleblock}
+
+  \fig{width = 0.50\textwidth}{figs/subset-partition}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \blue{\bigcup_{i \in I} (A \cap X_i) = A \cap \bigcup_{i \in I} X_i}
+  \]
+
+  \begin{align*}
+    \onslide<2->{&\textcolor{white}{\iff}\; x \in \bigcup_{i \in I} (A \cap X_i) \\}
+    \onslide<3->{&\iff \exists i \in I: x \in A \cap X_i \\}
+    \onslide<4->{&\iff \exists i \in I: x \in A \land x \in X_i \\}
+    \onslide<5->{&\red{\;\iff x \in A \land \exists i \in I: x \in X_i} \\}
+    \onslide<6->{&\iff x \in A \land x \in \bigcup_{i \in I} X_i \\}
+    \onslide<7->{&\iff x \in A \cap \bigcup_{i \in I} X_i }
+  \end{align*}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \bigcup_{i \in I} (A \cap X_i) = A \cap \bigcup_{i \in I} X_i
+  \]
+
+  \vspace{0.30cm}
+  \[
+    \bigcap_{i \in I} (A \cup X_i) = A \cup \bigcap_{i \in I} X_i
+  \]
+
+  \pause
+  \vspace{0.60cm}
+  \[
+    A \setminus \bigcup_{i \in I} X_i = \bigcap_{i \in I} (A \setminus X_i)
+  \]
+
+  \vspace{0.30cm}
+  \[
+    A \setminus \bigcap_{i \in I} X_i = \bigcup_{i \in I} (A \setminus X_i)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \[
+    \bigcup_{i \in I} X_i \cap \bigcup_{i \in I} Y_i \supseteq \bigcup_{i \in I} (X_i \cap Y_i)
+  \]
+
+  \[
+    \bigcap_{i \in I} X_i \cup \bigcap_{i \in I} Y_i \subseteq \bigcap_{i \in I} (X_i \cup Y_i)
+  \]
+
+  \begin{align*}
+    \onslide<2->{&\textcolor{white}{\implies}\; x \in \bigcap_{i \in I} X_i \cup \bigcap_{i \in I} Y_i \\}
+    \onslide<3->{&\iff x \in \bigcap_{i \in I} X_i \lor x \in \bigcap_{i \in I} Y_i  \\}
+    \onslide<4->{&\iff \forall i \in I: x \in X_i \lor \forall i \in I: x \in Y_i \\}
+    \onslide<6->{&\red{\;\implies \forall i \in I: (x \in X_i \lor x \in Y_i)} \\}
+    \onslide<7->{&\iff x \in \bigcap_{i \in I} (X_i \cup Y_i)}
+  \end{align*}
+
+  \uncover<8->{
+    \[
+      X_1 = \set{1}, X_2 = \set{2}, \qquad Y_1 = \set{2}, Y_2 = \set{1}
+    \]
+  }
+\end{frame}
+%%%%%%%%%%%%%%%

@@ -1,0 +1,115 @@
+% relation.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    {\LARGE Relation}
+  \end{center}
+
+  \fig{width = 0.60\textwidth}{figs/wulin-relation}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Equivalence Relation]
+    $R$ is an \red{equivalence relation} on $X$ if $R$ is
+    \begin{description}
+      \item[Reflexive:] $\forall x \in X: x R x$ \vspace{-0.30cm}
+	\fig{width = 0.20\textwidth}{figs/reflexive}
+      \item[Symmetric:] $\forall x, y \in X: x R y \implies y R x$
+	\fig{width = 0.25\textwidth}{figs/symmetric}
+      \item[Transitive:] $\forall x, y, z \in X: x R y \land y R z \implies x R z$
+	\fig{width = 0.30\textwidth}{figs/transitive}
+    \end{description}
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Equivalence Class]
+    \[
+      \purple{\text{Equivalance Relation } R \subseteq X \times X}
+    \]
+
+    The equivalence class of $a$ modulo $R$ is a \red{\it set}:
+    \[
+      [a]_{R} = \set{x \in X: a \sim x}
+    \]
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{UD Problem 10.10}
+    \[
+      \sim \text{ is an equivalence relation on } X
+    \]
+
+    Prove that 
+    \[
+      \forall x, y \in X: [x]_{\sim} = [y]_{\sim} \iff x \sim y.
+    \]
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{UD Problem 10.9}
+    \[
+      \sim\; \subseteq \mathbb{R}^2 \times \mathbb{R}^2
+    \]
+
+    \[
+      (x_1, x_2) \sim (y_1, y_2) \iff \textsf{Even}(x_1 - y_1) \land \textsf{Even}(x_2 - y_2)
+    \]
+
+    \begin{center}
+      \red{$Q:$ Is $\sim$ an equivalence relation?}
+    \end{center}
+  \end{exampleblock}
+
+  \pause
+  \vspace{0.60cm}
+  \begin{center}
+    \red{$Q:$ What is the partition of $\mathbb{R}^2$?}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{UD Problem 10.13: Equivalence Relations/Classes on Polynomials}
+    \[
+      p(x) = a_n x^n + a_{n-1} x^{n-1} + \cdots + a_1 x^1 + a_0 \quad (a_j \in \mathbb{R}, n \in \mathbb{N})
+    \]
+
+    \begin{enumerate}[(a)]
+      \item 
+	\[
+	  p \sim q \iff p(0) = q(0)
+	\]
+	\[
+	  \purple{[p(x) = x]_{\sim}}
+	\]
+      \item 
+	\[
+	  p \sim q \iff \text{deg}(p) = \text{deg}(q)
+	\]
+	\[
+	  \purple{[p(x) = 3x + 5]_{\sim}}
+	\]
+      \item 
+	\[
+	  p \sim q \iff \text{deg}(p) \le \text{deg}(q)
+	\]
+        \[
+	  \purple{[p(x) = x^2]_{\sim}}
+	\]
+    \end{enumerate}
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%

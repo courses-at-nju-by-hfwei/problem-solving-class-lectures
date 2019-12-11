@@ -1,0 +1,283 @@
+% function.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    y \in f(X) \iff \exists x \in X: y = f(x)
+  \]
+
+  \pause
+  \[
+    x \in f^{-1}(Y) \iff f(x) \in Y
+  \]
+
+  \pause
+  \[
+    a \in A \implies f(a) \in f(A)
+  \]
+
+  \pause
+  \[
+    f(A_1 \cup A_2) = f(A_1) \cup f(A_2) \pause \qquad f(\bigcup_{\alpha \in I} A_{\alpha}) = \bigcup \set{f(A_\alpha) \mid \alpha \in I}
+  \]
+
+  \pause
+  \[
+    f(A_1 \cap A_2) \subseteq f(A_1) \cap f(A_2) \pause \qquad f(\bigcap_{\alpha \in I} A_{\alpha}) \subseteq \bigcap \set{f(A_\alpha) \mid \alpha \in I}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{UD Problem $16.14$}
+    \[
+      f: A \to B \qquad g_1, g_2: B \to A
+    \]
+    \[
+      f \circ g_1 = f \circ g_2
+    \]
+
+    \begin{enumerate}[(a)]
+      \item Show that if $f$ is bijective, then $g_1 = g_2$.
+      \item If $g_1 \circ f = g_2 \circ f$ and $f$ is bijective, must $g_1 = g_2$?
+    \end{enumerate}
+  \end{exampleblock}
+
+  \pause
+  \[
+    \red{f^{-1}\; \circ\;} (f \circ g_1) = \red{f^{-1}\; \circ\;} (f \circ g_2)
+  \]
+
+  \pause
+  \[
+    (g_1 \circ f) \;\blue{\circ\; f^{-1}} = (f \circ g_2)\; \blue{\circ\; f^{-1}}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}
+    \[
+      f \circ g_1 = f \circ g_2 \land \red{f \text{ is injective}} \implies g_1 = g_2.
+    \]
+  \end{theorem}
+
+  \begin{align*}
+    \onslide<2->{&\textcolor{white}{\implies}\;\; (f \circ g_1)(x) = (f \circ g_2)(x) \\}
+    \onslide<3->{&\implies f(g_1(x)) = f(g_2(x)) \\}
+    \onslide<4->{&\implies g_1(x) = g_2(x) \quad \red{\text{($f$ is injective)}}}
+  \end{align*}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}
+    \[
+      g_1 \circ f = g_2 \circ f \land \blue{f \text{ is surjective}} \implies g_1 = g_2.
+    \]
+  \end{theorem}
+
+  \pause
+  \[
+    \forall b \in B: \exists a \in A: b = f(a)
+  \]
+
+  \pause
+  \[
+    g_1(b) = g_1(f(a)) \pause = g_2(f(a)) \pause = g_2(b)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{(Composition) UD Problem $16.22$}
+    Let $f: \mathbb{R} \to \mathbb{R}$ be a function such that $f$ is onto and $f \circ f \circ f = f$.
+    Prove that $f$ is bijective.
+  \end{exampleblock}
+
+  \begin{align*}
+    \onslide<2->{&\textcolor{white}{\implies}\;\; f \text{ is onto } \\}
+    \onslide<3->{&\implies \forall y \in \mathbb{R}: \exists x \in \mathbb{R}: f(x) = y \\}
+    \onslide<4->{&\implies \forall y \in \mathbb{R}: \exists x \in \mathbb{R}: f^3(x) = f^2(y) \\}
+    \onslide<5->{&\implies \forall y \in \mathbb{R}: \exists x \in \mathbb{R}: f(x) = f^2(y) \\}
+    \onslide<6->{&\implies \forall y \in \mathbb{R}: \exists x \in \mathbb{R}: y = f^2(y) \\}
+    \onslide<7->{&\implies \forall y \in \mathbb{R}: y = f^2(y) \\}
+    \onslide<8->{&\implies f^2 = \textsl{Id}_{\mathbb{R}} \\}
+  \end{align*}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}
+    If $f: X \to X$, then
+    \[
+      f^2 = \text{Id}_{X} \implies f \text{ is injective}.
+    \]
+  \end{theorem}
+
+  \begin{align*}
+    \onslide<2->{&\textcolor{white}{\implies}\;\; f(x_1) = f(x_2) \\}
+    \onslide<3->{&\implies f^2(x_1) = f^2(x_2) \\}
+    \onslide<4->{&\implies Id_{X}(x_1) = Id_{X}(x_2) \\}
+    \onslide<5->{&\implies x_1 = x_2 \\}
+  \end{align*}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Image (UD Problem $17.22$)}
+    \[
+      f: A \to B, \quad A_1, A_2 \subseteq A
+    \]
+
+    \begin{enumerate}[(i)]
+      \item If $f(A_1) = f(A_2)$, must $A_1 = A_2$?
+      \item When is $f(A_1) = f(A_2) \implies A_1 = A_2$?
+    \end{enumerate}
+  \end{exampleblock}
+
+  \begin{align*}
+    \onslide<2->{&\textcolor{white}{\implies}\;\; a_1 \in A_1 \\}
+    \onslide<3->{&\implies f(a_1) \in f(A_1) \\}
+    \onslide<4->{&\implies f(a_1) \in f(A_2) \\}
+    \onslide<5->{&\implies \exists a_2 \in A_2: f(a_2) = f(a_1) \\}
+    \onslide<6->{&\implies a_1 = a_2 \quad \text{\red{(if $f$ is injective)}}\\}
+    \onslide<7->{&\implies a_1 \in A_2}
+  \end{align*}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{(Inverse Image) UD Problem $17.23$}
+    \[
+      f: A \to B, \quad B_1, B_2 \subseteq B
+    \]
+
+    \begin{enumerate}[(i)]
+      \item If $f^{-1}(B_1) = f^{-1}(B_2)$, must $B_1 = B_2$?
+      \item When is $f^{-1}(B_1) = f^{-1}(B_2) \implies B_1 = B_2$?
+    \end{enumerate}
+  \end{exampleblock}
+
+  \begin{align*}
+    \onslide<2->{&\textcolor{white}{\implies}\;\; b_1 \in B_1 \\}
+    \onslide<3->{&\implies \exists a_1 \in A: f(a_1) = b_1 \in B_1 \quad \text{\red{(if $f$ is surjective)}}\\}
+    \onslide<4->{&\implies \exists a_1 \in A: a_1 \in f^{-1}(B_1) \\}
+    \onslide<5->{&\implies \exists a_1 \in A: a_1 \in f^{-1}(B_2) \\}
+    \onslide<6->{&\implies \exists a_1 \in A: f(a_1) \in B_2 \\}
+    \onslide<7->{&\implies b_1 \in B_2 \quad \text{\blue{($f(a_1) = b_1$, since $f$ is a function)}}}
+  \end{align*}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Monotonicity}
+    Assume that $F: \mathcal{P}(A) \to \mathcal{P}(A)$ and that $F$ has the monotonicity property:
+    \[
+      X \subseteq Y \subseteq A \implies F(X) \subseteq F(Y).
+    \]
+
+    \noindent Define
+    \[
+      B = \bigcap \set{X \subseteq A \mid F(X) \subseteq X}
+    \]
+
+    \[
+      C = \bigcup \set{X \subseteq A \mid X \subseteq F(X)}.
+    \]
+
+    \begin{enumerate}[(a)]
+      \item Show that $F(B) = B$ and $F(C) = C$.
+      \item Show that if $F(X) = X$, then $B \subseteq X \subseteq C$.
+    \end{enumerate}
+  \end{exampleblock}
+
+  \pause
+  \[
+    F(X) = X \pause \implies \red{F(X) \subseteq X} \land \blue{X \subseteq F(X)} \pause \implies \red{B \subseteq}\; X \;\blue{\subseteq C}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    B = \bigcap \set{X \subseteq A \mid F(X) \subseteq X}
+  \]
+
+  \pause
+  \[
+    \red{F(B) \subseteq B}
+  \]
+
+  \begin{align*}
+    \onslide<3->{F(B) &= F(\bigcap \set{X \subseteq A \mid F(X) \subseteq X}) \\}
+    \onslide<4->{&\subseteq \bigcap \set{F(X): X \subseteq A \land F(X) \subseteq X} \\}
+    \onslide<5->{&\subseteq \bigcap \set{X: X \subseteq A \land F(X) \subseteq X} \\}
+    \onslide<6->{&= B}
+  \end{align*}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    B = \bigcap \set{X \subseteq A \mid F(X) \subseteq X}
+  \]
+
+  \[
+    \red{B \subseteq F(B)}
+  \]
+
+  \pause
+  \[
+    F(B) \subseteq B \pause \implies \purple{F(F(B)) \subseteq F(B)} \pause \implies \teal{B \subseteq F(B)}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    C = \bigcup \set{X \subseteq A \mid X \subseteq F(X)}.
+  \]
+
+  \pause
+  \[
+    \red{C \subseteq F(C)}
+  \]
+
+  \begin{align*}
+    \onslide<3->{C &= \bigcup \set{X \subseteq A \mid X \subseteq F(X)} \\}
+    \onslide<4->{&\subseteq \bigcup \set{F(X) \subseteq A \mid X \subseteq F(X)} \\}
+    \onslide<5->{&= F(\bigcup \set{X \subseteq A \mid X \subseteq F(X)}) \\}
+    \onslide<6->{&= F(C)}
+  \end{align*}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    C = \bigcup \set{X \subseteq A \mid X \subseteq F(X)}.
+  \]
+
+  \pause
+  \[
+    \red{F(C) \subseteq C}
+  \]
+
+  \pause
+  \[
+    C \subseteq F(C) \pause \implies \purple{F(C) \subseteq F(F(C))} \pause \implies \teal{F(C) \subseteq C}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%

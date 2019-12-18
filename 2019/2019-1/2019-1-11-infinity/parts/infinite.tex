@@ -1,0 +1,225 @@
+% infinite.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Set Union (UD Problem $23.1$)}
+    Give an example, if possible, of
+    \begin{enumerate}[(a)]
+      \item A countably infinite collection of \purple{pairwise disjoint finite sets} whose union is countably infinite.
+	\pause
+	\[
+	  \forall n \in \N: A_n = \set{n} \qquad \bigcup_{n \in \N} A_n = \N
+	\]
+	\pause
+      \item A countably infinite collection of nonempty sets whose union is finite.
+	\pause
+	\[
+	  \forall n \in \N: A_n = \set{1} \qquad \bigcup_{n \in \N} A_n = \set{1}
+	\]
+	\pause
+      \item A countably infinite collection of \teal{pairwise disjoint nonempty sets} whose union is finite.
+	\pause
+	\[
+	  |A| = n \implies \pause |\ps{A}| = 2^n
+	\]
+    \end{enumerate}
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{UD Problem 23.3 (d)}
+    Is it countable or uncountable?
+    \[
+      A = \set{(x, y) \in \R \times \R: x + y = 1}
+    \]
+  \end{exampleblock}
+
+  \pause
+  \[
+    f: \R \xleftrightarrow[onto]{1-1} A
+  \]
+
+  \pause
+  \[
+    f(x) = (x, 1-x)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Infinite Sequences of $0$'s and $1$'s (UD Problem $23.4$)}
+    Is the set of all infinite sequences of $0$'s and $1$'s finite,
+    countably infinite, or uncountable?
+  \end{exampleblock}
+
+  \pause
+  \fig{width = 0.35\textwidth}{figs/diagonal-argument-01}
+  \begin{center}
+    \red{By Diagonal Argument.}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Infinite Sequences of $0$'s and $1$'s (UD Problem $23.4$)}
+    Is the set of all infinite sequences of $0$'s and $1$'s finite,
+    countably infinite, or uncountable?
+  \end{exampleblock}
+
+  \[
+    f: \set{\set{0,1}^{\ast}} \to \N
+  \]
+
+  \pause
+  \[
+    \purple{f(x_0 x_1 \cdots) = \sum_{i=0}^{\infty} x_i 2^{i}}
+  \]
+
+  \pause
+  \fig{width = 0.20\textwidth}{figs/wrong}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Complex Numbers (UD Problem $24.16$)}
+    Prove that
+    \[
+      |\R| = |\CP|, \quad \CP = \set{a + bi: a, b \in \R}
+    \]
+  \end{exampleblock}
+
+  \pause
+  \[
+    |\CP| = |\R \times \R| \pause = |\R|
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \R \times \R \approx \R
+  \]
+
+  \pause
+  \[
+    (x = 0.\blue{a_1 a_2 a_3 \cdots}, y = 0.\red{b_1 b_2 b_3 \cdots}) \pause \mapsto 0.\blue{a_1}\red{b_1}\blue{a_2}\red{b_2}\blue{a_3}\red{b_3}\cdots
+  \]
+
+  \pause
+  \fig{width = 0.25\textwidth}{figs/flawed}
+
+  \begin{center}
+    \href{https://www.maa.org/sites/default/files/pdf/pubs/AMM-March11\_Cantor.pdf}{\teal{Was Cantor Surprised?}}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{UD Problem $24.15$}
+    \[
+      (0, 1) \approx (0, 1) \times (0, 1)
+    \]
+  \end{exampleblock}
+
+  \pause
+  \begin{theorem}[Cantor-Schr\"{o}der–Bernstein (1887)]
+    \[
+      |X| \le |Y| \land |Y| \le |X| \implies |X| = |Y|
+    \]
+    \pause
+    \[
+      \exists\; \text{\blue{one-to-one} } f: X \to Y \land g: Y \to X \implies \exists\; \text{\blue{bijection} } h: X \to Y
+    \]
+  \end{theorem}
+
+  \pause
+  \[
+    f: (0, 1) \to (0, 1) \times (0, 1)
+  \]
+
+  \pause
+  \[
+    \teal{f(x) = (x, 0.5)}
+  \]
+
+  \pause
+  \[
+    g: (0, 1) \times (0, 1) \times (0, 1)
+  \]
+
+  \pause
+  \[
+    \teal{(x = 0.\blue{a_1 a_2 a_3 \cdots}, y = 0.\red{b_1 b_2 b_3 \cdots}) \mapsto 0.\blue{a_1}\red{b_1}\blue{a_2}\red{b_2}\blue{a_3}\red{b_3}\cdots}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Bijections (UD Problem $21.21$)}
+    \[
+      [0, 1] \approx (0, 1)
+    \]
+  \end{exampleblock}
+
+  \pause
+  \[
+    \red{0}, \red{1}, \quad \frac{1}{2}, \frac{1}{3}, \quad \frac{1}{4}, \frac{1}{5} \cdots
+  \]
+
+  \pause
+  \[
+    f(0) = \frac{1}{2} \quad f(1) = \frac{1}{3}
+  \]
+
+  \pause
+  \[
+    \forall n \ge 4: f(\frac{1}{n-2}) = \frac{1}{n}
+  \]
+
+  \pause
+  \[
+    f(x) = x, \text{ otherwise}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    (-\infty, \infty) \approx (0, \infty)
+  \]
+
+  \pause
+  \[
+    \teal{f(x) = e^{x}}
+  \]
+
+  \pause
+  \[
+    (0, \infty) \approx (0, 1)
+  \]
+
+  \pause
+  \[
+    \teal{f(x) = \frac{x}{x+1}}
+  \]
+
+  \pause
+  \[
+    [0, 1] \approx (0, 1]
+  \]
+
+  \pause
+  \[
+    \teal{f(0) = \frac{1}{2} \quad f(\frac{1}{2}) = \frac{2}{3} \quad f(\frac{2}{3}) = \frac{3}{4} \quad \cdots \quad f(x) = x}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%

@@ -1,0 +1,83 @@
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{$3.$ 集合的势 (Cardinality)}
+    $A$ 是由所有半径为有理数、圆心在$x$轴 (实数轴) 上的圆组成的集合。
+
+    请问$A$的势是什么, 并给出证明。
+  \end{exampleblock}
+
+  \pause
+  \vspace{0.30cm}
+  \[
+    |\R| \le \teal{|\Q \times \R|} \le |\R \times \R| = |\R|
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \uncover<2->{
+    \begin{definition}[$|A| \le |B|$]
+      $|A| \le |B|$ if there exists an \red{\it one-to-one} function $f$ from $A$ into $B$.
+    \end{definition}
+  }
+
+  \uncover<3->{
+    \vspace{0.50cm}
+    \centerline{\large \red{\it $Q:$ Is ``$\le$'' a partial order?}}
+  }
+
+  \vspace{0.30cm}
+  \begin{theorem}[Cantor-\textcolor{gray}{(Dedekind)}-Schr\"{o}der–Bernstein (1887)]
+    \[
+      |X| \le |Y| \land |Y| \le |X| \implies |X| = |Y|
+    \]
+    \uncover<4->{
+      \[
+	\exists\; f: A \blue{\;\xrightarrow{1-1}\;} B \land g: B \blue{\;\xrightarrow{1-1}\;} A \implies \exists\; h: A \red{\;\xleftrightarrow[onto]{1-1}\;} B
+      \]
+    }
+  \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{proof}[By Julius K\"{o}nig (1906)]
+    \pause
+    \begin{center}
+      \teal{Suppose that $A$ and $B$ are disjoint.}
+      \[
+	A \uplus B
+      \]
+    \end{center}
+
+    \pause
+    \[
+      \red{a \in A}: \purple{\cdots \to f^{-1}(g^{-1}(a)) \to g^{-1}(a) \to}\; \red{a} \;\blue{\to f(a) \to g(f(a)) \to \cdots}
+    \]
+
+    \begin{columns}
+      \column{0.50\textwidth}
+	\pause
+	\begin{enumerate}[(i)]
+	  \item $\cdots \leadsto \cdots$
+	  \item $a \in A \leadsto \cdots$
+	  \item $b \in B \leadsto \cdots$
+	  \item $a \in A \leadsto a \in A$
+	\end{enumerate}
+      \column{0.30\textwidth}
+        \pause
+	\begin{center}
+	  {\red{Partition} of $A \uplus B$}
+	\end{center}
+    \end{columns}
+  \end{proof}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.60\textwidth}{figs/Cantor-Bernstein-Proof}
+\end{frame}
+%%%%%%%%%%%%%%%

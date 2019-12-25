@@ -1,0 +1,148 @@
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{$7.$ 算法设计与正确性证明}
+    在``掼蛋''游戏中, $5$ 张大小连续的扑克牌构成一个顺子 
+
+    (如 $A\; 2\; 3\; 4\; 5$ 和 $10\; J\; Q\; K\; A$ 都是顺子; 不考虑花色)。
+
+    任给$13$张从小到大的牌 (允许不同花色重复, 如 $A\; 3\; 3\; 4\; 5\; 7\; 8\; 9\; 10\; J\; J\; Q\; K$):
+    \begin{enumerate}[(1)]
+      \item 请设计算法，找到所有的顺子。 
+      \item 请使用``循环不变式''\;(loop invariants)证明你设计的算法的正确性。
+      \item 数学归纳法的正确性也是需要证明的。请证明第一数学归纳法的正确性。 
+	(不允许使用第二数学归纳法证明。)
+    \end{enumerate}
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{$7.$ 算法设计与正确性证明}
+    \begin{enumerate}[(1)]
+      \item 任给$13$张从小到大的牌, 请设计算法，找到所有的顺子。 
+    \end{enumerate}
+  \end{exampleblock}
+
+  \begin{alertblock}{Preprocessing:}
+    \pause
+    % A\; A\; 2\; 2\; 3\; 3\; 4\; 4\; 5\; 5\; 6\; 6\; 7
+    \[
+      A\; 3\; 3\; 4\; 5\; 7\; 8\; 9\; 10\; J\; J\; Q\; K
+    \]
+    \pause
+    % A\; 2\; 3\; 4\; 5\; 6\; 7
+    \[
+      A\; 3\; 4\; 5\; 7\; 8\; 9\; 10\; J\; Q\; K
+    \]
+    % A\; 2\; 3\; 4\; 5\; 6\; 7\; \red{A}
+    \pause
+    \[
+      A\; 3\; 4\; 5\; 7\; 8\; 9\; 10\; J\; Q\; K\; \red{A}
+    \]
+  \end{alertblock}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{}
+  \begin{proof}[``Sliding Window'' Algorithm:]
+    \begin{lstlisting}[style = CStyle]
+    i $\gets$ 1  // starting index of the sliding window
+    cnt $\gets$ 1
+    while ($i \le n - 4$)  // $n$: # of cards
+      while (cnt $\neq 5$)
+        if (P[i + cnt] == P[i + cnt - 1] + 1)
+          |\teal{cnt++}|
+        else  // fail: skip cnt
+          |\teal{i $\gets$ i + cnt}|
+          |\teal{cnt $\gets$ 1}|
+          break
+      if (cnt == 5)  // succeed: slid by one
+        print P[i] $\cdots$ P[i + cnt - 1]
+        |\teal{i++}|
+        |\teal{cnt $\gets$ 4}|  // only need to check the new card
+    \end{lstlisting}
+  \end{proof}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+% %%%%%%%%%%%%%%%
+% \begin{frame}{}
+%   \begin{exampleblock}{$7.$ 算法设计与正确性证明}
+%     \begin{enumerate}[(1)]
+%       \setcounter{enumi}{1}
+%       \item 请使用``循环不变式''\;(loop invariants)证明你设计的算法的正确性。
+%     \end{enumerate}
+%   \end{exampleblock}
+% 
+%   \pause
+%   \fig{width = 0.45\textwidth}{figs/stay-tuned-soon}
+% 
+%   \pause
+%   \vspace{-0.80cm}
+%   \[
+%     \text{\blue{while} } (i \le n - 4): \pause \text{ the \teal{straight} starting at } P[k]\;(k < i) \text{ has been found}
+%   \]
+%   \pause
+%   \centerline{\red{OR} does not exist}
+% \end{frame}
+% %%%%%%%%%%%%%%%
+% 
+% %%%%%%%%%%%%%%%
+% \begin{frame}{}
+%   \begin{exampleblock}{$7.$ 算法设计与正确性证明}
+%     \begin{enumerate}[(1)]
+%       \setcounter{enumi}{2}
+%       \item 数学归纳法的正确性也是需要证明的。请证明第一数学归纳法的正确性。 
+% 	(不允许使用第二数学归纳法证明。)
+%     \end{enumerate}
+%   \end{exampleblock}
+% 
+%   \pause
+%   \vspace{0.60cm}
+%   \centerline{Well-ordering Principle $\implies$ Principle of Mathematical Induction}
+% \end{frame}
+% %%%%%%%%%%%%%%%
+% 
+% %%%%%%%%%%%%%%%
+% \begin{frame}{}
+%   \begin{definition}[Well-ordering Principle]
+%     Every non-empty subset of $\mathbb{N}$ contains a least element.
+%   \end{definition}
+% 
+%   \pause
+%   \vspace{0.20cm}
+%   \begin{definition}[Principle of Mathematical Induction]
+%   \[
+%     \Big[ P(1) \land \forall n \in \mathbb{N}^{+} \big(P(n) \to P(n+1) \big) \Big]
+%       \to \forall n \in \mathbb{N}^{+} P(n).
+%   \]
+%   \end{definition}
+% 
+%   \pause
+%   \begin{proof}[WOP $\implies$ PMI]
+%     \centerline{\large By contradiction.}
+% 
+%     \pause
+%     \[
+%       Q = \set{k \in \N \mid \lnot P(k)} \neq \emptyset
+%     \]
+%     \pause
+%     \vspace{-0.50cm}
+%     \[
+%       k = \min\; Q
+%     \]
+%     \pause
+%     \vspace{-0.50cm}
+%     \[
+%       k \neq 1 \implies k > 1 
+%     \]
+%     \pause
+%     \vspace{-0.50cm}
+%     \[
+%       k-1 \notin Q \implies P(k-1) \implies P(k)
+%     \]
+%   \end{proof}
+% \end{frame}
+% %%%%%%%%%%%%%%%

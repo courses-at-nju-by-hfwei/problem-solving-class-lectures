@@ -1,0 +1,104 @@
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{$4.$ 关系与序 (Order)}
+    一个自反(\blue{reflexive})且传递(\blue{transitive})的二元关系 $R \subseteq X \times X$ 
+    称为 $X$ 上的拟序 (\red{preorder/\textcolor{gray}{quasiorder}})。\\[8pt]
+
+    令 $\le \;\subseteq X \times X$ 为拟序, 请证明:
+    \begin{enumerate}[(1)]
+      \item 如果定义 $X$ 上的关系 $\sim$ 为
+	\[
+	  x \sim y \triangleq x \le y \land y \le x,
+	\]
+	则 $\sim$ 是 $X$ 上的等价关系 (equivalence relation)。
+    \end{enumerate}
+  \end{exampleblock}
+
+  \pause
+  \vspace{0.50cm}
+  \centerline{\blue{reflexive + symmetric + transitive}}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{$4.$ 关系与序 (Order)}
+    一个自反(\blue{reflexive})且传递(\blue{transitive})的二元关系 $R \subseteq X \times X$ 
+    称为 $X$ 上的拟序 (\red{preorder/\textcolor{gray}{quasiorder}})。\\[8pt]
+
+    令 $\le \;\subseteq X \times X$ 为拟序, 请证明:
+    \begin{enumerate}[(1)]
+      \setcounter{enumi}{1}
+      \item 如果定义商集 (quotient set) $X/\sim$ 上的关系 $\preceq$ 为
+	\[
+	  [x]_{\sim} \preceq [y]_{\sim} \triangleq x \le y,
+	\]
+	则 $\preceq$ 是偏序关系 (partial order)。
+    \end{enumerate}
+  \end{exampleblock}
+
+  \pause
+  \vspace{0.30cm}
+  \centerline{\blue{reflexive + antisymmetric + transitive}}
+
+  \pause
+  \vspace{0.60cm}
+  \centerline{\red{\Large Well-definedness!!!}}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \centerline{\large Well-definedness: \blue{Independence of Representative}}
+
+  \pause
+  \vspace{0.50cm}
+  \[
+    [x_1] = [x_2] \land [y_1] = [y_2]
+  \]
+  \[
+    \teal{\implies}
+  \]
+  \[
+    [x_1] \preceq [y_1] \iff [x_2] \preceq [y_2]
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    [a]_n + [b]_n = [a + b]_n
+  \]
+
+  \[
+    [a]_n \times [b]_n = [ab]_n
+  \]
+
+  % \pause
+  % \[
+  %   \red{Q: [a]_n^{[b]_n} = [a^b]_n}
+  % \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.40\textwidth}{figs/example}
+
+  \vspace{0.20cm}
+  \centerline{\red{\large $\teal{\le:}$ \only<1>{$\teal{???}$}\only<2->{Reachability} relationship in a directed graph}}
+
+  \uncover<1->{
+    \vspace{0.20cm}
+    \fig{width = 0.40\textwidth}{figs/scc}
+  }
+
+  \uncover<3->{\centerline{\teal{$\sim, [x]_{\sim}:$} \uncover<4->{Strongly Connected Component (SCC)}}}
+
+  \uncover<5->{
+    \vspace{0.40cm}
+    \centerline{\red{\large $\teal{\preceq:}$ \uncover<6->{Reachability relationship in a condensed directed acyclic graph}}}
+  }
+\end{frame}
+%%%%%%%%%%%%%%%

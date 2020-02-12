@@ -1,0 +1,86 @@
+% 1-logic.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{$1.$ ``算一算'' (Let us Calculate!)}	
+    请判断以下推理是否正确, 请给出证明或者指出错误之处。
+    要求给出严格的符号化推理过程。
+    
+    前提:
+    \begin{enumerate}[(1)]
+      \item 如果一个人害怕挑战，那么他就不会获得成功。
+      \item 每个人或者获得过成功，或者失败过。
+      \item 王二未曾失败过。
+    \end{enumerate}
+
+    结论: 王二不害怕挑战。
+  \end{exampleblock}
+
+  \pause
+  \vspace{0.30cm}
+  \[
+    \red{Z,\; Q,\; S,\; L,\; W}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+% \begin{frame}{}
+%   \setlength{\jot}{1.5ex}
+%   \begin{gather}
+%     Z \to Q \\
+%     L \lor W \\
+%     (Q \land \lnot S) \lor (S \land \lnot Q) \\
+%     (S \land L) \lor (\lnot S \land \lnot L) \\
+%     W \to Z \land Q \\
+%     Z \to S
+%   \end{gather}
+% 
+%   \pause
+%   \vspace{0.60cm}
+%   \[
+%     \blue{\lnot Z,\; \lnot Q,\; S,\; L,\; \lnot W}
+%   \]
+% \end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+% \begin{frame}{}
+%   \centerline{$x$: Human}
+% 
+%   \[
+%     A(x),\quad K(x),\quad J(x)
+%   \]
+% 
+%   \pause
+%   \setlength{\jot}{1.5ex}
+%   \begin{gather}
+%     \setcounter{equation}{0}
+%     \forall x: A(x) \lor K(x) \\
+%     \forall x: J(x) \to \lnot A(x) \\
+%     \exists x: \lnot K(x) \\[3ex]
+%     \teal{\exists x: \lnot J(x)}
+%   \end{gather}
+% 
+%   \pause
+%   \[
+%     \red{Q: H(x)?}
+%   \]
+% \end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+% \begin{frame}{}
+%   \[
+%     A,\quad K,\quad J
+%   \]
+% 
+%   \begin{gather*}
+%     \setcounter{equation}{0}
+%     \forall x: A \lor K \\[1ex]
+%     \forall x: J \to \lnot A \\[1ex]
+%     \exists x: \lnot K \\[3ex]
+%     \red{\exists x: \lnot J}
+%   \end{gather*}
+% \end{frame}
+%%%%%%%%%%%%%%%

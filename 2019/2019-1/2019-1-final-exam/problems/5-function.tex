@@ -1,14 +1,158 @@
 % 5-function.tex
 
 %%%%%%%%%%%%%%%
-\begin{frame}{Problem 5: Function}
-  \begin{problem}
+\begin{frame}
+  \begin{exampleblock}{Problem 5: Function}
     对任意函数 $f$ 和集合 $A$, $B$。
     \begin{enumerate}[(1)]
       \item 请证明 $f(A) \setminus f(B) \subseteq f(A \setminus B)$。
-	当 $f$ 满足什么条件时，``$=$'' 成立? 请给出理由。
+	当 $f$ 满足什么条件时，``$=$'' 成立?
       \item 请证明 $f^{-1}(A \setminus B) = f^{-1}(A) \setminus f^{-1}(B)$。
     \end{enumerate}
-  \end{problem}
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \red{\boxed{y \in f(X) \iff \exists x \in X: y = f(x)}}
+  \]
+
+  \vspace{0.60cm}
+  \[
+    \red{\boxed{x \in f^{-1}(Y) \iff f(x) \in Y}}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{exampleblock}{Problem 5: Function}
+    对任意函数 $f$ 和集合 $A$, $B$。
+    \begin{enumerate}[(1)]
+      \item 请证明 $f(A) \setminus f(B) \subseteq f(A \setminus B)$。
+	当 $f$ 满足什么条件时，``$=$'' 成立?
+    \end{enumerate}
+  \end{exampleblock}
+
+  \pause
+  \[
+    \red{\boxed{\forall y: y \in f(A) \setminus f(B) \implies y \in f(A \setminus B)}}
+  \]
+
+  \pause
+  \begin{align*}
+    &\phantom{\iff\;\;} y \in f(A) \setminus f(B) \\
+    &\iff y \in f(A) \land y \notin f(B) \\
+    \onslide<4->{&\iff (\exists x \in A: f(x) = y) \land \lnot(\exists x \in B: f(x) = y) \\}
+    \onslide<5->{&\iff (\exists x \in A: f(x) = y) \land (\forall x \in B: f(x) \neq y) \\}
+    \onslide<8->{&\red{\implies}\;\; \exists x \in A \setminus B: f(x) = y\; 
+      \blue{(\text{take } t \in A: f(t) = y)} \\}
+    \onslide<9->{&\iff y \in f(A \setminus B)}
+  \end{align*}
+
+  \vspace{-0.80cm}
+  \uncover<6-7>{
+    \[
+      y \in f(A \setminus B) \iff \exists x \in A \setminus B: f(x) = y
+    \]
+  }
+
+  \vspace{-0.30cm}
+  \uncover<7-8>{
+    \[
+      \blue{\boxed{\text{Take } t \in A: f(t) = y}}
+    \]
+  }
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{exampleblock}{Problem 5: Function}
+    对任意函数 $f$ 和集合 $A$, $B$。
+    \begin{enumerate}[(1)]
+      \item 请证明 $f(A) \setminus f(B) \subseteq f(A \setminus B)$。
+	当 $f$ 满足什么条件时，``$=$'' 成立?
+    \end{enumerate}
+  \end{exampleblock}
+
+  \pause
+  \begin{align*}
+    &\phantom{\implies} (\exists x \in A: f(x) = y) \land (\forall x \in B: f(x) \neq y) \\
+    &\red{\implies} \exists x \in A \setminus B: f(x) = y\; \\
+  \end{align*}
+
+  \pause
+  \vspace{-1.00cm}
+  \begin{align*}
+    &\phantom{\implies} \exists x \in A \setminus B: f(x) = y\; \\
+    &\red{\implies} (\exists x \in A: f(x) = y) \land \red{(\forall x \in B: f(x) \neq y)} \\
+  \end{align*}
+
+  \pause
+  \vspace{-0.50cm}
+  \[
+    \blue{f \text{ is injective.}}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{exampleblock}{Problem 5: Function}
+    对任意函数 $f$ 和集合 $A$, $B$。
+    \begin{enumerate}[(1)]
+      \setcounter{enumi}{1}
+      \item 请证明 $f^{-1}(A \setminus B) = f^{-1}(A) \setminus f^{-1}(B)$。
+    \end{enumerate}
+  \end{exampleblock}
+
+  \pause
+  \[
+    \red{\boxed{\forall x: x \in f^{-1}(A \setminus B) \iff x \in f^{-1}(A) \setminus f^{-1}(B)}}
+  \]
+
+  \pause
+  \begin{align*}
+    &\phantom{\iff\;\;} x \in f^{-1}(A \setminus B) \\
+    \onslide<4->{&\iff f(x) \in A \setminus B \\}
+    \onslide<5->{&\iff f(x) = A \land f(x) \notin B \\}
+    \onslide<6->{&\iff x \in f^{-1}(A) \land x \notin f^{-1}(B) \\}
+    \onslide<7->{&\iff x \in f^{-1}(A) \setminus f^{-1}(B)}
+  \end{align*}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[Properties of $f$ and $f^{-1}$ (UD Theorem $17.7$)]
+    \[
+      f: A \to B \qquad \textcolor{gray}{A_1, A_2 \subseteq A,\; B_1, B_2 \subseteq B}
+    \]
+
+    \vspace{-0.10cm}
+    \begin{enumerate}[(i)]
+      \setlength{\itemsep}{10pt}
+      \item \purple{$f$ preserves only $\subseteq$ and $\cup$:}
+	\begin{enumerate}[(1)]
+	  \setlength{\itemsep}{4pt}
+	  \item $A_1 \subseteq A_2 \implies f(A_1) \subseteq f(A_2)$
+	  \item $f(A_1 \cup A_2) = f(A_1) \cup f(A_2)$
+	  \item $f(A_1 \cap A_2) \subseteq f(A_1) \cap f(A_2)$
+	  \item $f(A_1 \setminus A_2) \supseteq f(A_1) \setminus f(A_2)$
+	\end{enumerate}
+      \item \purple{$f^{-1}$ preserves $\subseteq, \cup, \cap,$ and $\setminus$:}
+	\begin{enumerate}[(1)]
+	  \setlength{\itemsep}{4pt}
+	  \setcounter{enumii}{4}
+	  \item $B_1 \subseteq B_2 \implies f^{-1}(B_1) \subseteq f^{-1}(B_2)$
+	  \item $f^{-1}(B_1 \cup B_2) = f^{-1}(B_1) \cup f^{-1}(B_2)$
+	  \item $f^{-1}(B_1 \cap B_2) = f^{-1}(B_1) \cap f^{-1}(B_2)$
+	  \item $f^{-1}(B_1 \setminus B_2) = f^{-1}(B_1) \setminus f^{-1}(B_2)$
+	\end{enumerate}
+    \end{enumerate}
+  \end{theorem}
 \end{frame}
 %%%%%%%%%%%%%%%

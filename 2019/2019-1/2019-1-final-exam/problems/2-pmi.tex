@@ -4,11 +4,177 @@
 \begin{frame}{}
   \begin{exampleblock}{Problem 2: Mathematical Induction}
     令 $n, k \in \mathbb{N}^{+}$, 且 $n \ge k$。
-    请使用数学归纳法证明 
+    请使用\red{数学归纳法}证明 
     \[
       \frac{n!}{k! (n-k)!}
     \]
     是整数。
   \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Problem 2: Mathematical Induction (Original Version)}
+    令 $n, k \in \mathbb{N}^{+}$, 且 $n \ge k$。
+    \red{请证明} 
+    \[
+      \frac{n!}{k! (n-k)!}
+    \]
+    是整数。
+  \end{exampleblock}
+
+  \pause
+  \[
+    {n \choose k} \triangleq \frac{n!}{k! (n-k)!}
+  \]
+
+  \pause
+  \begin{center}
+    \red{Combinatorial Interpretation}  \\[15pt] \pause
+
+    \blue{\red{\# of ways} to choose a $k$-element subset from an $n$-element set}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Problem 2: Mathematical Induction}
+    令 $n, k \in \mathbb{N}^{+}$, 且 $n \ge k$。
+    请使用\red{数学归纳法}证明 
+    \[
+      \frac{n!}{k! (n-k)!}
+    \]
+    是整数。
+  \end{exampleblock}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{center}
+    \uncover<3->{\red{\fbox{By induction on $\ldots$}}} \\[15pt]
+
+    Base Case \\[8pt]
+    Induction Hypothesis \\[8pt]
+    Induction Step \\[15pt]
+    % \fig{width = 0.70\textwidth}{figs/good-job}
+
+    \uncover<4->{\red{\fbox{$n$ {\it vs.} $k$}}}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    {n \choose k} \triangleq \frac{n!}{k! (n-k)!}
+  \]
+
+  \pause
+  \vspace{0.60cm}
+  \[
+    {n+1 \choose k} = {n \choose k} + {n \choose k-1}
+  \]
+
+  \pause
+  \vspace{0.30cm}
+  \begin{center}
+    \red{\fbox{By induction on $n$.}}
+  \end{center}
+
+  \pause
+  \[
+    P(n) \triangleq \forall k \le n: {n \choose k} \in \mathbb{N}
+  \]
+
+  \pause
+  \[
+    \forall n \in \mathbb{N}^{+}: P(n)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \[
+    {n \choose k} \triangleq \frac{n!}{k! (n-k)!}\; \red{\in \mathbb{N}}
+  \]
+  \[
+    P(n) \triangleq \forall k \le n: {n \choose k} \in \mathbb{N}
+  \]
+  \begin{center}
+    \red{\fbox{By induction on $n$.}}
+  \end{center}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{columns}
+    \column{0.40\textwidth}
+      \begin{center}
+	Base Case: $P(1)$
+      \end{center}
+      \[
+	{1 \choose 1} = 1 \;\red{\in \mathbb{N}}
+      \]
+    \column{0.60\textwidth}
+      \begin{center}
+	Induction Hypothesis: Suppose that
+      \end{center}
+      \[
+	P(n) \triangleq \forall k \le n: {n \choose k} \in \mathbb{N}
+      \]
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    Induction Step: Consider $P(n+1)$.
+    \[
+      P(n+1) \triangleq \forall k \le n+1: {n+1 \choose k} \in \mathbb{N}
+    \]
+
+    \pause
+    \[
+      \forall k \le n+1: {n+1 \choose k} = \red{{n \choose k}} + {n \choose k-1}
+    \]
+
+    \pause
+    \hrule
+    \begin{columns}
+      \column{0.50\textwidth}
+	\begin{center}
+	  \teal{\textsc{Case I}}
+	  \[
+	    k = n+1
+	  \]
+	  \[
+	    {n+1 \choose n+1} = 1\; \red{\in \mathbb{N}}
+	  \]
+	\end{center}
+      \column{0.50\textwidth}
+        \pause
+	\begin{center}
+	  \teal{\textsc{Case II}}
+	  \[
+	    k \le n
+	  \]
+	  \[
+	    {n+1 \choose k} = {n \choose k} + {n \choose k-1}\; \red{\in \mathbb{N}}
+	  \]
+	\end{center}
+    \end{columns}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \fig{width = 0.30\textwidth}{figs/concrete-mathematics}
+
+  \begin{center}
+    Chapter 5: Binomial Coefficients
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%

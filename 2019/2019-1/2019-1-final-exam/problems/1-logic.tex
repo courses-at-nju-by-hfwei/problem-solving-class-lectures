@@ -17,70 +17,72 @@
   \end{exampleblock}
 
   \pause
-  \vspace{0.30cm}
   \[
-    \red{Z,\; Q,\; S,\; L,\; W}
+    \blue{x \in \textsl{Human}} \qquad \purple{w \in \textsl{Human}: \text{王二}}
+  \]
+
+  \pause
+  \vspace{-0.30cm}
+  \begin{align*}
+    C(x): &\;x \text{ 害怕挑战} \\[3pt]
+    W(x): &\;x \text{ 成功过} \\[3pt]
+    L(x): &\;x \text{ 失败过}
+  \end{align*}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{gather}
+    \forall x: C(x) \implies \lnot W(x) \\[5pt]
+    \forall x: W(x) \lor L(x) \\[5pt]
+    \lnot L(w)
+  \end{gather}
+  
+  \pause
+  \hrule
+  \[
+    \lnot C(w)
+  \]
+
+  \pause
+  \[
+    \red{\forall x: C \implies W}
+  \]
+
+  \pause
+  \[
+    \red{C(x) \implies W(x)}
   \]
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
-% \begin{frame}{}
-%   \setlength{\jot}{1.5ex}
-%   \begin{gather}
-%     Z \to Q \\
-%     L \lor W \\
-%     (Q \land \lnot S) \lor (S \land \lnot Q) \\
-%     (S \land L) \lor (\lnot S \land \lnot L) \\
-%     W \to Z \land Q \\
-%     Z \to S
-%   \end{gather}
-% 
-%   \pause
-%   \vspace{0.60cm}
-%   \[
-%     \blue{\lnot Z,\; \lnot Q,\; S,\; L,\; \lnot W}
-%   \]
-% \end{frame}
-%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{gather}
+    \forall x: C(x) \implies \lnot W(x) \\[5pt]
+    \forall x: W(x) \lor L(x) \\[5pt]
+    \lnot L(w)
+  \end{gather}
+  
+  \hrule
+  \[
+    \lnot C(w)
+  \]
 
-%%%%%%%%%%%%%%%
-% \begin{frame}{}
-%   \centerline{$x$: Human}
-% 
-%   \[
-%     A(x),\quad K(x),\quad J(x)
-%   \]
-% 
-%   \pause
-%   \setlength{\jot}{1.5ex}
-%   \begin{gather}
-%     \setcounter{equation}{0}
-%     \forall x: A(x) \lor K(x) \\
-%     \forall x: J(x) \to \lnot A(x) \\
-%     \exists x: \lnot K(x) \\[3ex]
-%     \teal{\exists x: \lnot J(x)}
-%   \end{gather}
-% 
-%   \pause
-%   \[
-%     \red{Q: H(x)?}
-%   \]
-% \end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-% \begin{frame}{}
-%   \[
-%     A,\quad K,\quad J
-%   \]
-% 
-%   \begin{gather*}
-%     \setcounter{equation}{0}
-%     \forall x: A \lor K \\[1ex]
-%     \forall x: J \to \lnot A \\[1ex]
-%     \exists x: \lnot K \\[3ex]
-%     \red{\exists x: \lnot J}
-%   \end{gather*}
-% \end{frame}
+  \pause
+  \begin{columns}
+    \column{0.50\textwidth}
+      \begin{gather}
+	C(w) \implies \lnot W(w) \\[5pt]
+	W(w) \lor L(w) \\[5pt]
+	\lnot L(w)
+      \end{gather}
+    \column{0.50\textwidth}
+      \begin{gather}
+	W(w) \quad \blue{(5) + (6)} \\[5pt]
+	\lnot C(w) \quad \blue{(4) + (7)} 
+      \end{gather}
+  \end{columns}
+\end{frame}
 %%%%%%%%%%%%%%%

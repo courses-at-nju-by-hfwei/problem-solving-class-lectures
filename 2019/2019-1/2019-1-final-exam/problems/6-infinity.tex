@@ -3,7 +3,59 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{exampleblock}{Problem 6: Infinity}
-    请证明: $\mathbb{N}$ 的所有有限子集所组成的集合是可数的。
+    请证明: $\mathbb{N}$ 的所有\red{有限}子集所组成的集合是可数的。
   \end{exampleblock}
+
+  \pause
+  \[
+    X \triangleq \Big\{A \subseteq \mathbb{N} \mid \exists n \in \mathbb{N}: |A| = n\Big\}
+  \]
+
+  \pause
+  \[
+    \red{\boxed{f: X \xrightarrow{1-1} \mathbb{N}}}
+    \pause \qquad f: A \mapsto \red{?}
+  \]
+
+  \pause
+  \vspace{-0.30cm}
+  \[
+    A = \set{0, 2, 1, 7} \qquad \pause a = \purple{111}0000\purple{1}00000\cdots
+  \]
+
+  \pause
+  \vspace{-0.30cm}
+  \[
+    a = a_0 a_1 \cdots a_{n-1} \qquad \pause
+    a_{k} = \begin{cases}
+      1, & k \in A \\
+      0, & k \notin A
+    \end{cases}
+  \]
+
+  \pause
+  \vspace{-0.30cm}
+  \[
+    \blue{\boxed{f(A) = \sum_{k=0}^{\red{\infty}} a_{k} 2^{k} \in \mathbb{N}}}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Problem 6: Infinity}
+    $\mathbb{N}$ 的\red{所有子集}所组成的集合是\red{不可数}的。
+  \end{exampleblock}
+
+  \pause
+  \[
+    |2^{\mathbb{N}}| = 2^{\aleph_{0}} = \aleph_{1} = |\mathbb{R}|
+  \]
+  
+  \pause
+  \vspace{0.80cm}
+  \[
+    \blue{\boxed{f(A) = \sum_{k=0}^{\red{\infty}} a_{k} 2^{k}}} \text{ may} \notin \mathbb{N}
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%

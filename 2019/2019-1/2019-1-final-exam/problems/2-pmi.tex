@@ -97,19 +97,20 @@
 %%%%%%%%%%%%%%%
 \begin{frame}
   \[
-    {n \choose k} \triangleq \frac{n!}{k! (n-k)!}\; \red{\in \mathbb{N}}
+    {n \choose k} \triangleq \frac{n!}{k! (n-k)!} \in \mathbb{N}
   \]
   \[
     P(n) \triangleq \forall k \le n: {n \choose k} \in \mathbb{N}
   \]
+
   \begin{center}
     \red{\fbox{By induction on $n$.}}
   \end{center}
 
-  \pause
   \vspace{0.30cm}
   \begin{columns}
     \column{0.40\textwidth}
+      \pause
       \begin{center}
 	Base Case: $P(1)$
       \end{center}
@@ -117,6 +118,7 @@
 	{1 \choose 1} = 1 \;\red{\in \mathbb{N}}
       \]
     \column{0.60\textwidth}
+      \pause
       \begin{center}
 	Induction Hypothesis: Suppose that
       \end{center}

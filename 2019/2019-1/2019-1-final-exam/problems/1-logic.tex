@@ -4,13 +4,13 @@
 \begin{frame}{}
   \begin{exampleblock}{Problem 1: Mathematical Logic}	
     请判断以下推理是否正确, 请给出证明或者指出错误之处。
-    要求给出严格的符号化推理过程。
+    要求给出严格的\purple{符号化推理}过程。
     
     前提:
     \begin{enumerate}[(1)]
-      \item 如果一个人害怕挑战，那么他就不会获得成功。
-      \item 每个人或者获得过成功，或者失败过。
-      \item 王二未曾失败过。
+      \item 如果\red{一个人}害怕挑战，那么他就不会获得成功。
+      \item \red{每个人}或者获得过成功，或者失败过。
+      \item \blue{王二}未曾失败过。
     \end{enumerate}
 
     结论: 王二不害怕挑战。
@@ -18,16 +18,38 @@
 
   \pause
   \[
-    \blue{x \in \textsl{Human}} \qquad \purple{w \in \textsl{Human}: \text{王二}}
+    \blue{x \in \textsl{Human}} \pause \qquad \purple{w \in \textsl{Human}: \text{王二}}
   \]
 
   \pause
   \vspace{-0.30cm}
   \begin{align*}
-    C(x): &\;x \text{ 害怕挑战} \\[3pt]
+    C(x): &\;x \text{ 害怕挑战} \pause \\[3pt]
     W(x): &\;x \text{ 成功过} \\[3pt]
     L(x): &\;x \text{ 失败过}
   \end{align*}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{enumerate}[(1)]
+    \item 如果\red{一个人}害怕挑战，那么他就不会获得成功。
+    \item \red{每个人}或者获得过成功，或者失败过。
+    \item \blue{王二}未曾失败过。
+  \end{enumerate}
+
+  \begin{gather}
+    \forall x: C(x) \implies \lnot W(x) \\[5pt]
+    \forall x: W(x) \lor L(x) \\[5pt]
+    \lnot L(w)
+  \end{gather}
+  
+  \pause
+  \hrule
+  \[
+    \lnot C(w)
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -39,7 +61,6 @@
     \lnot L(w)
   \end{gather}
   
-  \pause
   \hrule
   \[
     \lnot C(w)
@@ -70,18 +91,19 @@
     \lnot C(w)
   \]
 
-  \pause
   \begin{columns}
     \column{0.50\textwidth}
+      \pause
       \begin{gather}
 	C(w) \implies \lnot W(w) \\[5pt]
 	W(w) \lor L(w) \\[5pt]
 	\lnot L(w)
       \end{gather}
     \column{0.50\textwidth}
+      \pause
       \begin{gather}
 	W(w) \quad \blue{(5) + (6)} \\[5pt]
-	\lnot C(w) \quad \blue{(4) + (7)} 
+	\red{\lnot C(w)} \quad \blue{(4) + (7)} 
       \end{gather}
   \end{columns}
 \end{frame}

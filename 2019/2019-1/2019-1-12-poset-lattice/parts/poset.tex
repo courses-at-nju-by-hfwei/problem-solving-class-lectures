@@ -1,11 +1,6 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-\end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \begin{exampleblock}{SM Problem $14.44$}
+  \begin{exampleblock}{SM Problem $14.44$: Consistent Enumerations}
     Suppose the following are three consistent enumerations of an ordered set $A = \set{a, b, c, d}$:
     \begin{align*}
       A_1: \quad a \qquad \red{b} \qquad \red{c} \qquad d \\
@@ -52,41 +47,16 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \input{tikz/chain-intersection}
+  \begin{figure}
+    \centering
+    \resizebox{0.90\textwidth}{!}{\input{tikz/chain-intersection}}
+  \end{figure}
 
-  \begin{theorem}
-
-  \end{theorem}
-\end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \begin{exampleblock}{}
-    Let $A$ be a nonempty finite set with $|A| = n$ and let $a \in A$.
-
-    Prove that $A \setminus \set{a}$ is finite and $|A \setminus \set{a}| = n - 1$.
-  \end{exampleblock}
-\end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \begin{exampleblock}{}
-  \end{exampleblock}
-\end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-% \begin{frame}{}
-%   \begin{exampleblock}{}
-%   \end{exampleblock}
-% \end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \begin{exampleblock}{}
-  \end{exampleblock}
+  \uncover<3->{
+    \begin{theorem}
+      Every partial ordering on a set $X$ is the \red{intersection}
+      of the total orders on $X$ \blue{containing it}.
+    \end{theorem}
+  }
 \end{frame}
 %%%%%%%%%%%%%%%

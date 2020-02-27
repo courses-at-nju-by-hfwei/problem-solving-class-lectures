@@ -1,0 +1,46 @@
+% division.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Problem $2$: $D_{n}$}
+    $D_{n}$ is a boolean algebra if and only if
+    $n = p_1 p_2 \cdots p_k$ for some $k$,
+    where all $p_i$ are distinct primes.
+  \end{exampleblock}
+
+  \pause
+  \begin{columns}
+    \column{0.50\textwidth}
+      \fig{width = 0.60\textwidth}{figs/D36}
+      \[
+        D_{36}
+      \]
+      \[
+        36 = 2^2 \times 3^2
+      \]
+    \column{0.50\textwidth}
+      \fig{width = 0.65\textwidth}{figs/D70}
+      \[
+        D_{70}
+      \]
+      \[
+        70 = 2 \times 5 \times 7
+      \]
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{align*}
+    D_n &\text{ is a boolean algebra} \\[5pt]
+    &\implies D_n \text{ is a complemented distributive lattice} \\[5pt]
+    \onslide<2->{&\implies \forall x \in D_n: x \text{ has a complement} \\[5pt]}
+    \onslide<3->{&\implies \forall x \in D_n: \exists y \in D_n: (x \land y = \textbb{0}) \land (x \lor y = \textbb{1}) \\[5pt]}
+    \onslide<4->{&\implies \forall x \in D_n: \exists y \in D_n: \texttt{gcd}(x, y) = 1 \land \texttt{lcm}(x, y) = n \\[5pt]}
+    \onslide<5->{&\implies \forall x \in D_n: \exists y \in D_n: xy = n \land (x, y) = 1 \\[5pt]}
+    \onslide<6->{&\implies \forall x \in D_n: (x, n/x) = 1 \\[5pt]}
+    \onslide<7->{&\implies n = p_1 p_2 \codts p_k \land \text{all } p_i \text{ are unique primes}}
+  \end{align*}
+\end{frame}
+%%%%%%%%%%%%%%%

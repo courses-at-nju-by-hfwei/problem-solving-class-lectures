@@ -1,0 +1,28 @@
+% definition.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Boolean Algebra]
+    A {\it boolean algebra} $\mathcal{B} = (B, \land, \lor, ', \red{0}, \red{1})$ is a \textcolor{lightgray}{bounded}, complemented, and distributive lattice.
+    \[
+      \forall a, b, c \in B,
+    \]
+    \vspace{-0.50cm}
+    \begin{description}[Distributivity:]
+      \item[Idempotency:]
+      \item[Commutativity:]
+      \item[Associativity:]
+      \item[Absorption:]
+      \item[\red{Complements:}]
+        \[
+          a \land a' = 0 \quad a \lor a' = 1
+        \]
+      \item[\red{Distributivity:}]
+        \[
+          a \land (b \lor c) = (a \land b) \lor (a \land c) \qquad
+          a \lor (b \land c) = (a \lor b) \land (a \lor c)
+        \]
+    \end{description}
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%

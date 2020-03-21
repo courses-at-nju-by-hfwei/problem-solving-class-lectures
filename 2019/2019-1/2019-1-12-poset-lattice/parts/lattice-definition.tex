@@ -1,0 +1,57 @@
+% lattice-definition.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Lattice]
+    A {\it lattice} is an algebra $\mathcal{L} = (L, \land, \lor)$ satisfying, 
+    \[
+      \forall a, b, c \in L,
+    \]
+    \vspace{-0.50cm}
+    \begin{description}[Commutativity:]
+      \item[\teal{Idempotency:}]
+	\[
+	  a \land a = a \quad a \lor a = a
+	\]
+      \item[Commutativity:]
+	\[
+	  a \land b = b \land a \quad a \lor b = b \lor a
+	\]
+      \item[Associativity:]
+	\[
+	  (a \land b) \land c = a \land (b \land c) \quad (a \lor b) \lor c = a \lor (b \lor c)
+	\]
+      \item[Absorption:]
+	\[
+	  \red{a \land (a \lor b) = a} \quad \red{a \lor (a \land b) = a}
+	\]
+    \end{description}
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \red{\boxed{a \land (a \lor b) = a \quad a \lor (a \land b) = a}}
+  \]
+
+  \pause
+  \vspace{0.30cm}
+  \begin{center}
+    (1) Very useful in lattice computations \\[-0.60cm] \pause
+    \[
+      a \land a = \blue{a \land (a \lor (a \land b))} = a
+    \]
+    \pause
+    (2) The only laws connecting $\land$ and $\lor$ \\[10pt] \pause
+    $\land$-semilattice \qquad $\lor$-semilattice \\[15pt] \pause
+    (3) Ensure that $\land$ and $\lor$ induce the same order on $L$  \pause
+    \begin{gather*}
+      \onslide<6->{a \le b \iff a \land b = a} \\
+      \onslide<7->{a \le b \iff a \lor b = b} \\
+      \onslide<8->{\purple{\boxed{a \land b = a \iff a \lor b = b}}} 
+    \end{gather*}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%

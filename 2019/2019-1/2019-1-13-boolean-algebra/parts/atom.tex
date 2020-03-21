@@ -1,0 +1,57 @@
+% atom.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Problem $3$: Atom}
+    Let \red{$\mathcal{B} = (B, \le)$} is a Boolean algebra. 
+    \[
+      \forall a \in B: \textsf{Atom}(a) = \set{x \le a \mid x \text{ is an atom}}。
+    \]
+    
+    Suppose $\mathcal{B}$ is finite. To prove:
+    \[
+      \forall a \in B: a \neq 0 \implies \textsf{Atom}(a) \neq \emptyset.
+    \]
+  \end{exampleblock}
+
+  \pause
+  \begin{center}
+    Atoms: those elements which \red{\it immediately} succeed 0
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \[
+    \forall a \in B: a \neq 0 \implies \textsf{Atom}(a) \neq \emptyset.
+  \]
+  
+  \pause
+  \begin{center}
+    \red{By contradiction.}
+    \[
+      a \neq 0 \land \textsf{Atom}(a) = \emptyset
+    \]
+  \end{center}
+  
+  \pause
+  \begin{align*}
+    &\implies a \text{ is not an atom} 
+    \quad \teal{(o.w.,\; a \in \textsf{Atom}(a))} \\[5pt]
+    \onslide<4->{&\implies \exists x_1: 0 < x_1 < a 
+    \quad \teal{(a \neq 0)} \\[5pt]}
+    \onslide<5->{&\implies x_1 \text{ is not an atom} 
+    \quad \teal{(o.w.,\; x_1 \in \textsf{Atom}(a))} \\[5pt]}
+    \onslide<6->{&\implies \exists x_2: 0 < x_2 < x_1 
+    \quad \teal{(x_1 \neq 0)} \\[5pt]}
+    \onslide<7->{&\implies \cdots}
+  \end{align*}
+  
+  \uncover<8->{
+    \[
+      \red{\boxed{\cdots < x_2 < x_1 < a}}
+    \]
+  }
+\end{frame}
+%%%%%%%%%%%%%%%

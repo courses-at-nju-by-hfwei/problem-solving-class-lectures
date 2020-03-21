@@ -1,0 +1,65 @@
+% weak-distributive-law.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{SM Problem $14.72$: ``Weak'' Distributive Laws}
+    Prove that for any lattice $L$:
+    \begin{align*}
+      \red{a \lor (b \land c) \le (a \lor b) \land (a \lor c)} \\
+      a \land (b \lor c) \ge (a \land b) \lor (a \land c)
+    \end{align*}
+  \end{exampleblock}
+
+  \pause
+  \begin{align*}
+    \blue{a \lor (b \land c) \le a \lor b} \\
+    a \lor (b \land c) \le a \lor c
+  \end{align*}
+
+  \hrule
+  \pause
+  \begin{columns}
+    \column{0.30\textwidth}
+    \column{0.30\textwidth}
+      \begin{align*}
+	a \le b \\
+	c \le d \\
+      \end{align*}
+      \vspace{-1.2cm}
+      \hrule
+      \vspace{-0.3cm}
+      \[
+	(a \lor c) \le (b \lor d)
+      \]
+    \column{0.30\textwidth}
+  \end{columns}
+  % \begin{align}
+  %   (a \le b) \land (c \le d) \implies (a \lor c) \le (b \lor d)
+  % \end{align}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+% \begin{frame}{}
+%   \begin{columns}
+%     \column{0.30\textwidth}
+%     \column{0.30\textwidth}
+%       \begin{align*}
+% 	a \le b \\
+% 	c \le d \\
+%       \end{align*}
+%       \vspace{-1.2cm}
+%       \hrule
+%       \vspace{-0.3cm}
+%       \[
+% 	(a \lor c) \le (b \lor d)
+%       \]
+%     \column{0.30\textwidth}
+%   \end{columns}
+% 
+%   \pause
+%   \vspace{0.60cm}
+%   \begin{center}
+%     \href{http://problemoverflow.top/index.php}{\teal{\texttt{\Large problemoverflow.top}}}
+%   \end{center}
+% \end{frame}

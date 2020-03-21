@@ -6,34 +6,174 @@
     Suppose $A$ and $B$ are \red{well-ordered} isomorphic sets.
     Show that there is only one isomorphic mapping $f: A \to B$.
   \end{exampleblock}
+  
+  \pause
+  \begin{center}
+    Well-ordered $\implies$ Totally-ordered 
+    \[
+      (\mathbb{N}, <)
+    \]
+    \pause
+    Totally-ordered $\centernot\implies$ Well-ordered
+    \pause
+    \[
+      (\mathbb{Z}, <)
+    \]
+    \pause
+    \red{$Q:$ What about ``totally-ordered'' isomorphic sets?}
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{}
+  \begin{exampleblock}{SM Problem $14.62$: Isomorphic Well-Ordered Sets}
+    Suppose $A$ and $B$ are \red{well-ordered} isomorphic sets.
+    Show that there is only one isomorphic mapping $f: A \to B$.
   \end{exampleblock}
+  
+  \[
+    f: A \to B
+  \]
+  \begin{center}
+    Make use of the ``well-ordered'' property.
+  \end{center}
+  
+  \pause
+  \begin{gather*}
+    a \gets \min A \qquad b \gets \min B \\[6pt]
+    \onslide<3->{f(a) = b \\[6pt]}
+    \onslide<4->{f\left(\min (A \setminus \set{a})\right) = \min (B \setminus \set{b})}
+  \end{gather*}
+  
+  \onslide<5->{
+    \[
+      \red{\boxed{f(x) = \min \Big(B \setminus f\big(\blue{\set{a \in A: a < x}}\big)\Big)}}
+    \]
+  }
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{}
-  \end{exampleblock}
+  \[
+    \red{\boxed{f(x) = \min \Big(B \setminus f\big(\blue{\set{a \in A: a < x}}\big)\Big)}}
+  \]
+  
+  \pause
+  \[
+    f: A \xrightarrow[onto]{1-1} B
+  \]
+  
+  \pause
+  \vspace{-0.50cm}
+  \fig{width = 0.40\textwidth}{figs/your-turn}
+  \vspace{-0.80cm}
+  
+  \pause
+  \[
+    f \text{ is unique}
+  \]
+  \pause
+  \vspace{-0.80cm}
+  \begin{center}
+    For any isomorphic mapping $g: f \to B$, we show that $g = f$.
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{}
-  \end{exampleblock}
+  \[
+    \red{\boxed{f(x) = \min \Big(B \setminus f\big(\blue{\set{a \in A: a < x}}\big)\Big)}}
+  \]
+  
+  \pause
+  \fig{width = 0.50\textwidth}{figs/ruler-align}
+  
+  \pause
+  \begin{theorem}[Mathematical Induction for Well-Ordered Sets]
+    Let $\mathcal{S} = (S, <)$ be a well-ordered set.
+    If $P(x)$ is a predicate such that
+    \begin{enumerate}
+      \item $P(\min S)$ holds,
+      \item $\big(\forall y < x: P(y)\big) \implies P(x)$,
+    \end{enumerate}
+    then $\forall x \in S: P(x)$.
+  \end{theorem}
+  
+  % \pause
+  % \begin{center}
+  %   $\mathcal{S}$ is more general than those in ordinary mathematical induction.
+  % \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{}
-  \end{exampleblock}
+  \[
+    \red{\boxed{f(x) = \min \Big(B \setminus f\big(\blue{\set{a \in A: a < x}}\big)\Big)}}
+  \]
+  
+  \vspace{0.50cm}
+  \begin{center}
+    We need to prove $\forall x \in A: g(x) = f(x)$. \\[15pt]
+    By induction on the structure of $A$.
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
 
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \red{\boxed{f(x) = \min \Big(B \setminus f\big(\blue{\set{a \in A: a < x}}\big)\Big)}}
+  \]
+  
+  \begin{center}
+    \teal{Base Case: Consider $a \gets \min A$.} \\[8pt] \pause
+    
+    We need to show that $g(a) = f(a) = b.$ \\[20pt] \pause
+    
+    Suppose \red{by contradiction} that $g(a) = b_1 \neq b$.
+    \pause
+    \[
+      \exists a_1 > a: g(a_1) = b \pause \;\red{<}\; b_1 = g(a)
+    \]
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \red{\boxed{f(x) = \min \Big(B \setminus f\big(\blue{\set{a \in A: a < x}}\big)\Big)}}
+  \]
+  
+  \begin{center}
+    \teal{Induction Hypothesis:}
+    $\teal{\forall y < x: g(y) = f(y)}$
+    % \pause
+    % \[
+    %   \forall y < x: g(y) = \min \Big(B \setminus g\big(\set{a \in A: a < y}\big)\Big)
+    % \]
+    
+    \pause
+    \vspace{0.80cm}
+    \teal{Induction Step: We need to show that $g(x) = f(x)$.} \\[8pt] \pause
+    Suppose by contradiction that $g(x) \neq f(x)$. \pause
+    \[
+      f(x) = \min \Big(\cdot\Big) \triangleq M
+    \]
+    \pause
+    \vspace{-0.30cm}
+    \[
+      g(x) > f(x) = M
+    \]
+    \pause
+    \vspace{-0.30cm}
+    \[
+      \exists x_1 > x: g(x_1) = M \pause\; \red{= f(x) < g(x)}
+    \]
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%

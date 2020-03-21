@@ -1,0 +1,19 @@
+% mss-n-2.tex
+
+\begin{algorithm}[H]
+  \begin{algorithmic}[1]
+    \Procedure{mss}{$A, n$}
+      \State $\mss \gets 0$
+      \State $\mssat \gets A[0]$
+
+      \hStatex
+      \ForAll{$i \gets 1 \ldots n-1$}
+          \State $\mssat \gets \max\set{\mssat + A[i], 0}$
+          \State $\mss \gets \max\set{\mss, \mssat}$
+      \EndFor
+
+      \hStatex
+      \State \Return $\mss$
+    \EndProcedure
+  \end{algorithmic}
+\end{algorithm}

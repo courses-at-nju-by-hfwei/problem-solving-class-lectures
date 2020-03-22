@@ -6,12 +6,12 @@
       \State $\mssat[0] \gets A[0]$
 
       \hStatex
-      \ForAll{$i \gets 1 \ldots n-1$}
-        \State $\mssat[i] \gets \max\set{\mssat[i-1] + A[i], 0}$
+      \For{$i \gets 1 \ldots n-1$}
+        \State \red{$\mssat[i] \gets \max\set{\mssat[i-1] + A[i], A[i]}$}
       \EndFor
 
       \hStatex
-      \State \Return $\max\limits_{0 \le i \le n-1} \mssat[i]$
+      \State \Return \blue{$\max\limits_{0 \le i \le n-1} \mssat[i]$}
     \EndProcedure
   \end{algorithmic}
 \end{algorithm}

@@ -3,13 +3,13 @@
 \begin{algorithm}[H]
   \begin{algorithmic}[1]
     \Procedure{mss}{$A, n$}
-      \State $\mss \gets 0$
+      \State \blue{$\mss \gets -\infty$}
       \State $\mssat \gets A[0]$
 
       \hStatex
-      \ForAll{$i \gets 1 \ldots n-1$}
-          \State $\mssat \gets \max\set{\mssat + A[i], 0}$
-          \State $\mss \gets \max\set{\mss, \mssat}$
+      \For{$i \gets 1 \ldots n-1$}
+          \State \red{$\mssat \gets \max\set{\mssat + A[i], A[i]}$}
+          \State \blue{$\mss \gets \max\set{\mss, \mssat}$}
       \EndFor
 
       \hStatex

@@ -7,7 +7,6 @@
       A[0 \ldots n-1] \qquad \forall\; 0 \le i \le n-1: \red{A[i] \in \Z}
     \]
 
-    \pause
     \begin{center}
       To find (the sum of) a maximum-sum \red{subarray} of $A$
     \end{center}
@@ -18,7 +17,6 @@
     A = [-2, 11, -4, 13, -5, -2]
   \]
 
-  \pause
   \vspace{-0.30cm}
   \[
     \mss = 11 + (-4) + 13 = 20
@@ -75,8 +73,14 @@
   \]
 
   \pause
+  \vspace{-0.30cm}
   \[
     \mss = \max_{0 \le i \le n-1} \mssat[i]
+  \]
+
+  \pause
+  \[
+    \blue{\text{What is the relation between } \mssat[i-1] \text{ and } \mssat[i]?}
   \]
 
   \pause
@@ -85,14 +89,17 @@
   \]
 
   \pause
+  \fig{width = 0.60\textwidth}{figs/mss-proof}
+
+  \pause
   \[
     \blue{\boxed{\mssat[i] = \max \set{\mssat[i-1] + A[i], A[i]}}}
   \]
 
-  \pause
-  \[
-    \mssat[0] = A[0]
-  \]
+  % \pause
+  % \[
+  %   \mssat[0] = A[0]
+  % \]
 
   % \begin{displaymath}
   %   \text{MSS}[i] = \left\{ \begin{array}{ll}
@@ -146,47 +153,52 @@
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
+% \begin{frame}{}
+%   \begin{columns}
+%     \column{0.40\textwidth}
+%       \fig{width = 0.60\textwidth}{figs/programming-pearls.jpg}
+%     \column{0.60\textwidth}
+%       \begin{description}[<+->][Michael Shamos]
+%         \setlength{\itemsep}{8pt}
+%         \item[Ulf Grenander] $O(n^3) \implies O(n^2)$
+%         \item[Michael Shamos] $O(n \log n)$, one night
+%         \item[Jon Bentley] \purple{Conjecture}: $\Omega(n \log n)$
+%         \item[Michael Shamos] Carnegie Mellon seminar
+%         \item[Jay Kadane] $O(n)$, \uncover<6->{\textcolor{red}{$\le 1$ minute}}
+%       \end{description}
+%   \end{columns}
+% \end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{columns}
-    \column{0.40\textwidth}
-      \fig{width = 0.60\textwidth}{figs/programming-pearls.jpg}
-    \column{0.60\textwidth}
-      \begin{description}[<+->][Michael Shamos]
-        \setlength{\itemsep}{8pt}
-        \item[Ulf Grenander] $O(n^3) \implies O(n^2)$
-        \item[Michael Shamos] $O(n \log n)$, one night
-        \item[Jon Bentley] \purple{Conjecture}: $\Omega(n \log n)$
-        \item[Michael Shamos] Carnegie Mellon seminar
-        \item[Jay Kadane] $O(n)$, \uncover<6->{\textcolor{red}{$\le 1$ minute}}
-      \end{description}
-  \end{columns}
+  \begin{exampleblock}{Maximum-\red{product} Subarray (\mps)}
+    \[
+      A[0 \ldots n-1] \qquad \forall 0 \le i \le n-1: \red{A[i] \in \Z}
+    \]
+
+    \begin{center}
+      To find (the \red{product} of) a maximum-\red{product} subarray of $A$
+    \end{center}
+  \end{exampleblock}
+
+  \pause
+  \vspace{0.30cm}
+  \[
+    A = [\frac{1}{2}, 4, -2, 5, -\frac{1}{5}, 8]
+  \]
+
+  \pause
+  \[
+    \mps = 4 \times (-2) \times 5 \times (-\frac{1}{5}) \times 8 = 64
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
-% \begin{frame}{}
-%   \begin{exampleblock}{Maximum-\red{product} Subarray (\mps)}
-%     \[
-%       A[0 \ldots n-1] \qquad \forall 0 \le i \le n-1: \red{A[i] \in \Z}
-%     \]
-% 
-%     \pause
-%     \begin{center}
-%       To find (the \red{product} of) a maximum-\red{product} subarray of $A$
-%     \end{center}
-%   \end{exampleblock}
-% 
-%   \pause
-%   \vspace{0.30cm}
-%   \[
-%     A = [\frac{1}{2}, 4, -2, 5, -\frac{1}{5}, 8]
-%   \]
-% 
-%   \pause
-%   \[
-%     \mps = 4 \times (-2) \times 5 \times (-\frac{1}{5}) \times 8 = 64
-%   \]
-% \end{frame}
+\begin{frame}{}
+  \fig{width = 0.70\textwidth}{figs/problemoverflow-mps}
+\end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%

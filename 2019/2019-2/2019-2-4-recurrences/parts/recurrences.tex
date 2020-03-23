@@ -2,7 +2,10 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \centerline{\teal{\Large Recurrences}}
+  \begin{center}
+    {\teal{\Large Recurrences}}
+  \end{center}
+
   \fig{width = 0.60\textwidth}{figs/fractal-tree}
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -44,7 +47,7 @@
 
   \uncover<5->{
     \[
-      \blue{E \triangleq \log_b a} \qquad \text{\it (critical exponent)}
+      \blue{\boxed{E \triangleq \log_b a}} \quad \text{\it (critical exponent)}
     \]
   }
 \end{frame}
@@ -80,7 +83,7 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{TC 4-3 $(e)$: Gaps in Master Theorem}
+  \begin{exampleblock}{TC Problem 4-3 $(e)$: Gaps in Master Theorem}
     \[
       T(n) = 2T(n/2) + \frac{n}{\log n}
     \]
@@ -159,14 +162,58 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \[
+    T(n) = 2T(n/2) + \frac{n}{\log n}
+  \]
+
+  \begin{columns}
+    \column{0.50\textwidth}
+      \pause
+      \[
+        L(n) = 2L(n/2) + 1 = \Theta(n)
+      \]
+
+      % \pause
+      % \[
+      %   \teal{T(n) = \omega(n)}
+      % \]
+    \column{0.50\textwidth}
+      \pause
+      \[
+        H(n) = 2H(n/2) + n = \Theta(n \log n)
+      \]
+
+      % \pause
+      % \[
+      %   \teal{T(n) = o(n \log n)}
+      % \]
+  \end{columns}
+
+  \pause
+  \vspace{1.00cm}
+  \[
+    \red{\boxed{T(n) = \Theta(n \log \log n)}}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.70\textwidth}{figs/problemoverflow-nloglogn}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
   \begin{align*}
-    T(n) &= 2T(n/2) + \frac{n}{\log n} \\
-    \onslide<2->{&= 2(2T(\frac{n}{4}) + \frac{\frac{n}{2}}{\log \frac{n}{2}}) + \frac{n}{\log n} \\}
-    \onslide<3->{&= 2^2 T(\frac{n}{2^2}) + \frac{n}{\log n - 1} + \frac{n}{\log n} \\}
-    \onslide<4->{&= \ldots \\} 
-    \onslide<5->{&= 2^k T(\frac{n}{2^k}) + \sum\limits_{i=0}^{k-1} \frac{n}{\log n - i} \\}
+    T(n) &= 2T(n/2) + \frac{n}{\log n} \\[6pt]
+    \onslide<2->{&= 2(2T(\frac{n}{4}) + \frac{\frac{n}{2}}{\log \frac{n}{2}}) + \frac{n}{\log n} \\[6pt]}
+    \onslide<3->{&= 2^2 T(\frac{n}{2^2}) + \frac{n}{\log n - 1} + \frac{n}{\log n} \\[6pt]}
+    \onslide<4->{&= \ldots \\[6pt]} 
+    \onslide<5->{&= 2^k T(\frac{n}{2^k}) + \sum\limits_{i=0}^{k-1} \frac{n}{\log n - i} \\[6pt]}
   \end{align*}
 
+  \vspace{-0.60cm}
   \onslide<6->{
     \[
       \teal{\frac{n}{2^k} = 1 \implies k = \log n}
@@ -177,54 +224,19 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \[
+    \teal{\frac{n}{2^k} = 1 \implies k = \log n}
+  \]
+
   \begin{align*}
-    T(n) &= 2^k T(\frac{n}{2^k}) + \sum\limits_{i=0}^{k-1} \frac{n}{\log n - i} \\[6pt]
-    \onslide<2->{&= \Theta(n) + n \sum\limits_{i=0}^{\log n - 1} \frac{1}{\log n - i} \\[6pt]}
-    \onslide<3->{&= \Theta(n) + n H_{\log n} \\[6pt]}
+    T(n) &= 2^k T(\frac{n}{2^k}) + \sum\limits_{i=0}^{k-1} \frac{n}{\log n - i} \\[8pt]
+    \onslide<2->{&= \Theta(n) + n \sum\limits_{i=0}^{\log n - 1} \frac{1}{\log n - i} \\[8pt]}
+    \onslide<3->{&= \Theta(n) + n H_{\log n} \\[8pt]}
     \onslide<4->{&= \Theta(n \log \log n)}
   \end{align*}
 \end{frame}
 %%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%
-% \begin{frame}{}
-%   \[
-%     T(n) = 2T(n/2) + \frac{n}{\log n}
-%   \]
-% 
-%   \begin{columns}
-%     \column{0.50\textwidth}
-%       \pause
-%       \[
-%         L(n) = 2L(n/2) + 1 = \Theta(n)
-%       \]
-% 
-%       \pause
-%       \[
-%         \teal{T(n) = \omega(n)}
-%       \]
-%     \column{0.50\textwidth}
-%       \pause
-%       \[
-%         H(n) = 2H(n/2) + n = \Theta(n \log n)
-%       \]
-% 
-%       \pause
-%       \[
-%         \teal{T(n) = o(n \log n)}
-%       \]
-%   \end{columns}
-% 
-%   \pause
-%   \vspace{0.80cm}
-%   \[
-%     \red{\boxed{T(n) = \Theta(n \log \log n)}}
-%   \]
-% 
-%   \pause
-%   \fig{width = 0.20\textwidth}{figs/try-this}
-% \end{frame}
-%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
@@ -258,8 +270,9 @@
   \]
 
   \pause
+  \vspace{-0.60cm}
   \[
-    \teal{T(n) = \Theta(n \log \log n)}
+    \blue{T(n) = \Theta(n \log \log n)}
   \]
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -300,13 +313,13 @@
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
-\begin{frame}{}
-  \begin{exampleblock}{TC Problem 4-3 $(i)$}
-    \[
-      T(n) = T(n-2) + \frac{1}{\log n}
-    \]
-  \end{exampleblock}
-\end{frame}
+% \begin{frame}{}
+%   \begin{exampleblock}{TC Problem 4-3 $(i)$}
+%     \[
+%       T(n) = T(n-2) + \frac{1}{\log n}
+%     \]
+%   \end{exampleblock}
+% \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
@@ -367,103 +380,152 @@
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
-% \begin{frame}{}
-%   \begin{exampleblock}{TC Problem 4-3 $(j)$}
-%     \begin{align*} 
-%       \text{T}(n) &= \sqrt{n}\ \text{T}(\sqrt{n})+n \\
-% 	  &= \teal{n^{\frac{1}{2}}\ \text{T}\left(n^{\frac{1}{2}} \right)+n} \\
-% 	  \onslide<2->{
-% 		&= n^{\frac{1}{2}}\left( n^{\frac{1}{2^2}}\ \text{T}\left(n^{\frac{1}{2^2}} \right) + n^{\frac{1}{2}} \right)+n\\
-% 		&= \teal{n^{\frac{1}{2}+\frac{1}{2^2}}\ \text{T}\left(n^{\frac{1}{2^2}}\right) + 2n} \\
-% 	  }
-% 	  \onslide<3->{
-% 		&= n^{\frac{1}{2}+\frac{1}{2^2}}\left(n^{\frac{1}{2^3}}\ \text{T}\left(n^{\frac{1}{2^3}}\right) + n^{\frac{1}{2^2}} \right) + 2n\\
-% 		&= \teal{n^{\frac{1}{2}+\frac{1}{2^2}+\frac{1}{2^3}}\ \text{T}\left(n^{\frac{1}{2^3}}\right) + 3n} \\ 
-% 	  }
-% 	  \onslide<4->{
-% 		&= \cdots \\ 
-% 		&= \red{n^{\sum_{i=1}^{k}\frac{1}{2^i}}\ \text{T}\left(n^{\frac{1}{2^k}}\right) + kn} \\ 
-% 	  }
-%     \end{align*}
-%   \end{exampleblock}
-% \end{frame}
+\begin{frame}{}
+  \begin{exampleblock}{TC Problem 4-3 $(j)$}
+    \begin{align*} 
+      \text{T}(n) &= \sqrt{n} \text{T}(\sqrt{n})+n \\
+	  &= \teal{n^{\frac{1}{2}} \text{T}\left(n^{\frac{1}{2}} \right)+n} \\
+	  \onslide<2->{
+		&= n^{\frac{1}{2}}\left( n^{\frac{1}{2^2}} \text{T}\left(n^{\frac{1}{2^2}} \right) + n^{\frac{1}{2}} \right)+n\\
+		&= \teal{n^{\frac{1}{2}+\frac{1}{2^2}} \text{T}\left(n^{\frac{1}{2^2}}\right) + 2n} \\
+	  }
+	  \onslide<3->{
+		&= n^{\frac{1}{2}+\frac{1}{2^2}}\left(n^{\frac{1}{2^3}} \text{T}\left(n^{\frac{1}{2^3}}\right) + n^{\frac{1}{2^2}} \right) + 2n\\
+		&= \teal{n^{\frac{1}{2}+\frac{1}{2^2}+\frac{1}{2^3}} \text{T}\left(n^{\frac{1}{2^3}}\right) + 3n} \\ 
+	  }
+	  \onslide<4->{
+		&= \cdots \\ 
+		&= \red{n^{\sum_{i=1}^{k}\frac{1}{2^i}} \text{T}\left(n^{\frac{1}{2^k}}\right) + kn} \\ 
+	  }
+    \end{align*}
+  \end{exampleblock}
+\end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
-% \begin{frame}{}
-%   \[
-%     \text{T}(n) = \red{n^{\sum_{i=1}^{k}\frac{1}{2^i}}\ \text{T}\left(n^{\frac{1}{2^k}}\right) + kn}
-%   \]
-% 
-%   \fig{width = 0.50\textwidth}{figs/slow-down-zoo}
-% 
-%   \pause
-%   \[
-%     \red{n^{\frac{1}{2^k}} = 1}
-%   \]
-% \end{frame}
+\begin{frame}{}
+  \[
+    \text{T}(n) = \red{n^{\sum_{i=1}^{k}\frac{1}{2^i}} \text{T}\left(n^{\frac{1}{2^k}}\right) + kn}
+  \]
+
+  \fig{width = 0.50\textwidth}{figs/slow-down-zoo}
+
+  \pause
+  \[
+    \red{n^{\frac{1}{2^k}} = 1}
+  \]
+\end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
-% \begin{frame}{}
-%   \[
-%     n^{\frac{1}{2^k}} = \red{2} \pause \implies k = \log\log n
-%   \]
-% 
-%   \pause
-%   \vspace{-0.30cm}
-%   \begin{align*} 
-%     \text{T}(n) &= \red{n^{\sum_{i=1}^{k}\frac{1}{2^i}}\ \text{T}\left(n^{\frac{1}{2^k}}\right) + kn}\\ 
-% 	    &=n^{\sum_{i=1}^{\log\log n}\frac{1}{2^i}}\ \text{T}(2) + n \log\log n\\ 
-%   \end{align*}
-% 
-%   \pause
-%   \vspace{-0.30cm}
-%   \[
-%     \sum_{i=1}^{\log \log n}\frac{1}{2^i} < 1 \implies T(n) = \Theta(n \log \log n)
-%   \]
-% 
-%   \pause
-%   \vspace{0.40cm}
-%   \centerline{\red{Exercise: Prove it by mathematical induction.}}
-% \end{frame}
+\begin{frame}{}
+  \[
+    n^{\frac{1}{2^k}} = \red{2} \pause \implies k = \log\log n
+  \]
+
+  \pause
+  \vspace{-0.30cm}
+  \begin{align*} 
+    \text{T}(n) &= \red{n^{\sum_{i=1}^{k}\frac{1}{2^i}} \text{T}\left(n^{\frac{1}{2^k}}\right) + kn}\\ 
+	    &=n^{\sum_{i=1}^{\log\log n}\frac{1}{2^i}} \text{T}(2) + n \log\log n\\ 
+  \end{align*}
+
+  \pause
+  \vspace{-0.30cm}
+  \[
+    \sum_{i=1}^{\log \log n}\frac{1}{2^i} < 1 \implies T(n) = \Theta(n \log \log n)
+  \]
+
+  \pause
+  \vspace{0.40cm}
+  \begin{center}
+    {\red{Exercise: Prove it by mathematical induction.}}
+  \end{center}
+\end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
-% \begin{frame}{}
-%   \[
-%     \boxed{T(n) = \sqrt{n} T(\sqrt{n}) + n}
-%   \]
-% 
-%   \pause
-%   \[
-%     \frac{T(n)}{n} = \frac{T(\sqrt{n})}{\sqrt{n}} + 1
-%   \]
-% 
-%   \pause
-%   \[
-%     \red{n \leftrightarrow 2^m}
-%   \]
-% 
-%   \pause
-%   \[
-%     \frac{T(2^m)}{2^m} = \frac{T(2^{m/2})}{2^{m/2}} + 1
-%   \]
-% 
-%   \pause
-%   \[
-%     \red{S(m) \leftrightarrow \frac{T(2^m)}{2^m}}
-%   \]
-% 
-%   \pause
-%   \[
-%     S(m) = S(m/2) + 1 = \pause \Theta(\log m)
-%   \]
-% 
-%   \pause
-%   \vspace{-0.60cm}
-%   \[
-%     \boxed{\teal{T(n) = n \log \log n}}
-%   \]
-% \end{frame}
+\begin{frame}{}
+  \[
+    \boxed{T(n) = \sqrt{n} T(\sqrt{n}) + n}
+  \]
+
+  \pause
+  \[
+    \frac{T(n)}{n} = \frac{T(\sqrt{n})}{\sqrt{n}} + 1
+  \]
+
+  \pause
+  \[
+    \red{n \leftrightarrow 2^m}
+  \]
+
+  \pause
+  \[
+    \frac{T(2^m)}{2^m} = \frac{T(2^{m/2})}{2^{m/2}} + 1
+  \]
+
+  \pause
+  \[
+    \red{S(m) \leftrightarrow \frac{T(2^m)}{2^m}}
+  \]
+
+  \pause
+  \[
+    S(m) = S(m/2) + 1 = \pause \Theta(\log m)
+  \]
+
+  \pause
+  \vspace{-0.60cm}
+  \[
+    \boxed{\teal{T(n) = n \log \log n}}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{TC 4.4-5}
+    \begin{center}
+      To determine a \red{good} asymptotic upper bound.
+    \end{center}
+
+    \[
+      T(n) = T(n-1) + T(n/2) + n
+    \]
+  \end{exampleblock}
+
+  \pause
+  \fig{width = 0.40\textwidth}{figs/tc-yan-exponential}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.35\textwidth}{figs/tc-yan-python}
+
+  \vspace{0.30cm}
+  \fig{width = 0.80\textwidth}{figs/tc-yan-strange}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.85\textwidth}{figs/tc-solution}
+
+  \begin{center}
+    \href{https://math.stackexchange.com/a/475154/51434}{\teal{solution @ math.stackexchange}}
+  \end{center}
+
+  \pause
+  \vspace{0.50cm}
+  \[
+    T(n) = T(n-1) + T(n/2) + n
+  \]
+
+  \pause
+  \[
+    \blue{T(n) = -2(n + 2)}
+  \]
+\end{frame}
 %%%%%%%%%%%%%%%

@@ -4,7 +4,6 @@
 \begin{frame}{}
   \fig{width = 0.60\textwidth}{figs/mss}
 
-  \pause
   \[
     O(n^3) \implies O(n^2) \implies O(n \log n) \implies \red{O(n)}
   \]
@@ -18,11 +17,29 @@
   \]
 
   \pause
+  \vspace{0.50cm}
+  \begin{columns}
+    \column{0.50\textwidth}
+      \begin{center}
+        \teal{\Large Master Theorem}
+      \end{center}
+    \column{0.50\textwidth}
+      \fig{width = 0.50\textwidth}{figs/master-panda}
+  \end{columns}
+
+  \pause
   \vspace{0.80cm}
-  \begin{center}
-    \blue{Solving it} \\[10pt]  \pause
-    \textcolor{gray}{Algorithm Analysis} \\[10pt] \pause
-    \red{Algorithm Design}  \pause
-  \end{center}
+  \[
+    T(n) = 4T(n/2) + n^2 \log n
+  \]
+  \[
+    T(n) = 2T(n/2) + \frac{n}{\log n}
+  \]
+  \[
+    T(n) = \sqrt{n} T(\sqrt{n}) + n
+  \]
+  \[
+    T(n) = T(n-1) + T(n/2) + n
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%

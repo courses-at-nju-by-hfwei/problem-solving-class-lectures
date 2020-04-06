@@ -41,22 +41,19 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{center}
-    {\teal{\Large Rotating Caliper}}
-  \end{center}
-  \vspace{-0.30cm}
-  \fig{width = 0.50\textwidth}{figs/caliper}
+  % \begin{center}
+  %   {\teal{\Large Rotating Caliper}}
+  % \end{center}
+  % \vspace{-0.30cm}
+  % \fig{width = 0.50\textwidth}{figs/caliper}
 
-  \vspace{-0.30cm}
   \begin{columns}
-    \pause
     \column{0.50\textwidth}
       \fig{width = 0.40\textwidth}{figs/shamos}
       \begin{center}
         \href{http://euro.ecom.cmu.edu/people/faculty/mshamos/1978ShamosThesis.pdf}{\teal{``Computational Geometry''}} \\
         Ph.D Thesis, Michael Shamos, 1978
       \end{center}
-    \pause
     \column{0.50\textwidth}
       \fig{width = 0.40\textwidth}{figs/toussaint}
       \begin{center}
@@ -84,7 +81,6 @@
     If $AB$ is a diameter of a convex polygon $P$, then $A$ and $B$ are vertices.
   \end{theorem}
 
-  \pause
   % \fig{width = 0.45\textwidth}{figs/convex-polygon-vertex-diameter}
   \begin{center}
     \input{tikz/convex-polygon-vertex-diameter}
@@ -120,7 +116,7 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{definition}[Antipodal]
-    An \red{\it antipodal} is a pair of points that admits parallel supporting lines.
+    An \red{\it antipodal} is a pair of points that admits \red{\it parallel supporting lines}.
   \end{definition}
 
   \fig{width = 0.60\textwidth}{figs/convex-diameter-alg}
@@ -139,16 +135,21 @@
   \end{theorem}
 
   \vspace{0.30cm}
-  \pause
   % \fig{width = 0.40\textwidth}{figs/convex-polygon-antipodal-diameter}
   \begin{center}
     \input{tikz/convex-polygon-antipodal-diameter}
   \end{center}
 
   \vspace{0.30cm}
+  \uncover<2->{
+    \begin{center}
+      We claim that $l_{A}$ and $l_{B}$ are parallel supporting lines.
+    \end{center}
+  }
+
   \uncover<3->{
     \begin{center}
-      {$L \cap P \neq \emptyset$ \qquad $P$ lies entirely on one side of $L$.}
+      {$l_{A} \cap P \neq \emptyset$ \qquad $P$ lies entirely on one side of $l_{A}$.}
     \end{center}
   }
 \end{frame}
@@ -161,7 +162,7 @@
   \end{exampleblock}
 
   \pause
-  \begin{proof}[A Classical and Beautiful Divide-Conquer\only<3->{\red{-Combine}} Algorithm:]
+  \begin{proof}[A Classical and Beautiful Divide-Conquer{\red{-Combine}} Algorithm:]
     \fig{width = 0.35\textwidth}{figs/try}
     \vspace{-0.60cm}
     \begin{center}

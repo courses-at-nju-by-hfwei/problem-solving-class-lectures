@@ -1,0 +1,161 @@
+% knapsack.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{DH 4.13 (Integer Knapsack)}
+    \begin{columns}
+      \column{0.50\textwidth}
+        \begin{align*}
+          N &= 5 \\
+          Q &= [3, 1, 4, 5, 1] \quad \gray{(\text{\it quantity})} \\
+          W &= [10, 20, 20, 8, 7] \quad \gray{(\text{\it weight})} \\
+          P &= [17, 42, 35, 16, 15] \quad \gray{(\text{\it profit})}
+        \end{align*}
+      \column{0.50\textwidth}
+        \[
+          \red{C} = 103
+        \]
+    \end{columns}
+
+    \fig{width = 0.40\textwidth}{figs/knapsack}
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{0-1 Knapsack}
+    \[
+      \red{\forall i: Q[i] = 1}
+    \]
+
+    \fig{width = 0.40\textwidth}{figs/knapsack}
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{DH 4.13 (Integer Knapsack)}
+    \begin{align*}
+        N &= 5 \\
+        Q &= [3, 1, 4, 5, 1] \quad \gray{(\text{\it quantity})} \\
+        W &= [10, 20, 20, 8, 7] \quad \gray{(\text{\it weight})} \\
+        P &= [17, 42, 35, 16, 15] \quad \gray{(\text{\it profit})}
+    \end{align*}
+  \end{exampleblock}
+
+  \pause
+  \begin{align*}
+      N' &= \sum_{i} Q[i] \\
+      W' &= [\ldots, \underbrace{W_{i}}_{\blue{\# = Q_{i}}}, \ldots] \\
+      P' &= [\ldots, \underbrace{P_{i}}_{\blue{\# = Q_{i}}}, \ldots]
+  \end{align*}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{gather*}
+    \red{K[c, i]:} \\
+    \text{The maximal profit obtained using knapsack of capacity $c$} \\
+    \text{with items of $x_1 \ldots x_i$.}
+  \end{gather*}
+
+  \pause
+  \vspace{-0.30cm}
+  \[
+    \blue{K[C, N]}
+  \]
+
+  \pause
+  \[
+    \red{\boxed{$\text{Using the item $x_i$ or not?}$}}
+  \]
+
+  \pause
+  \[
+    K[c, i] = \max \begin{cases}
+      K[c, i-1], & \\
+      \red{K[c - W[i], i-1]} + \teal{P[i]}, & W[i] \le c \\
+    \end{cases}
+  \]
+
+  \pause
+  \vspace{0.30cm}
+  \[
+    \text{Time complexity}: \Theta(NC)
+  \]
+
+  \pause
+  \vspace{-0.30cm}
+  \[
+    \red{\text{Is this a polynomial algorithm}?}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.50\textwidth}{figs/keep-calm-stay-tuned}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+% \begin{frame}{}
+%   \begin{gather*}
+%     \red{K[c, i]}: \\
+%     \text{The maximal profit obtained using knapsack of capacity $c$} \\
+%     \text{with items of $x_1 \ldots x_i$.}
+%   \end{gather*}
+% 
+%   \pause
+%   \[
+%     \blue{K[C, N]}
+%   \]
+% 
+%   \pause
+%   \[
+%     \red{\boxed{$\text{Using an item $x_i$ or not?}$}}
+%   \]
+% 
+%   \pause
+%   \[
+%     K[c, i] = \max \begin{cases}
+%       K[c, i-1], & \\
+%       \max\limits_{k \ge 1} 
+%         \underbrace{\red{K[c - kW[i], i]} + \teal{k P[i]}}_{\blue{Q[i] \gets Q[i] - k}},
+%         & Q[i] \ge k \land k W[i] \le c
+%     \end{cases}
+%   \]
+% \end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+% \begin{frame}{}
+%   \begin{gather*}
+%     \red{K[c, i, q]}: \\
+%     \text{The maximal profit obtained using knapsack of capacity $c$} \\
+%     \text{with $q[j]$ items of $x_j$ for $1 \le j \le i$.}
+%   \end{gather*}
+% 
+%   \pause
+%   \[
+%     \blue{K[C, N, Q]}
+%   \]
+% 
+%   \pause
+%   \[
+%     \red{\boxed{$\text{Using an item $x_i$ or not?}$}}
+%   \]
+% 
+%   \pause
+%   \[
+%     K[c, i, q] = \max \begin{cases}
+%       K[c, i-1, q], & \\
+%       \red{K[c - W[i], i, q[i \mapsto q[i] - 1]]} + \teal{P[i]},
+%         & q[i] \ge 1 \land W[i] \le c
+%     \end{cases}
+%   \]
+% \end{frame}
+%%%%%%%%%%%%%%%

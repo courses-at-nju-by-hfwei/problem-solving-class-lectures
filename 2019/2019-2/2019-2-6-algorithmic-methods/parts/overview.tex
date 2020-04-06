@@ -3,19 +3,46 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \[
-    T(n) = aT(n/b) + f(n)
+    T(n) = aT(n/b) + f(n) \quad (a > 0, b > 1)
   \]
+  \begin{center}
+    \blue{Assume that $T(n)$ is constant for sufficiently small $n$.} \\[8pt]
+    \uncover<3->{\purple{$f(n)$ is asymptotically positive.}}
+  \end{center}
 
+  \pause
+  \vspace{0.60cm}
+  \[
+    \red{\boxed{T(1) = 0 \;\text{\it vs.}\; T(1) = d \neq 0}}
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \begin{center}
+    \teal{\large Convex Polygon Diameter}
+  \end{center}
+
+  \fig{width = 0.60\textwidth}{figs/caliper}
+
+  % \vspace{0.50cm}
+  \begin{center}
+    \red{Correctness Proof}
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \begin{center}
+    \teal{\Large Integer Knapsack}
+  \end{center}
+
   \fig{width = 0.50\textwidth}{figs/knapsack}
+
+  \begin{center}
+    \red{Algorithm \& Time Complexity}
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%

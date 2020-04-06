@@ -1,0 +1,172 @@
+% polygon-diameter.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    \teal{\Large Convex Polygon Diameter}
+  \end{center}
+
+  \fig{width = 0.60\textwidth}{figs/convex-diameter-alg}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+% \begin{frame}{}
+%   \begin{exampleblock}{Convex Polygon Diameter (DH $6.8$)}
+%     Show that the ``Convex Polygon Diameter'' algorithm is of \red{\bf linear-time} complexity.
+%   \end{exampleblock}
+% 
+%   \begin{center}
+%     \red{$Q:$} Linear-time of \red{\bf WHAT}? \\[5pt] \pause
+%     \blue{$A:$} Linear-time of \blue{\bf the size of input} \\[12pt] \pause
+% 
+%     \red{$Q:$} What is the input? \\[5pt] \pause
+%     \blue{$A:$} A convex polygon \uncover<5->{\teal{represented by $n$ vertices}} \\[12pt]
+% 
+%     \uncover<6->{
+%       \red{$Q:$} What are the critical operations? \\[5pt] \pause
+%     }
+%     \uncover<7->{
+%       \blue{$A:$} $d(p_1, p_2) = \sqrt{(x_1 - x_2)^2 + (y_1 - y_2)^2}$
+%     }
+%   \end{center}
+% 
+%   \uncover<8->{
+%     \[
+%       \Theta(c \cdot n) = \Theta(n)
+%     \]
+%   }
+% \end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    {\teal{\Large Rotating Caliper}}
+  \end{center}
+  \vspace{-0.30cm}
+  \fig{width = 0.50\textwidth}{figs/caliper}
+
+  \vspace{-0.30cm}
+  \begin{columns}
+    \pause
+    \column{0.50\textwidth}
+      \fig{width = 0.40\textwidth}{figs/shamos}
+      \begin{center}
+        \href{http://euro.ecom.cmu.edu/people/faculty/mshamos/1978ShamosThesis.pdf}{\teal{``Computational Geometry''}} \\
+        Ph.D Thesis, Michael Shamos, 1978
+      \end{center}
+    \pause
+    \column{0.50\textwidth}
+      \fig{width = 0.40\textwidth}{figs/toussaint}
+      \begin{center}
+        \href{https://www.cs.swarthmore.edu/~adanner/cs97/s08/pdf/calipers.pdf}{\teal{``Solving Geometric Problems with the Rotating Calipers''}}, 1983
+      \end{center}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    {\teal{\Huge Correctness}}
+  \end{center}
+
+  \vspace{0.30cm}
+  \fig{width = 0.60\textwidth}{figs/wait-why}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[DH 4-8]
+    % For a convex polygon, a pair of vertices determine the diameter.
+    If $AB$ is a diameter of a convex polygon $P$, then $A$ and $B$ are vertices.
+  \end{theorem}
+
+  \pause
+  % \fig{width = 0.45\textwidth}{figs/convex-polygon-vertex-diameter}
+  \begin{center}
+    \input{tikz/convex-polygon-vertex-diameter}
+  \end{center}
+
+  \uncover<4->{
+    \begin{center}
+      \red{\large BUT, we have {\it not} enumerated {\it all} pairs of vertices.} \\[10pt] \pause
+      \teal{We have enumerated {\it all antipodals.}} \\
+    \end{center}}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Line of Support]
+    A line $L$ is a \red{\it line of support} of a convex polygon $P$ if
+    \[
+      L \cap P = \text{ a vertex/an edge of } P.
+    \]
+  \end{definition}
+
+  \fig{width = 0.30\textwidth}{figs/supporting-line}
+
+  \pause
+  \vspace{0.20cm}
+  \begin{center}
+    {$L \cap P \neq \emptyset$ \qquad $P$ lies entirely on one side of $L$.}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Antipodal]
+    An \red{\it antipodal} is a pair of points that admits parallel supporting lines.
+  \end{definition}
+
+  \fig{width = 0.60\textwidth}{figs/convex-diameter-alg}
+
+  \pause
+  \begin{center}
+    {\teal{\large We have enumerated {\it all} antipodals by {\it rotating} through all angles.}}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[We Won't Miss the Diameter]
+    If $AB$ is a diameter of a convex polygon $P$, then $AB$ is an antipodal.
+  \end{theorem}
+
+  \vspace{0.30cm}
+  \pause
+  % \fig{width = 0.40\textwidth}{figs/convex-polygon-antipodal-diameter}
+  \begin{center}
+    \input{tikz/convex-polygon-antipodal-diameter}
+  \end{center}
+
+  \vspace{0.30cm}
+  \uncover<3->{
+    \begin{center}
+      {$L \cap P \neq \emptyset$ \qquad $P$ lies entirely on one side of $L$.}
+    \end{center}
+  }
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Finding the Closest Pair of Points (Additional: DH 4-10)}
+    \fig{width = 0.30\textwidth}{figs/closest-pair-plane}
+  \end{exampleblock}
+
+  \pause
+  \begin{proof}[A Classical and Beautiful Divide-Conquer\only<3->{\red{-Combine}} Algorithm:]
+    \fig{width = 0.35\textwidth}{figs/try}
+    \vspace{-0.60cm}
+    \begin{center}
+      {\teal{Section $33.4$, CLRS}}
+    \end{center}
+  \end{proof}
+\end{frame}
+%%%%%%%%%%%%%%%

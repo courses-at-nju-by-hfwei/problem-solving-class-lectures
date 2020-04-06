@@ -1,0 +1,172 @@
+% recurrence-initial.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    T(n) = a T(n/b) + f(n)
+  \]
+
+  \fig{width = 0.75\textwidth}{figs/master-tree}
+
+  \[
+    T(n) = n^{\log_{b}{a}} \red{T(1)} + 
+        \sum_{j = 0}^{\log_{b}{n} - 1} a^{j} f\left(\frac{n}{b^{j}}\right)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    T(n) = \red{\Theta(n^{\log_{b}{a}})} + 
+        \sum_{j = 0}^{\log_{b}{n} - 1} a^{j} f\left(\frac{n}{b^{j}}\right)
+  \]
+
+  \[
+    \teal{\boxed{f(n) \;\text{\it v.s.}\; n^{\log_{b}{a}}}}
+  \]
+
+  \begin{align*}
+    f(n) = O(n^{\log_{b}{a} - \epsilon}) &\implies T(n) = \Theta(n^{\log_{b}{a}}) \\[8pt]
+    f(n) = \Theta(n^{\log_{b}{a}}) &\implies T(n) = \Theta(n^{\log_{b}{a}} \log n) \\[8pt]
+    f(n) = \Omega(n^{\log_{b}{a} + \epsilon}) &\implies T(n) = \Theta(f(n))
+  \end{align*}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    T(n) = n^{\log_{b}{a}} \red{T(1)} + 
+        \sum_{j = 0}^{\log_{b}{n} - 1} a^{j} f\left( \frac{n}{b^{j}} \right)
+  \]
+
+  \pause
+  \[
+    \blue{a^{\log_{b}{n} - 1} f\left( \frac{n}{b^{\log_{b}{n} - 1}} \right) 
+        = a^{\log_{b}{n} - 1} f(b) = a^{\log_{b}{n}} \frac{f(b)}{a}}
+  \]
+
+  \pause
+  \begin{align*}
+    T(n) &= n^{\log_{b}{a}} \red{T(1)} + 
+        \sum_{j = 0}^{\log_{b}{n} - 1} a^{j} f\left(\frac{n}{b^{j}} \right) \\
+        &= n^{\log_{b}{a}} \left( \purple{\frac{f(b^{\log_{b}{n}})}{a^{\log_{b}{n}}} + \ldots + \frac{f(b^2)}{a^2} + \frac{f(b)}{a}} + \red{T(1)} \right)
+  \end{align*}
+
+  \pause
+  \begin{center}
+    \purple{$f(n)$ is asymptotically positive.}
+  \end{center}
+
+  \[
+    \red{T(1) = d = \Theta(1), \quad (d \text{ can be } 0)}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    T(n) = n^{\log_{b}{a}} \red{T(1)} + 
+        \sum_{j = 0}^{\log_{b}{n} - 1} a^{j} f\left(\frac{n}{b^{j}}\right)
+  \]
+
+  \begin{align*}
+    f(n) = O(n^{\log_{b}{a} - \epsilon}) &\implies T(n) = \Theta(n^{\log_{b}{a}}) 
+    \\[6pt]
+    \gray{f(n) = \Theta(n^{\log_{b}{a}})} &\gray{\implies T(n) = \Theta(n^{\log_{b}{a}} \log n)}
+    \\[6pt]
+    \gray{f(n) = \Omega(n^{\log_{b}{a} + \epsilon})} &\gray{\implies T(n) = \Theta(f(n))}
+  \end{align*}
+
+  \pause
+  \[
+    T(n) = n^{\log_{b}{a}} \left( \purple{\frac{f(b^{\log_{b}{n}})}{a^{\log_{b}{n}}} + \ldots 
+        + \frac{f(b^2)}{a^2} + \frac{f(b)}{a}} + \red{T(1)} \right)
+  \]
+
+  \begin{center}
+    \purple{$f(n)$ is asymptotically positive.}
+  \end{center}
+
+  \[
+    \purple{\sum_{j = 0}^{\log_{b}{n} - 1} a^{j} f\left(\frac{n}{b^{j}}\right)} = \Omega(n^{\log_{b}{a}})
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    T(n) = a T(n/b) + f(n)
+  \]
+
+  \[
+    T(n) = n^{\log_{b}{a}} \left( \purple{\frac{f(b^{\log_{b}{n}})}{a^{\log_{b}{n}}} + \ldots + \frac{f(b^2)}{a^2} + \frac{f(b)}{a}} + \red{T(1)} \right)
+  \]
+
+  \pause
+  \vspace{0.30cm}
+  \[
+    \red{\text{What if } f(n) = 0?}
+  \]
+
+  \pause
+  \[
+    T(n) = n^{\log_{b}{a}} \red{T(1)}
+  \]
+
+  \pause
+  \[
+    T(n) = \begin{cases}
+      0, & T(1) = 0 \\[5pt]
+      \Theta(n^{\log_{b}{a}}), & T(1) = d \neq 0
+    \end{cases}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+% \begin{frame}{}
+%   \[
+%     T(n) = T(\frac{n}{2}) + T(\frac{n}{4}) + T(\frac{n}{8}) + n \pause = \Theta(n)
+%   \]
+% \end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+% \begin{frame}[fragile]{}
+%   \[
+%     T(n) = T(\frac{n}{2}) + T(\frac{n}{4}) + T(\frac{n}{8})
+%   \]
+% 
+%   \pause
+%   \[
+%     T(n) = \begin{cases}
+%       0, & T(1) = 0 \\[5pt]
+%       \teal{\Theta(n^{0.879146})}, & T(1) = d \neq 0
+%     \end{cases}
+%   \]
+% 
+%   \pause
+%   \vspace{0.30cm}
+%   \[
+%     \boxed{\red{T(n) = \Theta(n^\alpha)}}
+%   \]
+% 
+%   \pause
+%   \vspace{0.30cm}
+%   \[
+%     2^{-\alpha} + 4^{-\alpha} + 8^{-\alpha} = 1
+%   \]
+% 
+%   \pause
+%   \vspace{0.30cm}
+%   \begin{center}
+%     \begin{verbatim}
+%       Solve[2^{-x} + 4^{-x} + 8^{-x} == 1, x] // N
+%     \end{verbatim}
+%   \end{center}
+% \end{frame}
+%%%%%%%%%%%%%%%

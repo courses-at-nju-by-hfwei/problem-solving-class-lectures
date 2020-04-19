@@ -1,0 +1,112 @@
+% indicator-rv.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Indicator Random Variable]
+    \[
+      I_{E} = \begin{cases}
+        1, & \text{if $E$ occurs} \\
+        0, & \text{otherwise}
+      \end{cases}
+    \]
+  \end{definition}
+
+  \[
+    \E[I_{E}] = \Pr(E)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Hat-check Problem (TC 5.2-4)}
+    \fig{width = 0.30\textwidth}{figs/hats}
+    \[
+      X: \# \text{ of customers who get back their own hat} \qquad \red{\E[X]}
+    \]
+  \end{exampleblock}
+
+  \pause
+  \[
+    I_i = \left\{\begin{array}{lc}
+      1 & \text{customer } c_i \text{ gets back his/her hat} \\
+      0 & \text{o.w.}
+    \end{array}\right.
+  \]
+
+  \pause
+  \[
+    X = \sum_{i=1}^{n} I_i \pause \qquad 
+    \E[I_i] = \Pr\Big( c_i \text{ gets back his/her hat} \Big) = \pause \frac{1}{n}
+  \]
+
+  \pause
+  \vspace{-0.50cm}
+  \[
+    \E[X] = 1
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Inversions (TC 5.2-5)}
+    \[
+      A[1 \cdots n] \text{ of } n \text{ distinct numbers}
+    \]
+    \[
+      (i,j) \text{ is an \purple{inversion} of } A : i < j \land A[i] > A[j]
+    \]
+    \[
+      X: \# \text{ of inversions in } A
+    \]
+
+    \pause
+    \[
+      \red{\E[X]} \quad \blue{(A \text{ is randomly ordered})}
+    \]
+  \end{exampleblock}
+
+  \pause
+  \[
+    \teal{I_{ij}} = \left\{\begin{array}{lc}
+      1 & (i, j) \text{ is an inversion} \\
+      0 & \text{o.w.}
+    \end{array}\right.
+  \]
+
+  \pause
+  \[
+    X = \sum_{i=1}^{n-1} \sum_{j>i}^{n} I_{ij} \qquad \pause \E[I_{ij}] = \Pr\Big((i,j) \text{ is an inversion}\Big) = \pause \frac{1}{2}
+  \]
+
+  \pause
+  \vspace{-0.50cm}
+  \[
+    \E[X] = \frac{n(n-1)}{4}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{align*}
+    \E[X] &= \blue{\sum_{s \in S} X(s) \Pr(s)}
+          \onslide<2->{= \frac{1}{n!} \sum_{s \in S} X(s) \\}
+          \onslide<4->{&= \frac{1}{n!} \red{\Big( \frac{n!}{2} \cdot \frac{n(n-1)}{2} \Big)}}
+          \onslide<3->{= \frac{n(n-1)}{4}}
+  \end{align*}
+
+  \uncover<5->{
+    \fig{width = 0.40\textwidth}{figs/1234-inversions}
+  }
+
+  \uncover<6->{
+    \vspace{-0.30cm}
+    \[
+      \# \text{ of inversions in } \langle 3214 \rangle \;\red{+}\; 
+      \# \text{ of inversions in } \langle 4123 \rangle
+    \]
+  }
+\end{frame}
+%%%%%%%%%%%%%%%

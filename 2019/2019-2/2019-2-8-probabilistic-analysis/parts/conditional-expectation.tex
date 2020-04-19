@@ -1,0 +1,312 @@
+% conditional-expectation.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Conditional Expectation \red{on an Event}]
+    \[
+      \E[X \mid E] = \sum_{x} x \Pr(X = x \mid E)
+    \]
+  \end{definition}
+
+  \[
+    \teal{\Big(\E[X] = \sum_{x} x \Pr(X = x)\Big)}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[A Fourth Way of Computing Expectation (CS 5.6-8)]
+    \begin{center}
+      Let $X$ be a random variable defined on a sample space $\Omega$. \\[6pt]
+      Let $E_1, E_2, \cdots, E_n$ be a \red{partition} of $\Omega$.
+    \end{center}
+    \[
+      \E[X] = \sum_{i=1}^{n} \E[X \mid E_i] \Pr(E_i)
+    \]
+  \end{theorem}
+
+  \vspace{0.20cm}
+  \begin{center}
+    \red{``The Law of Total Expectation''}
+  \end{center}
+
+  \pause
+  \vspace{-0.20cm}
+  \begin{align*}
+    \E[X] &= \sum_{x} x \;\blue{\Pr(X = x)} 
+          \onslide<3->{= \sum_{x}x \;\blue{\sum_{i=1}^{n} \Pr(X = x \mid E_i) \Pr(E_i)} \\}
+          \onslide<4->{&= \sum_{x} \;\blue{\sum_{i=1}^{n} \red{x} \Pr(X = x \mid E_i) \Pr(E_i)}}
+          \onslide<5->{= \sum_{i=1}^{n} \red{\sum_{x} x \Pr(X = x \mid E_i)} \Pr(E_i) \\}
+          \onslide<6->{&= \sum_{i=1}^{n}\; \red{\E[X \mid E_i]} \Pr(E_i)}
+  \end{align*}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{\red{($\nexists$)} \blue{Rational Person} Playing a Card Game (CS $5.6-4$)}
+    \begin{columns}
+      \column{0.50\textwidth}
+        \fig{width = 0.70\textwidth}{figs/JQKA}
+      \column{0.50\textwidth}
+        \begin{description}
+          \item[$A:$] $\$ 1.00$; \purple{Repeat}
+          \item[$J:$] $\$ 2.00$; End
+          \item[$K:$] $\$ 3.00$; End
+          \item[$Q:$] $\$ 4.00$; End
+        \end{description}
+    \end{columns}
+  \end{exampleblock}
+
+  \pause
+  \begin{center}
+    {Conditioning on the \red{first} draw $c$}
+  \end{center}
+
+  \vspace{-0.20cm}
+  \[
+    \E[X] = \frac{1}{4}\Big(\teal{\E[X \mid c = A]} + \E[X \mid c = J] + \E[X \mid c = K] + \E[X \mid c = Q]\Big)
+  \]
+
+  \pause
+  \vspace{-0.40cm}
+  \[
+    \teal{\E[X \mid c = A]} = \E[X] + 1
+  \]
+
+  \pause
+  \[
+    \E[X] = \frac{1}{4}\Big(\E[X] + 1 + 2 + 3 + 4 \Big) \pause = \frac{10}{3}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{In-class Exercise: Coin Pattern (Provided by Yifan Pei)}
+    \fig{width = 0.40\textwidth}{figs/coin}
+
+    \vspace{-0.50cm}
+    \[
+      X: \# \text{ of tosses to get $3$ consecutive heads } (HHH)
+    \]
+    \[
+      \E[X]
+    \]
+  \end{exampleblock}
+
+  \pause
+  \vspace{0.30cm}
+  \centerline{Conditioning on the first $3$ tosses}
+
+  \pause
+  \vspace{-0.40cm}
+  \[
+    T, \quad HT, \quad HHT, \quad HHH
+  \]
+
+  \pause
+  \vspace{-0.40cm}
+  \[
+    \E[X] = \frac{1}{2} (\E[X] + 1) + \frac{1}{4} (\E[X] + 2) + \frac{1}{8} (\E[X] + 3) + \frac{1}{8} \times 3 \pause = 14
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \violet{\boxed{X: \# \text{ of tosses to get } HHH}}
+  \]
+
+  \[
+    T, \quad HT, \quad HHT, \quad HHH
+  \]
+
+  \fig{width = 0.70\textwidth}{figs/HHH-automaton}
+
+  \[
+    \E[X] = \frac{1}{2} (\E[X] + 1) + \frac{1}{4} (\E[X] + 2) + \frac{1}{8} (\E[X] + 3) + \frac{1}{8} \times 3
+  \]
+
+  \pause
+  \[
+    \E[X_{\red{H^n}}] = \dots = 2(2^n - 1)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \violet{\boxed{X: \# \text{ of tosses to get } HHT}}
+  \]
+
+  \pause
+  \[
+    \E[X_{HHH}] \;\text{\emph{vs.}}\; \E[X_{HHT}]
+  \]
+
+  \pause
+  \fig{width = 0.70\textwidth}{figs/HHT-automaton}
+
+  \pause
+  \[
+    T, \quad HT, \quad HHH, \quad HHT
+  \]
+
+  \pause
+  \[
+    \E[X] = \frac{1}{2} (\E[X] + 1) + \frac{1}{4} (\E[X] + 2) + \frac{1}{8} (\textcolor<6->{red}{\E[X] + 3}) + \frac{1}{8} \times 3
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.70\textwidth}{figs/HHT-automaton}
+
+  \pause
+  \vspace{-0.30cm}
+  \[
+    \purple{\boxed{S_i: \text{ Expected number of tosses from state $s_i$ to reach state } s_n}}
+  \]
+
+  \begin{columns}
+    \column{0.40\textwidth}
+      \pause
+      \begin{align*}
+        S_0 &= \frac{1}{2}(1 + S_0 + 1 + S_1) \\
+        S_1 &= \frac{1}{2}(1 + S_0 + 1 + S_2) \\
+        S_2 &= \frac{1}{2}(1 + S_2 + 1 + S_3) \\
+        S_3 &= 0
+      \end{align*}
+    \column{0.30\textwidth}
+      \pause
+      \[
+        \red{S_0} = 8
+      \]
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.60\textwidth}{figs/HHH-automaton}
+  \fig{width = 0.60\textwidth}{figs/HHT-automaton}
+
+  \[
+    \E[X_{HHH}] = 14 > \E[X_{HHT}] = 8
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+% \begin{frame}{}
+%   \[
+%     A : A = \sum_{k=1}^{n} 2^{k-1} \red{[A^{(k)} = A_{(k)}]} \qquad \E[X_{A}] = 2 (A : A)
+%   \]
+% 
+%   \pause
+%   \vspace{-0.30cm}
+%   \fig{width = 0.35\textwidth}{figs/HT-pattern}
+% 
+%   \pause
+%   \[
+%     A = THTTH \qquad \E[X_A] = 2(2^1 + 2^4) = 36
+%   \]
+% 
+%   % \pause
+%   % \vspace{-1.20cm}
+%   % \[
+%   %   A = HTHTHHTHTH \qquad \pause \E[X_A] = 2(2^0 + 2^2 + 2^4 + 2^9) = 1066
+%   % \]
+% \end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+% \begin{frame}{}
+%   \[
+%     \red{\boxed{A : A = \sum_{k=1}^{n} 2^{k-1} [A^{(k)} = A_{(k)}] \qquad \E[X_{A}] = 2 (A : A)}}
+%   \]
+% 
+%   \pause
+%   \vspace{0.30cm}
+%   \[
+%     A = HHH \qquad A = HHT
+%   \]
+% 
+%   \pause
+%   \vspace{0.30cm}
+%   \[
+%     \E[X_{\red{H^n}}] = 2(2^0 + 2^1 + 2^{n-1}) = 2(2^n - 1)
+%   \]
+% 
+%   \pause
+%   \vspace{0.30cm}
+%   \[
+%     \E[X_{\red{H^{n-1} T}}] = 2(2^{n-1}) = 2^n
+%   \]
+% \end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+% \begin{frame}{}
+%   \fig{width = 0.90\textwidth}{figs/THTTH-automaton}
+% 
+%   \vspace{-0.50cm}
+%   \begin{columns}
+%     \column{0.60\textwidth}
+%       \pause
+%       \begin{align*}
+%         S_0 &= \frac{1}{2}(1 + \red{S_0} + 1 + S_1) \\
+%         S_1 &= \frac{1}{2}(1 + \red{S_1} + 1 + S_2) \\
+%         S_2 &= \frac{1}{2}(1 + \red{S_0} + 1 + S_3) \\
+%         S_3 &= \frac{1}{2}(1 + \red{S_2} + 1 + S_4) \\
+%         S_4 &= \frac{1}{2}(1 + \red{S_1} + 1 + S_5) \\
+%         S_5 &= 0
+%       \end{align*}
+%     \column{0.40\textwidth}
+%       \pause
+%       \fig{width = 0.80\textwidth}{figs/HT-pattern}
+%       \[
+% 	      2\sum_{k=1}^{n} 2^{k-1} \red{[A^{(k)} = A_{(k)}]}
+%       \]
+%   \end{columns}
+% 
+%   \pause
+%   \tikz[remember picture, overlay] \node[anchor=center] at (current page.center) {\includegraphics[scale = 0.618]{figs/qrcode-mathse}};
+% \end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+% \begin{frame}{}
+%   \begin{definition}[Conditional Expectation \purple{on an Event}]
+%     \[
+%       \E[X \mid E] = \sum_{x} x \Pr(X = x \mid E)
+%     \]
+%   \end{definition}
+% 
+%   \pause
+%   \begin{definition}[Conditional Expectation \red{on a Random Variable}]
+%     \[
+%       \E[X \mid Y = y] = \sum_{x} x \Pr(X = x \mid Y = y)
+%     \]
+%   \end{definition}
+% 
+%   \pause
+%   \begin{alertblock}{Notation:}
+%     \[
+%       \E[X \mid Y](y) = \E[X \mid Y = y]
+%     \]
+%   \end{alertblock}
+% 
+%   \pause
+%   \begin{theorem}
+%     \[
+%       \E[X] = \E[\E[X \mid Y]] = \sum_{y} \E[X \mid Y = y] \Pr(Y = y)
+%     \]
+%   \end{theorem}
+% \end{frame}
+%%%%%%%%%%%%%%%

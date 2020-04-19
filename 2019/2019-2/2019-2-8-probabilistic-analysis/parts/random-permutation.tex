@@ -1,0 +1,55 @@
+% random-permutation.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.50\textwidth}{figs/randomize-in-place}
+
+  \pause
+  \vspace{0.60cm}
+  \begin{center}
+    Fisher–Yates shuffle \& Knuth shuffle {\small (TAOCP Vol. 2)} \\[20pt] \pause
+    \red{Sampling without Replacement}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{\textsc{Permute-With-All} (TC 5.3-3)}
+    \fig{width = 0.50\textwidth}{figs/permute-with-all}
+  \end{exampleblock}
+
+  \begin{columns}
+    \column{0.40\textwidth}
+      \pause
+      \[
+          \red{\boxed{N^{N} \;\text{\emph{vs.}}\; N!}}
+      \]
+
+      \[
+          3^3 = 27 \;\text{\emph{vs.}}\; 3! = 6
+      \]
+    \column{0.60\textwidth}
+      \pause
+      \fig{width = 0.80\textwidth}{figs/permute-with-all-3-elements-experiment}
+
+      \vspace{-0.60cm}
+      \[
+        \# = 600, 000
+      \]
+
+      \vspace{-0.30cm}
+      \begin{center}
+        \href{https://blog.codinghorror.com/the-danger-of-naivete/}
+           {\teal{\footnotesize The Danger of Naïveté @ Coding Horror}}
+      \end{center}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+% \begin{frame}{}
+%   \begin{exampleblock}{TC 5.3-4}
+%   \end{exampleblock}
+% \end{frame}
+%%%%%%%%%%%%%%%

@@ -1,0 +1,231 @@
+% searching-analysis.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Searching an Unsorted Array (TC Problem 5-2 $(f)$)}
+    \input{algs/deterministic-search}
+
+    \pause
+    \vspace{-0.30cm}
+    \[ 
+      \red{\exists!_{k}}\; i: A[i] = x 
+    \]
+  \end{exampleblock}
+
+  \pause
+  \[
+    \red{Y: \# \text{ of comparisons}}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+% \begin{frame}{}
+%   \[ 
+%     \exists!\; i: A[i] = x 
+%   \]
+% 
+%   \[
+%     \red{Y: \# \text{ of comparisons}}
+%   \]
+% 
+%   \pause
+%   \begin{align*}
+%     \E[Y] &= \sum_{i = 1}^{n} i\; \red{\Pr\set{Y = i}} \\
+%     \onslide<3->{&= \sum_{i = 1}^{n} i\; \red{\Pr\set{A[i] = x}} \\}
+%     \onslide<4->{&= \frac{1}{n} \sum_{i = 1}^{n} i = \frac{n+1}{2}}
+%   \end{align*}
+% \end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[ 
+    \exists!_{k}\; i: A[i] = x 
+  \]
+
+  \[
+    \red{Y: \# \text{ of comparisons}}
+  \]
+
+  \pause
+  \vspace{-0.50cm}
+  \begin{align*}
+    \E[Y] &= \sum_{i = 1}^{\red{n-k+1}} i \Pr\set{Y = i} \\
+    \onslide<3->{&= \sum_{i = 1}^{n-k+1} i \Pr\set{\red{i \text{ is the first index among $k$ indices {\it s.t.} } A[i] = x}} \\}
+    \onslide<4->{&= \sum_{i = 1}^{n-k+1} i \red{\frac{\binom{n-i}{k-1}}{\binom{n}{k}}}}
+    \onslide<5->{= \frac{1}{\binom{n}{k}} \teal{\sum_{i = 1}^{n-k+1} i \binom{n-i}{k-1}} \onslide<6->{= \red{\cdots}} \\}
+    \onslide<7->{&= \frac{1}{\binom{n}{k}} \purple{\binom{n+1}{k+1}} = \frac{n+1}{k+1}}
+  \end{align*}
+
+  \uncover<8->{
+    \[
+      k = 1 \implies \E[Y] = \frac{n+1}{2}, \qquad k = n \implies \E[Y] = 1
+    \]
+  }
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+% \begin{frame}{}
+%   \[
+%     \sum_{i=1}^{n-k+1} i \binom{n-i}{k-1} = \binom{n+1}{k+1}
+%   \]
+% 
+%   \fig{width = 0.30\textwidth}{figs/qrcode-summation-wiki}
+%   \vspace{-0.30cm}
+%   \centerline{Summation by parts (\teal{Abel transformation}; wiki)}
+% \end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{How Did \red{I} Evaluate this Summation:}
+    \[
+      \sum_{i=1}^{n-k+1} i \binom{n-i}{k-1} = \binom{n+1}{k+1}
+    \]
+  \end{exampleblock}
+
+  \vspace{0.30cm}
+  \begin{columns}
+    \column{0.30\textwidth}
+      \uncover<2->{
+        \fig{width = 0.70\textwidth}{figs/wolfram-mma}
+      }
+    \column{0.30\textwidth}
+      \uncover<3->{
+        \fig{width = 0.70\textwidth}{figs/concrete-mathematics}
+      }
+      % {\centerline{\small Chapter $5$: Binomial Coefficients}}
+    \column{0.40\textwidth}
+      \uncover<3->{
+        \[
+          r \binom{r-1}{k-1} = k \binom{r}{k}
+        \]
+
+        \[
+          \sum_{0 \le k \le n} \binom{k}{m} = \binom{n+1}{m+1}
+        \]
+      }
+  \end{columns}
+
+  \uncover<2->{
+    \vspace{0.30cm}
+    \begin{center}
+      \href{https://www.wolframalpha.com/input/?i=Sum\%5Bi+Binomial\%5Bn+-+i\%2C+k+-+1\%5D\%2C+\%7Bi\%2C+1\%2C+n+-+k+\%2B+1\%7D\%5D}{\teal{\texttt{Sum[i Binomial[n - i, k - 1], {i, 1, n - k + 1}]}}}
+    \end{center}
+  }
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{align*}
+    \sum_{i=1}^{n-k+1} i \binom{n-i}{k-1} &= \sum_{i=0}^{n-k} (i+1) \binom{n-i-1}{k-1} \\
+    &= \sum_{i=0}^{n-k} \big((n+1) - (n-i)\big) \binom{n-i-1}{k-1} \\
+    &= \sum_{i=0}^{n-k} (n+1) \binom{n-i-1}{k-1} - \sum_{i=0}^{n-k} (n-i) \binom{n-i-1}{k-1} \\
+    &= (n+1) \sum_{i=0}^{n-k}\binom{n-i-1}{k-1} - k \sum_{i=0}^{n-k} \binom{n-i}{k} \\
+    &= (n+1) \sum_{m=k-1}^{n-1}\binom{m}{k-1} - k \sum_{m=k}^{n} \binom{m}{k} \\
+    &= (n+1) \binom{n}{k} - k \binom{n+1}{k+1} = \binom{n+1}{k+1}
+  \end{align*}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[A Third Way of Computing Expectation]
+    Let $X$ be a discrete random variable that takes on \red{only nonnegative integer values} $\mathbb{N}$.
+
+    \[
+      \E[X] = \textcolor{teal!60}{\sum_{i=1}^{\infty} i \Pr(X = i)} 
+            = \red{\sum_{i=1}^{\infty} \Pr(X \ge i)}
+    \]
+  \end{theorem}
+
+  \pause
+  \begin{align*}
+    &\Pr(X = 1) \\
+    &\Pr(X = 2) \quad \Pr(X = 2) \\
+    &\Pr(X = 3) \quad \Pr(X = 3) \quad \Pr(X = 3) \\
+    &\dots\;
+  \end{align*}
+
+  \pause
+  \[
+    \sum_{j=1}^{\infty} \sum_{i=1}^{j} \Pr(X = j) = 
+    \sum_{i=1}^{\infty} \sum_{j=i}^{\infty} \Pr(X = j)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{align*}
+    \E[Y] &= \sum_{i=1}^{n-k+1} \red{\Pr\set{Y \ge i}} \\
+    \onslide<2->{&= \sum_{i=1}^{n-k+1} \red{\frac{\binom{n-i+1}{k}}{\binom{n}{k}}} \\}
+    \onslide<3->{&= \frac{1}{\binom{n}{k}} \sum_{i=1}^{n-k+1} \binom{n-i+1}{k} \\}
+    \onslide<4->{&= \frac{1}{\binom{n}{k}} \sum_{r=k}^{n} \binom{r}{k} \\}
+    \onslide<5->{&= \frac{1}{\binom{n}{k}} \binom{n+1}{k+1} = \frac{n+1}{k+1}}
+  \end{align*}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+% \begin{frame}{}
+%   \[
+%     \red{I_{i}} = \left\{\begin{array}{lr}
+%       1, & \text{if } A[i] \text{ is checked} \\[6pt]
+%       0, & \text{o.w.}
+%     \end{array}\right.
+%   \]
+% 
+%   \pause
+%   \[
+%     \red{Y: \# \text{ of comparisons}}
+%   \]
+% 
+%   \pause
+%   \[
+%     \E[Y] = \E\big[\sum_{i=1}^{n} I_{i}\big] = \sum_{i=1}^{n} \E[I_{i}] = \sum_{i=1}^{n} \purple{\Pr\set{I_{i} = 1}}
+%   \]
+% 
+%   \pause
+%   \[
+%     \teal{\Pr\set{I_{i} = 1}} = \left\{\begin{array}{lr}
+%       \frac{1}{k}, & \text{if } A[i] = x \\[6pt]
+%       \frac{1}{k+1}, & \text{if } A[i] \neq x
+%     \end{array}\right.
+%   \]
+% 
+%   \pause
+%   \[
+%     \E[Y] = \sum_{i=1}^{n} \Pr\set{I_{i} = 1} = k \cdot \frac{1}{k} + (n-k) \cdot \frac{1}{k+1} = \frac{n+1}{k+1}
+%   \]
+% \end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+% \begin{frame}{}
+%   \fig{width = 0.40\textwidth}{figs/wrong.jpg}
+% 
+%   \pause
+%   \[
+%     \teal{\Pr\set{I_{i} = 1}} = \left\{\begin{array}{lr}
+%       \frac{1}{k}, & \text{if } A[i] = x \\[6pt]
+%       \frac{1}{k+1}, & \text{if } A[i] \neq x
+%     \end{array}\right.
+%   \]
+% 
+%   \pause
+%   \vspace{0.20cm}
+%   \[
+%     i = 1 \implies \Pr\set{I_{1} = 1} = 1
+%   \]
+% 
+%   \pause
+%   \vspace{-0.50cm}
+%   \[
+%     i = n \implies \Pr\set{I_{n} = 1} = 0
+%   \]
+% \end{frame}
+%%%%%%%%%%%%%%%

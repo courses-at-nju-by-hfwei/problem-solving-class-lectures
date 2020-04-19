@@ -1,0 +1,40 @@
+% expectation.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Expectation]
+    \[
+      \E[X] = \sum_{x} x \Pr(X = x)
+    \]
+  \end{definition}
+
+  \pause
+  \vspace{0.60cm}
+  \begin{theorem}[A Second Way of Computing Expectation]
+    \[
+      \E[X] = \sum_{s \in S} X(s) \Pr(s)
+    \]
+  \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[Linearity of Expectation] 
+    \[
+      \E[X + Y] = \E[X] + \E[Y]
+    \]
+    \[
+      \E[c X] = c \E[X]
+    \]
+  \end{theorem}
+
+  \pause
+  \begin{align*}
+    \E[X + Y] = \sum_{s \in S} \Big(X(s) + Y(s)\Big) \Pr(s) = \E[X] + \E[Y]
+  \end{align*}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+\input{parts/indicator-rv}
+\input{parts/searching-analysis}

@@ -1,0 +1,20 @@
+% file: algs/stack-queue/queue-2stack.tex
+
+\begin{algorithm}[H]
+  \begin{algorithmic}[]
+    \Procedure{\teal{Enqueue}}{$x$}
+      \State \textsl{Push}($S_1, x$)
+    \EndProcedure
+
+    \Statex
+    \Procedure{\teal{Dequeue}}{\null}
+      \If{$S_2 = \emptyset$}
+	\While{$S_1 \neq \emptyset$}
+	  \State $\textsl{Push}\Big(S_2, \textsl{Pop}(S_1)\Big)$
+	\EndWhile
+      \EndIf
+
+      \State \textsl{Pop}($S_2$)
+    \EndProcedure
+  \end{algorithmic}
+\end{algorithm}

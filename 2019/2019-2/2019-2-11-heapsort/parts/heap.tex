@@ -2,11 +2,29 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{Heap Identity}
+  \begin{exampleblock}{Heap Identity (Additional)}
     \[
       \forall h \ge 1: \lceil \log(\lfloor \frac{1}{2}h \rfloor + 1)\rceil + 1 = \lceil \log (h+1) \rceil
     \]
   \end{exampleblock}
+
+  \pause
+  \[
+    \blue{\boxed{\lceil \log (h + 1) \rceil = \lfloor \log h \rfloor + 1, \forall h \ge 1}}
+  \]
+
+  \pause
+  \[
+    \red{\lfloor \log \lfloor \frac{1}{2} h \rfloor \rfloor + 1}
+    = \lceil \log(\lfloor \frac{1}{2}h \rfloor + 1)\rceil 
+    = \lceil \log (h+1) \rceil - 1
+    = \red{\lfloor \log h \rfloor}
+  \]
+
+  \pause
+  \[
+    \teal{\text{Depth }} \text{of } h = (\teal{\text{Depth }} \text{of the parent of } h) + 1 
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%
 

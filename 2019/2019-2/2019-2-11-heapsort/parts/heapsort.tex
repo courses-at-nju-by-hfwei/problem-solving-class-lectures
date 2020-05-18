@@ -129,7 +129,7 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{Worst-case of \textsc{Heapsort} (TC $6.4-4$)}
+  \begin{exampleblock}{Worst-case of \textsc{Heapsort} (TC 6.4-4)}
     Show that the \red{worst-case} running time of \textsc{Heapsort} is $\red{\Omega}(n \log n)$.
   \end{exampleblock}
 
@@ -186,7 +186,7 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{Worst-case of \textsc{Heapsort} (TC $6.4-4$)}
+  \begin{exampleblock}{Worst-case of \textsc{Heapsort}}
     Show that the \red{worst-case} running time of \textsc{Heapsort} is $\red{O}(n \log n)$.
   \end{exampleblock}
 
@@ -211,7 +211,7 @@
 \begin{frame}{}
   \fig{width = 0.40\textwidth}{figs/therefore}
 
-  \begin{exampleblock}{Worst-case of \textsc{Heapsort} (TC $6.4-4$)}
+  \begin{exampleblock}{Worst-case of \textsc{Heapsort}}
     Show that the \red{worst-case} running time of \textsc{Heapsort} is $\red{\Theta}(n \log n)$.
   \end{exampleblock}
 
@@ -314,23 +314,74 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{Best-case of \textsc{Heapsort} (TC $6.4-5$)}
+  \begin{exampleblock}{Best-case of \textsc{Heapsort}}
     Show that when all elements are distinct, 
     the \red{best-case} running time of \textsc{Heapsort} is $\red{O}(n \log n)$.
+  \end{exampleblock}
+
+  \pause
+  \begin{table}
+    \centering
+    \renewcommand*{\arraystretch}{1.5}
+    \begin{tabular}{c||c|c|c}
+      \hline
+		  	& $O$ 				& $\Omega$ 				& $\Theta$ \\ \hline \hline
+      {\it Best-case} 	& {\teal{by example}}	
+			& {\purple{``weakness'' of $\mathcal{A}$}}	
+			& {\violet{$O = \Omega$}}    \\ \hline
+      {\it Worst-case} 	& {\purple{``power'' of $\mathcal{A}$}}
+			& {\teal{by example}}	
+			& {\violet{$O = \Omega$}}    \\ \hline
+    \end{tabular}
+  \end{table}
+
+  \only<4->{
+    \[
+      \purple{\frac{1}{2} n \log n + O(n)} \le \teal{?} \le \purple{n \log n}
+    \]
+  }
+
+  \pause
+  \begin{table}
+    \centering
+    \renewcommand*{\arraystretch}{1.5}
+    \begin{tabular}{c||c|c|c}
+      \hline
+		  	& $O$ 				& $\Omega$ 				& $\Theta$ \\ \hline \hline
+      {\it Best-case} 	& {\teal{$?$}}	
+			& {\purple{$\sim \frac{1}{2} n \log n + O(n)$}}	
+			& {\violet{$O = \Omega$}}    \\ \hline
+      {\it Worst-case} 	& {\purple{$\sim n \log n$}}
+			& {\teal{$\sim n \log n$}}	
+			& {\violet{$O = \Omega$}}    \\ \hline
+    \end{tabular}
+  \end{table}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Best-case of \textsc{Heapsort}}
+    Show that when all elements are distinct, 
+    the \red{best-case} running time of \textsc{Heapsort} is
+    \[
+      B(n) \le \red{\frac{1}{2} n \log n} + O(n \log \log n).
+    \]
   \end{exampleblock}
 
   \pause
   \vspace{0.60cm}
   \centerline{\red{\Large By Example.}}
 
-  \pause
   \fig{width = 0.35\textwidth}{figs/very-hard}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \centerline{\red{\large ``On the Best Case of Heapsort''} \teal{(1994)}}
+  \begin{center}
+    {\red{\large ``On the Best Case of Heapsort''} \teal{(1994)}}
+  \end{center}
 
   \begin{columns}
     \column{0.33\textwidth}
@@ -340,12 +391,6 @@
     \column{0.33\textwidth}
       \fig{width = 0.90\textwidth}{figs/best-case-heap-even}
   \end{columns}
-
-  \pause
-  \vspace{0.30cm}
-  \[
-    B(n) \le \frac{1}{2} n \log n + O(n \log \log n)
-  \]
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -353,7 +398,7 @@
 \begin{frame}{}
   \fig{width = 0.40\textwidth}{figs/therefore}
 
-  \begin{exampleblock}{Best-case of \textsc{Heapsort} (TC $6.4-5$)}
+  \begin{exampleblock}{Best-case of \textsc{Heapsort}}
     Show that when all elements are distinct, 
     the \red{best-case} running time of \textsc{Heapsort} is $\red{\Theta}(n \log n)$.
   \end{exampleblock}
@@ -423,7 +468,11 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \centerline{\blue{\Large ``By a surprisingly short counting argument.''}}
+  \begin{center}
+    {\blue{\Large ``By a surprisingly short counting argument.''}} \\[10pt]
+    {``The Analysis of Heapsort'' (Sedgewick ; 1992)}
+  \end{center}
+
   \begin{columns}
     \column{0.50\textwidth}
       \fig{width = 0.50\textwidth}{figs/sedgewick}

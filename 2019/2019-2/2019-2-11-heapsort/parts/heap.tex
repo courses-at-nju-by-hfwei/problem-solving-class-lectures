@@ -23,8 +23,30 @@
 
   \pause
   \[
-    \teal{\text{Depth }} \text{of } h = (\teal{\text{Depth }} \text{of the parent of } h) + 1 
+    (\teal{\text{Depth }} \text{of the parent of } h) + 1 = \teal{\text{Depth }} \text{of } h
   \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{$k$-way Merging (TC 6.5-9)}
+    Give an $O(n \log k)$-time algorithm to merge $k$ sorted lists with $n$ elements in total
+    into one sorted list.
+  \end{exampleblock}
+
+  \pause
+  \vspace{0.20cm}
+  \[
+    k = 2 \implies O(n)
+  \]
+
+  \pause
+  \vspace{0.20cm}
+  \begin{center}
+    Always maintain a \red{min-heap} of size $k$ \\[5pt]
+    whose root contains \blue{the next smallest} element.
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
 

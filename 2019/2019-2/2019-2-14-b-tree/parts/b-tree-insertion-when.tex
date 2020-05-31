@@ -1,0 +1,268 @@
+% b-tree-insertion-when.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{enumerate}[(I)]
+    \setcounter{enumi}{1}
+    \centering
+    \item \red{When does each node \textsc{split}?}
+  \end{enumerate}
+
+  \pause
+  \vspace{0.80cm}
+  \begin{center}
+    Let's focus the \red{rightmost} node first, denoted $A$.
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.10\textwidth}{figs/t0}
+  
+  \begin{columns}
+    \column{0.33\textwidth}
+      \fig{width = 0.40\textwidth}{figs/b-tree-1}
+    \column{0.33\textwidth}
+      \fig{width = 0.70\textwidth}{figs/b-tree-2}
+    \column{0.33\textwidth}
+      \fig{width = 0.80\textwidth}{figs/b-tree-3}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{columns}
+    \column{0.33\textwidth}
+      \fig{width = 0.80\textwidth}{figs/b-tree-4}
+    \column{0.33\textwidth}
+      \fig{width = 0.90\textwidth}{figs/b-tree-5}
+    \column{0.33\textwidth}
+      \fig{width = 0.90\textwidth}{figs/b-tree-6}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{columns}
+    \column{0.50\textwidth}
+      \fig{width = 0.80\textwidth}{figs/b-tree-7}
+    \column{0.50\textwidth}
+      \fig{width = 0.80\textwidth}{figs/b-tree-8}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{columns}
+    \column{0.50\textwidth}
+      \fig{width = 0.80\textwidth}{figs/b-tree-9}
+    \column{0.50\textwidth}
+      \fig{width = 0.80\textwidth}{figs/b-tree-10}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{columns}
+    \column{0.50\textwidth}
+      \fig{width = 0.90\textwidth}{figs/b-tree-11}
+    \column{0.50\textwidth}
+      \fig{width = 0.90\textwidth}{figs/b-tree-12}
+  \end{columns}
+
+  \pause
+  \vspace{1.00cm}
+  \[
+    \red{A\; \textsc{split}: 4,\quad 6,\quad 8,\quad 10,\quad 12,\quad \dots}
+  \]
+  % \[
+  %   \blue{A\; \textsc{full}: 3,\quad 5,\quad 7,\quad 9,\quad 11,\quad \dots}
+  % \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{enumerate}[(I)]
+    \setcounter{enumi}{1}
+    \centering
+    \item \red{When does each node \textsc{split}?}
+  \end{enumerate}
+
+  \pause
+  \vspace{0.60cm}
+  \begin{center}
+    Let's consider the \red{parent of $A$}, denoted $B \triangleq p(A)$. \\[30pt] \pause
+    \blue{Every time $A$ splits, $B$ obtains a new key.}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{columns}
+    \column{0.25\textwidth}
+      \fig{width = 0.40\textwidth}{figs/b-tree-1}
+    \column{0.25\textwidth}
+      \fig{width = 0.75\textwidth}{figs/b-tree-2}
+    \column{0.25\textwidth}
+      \fig{width = 0.85\textwidth}{figs/b-tree-3}
+    \column{0.25\textwidth}
+      \fig{width = 0.90\textwidth}{figs/b-tree-4}
+  \end{columns}
+
+  \pause
+  \vspace{0.50cm}
+  \begin{columns}
+    \column{0.50\textwidth}
+      \fig{width = 0.70\textwidth}{figs/b-tree-5}
+    \column{0.50\textwidth}
+      \fig{width = 0.70\textwidth}{figs/b-tree-6}
+  \end{columns}
+
+  \pause
+  \vspace{0.50cm}
+  \begin{columns}
+    \column{0.50\textwidth}
+      \fig{width = 0.90\textwidth}{figs/b-tree-7}
+    \column{0.50\textwidth}
+      \fig{width = 0.90\textwidth}{figs/b-tree-8}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{columns}
+    \column{0.50\textwidth}
+      \fig{width = 0.80\textwidth}{figs/b-tree-9}
+    \column{0.50\textwidth}
+      \fig{width = 0.80\textwidth}{figs/b-tree-10}
+  \end{columns}
+
+  \pause
+  \vspace{0.50cm}
+  \begin{columns}
+    \column{0.50\textwidth}
+      \fig{width = 0.90\textwidth}{figs/b-tree-11}
+    \column{0.50\textwidth}
+      \fig{width = 0.90\textwidth}{figs/b-tree-12}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{columns}
+    \column{0.50\textwidth}
+      \fig{width = 0.80\textwidth}{figs/b-tree-13}
+    \column{0.50\textwidth}
+      \fig{width = 0.80\textwidth}{figs/b-tree-14}
+  \end{columns}
+
+  \pause
+  \vspace{0.50cm}
+  \begin{columns}
+    \column{0.50\textwidth}
+      \fig{width = 1.00\textwidth}{figs/b-tree-15}
+    \column{0.50\textwidth}
+      \fig{width = 1.00\textwidth}{figs/b-tree-16}
+  \end{columns}
+
+  \pause
+  \vspace{1.00cm}
+  \[
+    \red{B\; \textsc{split}: 9,\quad 13,\quad 17,\quad 21,\quad 25,\quad \dots}
+  \]
+  % \[
+  %   \blue{B\; \textsc{full}: 8,\quad 12,\quad 16,\quad 20,\quad 24,\quad \dots}
+  % \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \red{A\; \textsc{split}: 4,\quad 6,\quad 8,\quad 10,\quad 12,\quad \dots}
+  \]
+  % \[
+  %   \blue{A\; \textsc{full}: 3,\quad 5,\quad 7,\quad 9,\quad 11,\quad \dots}
+  % \]
+
+  \vspace{1.00cm}
+  \[
+    \red{B\; \textsc{split}: 9,\quad 13,\quad 17,\quad 21,\quad 25,\quad \dots}
+  \]
+  % \[
+  %   \blue{B\; \textsc{full}: 8,\quad 12,\quad 16,\quad 20,\quad 24,\quad \dots}
+  % \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{enumerate}[(I)]
+    \setcounter{enumi}{1}
+    \centering
+    \item \red{When does each node \textsc{split}?}
+  \end{enumerate}
+
+  \pause
+  \vspace{0.80cm}
+  \begin{center}
+    Let's consider the \red{parent of $B$}, denoted $C = p(B)$.
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \teal{A\; \textsc{split}: 4,\quad 6,\quad 8,\quad 10,\quad 12,\quad \dots}
+  \]
+  % \[
+  %   \blue{A\; \textsc{full}: 3,\quad 5,\quad 7,\quad 9,\quad 11,\quad \dots}
+  % \]
+  \[
+    \teal{B\; \textsc{split}: 9,\quad 13,\quad 17,\quad 21,\quad 25,\quad \dots}
+  \]
+  % \[
+  %   \blue{B\; \textsc{full}: 8,\quad 12,\quad 16,\quad 20,\quad 24,\quad \dots}
+  % \]
+  \[
+    \teal{C\; \textsc{split}: 18,\quad 26,\quad 34,\quad 42,\quad 50,\quad \dots}
+  \]
+
+  \pause
+  \hrule
+  \[
+    A: 1 \qquad B: 2 \qquad C: 3 \qquad
+  \]
+
+  \[
+    \red{T_{i}: \text{ the first time point the $i$-th node splits}}
+  \]
+
+  \pause
+  \[
+    T_{1} = 4
+  \]
+  
+  \pause
+  \[
+    \blue{T_{i} = \underbrace{T_{i-1}}_{\text{its right child first split}} + 
+        \underbrace{2 \times 2^{i-1}}_{\text{its right child split twice more}} + 
+        \underbrace{1}_{\text{insert one more}}}
+  \]
+
+  \pause
+  \[
+    \red{T_{i} = 2^{i+1} + i - 1}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%

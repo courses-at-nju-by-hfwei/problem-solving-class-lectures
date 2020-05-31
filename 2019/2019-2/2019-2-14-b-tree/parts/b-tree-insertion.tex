@@ -2,17 +2,105 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{Insertion (TC 18.2-4$^{\red{\star}}$)}
+  \begin{exampleblock}{Insertion (TC 18.2-4$\;^{\red{\star}}$)}
     \begin{center}
       Suppose that we insert the keys \blue{$\set{1, 2, \dots, n}$} \red{in increasing order} \\[5pt]
       into an \purple{empty B-tree} with minimum degree 2. \\[6pt]
-      How many nodes, \teal{denoted $T(n)$}, does the final B-tree have?
+      How many nodes, \teal{denoted $X_{n}$}, does the final B-tree have?
     \end{center}
   \end{exampleblock}
 
   \pause
+  \vspace{0.60cm}
+  \fig{width = 0.10\textwidth}{figs/t0}
   \[
-    \purple{T_{0} = 1}
+    \purple{X_{0} = 1}
   \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    By \blue{Yangjing Dong} (June 2018) \\[20pt]
+    \href{https://maxmute.com/TC18.2-4.html}{\teal{https://maxmute.com/TC18.2-4.html}}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    Only \red{\textsc{split}} can create new nodes.
+  \end{center}
+
+  \pause
+  \begin{columns}
+    \column{0.50\textwidth}
+      \fig{width = 0.90\textwidth}{figs/b-tree-root-split}
+
+      \begin{center}
+        root \textsc{split}
+      \end{center}
+      \[
+        \red{+2}
+      \]
+    \pause
+    \column{0.50\textwidth}
+      \fig{width = 0.90\textwidth}{figs/b-tree-non-root-split}
+
+      \begin{center}
+        non-root \textsc{split}
+      \end{center}
+      \[
+        \red{+1}
+      \]
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{enumerate}[(I)]
+    \centering
+    \item Which nodes will \textsc{split}? \quad \teal{$S$} \\[15pt]
+    \item \textcolor<3>{red}{When does each node \teal{$s \in S$} \textsc{split}?} 
+      \quad \teal{$T_{s} = \set{s_{1}, s_{2}, \dots}$} \\[15pt]
+    \item How does it \textsc{split}, as a root or a non-root?
+      \quad \teal{$T_{s} = s_{R} \uplus s_{NR}$}
+  \end{enumerate}
+
+  \pause
+  \vspace{0.60cm}
+  \[
+    X_{n} = 1 + \sum_{s \in S} \Big( 2\; |s_{R}| + |s_{NR}| \Big)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+\input{parts/b-tree-insertion-which}
+\input{parts/b-tree-insertion-when}
+\input{parts/b-tree-insertion-how}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \blue{X_{n} = 1 + \sum_{s \in S} \Big( |T_{s}| + 1 \Big)} \qquad
+    \red{T_{i} = 2^{i+1} + i - 1}
+  \]
+
+  \pause
+  \begin{align*}
+    \onslide<3->{X_{n} &= 1 + \sum_{i = 1}^{\infty} \teal{[T_{i} \le n]} 
+      \Big( \Big(\left\lfloor \frac{n - T_{i}}{2^{i}} \right\rfloor + 1 \Big) + 1 \Big) \\}
+          \onslide<4->{&= 1 + \sum_{i = 1}^{\infty} \teal{[T_{i} \le n]} 
+      \Big( \left\lfloor \frac{n - T_{i}}{2^{i}} \right\rfloor + 2 \Big) \\}
+          \onslide<5->{&= 1 + \sum_{i = 1}^{\infty} \teal{[T_{i} \le n]} 
+      \Big( \left\lfloor \frac{n - 2^{i+1} - i + 1}{2^{i}} \right\rfloor \Big) \\}
+          \onslide<6->{&= 1 + \sum_{i = 1}^{2^{i+1} + i - 1 \le n} 
+      \left\lfloor \frac{n - i + 1}{2^{i}} \right\rfloor \\}
+          \onslide<7->{&= 1 + \sum_{\red{i = 0}}^{2^{i+2} + i \le n} 
+      \left\lfloor \frac{n - i}{2^{i + 1}} \right\rfloor}
+  \end{align*}
 \end{frame}
 %%%%%%%%%%%%%%%

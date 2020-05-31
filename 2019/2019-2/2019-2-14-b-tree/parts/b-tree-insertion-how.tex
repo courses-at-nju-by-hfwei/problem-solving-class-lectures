@@ -1,0 +1,31 @@
+% b-tree-insertion-how.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    X_{n} = 1 + \sum_{s \in S} \Big( 2\; \red{|s_{R}|} + \red{|s_{NR}|} \Big)
+  \]
+  \[
+    \red{(T_{s} = s_{R} \uplus s_{NR})}
+  \]
+
+  \begin{enumerate}[(I)]
+    \setcounter{enumi}{2}
+    \centering
+    \item How does it \textsc{split}, as a root or a non-root?
+  \end{enumerate}
+
+  \pause
+  \[
+    \blue{s_{R} = \set{s_{1}} \qquad s_{NR} = \set{s_{2}, s_{3}, \dots}}
+  \]
+  \[
+    \blue{|s_{R}| = 1 \qquad |s_{NR}| = |T_{s}| - 1}
+  \]
+
+  \pause
+  \[
+    X_{n} = 1 + \sum_{s \in S} \Big(2 + |T_{s}| - 1) = 1 + \sum_{s \in S} \Big( |T_{s}| + 1 \Big)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%

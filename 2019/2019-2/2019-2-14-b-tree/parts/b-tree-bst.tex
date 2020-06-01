@@ -19,19 +19,67 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{exampleblock}{Predecessor (TC 18.2-3)}
-    Explain how to find the \red{predecessor of a given key} stored in a B-tree.
+    Explain how to find the \red{predecessor of a given key $(x, i)$} stored in a B-tree.
   \end{exampleblock}
 
-  \fig{width = 0.75\textwidth}{figs/b-tree-example}
+  \pause
+  \fig{width = 1.00\textwidth}{figs/b-tree-37-char}
+  \begin{center}
+    \teal{B-tree with 37 characters.}
+  \end{center}
+
+  \pause
+  \[
+    \red{x.\leaf = 0}
+  \]
+
+  \pause
+  \vspace{-0.30cm}
+  \[
+    \blue{H \qquad N} \qquad \teal{S \qquad V} \qquad \purple{Q}
+  \]
+
+  \pause
+  \vspace{0.20cm}
+  \begin{center}
+    find the \red{rightmost key} in $x.c_{i}$
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \[
+    (x, i)
+  \]
+  \fig{width = 1.00\textwidth}{figs/b-tree-37-char}
+
+  \[
+    \red{x.\leaf = 1}
+  \]
+
+  \vspace{-0.30cm}
+  \[
+    \blue{P \qquad U \qquad} \teal{T\qquad O \qquad} \purple{A}
+  \]
+
+  \pause
+  \[
+    i \ge 2 \implies (x, i-1)
+  \]
+  \[
+    i = 1 \implies \text{ find $(y, j)$ such that $x$ is the \red{leftmost key} in $y.c_{j + 1}$}
+  \]
+
+  \pause
+  \begin{center}
+    $A$ is the \purple{only} key which has no predecessor.
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \input{algs/b-tree-predecessor}
 \end{frame}
 %%%%%%%%%%%%%%%

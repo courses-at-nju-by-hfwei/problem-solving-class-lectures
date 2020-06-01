@@ -97,9 +97,9 @@
       \Big( \left\lfloor \frac{n - T_{i}}{2^{i}} \right\rfloor + 2 \Big) \\}
           \onslide<5->{&= 1 + \sum_{i = 1}^{\infty} \teal{[T_{i} \le n]} 
       \Big( \left\lfloor \frac{n - 2^{i+1} - i + 1}{2^{i}} \right\rfloor \Big) \\}
-          \onslide<6->{&= 1 + \sum_{i = 1}^{2^{i+1} + i - 1 \le n} 
+          \onslide<6->{&= 1 + \sum_{\substack{i \ge 1 \\ 2^{i+1} + i - 1 \le n}} 
       \left\lfloor \frac{n - i + 1}{2^{i}} \right\rfloor \\}
-          \onslide<7->{&= 1 + \sum_{\red{i = 0}}^{2^{i+2} + i \le n} 
+          \onslide<7->{&= 1 + \sum_{\substack{\red{i \ge 0} \\ 2^{i+2} + i \le n}} 
       \left\lfloor \frac{n - i}{2^{i + 1}} \right\rfloor}
   \end{align*}
 \end{frame}

@@ -1,14 +1,16 @@
 % b-tree-predecessor.tex
 
 \begin{algorithm}[H]
-% \caption{Predecessor of a given key in B-tree.}
+% \caption{Predecessor of a given key in $B$-tree.}
 % \label{b-tree-predecessor}
 \begin{algorithmic}[1]
-  \Procedure{B-Tree-Predecessor}{$T, x, i$} \Comment{\purple{$x.key_{i}$ in B-tree $T$}}
+  \Procedure{B-Tree-Predecessor}{$T, x, i$} \Comment{\purple{$x.key_{i}$ in $B$-tree $T$}}
     \If{$x.\leaf = 0$}
       \State \Return the rightmost key in $x.c_{i}$
+    \pause
     \ElsIf{$i \ge 2$} \Comment{$x.\leaf = 1$}
       \State \Return $(x, i-1)$
+    \pause
     \Else \Comment{\red{$x.\leaf = 1 \land i = 1$}}
       \State $y \gets x.p$
       \While{\red{$y \neq T.root \land x = y.c_{1}$}}
@@ -17,8 +19,10 @@
         \State $y \gets y.p$
       \EndWhile
 
+      \pause
       \If{\red{$x = y.c_{1}$}} \Comment{\teal{$y = T.root \land x = y.c_{1}$}}
         \State \Return ``no predecessor''
+      \pause
       \Else \Comment{\teal{$x \neq y.c_{1}$}}
         \State $j \gets 2$
         \While{$y.c_{j} \neq x$}
